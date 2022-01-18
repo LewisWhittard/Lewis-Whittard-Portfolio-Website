@@ -1,0 +1,69 @@
+﻿@model LMWDev.Models.PortfolioPieceModel
+
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+<body>
+
+	@foreach (var item in Model.Body)
+	{
+		switch (item.Type)
+		{
+			case "P-Center":
+				<p id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </p>
+				break;
+
+			case "H1-Center":
+				<h1 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </h1>
+				break;
+
+			case "H2-Center":
+				<H2 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </H2>
+				break;
+
+			case "H3-Center":
+				<H3 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </H3>
+				break;
+
+			case "H4-Center":
+				<H4 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </H4>
+				break;
+
+			case "H5-Center":
+				<H5 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </H5>
+				break;
+
+			case "H6-Center":
+				<H6 id="@item.iD" style="text-align: center;" name="@item.iD"> @item.Content </H6>
+				break;
+
+			case "BR":
+				<br>
+				break;
+
+			case "HyperLink-Center":
+				<p style="text-align: center;"><a href="@item.Content" id="@item.iD" name="@item.iD">@item.Content</a></p>
+				break;
+
+			case "Image-Center":
+				<img src="~/Images/@item.BodyContent.path" alt="@item.BodyContent.alt" id="@item.BodyContent.iD" name="@item.BodyContent.name" class="centerMedia">
+				break;
+
+			case "Video":
+				<video width="1280" height="720" id="@item.BodyContent.iD"  alt="@item.BodyContent.alt" Name="@item.BodyContent.name"  controls>
+					<source src="~/Videos/@item.BodyContent.path" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				break;
+
+			case "DownloadFile":
+				<p style="text-align: center;"><a class="btn btn-primary" href="~/Downloads/@item.BodyContent.path">Download</a></p>
+				break;
+		}
+	}
+
+
+</body>

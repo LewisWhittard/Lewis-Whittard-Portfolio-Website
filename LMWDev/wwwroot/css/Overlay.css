@@ -1,0 +1,120 @@
+﻿
+.OverlayContainer1 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.OverlayContainer2 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.OverlayContainer3 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.OverlayContainer4 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.OverlayContainer5 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.OverlayContainer6 {
+	position: relative;
+	width: 25%;
+	height: 25%;
+	margin-right: 45px;
+	margin-left: 45px;
+	margin-bottom: 32px;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #003c8a;
+}
+
+.OverlayContainer1:hover .overlay {
+	opacity: 1;
+}
+
+.OverlayContainer2:hover .overlay {
+	opacity: 1;
+}
+
+.OverlayContainer3:hover .overlay {
+	opacity: 1;
+}
+
+.OverlayContainer4:hover .overlay {
+	opacity: 1;
+}
+
+.OverlayContainer5:hover .overlay {
+	opacity: 1;
+}
+
+.OverlayContainer6:hover .overlay {
+	opacity: 1;
+}
+
+.text {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.ButtonOverlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+

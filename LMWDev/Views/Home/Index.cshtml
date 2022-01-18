@@ -1,0 +1,92 @@
+﻿@model LMWDev.Models.HomeModel
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<body>
+	<div class="text-center">
+		<h1 class="display-4">Welcome To My Portfolio</h1>
+		<h2> Hi I am Lewis Whittard!</h2>
+		<p>Welcome to my portfolio here you will find an array of pasion and learning projects I am/have done outside of work if you don't know where to start the blogs a good place to start!</p>
+
+	</div>
+	<div class="row">
+		<div class="OverlayContainer1">
+			<img src="~/Images/Software.png" alt="Software" class="image">
+			<div class="overlay">
+				<form action="@Url.Action("Modified", "Search")" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" class="btn btn-primary">Programming</button>
+						<input type="hidden" id="Programming" name="Programming" value="TRUE">
+					</div>
+				</form>
+				</div>
+			</div>
+		
+		<div class="OverlayContainer2">
+			<img src="~/Images/Testing.png" alt="Testing" class="image">
+			
+				<div class="overlay">
+					<form action="@Url.Action("Modified", "Search")" method="post">
+						<div class="ButtonOverlay">
+							<button type="submit" class="btn btn-primary">Testing</button>
+							<input type="hidden" id="Testing" name="Testing" value="TRUE">
+						</div>
+					</form>
+				</div>
+			</div>
+		<div class="OverlayContainer3">
+			<img src="~/Images/Games.png" alt="Games" class="image">
+			
+				<div class="overlay">
+					<form action="@Url.Action("Modified", "Search")" method="post">
+						<div class="ButtonOverlay">
+							<button type="submit" class="btn btn-primary">Games</button>
+							<input type="hidden" id="Games" name="Games" value="TRUE">
+						</div>
+					</form>
+				</div>
+			
+		</div>
+		<div class="OverlayContainer4">
+			<img src="~/Images/2DAssets.png" alt="2DAssets" class="image">
+			<div class="overlay">
+				<div class="overlay">
+					<form action="@Url.Action("Modified", "Search")" method="post">
+						<div class="ButtonOverlay">
+							<button type="submit" class="btn btn-primary">2D Assets</button>
+							<input type="hidden" id="TwoDAssets" name="TwoD" value="TRUE">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="OverlayContainer5">
+			<img src="~/Images/3DAssets.png" alt="3DAssets" class="image">
+			<div class="overlay">
+				<form action="@Url.Action("Modified", "Search")" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" class="btn btn-primary">3D Assets</button>
+						<input type="hidden" id="ThreeDAssets" name="ThreeD" value="TRUE">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="OverlayContainer6">
+			<img src="~/Images/Blog.png" alt="Blog" class="image">
+			<div class="overlay">
+				<form action="@Url.Action("Modified", "Search")" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" class="btn btn-primary">Blog</button>
+						<input type="hidden" id="Blog" name="Blog" value="TRUE">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+

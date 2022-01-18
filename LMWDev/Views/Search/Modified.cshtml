@@ -1,0 +1,162 @@
+﻿@model LMWDev.Models.SearchModel
+
+@{
+	ViewData["Title"] = "Index";
+}
+<form action="@Url.Action("Modified", "Search")" method="post">
+
+	<div class="row">
+		<div class="col-sm">
+			<div class="row">
+				<div class="input-group mb-3">
+
+					<input type="text" class="form-control" id="Search" name="Search" placeholder="Begin your search" value="@Model.Search" aria-label="Search" aria-describedby="basic-addon1">
+					<div class="input-group-prepend">
+						<button type="submit" class="btn btn-primary">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm">
+			<div class="row">
+				<div class="col-sm">
+					@if (Model.ProgrammingCategory == true)
+					{
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="TRUE" name="Programming" id="Programming" checked>
+							<label class="form-check-label" for="flexCheckChecked">
+								Programming
+							</label>
+						</div>
+					}
+
+					else
+					{
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="TRUE" name="Programming" id="Programming">
+							<label class="form-check-label" for="flexCheckChecked">
+								Programming
+							</label>
+						</div>
+					}
+					@if (Model.TestingCategory == true)
+					{
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="TRUE" name="Testing" id="Testing" checked>
+							<label class="form-check-label" for="flexCheckChecked">
+								Testing
+							</label>
+						</div>
+					}
+
+					else
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" name="Testing" id="Testing">
+						<label class="form-check-label" for="flexCheckChecked">
+							Testing
+						</label>
+					</div>
+					}
+				</div>
+				<div class="col-sm">
+					@if (Model.GamesCategory == true)
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" id="Games" name="Games" checked>
+						<label class="form-check-label" for="flexCheckChecked">
+							Games
+						</label>
+					</div>
+					}
+					else
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" id="Games" name="Games">
+						<label class="form-check-label" for="flexCheckChecked">
+							Games
+						</label>
+					</div>
+					}
+					@if (Model.ThreeDAssetsCategory == true)
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" name="ThreeD" id="ThreeDAssets" checked>
+						<label class="form-check-label" for="flexCheckChecked">
+							3D Assets
+						</label>
+					</div>
+					}
+					else
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" name="ThreeD" id="ThreeDAssets">
+						<label class="form-check-label" for="flexCheckChecked">
+							3D Assets
+						</label>
+					</div>
+					}
+				</div>
+				<div class="col-sm">
+					@if (Model.TwoDAssetCategory == true)
+					{
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="TRUE" name="TwoD" id="TwoDAssets" checked>
+							<label class="form-check-label" for="flexCheckChecked">
+								2D Assets
+							</label>
+						</div>
+					}
+
+					else
+					{
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="TRUE" name="TwoD" id="TwoDAssets">
+							<label class="form-check-label" for="flexCheckChecked">
+								2D Assets
+							</label>
+						</div>
+					}
+
+					@if (Model.BlogCategory == true)
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" id="Blog" name="Blog" checked>
+						<label class="form-check-label" for="flexCheckChecked">
+							Blog
+						</label>
+					</div>
+					}
+					else
+					{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="TRUE" id="Blog" name="Blog">
+						<label class="form-check-label" for="flexCheckChecked">
+							Blog
+						</label>
+					</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div class="row">
+
+	@for (int i = 0; i < Model.ListOfSingleSearchResults.Count(); i++)
+	{
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="~/Images/@Model.ListOfSingleSearchResults[i].CoverImage.path" tags="@Model.ListOfSingleSearchResults[i].CoverImage.tags" id="@Model.ListOfSingleSearchResults[i].CoverImage.iD" name="@Model.ListOfSingleSearchResults[i].CoverImage.name" alt="@Model.ListOfSingleSearchResults[i].CoverImage.alt">
+			<div class="card-body">
+				<h5 class="card-title">@Model.ListOfSingleSearchResults[i].Title</h5>
+				<p class="card-text">@Model.ListOfSingleSearchResults[i].Description</p>
+				<form method="get">
+					<input type="hidden" id="PostId" name="Id" value="@Model.ListOfSingleSearchResults[i].ID">
+					<input class="btn btn-primary" type="submit" asp-action="Index" asp-controller="PortfolioPiece" value="View" />
+				</form>
+			</div>
+		</div>
+
+	}
+</div>
