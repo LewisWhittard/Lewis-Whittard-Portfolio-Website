@@ -100,14 +100,12 @@ namespace LMWDev.SpreadsheetConnection
 				var nameCell = Row.Cell(2).Value.ToString();
 				var PathCell = Row.Cell(3).Value.ToString();
 				var IsCoverImageCell = Row.Cell(4).Value.ToString();
-				var TagsCell = Row.Cell(5).Value.ToString();
-				var AltCell = Row.Cell(6).Value.ToString();
+				var AltCell = Row.Cell(5).Value.ToString();
 
 				SingleRow.iD = IdCellLong;
 				SingleRow.name = nameCell;
 				SingleRow.path = PathCell;
 				SingleRow.isCoverImage = IsCoverImageCell;
-				SingleRow.tags = TagsCell;
 				SingleRow.alt = AltCell;
 
 				ImagesTable.Add(SingleRow);
@@ -226,7 +224,6 @@ namespace LMWDev.SpreadsheetConnection
 			public string name { get; set; }
 			public string path { get; set; }
 			public string isCoverImage { get; set; }
-			public string tags { get; set; }
 			public string alt { get; set; }
 		}
 
