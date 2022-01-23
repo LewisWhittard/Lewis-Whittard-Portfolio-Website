@@ -4,12 +4,52 @@
 }
 
 <body>
-	<div class="text-center">
-		<h1 class="display-4">Welcome To My Portfolio</h1>
-		<h2> Hi I am Lewis Whittard!</h2>
-		<p>Welcome to my portfolio here you will find an array of side projects I have done in my spare time if you don't know where to start the blogs a good place to start!</p>
 
+	<h1>About Me</h1>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<p> Having over 3 years experience in the software industry I have worked as a software tester using mostly manual techniques and dabbled with automation. Currently I am transitioning into a support developer role. </p>
+				<br>
+				<h2>Hobbies and Interests</h2>
+				<p>I enjoy improving my skill set by doing side projects outside of my day job, which will be displayed on this portfolio site. Some of this stems for my passion for gaming which I have done from a young age. This helped ignite my interest in computing as a whole. I also do kick boxing for both health and enjoyment.</p>
+
+			</div>
+			<div class="col-sm">
+				<img width="75%" src="~/Images/LewisWhittard.png" />
+
+			</div>
+
+		</div>
 	</div>
+
+	<h2>My Qualifications</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Qualification</th>
+				<th scope="col">Result</th>
+				<th scope="col">Year</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Software Development Technician Level 3</td>
+				<td>Pass</td>
+				<td>2018-2020</td>
+			</tr>
+			<tr>
+
+				<td>BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)</td>
+				<td>Merit, Merit, Pass</td>
+				<td>2014-2016</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>What I do</h2>
 	<div class="row">
 		<div class="OverlayContainer1">
 			<img src="~/Images/Software.png" alt="Software" class="image">
@@ -20,33 +60,33 @@
 						<input type="hidden" id="Programming" name="Programming" value="TRUE">
 					</div>
 				</form>
-				</div>
 			</div>
-		
+		</div>
+
 		<div class="OverlayContainer2">
 			<img src="~/Images/Testing.png" alt="Testing" class="image">
-			
-				<div class="overlay">
-					<form action="@Url.Action("Modified", "Search")" method="post">
-						<div class="ButtonOverlay">
-							<button type="submit" class="btn btn-primary">Testing</button>
-							<input type="hidden" id="Testing" name="Testing" value="TRUE">
-						</div>
-					</form>
-				</div>
+
+			<div class="overlay">
+				<form action="@Url.Action("Modified", "Search")" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" class="btn btn-primary">Testing</button>
+						<input type="hidden" id="Testing" name="Testing" value="TRUE">
+					</div>
+				</form>
 			</div>
+		</div>
 		<div class="OverlayContainer3">
 			<img src="~/Images/Games.png" alt="Games" class="image">
-			
-				<div class="overlay">
-					<form action="@Url.Action("Modified", "Search")" method="post">
-						<div class="ButtonOverlay">
-							<button type="submit" class="btn btn-primary">Games</button>
-							<input type="hidden" id="Games" name="Games" value="TRUE">
-						</div>
-					</form>
-				</div>
-			
+
+			<div class="overlay">
+				<form action="@Url.Action("Modified", "Search")" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" class="btn btn-primary">Games</button>
+						<input type="hidden" id="Games" name="Games" value="TRUE">
+					</div>
+				</form>
+			</div>
+
 		</div>
 		<div class="OverlayContainer4">
 			<img src="~/Images/2DAssets.png" alt="2DAssets" class="image">
