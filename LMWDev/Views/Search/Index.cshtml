@@ -1,7 +1,7 @@
 ﻿@model LMWDev.Models.SearchModel
 
 @{
-	ViewData["Title"] = "Index";
+	ViewData["Title"] = "Search";
 }
 <form action="@Url.Action("Modified", "Search")" method="post">
 
@@ -153,7 +153,7 @@
 				<p class="card-text">@Model.ListOfSingleSearchResults[i].Description</p>
 				<form method="get">
 					<input type="hidden" id="PostId" name="Id" value="@Model.ListOfSingleSearchResults[i].ID">
-					<input class="btn btn-primary" type="submit" asp-action="Index" asp-controller="PortfolioPiece" value="View" />
+					<input class="btn btn-primary" type="submit" id="@Model.ListOfSingleSearchResults[i].ID Button" asp-action="Index" asp-controller="PortfolioPiece" value="View" />
 				</form>
 			</div>
 		</div>
