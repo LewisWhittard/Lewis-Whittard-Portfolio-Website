@@ -85,7 +85,7 @@ namespace LMWDev.Models
 			return ListOfResults;
 		}
 
-		public List<SingleSearchResultCompleted> AddCoverImageToResults(List<ImagesTableSingle> Images, List<SearchRowResultsSingle> Results)
+		public List<SingleSearchResultCompleted> AddCoverImageAndButtonIdToResults(List<ImagesTableSingle> Images, List<SearchRowResultsSingle> Results)
 		{
 			List<SingleSearchResultCompleted> ResultsWithImage = new List<SingleSearchResultCompleted>();
 			
@@ -99,6 +99,8 @@ namespace LMWDev.Models
 				SingleRow.Title = item.title;
 				SingleRow.ImageId = item.imageID;
 				SingleRow.CoverImage = GetImage(item.imageID, Images);
+				string IDNumberAsAString = SingleRow.ID.ToString();
+				SingleRow.ButtonID = IDNumberAsAString + "Button";
 				ResultsWithImage.Add(SingleRow);
 
 
@@ -131,6 +133,7 @@ namespace LMWDev.Models
 
 	public class SingleSearchResultCompleted : SingleSearchResult
 	{
+		public string ButtonID { get; set; }
 		public ImagesTableSingle CoverImage { get; set; }
 	}
 

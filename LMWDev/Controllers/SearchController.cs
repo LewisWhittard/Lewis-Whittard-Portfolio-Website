@@ -40,7 +40,7 @@ namespace LMWDev.Controllers
 			
 			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
 
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageToResults(CoverImageFiltered, FilteredByTitleAndDescription);
+			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
 
 			FinalResults.Reverse();
 			
@@ -86,7 +86,7 @@ namespace LMWDev.Controllers
 
 			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
 
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageToResults(CoverImageFiltered, FilteredByTitleAndDescription);
+			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
 
 			FinalResults.Reverse();
 
