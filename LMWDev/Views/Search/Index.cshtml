@@ -153,7 +153,7 @@
 				<p class="card-text">@Model.ListOfSingleSearchResults[i].Description</p>
 				<form method="get">
 					<input type="hidden" id="PostId" name="Id" value="@Model.ListOfSingleSearchResults[i].ID">
-					<button class="btn btn-primary" type="submit" id="@Model.ListOfSingleSearchResults[i].ID Button" asp-action="Index" asp-controller="PortfolioPiece"> View </button>
+					<button class="btn btn-primary" type="submit" id="@Model.ListOfSingleSearchResults[i].ID%Button" asp-action="Index" asp-controller="PortfolioPiece"> View </button>
 				</form>
 			</div>
 		</div>
