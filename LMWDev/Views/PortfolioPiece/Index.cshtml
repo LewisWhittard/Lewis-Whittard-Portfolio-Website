@@ -53,10 +53,12 @@
 				break;
 
 			case "Video":
-				<video width="1280" height="720" id="@item.BodyContent.iD"  alt="@item.BodyContent.alt" Name="@item.BodyContent.name"  controls>
+				<div style="text-align: center">
+				<video width="320" height="240" id="@item.BodyContent.iD"  alt="@item.BodyContent.alt" Name="@item.BodyContent.name"  controls>
 					<source src="~/Videos/@item.BodyContent.path" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
+				</div>
 				break;
 
 			case "DownloadFile":
