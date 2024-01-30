@@ -143,20 +143,5 @@
 </form>
 
 <div class="row">
-
-	@for (int i = 0; i < Model.ListOfSingleSearchResults.Count(); i++)
-	{
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="~/Images/@Model.ListOfSingleSearchResults[i].CoverImage.path" id="@Model.ListOfSingleSearchResults[i].CoverImage.iD" name="@Model.ListOfSingleSearchResults[i].CoverImage.name" alt="@Model.ListOfSingleSearchResults[i].CoverImage.alt">
-			<div class="card-body">
-				<h5 class="card-title">@Model.ListOfSingleSearchResults[i].Title</h5>
-				<p class="card-text">@Model.ListOfSingleSearchResults[i].Description</p>
-				<form method="get">
-					<input type="hidden" id="PostId" name="Id" value="@Model.ListOfSingleSearchResults[i].ID">
-					<button class="btn btn-primary" type="submit" id="@Model.ListOfSingleSearchResults[i].ButtonID" asp-action="Index" asp-controller="PortfolioPiece"> View </button>
-				</form>
-			</div>
-		</div>
-
-	}
+	@Html.Partial("_Cards.cshtml", Model)
 </div>
