@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LMW_Infrastructure.Model.ContactForm
 {
-	public class ContactForm : IContactForm
+	public class ContactForm : IContactForm, IDatabaseTableStandards
 	{
-		public int ID { get; set; }
-		public bool Inactive { get; set; }
-		public bool Deleted { get; set; }
+		public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public bool Inactive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}
 }
