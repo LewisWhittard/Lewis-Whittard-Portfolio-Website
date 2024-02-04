@@ -1,4 +1,5 @@
-﻿using LMWDev.Models;
+﻿using LMW_Infrastructure.DatabaseConfig;
+using LMWDev.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,9 +21,17 @@ namespace LMWDev.Controllers
 
 		public IActionResult Index()
 		{
+			using (var context = new ApplicationContext())
+			{
+				// Ensure the database is created and apply migrations
+				context.Database.EnsureCreated();
+			}
+
 			HomeModel ViewModel = new HomeModel();
 			ViewModel.FlexibleMeta = false;
 			return View(ViewModel);
+
+			
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,7 +1,8 @@
 ﻿namespace LMW_Infrastructure.Model
 {
-	public interface Icontent
+	public interface IContent
 	{
-
+		public int WebPageId { get; set; }
+		public WebPage WebPage { get; set; }
 	}
 }
