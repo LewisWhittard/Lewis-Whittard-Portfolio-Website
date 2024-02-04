@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LMW_Infrastructure.Model
 {
-	public class MicroData : IMicroData
+	public class MicroData : IMicroData, IDatabaseTableStandards
 	{
-		public int ID { get; set; }
-		public bool Inactive { get; set; }
-		public bool Deleted { get; set; }
+		public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public bool Inactive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}
 }
