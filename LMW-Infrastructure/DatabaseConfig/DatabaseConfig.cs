@@ -10,6 +10,7 @@ namespace LMW_Infrastructure.DatabaseConfig
 		public DbSet<ContactForm> ContactForm { get; set; }
 		public DbSet<Content> Content { get; set; }
 		public DbSet<WebPage> WebPages { get; set; }
+		public DbSet<ContentComponent> ContentComponents { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
