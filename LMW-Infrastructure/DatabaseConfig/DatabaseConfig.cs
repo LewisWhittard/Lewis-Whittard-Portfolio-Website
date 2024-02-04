@@ -1,20 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System;
+﻿using LMW_Infrastructure.Model;
 using LMW_Infrastructure.Model.ContactForm;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using Microsoft.Identity.Client;
+using LMW_Infrastructure.Model.Content;
+using Microsoft.EntityFrameworkCore;
 
-public class ApplicationContext : DbContext
+
+namespace LMW_Infrastructure.DatabaseConfig
 {
-	public DbSet<IContactForm> ContactForm { get; set; }
-	public DbSet<Icontent> Content { get; set; }
-	public DbSet<IJsonLD> JsonLDs { get; set; }
-	public DbSet<IMicroData> MicroData { get; set; }
-	public DbSet<IWebPage> WebPages { get; set; }
-
-	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	public class ApplicationContext : DbContext
 	{
-		optionsBuilder.UseSqlServer("Server={server};Database={Database};User Id={UserId};Password={Password};");
+		public DbSet<ContactForm> ContactForm { get; set; }
+		public DbSet<Content> Content { get; set; }
+		public DbSet<JsonLD> JsonLDs { get; set; }
+		public DbSet<MicroData> MicroData { get; set; }
+		public DbSet<WebPage> WebPages { get; set; }
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseSqlServer(Config());
+		}
+
+		private string Config()
+		{
+			string server = "(localdb)\\MSSQLLocalDB";
+			string database = "LMWDev";
+			string userID = "";
+			string password = "";
+			return $"Server={server};Database={database};User Id={userID};Password={password};";
+		}
 	}
 }

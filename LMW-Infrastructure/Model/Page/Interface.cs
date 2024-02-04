@@ -1,6 +1,6 @@
 ﻿namespace LMW_Infrastructure.Model
 {
-	public interface Icontent
+	public interface IWebPage
 	{
 		public int ID { get; set; }
 		public bool Inactive { get; set; }

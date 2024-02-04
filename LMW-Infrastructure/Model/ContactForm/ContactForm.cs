@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMW_Infrastructure.Model.ContactForm
 {
-	public interface IWebPage
+	public class ContactForm : IContactForm
 	{
 		public int ID { get; set; }
 		public bool Inactive { get; set; }

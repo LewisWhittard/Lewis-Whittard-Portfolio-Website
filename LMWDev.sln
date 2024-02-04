@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMWDev", "LMWDev\LMWDev.csproj", "{A06F689C-189E-46DD-A924-8020EE623F58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{898CA6DB-0802-4816-8923-63FEC864DDF9} = {898CA6DB-0802-4816-8923-63FEC864DDF9}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMW-Infrastructure", "LMW-Infrastructure\LMW-Infrastructure.csproj", "{898CA6DB-0802-4816-8923-63FEC864DDF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMWDev-Infrastructure", "LMW-Infrastructure\LMWDev-Infrastructure.csproj", "{898CA6DB-0802-4816-8923-63FEC864DDF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
