@@ -4,5 +4,5 @@
 	{
 		public int WebPageId { get; set; }
 		public WebPage WebPage { get; set; }
+		public List<ContentComponent> Components { get; set; }
 	}
-}

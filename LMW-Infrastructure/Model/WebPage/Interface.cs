@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace LMW_Infrastructure.Model
+﻿namespace LMW_Infrastructure.Model
 {
 	public interface IWebPage
 	{
