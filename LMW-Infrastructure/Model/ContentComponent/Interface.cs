@@ -7,5 +7,6 @@
 		public int DisplayOrder { get; set; }
 		public string Value { get; set; }
 		public string? Alt {  get; set; }
+		public ContentComponentType ComponentType { get; set; }
 	}
 }
