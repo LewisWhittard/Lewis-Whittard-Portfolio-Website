@@ -8,5 +8,6 @@
 		public int WebPageId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public WebPage WebPage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public List<ContentComponent> Components { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		ContentType IContent.ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}
 }

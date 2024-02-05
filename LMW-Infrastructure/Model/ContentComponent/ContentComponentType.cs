@@ -1,4 +1,4 @@
-﻿namespace LMW_Infrastructure.Model.ContentComponent
+﻿namespace LMW_Infrastructure.Model
 {
 	public enum ContentComponentType
 	{
