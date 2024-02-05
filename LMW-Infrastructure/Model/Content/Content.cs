@@ -1,4 +1,6 @@
-﻿namespace LMW_Infrastructure.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LMW_Infrastructure.Model
 {
 	public class Content : IContent, IDatabaseTableStandards
 	{
@@ -8,6 +10,8 @@
 		public int WebPageId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public WebPage WebPage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public List<ContentComponent> Components { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		[NotMapped]
+		public string HTML { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		ContentType IContent.ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}
 }
