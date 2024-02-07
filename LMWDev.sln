@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMWDev", "LMWDev\LMWDev.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMWDev-Infrastructure", "LMW-Infrastructure\LMWDev-Infrastructure.csproj", "{898CA6DB-0802-4816-8923-63FEC864DDF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMWDev-UI", "LMWDev-UI\LMWDev-UI.csproj", "{979BCD74-736F-4590-884C-5D23CE5CFD4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{898CA6DB-0802-4816-8923-63FEC864DDF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{898CA6DB-0802-4816-8923-63FEC864DDF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{898CA6DB-0802-4816-8923-63FEC864DDF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979BCD74-736F-4590-884C-5D23CE5CFD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979BCD74-736F-4590-884C-5D23CE5CFD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979BCD74-736F-4590-884C-5D23CE5CFD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979BCD74-736F-4590-884C-5D23CE5CFD4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
