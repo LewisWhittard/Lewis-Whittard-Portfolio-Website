@@ -13,6 +13,8 @@
 		img = 8,
 		video = 9,
 		href = 10,
-		button = 11
+		button = 11,
+		th = 12,
+		td = 13
 	}
 }

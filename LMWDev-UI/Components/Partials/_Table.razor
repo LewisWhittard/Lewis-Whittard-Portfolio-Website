@@ -1,0 +1,54 @@
+﻿@using LMW_Infrastructure.Model;
+
+<h2>@Title</h2>
+<table class="table">
+    <thead>
+        <tr>
+            @ColumnHeaders
+        </tr>
+    </thead>
+    <tbody>
+        @ColumnContent
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public Content Content { get; set; }
+    string Title { get; set; }
+    string ColumnHeaders { get; set; }
+    string ColumnContent { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Title = GetTitle();
+        ColumnHeaders = GetColumnHeaders();
+        ColumnContent = GetColumnContent();
+    }
+
+    public string GetTitle()
+    {
+        var result = Content.Components.Where(x => x.ComponentType == ContentComponentType.title).FirstOrDefault().Value;
+        return result;
+    }
+
+    public string GetColumnHeaders()
+    {
+        var result = Content.Components
+        .Where(x => x.ComponentType == ContentComponentType.th)
+        .OrderBy(x => x.DisplayOrder)
+        .Select(x => $"<th>{x.Value}</th>")
+        .Aggregate((current, next) => current + next);
+        return result;
+    }
+
+    public string GetColumnContent()
+    {
+        var result = Content.Components
+        .Where(x => x.ComponentType == ContentComponentType.th)
+        .OrderBy(x => x.DisplayOrder)
+        .Select(x => $"<tr><td>{x.Value}</td></tr>")
+        .Aggregate((current, next) => current + next);
+        return result;
+    }
+}
