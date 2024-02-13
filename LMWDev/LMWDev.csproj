@@ -26,4 +26,8 @@
     <ProjectReference Include="..\LMW-Infrastructure\LMWDev-Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Partials\" />
+  </ItemGroup>
+
 </Project>

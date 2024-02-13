@@ -1,0 +1,16 @@
+﻿@using LMWDev.Views.Partials;
+
+<h2>@Table.Title</h2>
+<table class="table">
+    <thead>
+        @Table.Headers
+    </thead>
+    <tbody>
+        @Table.Values
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public Table Table { get; set; }
+}

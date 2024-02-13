@@ -7,6 +7,8 @@
 		public int DisplayOrder { get; set; }
 		public string Value { get; set; }
 		public string? Alt {  get; set; }
-		public ContentComponentType ComponentType { get; set; }
-	}
+		public HTMLContentComponentType HMTLContentComponentType { get; set; }
+        public ContentComponentType ContentComponentType { get; set; }
+
+    }
 }

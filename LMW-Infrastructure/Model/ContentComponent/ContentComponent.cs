@@ -10,6 +10,7 @@
 		public int DisplayOrder { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public string Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public string? Alt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-		public ContentComponentType ComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-	}
+        public HTMLContentComponentType HMTLContentComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ContentComponentType ContentComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    }
 }
