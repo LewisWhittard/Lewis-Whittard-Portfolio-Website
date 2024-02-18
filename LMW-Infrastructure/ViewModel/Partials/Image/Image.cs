@@ -13,25 +13,26 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         
         public Image(ContentComponent contentComponent)
         {
-            ContentComponent _contentComponent = contentComponent;
+            _contentComponent = contentComponent;
+            Value = GetValue();
+            ItemProp = GetItemProp();
+            Alt = GetAlt();
         }
 
-        public string GetColumnValue()
+        public string GetValue()
         {
             string result = _contentComponent.Value;
             return result;
         }
 
-        public string GetItemProp()
+        public string? GetItemProp()
         {
-            string result = _contentComponent.ItemProp;
-            return result;
+            return _contentComponent.ItemProp;
         }
 
-        public string GetAlt()
+        public string? GetAlt()
         {
-            string result = _contentComponent.Alt;
-            return result;
+            return _contentComponent.Alt;
         }
     }
 }

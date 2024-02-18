@@ -5,7 +5,7 @@
         public string Value { get; set; }
         public string? ItemProp { get; set; }
         
-        string GetColumnValue();
-        string GetItemProp();
+        string GetValue();
+        string? GetItemProp();
     }
 }

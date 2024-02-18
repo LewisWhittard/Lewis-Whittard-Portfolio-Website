@@ -17,7 +17,7 @@ namespace LMWDev.Views.Partials
             _content = content;
             Title = GetTitle();
             Headers = GetColumnHeaders();
-            Value = GetColumnValue();
+            Value = GetValue();
         }
 
         public string GetTitle()
@@ -36,7 +36,7 @@ namespace LMWDev.Views.Partials
             return result;
         }
 
-        public string GetColumnValue()
+        public string GetValue()
         {
             var result = _content.Components
             .Where(x => x.ContentComponentType == ContentComponentType.Value)
