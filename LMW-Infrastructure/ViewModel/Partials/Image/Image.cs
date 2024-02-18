@@ -13,5 +13,10 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         {
             throw new NotImplementedException();
         }
+
+        public string GetItemProp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace LMW_Infrastructure.ViewModel.Partials.Interface
         public string Value { get; set; }
         public string? ItemProp { get; set; }
         string GetColumnValue();
+        string GetItemProp();
     }
 }

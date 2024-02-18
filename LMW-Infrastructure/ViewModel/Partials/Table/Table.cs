@@ -9,6 +9,8 @@ namespace LMWDev.Views.Partials
         public string Title { get; set; }
         public string Headers { get; set; }
         public string Value { get; set; }
+        public string? ItemProp { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         private readonly Content _content;
 
         public Table(Content content)
@@ -43,6 +45,11 @@ namespace LMWDev.Views.Partials
             .Select(x => $"<tr>{x.HMTLContentComponentType}{x.Value}{"/" + x.HMTLContentComponentType}</tr>")
             .Aggregate((current, next) => current + next);
             return result;
+        }
+
+        public string GetItemProp()
+        {
+            throw new NotImplementedException();
         }
     }
 }
