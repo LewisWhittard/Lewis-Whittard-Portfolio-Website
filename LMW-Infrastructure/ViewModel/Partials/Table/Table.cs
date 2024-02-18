@@ -1,13 +1,14 @@
 ﻿using LMW_Infrastructure.Model;
+using LMW_Infrastructure.ViewModel.Partials.Interface;
 using LMW_Infrastructure.ViewModel.Partials.Table.Interface;
 
 namespace LMWDev.Views.Partials
 {
-    public class Table : ITable
+    public class Table : ITable, IPartialStandards
     {
         public string Title { get; set; }
         public string Headers { get; set; }
-        public string Values { get; set; }
+        public string Value { get; set; }
         private readonly Content _content;
 
         public Table(Content content)
@@ -15,7 +16,7 @@ namespace LMWDev.Views.Partials
             _content = content;
             Title = GetTitle();
             Headers = GetColumnHeaders();
-            Values = GetColumnValues();
+            Value = GetColumnValue();
         }
 
         public string GetTitle()
@@ -34,7 +35,7 @@ namespace LMWDev.Views.Partials
             return result;
         }
 
-        public string GetColumnValues()
+        public string GetColumnValue()
         {
             var result = _content.Components
             .Where(x => x.ContentComponentType == ContentComponentType.Content)
