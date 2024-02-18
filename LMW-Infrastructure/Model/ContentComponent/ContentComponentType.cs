@@ -4,6 +4,8 @@
 	{
 		Title = 0,
 		Header = 1,
-		Content= 2
+		Value = 2,
+		ItemProp = 3,
+		Alt = 4
 	}
 }

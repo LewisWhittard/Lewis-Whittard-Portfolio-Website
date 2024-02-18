@@ -9,26 +9,29 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         public string Value {get; set;}
         public string? ItemProp { get; set; }
         public string? Alt { get; set; }
-        private readonly Content _content;
+        private readonly ContentComponent _contentComponent;
         
-        public Image(Content content)
+        public Image(ContentComponent contentComponent)
         {
-            Content _content = content;
+            ContentComponent _contentComponent = contentComponent;
         }
 
         public string GetColumnValue()
         {
-            throw new NotImplementedException();
+            string result = _contentComponent.Value;
+            return result;
         }
 
         public string GetItemProp()
         {
-            throw new NotImplementedException();
+            string result = _contentComponent.ItemProp;
+            return result;
         }
 
         public string GetAlt()
         {
-            throw new NotImplementedException();
+            string result = _contentComponent.Alt;
+            return result;
         }
     }
 }

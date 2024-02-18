@@ -9,6 +9,7 @@
 		public string? Alt {  get; set; }
 		public HTMLContentComponentType HMTLContentComponentType { get; set; }
         public ContentComponentType ContentComponentType { get; set; }
+		public string? ItemProp { get; set; }
 
     }
 }

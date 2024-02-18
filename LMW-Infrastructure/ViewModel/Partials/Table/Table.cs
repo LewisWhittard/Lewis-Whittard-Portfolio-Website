@@ -39,7 +39,7 @@ namespace LMWDev.Views.Partials
         public string GetColumnValue()
         {
             var result = _content.Components
-            .Where(x => x.ContentComponentType == ContentComponentType.Content)
+            .Where(x => x.ContentComponentType == ContentComponentType.Value)
             .OrderBy(x => x.DisplayOrder)
             .Select(x => $"<tr>{x.HMTLContentComponentType}{x.Value}{"/" + x.HMTLContentComponentType}</tr>")
             .Aggregate((current, next) => current + next);

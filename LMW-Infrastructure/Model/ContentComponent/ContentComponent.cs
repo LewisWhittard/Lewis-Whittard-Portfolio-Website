@@ -12,5 +12,6 @@
 		public string? Alt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public HTMLContentComponentType HMTLContentComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ContentComponentType ContentComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string? ItemProp { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
