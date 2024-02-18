@@ -39,7 +39,7 @@ namespace LMWDev.Views.Partials
             var result = _content.Components
             .Where(x => x.ContentComponentType == ContentComponentType.Content)
             .OrderBy(x => x.DisplayOrder)
-            .Select(x => $"<tr>{x.HMTLContentComponentType}{x.Value}{x.HMTLContentComponentType}</tr>")
+            .Select(x => $"<tr>{x.HMTLContentComponentType}{x.Value}{"/" + x.HMTLContentComponentType}</tr>")
             .Aggregate((current, next) => current + next);
             return result;
         }
