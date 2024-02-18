@@ -9,6 +9,8 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         public string Value {get; set;}
         public string? ItemProp { get; set; }
         public string? Alt { get; set; }
+        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+
         private readonly ContentComponent _contentComponent;
         
         public Image(ContentComponent contentComponent)
@@ -17,12 +19,12 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
             Value = GetValue();
             ItemProp = GetItemProp();
             Alt = GetAlt();
+            HTMLContentComponentType = GetHTMLContentComponentType();
         }
 
         public string GetValue()
         {
-            string result = _contentComponent.Value;
-            return result;
+            return _contentComponent.Value;
         }
 
         public string? GetItemProp()
@@ -33,6 +35,11 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         public string? GetAlt()
         {
             return _contentComponent.Alt;
+        }
+
+        public HTMLContentComponentType? GetHTMLContentComponentType()
+        {
+            return _contentComponent.HMTLContentComponentType;
         }
     }
 }

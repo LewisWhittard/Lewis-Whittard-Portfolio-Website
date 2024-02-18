@@ -10,6 +10,8 @@ namespace LMWDev.Views.Partials
         public string Headers { get; set; }
         public string Value { get; set; }
         public string? ItemProp { get; set; }
+        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+
         private readonly Content _content;
 
         public Table(Content content)
@@ -47,6 +49,11 @@ namespace LMWDev.Views.Partials
         }
 
         public string GetItemProp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public HTMLContentComponentType? GetHTMLContentComponentType()
         {
             throw new NotImplementedException();
         }

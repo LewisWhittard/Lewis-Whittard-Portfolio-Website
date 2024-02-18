@@ -12,4 +12,8 @@
     <ProjectReference Include="..\LMW-Infrastructure\LMWDev-Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\Partials\Text\" />
+  </ItemGroup>
+
 </Project>
