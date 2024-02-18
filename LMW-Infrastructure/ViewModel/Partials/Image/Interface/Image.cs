@@ -3,5 +3,6 @@
     public interface IImage
     {
         public string? Alt {  get; set; }
+        public string GetAlt();
     }
 }
