@@ -2,7 +2,7 @@
 using LMW_Infrastructure.ViewModel.Partials.Interface;
 using LMW_Infrastructure.ViewModel.Partials.Table.Interface;
 
-namespace LMWDev.Views.Partials
+namespace LMW_Infrastructure.ViewModel.Partials.Table
 {
     public class Table : ITable, IPartialStandards
     {
