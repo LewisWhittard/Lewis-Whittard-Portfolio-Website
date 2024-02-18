@@ -2,19 +2,19 @@
 
 @if (Image.ItemProp == null && Image.Alt == null)
 {
-    
+    <img src="@Image.Value" class="centerMedia">
 }
 else if (Image.ItemProp != null && Image.Alt == null)
 {
-
+    <img src="@Image.Value" itemprop="@Image.ItemProp" class="centerMedia">
 }
 else if (Image.ItemProp == null && Image.Alt != null)
 {
-
+    <img src="@Image.Value" alt="@Image.Alt" class="centerMedia">
 }
 else
 {
-    
+    <img src="@Image.Value" itemprop="@Image.ItemProp" alt="@Image.Alt" class="centerMedia">
 }
 
 @code {
