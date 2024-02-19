@@ -1,16 +1,13 @@
 ﻿using LMW_Infrastructure.Model;
-using LMW_Infrastructure.ViewModel.Partials.Interface;
 using LMW_Infrastructure.ViewModel.Partials.Table.Interface;
 
 namespace LMW_Infrastructure.ViewModel.Partials.Table
 {
-    public class Table : ITable, IPartialStandards
+    public class Table : ITable
     {
         public string Title { get; set; }
         public string Headers { get; set; }
         public string Value { get; set; }
-        public string? ItemProp { get; set; }
-        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
 
         private readonly Content _content;
 
@@ -46,16 +43,6 @@ namespace LMW_Infrastructure.ViewModel.Partials.Table
             .Select(x => $"<tr>{x.HMTLContentComponentType}{x.Value}{"/" + x.HMTLContentComponentType}</tr>")
             .Aggregate((current, next) => current + next);
             return result;
-        }
-
-        public string GetItemProp()
-        {
-            throw new NotImplementedException();
-        }
-
-        public HTMLContentComponentType? GetHTMLContentComponentType()
-        {
-            throw new NotImplementedException();
         }
     }
 }
