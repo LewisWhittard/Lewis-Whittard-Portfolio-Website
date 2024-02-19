@@ -1,10 +1,9 @@
 ﻿using LMW_Infrastructure.Model;
 using LMW_Infrastructure.ViewModel.Partials.Image.Interface;
-using LMW_Infrastructure.ViewModel.Partials.Interface;
 
 namespace LMW_Infrastructure.ViewModel.Partials.Image
 {
-    public class Image : IImage, IPartialStandards
+    public class Image : IImage
     {
         public string Value {get; set;}
         public string? ItemProp { get; set; }

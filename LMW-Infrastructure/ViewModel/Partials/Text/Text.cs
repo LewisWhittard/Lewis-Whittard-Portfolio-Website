@@ -1,10 +1,9 @@
 ﻿using LMW_Infrastructure.Model;
-using LMW_Infrastructure.ViewModel.Partials.Interface;
 using LMW_Infrastructure.ViewModel.Partials.Text.Interface;
 
 namespace LMW_Infrastructure.ViewModel.Partials.Text
 {
-    public class Text : IText, IPartialStandards
+    public class Text : IText
     {
         public string Value {get; set;}
         public string? ItemProp { get; set; }
