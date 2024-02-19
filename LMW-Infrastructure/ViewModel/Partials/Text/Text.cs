@@ -10,6 +10,11 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text
         public string? ItemProp { get; set; }
         public HTMLContentComponentType? HTMLContentComponentType { get; set; }
 
+        public Text()
+        {
+            Value = "";
+        }
+
         public HTMLContentComponentType? GetHTMLContentComponentType()
         {
             throw new NotImplementedException();
