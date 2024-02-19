@@ -2,7 +2,76 @@
 
 @switch (Text.HTMLContentComponentType)
 {
-    
+    case LMW_Infrastructure.Model.HTMLContentComponentType.p:
+        if (Text.ItemProp == null)
+        {
+            <p style="text-align: center;">@Text.Value</p>
+        }
+        else
+        {
+            <p itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</p>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h1:
+        if (Text.ItemProp == null)
+        {
+            <h1 style="text-align: center;">@Text.Value</h1>
+        }
+        else
+        {
+            <h1 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h1>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h2:
+        if (Text.ItemProp == null)
+        {
+            <h2 style="text-align: center;">@Text.Value</h2>
+        }
+        else
+        {
+            <h2 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h2>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h3:
+        if (Text.ItemProp == null)
+        {
+            <h3 style="text-align: center;">@Text.Value</h3>
+        }
+        else
+        {
+            <h3 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h3>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h4:
+        if (Text.ItemProp == null)
+        {
+            <h4 style="text-align: center;">@Text.Value</h4>
+        }
+        else
+        {
+            <h4 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h4>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h5:
+        if (Text.ItemProp == null)
+        {
+            <h5 style="text-align: center;">@Text.Value</h5>
+        }
+        else
+        {
+            <h5 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h5>
+        }
+        break;
+    case LMW_Infrastructure.Model.HTMLContentComponentType.h6:
+        if (Text.ItemProp == null)
+        {
+            <h6 style="text-align: center;">@Text.Value</h6>
+        }
+        else
+        {
+            <h6 itemprop="@Text.ItemProp" style="text-align: center;">@Text.Value</h6>
+        }
+        break;
 }
 
 @code {

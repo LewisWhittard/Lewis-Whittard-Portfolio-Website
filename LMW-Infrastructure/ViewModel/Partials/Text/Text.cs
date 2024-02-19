@@ -7,7 +7,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text
     {
         public string Value {get; set;}
         public string? ItemProp { get; set; }
-        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+        public HTMLContentComponentType HTMLContentComponentType { get; set; }
         private readonly ContentComponent _contentComponent;
 
         public Text(ContentComponent contentComponent)

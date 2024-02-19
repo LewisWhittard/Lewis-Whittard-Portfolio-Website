@@ -11,7 +11,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text.Interface
     {
         public string Value { get; set; }
         public string? ItemProp { get; set; }
-        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+        public HTMLContentComponentType HTMLContentComponentType { get; set; }
 
         string PopulateValue();
         string? PopulateItemProp();
