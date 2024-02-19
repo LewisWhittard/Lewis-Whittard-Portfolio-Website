@@ -1,10 +1,5 @@
 ﻿using LMW_Infrastructure.Model;
 using LMW_Infrastructure.ViewModel.Partials.Video.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMW_Infrastructure.ViewModel.Partials.Video
 {
