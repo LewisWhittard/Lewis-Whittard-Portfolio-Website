@@ -8,25 +8,29 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text
         public string Value {get; set;}
         public string? ItemProp { get; set; }
         public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+        private readonly ContentComponent _contentComponent;
 
-        public Text()
+        public Text(ContentComponent contentComponent)
         {
-            Value = "";
+            _contentComponent = contentComponent;
+            Value = GetValue();
+            ItemProp = GetItemProp();
+            HTMLContentComponentType = GetHTMLContentComponentType();
         }
 
         public HTMLContentComponentType? GetHTMLContentComponentType()
         {
-            throw new NotImplementedException();
+            return _contentComponent.HMTLContentComponentType;
         }
 
         public string? GetItemProp()
         {
-            throw new NotImplementedException();
+            return _contentComponent.ItemProp;
         }
 
         public string GetValue()
         {
-            throw new NotImplementedException();
+            return _contentComponent.Value;
         }
     }
 }
