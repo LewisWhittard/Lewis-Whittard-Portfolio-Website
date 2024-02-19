@@ -18,7 +18,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text
             HTMLContentComponentType = PopulateHTMLContentComponentType();
         }
 
-        public HTMLContentComponentType? PopulateHTMLContentComponentType()
+        public HTMLContentComponentType PopulateHTMLContentComponentType()
         {
             return _contentComponent.HMTLContentComponentType;
         }

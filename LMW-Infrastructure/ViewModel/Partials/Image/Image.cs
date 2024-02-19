@@ -8,7 +8,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         public string Value {get; set;}
         public string? ItemProp { get; set; }
         public string? Alt { get; set; }
-        public HTMLContentComponentType? HTMLContentComponentType { get; set; }
+        public HTMLContentComponentType HTMLContentComponentType { get; set; }
 
         private readonly ContentComponent _contentComponent;
         
@@ -36,7 +36,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
             return _contentComponent.Alt;
         }
 
-        public HTMLContentComponentType? GetHTMLContentComponentType()
+        public HTMLContentComponentType GetHTMLContentComponentType()
         {
             return _contentComponent.HMTLContentComponentType;
         }
