@@ -7,8 +7,8 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image.Interface
         public string Value { get; set; }
         public string? ItemProp { get; set; }
         public HTMLContentComponentType? HTMLContentComponentType { get; set; }
-        public string? GetAlt();
-        string GetValue();
-        string? GetItemProp();
+        public string? PopulateAlt();
+        string PopulateValue();
+        string? PopulateItemProp();
     }
 }

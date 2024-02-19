@@ -12,8 +12,8 @@ namespace LMW_Infrastructure.ViewModel.Partials.Table.Interface
         string Title { get; set; }
         string Headers { get; set; }
         public string Value { get; set; }
-        string GetTitle();
-        string GetColumnHeaders();
-        string GetValue();
+        string PopulateTitle();
+        string PopulateColumnHeaders();
+        string PopulateValue();
     }
 }

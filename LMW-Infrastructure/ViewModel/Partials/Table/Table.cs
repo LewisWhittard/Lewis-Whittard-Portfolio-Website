@@ -14,18 +14,18 @@ namespace LMW_Infrastructure.ViewModel.Partials.Table
         public Table(Content content)
         {
             _content = content;
-            Title = GetTitle();
-            Headers = GetColumnHeaders();
-            Value = GetValue();
+            Title = PopulateTitle();
+            Headers = PopulateColumnHeaders();
+            Value = PopulateValue();
         }
 
-        public string GetTitle()
+        public string PopulateTitle()
         {
             var result = _content.Components.Where(x => x.ContentComponentType == ContentComponentType.Title).FirstOrDefault().Value;
             return result;
         }
 
-        public string GetColumnHeaders()
+        public string PopulateColumnHeaders()
         {
             var result = _content.Components
             .Where(x => x.ContentComponentType == ContentComponentType.Header)
@@ -35,7 +35,7 @@ namespace LMW_Infrastructure.ViewModel.Partials.Table
             return result;
         }
 
-        public string GetValue()
+        public string PopulateValue()
         {
             var result = _content.Components
             .Where(x => x.ContentComponentType == ContentComponentType.Value)

@@ -15,23 +15,23 @@ namespace LMW_Infrastructure.ViewModel.Partials.Image
         public Image(ContentComponent contentComponent)
         {
             _contentComponent = contentComponent;
-            Value = GetValue();
-            ItemProp = GetItemProp();
-            Alt = GetAlt();
+            Value = PopulateValue();
+            ItemProp = PopulateItemProp();
+            Alt = PopulateAlt();
             HTMLContentComponentType = GetHTMLContentComponentType();
         }
 
-        public string GetValue()
+        public string PopulateValue()
         {
             return _contentComponent.Value;
         }
 
-        public string? GetItemProp()
+        public string? PopulateItemProp()
         {
             return _contentComponent.ItemProp;
         }
 
-        public string? GetAlt()
+        public string? PopulateAlt()
         {
             return _contentComponent.Alt;
         }

@@ -13,22 +13,22 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text
         public Text(ContentComponent contentComponent)
         {
             _contentComponent = contentComponent;
-            Value = GetValue();
-            ItemProp = GetItemProp();
-            HTMLContentComponentType = GetHTMLContentComponentType();
+            Value = PopulateValue();
+            ItemProp = PopulateItemProp();
+            HTMLContentComponentType = PopulateHTMLContentComponentType();
         }
 
-        public HTMLContentComponentType? GetHTMLContentComponentType()
+        public HTMLContentComponentType? PopulateHTMLContentComponentType()
         {
             return _contentComponent.HMTLContentComponentType;
         }
 
-        public string? GetItemProp()
+        public string? PopulateItemProp()
         {
             return _contentComponent.ItemProp;
         }
 
-        public string GetValue()
+        public string PopulateValue()
         {
             return _contentComponent.Value;
         }

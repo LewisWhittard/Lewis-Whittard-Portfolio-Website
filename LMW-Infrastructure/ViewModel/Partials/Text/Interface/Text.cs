@@ -13,8 +13,8 @@ namespace LMW_Infrastructure.ViewModel.Partials.Text.Interface
         public string? ItemProp { get; set; }
         public HTMLContentComponentType? HTMLContentComponentType { get; set; }
 
-        string GetValue();
-        string? GetItemProp();
-        HTMLContentComponentType? GetHTMLContentComponentType();
+        string PopulateValue();
+        string? PopulateItemProp();
+        HTMLContentComponentType? PopulateHTMLContentComponentType();
     }
 }
