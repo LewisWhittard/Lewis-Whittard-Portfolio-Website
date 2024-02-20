@@ -1,0 +1,24 @@
+﻿@using LMW_Infrastructure.ViewModel.Partials.Text
+
+<div>
+    @((MarkupString)RenderedHTML)
+</div>
+
+@code {
+    [Parameter]
+    public Text Text { get; set; }
+    public string RenderedHTML { get; set; }
+
+    protected override void OnInitialized()
+    {
+        RenderedHTML = ReturnRenderedHTML();
+    }
+
+    public string ReturnRenderedHTML()
+    {
+        string itemProp = Text.ItemProp != null ? $"itemprop=\"{Text.ItemProp}\"" : "";
+        string tag = Enum.GetName(typeof(LMW_Infrastructure.Model.HTMLContentComponentType), Text.HTMLContentComponentType).ToLower();
+
+        return $"<{tag} style=\"text-align: center;\" {itemProp}>{Text.Value}</{tag}>";
+    }
+}
