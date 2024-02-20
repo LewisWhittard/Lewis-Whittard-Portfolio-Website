@@ -5,15 +5,18 @@ namespace LMW_Infrastructure.ViewModel.Partials.Video
 {
     public class Video : IVideo
     {
-        public string Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public HTMLContentComponentType HTMLContentComponentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Value { get; set; }
+        public HTMLContentComponentType HTMLContentComponentType { get; set; }
+        private readonly ContentComponent _contentComponent;
 
-        public HTMLContentComponentType PopulateHTMLContentComponentType()
+        public Video(ContentComponent contentComponent)
         {
-            throw new NotImplementedException();
+            _contentComponent = contentComponent;
+            Value = contentComponent.Value;
+            HTMLContentComponentType = PopulateHTMLContentComponentType();
         }
 
-        public string? PopulateItemProp()
+        public HTMLContentComponentType PopulateHTMLContentComponentType()
         {
             throw new NotImplementedException();
         }
