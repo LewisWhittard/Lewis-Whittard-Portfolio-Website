@@ -17,17 +17,8 @@
 
     public string ReturnRenderedHTML()
     {
-        string itemProp = "";
-        string Alt = "";
-        
-        if (Image.ItemProp != null)
-        {
-            itemProp = $"itemprop=\"{Image.ItemProp}\"";
-        }
-        if (Image.Alt != null)
-        {
-            Alt = $"alt=\"{Image.Alt}\"";
-        }
+        string itemProp = Image.ItemProp != null ? $"itemprop=\"{Image.ItemProp}\"" : "";
+        string Alt = Image.Alt != null ? $"alt=\"{Image.Alt}\"" : "";
         
         return $"<img src=\"{Image.Value}\" {itemProp} {Alt} class=\"centerMedia\">";
     }
