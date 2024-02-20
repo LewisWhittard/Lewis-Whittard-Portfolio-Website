@@ -24,4 +24,3 @@ namespace LMW_Infrastructure.ViewModel.Partials.Video
         }
     }
 }
-}
