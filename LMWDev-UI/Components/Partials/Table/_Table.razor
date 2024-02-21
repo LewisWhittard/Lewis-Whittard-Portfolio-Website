@@ -1,0 +1,17 @@
+﻿@using LMW_Infrastructure.ViewModel.Partials.Table;
+
+
+<h2>@Table.Title</h2>
+<table class="table">
+    <thead>
+        @Table.Headers
+    </thead>
+    <tbody>
+        @Table.Value
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public Table Table { get; set; }
+}
