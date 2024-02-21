@@ -1,0 +1,25 @@
+﻿@using LMW_Infrastructure.ViewModel.Partials.Image;
+
+<div>
+    @((MarkupString)RenderedHTML)
+</div>
+
+@code {
+    [Parameter]
+    public Image Image { get; set; }
+    public string RenderedHTML { get; set; }
+
+    protected override void OnInitialized()
+    {
+        RenderedHTML = ReturnRenderedHTML();
+    }
+
+
+    public string ReturnRenderedHTML()
+    {
+        string itemProp = Image.ItemProp ?? $"itemprop=\"{Image.ItemProp}\"";
+        string Alt = Image.Alt ?? $"alt=\"{Image.Alt}\"";
+        
+        return $"<img src=\"{Image.Value}\" {itemProp} {Alt} class=\"centerMedia\">";
+    }
+}

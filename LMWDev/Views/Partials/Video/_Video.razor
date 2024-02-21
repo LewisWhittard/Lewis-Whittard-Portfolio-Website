@@ -1,0 +1,14 @@
+﻿@using LMW_Infrastructure.ViewModel.Partials.Video
+
+<div style="text-align: center">
+	<video width="320" height="240" controls>
+		<source src="~/Videos/@Video.Value" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</div>
+
+@code
+{
+    [Parameter]
+    public Video Video { get; set; }
+}
