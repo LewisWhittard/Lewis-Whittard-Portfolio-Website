@@ -16,7 +16,7 @@
 
     public string ReturnRenderedHTML()
     {
-        string itemProp = Text.ItemProp != null ? $"itemprop=\"{Text.ItemProp}\"" : "";
+        string itemProp = Text.ItemProp ?? $"itemprop=\"{Text.ItemProp}\"";
         string tag = Enum.GetName(typeof(LMW_Infrastructure.Model.HTMLContentComponentType), Text.HTMLContentComponentType).ToLower();
 
         return $"<{tag} style=\"text-align: center;\" {itemProp}>{Text.Value}</{tag}>";
