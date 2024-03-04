@@ -10,12 +10,12 @@ namespace Infrastructure.Models.Data.Table.Header
 {
     public class Header : IData, IHeader
     {
-        public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Inactive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int DisplayOrder { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int TableID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int ID { get; set; }
+        public bool Deleted { get; set; }
+        public bool Inactive { get; set; }
+        public int DisplayOrder { get; set; }
+        public int TableID { get; set; }
+        public string Value { get; set; }
 
         public Header()
         {
