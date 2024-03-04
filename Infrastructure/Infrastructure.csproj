@@ -11,8 +11,8 @@
     <Folder Include="Models\Data\Carousel\" />
     <Folder Include="Models\Data\InfomationBlock\" />
     <Folder Include="Models\Data\Video\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Service\" />
+    <Folder Include="Service\Interface\" />
+    <Folder Include="Service\Table\" />
   </ItemGroup>
 
 </Project>

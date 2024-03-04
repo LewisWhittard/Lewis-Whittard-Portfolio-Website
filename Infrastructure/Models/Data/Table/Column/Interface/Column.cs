@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Models.Data.Table.Row.Column.Interface
+namespace Infrastructure.Models.Data.Table.Column.Interface
 {
     public interface IColumn
     {
         public string Value { get; set; }
+        public int TableID { get; set; }
+        public int RowID { get; set; }
         public int DisplayOrder { get; set; }
     }
 }
