@@ -1,23 +1,21 @@
 ﻿using Infrastructure.Models.Data.Table.Column;
 using Infrastructure.Models.Data.Table.Header;
-using Infrastructure.Models.Data.Table;
 using Newtonsoft.Json;
-using Infrastructure.Repository.Json.Table.Container;
 
 namespace JsonCreator.Pages
 {
     public class Tables
     {
-        private readonly Container Container;
+        private readonly Infrastructure.Repository.Json.Table.Container.Table Container;
 
         public Tables()
         {
             var Home = Homepage();
-            Container = new Container(Home);
+            Container = new Infrastructure.Repository.Json.Table.Container.Table(Home);
             var json = JsonConvert.SerializeObject(Container,Formatting.Indented);
         }
 
-        public List<Table> Homepage()
+        public List<Infrastructure.Models.Data.Table.Table> Homepage()
         {
             Header Qualification = new Header(0, false, false, 0, 0, "Qualification");
             Header Result = new Header(1, false, false, 1, 0, "Result");
@@ -45,10 +43,9 @@ namespace JsonCreator.Pages
             Columns.Add(Grade1);
             Columns.Add(Date1);
             Columns.Add(EducationalEstablishment1);
-            Table Qualifications = new Table(0, false, false, 0, Headers, Columns,"Homepage");
-            List<Table> Tables = new List<Table>();
+            Infrastructure.Models.Data.Table.Table Qualifications = new Infrastructure.Models.Data.Table.Table(0, false, false, 0, Headers, Columns,"Homepage");
+            List<Infrastructure.Models.Data.Table.Table> Tables = new List<Infrastructure.Models.Data.Table.Table>();
             Tables.Add(Qualifications);
-
             return Tables;
         }
     }

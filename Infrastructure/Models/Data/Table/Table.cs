@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Table
             
         }
 
-        public Table(int iD, bool deleted, bool inactive, int displayOrder, List<Header.Header> headers, List<Column.Column> columns, string Webpage)
+        public Table(int iD, bool deleted, bool inactive, int displayOrder, List<Header.Header> headers, List<Column.Column> columns, string webpage)
         {
             iD = ID;
             Deleted = deleted;
@@ -26,7 +26,7 @@ namespace Infrastructure.Models.Data.Table
             DisplayOrder = displayOrder;
             Headers = headers;
             Columns = columns;
-            WebPage = 
+            WebPage = webpage;
         }
     }
 }
