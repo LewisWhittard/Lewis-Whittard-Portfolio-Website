@@ -2,7 +2,7 @@
 {
     public interface IData
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
     }

@@ -10,7 +10,7 @@ namespace Infrastructure.Models.Data.Table
 {
     public class Header : IData, IHeader
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int DisplayOrder { get; set; }
@@ -24,7 +24,7 @@ namespace Infrastructure.Models.Data.Table
 
         public Header(int iD, bool deleted, bool inactive, int displayOrder, int tableID, string value)
         {
-            ID = iD;
+            id = iD;
             Deleted = deleted;
             Inactive = inactive;
             DisplayOrder = displayOrder;

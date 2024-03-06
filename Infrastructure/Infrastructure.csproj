@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Models\Data\Card\" />
     <Folder Include="Models\Data\Carousel\" />
-    <Folder Include="Models\Data\InfomationBlock\" />
     <Folder Include="Models\Data\Video\" />
     <Folder Include="Repository\Json\Table\Repository\" />
     <Folder Include="Service\Interface\" />

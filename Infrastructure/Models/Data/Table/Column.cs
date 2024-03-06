@@ -6,7 +6,7 @@ namespace Infrastructure.Models.Data.Table
     public class Column : IColumn, IData
     {
 
-        public int ID { get; set; }
+        public int id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public string Value { get; set; }
@@ -16,12 +16,12 @@ namespace Infrastructure.Models.Data.Table
 
         public Column()
         {
-            ID = 0;
+            id = 0;
         }
 
         public Column(int iD, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID)
         {
-            ID = ID;
+            id = id;
             Deleted = deleted;
             Inactive = inactive;
             Value = value;
