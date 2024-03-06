@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Models.Data.Table.Column.Interface
+namespace Infrastructure.Models.Data.Table.Interfaces
 {
     public interface IColumn
     {

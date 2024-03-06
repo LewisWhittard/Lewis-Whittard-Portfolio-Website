@@ -1,5 +1,4 @@
-﻿using Infrastructure.Models.Data.Table.Column;
-using Infrastructure.Models.Data.Table.Header;
+﻿using Infrastructure.Models.Data.Table;
 using Newtonsoft.Json;
 
 namespace JsonCreator.Pages

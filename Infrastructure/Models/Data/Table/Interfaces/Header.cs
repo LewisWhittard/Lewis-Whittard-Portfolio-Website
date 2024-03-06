@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Models.Data.Table.Header.Interface
+namespace Infrastructure.Models.Data.Table.Interfaces
 {
     public interface IHeader
     {

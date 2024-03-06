@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models.Data.Table.Header.Interface;
+﻿using Infrastructure.Models.Data.Table.Interfaces;
 using Infrastructure.Models.DataStandards.Interface;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Models.Data.Table.Header
+namespace Infrastructure.Models.Data.Table
 {
     public class Header : IData, IHeader
     {
@@ -19,10 +19,10 @@ namespace Infrastructure.Models.Data.Table.Header
 
         public Header()
         {
-            
+
         }
 
-        public Header(int iD, bool deleted, bool inactive, int displayOrder, int tableID,string value)
+        public Header(int iD, bool deleted, bool inactive, int displayOrder, int tableID, string value)
         {
             ID = iD;
             Deleted = deleted;

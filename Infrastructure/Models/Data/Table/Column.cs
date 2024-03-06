@@ -1,7 +1,7 @@
-﻿using Infrastructure.Models.Data.Table.Column.Interface;
+﻿using Infrastructure.Models.Data.Table.Interfaces;
 using Infrastructure.Models.DataStandards.Interface;
 
-namespace Infrastructure.Models.Data.Table.Column
+namespace Infrastructure.Models.Data.Table
 {
     public class Column : IColumn, IData
     {
