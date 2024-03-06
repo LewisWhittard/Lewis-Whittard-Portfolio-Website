@@ -8,7 +8,6 @@ namespace Infrastructure.Models.Data.Table
         public int ID { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public int DisplayOrder { get; set; }
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }
         public string WebPage { get; set; }
@@ -23,7 +22,6 @@ namespace Infrastructure.Models.Data.Table
             iD = ID;
             Deleted = deleted;
             Inactive = inactive;
-            DisplayOrder = displayOrder;
             Headers = headers;
             Columns = columns;
             WebPage = webpage;

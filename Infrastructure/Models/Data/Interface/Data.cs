@@ -5,6 +5,5 @@
         public int ID { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }
