@@ -9,10 +9,8 @@
   <ItemGroup>
     <Folder Include="Models\Data\Card\" />
     <Folder Include="Models\Data\Carousel\" />
-    <Folder Include="Models\Data\Video\" />
-    <Folder Include="Repository\Json\Table\Repository\" />
-    <Folder Include="Service\Interface\" />
-    <Folder Include="Service\Table\" />
+    <Folder Include="Models\Data\Page\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

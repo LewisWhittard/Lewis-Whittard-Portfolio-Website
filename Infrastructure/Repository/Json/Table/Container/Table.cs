@@ -1,21 +1,12 @@
-﻿using Infrastructure.Repository.Interfaces.Table;
-
-using Infrastructure.Repository.Json.Table.Container.Interface;
-
-namespace Infrastructure.Repository.Json.Table.Container
+﻿namespace Infrastructure.Repository.Json.Table.Container
 {
-    public class Table : ITable
+    public class Table
     {
-        public readonly List<Models.Data.Table.Table> Tables;
+        public List<Models.Data.Table.Table> Tables { get; set; }
 
-        public Table()
+        public Table(List<Models.Data.Table.Table> table)
         {
-            
-        }
-
-        public Table(List<Models.Data.Table.Table> tables)
-        {
-            Tables = tables;
+            Tables = table;
         }
     }
 }

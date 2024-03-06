@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Models.Data.InfomationBlock.Interfaces
 {
-    public interface IParagraph
+    public interface IImage
     {
-        public string Text { get; set; }
+        public string Source {  get; set; }
         public int DisplayOrder { get; set; }
     }
 }
