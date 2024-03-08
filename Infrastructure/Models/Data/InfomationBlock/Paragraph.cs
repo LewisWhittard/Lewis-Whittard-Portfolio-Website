@@ -1,10 +1,5 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
 using Infrastructure.Models.DataStandards.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Models.Data.InfomationBlock
 {
@@ -15,5 +10,21 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public int id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
+        public int InfomationBlockid { get; set; }
+
+        public Paragraph(string text,int DisplayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
+        {
+            Text = text;
+            DisplayOrder = 0;
+            this.id = id;
+            Deleted = deleted;
+            Inactive = inactive;
+            InfomationBlockid = infomationBlockId;
+        }
+
+        public Paragraph()
+        {
+            
+        }
     }
 }

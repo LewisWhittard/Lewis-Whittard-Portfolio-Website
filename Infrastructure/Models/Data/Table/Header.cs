@@ -24,7 +24,7 @@ namespace Infrastructure.Models.Data.Table
 
         public Header(int iD, bool deleted, bool inactive, int displayOrder, int tableID, string value)
         {
-            id = iD;
+            this.id = iD;
             Deleted = deleted;
             Inactive = inactive;
             DisplayOrder = displayOrder;
