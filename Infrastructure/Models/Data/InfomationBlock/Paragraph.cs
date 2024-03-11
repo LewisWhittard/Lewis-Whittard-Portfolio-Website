@@ -12,10 +12,10 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
 
-        public Paragraph(string text,int DisplayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
+        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
         {
             Text = text;
-            DisplayOrder = 0;
+            DisplayOrder = displayOrder;
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
