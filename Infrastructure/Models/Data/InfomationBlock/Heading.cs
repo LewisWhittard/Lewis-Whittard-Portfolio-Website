@@ -5,7 +5,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
 {
     public class Heading : IData, IHeading
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public string Text { get; set; }
@@ -19,7 +19,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
 
         public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid)
         {
-            this.id = id;
+            Id = id;
             Deleted = deleted;
             Inactive = inactive;
             Text = text;

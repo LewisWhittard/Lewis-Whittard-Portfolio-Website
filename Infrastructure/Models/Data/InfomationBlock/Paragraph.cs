@@ -7,7 +7,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
     {
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
@@ -16,7 +16,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         {
             Text = text;
             DisplayOrder = 0;
-            this.id = id;
+            Id = id;
             Deleted = deleted;
             Inactive = inactive;
             InfomationBlockid = infomationBlockId;

@@ -10,7 +10,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
 {
     public class InfomatonBlock : IInfomationBlock, IData
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public List<Image> Images { get; set; }
