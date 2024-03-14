@@ -1,5 +1,5 @@
-﻿using Infrastructure.Models.DataStandards.Interface;
-using Infrastructure.Models.Data.Table.Interfaces;
+﻿using Infrastructure.Models.Data.Table.Interfaces;
+using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.Table
 {

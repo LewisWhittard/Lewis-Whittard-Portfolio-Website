@@ -1,5 +1,5 @@
-﻿using Infrastructure.Models.Data.Table.Interfaces;
-using Infrastructure.Models.DataStandards.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using Infrastructure.Models.Data.Table.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

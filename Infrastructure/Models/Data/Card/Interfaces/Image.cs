@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Models.Data.InfomationBlock.Interfaces
+﻿namespace Infrastructure.Models.Data.Card.Interfaces
 {
     public interface IImage
     {

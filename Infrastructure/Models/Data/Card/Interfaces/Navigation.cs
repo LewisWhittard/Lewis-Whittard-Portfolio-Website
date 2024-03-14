@@ -2,6 +2,6 @@
 {
     public interface INavigation
     {
-        public string Navigation {  get; set; }
+        public string Value {  get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Models.DataStandards.Interface
+﻿namespace Infrastructure.Models.Data.Interface
 {
     public interface IData
     {

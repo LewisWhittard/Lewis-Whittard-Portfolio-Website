@@ -1,5 +1,5 @@
 ﻿using Infrastructure.Models.Data.Card.Interface;
-using Infrastructure.Models.DataStandards.Interface;
+using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.Card
 {
