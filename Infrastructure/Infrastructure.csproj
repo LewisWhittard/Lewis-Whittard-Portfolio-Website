@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Data\Carousel\Interfaces\" />
     <Folder Include="Models\Data\Page\" />
     <Folder Include="Services\" />
   </ItemGroup>
