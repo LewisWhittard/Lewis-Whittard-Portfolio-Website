@@ -5,6 +5,5 @@
         public Image Image { get; set; }
         public Paragraph Paragraph { get; set; }
         public Navigation Navigation { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }

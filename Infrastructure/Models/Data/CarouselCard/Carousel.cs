@@ -3,12 +3,11 @@ using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.CarouselCard
 {
-    public class CarouselCard : ICarouselCard, IData
+    public class Carousel : ICarousel, IData
     {
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public List<Card> Cards { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }

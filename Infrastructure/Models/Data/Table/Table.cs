@@ -11,7 +11,6 @@ namespace Infrastructure.Models.Data.Table
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }
         public string WebPage { get; set; }
-        public int DisplayOrder { get; set; }
 
         public Table()
         {
