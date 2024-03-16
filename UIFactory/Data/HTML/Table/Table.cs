@@ -3,15 +3,14 @@ using UIFactory.Data.HTML.Table.Interfaces;
 
 namespace UIFactory.Data.HTML.Table
 {
-    public class Table : IData, ITable
+    public class Table : ITable, IHTML, IJsonLD
     {
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }
         public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
+        public List<string> JsonLDValues { get; set; }
 
         public Table()
         {

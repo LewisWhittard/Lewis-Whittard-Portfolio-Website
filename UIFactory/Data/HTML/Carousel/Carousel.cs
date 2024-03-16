@@ -3,12 +3,11 @@ using UIFactory.Data.HTML.Interface;
 
 namespace UIFactory.Data.HTML.Carousel
 {
-    public class Carousel : ICarousel, IData
+    public class Carousel : ICarousel, IHTML, IJsonLD
     {
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
+        public List<string> JsonLDValues { get; set; }
     }
 }
