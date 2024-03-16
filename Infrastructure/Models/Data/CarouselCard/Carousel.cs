@@ -8,6 +8,6 @@ namespace Infrastructure.Models.Data.CarouselCard
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public List<Card> Cards { get; set; }
+        public List<Card> Images { get; set; }
     }
 }
