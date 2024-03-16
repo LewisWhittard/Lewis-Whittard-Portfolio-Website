@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonCreator", "JsonCreator\JsonCreator.csproj", "{F7BC7816-7A69-44C4-9F4E-21FFD219F841}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIFactory", "UIFactory\UIFactory.csproj", "{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F7BC7816-7A69-44C4-9F4E-21FFD219F841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7BC7816-7A69-44C4-9F4E-21FFD219F841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7BC7816-7A69-44C4-9F4E-21FFD219F841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
