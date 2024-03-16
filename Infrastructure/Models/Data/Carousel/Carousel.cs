@@ -9,5 +9,6 @@ namespace Infrastructure.Models.Data.Carousel
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public List<Image> Images { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }
