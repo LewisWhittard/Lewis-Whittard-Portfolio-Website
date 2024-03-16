@@ -1,5 +1,5 @@
-﻿using Infrastructure.Models.Data.Card.Interfaces;
-using Infrastructure.Models.Data.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using Infrastructure.Models.Interfaces.Card;
 
 namespace Infrastructure.Models.Data.Card
 {

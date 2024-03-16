@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models.Data.Card.Interface;
+﻿using Infrastructure.Models.Interfaces.Card.Interfaces;
 using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.Card
