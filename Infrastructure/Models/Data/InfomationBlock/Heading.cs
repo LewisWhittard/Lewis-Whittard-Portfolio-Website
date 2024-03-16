@@ -1,5 +1,5 @@
-﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Models.Interfaces.InfomationBlock;
+﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
+using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.InfomationBlock
 {

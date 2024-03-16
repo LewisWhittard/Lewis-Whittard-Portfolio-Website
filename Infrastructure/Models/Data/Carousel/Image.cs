@@ -1,5 +1,5 @@
-﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Models.Interfaces.Carousel;
+﻿using Infrastructure.Models.Data.Carousel.Interfaces;
+using Infrastructure.Models.Data.Interface;
 
 namespace Infrastructure.Models.Data.Carousel
 {

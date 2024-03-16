@@ -1,5 +1,10 @@
-﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Models.Interfaces.CarouselCard.Interfaces;
+﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
+using Infrastructure.Models.Data.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Models.Data.InfomationBlock
 {

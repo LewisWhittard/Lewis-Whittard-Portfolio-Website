@@ -1,5 +1,5 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Models.Interfaces.Table;
+using Infrastructure.Models.Data.Table.Interfaces;
 
 namespace Infrastructure.Models.Data.Table
 {
