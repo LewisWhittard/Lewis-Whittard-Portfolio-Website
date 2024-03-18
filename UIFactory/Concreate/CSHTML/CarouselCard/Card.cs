@@ -1,9 +1,9 @@
-﻿using Infrastructure.Models.Data.Card.Interface;
-using Infrastructure.Models.Data.Interface;
+﻿using UIFactory.Concreate.CSHTML.CarouselCard.Interfaces;
+using UIFactory.Data.HTML.Interface;
 
-namespace Infrastructure.Models.Data.Card
+namespace UIFactory.Concreate.CSHTML.CarouselCard
 {
-    public class Card : ICard , IData
+    public class Card : ICard, IData
     {
         public Image Image { get; set; }
         public Paragraph Paragraph { get; set; }
@@ -11,11 +11,5 @@ namespace Infrastructure.Models.Data.Card
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public int DisplayOrder { get; set; }
-
-        public Card()
-        {
-            
-        }
     }
 }
