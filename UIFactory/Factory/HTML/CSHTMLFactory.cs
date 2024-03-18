@@ -6,10 +6,10 @@ using UIFactory.Concreate.CSHTML.Table;
 
 namespace UIFactory.Factory.HTML
 {
-    class HTMLFactory
+    class CSHTMLFactory
     {
         // Factory method to create HMTL
-        public IHTML CreateHMTL(IHTML type)
+        public IHTML CreateCSHMTL(IHTML type)
         {
             switch (type.Name)
             {
