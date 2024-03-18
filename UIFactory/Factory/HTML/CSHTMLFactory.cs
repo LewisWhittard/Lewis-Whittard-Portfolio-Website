@@ -9,22 +9,22 @@ namespace UIFactory.Factory.HTML
 {
     class CSHTMLFactory<T>
     {
-        // Factory method to create HMTL
+        // Factory method to create CSHMTL
         public IHTML CreateCSHMTL(IData type)
         {
             var value = CastFromIDataToClass(type);
 
             switch (value)
             {
-                case nameof(Card):
+                case nameof(Infrastructure.Models.Data.Card.Card):
                     return new Concreate.CSHTML.Card.Card();
-                case nameof(Carousel):
+                case nameof(Infrastructure.Models.Data.Carousel.Carousel):
                     return new Carousel();
-                case nameof(CarouselCard):
+                case nameof(Infrastructure.Models.Data.CarouselCard.CarouselCard):
                     return new CarouselCard();
-                case nameof(InfomatonBlock):
+                case nameof(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock):
                     return new InfomatonBlock();
-                case nameof(Table):
+                case nameof(Infrastructure.Models.Data.Table.Table):
                     return new Table();
                 default:
                     throw new ArgumentException("Unknown type: " + type);
