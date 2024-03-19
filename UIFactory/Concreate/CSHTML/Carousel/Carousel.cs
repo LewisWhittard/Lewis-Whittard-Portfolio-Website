@@ -9,5 +9,15 @@ namespace UIFactory.Concreate.CSHTML.Carousel
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
+
+        public Carousel(Infrastructure.Models.Data.Carousel.Carousel carousel)
+        {
+            Id = carousel.Id;
+            foreach (var item in carousel.Images) 
+            {
+                Images.Add(new Image(item));
+            }
+            DisplayOrder = carousel.DisplayOrder;
+        }
     }
 }
