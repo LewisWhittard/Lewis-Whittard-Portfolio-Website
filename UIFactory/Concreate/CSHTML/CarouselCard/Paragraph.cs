@@ -1,13 +1,16 @@
 ﻿using UIFactory.Concreate.CSHTML.CarouselCard.Interfaces;
-using UIFactory.Data.HTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.CarouselCard
 {
-    public class Paragraph : IData, IParagraph
+    public class Paragraph : IParagraph
     {
         public string Text { get; set; }
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
+
+        public Paragraph(Infrastructure.Models.Data.CarouselCard.Paragraph paragraph)
+        {
+            Text = paragraph.Text;
+            Id = paragraph.Id;
+        }
     }
 }

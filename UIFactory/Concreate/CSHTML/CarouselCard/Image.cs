@@ -1,14 +1,18 @@
 ﻿using UIFactory.Concreate.CSHTML.CarouselCard.Interfaces;
-using UIFactory.Data.HTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.CarouselCard
 {
-    public class Image : IImage, IData
+    public class Image : IImage
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
+
+        public Image(Infrastructure.Models.Data.CarouselCard.Image image)
+        {
+            Source = image.Source;
+            DisplayOrder = image.DisplayOrder;
+            Id = image.Id;
+        }
     }
 }
