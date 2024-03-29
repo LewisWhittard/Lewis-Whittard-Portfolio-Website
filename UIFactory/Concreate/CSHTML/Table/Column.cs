@@ -1,9 +1,9 @@
-﻿using UIFactory.Concreate.CSHTML.Table.Interfaces;
-using UIFactory.Data.HTML.Interface;
+﻿using UIFactory.Concreate.CSHTML.Interface;
+using UIFactory.Concreate.CSHTML.Table.Interfaces;
 
 namespace UIFactory.Concreate.CSHTML.Table
 {
-    public class Column : IColumn, IData
+    public class Column : IColumn, IHTML
     {
 
         public int Id { get; set; }

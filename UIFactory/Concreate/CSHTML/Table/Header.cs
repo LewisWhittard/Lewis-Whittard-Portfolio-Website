@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UIFactory.Concreate.CSHTML.Interface;
 using UIFactory.Concreate.CSHTML.Table.Interfaces;
-using UIFactory.Data.HTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.Table
 {
-    public class Header : IData, IHeader
+    public class Header : IHTML, IHeader
     {
         public int Id { get; set; }
         public bool Deleted { get; set; }

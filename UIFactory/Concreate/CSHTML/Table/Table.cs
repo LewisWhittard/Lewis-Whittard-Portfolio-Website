@@ -20,8 +20,6 @@ namespace UIFactory.Concreate.CSHTML.Table
         public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header> headers, List<Column> columns, string webpage)
         {
             Id = id;
-            Deleted = deleted;
-            Inactive = inactive;
             Headers = headers;
             Columns = columns;
             WebPage = webpage;

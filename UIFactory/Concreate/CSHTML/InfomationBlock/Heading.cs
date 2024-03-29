@@ -1,9 +1,9 @@
 ﻿using UIFactory.Concreate.CSHTML.InfomationBlock.Interfaces;
-using UIFactory.Data.HTML.Interface;
+using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.InfomationBlock
 {
-    public class Heading : IData, IHeading
+    public class Heading : IHTML, IHeading
     {
         public int Id { get; set; }
         public bool Deleted { get; set; }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UIFactory.Concreate.CSHTML.InfomationBlock.Interfaces;
-using UIFactory.Data.HTML.Interface;
+﻿using UIFactory.Concreate.CSHTML.InfomationBlock.Interfaces;
+using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.InfomationBlock
 {
-    public class Image : IImage, IData
+    public class Image : IImage, IHTML
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }

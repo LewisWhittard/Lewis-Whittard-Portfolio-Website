@@ -1,9 +1,9 @@
 ﻿using UIFactory.Concreate.CSHTML.InfomationBlock.Interfaces;
-using UIFactory.Data.HTML.Interface;
+using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.InfomationBlock
 {
-    public class Paragraph : IParagraph, IData
+    public class Paragraph : IParagraph, IHTML
     {
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
