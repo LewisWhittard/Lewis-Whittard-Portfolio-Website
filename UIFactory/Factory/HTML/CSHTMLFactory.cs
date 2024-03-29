@@ -7,49 +7,31 @@ using Infrastructure.Models.Data.Interface;
 
 namespace UIFactory.Factory.HTML
 {
-    class CSHTMLFactory<T>
+    class CSHTMLFactory
     {
         // Factory method to create CSHMTL
-        public IHTML CreateCSHMTL(IData type)
-        {
-            var value = CastFromIDataToClass(type);
+        //public IHTML CreateCSHMTL(IData type)
+        //{
+        //    var value = CastFromIDataToClass(type);
 
-            switch (value)
-            {
-                case nameof(Infrastructure.Models.Data.Card.Card):
-                    return new Concreate.CSHTML.Card.Card();
-                case nameof(Infrastructure.Models.Data.Carousel.Carousel):
-                    return new Carousel();
-                case nameof(Infrastructure.Models.Data.CarouselCard.CarouselCard):
-                    return new CarouselCard();
-                case nameof(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock):
-                    return new InfomatonBlock();
-                case nameof(Infrastructure.Models.Data.Table.Table):
-                    return new Table();
-                default:
-                    throw new ArgumentException("Unknown type: " + type);
-            }
-        }
+        //    switch (value)
+        //    {
+        //        case nameof(Infrastructure.Models.Data.Card.Card):
+        //            return new Concreate.CSHTML.Card.Card();
+        //        case nameof(Infrastructure.Models.Data.Carousel.Carousel):
+        //            return new Carousel();
+        //        case nameof(Infrastructure.Models.Data.CarouselCard.CarouselCard):
+        //            return new CarouselCard();
+        //        case nameof(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock):
+        //            return new InfomatonBlock();
+        //        case nameof(Infrastructure.Models.Data.Table.Table):
+        //            return new Table();
+        //        default:
+        //            throw new ArgumentException("Unknown type: " + type);
+        //    }
 
-        public object CastFromIDataToClass(IData value)
-        {
-            var type = value.GetType();
+        //    return null;
 
-            switch (type.Name)
-            {
-                case nameof(Infrastructure.Models.Data.Card.Card):
-                    return (Infrastructure.Models.Data.Card.Card)value;
-                case nameof(Infrastructure.Models.Data.Carousel.Carousel):
-                    return (Infrastructure.Models.Data.Carousel.Carousel)value;
-                case nameof(Infrastructure.Models.Data.CarouselCard.CarouselCard):
-                    return (Infrastructure.Models.Data.CarouselCard.CarouselCard)value;
-                case nameof(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock):
-                    return (Infrastructure.Models.Data.InfomationBlock.InfomatonBlock)value;
-                case nameof(Infrastructure.Models.Data.Table.Table):
-                    return(Table)value;
-                default:
-                    throw new ArgumentException("Unknown type: " + type);
-            }
-        }
+        //}
     }
 }
