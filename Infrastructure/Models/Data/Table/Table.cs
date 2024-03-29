@@ -12,6 +12,7 @@ namespace Infrastructure.Models.Data.Table
         public List<Column> Columns { get; set; }
         public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
 
         public Table()
         {

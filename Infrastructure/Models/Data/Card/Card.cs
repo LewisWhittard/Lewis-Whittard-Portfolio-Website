@@ -12,6 +12,7 @@ namespace Infrastructure.Models.Data.Card
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int DisplayOrder { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
 
         public Card()
         {

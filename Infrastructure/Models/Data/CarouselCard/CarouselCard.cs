@@ -10,5 +10,6 @@ namespace Infrastructure.Models.Data.CarouselCard
         public bool Inactive { get; set; }
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
     }
 }

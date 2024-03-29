@@ -11,6 +11,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
         public int InfomationBlockid { get; set; }
+        public UIConcreate? UIConcreate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Heading()
         {

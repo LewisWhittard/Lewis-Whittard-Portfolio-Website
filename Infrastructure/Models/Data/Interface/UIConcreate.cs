@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.Models.Data.Interface
 {
-    public enum FactoryConcreate
+    public enum UIConcreate
     {
         Card = 0,
         Carousel = 1,

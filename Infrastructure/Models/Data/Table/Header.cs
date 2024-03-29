@@ -16,6 +16,7 @@ namespace Infrastructure.Models.Data.Table
         public int DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
 
         public Header()
         {

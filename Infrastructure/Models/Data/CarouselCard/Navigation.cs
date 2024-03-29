@@ -10,5 +10,6 @@ namespace Infrastructure.Models.Data.CarouselCard
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public string Value { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
     }
 }

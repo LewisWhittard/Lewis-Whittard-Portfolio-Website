@@ -3,7 +3,7 @@ using Infrastructure.Models.Data.Page.Interface;
 
 namespace Infrastructure.Models.Data.Page
 {
-    public class Page : IPage,IData
+    public class Page : IPage, IData
     {
         public string Webpage { get; set; }
         public List<Card.Card> Cards { get; set; }
@@ -14,5 +14,6 @@ namespace Infrastructure.Models.Data.Page
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
+        public UIConcreate? UIConcreate { get; set; }
     }
 }
