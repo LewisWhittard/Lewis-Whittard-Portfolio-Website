@@ -29,6 +29,7 @@ namespace Infrastructure.Models.Data.Table
             Headers = headers;
             Columns = columns;
             WebPage = webpage;
+            UIConcreateType = UIConcreate.Table;
         }
     }
 }

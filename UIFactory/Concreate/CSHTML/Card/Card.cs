@@ -3,7 +3,7 @@ using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.Card
 {
-    public class Card : ICard, IHTML
+    public class Card : ICard, ICSHTML
     {
         public Image Image { get; set; }
         public Paragraph Paragraph { get; set; }

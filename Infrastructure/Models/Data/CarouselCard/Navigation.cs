@@ -13,5 +13,10 @@ namespace Infrastructure.Models.Data.CarouselCard
         public string Value { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Navigation()
+        {
+            
+        }
     }
 }

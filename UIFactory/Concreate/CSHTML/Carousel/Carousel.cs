@@ -3,7 +3,7 @@ using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.Carousel
 {
-    public class Carousel : ICarousel, IHTML, IJsonLD
+    public class Carousel : ICarousel, ICSHTML, IJsonLD
     {
         public int Id { get; set; }
         public List<Image> Images { get; set; }

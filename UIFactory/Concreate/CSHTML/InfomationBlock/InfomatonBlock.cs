@@ -3,7 +3,7 @@ using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.InfomationBlock
 {
-    public class InfomatonBlock : IInfomationBlock, IHTML, IJsonLD
+    public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD
     {
         public int Id { get; set; }
         public List<Image> Images { get; set; }

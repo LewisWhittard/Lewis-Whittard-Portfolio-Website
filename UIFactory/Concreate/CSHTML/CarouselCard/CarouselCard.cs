@@ -3,7 +3,7 @@ using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.CarouselCard
 {
-    public class CarouselCard : ICarouselCard, IHTML, IJsonLD
+    public class CarouselCard : ICarouselCard, ICSHTML, IJsonLD
     {
         public int Id { get; set; }
         public List<Card> Cards { get; set; }

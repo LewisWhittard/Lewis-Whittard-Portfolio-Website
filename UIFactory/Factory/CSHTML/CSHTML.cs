@@ -4,12 +4,11 @@ using UIFactory.Concreate.CSHTML.CarouselCard;
 using UIFactory.Concreate.CSHTML.InfomationBlock;
 using UIFactory.Concreate.CSHTML.Table;
 using Infrastructure.Models.Data.Interface;
-
-namespace UIFactory.Factory.HTML
+namespace UIFactory.Factory.CSHTML
 {
-    class CSHTMLFactory
+    class CSHTML
     {
-        public IHTML CreateCSHMTL(IData type)
+        public ICSHTML CreateCSHMTL(IData type)
         {
 
             switch (type.UIConcreateType)
@@ -27,9 +26,6 @@ namespace UIFactory.Factory.HTML
                 default:
                     throw new ArgumentException("Unknown type: " + type);
             }
-
-            return null;
-
         }
     }
 }

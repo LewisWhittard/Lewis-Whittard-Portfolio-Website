@@ -12,5 +12,10 @@ namespace Infrastructure.Models.Data.Card
         public bool Inactive { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Paragraph()
+        {
+            
+        }
     }
 }

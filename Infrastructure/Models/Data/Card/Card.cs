@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Card
 
         public Card()
         {
-
+            UIConcreateType = UIConcreate.Card;
         }
     }
 }

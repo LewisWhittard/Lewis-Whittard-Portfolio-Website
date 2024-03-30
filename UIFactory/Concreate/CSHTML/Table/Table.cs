@@ -3,7 +3,7 @@ using UIFactory.Concreate.CSHTML.Table.Interfaces;
 
 namespace UIFactory.Concreate.CSHTML.Table
 {
-    public class Table : ITable, IHTML, IJsonLD
+    public class Table : ITable, ICSHTML, IJsonLD
     {
         public int Id { get; set; }
         public List<Header> Headers { get; set; }

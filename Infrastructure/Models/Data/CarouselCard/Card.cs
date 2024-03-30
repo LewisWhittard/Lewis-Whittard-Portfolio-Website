@@ -14,5 +14,10 @@ namespace Infrastructure.Models.Data.CarouselCard
         public bool Inactive { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Card()
+        {
+            
+        }
     }
 }

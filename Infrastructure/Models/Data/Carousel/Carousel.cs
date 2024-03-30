@@ -13,5 +13,10 @@ namespace Infrastructure.Models.Data.Carousel
         public int DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Carousel()
+        {
+            UIConcreateType = UIConcreate.Carousel;
+        }
     }
 }

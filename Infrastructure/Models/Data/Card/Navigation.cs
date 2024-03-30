@@ -12,5 +12,10 @@ namespace Infrastructure.Models.Data.Card
         public string Value { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Navigation()
+        {
+            
+        }
     }
 }

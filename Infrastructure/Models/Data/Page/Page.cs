@@ -17,5 +17,10 @@ namespace Infrastructure.Models.Data.Page
         public bool Inactive { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Page()
+        {
+            
+        }
     }
 }

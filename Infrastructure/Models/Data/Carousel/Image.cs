@@ -13,5 +13,10 @@ namespace Infrastructure.Models.Data.Carousel
         public bool Inactive { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public Image()
+        {
+            
+        }
     }
 }

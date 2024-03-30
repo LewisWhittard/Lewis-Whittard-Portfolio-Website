@@ -15,5 +15,10 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public int DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
+
+        public InfomatonBlock()
+        {
+            UIConcreateType = UIConcreate.InfomationBlock;
+        }
     }
 }
