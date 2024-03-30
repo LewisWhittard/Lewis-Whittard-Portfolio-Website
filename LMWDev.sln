@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonCreator", "JsonCreator\JsonCreator.csproj", "{F7BC7816-7A69-44C4-9F4E-21FFD219F841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIFactory", "UIFactory\UIFactory.csproj", "{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIFactory", "UIFactory\UIFactory.csproj", "{A3305CD7-36BA-4FD0-92D2-506E873B3C5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureProjects", "InfrastructureProjects", "{71EE5324-EBEB-4940-900C-1C9E895A3294}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationProjects", "ApplicationProjects", "{054C86A5-12EA-49D4-BBBA-EB780916C7A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIFactoryProjects", "UIFactoryProjects", "{19E6A52D-45C9-453A-B717-C1A0A0A701FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +42,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A06F689C-189E-46DD-A924-8020EE623F58} = {054C86A5-12EA-49D4-BBBA-EB780916C7A3}
+		{6895A2A5-A1AC-43E3-940E-E606E53F2728} = {71EE5324-EBEB-4940-900C-1C9E895A3294}
+		{F7BC7816-7A69-44C4-9F4E-21FFD219F841} = {71EE5324-EBEB-4940-900C-1C9E895A3294}
+		{A3305CD7-36BA-4FD0-92D2-506E873B3C5A} = {19E6A52D-45C9-453A-B717-C1A0A0A701FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3328E80D-68B4-4CFC-8520-892E666B82C7}
