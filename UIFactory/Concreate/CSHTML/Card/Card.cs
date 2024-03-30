@@ -10,20 +10,16 @@ namespace UIFactory.Concreate.CSHTML.Card
         public Navigation Navigation { get; set; }
         public int Id { get; set; }
         public int DisplayOrder { get; set; }
-
-        public Card()
-        {
-            
-        }
+        private readonly Infrastructure.Models.Data.Card.Card _card;
 
         public Card(Infrastructure.Models.Data.Card.Card card)
         {
-            Image = new Image(card.Image);
-            Paragraph = new Paragraph(card.Paragraph);
-            Navigation = new Navigation(card.Navigation);
-            Id = card.Id;
-            DisplayOrder = card.DisplayOrder;
-
+            _card = card;
+            Image = new Image(_card.Image);
+            Paragraph = new Paragraph(_card.Paragraph);
+            Navigation = new Navigation(_card.Navigation);
+            Id = _card.Id;
+            DisplayOrder = _card.DisplayOrder;
         }
     }
 }
