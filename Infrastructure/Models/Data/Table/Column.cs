@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.Table
         public int DisplayOrder { get; set; }
         public int RowID { get; set; }
         public int TableID { get; set; }
-        public UIConcreate? UIConcreate { get; set; }
+        public UIConcreate? UIConcreateType { get; set; }
 
         public Column()
         {

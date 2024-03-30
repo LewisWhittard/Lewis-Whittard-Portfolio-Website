@@ -17,6 +17,6 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public List<Paragraph> paragraphs { get; set; }
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
-        public UIConcreate? UIConcreate { get; set; }
+        public UIConcreate? UIConcreateType { get; set; }
     }
 }

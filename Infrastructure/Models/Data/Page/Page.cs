@@ -14,6 +14,6 @@ namespace Infrastructure.Models.Data.Page
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public UIConcreate? UIConcreate { get; set; }
+        public UIConcreate? UIConcreateType { get; set; }
     }
 }

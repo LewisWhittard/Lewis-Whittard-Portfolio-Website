@@ -11,7 +11,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
-        public UIConcreate? UIConcreate { get; set; }
+        public UIConcreate? UIConcreateType { get; set; }
 
         public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
         {

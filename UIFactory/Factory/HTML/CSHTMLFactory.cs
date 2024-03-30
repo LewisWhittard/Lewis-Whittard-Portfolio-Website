@@ -12,7 +12,7 @@ namespace UIFactory.Factory.HTML
         public IHTML CreateCSHMTL(IData type)
         {
 
-            switch (type.UIConcreate)
+            switch (type.UIConcreateType)
             {
                 case UIConcreate.Card:
                     return new Concreate.CSHTML.Card.Card();

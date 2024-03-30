@@ -10,6 +10,6 @@ namespace Infrastructure.Models.Data.Carousel
         public bool Inactive { get; set; }
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
-        public UIConcreate? UIConcreate { get; set; }
+        public UIConcreate? UIConcreateType { get; set; }
     }
 }
