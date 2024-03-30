@@ -1,10 +1,6 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.InfomationBlock
 {
@@ -17,6 +13,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public List<Paragraph> paragraphs { get; set; }
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
+        [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
     }
 }

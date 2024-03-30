@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Page.Interface;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.Page
 {
@@ -14,6 +15,7 @@ namespace Infrastructure.Models.Data.Page
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
+        [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
     }
 }

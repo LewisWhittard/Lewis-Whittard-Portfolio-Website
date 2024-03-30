@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.Table.Interfaces;
 using Infrastructure.Models.Data.Interface;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.Table
 {
@@ -12,6 +13,7 @@ namespace Infrastructure.Models.Data.Table
         public List<Column> Columns { get; set; }
         public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
+        [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
 
         public Table()

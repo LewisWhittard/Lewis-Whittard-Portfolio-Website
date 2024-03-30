@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.InfomationBlock
 {
@@ -11,6 +12,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
         public int InfomationBlockid { get; set; }
+        [JsonIgnore]
         public UIConcreate? UIConcreateType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Heading()

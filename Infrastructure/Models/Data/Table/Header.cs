@@ -1,10 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Table.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.Table
 {
@@ -16,6 +12,7 @@ namespace Infrastructure.Models.Data.Table
         public int DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
+        [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
 
         public Header()
