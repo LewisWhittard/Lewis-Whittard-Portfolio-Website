@@ -10,6 +10,11 @@ namespace UIFactory.Concreate.CSHTML.CarouselCard
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
 
+        public CarouselCard()
+        {
+            
+        }
+
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard card)
         {
             Id = card.Id;

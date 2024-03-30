@@ -9,29 +9,27 @@ namespace UIFactory.Factory.HTML
 {
     class CSHTMLFactory
     {
-        // Factory method to create CSHMTL
-        //public IHTML CreateCSHMTL(IData type)
-        //{
-        //    var value = CastFromIDataToClass(type);
+        public IHTML CreateCSHMTL(IData type)
+        {
 
-        //    switch (value)
-        //    {
-        //        case nameof(Infrastructure.Models.Data.Card.Card):
-        //            return new Concreate.CSHTML.Card.Card();
-        //        case nameof(Infrastructure.Models.Data.Carousel.Carousel):
-        //            return new Carousel();
-        //        case nameof(Infrastructure.Models.Data.CarouselCard.CarouselCard):
-        //            return new CarouselCard();
-        //        case nameof(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock):
-        //            return new InfomatonBlock();
-        //        case nameof(Infrastructure.Models.Data.Table.Table):
-        //            return new Table();
-        //        default:
-        //            throw new ArgumentException("Unknown type: " + type);
-        //    }
+            switch (type.UIConcreate)
+            {
+                case UIConcreate.Card:
+                    return new Concreate.CSHTML.Card.Card();
+                case UIConcreate.Carousel:
+                    return new Carousel();
+                case UIConcreate.CarouselCard:
+                    return new CarouselCard();
+                case UIConcreate.InfomationBlock:
+                    return new InfomatonBlock();
+                case UIConcreate.Table:
+                    return new Table();
+                default:
+                    throw new ArgumentException("Unknown type: " + type);
+            }
 
-        //    return null;
+            return null;
 
-        //}
+        }
     }
 }

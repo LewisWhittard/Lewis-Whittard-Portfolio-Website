@@ -11,6 +11,11 @@ namespace UIFactory.Concreate.CSHTML.Card
         public int Id { get; set; }
         public int DisplayOrder { get; set; }
 
+        public Card()
+        {
+            
+        }
+
         public Card(Infrastructure.Models.Data.Card.Card card)
         {
             Image = new Image(card.Image);

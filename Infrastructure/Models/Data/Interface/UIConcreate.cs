@@ -5,6 +5,7 @@
         Card = 0,
         Carousel = 1,
         CarouselCard = 2,
-        InfomationBlock = 3
+        InfomationBlock = 3,
+        Table  = 5
     }
 }
