@@ -11,18 +11,24 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
         public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
+        private readonly Infrastructure.Models.Data.Table.Table _table;
 
         public Table(Infrastructure.Models.Data.Table.Table table)
         {
-            Id = 0;
-            foreach (var item in table.Headers)
+            _table = table;
+            Id = _table.Id;
+            foreach (var item in _table.Headers)
             {
-                Header table = new Header(item);
+                Header header = new Header(item);
+                Headers.Add(header);
             }
-            foreach (var item in table.Columns)
+            foreach (var item in _table.Columns)
             {
-                Column table = new Column(item);
+                Column column = new Column(item);
+                Columns.Add(column);
             }
+            WebPage = _table.WebPage;
+            DisplayOrder = _table.DisplayOrder;
         }
     }
 }

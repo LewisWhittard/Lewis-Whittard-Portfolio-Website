@@ -1,33 +1,26 @@
-﻿using UIFactory.Concreate.CSHTML.Interface;
+﻿using UIFactory.Factory.Concreate.CSHTML.Interface;
 using UIFactory.Factory.Concreate.CSHTML.Table.Interfaces;
 
 namespace UIFactory.Factory.Concreate.CSHTML.Table
 {
-    public class Column : IColumn, IHTML
+    public class Column : IColumn, ICSHTML
     {
 
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
         public string Value { get; set; }
         public int DisplayOrder { get; set; }
         public int RowID { get; set; }
         public int TableID { get; set; }
+        private readonly Infrastructure.Models.Data.Table.Column _column;
 
-        public Column()
+        public Column(Infrastructure.Models.Data.Table.Column column)
         {
-
-        }
-
-        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID)
-        {
-            Id = id;
-            Deleted = deleted;
-            Inactive = inactive;
-            Value = value;
-            DisplayOrder = displayOrder;
-            RowID = rowID;
-            TableID = tableID;
+            _column = column;
+            Id = _column.Id;
+            Value = _column.Value;
+            DisplayOrder = _column.DisplayOrder;
+            RowID = _column.RowID;
+            TableID = _column.TableID;
         }
     }
 }
