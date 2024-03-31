@@ -1,10 +1,10 @@
-﻿using UIFactory.Concreate.CSHTML.Interface;
-using UIFactory.Concreate.CSHTML.Carousel;
-using UIFactory.Concreate.CSHTML.CarouselCard;
-using UIFactory.Concreate.CSHTML.InfomationBlock;
-using UIFactory.Concreate.CSHTML.Table;
+﻿using UIFactory.Factory.Concreate.CSHTML.Carousel;
+using UIFactory.Factory.Concreate.CSHTML.CarouselCard;
+using UIFactory.Factory.Concreate.CSHTML.InfomationBlock;
+using UIFactory.Factory.Concreate.CSHTML.Table;
 using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.CSHTML.Interface;
+using UIFactory.Factory.Concreate.CSHTML.Interface;
 namespace UIFactory.Factory.CSHTML
 {
     class CSHTML : IFactory
