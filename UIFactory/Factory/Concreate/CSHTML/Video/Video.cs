@@ -19,7 +19,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Video
             Title = _Video.Title;
             Description = _Video.Description;
             Navigation = _Video.Navigation;
-           DisplayOrder = _Video.DisplayOrder;
+            DisplayOrder = _Video.DisplayOrder;
             Source = _Video.Source;
         }
     }
