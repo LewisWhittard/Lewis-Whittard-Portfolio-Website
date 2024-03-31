@@ -8,7 +8,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
         public int Id { get; set; }
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }
-        public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         private readonly Infrastructure.Models.Data.Table.Table _table;
@@ -27,7 +26,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
                 Column column = new Column(item);
                 Columns.Add(column);
             }
-            WebPage = _table.WebPage;
             DisplayOrder = _table.DisplayOrder;
         }
     }
