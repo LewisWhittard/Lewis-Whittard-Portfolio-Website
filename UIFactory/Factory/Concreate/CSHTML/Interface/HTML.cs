@@ -4,6 +4,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Interface
 {
     public interface ICSHTML
     {
-        public UIPartial UIConcreate { get; set; }
+        public UIPartial UIPartial { get; set; }
     }
 }
