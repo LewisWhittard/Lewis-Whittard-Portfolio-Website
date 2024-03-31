@@ -12,16 +12,16 @@ namespace UIFactory.Factory.Concreate.CSHTML.Video
         public int DisplayOrder { get; set; }
         public string Source { get; set; }
         public UIPartial? UIPartialType { get; set; }
-        private readonly Infrastructure.Models.Data.Video.Interfaces.IVideo _Video;
+        private readonly Infrastructure.Models.Data.Video.Interfaces.IVideo _video;
 
         public Video(Infrastructure.Models.Data.Video.Interfaces.IVideo video)
         {
-            _Video = video;
-            Title = _Video.Title;
-            Description = _Video.Description;
-            Navigation = _Video.Navigation;
-            DisplayOrder = _Video.DisplayOrder;
-            Source = _Video.Source;
+            _video = video;
+            Title = _video.Title;
+            Description = _video.Description;
+            Navigation = _video.Navigation;
+            DisplayOrder = _video.DisplayOrder;
+            Source = _video.Source;
             UIPartialType = UIPartial.Video;
         }
     }

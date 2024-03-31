@@ -12,26 +12,26 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
-        public Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _InfomatonBlock { get; set; }
+        public Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _infomatonBlock { get; set; }
         public UIPartial? UIPartialType { get; set; }
 
         public InfomatonBlock(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomatonBlock)
         {
-            _InfomatonBlock = infomatonBlock;
+            _infomatonBlock = infomatonBlock;
 
-            foreach (var item in _InfomatonBlock.Images)
+            foreach (var item in _infomatonBlock.Images)
             {
                 Image image = new Image(item);
             }
-            foreach (var item in _InfomatonBlock.paragraphs)
+            foreach (var item in _infomatonBlock.paragraphs)
             {
                 Paragraph paragpraph = new Paragraph(item);
             }
-            foreach (var item in _InfomatonBlock.headings)
+            foreach (var item in _infomatonBlock.headings)
             {
 
             }
-            DisplayOrder = _InfomatonBlock.Id;
+            DisplayOrder = _infomatonBlock.Id;
             UIPartialType = UIPartial.InfomationBlock;
         }
     }

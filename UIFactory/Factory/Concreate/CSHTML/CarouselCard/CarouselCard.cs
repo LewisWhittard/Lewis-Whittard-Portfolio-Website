@@ -12,18 +12,18 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
         public List<string> JsonLDValues { get; set; }
         public UIPartial? UIPartialType { get; set; }
 
-        private Infrastructure.Models.Data.CarouselCard.CarouselCard _CarouselCard;
+        private Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCard;
 
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard)
         {
-            _CarouselCard = carouselCard;
+            _carouselCard = carouselCard;
 
-            Id = _CarouselCard.Id;
-            foreach (var item in _CarouselCard.Cards)
+            Id = _carouselCard.Id;
+            foreach (var item in _carouselCard.Cards)
             {
                 Cards.Add(new Card(item));
             }
-            DisplayOrder = _CarouselCard.DisplayOrder;
+            DisplayOrder = _carouselCard.DisplayOrder;
             UIPartialType = UIPartial.CarouselCard;
         }
     }
