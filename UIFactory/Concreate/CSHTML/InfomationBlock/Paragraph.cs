@@ -3,28 +3,24 @@ using UIFactory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Concreate.CSHTML.InfomationBlock
 {
-    public class Paragraph : IParagraph, IHTML
+    public class Paragraph : IParagraph, ICSHTML
     {
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
         public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
+        private readonly Infrastructure.Models.Data.InfomationBlock.Paragraph _paragraph;
 
-        public Paragraph(string text, int displayOrder, int id, bool deleted, bool inactive, int infomationBlockId)
+        public Paragraph(Infrastructure.Models.Data.InfomationBlock.Paragraph paragraph)
         {
-            Text = text;
-            DisplayOrder = displayOrder;
-            Id = id;
-            Deleted = deleted;
-            Inactive = inactive;
-            InfomationBlockid = infomationBlockId;
-        }
+            _paragraph = paragraph;
+            Text = _paragraph.Text;
+            DisplayOrder = _paragraph.DisplayOrder;
+            Id  = _paragraph.Id;
+            InfomationBlockid = _paragraph.InfomationBlockid;
 
-        public Paragraph()
-        {
 
-        }
+
+    }
     }
 }

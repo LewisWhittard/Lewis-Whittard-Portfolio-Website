@@ -9,20 +9,18 @@ namespace UIFactory.Concreate.CSHTML.CarouselCard
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
+        private Infrastructure.Models.Data.CarouselCard.CarouselCard _CarouselCard;
 
-        public CarouselCard()
+        public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard)
         {
-            
-        }
+            _CarouselCard = carouselCard;
 
-        public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard card)
-        {
-            Id = card.Id;
-            foreach (var item in card.Cards) 
+            Id = _CarouselCard.Id;
+            foreach (var item in _CarouselCard.Cards) 
             {
                 Cards.Add(new Card(item));
             }
-            DisplayOrder = card.DisplayOrder;
+            DisplayOrder = _CarouselCard.DisplayOrder;
         }
     }
 }
