@@ -7,7 +7,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
         public Image Image { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Navigation Navigation { get; set; }
+        public string Navigation { get; set; }
         public int Id { get; set; }
 
         public Card(Infrastructure.Models.Data.CarouselCard.Card card)
@@ -15,7 +15,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
             Image = new Image(card.Image);
             Title = card.Title;
             Description = card.Description;
-            Navigation = new Navigation(card.Navigation);
+            Navigation = card.Navigation;
             Id = card.Id;
         }
     }
