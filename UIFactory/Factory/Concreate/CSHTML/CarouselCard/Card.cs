@@ -9,14 +9,16 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
         public string Description { get; set; }
         public string Navigation { get; set; }
         public int Id { get; set; }
+        private readonly Infrastructure.Models.Data.CarouselCard.Card _Card;
 
         public Card(Infrastructure.Models.Data.CarouselCard.Card card)
         {
-            Image = new Image(card.Image);
-            Title = card.Title;
-            Description = card.Description;
-            Navigation = card.Navigation;
-            Id = card.Id;
+            _Card = card;
+            Image = new Image(_Card.Image);
+            Title = _Card.Title;
+            Description = _Card.Description;
+            Navigation = _Card.Navigation;
+            Id = _Card.Id;
         }
     }
 }
