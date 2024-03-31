@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Concreate.CSHTML.Card.Interfaces;
+﻿using System.Numerics;
+using UIFactory.Factory.Concreate.CSHTML.Card.Interfaces;
 using UIFactory.Factory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Factory.Concreate.CSHTML.Card
@@ -6,7 +7,8 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
     public class Card : ICard, ICSHTML
     {
         public Image Image { get; set; }
-        public Paragraph Paragraph { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public Navigation Navigation { get; set; }
         public int Id { get; set; }
         public int DisplayOrder { get; set; }
@@ -16,7 +18,8 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
         {
             _card = card;
             Image = new Image(_card.Image);
-            Paragraph = new Paragraph(_card.Paragraph);
+            Title = _card.Title;
+            Description = _card.Description;
             Navigation = new Navigation(_card.Navigation);
             Id = _card.Id;
             DisplayOrder = _card.DisplayOrder;
