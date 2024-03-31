@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+﻿using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.Concreate.CSHTML.Card.Interfaces;
 using UIFactory.Factory.Concreate.CSHTML.Interface;
 
@@ -12,6 +12,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
         public string Navigation { get; set; }
         public int Id { get; set; }
         public int DisplayOrder { get; set; }
+        public UIPartial? UIPartialType { get; set; }
         private readonly Infrastructure.Models.Data.Card.Card _card;
 
         public Card(Infrastructure.Models.Data.Card.Card card)
@@ -23,6 +24,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
             Navigation = _card.Navigation;
             Id = _card.Id;
             DisplayOrder = _card.DisplayOrder;
+            UIPartialType = UIPartial.Card;
         }
     }
 }

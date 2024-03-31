@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Concreate.CSHTML.CarouselCard.Interfaces;
+﻿using Infrastructure.Models.Data.Interface;
+using UIFactory.Factory.Concreate.CSHTML.CarouselCard.Interfaces;
 using UIFactory.Factory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
@@ -9,6 +10,8 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
+        public UIPartial? UIPartialType { get; set; }
+
         private Infrastructure.Models.Data.CarouselCard.CarouselCard _CarouselCard;
 
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard)
@@ -21,6 +24,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
                 Cards.Add(new Card(item));
             }
             DisplayOrder = _CarouselCard.DisplayOrder;
+            UIPartialType = UIPartial.CarouselCard;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Concreate.CSHTML.InfomationBlock.Interfaces;
+﻿using Infrastructure.Models.Data.Interface;
+using UIFactory.Factory.Concreate.CSHTML.InfomationBlock.Interfaces;
 using UIFactory.Factory.Concreate.CSHTML.Interface;
 
 namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
@@ -12,7 +13,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _InfomatonBlock { get; set; }
-
+        public UIPartial? UIPartialType { get; set; }
 
         public InfomatonBlock(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomatonBlock)
         {
@@ -31,9 +32,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
 
             }
             DisplayOrder = _InfomatonBlock.Id;
-
-
-
+            UIPartialType = UIPartial.InfomationBlock;
         }
     }
 }
