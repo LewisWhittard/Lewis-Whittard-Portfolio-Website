@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Card
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
 
-        public Card()
+        public Video()
         {
             UIConcreateType = UIConcreate.Video;
         }
