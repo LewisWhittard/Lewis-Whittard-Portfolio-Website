@@ -9,7 +9,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
         public Image Image { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Navigation Navigation { get; set; }
+        public string Navigation { get; set; }
         public int Id { get; set; }
         public int DisplayOrder { get; set; }
         private readonly Infrastructure.Models.Data.Card.Card _card;
@@ -20,7 +20,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
             Image = new Image(_card.Image);
             Title = _card.Title;
             Description = _card.Description;
-            Navigation = new Navigation(_card.Navigation);
+            Navigation = _card.Navigation;
             Id = _card.Id;
             DisplayOrder = _card.DisplayOrder;
         }

@@ -9,7 +9,7 @@ namespace Infrastructure.Models.Data.Card
         public Image Image { get; set; }
         public string Title {  get; set; }
         public string Description { get; set; }
-        public Navigation Navigation { get; set; }
+        public string Navigation { get; set; }
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }

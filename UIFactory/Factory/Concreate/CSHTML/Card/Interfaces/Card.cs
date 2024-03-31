@@ -7,7 +7,7 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card.Interfaces
         public Image Image { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Navigation Navigation { get; set; }
+        public string Navigation { get; set; }
         public int DisplayOrder { get; set; }
     }
 }
