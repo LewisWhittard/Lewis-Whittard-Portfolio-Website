@@ -5,6 +5,7 @@ using UIFactory.Factory.Concreate.CSHTML.Table;
 using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.CSHTML.Interface;
 using UIFactory.Factory.Concreate.CSHTML.Interface;
+using UIFactory.Factory.Concreate.CSHTML.Video;
 namespace UIFactory.Factory.CSHTML
 {
     class CSHTML : IFactory
@@ -29,6 +30,9 @@ namespace UIFactory.Factory.CSHTML
                 case UIConcreate.Table:
                     var table = (Infrastructure.Models.Data.Table.Table)data;
                     return new Table(table);
+                case UIConcreate.Video:
+                    var video = (Infrastructure.Models.Data.Video.Video)data;
+                    return new Video(video);
                 default:
                     throw new ArgumentException("Unknown type: " + data);
             }

@@ -3,7 +3,7 @@ using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Video.Interfaces;
 using System.Text.Json.Serialization;
 
-namespace Infrastructure.Models.Data.Card
+namespace Infrastructure.Models.Data.Video
 {
     public class Video : IVideo , IData
     {
