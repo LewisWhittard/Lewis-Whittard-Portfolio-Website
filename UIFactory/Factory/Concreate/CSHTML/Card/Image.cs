@@ -9,14 +9,16 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
+        private readonly Infrastructure.Models.Data.Card.Image _image;
 
         public Image(Infrastructure.Models.Data.Card.Image image)
         {
-            Source = image.Source;
-            DisplayOrder = image.DisplayOrder;
-            Id = image.Id;
-            Deleted = image.Deleted;
-            Inactive = image.Inactive;
+            _image = image;
+            Source = _image.Source;
+            DisplayOrder = _image.DisplayOrder;
+            Id = _image.Id;
+            Deleted = _image.Deleted;
+            Inactive = _image.Inactive;
         }
     }
 }
