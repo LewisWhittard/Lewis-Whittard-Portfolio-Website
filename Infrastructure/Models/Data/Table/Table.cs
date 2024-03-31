@@ -11,7 +11,6 @@ namespace Infrastructure.Models.Data.Table
         public bool Inactive { get; set; }
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }
-        public string WebPage { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcreate? UIConcreateType { get; set; }
@@ -28,7 +27,6 @@ namespace Infrastructure.Models.Data.Table
             Inactive = inactive;
             Headers = headers;
             Columns = columns;
-            WebPage = webpage;
             UIConcreateType = UIConcreate.Table;
         }
     }
