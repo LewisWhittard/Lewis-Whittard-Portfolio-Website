@@ -12,17 +12,17 @@ namespace UIFactory.Concreate.CSHTML.Table
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
 
-        public Table()
+        public Table(Infrastructure.Models.Data.Table.Table table)
         {
-
-        }
-
-        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header> headers, List<Column> columns, string webpage)
-        {
-            Id = id;
-            Headers = headers;
-            Columns = columns;
-            WebPage = webpage;
+            Id = 0;
+            foreach (var item in table.Headers)
+            {
+                Header table = new Header(item);
+            }
+            foreach (var item in table.Columns)
+            {
+                Column table = new Column(item);
+            }
         }
     }
 }
