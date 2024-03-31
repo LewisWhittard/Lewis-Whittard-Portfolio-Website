@@ -7,7 +7,8 @@ namespace Infrastructure.Models.Data.CarouselCard
     public class Card : ICard, IData
     {
         public Image Image { get; set; }
-        public Paragraph Paragraph { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public Navigation Navigation { get; set; }
         public int Id { get; set; }
         public bool Deleted { get; set; }

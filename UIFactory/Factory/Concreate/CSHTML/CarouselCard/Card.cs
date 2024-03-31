@@ -5,14 +5,16 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
     public class Card : ICard
     {
         public Image Image { get; set; }
-        public Paragraph Paragraph { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public Navigation Navigation { get; set; }
         public int Id { get; set; }
 
         public Card(Infrastructure.Models.Data.CarouselCard.Card card)
         {
             Image = new Image(card.Image);
-            Paragraph = new Paragraph(card.Paragraph);
+            Title = card.Title;
+            Description = card.Description;
             Navigation = new Navigation(card.Navigation);
             Id = card.Id;
         }
