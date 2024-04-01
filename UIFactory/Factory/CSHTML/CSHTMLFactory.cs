@@ -6,11 +6,13 @@ using UIFactory.Factory.CSHTML.Concreate.InfomationBlock;
 using UIFactory.Factory.CSHTML.Concreate.Table;
 using UIFactory.Factory.CSHTML.Concreate.Video;
 using UIFactory.Factory.Interface;
+using SEO.Models.JsonLD.Interface;
+
 namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
-        public IUI CreateUI(IData data)
+        public IUI CreateUI(IData data, IJsonLDData? jsonLDData)
         {
 
             switch (data.UIConcreateType)
