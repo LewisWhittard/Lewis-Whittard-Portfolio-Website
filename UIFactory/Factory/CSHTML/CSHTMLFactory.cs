@@ -12,7 +12,7 @@ namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
-        public IUI CreateUI(IData data, List<IJsonLDData> jsonLDData)
+        public IUI CreateUI(IData data)
         {
 
             switch (data.UIConcreateType)
@@ -40,7 +40,7 @@ namespace UIFactory.Factory.CSHTML
             }
         }
 
-        public IUI CreateUI(IData data)
+        public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData)
         {
             throw new NotImplementedException();
         }
