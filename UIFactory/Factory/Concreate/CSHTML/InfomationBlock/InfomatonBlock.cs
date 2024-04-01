@@ -6,7 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
 {
     public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD
     {
-        public int Id { get; set; }
         public List<Image> Images { get; set; }
         public List<Paragraph> paragraphs { get; set; }
         public List<Heading> headings { get; set; }

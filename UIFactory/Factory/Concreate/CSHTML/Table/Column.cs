@@ -6,8 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
 {
     public class Column : IColumn, ICSHTML
     {
-
-        public int Id { get; set; }
         public string Value { get; set; }
         public int DisplayOrder { get; set; }
         public int RowID { get; set; }
@@ -18,7 +16,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
         public Column(Infrastructure.Models.Data.Table.Column column)
         {
             _column = column;
-            Id = _column.Id;
             Value = _column.Value;
             DisplayOrder = _column.DisplayOrder;
             RowID = _column.RowID;

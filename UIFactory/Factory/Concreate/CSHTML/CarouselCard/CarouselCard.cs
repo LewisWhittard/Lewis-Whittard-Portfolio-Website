@@ -6,7 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
 {
     public class CarouselCard : ICarouselCard, ICSHTML, IJsonLD
     {
-        public int Id { get; set; }
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
@@ -17,8 +16,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard)
         {
             _carouselCard = carouselCard;
-
-            Id = _carouselCard.Id;
             foreach (var item in _carouselCard.Cards)
             {
                 Cards.Add(new Card(item));

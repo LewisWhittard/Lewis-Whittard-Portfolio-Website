@@ -6,7 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }
-        public int Id { get; set; }
         private readonly Infrastructure.Models.Data.CarouselCard.Image _image;
 
 
@@ -15,7 +14,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.CarouselCard
             _image = image;
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
-            Id = _image.Id;
         }
     }
 }

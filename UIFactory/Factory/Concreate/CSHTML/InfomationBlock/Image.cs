@@ -8,7 +8,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }
-        public int Id { get; set; }
         public UIPartial? UIPartialType { get; set; }
 
         private readonly Infrastructure.Models.Data.InfomationBlock.Image _image;
@@ -18,7 +17,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
             _image = Image;
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
-            Id = _image.Id;
         }
     }
 }

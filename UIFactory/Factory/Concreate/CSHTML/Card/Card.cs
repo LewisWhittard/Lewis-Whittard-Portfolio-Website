@@ -10,7 +10,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
         public string Title { get; set; }
         public string Description { get; set; }
         public string Navigation { get; set; }
-        public int Id { get; set; }
         public int DisplayOrder { get; set; }
         public UIPartial? UIPartialType { get; set; }
         private readonly Infrastructure.Models.Data.Card.Card _card;
@@ -22,7 +21,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
             Title = _card.Title;
             Description = _card.Description;
             Navigation = _card.Navigation;
-            Id = _card.Id;
             DisplayOrder = _card.DisplayOrder;
             UIPartialType = UIPartial.Card;
         }

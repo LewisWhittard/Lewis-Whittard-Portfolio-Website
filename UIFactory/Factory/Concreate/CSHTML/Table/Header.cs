@@ -6,7 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
 {
     public class Header : ICSHTML, IHeader
     {
-        public int Id { get; set; }
         public int DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
@@ -16,7 +15,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Table
         public Header(Infrastructure.Models.Data.Table.Header Header)
         {
             _header = Header;
-            Id = _header.Id;
             DisplayOrder = _header.DisplayOrder;
             TableID = _header.TableID;
             Value  = _header.Value;

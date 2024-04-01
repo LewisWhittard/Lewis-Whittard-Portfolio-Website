@@ -8,7 +8,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
     {
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
-        public int Id { get; set; }
         public int InfomationBlockid { get; set; }
         public UIPartial? UIPartialType { get; set; }
         private readonly Infrastructure.Models.Data.InfomationBlock.Paragraph _paragraph;
@@ -18,7 +17,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.InfomationBlock
             _paragraph = paragraph;
             Text = _paragraph.Text;
             DisplayOrder = _paragraph.DisplayOrder;
-            Id = _paragraph.Id;
             InfomationBlockid = _paragraph.InfomationBlockid;
 
 

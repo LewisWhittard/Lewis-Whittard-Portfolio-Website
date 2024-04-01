@@ -6,7 +6,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }
-        public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         private readonly Infrastructure.Models.Data.Card.Image _image;
@@ -16,7 +15,6 @@ namespace UIFactory.Factory.Concreate.CSHTML.Card
             _image = image;
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
-            Id = _image.Id;
             Deleted = _image.Deleted;
             Inactive = _image.Inactive;
         }
