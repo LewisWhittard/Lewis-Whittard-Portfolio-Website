@@ -12,7 +12,7 @@ namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
-        public IUI CreateUI(IData data, IJsonLDData? jsonLDData)
+        public IUI CreateUI(IData data, List<IJsonLDData> jsonLDData)
         {
 
             switch (data.UIConcreateType)
@@ -38,6 +38,11 @@ namespace UIFactory.Factory.CSHTML
                 default:
                     throw new ArgumentException("Unknown type: " + data);
             }
+        }
+
+        public IUI CreateUI(IData data)
+        {
+            throw new NotImplementedException();
         }
     }
 }
