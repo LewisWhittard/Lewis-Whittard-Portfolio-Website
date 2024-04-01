@@ -11,7 +11,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Video
         public string Navigation { get; set; }
         public int DisplayOrder { get; set; }
         public string Source { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
         private readonly Infrastructure.Models.Data.Video.Interfaces.IVideo _video;
 
         public Video(Infrastructure.Models.Data.Video.Interfaces.IVideo video)
@@ -22,7 +22,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Video
             Navigation = _video.Navigation;
             DisplayOrder = _video.DisplayOrder;
             Source = _video.Source;
-            UIPartialType = UIPartial.Video;
+            UIType = UI.Video;
         }
     }
 }

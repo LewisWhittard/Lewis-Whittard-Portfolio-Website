@@ -9,7 +9,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Carousel
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
         private readonly Infrastructure.Models.Data.Carousel.Carousel _carousel;
 
         public Carousel(Infrastructure.Models.Data.Carousel.Carousel carousel)
@@ -20,7 +20,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Carousel
                 Images.Add(new Image(item));
             }
             DisplayOrder = _carousel.DisplayOrder;
-            UIPartialType = UIPartial.Carousel;
+            UIType = UI.Carousel;
         }
     }
 }

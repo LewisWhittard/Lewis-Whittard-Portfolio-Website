@@ -8,7 +8,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Table
         public int DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
         private readonly Infrastructure.Models.Data.Table.Header _header;
 
         public Header(Infrastructure.Models.Data.Table.Header Header)

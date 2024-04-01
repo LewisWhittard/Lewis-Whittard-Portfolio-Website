@@ -8,7 +8,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.InfomationBlock
         public string Text { get; set; }
         public int DisplayOrder { get; set; }
         public int InfomationBlockid { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
         public Infrastructure.Models.Data.InfomationBlock.Heading _header;
 
         public Heading(Infrastructure.Models.Data.InfomationBlock.Heading header)

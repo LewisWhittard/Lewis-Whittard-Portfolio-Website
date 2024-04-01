@@ -7,7 +7,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.InfomationBlock
     {
         public string Source { get; set; }
         public int DisplayOrder { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
 
         private readonly Infrastructure.Models.Data.InfomationBlock.Image _image;
 

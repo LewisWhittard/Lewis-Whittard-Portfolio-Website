@@ -10,7 +10,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Table
         public List<Column> Columns { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
         private readonly Infrastructure.Models.Data.Table.Table _table;
 
         public Table(Infrastructure.Models.Data.Table.Table table)
@@ -27,7 +27,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.Table
                 Columns.Add(column);
             }
             DisplayOrder = _table.DisplayOrder;
-            UIPartialType = UIPartial.Table;
+            UIType = UI.Table;
         }
     }
 }

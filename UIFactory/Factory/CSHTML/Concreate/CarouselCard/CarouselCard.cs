@@ -9,7 +9,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.CarouselCard
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
-        public UIPartial? UIPartialType { get; set; }
+        public UI? UIType { get; set; }
 
         private Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCard;
 
@@ -21,7 +21,7 @@ namespace UIFactory.Factory.CSHTML.Concreate.CarouselCard
                 Cards.Add(new Card(item));
             }
             DisplayOrder = _carouselCard.DisplayOrder;
-            UIPartialType = UIPartial.CarouselCard;
+            UIType = UI.CarouselCard;
         }
     }
 }
