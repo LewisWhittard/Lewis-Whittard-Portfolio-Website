@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Factory\MAUIBlazor\Interface\" />
+    <Folder Include="Strategy\StrategyConcreate\Interface\" />
+  </ItemGroup>
+
 </Project>
