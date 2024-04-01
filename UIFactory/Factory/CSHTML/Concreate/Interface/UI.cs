@@ -1,6 +1,6 @@
 ﻿namespace UIFactory.Factory.CSHTML.Concreate.Interface
 {
-    public enum UIPartial
+    public enum UI
     {
         Card = 0,
         Carousel = 1,

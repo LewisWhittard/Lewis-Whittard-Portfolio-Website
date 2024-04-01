@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.CSHTML.Concreate.InfomationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concreate.Interface;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concreate.InfomationBlock
 {
-    public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD
+    public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD, IUI
     {
         public List<Image> Images { get; set; }
         public List<Paragraph> paragraphs { get; set; }

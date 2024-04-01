@@ -1,12 +1,12 @@
-﻿namespace UIFactory.Strategy.Interface
-{
-    public class Strategy
-    {
-        public UI UIType { get; set; }
+﻿using Infrastructure.Models.Data.Interface;
+using UIFactory.Factory.CSHTML.Concreate.Interface;
+using UIFactory.Factory.CSHTML.Interface;
+using UIFactory.Factory.Interface;
 
-        public Strategy(UI uiType)
-        {
-            UIType = uiType;
-        }
+namespace UIFactory.Strategy.Interface
+{
+    public interface IStrategy
+    {
+        public void SwitchStrategy(IUIFactory UIFactory);
     }
 }

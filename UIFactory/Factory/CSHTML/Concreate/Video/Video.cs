@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.CSHTML.Concreate.Interface;
 using UIFactory.Factory.CSHTML.Concreate.Video.Interfaces;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concreate.Video
 {
-    public class Video : ICSHTML, IVideo
+    public class Video : ICSHTML, IVideo, IUI
     {
         public string Title { get; set; }
         public string Description { get; set; }

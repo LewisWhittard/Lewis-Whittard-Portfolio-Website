@@ -2,6 +2,5 @@
 {
     public interface ICSHTML
     {
-        public UIPartial? UIPartialType { get; set; }
     }
 }

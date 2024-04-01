@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Factory\MAUIBlazor\Interface\" />
-    <Folder Include="Strategy\StrategyConcreate\Interface\" />
   </ItemGroup>
 
 </Project>

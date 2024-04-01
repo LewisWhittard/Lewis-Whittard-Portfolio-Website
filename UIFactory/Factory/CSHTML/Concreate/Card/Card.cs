@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.CSHTML.Concreate.Card.Interfaces;
 using UIFactory.Factory.CSHTML.Concreate.Interface;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concreate.Card
 {
-    public class Card : ICard, ICSHTML
+    public class Card : ICard, ICSHTML, IUI
     {
         public Image Image { get; set; }
         public string Title { get; set; }

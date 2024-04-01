@@ -1,16 +1,16 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.CSHTML.Interface;
-using UIFactory.Factory.CSHTML.Concreate.Interface;
 using UIFactory.Factory.CSHTML.Concreate.Carousel;
 using UIFactory.Factory.CSHTML.Concreate.CarouselCard;
 using UIFactory.Factory.CSHTML.Concreate.InfomationBlock;
 using UIFactory.Factory.CSHTML.Concreate.Table;
 using UIFactory.Factory.CSHTML.Concreate.Video;
+using UIFactory.Factory.Interface;
 namespace UIFactory.Factory.CSHTML
 {
-    class CSHTMLFactory : IFactory
+    class CSHTMLFactory : IUIFactory
     {
-        public ICSHTML CreateCSHMTL(IData data)
+        public IUI CreateUI(IData data)
         {
 
             switch (data.UIConcreateType)

@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.CSHTML.Concreate.Interface;
 using UIFactory.Factory.CSHTML.Concreate.Table.Interfaces;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concreate.Table
 {
-    public class Table : ITable, ICSHTML, IJsonLD
+    public class Table : ITable, ICSHTML, IJsonLD, IUI
     {
         public List<Header> Headers { get; set; }
         public List<Column> Columns { get; set; }

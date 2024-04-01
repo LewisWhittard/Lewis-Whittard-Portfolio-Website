@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.CSHTML.Concreate.Carousel.Interfaces;
 using UIFactory.Factory.CSHTML.Concreate.Interface;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concreate.Carousel
 {
-    public class Carousel : ICarousel, ICSHTML, IJsonLD
+    public class Carousel : ICarousel, ICSHTML, IJsonLD, IUI
     {
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
