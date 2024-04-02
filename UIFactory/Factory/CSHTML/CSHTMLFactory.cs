@@ -12,13 +12,12 @@ namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
-        public IUI CreateUI(IData data)
+        public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData)
         {
-
             switch (data.UIConcreateType)
             {
                 case UIConcreate.Card:
-                    var card = (Infrastructure.Models.Data.Card.Card) data;
+                    var card = (Infrastructure.Models.Data.Card.Card)data;
                     return new Concreate.Card.Card(card);
                 case UIConcreate.Carousel:
                     var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;
@@ -40,7 +39,7 @@ namespace UIFactory.Factory.CSHTML
             }
         }
 
-        public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData)
+        public IUI CreateUI(IData data)
         {
             throw new NotImplementedException();
         }
