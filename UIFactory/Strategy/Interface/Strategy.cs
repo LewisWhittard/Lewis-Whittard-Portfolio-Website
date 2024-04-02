@@ -1,6 +1,5 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using SEO.Models.JsonLD.Interface;
-using UIFactory.Factory.CSHTML.Interface;
 using UIFactory.Factory.Interface;
 
 namespace UIFactory.Strategy.Interface
