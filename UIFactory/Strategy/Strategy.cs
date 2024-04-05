@@ -20,17 +20,17 @@ namespace UIFactory.Strategy
             _strategy = UIFactory;
         }
 
-        public IUI Exicute(IData data,List<IJsonLDData> jsonLDData)
+        public IUI Execute(IData data,List<IJsonLDData> jsonLDData)
         {
             return _strategy.CreateUI(data, jsonLDData);
         }
 
-        public IUI Exicute(IData data)
+        public IUI Execute(IData data)
         {
             return _strategy.CreateUI(data);
         }
 
-        public List<IUI> ExicuteList(List<IData> data, List<IJsonLDData> jsonLDData)
+        public List<IUI> ExecuteList(List<IData> data, List<IJsonLDData> jsonLDData)
         {
             List<IUI> uIs = new List<IUI>();
 
@@ -44,7 +44,7 @@ namespace UIFactory.Strategy
             return uIs;
         }
 
-        public List<IUI> ExicuteList(List<IData> data)
+        public List<IUI> ExecuteList(List<IData> data)
         {
             List<IUI> uIs = new List<IUI>();
 

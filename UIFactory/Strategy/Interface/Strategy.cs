@@ -8,9 +8,9 @@ namespace UIFactory.Strategy.Interface
     {
         public IUIFactory _strategy { get; set; }
         public void SwitchStrategy(IUIFactory UIFactory);
-        public IUI Exicute(IData data, List<IJsonLDData> JsonLDData);
-        public IUI Exicute(IData data);
-        public List<IUI> ExicuteList(List<IData> data, List<IJsonLDData> JsonLDData);
-        public List<IUI> ExicuteList(List<IData> data);
+        public IUI Execute(IData data, List<IJsonLDData> JsonLDData);
+        public IUI Execute(IData data);
+        public List<IUI> ExecuteList(List<IData> data, List<IJsonLDData> JsonLDData);
+        public List<IUI> ExecuteList(List<IData> data);
     }
 }
