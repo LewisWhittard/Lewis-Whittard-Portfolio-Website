@@ -6,12 +6,34 @@ using UIFactory.Factory.CSHTML.Concrete.Table;
 using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
+using Infrastructure.Service.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
-        public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData)
+        private readonly IPageService _pageService;
+
+        public CSHTMLFactory(IPageService pageService)
+        {
+            _pageService = pageService;
+        }
+
+        public List<IUI> CreateUIList(string PageName)
+        {
+            List<IUI> result = new List<IUI>();
+            var pageData = _pageService.Get(PageName).CreateIDataList();
+            List<IJsonLDData> jsonLDData = new List<IJsonLDData>();
+            foreach (var item in pageData)
+            {
+                List<IJsonLDData> jsonLD = jsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
+                var uI = CreateUI(item,jsonLD);
+                result.Add(uI);
+            }
+            return result;
+        }
+
+        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData)
         {
             switch (data.UIConcreteType)
             {
@@ -36,11 +58,6 @@ namespace UIFactory.Factory.CSHTML
                 default:
                     throw new ArgumentException("Unknown type: " + data);
             }
-        }
-
-        public IUI CreateUI(IData data)
-        {
-            throw new NotImplementedException();
         }
     }
 }

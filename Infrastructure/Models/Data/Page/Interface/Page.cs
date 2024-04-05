@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Models.Data.Page.Interface
+﻿using Infrastructure.Models.Data.Interface;
+
+namespace Infrastructure.Models.Data.Page.Interface
 {
     public interface IPage
     {
@@ -8,5 +10,6 @@
         public List<CarouselCard.Card> CarouselCards { get; set; }
         public List<InfomationBlock.InfomatonBlock> InfomationBlocks { get; set; }
         public List<Table.Table> Tables { get; set; }
+        public List<IData> CreateIDataList();
     }
 }

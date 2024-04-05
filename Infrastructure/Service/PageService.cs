@@ -1,4 +1,5 @@
-﻿using Infrastructure.Models.Data.Page.Interface;
+﻿using Infrastructure.Models.Data.Page;
+using Infrastructure.Models.Data.Page.Interface;
 using Infrastructure.Repository.Interface;
 using Infrastructure.Service.Interface;
 
@@ -13,7 +14,7 @@ namespace Infrastructure.Service
             _pageRepository = pageRepository;
         }
 
-        IPage IPageService.Get(string PageName)
+        public Page Get(string PageName)
         {
             return _pageRepository.Get(PageName);
         }

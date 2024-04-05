@@ -5,7 +5,6 @@ namespace UIFactory.Factory.Interface
 {
     public interface IUIFactory
     {
-        public IUI CreateUI(IData data);
-        public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData);
+        public List<IUI> CreateUIList(string PageName);
     }
 }

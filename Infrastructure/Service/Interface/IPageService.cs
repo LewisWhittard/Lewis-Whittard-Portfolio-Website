@@ -1,9 +1,10 @@
-﻿using Infrastructure.Models.Data.Page.Interface;
+﻿using Infrastructure.Models.Data.Page;
+using Infrastructure.Models.Data.Page.Interface;
 
 namespace Infrastructure.Service.Interface
 {
     public interface IPageService
     {
-        public IPage Get(string PageName);
+        public Page Get(string PageName);
     }
 }
