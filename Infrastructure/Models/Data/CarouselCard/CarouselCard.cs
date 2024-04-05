@@ -12,11 +12,11 @@ namespace Infrastructure.Models.Data.CarouselCard
         public List<Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public CarouselCard()
         {
-            UIConcreateType = UIConcreate.CarouselCard;
+            UIConcreteType = UIConcrete.CarouselCard;
         }
     }
 }

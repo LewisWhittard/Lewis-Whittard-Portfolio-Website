@@ -1,9 +1,9 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using UIFactory.Factory.CSHTML.Concreate.Carousel;
-using UIFactory.Factory.CSHTML.Concreate.CarouselCard;
-using UIFactory.Factory.CSHTML.Concreate.InfomationBlock;
-using UIFactory.Factory.CSHTML.Concreate.Table;
-using UIFactory.Factory.CSHTML.Concreate.Video;
+using UIFactory.Factory.CSHTML.Concrete.Carousel;
+using UIFactory.Factory.CSHTML.Concrete.CarouselCard;
+using UIFactory.Factory.CSHTML.Concrete.InfomationBlock;
+using UIFactory.Factory.CSHTML.Concrete.Table;
+using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
 
@@ -13,24 +13,24 @@ namespace UIFactory.Factory.CSHTML
     {
         public IUI CreateUI(IData data, List<IJsonLDData> JsonLDData)
         {
-            switch (data.UIConcreateType)
+            switch (data.UIConcreteType)
             {
-                case UIConcreate.Card:
+                case UIConcrete.Card:
                     var card = (Infrastructure.Models.Data.Card.Card)data;
-                    return new Concreate.Card.Card(card);
-                case UIConcreate.Carousel:
+                    return new Concrete.Card.Card(card);
+                case UIConcrete.Carousel:
                     var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;
                     return new Carousel(carousel);
-                case UIConcreate.CarouselCard:
+                case UIConcrete.CarouselCard:
                     var carouselCard = (Infrastructure.Models.Data.CarouselCard.CarouselCard)data;
                     return new CarouselCard(carouselCard);
-                case UIConcreate.InfomationBlock:
+                case UIConcrete.InfomationBlock:
                     var infomationBlock = (Infrastructure.Models.Data.InfomationBlock.InfomatonBlock)data;
                     return new InfomatonBlock(infomationBlock);
-                case UIConcreate.Table:
+                case UIConcrete.Table:
                     var table = (Infrastructure.Models.Data.Table.Table)data;
                     return new Table(table);
-                case UIConcreate.Video:
+                case UIConcrete.Video:
                     var video = (Infrastructure.Models.Data.Video.Video)data;
                     return new Video(video);
                 default:

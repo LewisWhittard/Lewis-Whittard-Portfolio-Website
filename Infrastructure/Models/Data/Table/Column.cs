@@ -15,7 +15,7 @@ namespace Infrastructure.Models.Data.Table
         public int RowID { get; set; }
         public int TableID { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Column()
         {

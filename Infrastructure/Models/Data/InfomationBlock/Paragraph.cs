@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
         {

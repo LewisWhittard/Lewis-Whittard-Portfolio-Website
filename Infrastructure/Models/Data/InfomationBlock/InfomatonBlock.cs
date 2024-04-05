@@ -14,11 +14,11 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public InfomatonBlock()
         {
-            UIConcreateType = UIConcreate.InfomationBlock;
+            UIConcreteType = UIConcrete.InfomationBlock;
         }
     }
 }

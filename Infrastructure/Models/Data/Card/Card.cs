@@ -15,11 +15,11 @@ namespace Infrastructure.Models.Data.Card
         public bool Inactive { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Card()
         {
-            UIConcreateType = UIConcreate.Card;
+            UIConcreteType = UIConcrete.Card;
         }
     }
 }

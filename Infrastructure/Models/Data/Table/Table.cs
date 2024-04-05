@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.Table
         public List<Column> Columns { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Table()
         {
@@ -27,7 +27,7 @@ namespace Infrastructure.Models.Data.Table
             Inactive = inactive;
             Headers = headers;
             Columns = columns;
-            UIConcreateType = UIConcreate.Table;
+            UIConcreteType = UIConcrete.Table;
         }
     }
 }

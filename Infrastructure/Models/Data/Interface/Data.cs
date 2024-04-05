@@ -8,6 +8,6 @@ namespace Infrastructure.Models.Data.Interface
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
     }
 }

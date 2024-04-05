@@ -12,7 +12,7 @@ namespace Infrastructure.Models.Data.Card
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Image()
         {

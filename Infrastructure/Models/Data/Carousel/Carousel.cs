@@ -12,11 +12,11 @@ namespace Infrastructure.Models.Data.Carousel
         public List<Image> Images { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Carousel()
         {
-            UIConcreateType = UIConcreate.Carousel;
+            UIConcreteType = UIConcrete.Carousel;
         }
     }
 }

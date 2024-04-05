@@ -16,11 +16,11 @@ namespace Infrastructure.Models.Data.Video
         public bool Inactive { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Video()
         {
-            UIConcreateType = UIConcreate.Video;
+            UIConcreteType = UIConcrete.Video;
         }
     }
 }

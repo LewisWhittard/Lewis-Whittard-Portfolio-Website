@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public int DisplayOrder { get; set; }
         public int InfomationBlockid { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Heading()
         {

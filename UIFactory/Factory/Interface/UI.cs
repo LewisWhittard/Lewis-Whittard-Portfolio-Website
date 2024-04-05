@@ -1,4 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concreate.Interface;
+﻿using UIFactory.Factory.CSHTML.Concrete.Interface;
 
 namespace UIFactory.Factory.Interface
 {

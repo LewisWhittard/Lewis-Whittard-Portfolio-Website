@@ -36,7 +36,7 @@ namespace UIFactory.Strategy
 
             foreach (var item in data)
             {
-                List<IJsonLDData> jsonLD = jsonLDData.Where(x => x.DataId == item.Id && item.UIConcreateType == x.UIConcreateType).ToList();
+                List<IJsonLDData> jsonLD = jsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
                 IUI uI = _strategy.CreateUI(item);
                 uIs.Add(uI);
             }

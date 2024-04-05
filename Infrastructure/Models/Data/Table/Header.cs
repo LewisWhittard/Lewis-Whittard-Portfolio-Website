@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.Table
         public int TableID { get; set; }
         public string Value { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Header()
         {

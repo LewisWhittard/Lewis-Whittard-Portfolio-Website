@@ -16,7 +16,7 @@ namespace Infrastructure.Models.Data.Page
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         [JsonIgnore]
-        public UIConcreate? UIConcreateType { get; set; }
+        public UIConcrete? UIConcreteType { get; set; }
 
         public Page()
         {
