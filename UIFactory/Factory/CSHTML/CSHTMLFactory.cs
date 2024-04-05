@@ -6,7 +6,7 @@ using UIFactory.Factory.CSHTML.Concrete.Table;
 using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
-using Infrastructure.Service.Interface;
+using Infrastructure.Service.Page.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {

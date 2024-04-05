@@ -1,7 +1,4 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.JsonLD.Interface;
-using System.Data;
-using UIFactory.Factory.Interface;
+﻿using UIFactory.Factory.Interface;
 using UIFactory.Strategy.Interface;
 
 namespace UIFactory.Strategy
@@ -22,7 +19,7 @@ namespace UIFactory.Strategy
 
         public List<IUI> Execute(string PageName)
         {
-            return null;
+            return _strategy.CreateUIList(PageName);
         }
     }
 }
