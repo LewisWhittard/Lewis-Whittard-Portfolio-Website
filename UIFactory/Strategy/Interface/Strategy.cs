@@ -2,7 +2,7 @@
 
 namespace UIFactory.Strategy.Interface
 {
-    public interface IStrategy
+    public interface IUIFactoryStrategy
     {
         public IUIFactory _strategy { get; set; }
         public void SwitchStrategy(IUIFactory UIFactory);

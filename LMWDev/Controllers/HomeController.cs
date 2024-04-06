@@ -1,27 +1,32 @@
-﻿using LMWDev.Models;
+﻿using Infrastructure.Service.Page;
+using LMWDev.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
+using SEO.Service.AltService;
+using SEO.Service.JsonLDService;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using UIFactory.Factory.CSHTML;
+using UIFactory.Factory.Interface;
+using UIFactory.Strategy;
+using UIFactory.Strategy.Interface;
 
 namespace LMWDev.Controllers
 {
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
-
-		public HomeController(ILogger<HomeController> logger)
+		private readonly IUIFactoryStrategy _uIFactoryStrategy;
+        public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
-		}
+			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(), new JsonLDService(), new AltService()));
+        }
 
 		public IActionResult Index()
 		{
-			HomeModel ViewModel = new HomeModel();
-			ViewModel.FlexibleMeta = false;
+			List<IUI> uIs = _uIFactoryStrategy.ExecuteByPageName("HomePage");
+			HomeModel ViewModel = new HomeModel(false,uIs);
 			return View(ViewModel);
 		}
 

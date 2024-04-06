@@ -13,7 +13,7 @@ using SEO.Models.Alt.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
-    class CSHTMLFactory : IUIFactory
+    public class CSHTMLFactory : IUIFactory
     {
         private readonly IPageService _pageService;
         private readonly IJsonLDService _jsonLDService;

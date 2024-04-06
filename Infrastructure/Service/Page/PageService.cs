@@ -12,6 +12,11 @@ namespace Infrastructure.Service.Page
             _pageRepository = pageRepository;
         }
 
+        public PageService()
+        {
+            
+        }
+
         public Models.Data.Page.Page Get(string PageName)
         {
             return _pageRepository.GetByPageName(PageName);
