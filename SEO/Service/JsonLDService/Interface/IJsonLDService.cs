@@ -1,6 +1,6 @@
 ﻿using SEO.Models.JsonLD.Interface;
 
-namespace SEO.JsonLDService.Interface
+namespace SEO.Service.JsonLDService.Interface
 {
     public interface IJsonLDService
     {

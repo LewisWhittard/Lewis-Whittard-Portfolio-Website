@@ -1,7 +1,7 @@
-﻿using SEO.JsonLDService.Interface;
-using SEO.Models.JsonLD.Interface;
+﻿using SEO.Models.JsonLD.Interface;
+using SEO.Service.JsonLDService.Interface;
 
-namespace SEO.JsonLDService
+namespace SEO.Service.JsonLDService
 {
     public class JsonLDService : IJsonLDService
     {

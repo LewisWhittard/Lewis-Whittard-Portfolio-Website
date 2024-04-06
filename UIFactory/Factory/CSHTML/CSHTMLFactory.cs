@@ -7,7 +7,7 @@ using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
 using Infrastructure.Service.Page.Interface;
-using SEO.JsonLDService.Interface;
+using SEO.Service.JsonLDService.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
