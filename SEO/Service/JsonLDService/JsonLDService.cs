@@ -1,13 +1,19 @@
-﻿using SEO.Models.JsonLD.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using SEO.Models.JsonLD.Interface;
 using SEO.Service.JsonLDService.Interface;
 
 namespace SEO.Service.JsonLDService
 {
     public class JsonLDService : IJsonLDService
     {
-        List<IJsonLDData> IJsonLDService.Get(string PageName)
+        public List<IJsonLDData> GetByPageName(string PageName, IData data)
         {
-            throw new NotImplementedException();
+            return GetByPageName(PageName).Where(x => x.DataId == data.Id && data.UIConcreteType == x.UIConcreteType).ToList(); ;
+        }
+
+        public List<IJsonLDData> GetByPageName(string PageName)
+        {
+            return null;
         }
     }
 }

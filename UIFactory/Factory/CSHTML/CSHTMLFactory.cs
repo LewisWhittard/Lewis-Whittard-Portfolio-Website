@@ -30,12 +30,11 @@ namespace UIFactory.Factory.CSHTML
         {
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.Get(PageName).CreateIDataList();
-            var PagejsonLDData = _jsonLDService.GetByPageName(PageName);
             var pageAltData = _altService.GetByPageName(PageName);
 
             foreach (var item in pageData)
             {
-                List<IJsonLDData> jsonLD = PagejsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
+                List<IJsonLDData> jsonLD = _jsonLDService.GetByPageName(PageName, item);
                 List<IAltData> alt = pageAltData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
                 var uI = CreateUI(item,jsonLD, alt);
                 result.Add(uI);
