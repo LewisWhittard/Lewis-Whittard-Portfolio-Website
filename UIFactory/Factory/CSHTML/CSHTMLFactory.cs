@@ -7,26 +7,29 @@ using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
 using Infrastructure.Service.Page.Interface;
+using SEO.JsonLDService.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
     class CSHTMLFactory : IUIFactory
     {
         private readonly IPageService _pageService;
+        private readonly IJsonLDService _jsonLDService;
 
-        public CSHTMLFactory(IPageService pageService)
+        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService)
         {
             _pageService = pageService;
+            _jsonLDService = jsonLDService;
         }
 
         public List<IUI> CreateUIList(string PageName)
         {
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.Get(PageName).CreateIDataList();
-            List<IJsonLDData> jsonLDData = new List<IJsonLDData>();
+            var PagejsonLDData = _jsonLDService.Get(PageName);
             foreach (var item in pageData)
             {
-                List<IJsonLDData> jsonLD = jsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
+                List<IJsonLDData> jsonLD = PagejsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
                 var uI = CreateUI(item,jsonLD);
                 result.Add(uI);
             }

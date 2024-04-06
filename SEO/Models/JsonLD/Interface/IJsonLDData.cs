@@ -6,6 +6,7 @@ namespace SEO.Models.JsonLD.Interface
     {
         public int DataId { get; set; }
         public UIConcrete? UIConcreteType { get; set; }
+        public string Page {  get; set; }
 
     }
 }
