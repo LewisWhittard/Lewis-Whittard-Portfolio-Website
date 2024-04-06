@@ -6,12 +6,12 @@ namespace SEO.Service.JsonLDService
 {
     public class JsonLDService : IJsonLDService
     {
-        public List<IJsonLDData> GetByPageName(string PageName, IData data)
+        public List<IJsonLDData> GetByPageName(string pageName, IData data)
         {
-            return GetByPageName(PageName).Where(x => x.DataId == data.Id && data.UIConcreteType == x.UIConcreteType).ToList(); ;
+            return GetByPageName(pageName).Where(x => x.DataId == data.Id && data.UIConcreteType == x.UIConcreteType).ToList();
         }
 
-        public List<IJsonLDData> GetByPageName(string PageName)
+        public List<IJsonLDData> GetByPageName(string pageName)
         {
             return null;
         }
