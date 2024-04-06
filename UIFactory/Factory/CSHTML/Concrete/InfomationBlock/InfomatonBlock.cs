@@ -1,4 +1,6 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
+﻿using SEO.Models.Alt.Interface;
+using SEO.Models.JsonLD.Interface;
+using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
 
@@ -11,24 +13,27 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
-        public Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _infomatonBlock { get; set; }
         public UI? UIType { get; set; }
+        private readonly Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _infomatonBlock;
+        private readonly List<IAltData> _alt;
 
-        public InfomatonBlock(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomatonBlock)
+        public InfomatonBlock(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomatonBlock, List<IJsonLDData> JsonLd, List<IAltData> alt)
         {
             _infomatonBlock = infomatonBlock;
-
+            _alt = alt;
             foreach (var item in _infomatonBlock.Images)
             {
-                Image image = new Image(item);
+                Image image = new Image(item,alt.Where(x => x.DisplayOrder == item.DisplayOrder).FirstOrDefault());
+                Images.Add(image);
             }
             foreach (var item in _infomatonBlock.paragraphs)
             {
-                Paragraph paragpraph = new Paragraph(item);
+                Paragraph paragraph = new Paragraph(item);
+                paragraphs.Add(paragraph);
             }
             foreach (var item in _infomatonBlock.headings)
             {
-
+                Heading heading = new Heading(item);
             }
             DisplayOrder = _infomatonBlock.Id;
             UIType = UI.InfomationBlock;

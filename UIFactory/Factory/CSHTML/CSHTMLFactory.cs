@@ -55,7 +55,7 @@ namespace UIFactory.Factory.CSHTML
                     return new CarouselCard(carouselCard,jsonLDData,altData);
                 case UIConcrete.InfomationBlock:
                     var infomationBlock = (Infrastructure.Models.Data.InfomationBlock.InfomatonBlock)data;
-                    return new InfomatonBlock(infomationBlock);
+                    return new InfomatonBlock(infomationBlock,jsonLDData,altData);
                 case UIConcrete.Table:
                     var table = (Infrastructure.Models.Data.Table.Table)data;
                     return new Table(table);
