@@ -6,7 +6,7 @@ namespace SEO.Service.AltService
 {
     public class AltService : IAltService
     {
-        public List<IAltData> Get(string PageName)
+        public List<IAltData> GetByPageName(string PageName)
         {
             return new List<IAltData>();
         }

@@ -5,6 +5,6 @@ namespace SEO.Service.AltService.Interface
 {
     public interface IAltService
     {
-        public List<IAltData> Get(string PageName);
+        public List<IAltData> GetByPageName(string PageName);
     }
 }

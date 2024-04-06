@@ -31,7 +31,7 @@ namespace UIFactory.Factory.CSHTML
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.Get(PageName).CreateIDataList();
             var PagejsonLDData = _jsonLDService.Get(PageName);
-            var pageAltData = _altService.Get(PageName);
+            var pageAltData = _altService.GetByPageName(PageName);
 
             foreach (var item in pageData)
             {

@@ -5,6 +5,6 @@ namespace Infrastructure.Repository.Interface
 {
     public interface IPageRepository
     {
-        public Page Get(string PageName);
+        public Page GetByPageName(string PageName);
     }
 }

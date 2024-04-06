@@ -4,6 +4,6 @@ namespace SEO.Service.JsonLDService.Interface
 {
     public interface IJsonLDService
     {
-        public List<IJsonLDData> Get(string PageName);
+        public List<IJsonLDData> GetByPageName(string PageName);
     }
 }

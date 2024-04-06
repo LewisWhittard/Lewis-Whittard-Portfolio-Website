@@ -14,7 +14,7 @@ namespace Infrastructure.Service.Page
 
         public Models.Data.Page.Page Get(string PageName)
         {
-            return _pageRepository.Get(PageName);
+            return _pageRepository.GetByPageName(PageName);
         }
     }
 }
