@@ -8,6 +8,8 @@ using UIFactory.Factory.Interface;
 using SEO.Models.JsonLD.Interface;
 using Infrastructure.Service.Page.Interface;
 using SEO.Service.JsonLDService.Interface;
+using SEO.Service.AltService.Interface;
+using SEO.Models.Alt.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
@@ -15,11 +17,13 @@ namespace UIFactory.Factory.CSHTML
     {
         private readonly IPageService _pageService;
         private readonly IJsonLDService _jsonLDService;
+        private readonly IAltService _altService;
 
-        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService)
+        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService, IAltService altService)
         {
             _pageService = pageService;
             _jsonLDService = jsonLDService;
+            _altService = altService;
         }
 
         public List<IUI> CreateUIList(string PageName)
@@ -27,16 +31,19 @@ namespace UIFactory.Factory.CSHTML
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.Get(PageName).CreateIDataList();
             var PagejsonLDData = _jsonLDService.Get(PageName);
+            var pageAltData = _altService.Get(PageName);
+
             foreach (var item in pageData)
             {
                 List<IJsonLDData> jsonLD = PagejsonLDData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
-                var uI = CreateUI(item,jsonLD);
+                List<IAltData> alt = pageAltData.Where(x => x.DataId == item.Id && item.UIConcreteType == x.UIConcreteType).ToList();
+                var uI = CreateUI(item,jsonLD, alt);
                 result.Add(uI);
             }
             return result;
         }
 
-        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData)
+        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData,List<IAltData> altData)
         {
             switch (data.UIConcreteType)
             {
