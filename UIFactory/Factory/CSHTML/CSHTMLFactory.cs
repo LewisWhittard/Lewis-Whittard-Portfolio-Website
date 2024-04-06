@@ -52,7 +52,7 @@ namespace UIFactory.Factory.CSHTML
                     return new Carousel(carousel, jsonLDData, altData);
                 case UIConcrete.CarouselCard:
                     var carouselCard = (Infrastructure.Models.Data.CarouselCard.CarouselCard)data;
-                    return new CarouselCard(carouselCard);
+                    return new CarouselCard(carouselCard,jsonLDData,altData);
                 case UIConcrete.InfomationBlock:
                     var infomationBlock = (Infrastructure.Models.Data.InfomationBlock.InfomatonBlock)data;
                     return new InfomatonBlock(infomationBlock);
