@@ -1,10 +1,7 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.JsonLD.Interface;
-
-namespace UIFactory.Factory.Interface
+﻿namespace UIFactory.Factory.Interface
 {
     public interface IUIFactory
     {
-        public List<IUI> CreateUIList(string PageName);
+        public List<IUI> CreateUIListByPageName(string PageName);
     }
 }

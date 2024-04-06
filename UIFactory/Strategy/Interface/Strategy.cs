@@ -6,6 +6,6 @@ namespace UIFactory.Strategy.Interface
     {
         public IUIFactory _strategy { get; set; }
         public void SwitchStrategy(IUIFactory UIFactory);
-        public List<IUI> Execute(string PageName);
+        public List<IUI> ExecuteByPageName(string PageName);
     }
 }

@@ -26,7 +26,7 @@ namespace UIFactory.Factory.CSHTML
             _altService = altService;
         }
 
-        public List<IUI> CreateUIList(string PageName)
+        public List<IUI> CreateUIListByPageName(string PageName)
         {
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.Get(PageName).CreateIDataList();
@@ -46,10 +46,10 @@ namespace UIFactory.Factory.CSHTML
             {
                 case UIConcrete.Card:
                     var card = (Infrastructure.Models.Data.Card.Card)data;
-                    return new Concrete.Card.Card(card);
+                    return new Concrete.Card.Card(card, jsonLDData, altData.FirstOrDefault());
                 case UIConcrete.Carousel:
                     var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;
-                    return new Carousel(carousel);
+                    return new Carousel(carousel, jsonLDData, altData);
                 case UIConcrete.CarouselCard:
                     var carouselCard = (Infrastructure.Models.Data.CarouselCard.CarouselCard)data;
                     return new CarouselCard(carouselCard);

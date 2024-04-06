@@ -17,9 +17,9 @@ namespace UIFactory.Strategy
             _strategy = UIFactory;
         }
 
-        public List<IUI> Execute(string PageName)
+        public List<IUI> ExecuteByPageName(string PageName)
         {
-            return _strategy.CreateUIList(PageName);
+            return _strategy.CreateUIListByPageName(PageName);
         }
     }
 }
