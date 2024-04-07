@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Models.Data.Page;
-using Infrastructure.Models.Data.Page.Interface;
 
 namespace Infrastructure.Repository.Interface
 {
