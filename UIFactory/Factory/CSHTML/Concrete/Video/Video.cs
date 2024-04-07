@@ -14,9 +14,9 @@ namespace UIFactory.Factory.CSHTML.Concrete.Video
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        private readonly Infrastructure.Models.Data.Video.Interfaces.IVideo _video;
+        private readonly Infrastructure.Models.Data.Video.Video _video;
 
-        public Video(Infrastructure.Models.Data.Video.Interfaces.IVideo video)
+        public Video(Infrastructure.Models.Data.Video.Video video)
         {
             _video = video;
             Title = _video.Title;
