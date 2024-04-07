@@ -33,7 +33,7 @@ namespace UIFactory.Factory.CSHTML
             foreach (var data in pageData)
             {
                 List<IJsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data);
-                List<IAltData> alt = _altService.GetBySuperClassGUID(PageName,data);
+                List<IAltData> alt = _altService.GetBySuperClassGUID(data);
                 var uI = CreateUI(data, jsonLD, alt);
                 result.Add(uI);
             }
