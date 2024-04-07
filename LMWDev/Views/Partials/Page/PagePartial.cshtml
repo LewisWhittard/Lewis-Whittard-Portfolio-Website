@@ -1,0 +1,32 @@
+﻿@using System.Data
+@using UIFactory.Factory.CSHTML.Concrete.Interface
+@using UIFactory.Factory.Interface
+@model List<IUI>
+
+@foreach (var item in Model)
+{
+    @switch (item.UIType)
+    {
+        case UI.Card:
+            var card = (UIFactory.Factory.CSHTML.Concrete.Card.Card)item;
+            break;
+        case UI.Carousel:
+            var carousel = (UIFactory.Factory.CSHTML.Concrete.Carousel.Carousel)item;
+            break;
+        case UI.CarouselCard:
+            var CarouselCard = (UIFactory.Factory.CSHTML.Concrete.Carousel.Carousel)item;
+            break;
+        case UI.InfomationBlock:
+            var infomationBlock = (UIFactory.Factory.CSHTML.Concrete.InfomationBlock.InfomatonBlock)item;
+            break;
+        case UI.Table:
+            var table = (UIFactory.Factory.CSHTML.Concrete.Table.Table)item;
+            break;
+        case UI.Video:
+            var video = (UIFactory.Factory.CSHTML.Concrete.Video.Video)item;
+            break;
+        default:
+            throw new ArgumentException("Unknown type: " + item);
+            break;
+    }
+}

@@ -26,4 +26,13 @@
     <ProjectReference Include="..\UIFactory\UIFactory.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Partials\Card\" />
+    <Folder Include="Views\Partials\Carousel\" />
+    <Folder Include="Views\Partials\CarouselCard\" />
+    <Folder Include="Views\Partials\InfomationBlock\" />
+    <Folder Include="Views\Partials\Video\" />
+    <Folder Include="Views\Partials\Table\" />
+  </ItemGroup>
+
 </Project>
