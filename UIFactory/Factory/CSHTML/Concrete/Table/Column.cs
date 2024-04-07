@@ -8,7 +8,6 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
     {
         public string Value { get; set; }
         public int DisplayOrder { get; set; }
-        public int RowID { get; set; }
         public int TableID { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }
@@ -20,7 +19,6 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
             _column = column;
             Value = _column.Value;
             DisplayOrder = _column.DisplayOrder;
-            RowID = _column.RowID;
             TableID = _column.TableID;
             GUID = _column.GUID;
         }

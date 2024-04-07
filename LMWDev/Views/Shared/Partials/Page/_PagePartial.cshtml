@@ -14,13 +14,14 @@
             var carousel = (UIFactory.Factory.CSHTML.Concrete.Carousel.Carousel)item;
             break;
         case UI.CarouselCard:
-            var CarouselCard = (UIFactory.Factory.CSHTML.Concrete.Carousel.Carousel)item;
+            var CarouselCard = (UIFactory.Factory.CSHTML.Concrete.CarouselCard.Card)item;
             break;
         case UI.InfomationBlock:
             var infomationBlock = (UIFactory.Factory.CSHTML.Concrete.InfomationBlock.InfomatonBlock)item;
             break;
         case UI.Table:
             var table = (UIFactory.Factory.CSHTML.Concrete.Table.Table)item;
+            @await Html.PartialAsync("~/Views/Shared/_MyPartial.cshtml", table)
             break;
         case UI.Video:
             var video = (UIFactory.Factory.CSHTML.Concrete.Video.Video)item;
