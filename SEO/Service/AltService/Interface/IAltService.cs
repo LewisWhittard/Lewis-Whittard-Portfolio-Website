@@ -6,7 +6,6 @@ namespace SEO.Service.AltService.Interface
 {
     public interface IAltService
     {
-        public List<IAltData> GetByPageName(string pageName);
-        public List<IAltData> GetByPageNameAndSuperClassDataIdAndUIConcreteType(string pageName, IData data);
+        public List<IAltData> GetBySuperClassGUID(IData data);
     }
 }

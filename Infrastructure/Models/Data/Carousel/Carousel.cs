@@ -13,6 +13,7 @@ namespace Infrastructure.Models.Data.Carousel
         public int DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
+        public string GUID { get; set; }
 
         public Carousel()
         {

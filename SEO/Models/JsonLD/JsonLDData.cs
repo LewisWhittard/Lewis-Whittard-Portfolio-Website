@@ -5,7 +5,7 @@ namespace SEO.Models.JsonLD
 {
     public class JsonLDData : IJsonLDData
     {
-        public int SuperClassDataId { get; set; }
+        public int SuperClassGUID { get; set; }
         public UIConcrete? UIConcreteType { get; set; }
         public string Page {  get; set; }
     }

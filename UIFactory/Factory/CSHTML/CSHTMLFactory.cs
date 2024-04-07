@@ -32,8 +32,8 @@ namespace UIFactory.Factory.CSHTML
             var pageData = _pageService.GetByPageNameAsIDataList(PageName);
             foreach (var data in pageData)
             {
-                List<IJsonLDData> jsonLD = _jsonLDService.GetByPageNameAndSuperClassDataIdAndUIConcreteType(PageName, data);
-                List<IAltData> alt = _altService.GetByPageNameAndSuperClassDataIdAndUIConcreteType(PageName,data);
+                List<IJsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data);
+                List<IAltData> alt = _altService.GetBySuperClassGUID(PageName,data);
                 var uI = CreateUI(data, jsonLD, alt);
                 result.Add(uI);
             }
@@ -46,7 +46,7 @@ namespace UIFactory.Factory.CSHTML
             {
                 case UIConcrete.Card:
                     var card = (Infrastructure.Models.Data.Card.Card)data;
-                    return new Concrete.Card.Card(card, jsonLDData, altData.FirstOrDefault());
+                    return new Concrete.Card.Card(card, jsonLDData, altData);
                 case UIConcrete.Carousel:
                     var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;
                     return new Carousel(carousel, jsonLDData, altData);

@@ -12,6 +12,8 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int InfomationBlockid { get; set; }
+        public string GUID { get; set; }
+
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 

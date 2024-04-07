@@ -1,5 +1,7 @@
-﻿using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt;
+using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
+using SEO.Service.AltService.Interface;
 using UIFactory.Factory.CSHTML.Concrete.Card.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
@@ -16,10 +18,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
         public UI? UIType { get; set; }
         private readonly Infrastructure.Models.Data.Card.Card _card;
 
-        public Card(Infrastructure.Models.Data.Card.Card card, List<IJsonLDData> jsonLDData, IAltData altData)
+        public Card(Infrastructure.Models.Data.Card.Card card, List<IJsonLDData> jsonLDData, List<IAltData> altData)
         {
             _card = card;
-            Image = new Image(_card.Image, altData);
+            Image = new Image(_card.Image, altData.Where(x => x.DataGUID == _card.GUID).FirstOrDefault());
             Title = _card.Title;
             Description = _card.Description;
             Navigation = _card.Navigation;

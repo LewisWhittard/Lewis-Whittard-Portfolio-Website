@@ -13,8 +13,11 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public List<Paragraph> paragraphs { get; set; }
         public List<Heading> headings { get; set; }
         public int DisplayOrder { get; set; }
+        public string GUID { get; set; }
+
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
+        
 
         public InfomatonBlock()
         {
