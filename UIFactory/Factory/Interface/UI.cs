@@ -5,5 +5,6 @@ namespace UIFactory.Factory.Interface
     public interface IUI
     {
         public UI? UIType { get; set; }
+        public string GUID { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
+        public string GUID { get; set; }
+
         private Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCard;
         private readonly List<IAltData> _alt;
         
@@ -22,10 +24,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             _alt = alt;
             foreach (var item in _carouselCard.Cards)
             {
-                Cards.Add(new Card(item , _alt.Where(x => x.DisplayOrder == item.DisplayOrder).FirstOrDefault()));
+                Cards.Add(new Card(item, _alt.Where(x => x.DisplayOrder == item.DisplayOrder).FirstOrDefault()));
             }
             DisplayOrder = _carouselCard.DisplayOrder;
             UIType = UI.CarouselCard;
+            GUID = _carouselCard.GUID;
         }
     }
 }

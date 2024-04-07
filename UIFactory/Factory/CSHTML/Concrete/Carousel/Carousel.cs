@@ -12,6 +12,8 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
+        public string GUID { get; set; }
+
         private readonly Infrastructure.Models.Data.Carousel.Carousel _carousel;
         private readonly List<IAltData> _alt;
 
@@ -25,6 +27,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
             }
             DisplayOrder = _carousel.DisplayOrder;
             UIType = UI.Carousel;
+            GUID = _carousel.GUID;
         }
     }
 }

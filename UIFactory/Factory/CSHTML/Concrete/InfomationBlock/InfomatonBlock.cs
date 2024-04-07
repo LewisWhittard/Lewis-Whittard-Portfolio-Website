@@ -14,6 +14,8 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
+        public string GUID { get; set; }
+
         private readonly Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _infomatonBlock;
         private readonly List<IAltData> _alt;
 
@@ -23,7 +25,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
             _alt = alt;
             foreach (var item in _infomatonBlock.Images)
             {
-                Image image = new Image(item,alt.Where(x => x.DisplayOrder == item.DisplayOrder).FirstOrDefault());
+                Image image = new Image(item,alt);
                 Images.Add(image);
             }
             foreach (var item in _infomatonBlock.paragraphs)
