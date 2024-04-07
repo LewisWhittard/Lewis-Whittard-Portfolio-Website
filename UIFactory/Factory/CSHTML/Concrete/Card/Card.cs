@@ -23,7 +23,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
         public Card(Infrastructure.Models.Data.Card.Card card, List<IJsonLDData> jsonLDData, List<IAltData> altData)
         {
             _card = card;
-            Image = new Image(_card.Image, altData);
+            Image = new Image(_card.Image, altData.Where(x => x.GUID == _card.GUID).FirstOrDefault());
             Title = _card.Title;
             Description = _card.Description;
             Navigation = _card.Navigation;

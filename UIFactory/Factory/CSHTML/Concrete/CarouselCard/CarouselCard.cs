@@ -1,4 +1,5 @@
-﻿using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt;
+using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
 using UIFactory.Factory.CSHTML.Concrete.CarouselCard.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
@@ -24,7 +25,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             _alt = alt;
             foreach (var item in _carouselCard.Cards)
             {
-                Cards.Add(new Card(item, _alt.Where(x => x.DisplayOrder == item.DisplayOrder).FirstOrDefault()));
+                Cards.Add(new Card(item, _alt.Where(x => x.GUID == item.GUID).FirstOrDefault()));
             }
             DisplayOrder = _carouselCard.DisplayOrder;
             UIType = UI.CarouselCard;

@@ -1,4 +1,5 @@
-﻿using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt;
+using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
 using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
@@ -25,7 +26,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
             _alt = alt;
             foreach (var item in _infomatonBlock.Images)
             {
-                Image image = new Image(item,alt);
+                Image image = new Image(item, _alt.Where(x => x.GUID == item.GUID).FirstOrDefault());
                 Images.Add(image);
             }
             foreach (var item in _infomatonBlock.paragraphs)

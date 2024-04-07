@@ -15,11 +15,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         private readonly IAltData _alt;
         public string GUID { get; set; }
 
-        public Image(Infrastructure.Models.Data.InfomationBlock.Image Image, List<IAltData> alt)
+        public Image(Infrastructure.Models.Data.InfomationBlock.Image Image,IAltData alt)
         {
             _image = Image;
             GUID = _image.GUID;
-            _alt = alt.Where(x => x.DataGUID == GUID).FirstOrDefault();
+            _alt = alt;
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
             Alt = _alt.Value;

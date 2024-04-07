@@ -17,10 +17,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        public Image(Infrastructure.Models.Data.Card.Image image, List<IAltData> altData)
+        public Image(Infrastructure.Models.Data.Card.Image image, IAltData altData)
         {
             _image = image;
-            _altData = altData.Where(x => x.DataGUID == GUID).FirstOrDefault();
+            _altData = altData;
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
             Alt = _altData.Value;
