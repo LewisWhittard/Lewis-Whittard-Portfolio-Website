@@ -1,4 +1,5 @@
-﻿using Infrastructure.Repository.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using Infrastructure.Repository.Interface;
 using Infrastructure.Service.Page.Interface;
 
 namespace Infrastructure.Service.Page
@@ -16,10 +17,15 @@ namespace Infrastructure.Service.Page
         {
             
         }
-
-        public Models.Data.Page.Page Get(string PageName)
+        
+        public Models.Data.Page.Page GetByPageName(string PageName)
         {
             return _pageRepository.GetByPageName(PageName);
+        }
+
+        public List<IData> GetByPageNameAsIDataList(string PageName)
+        {
+            return _pageRepository.GetByPageName(PageName).CreateIDataList();
         }
     }
 }

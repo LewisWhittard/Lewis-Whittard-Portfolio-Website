@@ -29,7 +29,7 @@ namespace UIFactory.Factory.CSHTML
         public List<IUI> CreateUIListByPageName(string PageName)
         {
             List<IUI> result = new List<IUI>();
-            var pageData = _pageService.Get(PageName).CreateIDataList();
+            var pageData = _pageService.GetByPageNameAsIDataList(PageName);
             foreach (var data in pageData)
             {
                 List<IJsonLDData> jsonLD = _jsonLDService.GetByPageName(PageName, data);
