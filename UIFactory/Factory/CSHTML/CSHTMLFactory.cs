@@ -32,8 +32,8 @@ namespace UIFactory.Factory.CSHTML
             var pageData = _pageService.GetByPageNameAsIDataList(PageName);
             foreach (var data in pageData)
             {
-                List<IJsonLDData> jsonLD = _jsonLDService.GetByPageName(PageName, data);
-                List<IAltData> alt = _altService.GetByPageName(PageName,data);
+                List<IJsonLDData> jsonLD = _jsonLDService.GetByPageNameAndSuperClassDataIdAndUIConcreteType(PageName, data);
+                List<IAltData> alt = _altService.GetByPageNameAndSuperClassDataIdAndUIConcreteType(PageName,data);
                 var uI = CreateUI(data, jsonLD, alt);
                 result.Add(uI);
             }

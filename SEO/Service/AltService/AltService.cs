@@ -11,7 +11,7 @@ namespace SEO.Service.AltService
             return new List<IAltData>();
         }
 
-        public List<IAltData> GetByPageName(string pageName, IData data)
+        public List<IAltData> GetByPageNameAndSuperClassDataIdAndUIConcreteType(string pageName, IData data)
         {
             return GetByPageName(pageName).Where(x => x.SuperClassDataId == data.Id && data.UIConcreteType == x.UIConcreteType).ToList();
         }

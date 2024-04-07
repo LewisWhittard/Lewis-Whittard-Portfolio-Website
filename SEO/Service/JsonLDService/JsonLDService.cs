@@ -6,7 +6,7 @@ namespace SEO.Service.JsonLDService
 {
     public class JsonLDService : IJsonLDService
     {
-        public List<IJsonLDData> GetByPageName(string pageName, IData data)
+        public List<IJsonLDData> GetByPageNameAndSuperClassDataIdAndUIConcreteType(string pageName, IData data)
         {
             return GetByPageName(pageName).Where(x => x.SuperClassDataId == data.Id && data.UIConcreteType == x.UIConcreteType).ToList();
         }
