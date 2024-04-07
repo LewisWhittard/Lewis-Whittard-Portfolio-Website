@@ -10,6 +10,6 @@ namespace SEO.Models.Alt
         public string Page { get; set; }
         public int DisplayOrder { get; set; }
         public string Value { get; set; }
-        public string DataGUID { get; set; }
+        public string GUID { get; set; }
     }
 }
