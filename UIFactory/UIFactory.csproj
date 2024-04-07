@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <Compile Remove="Factory\CSHTML\Interfaces\**" />
+    <Compile Remove="Factory\MAUIBlazor\**" />
     <EmbeddedResource Remove="Factory\CSHTML\Interfaces\**" />
+    <EmbeddedResource Remove="Factory\MAUIBlazor\**" />
     <None Remove="Factory\CSHTML\Interfaces\**" />
+    <None Remove="Factory\MAUIBlazor\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Factory\CSHTML\Interface\" />
-    <Folder Include="Factory\MAUIBlazor\Interface\" />
   </ItemGroup>
 
 </Project>
