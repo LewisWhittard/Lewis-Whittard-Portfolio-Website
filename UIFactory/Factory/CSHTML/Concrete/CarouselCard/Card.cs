@@ -15,6 +15,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
         public string Alt {  get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }
+        public int DisplayOrder { get; set; }
 
         private readonly Infrastructure.Models.Data.CarouselCard.Card _card;
         private readonly IAltData _alt;

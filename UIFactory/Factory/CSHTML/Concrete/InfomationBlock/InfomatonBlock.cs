@@ -1,6 +1,8 @@
-﻿using SEO.Models.Alt;
+﻿using Infrastructure.Models.Data.InfomationBlock;
+using SEO.Models.Alt;
 using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
+using System.Collections.Generic;
 using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
@@ -9,9 +11,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
 {
     public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD, IUI
     {
+        public Heading Heading { get; set; }
         public List<Image> Images { get; set; }
-        public List<Paragraph> paragraphs { get; set; }
-        public List<Heading> headings { get; set; }
+        public List<Paragraph> Paragraphs { get; set; }
+        public List<Heading> Headings { get; set; }
         public int DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
@@ -32,14 +35,35 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
             foreach (var item in _infomatonBlock.paragraphs)
             {
                 Paragraph paragraph = new Paragraph(item);
-                paragraphs.Add(paragraph);
+                Paragraphs.Add(paragraph);
             }
             foreach (var item in _infomatonBlock.headings)
             {
                 Heading heading = new Heading(item);
-            }
+				Headings.Add(heading);
+			}
             DisplayOrder = _infomatonBlock.Id;
             UIType = UI.InfomationBlock;
         }
-    }
+
+		public List<IUI> ReturnContentsAsListIUI()
+		{
+			List<IUI> value = new List<IUI>();
+
+            foreach (var item in Images)
+            {
+                value.Add(item);
+            }
+            foreach (var item in Paragraphs)
+			{
+				value.Add(item);
+			}
+            foreach (var item in Headings)
+			{
+				value.Add(item);
+			}
+
+			return value;
+		}
+	}
 }

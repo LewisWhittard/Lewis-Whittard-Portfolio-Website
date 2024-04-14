@@ -11,16 +11,18 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public int InfomationBlockid { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }
+        public int Level { get; set; }
 
-        public Infrastructure.Models.Data.InfomationBlock.Heading _header;
+        public Infrastructure.Models.Data.InfomationBlock.Heading _heading;
 
-        public Heading(Infrastructure.Models.Data.InfomationBlock.Heading header)
+        public Heading(Infrastructure.Models.Data.InfomationBlock.Heading heading)
         {
-            _header = header;
-            Text = _header.Text;
-            DisplayOrder = _header.DisplayOrder;
-            InfomationBlockid = _header.InfomationBlockid;
-            GUID = _header.GUID;
+            _heading = heading;
+            Text = _heading.Text;
+            DisplayOrder = _heading.DisplayOrder;
+            InfomationBlockid = _heading.InfomationBlockid;
+            GUID = _heading.GUID;
+            Level = _heading.Level;
         }
     }
 }
