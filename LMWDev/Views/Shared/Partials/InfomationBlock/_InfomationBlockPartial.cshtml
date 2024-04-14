@@ -18,6 +18,21 @@
             
             case UI.InfomationBlockHeading:
                 var heading = (Heading)item;
+                
+                @switch (heading.Level)
+                {
+                    case 1:
+                        <h1>@heading.Text</h1>
+                        break;
+                    case 2:
+                        <h2>@heading.Text</h2>
+                        break;
+                        default:
+                        throw new InvalidOperationException("Unsupported heading Level");
+
+                        break;
+                }
+
                 <h1>@heading.Text</h1>
                 break;
 
@@ -26,8 +41,10 @@
                 <p>@paragraph.Text</p>
                 break;
 
-            
-        }
+            default:
+                throw new InvalidOperationException("Unsupported UI Type");
+                break;
+            }
     }
 
 </div>

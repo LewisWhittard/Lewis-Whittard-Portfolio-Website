@@ -1,8 +1,5 @@
-﻿using Infrastructure.Models.Data.InfomationBlock;
-using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
-using System.Collections.Generic;
 using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
