@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace SEO.Models.Meta.Interface
+﻿namespace SEO.Models.Meta.Interface
 {
     public interface IMetaData
     {
