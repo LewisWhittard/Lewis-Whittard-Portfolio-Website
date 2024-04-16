@@ -2,7 +2,7 @@
 
 namespace SEO.Models.Meta.Interface
 {
-    public interface IMeta
+    public interface IMetaData
     {
         public int Id { get; set; }
         public Name Name { get; set; }

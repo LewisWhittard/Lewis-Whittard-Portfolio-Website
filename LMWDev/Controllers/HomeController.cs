@@ -22,7 +22,7 @@ namespace LMWDev.Controllers
         public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
-			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(), new JsonLDService(), new AltService()));
+			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(), new JsonLDService(), new AltService(), new MetaService()));
         }
 
 		public IActionResult Index()

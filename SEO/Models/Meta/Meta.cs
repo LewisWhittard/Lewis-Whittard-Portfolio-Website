@@ -2,7 +2,7 @@
 
 namespace SEO.Models.Meta.Interface
 {
-    public class Meta : IMeta, IData
+    public class MetaData : IMetaData, IData
     {
         public int Id { get; set; }
         public Name Name { get; set; }

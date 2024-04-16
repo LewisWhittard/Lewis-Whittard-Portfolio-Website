@@ -10,6 +10,8 @@ using Infrastructure.Service.Page.Interface;
 using SEO.Service.JsonLDService.Interface;
 using SEO.Service.AltService.Interface;
 using SEO.Models.Alt.Interface;
+using SEO.Service.MetaService.Interface;
+using SEO.Models.Meta.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
@@ -18,12 +20,14 @@ namespace UIFactory.Factory.CSHTML
         private readonly IPageService _pageService;
         private readonly IJsonLDService _jsonLDService;
         private readonly IAltService _altService;
+        private readonly IMetaService _metaService;
 
-        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService, IAltService altService)
+        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService, IAltService altService, IMetaService metaService)
         {
             _pageService = pageService;
             _jsonLDService = jsonLDService;
             _altService = altService;
+            _metaService = metaService;
         }
 
         public List<IUI> CreateUIListByPageName(string PageName)
@@ -34,13 +38,14 @@ namespace UIFactory.Factory.CSHTML
             {
                 List<IJsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data);
                 List<IAltData> alt = _altService.GetBySuperClassGUID(data);
-                var uI = CreateUI(data, jsonLD, alt);
+                List<IMetaData> meta = _metaService.GetBySuperClassGUID(data);
+                var uI = CreateUI(data, jsonLD, alt, meta);
                 result.Add(uI);
             }
             return result;
         }
 
-        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData,List<IAltData> altData)
+        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData,List<IAltData> altData, List<IMetaData> meta)
         {
             switch (data.UIConcreteType)
             {
