@@ -34,11 +34,11 @@ namespace UIFactory.Factory.CSHTML
         {
             List<IUI> result = new List<IUI>();
             var pageData = _pageService.GetByPageNameAsIDataList(PageName);
+            List<IMetaData> meta = _metaService.GetByPageName(PageName);
             foreach (var data in pageData)
             {
                 List<IJsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data);
                 List<IAltData> alt = _altService.GetBySuperClassGUID(data);
-                List<IMetaData> meta = _metaService.GetBySuperClassGUID(data);
                 var uI = CreateUI(data, jsonLD, alt, meta);
                 result.Add(uI);
             }

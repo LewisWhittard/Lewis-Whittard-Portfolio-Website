@@ -7,9 +7,9 @@ namespace SEO.Service.JsonLDService
 {
     public class MetaService : IMetaService
     {
-        public List<IMeta> GetBySuperClassGUID(IData data)
+        public List<IMetaData> GetByPageName(IData data)
         {
-            return new List<IMeta>();
+            return new List<IMetaData>();
         }
     }
 }

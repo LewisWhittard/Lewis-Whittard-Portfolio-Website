@@ -5,6 +5,6 @@ namespace SEO.Service.MetaService.Interface
 {
     public interface IMetaService
     {
-        public List<IMeta> GetBySuperClassGUID(IData data);
+        public List<IMetaData> GetByPageName(string data);
     }
 }
