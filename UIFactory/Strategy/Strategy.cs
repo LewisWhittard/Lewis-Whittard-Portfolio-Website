@@ -19,7 +19,7 @@ namespace UIFactory.Strategy
 
         public List<IUI> ExecuteByPageName(string PageName)
         {
-            return _strategy.CreateUIListByPageName(PageName);
+            return (List<IUI>)_strategy.CreateUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
         }
     }
 }

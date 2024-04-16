@@ -1,4 +1,5 @@
-﻿using Infrastructure.Service.Page;
+﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using Infrastructure.Service.Page;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -6,6 +7,7 @@ using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using UIFactory.Factory.CSHTML;
 using UIFactory.Factory.Interface;
 using UIFactory.Strategy;
@@ -25,7 +27,7 @@ namespace LMWDev.Controllers
 
 		public IActionResult Index()
 		{
-			List<IUI> uIs = _uIFactoryStrategy.ExecuteByPageName("HomePage");
+			List<IUI> uIs = (List<IUI>)_uIFactoryStrategy.ExecuteByPageName("HomePage");
 			HomeModel ViewModel = new HomeModel(false,uIs);
 			return View(ViewModel);
 		}
