@@ -8,7 +8,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
     public class Image : IImage, IUI
     {
         public string Source { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public string alt { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

@@ -12,7 +12,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public List<Image> Images { get; set; }
         public List<Paragraph> Paragraphs { get; set; }
         public List<Heading> Headings { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

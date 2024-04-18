@@ -8,7 +8,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
     public class Image : IImage, ICSHTML, IUI
     {
         public string Source { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public UI? UIType { get; set; }
         public string Alt { get; set; } 
         private readonly Infrastructure.Models.Data.InfomationBlock.Image _image;

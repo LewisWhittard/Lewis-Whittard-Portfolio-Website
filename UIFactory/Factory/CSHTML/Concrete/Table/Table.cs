@@ -9,7 +9,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
         public string Title { get; set; }
         public List<Header> Headers { get; set; }
         public List<List<Column>> Columns { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

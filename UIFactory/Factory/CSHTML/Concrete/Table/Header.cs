@@ -6,7 +6,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
 {
     public class Header : ICSHTML, IHeader, IUI
     {
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
         public UI? UIType { get; set; }

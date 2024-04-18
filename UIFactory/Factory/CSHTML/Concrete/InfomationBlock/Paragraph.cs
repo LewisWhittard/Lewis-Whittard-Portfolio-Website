@@ -7,7 +7,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
     public class Paragraph : IParagraph, ICSHTML, IUI
     {
         public string Text { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public int InfomationBlockid { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

@@ -10,7 +10,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
     public class Carousel : ICarousel, ICSHTML, IJsonLD, IUI
     {
         public List<Image> Images { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

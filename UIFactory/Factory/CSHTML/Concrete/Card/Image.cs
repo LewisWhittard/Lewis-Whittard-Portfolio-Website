@@ -10,7 +10,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
     public class Image : IImage , IUI
     {
         public string Source { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         private readonly Infrastructure.Models.Data.Card.Image _image;
         private readonly IAltData _altData;
         public string Alt {  get; set; }

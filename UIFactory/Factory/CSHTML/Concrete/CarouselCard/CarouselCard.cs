@@ -1,5 +1,4 @@
-﻿using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
 using UIFactory.Factory.CSHTML.Concrete.CarouselCard.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
@@ -10,7 +9,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
     public class CarouselCard : ICarouselCard, ICSHTML, IJsonLD, IUI
     {
         public List<Card> Cards { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public List<string> JsonLDValues { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }
@@ -27,9 +26,29 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             {
                 Cards.Add(new Card(item, _alt.Where(x => x.GUID == item.GUID).FirstOrDefault()));
             }
+
+            int cardCount = Cards.Count();
+            if (cardCount < 9) 
+            {
+                List<Card> cards = PopulateBlankCards(cardCount);
+            }
+
             DisplayOrder = _carouselCard.DisplayOrder;
             UIType = UI.CarouselCard;
             GUID = _carouselCard.GUID;
+        }
+
+        private List<Card> PopulateBlankCards(int cardCount)
+        {
+            List<Card> blankCards = new List<Card>();
+            int cardsRequired = 9 - cardCount;
+
+            for (int i = 0; i < cardsRequired; i++)
+            {
+                Card card = new Card();
+            }
+
+            return null;
         }
     }
 }

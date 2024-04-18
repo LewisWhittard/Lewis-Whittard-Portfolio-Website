@@ -7,7 +7,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
     public class Column : IColumn, ICSHTML, IUI
     {
         public string Value { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public int TableID { get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }

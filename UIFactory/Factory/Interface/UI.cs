@@ -6,6 +6,6 @@ namespace UIFactory.Factory.Interface
     {
         public UI? UIType { get; set; }
         public string GUID { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
     }
 }
