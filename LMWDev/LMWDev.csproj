@@ -26,8 +26,4 @@
     <ProjectReference Include="..\UIFactory\UIFactory.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Shared\Partials\CarouselCard\" />
-  </ItemGroup>
-
 </Project>
