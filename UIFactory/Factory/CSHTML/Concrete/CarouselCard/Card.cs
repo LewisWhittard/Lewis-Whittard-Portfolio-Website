@@ -28,6 +28,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             Description = _card.Description;
             Navigation = _card.Navigation;
             GUID = _card.GUID;
+            Alt = _alt.Value;
         }
 
         public Card()
@@ -35,7 +36,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             Image = new Image();
             Title = "";
             Description = "";
-            Navigation = "NoPagePlaceHolder";
+            Navigation = "";
             Alt = "";
         }
     }

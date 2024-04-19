@@ -46,9 +46,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             for (int i = 0; i < cardsRequired; i++)
             {
                 Card card = new Card();
+                blankCards.Add(card);
             }
-
-            return null;
+            
+            return blankCards;
         }
     }
 }
