@@ -4,19 +4,22 @@
 
 <div id="@Model.GUID" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        @foreach (var item in Model.Cards)
+        @foreach (var row in Model.ReturnCardsAsRows())
         {
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="~/Images/@Model.Image" id="@Model.Image.GUID" name="@Model.Image.GUID" alt="@Model.Image.Alt">
-                <div class="card-body">
-                    <h5 class="card-title">@Model.Title</h5>
-                    <p class="card-text">@Model.Description</p>
-                    <form method="get">
-                        <input type="hidden" id="PostId" name="Id" value="@Model.GUID">
-                        <button class="btn btn-primary" type="submit" id="@Model.Navigation" asp-action="Index" asp-controller="PortfolioPiece"> View </button>
-                    </form>
+            @foreach (var card in row)
+            {
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/@card.Image" id="@card.Image.GUID" name="@card.Image.GUID" alt="@card.Image.Alt">
+                    <div class="card-body">
+                        <h5 class="card-title">@card.Title</h5>
+                        <p class="card-text">@card.Description</p>
+                        <form method="get">
+                            <input type="hidden" id="PostId" name="Id" value="@card.GUID">
+                            <button class="btn btn-primary" type="submit" id="@card.Navigation" asp-action="Index" asp-controller="PortfolioPiece"> View </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            }
         }
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
