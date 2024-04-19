@@ -3,11 +3,11 @@ using UIFactory.Strategy.Interface;
 
 namespace UIFactory.Strategy
 {
-    public class Strategy : IStrategy
+    public class UIFactoryStrategy : IUIFactoryStrategy
     {
         public IUIFactory _strategy { get; set; }
 
-        public Strategy(IUIFactory UIFactory)
+        public UIFactoryStrategy(IUIFactory UIFactory)
         {
             _strategy = UIFactory;
         }
@@ -19,7 +19,7 @@ namespace UIFactory.Strategy
 
         public List<IUI> ExecuteByPageName(string PageName)
         {
-            return _strategy.CreateUIListByPageName(PageName);
+            return (List<IUI>)_strategy.CreateUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
         }
     }
 }

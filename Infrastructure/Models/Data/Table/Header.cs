@@ -12,6 +12,7 @@ namespace Infrastructure.Models.Data.Table
         public int DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string Value { get; set; }
+        public string GUID { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 

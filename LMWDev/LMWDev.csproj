@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <StartupObject></StartupObject>
     <Nullable>disable</Nullable>
     <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
@@ -20,6 +20,10 @@
 
   <ItemGroup>
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UIFactory\UIFactory.csproj" />
   </ItemGroup>
 
 </Project>

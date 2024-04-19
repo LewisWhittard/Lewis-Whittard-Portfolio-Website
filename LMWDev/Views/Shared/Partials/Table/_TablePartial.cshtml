@@ -1,0 +1,27 @@
+﻿@using System.Data
+@using UIFactory.Factory.CSHTML.Concrete.Table
+@model Table
+
+<h2>@Model.Title</h2>
+<table class="table">
+	<thead>
+		<tr>
+			@foreach (var item in Model.Headers)
+			{
+				<th scope="col">@item.Value</th>
+			}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var row in Model.Columns)
+		{
+			<tr>
+				@foreach (var column in row)
+				{
+					<td>@column.Value</td>
+				}
+			</tr>
+		}
+	</tbody>
+</table>
+

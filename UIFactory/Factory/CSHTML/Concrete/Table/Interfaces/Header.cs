@@ -10,6 +10,5 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table.Interfaces
     {
         public int TableID { get; set; }
         public string Value { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }

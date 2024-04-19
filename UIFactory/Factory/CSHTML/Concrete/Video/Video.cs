@@ -9,12 +9,14 @@ namespace UIFactory.Factory.CSHTML.Concrete.Video
         public string Title { get; set; }
         public string Description { get; set; }
         public string Navigation { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public string Source { get; set; }
         public UI? UIType { get; set; }
-        private readonly Infrastructure.Models.Data.Video.Interfaces.IVideo _video;
+        public string GUID { get; set; }
 
-        public Video(Infrastructure.Models.Data.Video.Interfaces.IVideo video)
+        private readonly Infrastructure.Models.Data.Video.Video _video;
+
+        public Video(Infrastructure.Models.Data.Video.Video video)
         {
             _video = video;
             Title = _video.Title;
@@ -23,6 +25,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.Video
             DisplayOrder = _video.DisplayOrder;
             Source = _video.Source;
             UIType = UI.Video;
+            GUID = _video.GUID;
         }
     }
 }

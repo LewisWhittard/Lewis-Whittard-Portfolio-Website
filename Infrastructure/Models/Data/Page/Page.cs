@@ -12,6 +12,7 @@ namespace Infrastructure.Models.Data.Page
         public List<CarouselCard.Card> CarouselCards { get; set; }
         public List<InfomationBlock.InfomatonBlock> InfomationBlocks { get; set; }
         public List<Table.Table> Tables { get; set; }
+        public string GUID { get; set; }
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }

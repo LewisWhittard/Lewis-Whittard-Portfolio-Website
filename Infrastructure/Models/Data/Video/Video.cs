@@ -15,6 +15,7 @@ namespace Infrastructure.Models.Data.Video
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public int DisplayOrder { get; set; }
+        public string GUID { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 

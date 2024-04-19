@@ -12,8 +12,8 @@ namespace Infrastructure.Models.Data.Table
         public bool Inactive { get; set; }
         public string Value { get; set; }
         public int DisplayOrder { get; set; }
-        public int RowID { get; set; }
         public int TableID { get; set; }
+        public string GUID { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
@@ -29,7 +29,6 @@ namespace Infrastructure.Models.Data.Table
             Inactive = inactive;
             Value = value;
             DisplayOrder = displayOrder;
-            RowID = rowID;
             TableID = tableID;
         }
     }

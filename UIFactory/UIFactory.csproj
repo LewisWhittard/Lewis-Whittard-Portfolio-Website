@@ -8,18 +8,19 @@
 
   <ItemGroup>
     <Compile Remove="Factory\CSHTML\Interfaces\**" />
+    <Compile Remove="Factory\CSHTML\Interface\**" />
+    <Compile Remove="Factory\MAUIBlazor\**" />
     <EmbeddedResource Remove="Factory\CSHTML\Interfaces\**" />
+    <EmbeddedResource Remove="Factory\CSHTML\Interface\**" />
+    <EmbeddedResource Remove="Factory\MAUIBlazor\**" />
     <None Remove="Factory\CSHTML\Interfaces\**" />
+    <None Remove="Factory\CSHTML\Interface\**" />
+    <None Remove="Factory\MAUIBlazor\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\SEO\SEO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Factory\CSHTML\Interface\" />
-    <Folder Include="Factory\MAUIBlazor\Interface\" />
   </ItemGroup>
 
 </Project>

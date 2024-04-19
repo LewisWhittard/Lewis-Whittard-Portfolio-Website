@@ -5,8 +5,7 @@ namespace SEO.Service.JsonLDService.Interface
 {
     public interface IJsonLDService
     {
-        public List<IJsonLDData> GetByPageName(string pageName);
-        public List<IJsonLDData> GetByPageName(string pageName, IData data);
+        public List<IJsonLDData> GetBySuperClassGUID(IData data);
 
     }
 }
