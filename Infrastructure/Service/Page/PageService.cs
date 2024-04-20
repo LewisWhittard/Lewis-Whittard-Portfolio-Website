@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Repository.Interface;
+using Infrastructure.Repository.Page;
+using Infrastructure.Repository.Page.Interface;
 using Infrastructure.Service.Page.Interface;
 
 namespace Infrastructure.Service.Page
@@ -11,11 +12,6 @@ namespace Infrastructure.Service.Page
         public PageService(IPageRepository pageRepository)
         {
             _pageRepository = pageRepository;
-        }
-
-        public PageService()
-        {
-            
         }
         
         public Models.Data.Page.Page GetByPageName(string PageName)

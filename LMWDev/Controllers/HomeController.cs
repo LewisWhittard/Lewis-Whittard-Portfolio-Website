@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+﻿using Infrastructure.Repository.Page;
 using Infrastructure.Service.Page;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,6 @@ using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using UIFactory.Factory.CSHTML;
 using UIFactory.Factory.Interface;
 using UIFactory.Strategy;
@@ -22,7 +21,7 @@ namespace LMWDev.Controllers
         public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
-			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(), new JsonLDService(), new AltService(), new MetaService()));
+			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(new MockPageRepository()), new JsonLDService(), new AltService(), new MetaService()));
         }
 
 		public IActionResult Index()
