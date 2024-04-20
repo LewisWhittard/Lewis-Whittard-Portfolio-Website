@@ -1,5 +1,4 @@
-﻿using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
 using UIFactory.Factory.CSHTML.Concrete.Carousel.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;

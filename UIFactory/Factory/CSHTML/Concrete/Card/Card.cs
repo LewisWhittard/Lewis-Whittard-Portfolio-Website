@@ -1,7 +1,5 @@
-﻿using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
-using SEO.Service.AltService.Interface;
 using UIFactory.Factory.CSHTML.Concrete.Card.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;

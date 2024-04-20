@@ -1,6 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.Card;
-
-namespace UIFactory.Factory.CSHTML.Concrete.Card.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.Card.Interfaces
 {
     public interface ICard
     {

@@ -1,6 +1,4 @@
-﻿using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
-using System.Net;
+﻿using SEO.Models.Alt.Interface;
 using UIFactory.Factory.CSHTML.Concrete.Card.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
