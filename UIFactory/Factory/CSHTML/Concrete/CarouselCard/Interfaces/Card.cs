@@ -1,6 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.CarouselCard;
-
-namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard.Interfaces
 {
     public interface ICard
     {

@@ -1,6 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.Table;
-
-namespace UIFactory.Factory.CSHTML.Concrete.Table.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.Table.Interfaces
 {
     public interface ITable
     {

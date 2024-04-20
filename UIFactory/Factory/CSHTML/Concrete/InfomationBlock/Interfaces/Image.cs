@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces
 {
     public interface IImage
     {

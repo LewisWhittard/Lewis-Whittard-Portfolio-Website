@@ -1,6 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.Carousel;
-
-namespace UIFactory.Factory.CSHTML.Concrete.Carousel.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.Carousel.Interfaces
 {
     public interface ICarousel
     {

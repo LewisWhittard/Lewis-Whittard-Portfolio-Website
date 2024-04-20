@@ -1,5 +1,4 @@
-﻿using UIFactory.Factory.CSHTML.Concrete.InfomationBlock;
-using UIFactory.Factory.Interface;
+﻿using UIFactory.Factory.Interface;
 
 namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces
 {
