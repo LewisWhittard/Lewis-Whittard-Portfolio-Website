@@ -15,9 +15,14 @@ namespace Infrastructure.Models.Data.InfomationBlock
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
-        public Image()
+        public Image(string source,int displayOrder, int iD, bool deleted, bool inactive,string gUID )
         {
-            
+            Source = source;
+            DisplayOrder = displayOrder;
+            Id = iD;
+            Deleted = deleted;
+            Inactive = inactive;
+            GUID = gUID;
         }
     }
 }

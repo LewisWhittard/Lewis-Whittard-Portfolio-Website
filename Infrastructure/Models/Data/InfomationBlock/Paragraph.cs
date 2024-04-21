@@ -17,7 +17,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
-        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId)
+        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId, string gUID)
         {
             Text = text;
             DisplayOrder = displayOrder;
@@ -25,6 +25,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
             Deleted = deleted;
             Inactive = inactive;
             InfomationBlockid = infomationBlockId;
+            GUID = gUID;
         }
 
         public Paragraph()

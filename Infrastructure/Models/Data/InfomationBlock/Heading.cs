@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
             
         }
 
-        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid)
+        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid,string gUID, int level)
         {
             Id = id;
             Deleted = deleted;
@@ -30,7 +30,8 @@ namespace Infrastructure.Models.Data.InfomationBlock
             Text = text;
             DisplayOrder = displayOrder;
             InfomationBlockid = infomationBlockid;
-
+            GUID = gUID;
+            Level = level;
         }
     }
 }

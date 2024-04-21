@@ -24,6 +24,11 @@ namespace Infrastructure.Models.Data.Page
             
         }
 
+        public Page()
+        {
+            
+        }
+
         public List<IData> CreateIDataList()
         {
             List<IData> result = new List<IData>();
