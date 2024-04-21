@@ -15,7 +15,11 @@ namespace Infrastructure.Repository.Page
             List<Paragraph> paragraphs = new List<Paragraph>() { paragraph,paragraph2 };
             List<Image> images = new List<Image> { image };
             InfomatonBlock infomationBLock = new InfomatonBlock(0,false,false,images,paragraphs,headings,0,"HomePageInfomationBlock0");
-            Models.Data.Page.Page page = new Models.Data.Page.Page();
+            List<InfomatonBlock> infomationBLocks =  new List<InfomatonBlock> { infomationBLock };
+            
+            
+            
+            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null,null,infomationBLocks,null,"HomePage",0,false,false);
         }
 
         public 
