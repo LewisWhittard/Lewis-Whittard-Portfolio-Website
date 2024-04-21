@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.Table
             
         }
 
-        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string webpage, string gUID)
+        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string webpage, string gUID, string title)
         {
             Id = id;
             Deleted = deleted;
@@ -31,6 +31,7 @@ namespace Infrastructure.Models.Data.Table
             Columns = columns;
             UIConcreteType = UIConcrete.Table;
             GUID = gUID;
+            Title = title;
         }
     }
 }

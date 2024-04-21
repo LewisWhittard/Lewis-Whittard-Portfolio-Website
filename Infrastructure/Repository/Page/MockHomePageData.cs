@@ -18,23 +18,23 @@ namespace Infrastructure.Repository.Page
             InfomatonBlock infomationBLock = new InfomatonBlock(0,false,false,images,paragraphs,headings,0,"HomePageInfomationBlock0");
             List<InfomatonBlock> infomationBLocks =  new List<InfomatonBlock> { infomationBLock };
 
-            Header header0 = new Header(0,false,false,0,0, "Qualification", "HomePageTable0Header0");
-            Header header1 = new Header(1,false,false,1,0, "Result", "HomePageTable0Header1");
-            Header header2 = new Header(2, false, false, 2, 0, "Year", "HomePageTable0Header2");
+            Header header00 = new Header(0,false,false,0,0, "Qualification", "HomePageTable0Header0");
+            Header header01 = new Header(1,false,false,1,0, "Result", "HomePageTable0Header1");
+            Header header02 = new Header(2, false, false, 2, 0, "Year", "HomePageTable0Header2");
 
-            Column column0 = new Column(0,false,false, "Software Development Technician Level 3", 0,0,0, "HomePageTable0Column0");
-            Column column1 = new Column(1, false, false, "Pass", 1, 0, 0, "HomePageTable0Column1");
-            Column column2 = new Column(2, false, false, "2020", 2, 0, 0, "HomePageTable0Column2");
-            Column column3 = new Column(3, false, false, "BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)", 0, 1, 0, "HomePageTable0Column3");
-            Column column4 = new Column(4, false, false, "Merit, Merit, Pass", 1, 1, 0, "HomePageTable0Column4");
-            Column column5 = new Column(5, false, false, "2016", 2, 1, 0, "HomePageTable0Column5");
-            List<Header> headers0 = new List<Header>() { header0,header1,header2 };
-            List<List<Column>> columns0 = new List<List<Column>>()
+            Column column00 = new Column(0,false,false, "Software Development Technician Level 3", 0,0,0, "HomePageTable0Column0");
+            Column column01 = new Column(1, false, false, "Pass", 1, 0, 0, "HomePageTable0Column1");
+            Column column02 = new Column(2, false, false, "2020", 2, 0, 0, "HomePageTable0Column2");
+            Column column03 = new Column(3, false, false, "BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)", 0, 1, 0, "HomePageTable0Column3");
+            Column column04 = new Column(4, false, false, "Merit, Merit, Pass", 1, 1, 0, "HomePageTable0Column4");
+            Column column05 = new Column(5, false, false, "2016", 2, 1, 0, "HomePageTable0Column5");
+            List<Header> headers00 = new List<Header>() { header00,header01,header02 };
+            List<List<Column>> columns00 = new List<List<Column>>()
             {
-                new List<Column>() { column0, column1, column2 },
-                new List<Column>() { column3, column4, column5 }
+                new List<Column>() { column00, column01, column02 },
+                new List<Column>() { column03, column04, column05 }
             };
-            Table table1 = new Table(0,false,false,1,headers0,columns0,"HomePage","HomePageTable0");
+            Table table1 = new Table(0,false,false,1,headers00,columns00,"HomePage","HomePageTable0", "Qualifications");
 
             List<Table> tables = new List<Table>()
             {
