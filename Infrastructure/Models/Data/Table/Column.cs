@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.Table
 
         }
 
-        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID)
+        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID, string gUID)
         {
             Id = id;
             Deleted = deleted;
@@ -30,6 +30,7 @@ namespace Infrastructure.Models.Data.Table
             Value = value;
             DisplayOrder = displayOrder;
             TableID = tableID;
+            GUID = gUID;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Infrastructure.Models.Data.Table
 
         }
 
-        public Header(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value)
+        public Header(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value, string gUID)
         {
             Id = id;
             Deleted = deleted;
@@ -29,6 +29,7 @@ namespace Infrastructure.Models.Data.Table
             DisplayOrder = displayOrder;
             TableID = tableID;
             Value = value;
+            GUID = gUID;
         }
     }
 }
