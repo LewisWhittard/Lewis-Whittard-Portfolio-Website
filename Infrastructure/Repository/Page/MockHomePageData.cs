@@ -35,10 +35,12 @@ namespace Infrastructure.Repository.Page
                 new List<Column>() { column03, column04, column05 }
             };
 
+            Table table0 = new Table(0, false, false, 1, headers0, columns0, "HomePage", "HomePageTable0", "Certifications");
+
+
             Header header10 = new Header(3, false, false, 0, 1, "Certification", "HomePageTable1Header0");
             Header header11 = new Header(4, false, false, 1, 1, "Result", "HomePageTable1Header1");
             Header header12 = new Header(5, false, false, 2, 1, "Year", "HomePageTable1Header2");
-
             Column column10 = new Column(6, false, false, "ISTQB® Certified Tester, Foundation Level (4.0)", 0, 0, 1, "HomePageTable1Column0");
             Column column11 = new Column(7, false, false, "Pass", 1, 0, 1, "HomePageTable1Column1");
             Column column12 = new Column(8, false, false, "2024", 2, 0, 1, "HomePageTable1Column2");
@@ -55,17 +57,14 @@ namespace Infrastructure.Repository.Page
                 new List<Column>() { column13, column14, column15 },
                 new List<Column>() { column16, column17, column18 }
             };
-
             Table table1 = new Table(0,false,false,1,headers1,columns1,"HomePage","HomePageTable0", "Certifications");
-
             List<Table> tables = new List<Table>()
             {
+                table0,
                 table1
             };
 
-            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null,null,infomationBLocks,null,"HomePage",0,false,false);
+            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null,null,infomationBLocks,tables,"HomePage",0,false,false);
         }
-
-        public 
     }
 }
