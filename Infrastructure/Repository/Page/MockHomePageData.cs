@@ -50,7 +50,7 @@ namespace Infrastructure.Repository.Page
             Column column16 = new Column(12, false, false, "BCS Level 3 Certificate in Software Development Context and Methodologies (603/1191/5)", 0, 2, 1, "HomePageTable1Column6");
             Column column17 = new Column(13, false, false, "Pass", 1, 2, 1, "HomePageTable1Column7");
             Column column18 = new Column(14, false, false, "2019", 2, 2, 1, "HomePageTable1Column8");
-            List<Header> headers1 = new List<Header>() { header00, header01, header02 };
+            List<Header> headers1 = new List<Header>() { header10, header11, header12 };
             List<List<Column>> columns1 = new List<List<Column>>()
             {
                 new List<Column>() { column10, column11, column12 },
