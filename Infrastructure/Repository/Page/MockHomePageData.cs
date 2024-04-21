@@ -28,13 +28,13 @@ namespace Infrastructure.Repository.Page
             Column column03 = new Column(3, false, false, "BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)", 0, 1, 0, "HomePageTable0Column3");
             Column column04 = new Column(4, false, false, "Merit, Merit, Pass", 1, 1, 0, "HomePageTable0Column4");
             Column column05 = new Column(5, false, false, "2016", 2, 1, 0, "HomePageTable0Column5");
-            List<Header> headers00 = new List<Header>() { header00,header01,header02 };
-            List<List<Column>> columns00 = new List<List<Column>>()
+            List<Header> headers0 = new List<Header>() { header00,header01,header02 };
+            List<List<Column>> columns0 = new List<List<Column>>()
             {
                 new List<Column>() { column00, column01, column02 },
                 new List<Column>() { column03, column04, column05 }
             };
-            Table table1 = new Table(0,false,false,1,headers00,columns00,"HomePage","HomePageTable0", "Qualifications");
+            Table table1 = new Table(0,false,false,1,headers0,columns0,"HomePage","HomePageTable0", "Qualifications");
 
             List<Table> tables = new List<Table>()
             {
