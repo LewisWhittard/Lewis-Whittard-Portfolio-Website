@@ -1,8 +1,9 @@
-﻿using Infrastructure.Models.Data.CarouselCard.Interfaces;
-using Infrastructure.Models.Data.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using Infrastructure.Models.Data.Shared.Card.Interfaces;
+using Infrastructure.Models.Data.Shared.Image.Interfaces;
 using System.Text.Json.Serialization;
 
-namespace Infrastructure.Models.Data.CarouselCard
+namespace Infrastructure.Models.Data.Shared.Image
 {
     public class Image : IImage, IData
     {
@@ -17,7 +18,7 @@ namespace Infrastructure.Models.Data.CarouselCard
 
         public Image()
         {
-            
+
         }
     }
 }

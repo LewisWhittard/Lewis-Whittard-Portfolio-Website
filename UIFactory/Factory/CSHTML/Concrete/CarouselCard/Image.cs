@@ -12,10 +12,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
         public string GUID { get; set; }
         public string Alt { get; set; }
 
-        private readonly Infrastructure.Models.Data.CarouselCard.Image _image;
+        private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
 
 
-        public Image(Infrastructure.Models.Data.CarouselCard.Image image)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image image)
         {
             _image = image;
             Source = _image.Source;

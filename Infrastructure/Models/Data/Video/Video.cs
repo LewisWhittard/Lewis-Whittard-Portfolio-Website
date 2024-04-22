@@ -1,5 +1,4 @@
-﻿using Infrastructure.Models.Data.Card.Interface;
-using Infrastructure.Models.Data.Interface;
+﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Video.Interfaces;
 using System.Text.Json.Serialization;
 

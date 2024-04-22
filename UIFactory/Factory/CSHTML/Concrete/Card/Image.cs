@@ -9,13 +9,13 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
     {
         public string Source { get; set; }
         public int? DisplayOrder { get; set; }
-        private readonly Infrastructure.Models.Data.Card.Image _image;
+        private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
         private readonly IAltData _altData;
         public string Alt {  get; set; }
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        public Image(Infrastructure.Models.Data.Card.Image image, IAltData altData)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image image, IAltData altData)
         {
             _image = image;
             _altData = altData;

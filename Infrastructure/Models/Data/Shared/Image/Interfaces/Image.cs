@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Models.Data.CarouselCard.Interfaces
+﻿namespace Infrastructure.Models.Data.Shared.Image.Interfaces
 {
     public interface IImage
     {

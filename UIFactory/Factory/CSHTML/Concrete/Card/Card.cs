@@ -16,9 +16,9 @@ namespace UIFactory.Factory.CSHTML.Concrete.Card
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        private readonly Infrastructure.Models.Data.Card.Card _card;
+        private readonly Infrastructure.Models.Data.Shared.Card.Card _card;
 
-        public Card(Infrastructure.Models.Data.Card.Card card, List<IJsonLDData> jsonLDData, List<IAltData> altData)
+        public Card(Infrastructure.Models.Data.Shared.Card.Card card, List<IJsonLDData> jsonLDData, List<IAltData> altData)
         {
             _card = card;
             Image = new Image(_card.Image, altData.Where(x => x.GUID == _card.GUID).FirstOrDefault());

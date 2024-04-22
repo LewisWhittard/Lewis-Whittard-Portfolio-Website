@@ -50,7 +50,7 @@ namespace UIFactory.Factory.CSHTML
             switch (data.UIConcreteType)
             {
                 case UIConcrete.Card:
-                    var card = (Infrastructure.Models.Data.Card.Card)data;
+                    var card = (Infrastructure.Models.Data.Shared.Card.Card)data;
                     return new Concrete.Card.Card(card, jsonLDData, altData);
                 case UIConcrete.Carousel:
                     var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;

@@ -9,7 +9,7 @@ namespace Infrastructure.Models.Data.CarouselCard
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public List<Card> Cards { get; set; }
+        public List<Shared.Card.Card> Cards { get; set; }
         public int DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }

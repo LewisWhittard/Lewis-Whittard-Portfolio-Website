@@ -16,10 +16,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
         public string GUID { get; set; }
         public int? DisplayOrder { get; set; }
 
-        private readonly Infrastructure.Models.Data.CarouselCard.Card _card;
+        private readonly Infrastructure.Models.Data.Shared.Card.Card _card;
         private readonly IAltData _alt;
 
-        public Card(Infrastructure.Models.Data.CarouselCard.Card card, IAltData alt)
+        public Card(Infrastructure.Models.Data.Shared.Card.Card card, IAltData alt)
         {
             _card = card;
             _alt = alt;

@@ -29,12 +29,12 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
                 Image image = new Image(item, _alt.Where(x => x.GUID == item.GUID).FirstOrDefault());
                 Images.Add(image);
             }
-            foreach (var item in _infomatonBlock.paragraphs)
+            foreach (var item in _infomatonBlock.Paragraphs)
             {
                 Paragraph paragraph = new Paragraph(item);
                 Paragraphs.Add(paragraph);
             }
-            foreach (var item in _infomatonBlock.headings)
+            foreach (var item in _infomatonBlock.Headings)
             {
                 Heading heading = new Heading(item);
 				Headings.Add(heading);
