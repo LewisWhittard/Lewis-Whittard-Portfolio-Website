@@ -13,10 +13,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        private readonly Infrastructure.Models.Data.Carousel.Image _image;
+        private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
         private readonly IAltData _alt;
 
-        public Image(Infrastructure.Models.Data.Carousel.Image image, IAltData altData)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image image, IAltData altData)
         {
             _image = image;
             _alt = altData;
