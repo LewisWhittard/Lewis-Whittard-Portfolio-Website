@@ -18,8 +18,17 @@ namespace Infrastructure.Models.Data.Shared.Card
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
-        public Card()
+        public Card(Image.Image image, string title, string description, string navigation,int id,bool deleted,bool inactive,int displayOrder,string gUID)
         {
+            Image = image;
+            Title = title;
+            Description = description;
+            Navigation = navigation;
+            Id = id;
+            Deleted = deleted;
+            Inactive = inactive;
+            DisplayOrder = displayOrder;
+            GUID = gUID;
             UIConcreteType = UIConcrete.Card;
         }
     }
