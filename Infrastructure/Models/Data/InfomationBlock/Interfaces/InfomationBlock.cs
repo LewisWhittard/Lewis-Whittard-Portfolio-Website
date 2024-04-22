@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Models.Data.InfomationBlock.Interfaces
+﻿using Infrastructure.Models.Data.Shared.Image;
+
+namespace Infrastructure.Models.Data.InfomationBlock.Interfaces
 {
     public interface IInfomationBlock
     {

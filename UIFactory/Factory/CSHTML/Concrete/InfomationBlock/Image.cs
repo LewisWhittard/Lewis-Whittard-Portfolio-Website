@@ -11,11 +11,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public int? DisplayOrder { get; set; }
         public UI? UIType { get; set; }
         public string Alt { get; set; } 
-        private readonly Infrastructure.Models.Data.InfomationBlock.Image _image;
+        private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
         private readonly IAltData _alt;
         public string GUID { get; set; }
 
-        public Image(Infrastructure.Models.Data.InfomationBlock.Image Image,IAltData alt)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image Image,IAltData alt)
         {
             _image = Image;
             GUID = _image.GUID;

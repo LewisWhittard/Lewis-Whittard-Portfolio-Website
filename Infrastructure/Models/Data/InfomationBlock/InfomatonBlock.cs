@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
+using Infrastructure.Models.Data.Shared.Image;
 using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.InfomationBlock

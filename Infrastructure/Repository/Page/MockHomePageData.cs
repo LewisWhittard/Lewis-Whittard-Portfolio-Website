@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock;
 using Infrastructure.Models.Data.Table;
+using Infrastructure.Models.Data.Shared.Image;
 
 namespace Infrastructure.Repository.Page
 {
