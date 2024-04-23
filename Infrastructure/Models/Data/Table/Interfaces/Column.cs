@@ -10,6 +10,5 @@ namespace Infrastructure.Models.Data.Table.Interfaces
     {
         public string Value { get; set; }
         public int TableID { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }

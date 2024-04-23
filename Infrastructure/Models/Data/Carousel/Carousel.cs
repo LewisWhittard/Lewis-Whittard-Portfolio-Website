@@ -10,7 +10,7 @@ namespace Infrastructure.Models.Data.Carousel
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public List<Shared.Image.Image> Images { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
         public string GUID { get; set; }

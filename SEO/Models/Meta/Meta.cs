@@ -12,5 +12,6 @@ namespace SEO.Models.Meta.Interface
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public UIConcrete? UIConcreteType { get; set; }
+        public int? DisplayOrder { get; set; }
     }
 }

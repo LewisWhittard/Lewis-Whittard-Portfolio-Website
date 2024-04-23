@@ -5,6 +5,5 @@
         public string Title { get; set; }
         public List<Header> Headers { get; set; }
         public List<List<Column>> Columns { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }

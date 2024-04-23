@@ -11,7 +11,7 @@ namespace Infrastructure.Models.Data.Table
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public string Value { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string GUID { get; set; }
         [JsonIgnore]

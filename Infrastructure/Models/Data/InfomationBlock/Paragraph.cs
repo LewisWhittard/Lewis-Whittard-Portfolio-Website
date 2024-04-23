@@ -7,7 +7,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
     public class Paragraph : IParagraph,IData
     {
         public string Text { get; set; }
-        public int DisplayOrder { get; set; }
+        public int? DisplayOrder { get; set; }
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }

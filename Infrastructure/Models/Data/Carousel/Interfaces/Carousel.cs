@@ -3,6 +3,5 @@
     public interface ICarousel
     {
         public List<Shared.Image.Image> Images { get; set; }
-        public int DisplayOrder { get; set; }
     }
 }
