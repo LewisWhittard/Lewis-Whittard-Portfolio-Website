@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.CarouselCard.Interfaces;
 using Infrastructure.Models.Data.Interface;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.CarouselCard
@@ -14,10 +15,15 @@ namespace Infrastructure.Models.Data.CarouselCard
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
         public string GUID { get; set; }
-        public string UniqueDataId { get; set; }
 
-        public CarouselCard()
+        public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string gUID)
         {
+            Id = id;
+            Deleted = deleted;
+            Inactive = inactive;
+            Cards = cards;
+            DisplayOrder = displayOrder;
+            GUID = gUID;
             UIConcreteType = UIConcrete.CarouselCard;
         }
     }
