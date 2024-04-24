@@ -3,12 +3,18 @@ using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.CarouselCard;
 using Infrastructure.Models.Data.Shared.Card;
-using Infrastructure.Models.Data.CarouselCard.Interfaces;
 
 namespace Infrastructure.Repository.Page
 {
     public class MockHomePageData
     {
+        public List<Models.Data.Page.Page> Page { get; set; }
+
+        public List<Models.Data.Page.Page> returnPage()
+        {
+            return Page;
+        }
+
         public MockHomePageData()
         {
             Heading heading00 = new Heading(0,false,false,"About Me",0,0, "HomePageInfomationBlock0Heading0", 1);
@@ -75,7 +81,11 @@ namespace Infrastructure.Repository.Page
                 carouselCard0
             };
             
-            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,"HomePage",0,false,false);
+            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,"HomePage",0,false,false);
+            Page = new List<Models.Data.Page.Page>()
+            {
+                page0
+            };
         }
     }
 }
