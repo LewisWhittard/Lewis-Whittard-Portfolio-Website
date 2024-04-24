@@ -1,6 +1,8 @@
 ﻿using Infrastructure.Models.Data.InfomationBlock;
 using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Shared.Image;
+using Infrastructure.Models.Data.CarouselCard;
+using Infrastructure.Models.Data.Shared.Card;
 
 namespace Infrastructure.Repository.Page
 {
@@ -64,6 +66,10 @@ namespace Infrastructure.Repository.Page
                 table0,
                 table1
             };
+
+
+
+            List<Card> cards = 
 
             Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null,null,infomationBLocks,tables,"HomePage",0,false,false);
         }
