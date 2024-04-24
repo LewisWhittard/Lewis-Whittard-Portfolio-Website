@@ -28,7 +28,6 @@ namespace Infrastructure.Repository.Page
             Card card3 = new Card(image3, "UI Test Automation Portfolio Piece", "UI Test Automation portfolio piece, I used the following tools: C#, Selenium, NUnit, Libre Office Impress and Microsoft Video Editor.", "3", 3, false, false,1, "SearchPageCard3");
             Image image4 = new Image("CogettaPlain.png", null, 4, false, false, "SearchPageCardImage4");
             Card card4 = new Card(image4, "Cogetta", "A substitution cipher written in Python 3.", "4",4, false, false,0, "SearchPageCard4");
-            
             Cards.Add(card0);
             Cards.Add(card1);
             Cards.Add(card2);
