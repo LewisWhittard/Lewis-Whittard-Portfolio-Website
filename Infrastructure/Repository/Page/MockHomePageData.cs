@@ -3,6 +3,7 @@ using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.CarouselCard;
 using Infrastructure.Models.Data.Shared.Card;
+using Infrastructure.Models.Data.CarouselCard.Interfaces;
 
 namespace Infrastructure.Repository.Page
 {
@@ -40,7 +41,6 @@ namespace Infrastructure.Repository.Page
 
             Table table0 = new Table(0, false, false, 1, headers0, columns0, "HomePage", "HomePageTable0", "Certifications");
 
-
             Header header10 = new Header(3, false, false, 0, 1, "Certification", "HomePageTable1Header0");
             Header header11 = new Header(4, false, false, 1, 1, "Result", "HomePageTable1Header1");
             Header header12 = new Header(5, false, false, 2, 1, "Year", "HomePageTable1Header2");
@@ -60,18 +60,22 @@ namespace Infrastructure.Repository.Page
                 new List<Column>() { column13, column14, column15 },
                 new List<Column>() { column16, column17, column18 }
             };
-            Table table1 = new Table(0,false,false,1,headers1,columns1,"HomePage","HomePageTable0", "Certifications");
+            Table table1 = new Table(0,false,false,2,headers1,columns1,"HomePage","HomePageTable0", "Certifications");
             List<Table> tables = new List<Table>()
             {
                 table0,
                 table1
             };
-
-
-
-            List<Card> cards = 
-
-            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null,null,infomationBLocks,tables,"HomePage",0,false,false);
+            
+            MockSearchPageData mockSearchPageData = new MockSearchPageData();
+            List<Card> cards = mockSearchPageData.ReturnCards();
+            CarouselCard carouselCard0 = new CarouselCard(0, false, false,cards,3,"HomeCardCarousel0");
+            List<CarouselCard> carouselCards = new List<CarouselCard>()
+            {
+                carouselCard0
+            };
+            
+            Models.Data.Page.Page page = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,"HomePage",0,false,false);
         }
     }
 }
