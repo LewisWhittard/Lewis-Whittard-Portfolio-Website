@@ -20,6 +20,11 @@ namespace Infrastructure.Models.Data.Page
         public UIConcrete? UIConcreteType { get; set; }
         public int? DisplayOrder { get; set; }
 
+        public Page()
+        {
+            
+        }
+
         public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InfomationBlock.InfomatonBlock>? infomationBlocks,List<Table.Table>? tables, string gUID, int id,bool deleted,bool inactive)
         {
             PageName = pageName;

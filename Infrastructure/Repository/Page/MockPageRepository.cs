@@ -8,7 +8,11 @@ namespace Infrastructure.Repository.Page
 
         public MockPageRepository()
         {
-
+            _pages = new List<Models.Data.Page.Page>()
+            {
+                new Models.Data.Page.Page() {PageName = "HomePage"},
+                new Models.Data.Page.Page() {PageName = "SecondPage"}
+            };
             
 
             
