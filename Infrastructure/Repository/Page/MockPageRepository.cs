@@ -10,7 +10,7 @@ namespace Infrastructure.Repository.Page
         {
             _pages = new List<Models.Data.Page.Page>()
             {
-                new Models.Data.Page.Page() {PageName = "HomePage"},
+                new Models.Data.Page.Page() {PageName = "FirstPage"},
                 new Models.Data.Page.Page() {PageName = "SecondPage"}
             };
             

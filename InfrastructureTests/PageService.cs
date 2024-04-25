@@ -4,7 +4,7 @@ using Infrastructure.Repository.Page;
 public class PageServiceTests
 {
     [Theory]
-    [InlineData("HomePage")]
+    [InlineData("FirstPage")]
     [InlineData("SecondPage")]
     [InlineData("NoPage")]
     public void GetByPageName_ReturnsPage(string pageName)
