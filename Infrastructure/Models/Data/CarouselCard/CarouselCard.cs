@@ -1,6 +1,5 @@
 ﻿using Infrastructure.Models.Data.CarouselCard.Interfaces;
 using Infrastructure.Models.Data.Interface;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.CarouselCard
