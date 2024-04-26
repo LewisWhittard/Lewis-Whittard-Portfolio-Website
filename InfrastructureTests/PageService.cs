@@ -4,26 +4,29 @@ using Infrastructure.Repository.Page;
 public class PageServiceTests
 {
     [Theory]
-    [InlineData("FirstPage")]
-    [InlineData("SecondPage")]
-    [InlineData("NoPage")]
-    public void GetByPageName_ReturnsPage(string pageName)
+    [InlineData("FirstPage",false)]
+    [InlineData("SecondPage",false)]
+    [InlineData("NoPage",false)]
+    [InlineData("Deleted",false)]
+    [InlineData("IncludeInactive",true)]
+    [InlineData("ExcludeInactive", false)]
+    public void GetByPageName_ReturnsPage(string pageName, bool includeInactive)
     {
         // Arrange
         var mockRepository = new MockPageRepository();
         var pageService = new PageService(mockRepository);
 
         // Act
-        Infrastructure.Models.Data.Page.Page? page = pageService.GetByPageName(pageName);
+        Infrastructure.Models.Data.Page.Page? page = pageService.GetByPageName(pageName,includeInactive);
 
         // Assert
-        if (pageName != "NoPage")
+        if (pageName == "NoPage" || pageName == "Deleted" || pageName == "ExcludeInactive")
         {
-            Assert.Equal(pageName, page.PageName);
+            Assert.Null(page);
         }
         else
         {
-            Assert.Null(page);
+            Assert.Equal(pageName, page.PageName);
         }
     }
 

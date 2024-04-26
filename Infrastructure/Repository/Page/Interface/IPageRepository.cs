@@ -2,6 +2,6 @@
 {
     public interface IPageRepository
     {
-        public Models.Data.Page.Page GetByPageName(string PageName);
+        public List<Models.Data.Page.Page> GetPages(string PageName);
     }
 }

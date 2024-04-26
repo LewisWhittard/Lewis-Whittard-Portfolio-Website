@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Repository.Page;
 using Infrastructure.Repository.Page.Interface;
 using Infrastructure.Service.Page.Interface;
 
@@ -14,14 +13,22 @@ namespace Infrastructure.Service.Page
             _pageRepository = pageRepository;
         }
         
-        public Models.Data.Page.Page GetByPageName(string PageName)
+        public Models.Data.Page.Page GetByPageName(string PageName, bool includeInactive)
         {
-            return _pageRepository.GetByPageName(PageName);
+            if (includeInactive == true)
+            {
+                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault();
+            }
+
+            else
+            {
+                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted && !x.Inactive).FirstOrDefault();
+            }
         }
 
-        public List<IData> GetByPageNameAsIDataList(string PageName)
+        public List<IData> GetByPageNameAsIDataList(string PageName, bool Inactive)
         {
-            return _pageRepository.GetByPageName(PageName).CreateIDataList();
+            return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault().CreateIDataList();
         }
     }
 }

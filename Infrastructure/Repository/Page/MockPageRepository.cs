@@ -10,8 +10,11 @@ namespace Infrastructure.Repository.Page
         {
             _pages = new List<Models.Data.Page.Page>()
             {
-                new Models.Data.Page.Page() {PageName = "FirstPage"},
-                new Models.Data.Page.Page() {PageName = "SecondPage"}
+                new Models.Data.Page.Page() {PageName = "FirstPage", Deleted = false, Inactive = false},
+                new Models.Data.Page.Page() {PageName = "SecondPage", Deleted = false, Inactive = false},
+                new Models.Data.Page.Page() {PageName = "Deleted", Deleted = true, Inactive = false},
+                new Models.Data.Page.Page() {PageName = "IncludeInactive", Deleted = false, Inactive = true},
+                new Models.Data.Page.Page() {PageName = "ExcludeInactive", Deleted = false, Inactive = true}
             };
             
 
@@ -19,10 +22,9 @@ namespace Infrastructure.Repository.Page
 
         }
 
-        public Models.Data.Page.Page GetByPageName(string pageName)
+        public List<Models.Data.Page.Page> GetPages(string PageName)
         {
-            Models.Data.Page.Page result = _pages.Where(x => x.PageName == pageName).FirstOrDefault();
-            return result;
+            return _pages;
         }
     }
 }
