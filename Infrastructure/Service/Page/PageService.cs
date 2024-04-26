@@ -13,30 +13,22 @@ namespace Infrastructure.Service.Page
             _pageRepository = pageRepository;
         }
         
-        public Models.Data.Page.Page GetByPageName(string PageName, bool includeInactive)
+        public Models.Data.Page.Page GetByPageName(string pageName, bool includeInactive)
         {
             if (includeInactive == true)
             {
-                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault();
+                return _pageRepository.GetPages(pageName).Where(x => x.PageName == pageName && !x.Deleted).FirstOrDefault();
             }
 
             else
             {
-                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted && !x.Inactive).FirstOrDefault();
+                return _pageRepository.GetPages(PageName).Where(x => x.PageName == pageName && !x.Deleted && !x.Inactive).FirstOrDefault();
             }
         }
 
-        public List<IData> GetByPageNameAsIDataList(string PageName, bool includeInactive)
+        public List<IData> GetByPageNameAsIDataList(string pageName, bool includeInactive)
         {
-            if (includeInactive == true)
-            {
-                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault().CreateIDataList();
-            }
-
-            else
-            {
-                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted && !x.Inactive).FirstOrDefault().CreateIDataList();
-            }
+            return GetByPageName(pageName,includeInactive).CreateIDataList();
         }
     }
 }
