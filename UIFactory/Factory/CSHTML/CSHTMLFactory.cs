@@ -33,7 +33,7 @@ namespace UIFactory.Factory.CSHTML
         public List<IUI> CreateUIListByPageName(string PageName)
         {
             List<IUI> result = new List<IUI>();
-            var pageData = _pageService.GetByPageNameAsIDataList(PageName);
+            var pageData = _pageService.GetByPageNameAsIDataList(PageName,false);
             List<IMetaData> meta = _metaService.GetByPageName(PageName);
             foreach (var data in pageData)
             {

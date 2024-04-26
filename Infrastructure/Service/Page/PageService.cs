@@ -26,9 +26,17 @@ namespace Infrastructure.Service.Page
             }
         }
 
-        public List<IData> GetByPageNameAsIDataList(string PageName, bool Inactive)
+        public List<IData> GetByPageNameAsIDataList(string PageName, bool includeInactive)
         {
-            return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault().CreateIDataList();
+            if (includeInactive == true)
+            {
+                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted).FirstOrDefault().CreateIDataList();
+            }
+
+            else
+            {
+                return _pageRepository.GetPages(PageName).Where(x => x.PageName == PageName && !x.Deleted && !x.Inactive).FirstOrDefault().CreateIDataList();
+            }
         }
     }
 }
