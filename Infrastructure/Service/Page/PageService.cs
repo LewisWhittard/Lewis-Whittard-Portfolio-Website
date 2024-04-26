@@ -22,7 +22,7 @@ namespace Infrastructure.Service.Page
 
             else
             {
-                return _pageRepository.GetPages(PageName).Where(x => x.PageName == pageName && !x.Deleted && !x.Inactive).FirstOrDefault();
+                return _pageRepository.GetPages(pageName).Where(x => x.PageName == pageName && !x.Deleted && !x.Inactive).FirstOrDefault();
             }
         }
 
