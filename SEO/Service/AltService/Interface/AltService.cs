@@ -1,11 +1,10 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
 
 namespace SEO.Service.AltService.Interface
 {
     public interface IAltService
     {
-        public List<IAltData> GetBySuperClassGUID(IData data);
+        public List<AltData> GetBySuperClassGUID(IData data);
     }
 }
