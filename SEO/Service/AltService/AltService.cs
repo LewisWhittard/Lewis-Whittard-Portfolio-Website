@@ -17,11 +17,11 @@ namespace SEO.Service.AltService
         {
             if (includeInactive == true) 
             {
-                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID).ToList();
+                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted).ToList();
             }
             else
             {
-                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Inactive).ToList();
+                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).ToList();
             }
         }
     }
