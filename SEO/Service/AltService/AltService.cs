@@ -1,4 +1,4 @@
-﻿using SEO.Models.Alt;
+﻿using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository.Interface;
 using SEO.Service.AltService.Interface;
 
@@ -13,16 +13,27 @@ namespace SEO.Service.AltService
             _altRepository = altRepository;
         }
 
-        public List<AltData> GetBySuperClassGUID(string superClassGUID, bool includeInactive)
+        public List<IAltData> GetBySuperClassGUID(string superClassGUID, bool includeInactive)
         {
+            List<IAltData> result = new List<IAltData>();
+
             if (includeInactive == true) 
             {
-                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted).ToList();
+                var data = _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted).ToList();
+                result.AddRange(data);
             }
             else
             {
-                return _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).ToList();
+                var data = _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).ToList();
+                result.AddRange(data);
             }
+
+            return result;
+        }
+
+        List<IAltData> IAltService.GetBySuperClassGUID(string superClassGUID, bool includeInactive)
+        {
+            throw new NotImplementedException();
         }
     }
 }

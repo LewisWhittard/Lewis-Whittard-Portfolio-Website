@@ -1,6 +1,7 @@
-﻿using SEO.Models.Alt;
+﻿using SEO.Models.Alt.Interface;
+using SEO.Repository.AltRepository;
 using SEO.Service.AltService;
-public class PageServiceTests
+public class AltServiceTests
 {
     [Theory]
     [InlineData("First",false)]
@@ -13,9 +14,10 @@ public class PageServiceTests
     public void GetBySuperClassGUID_ReturnsALT(string superClassGUID, bool includeInactive)
     {
         // Arrange
-        AltService altService = new AltService();
+        MockAltRepository altRepository = new MockAltRepository();
+        AltService altService = new AltService(altRepository);
         // Act
-        List<AltData> altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
+        List<IAltData> altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
 
         // Assert
         if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")

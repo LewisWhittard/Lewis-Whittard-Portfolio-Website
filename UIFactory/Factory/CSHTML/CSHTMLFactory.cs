@@ -38,14 +38,14 @@ namespace UIFactory.Factory.CSHTML
             foreach (var data in pageData)
             {
                 List<IJsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data);
-                List<IAltData> alt = _altService.GetBySuperClassGUID(data);
+                List<IAltData> alt = _altService.GetBySuperClassGUID(data.GUID,false);
                 var uI = CreateUI(data, jsonLD, alt, meta);
                 result.Add(uI);
             }
             return result;
         }
 
-        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData,List<IAltData> altData, List<IMetaData> meta)
+        private IUI CreateUI(IData data, List<IJsonLDData> jsonLDData, List<IAltData> altData, List<IMetaData> meta)
         {
             switch (data.UIConcreteType)
             {
