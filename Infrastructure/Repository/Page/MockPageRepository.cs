@@ -10,8 +10,8 @@ namespace Infrastructure.Repository.Page
         {
             _pages = new List<Models.Data.Page.Page>()
             {
-                new Models.Data.Page.Page() {PageName = "FirstPage", Deleted = false, Inactive = false},
-                new Models.Data.Page.Page() {PageName = "SecondPage", Deleted = false, Inactive = false},
+                new Models.Data.Page.Page() {PageName = "First", Deleted = false, Inactive = false},
+                new Models.Data.Page.Page() {PageName = "Second", Deleted = false, Inactive = false},
                 new Models.Data.Page.Page() {PageName = "Deleted", Deleted = true, Inactive = false},
                 new Models.Data.Page.Page() {PageName = "IncludeInactive", Deleted = false, Inactive = true},
                 new Models.Data.Page.Page() {PageName = "ExcludeInactive", Deleted = false, Inactive = true}

@@ -4,9 +4,9 @@ using Infrastructure.Repository.Page;
 public class PageServiceTests
 {
     [Theory]
-    [InlineData("FirstPage",false)]
-    [InlineData("SecondPage",false)]
-    [InlineData("NoPage",false)]
+    [InlineData("First",false)]
+    [InlineData("Second",false)]
+    [InlineData("Non",false)]
     [InlineData("Deleted",false)]
     [InlineData("IncludeInactive",true)]
     [InlineData("ExcludeInactive", false)]
@@ -20,7 +20,7 @@ public class PageServiceTests
         Infrastructure.Models.Data.Page.Page? page = pageService.GetByPageName(pageName,includeInactive);
 
         // Assert
-        if (pageName == "NoPage" || pageName == "Deleted" || pageName == "ExcludeInactive")
+        if (pageName == "Non" || pageName == "Deleted" || pageName == "ExcludeInactive")
         {
             Assert.Null(page);
         }
