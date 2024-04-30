@@ -12,7 +12,7 @@ public class JsonLDServiceTests
     [InlineData("Deleted",false)]
     [InlineData("IncludeInactive",true)]
     [InlineData("ExcludeInactive", false)]
-    public void GetBySuperClassGUID_ReturnsALT(string superClassGUID, bool includeInactive)
+    public void GetBySuperClassGUID_ReturnsJsonLD(string superClassGUID, bool includeInactive)
     {
         // Arrange
         MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
