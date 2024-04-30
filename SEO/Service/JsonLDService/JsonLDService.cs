@@ -1,5 +1,4 @@
 ﻿using SEO.Models.JsonLD;
-using SEO.Models.JsonLD.Interface;
 using SEO.Repository.JsonLDRepository.Interface;
 using SEO.Service.JsonLDService.Interface;
 

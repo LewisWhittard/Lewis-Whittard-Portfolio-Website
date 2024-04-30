@@ -1,4 +1,5 @@
-﻿using SEO.Models.JsonLD.Interface;
+﻿using SEO.Models.JsonLD;
+using SEO.Repository.JsonLDRepositoryRepository;
 using SEO.Service.JsonLDService;
 
 public class JsonLDServiceTests
@@ -14,33 +15,34 @@ public class JsonLDServiceTests
     public void GetBySuperClassGUID_ReturnsALT(string superClassGUID, bool includeInactive)
     {
         // Arrange
-        JsonLDService JsonLDService = new JsonLDService();
+        MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
+        JsonLDService jsonLDService = new JsonLDService(mockJsonLDRepository);
         // Act
-        List<IJsonLDData> altData = JsonLDService.GetBySuperClassGUID(superClassGUID, includeInactive);
+        List<JsonLDData> JsonData = jsonLDService.GetBySuperClassGUID(superClassGUID, includeInactive);
 
         // Assert
         if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")
         {
-            foreach (var item in altData)
+            foreach (var item in JsonData)
             {
-                Assert.Null(altData);
+                Assert.Null(JsonData);
             }
         }
         else
         {
-            foreach (var item in altData) 
+            foreach (var item in JsonData) 
             { 
                 Assert.Equal(superClassGUID, item.SuperClassGUID);
             }
 
             if (superClassGUID == "Multiple")
             {
-                Assert.True(altData.Count() == 2);
+                Assert.True(JsonData.Count() == 2);
             }
 
             else
             {
-                Assert.True(altData.Count() == 1);
+                Assert.True(JsonData.Count() == 1);
             }
         }
     }
