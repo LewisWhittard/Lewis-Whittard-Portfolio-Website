@@ -1,6 +1,7 @@
 ﻿using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository;
 using SEO.Service.AltService;
+
 public class AltServiceTests
 {
     [Theory]
