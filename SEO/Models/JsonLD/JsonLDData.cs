@@ -25,5 +25,10 @@ namespace SEO.Models.JsonLD
             Deleted = deleted;
             Inactive = inactive;
         }
+
+        public JsonLDData()
+        {
+            
+        }
     }
 }

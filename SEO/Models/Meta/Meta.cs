@@ -28,5 +28,10 @@ namespace SEO.Models.Meta.Interface
             DisplayOrder = displayOrder;
             PageName = pageName;
         }
+
+        public MetaData()
+        {
+            
+        }
     }
 }

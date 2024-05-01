@@ -27,5 +27,10 @@ namespace SEO.Models.Alt
             Deleted = deleted;
             Inactive = inactive;
         }
+
+        public AltData()
+        {
+            
+        }
     }
 }
