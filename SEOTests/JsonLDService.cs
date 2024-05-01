@@ -18,31 +18,28 @@ public class JsonLDServiceTests
         MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
         JsonLDService jsonLDService = new JsonLDService(mockJsonLDRepository);
         // Act
-        List<JsonLDData> JsonData = jsonLDService.GetBySuperClassGUID(superClassGUID, includeInactive);
+        List<JsonLDData> jsonLDData = jsonLDService.GetBySuperClassGUID(superClassGUID, includeInactive);
 
         // Assert
         if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")
         {
-            foreach (var item in JsonData)
-            {
-                Assert.Null(JsonData);
-            }
+            Assert.True(jsonLDData.Count() == 0);
         }
         else
         {
-            foreach (var item in JsonData) 
+            foreach (var item in jsonLDData) 
             { 
                 Assert.Equal(superClassGUID, item.SuperClassGUID);
             }
 
             if (superClassGUID == "Multiple")
             {
-                Assert.True(JsonData.Count() == 2);
+                Assert.True(jsonLDData.Count() == 2);
             }
 
             else
             {
-                Assert.True(JsonData.Count() == 1);
+                Assert.True(jsonLDData.Count() == 1);
             }
         }
     }

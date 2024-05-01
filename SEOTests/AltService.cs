@@ -23,10 +23,7 @@ public class AltServiceTests
         // Assert
         if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")
         {
-            foreach (var item in altData)
-            {
-                Assert.Null(altData);
-            }
+            Assert.True(altData.Count() == 0);
         }
         else
         {
