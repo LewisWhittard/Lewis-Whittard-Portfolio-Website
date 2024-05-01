@@ -3,7 +3,7 @@ using SEO.Models.JsonLD;
 
 namespace SEOTests.Ctor
 {
-    public class JsonLDTests
+    public class JsonLDCtor
     {
         [Theory]
         [InlineData("superClassGUID", UIConcrete.Table, "page", 1, 10, "guid", false, false)]
