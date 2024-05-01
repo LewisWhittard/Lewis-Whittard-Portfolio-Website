@@ -7,5 +7,6 @@
         public string Content { get; set; }
         public string GUID { get; set; }
         public string? Charset { get; set; }
+        public string PageName { get; set; }
     }
 }

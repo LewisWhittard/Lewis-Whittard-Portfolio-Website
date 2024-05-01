@@ -13,5 +13,6 @@ namespace SEO.Models.Meta.Interface
         public bool Inactive { get; set; }
         public UIConcrete? UIConcreteType { get; set; }
         public int? DisplayOrder { get; set; }
+        public string PageName { get; set; }
     }
 }
