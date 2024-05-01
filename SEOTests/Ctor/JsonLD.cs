@@ -26,7 +26,7 @@ namespace SEOTests.Ctor
             Assert.Equal(deleted, jsonLDData.Deleted);
             Assert.Equal(inactive, jsonLDData.Inactive);
         }
-    
+
 
         public void JsonLDData_Constructor_NoParameters()
         {
@@ -44,3 +44,4 @@ namespace SEOTests.Ctor
             Assert.Equal(false, jsonLDData.Inactive);
         }
     }
+}
