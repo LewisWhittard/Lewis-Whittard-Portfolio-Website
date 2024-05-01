@@ -3,7 +3,7 @@ using SEO.Models.Meta.Interface;
 
 namespace SEOTests.Ctor
 {
-    public class AltCtorTests
+    public class MetaCtorTests
     {
         [Theory]
         [InlineData(1, Name.OGTitle, "Lorem ipsum", "12345678-1234-1234-1234-123456789abc", "UTF-8", false, false, UIConcrete.Table, 2, "HomePage")]
