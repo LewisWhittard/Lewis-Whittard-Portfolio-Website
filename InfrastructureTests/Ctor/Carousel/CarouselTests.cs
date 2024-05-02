@@ -19,7 +19,6 @@ namespace InfrastructureTests.Ctor.Carousel
             Assert.Null(carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
             Assert.Null(carousel.GUID);
-            Assert.Equal("", carousel.GUID);
         }
     }
 }
