@@ -24,4 +24,16 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Ctor\CarouselCard\" />
+    <Folder Include="Ctor\Carousel\" />
+    <Folder Include="Ctor\InfomationBlock\" />
+    <Folder Include="Ctor\Interface\" />
+    <Folder Include="Ctor\Page\" />
+    <Folder Include="Ctor\Shared\Card\" />
+    <Folder Include="Ctor\Shared\Image\" />
+    <Folder Include="Ctor\Table\" />
+    <Folder Include="Ctor\Video\" />
+  </ItemGroup>
+
 </Project>
