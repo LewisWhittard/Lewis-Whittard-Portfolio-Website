@@ -5,7 +5,9 @@
         [Fact]
         public void Table_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }

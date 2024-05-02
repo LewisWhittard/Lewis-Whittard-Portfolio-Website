@@ -5,7 +5,9 @@
         [Fact]
         public void InfomationBlock_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }

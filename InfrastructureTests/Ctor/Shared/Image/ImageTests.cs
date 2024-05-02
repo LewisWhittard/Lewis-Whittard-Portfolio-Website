@@ -5,7 +5,9 @@
         [Fact]
         public void Image_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }

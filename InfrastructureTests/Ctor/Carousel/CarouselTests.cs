@@ -5,7 +5,9 @@
         [Fact]
         public void Carousel_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }

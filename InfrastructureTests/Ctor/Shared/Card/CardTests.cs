@@ -5,7 +5,9 @@
         [Fact]
         public void Card_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }

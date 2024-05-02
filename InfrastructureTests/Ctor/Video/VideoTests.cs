@@ -5,7 +5,9 @@
         [Fact]
         public void Video_Constructor_NoParameters()
         {
+            //arrange, act
 
+            //assert
         }
     }
 }
