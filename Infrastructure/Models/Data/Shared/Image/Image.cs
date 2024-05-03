@@ -17,7 +17,7 @@ namespace Infrastructure.Models.Data.Shared.Image
 
         public Image()
         {
-
+            UIConcreteType = UIConcrete.Image;
         }
 
         public Image(string source, int? displayOrder, int iD, bool deleted, bool inactive, string gUID)

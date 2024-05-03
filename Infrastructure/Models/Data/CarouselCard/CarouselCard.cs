@@ -15,6 +15,11 @@ namespace Infrastructure.Models.Data.CarouselCard
         public UIConcrete? UIConcreteType { get; set; }
         public string GUID { get; set; }
 
+        public CarouselCard()
+        {
+            UIConcreteType = UIConcrete.CarouselCard;
+        }
+
         public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string gUID)
         {
             Id = id;

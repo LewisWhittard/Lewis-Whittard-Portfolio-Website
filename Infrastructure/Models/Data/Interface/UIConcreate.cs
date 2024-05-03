@@ -7,6 +7,7 @@
         CarouselCard = 2,
         InfomationBlock = 3,
         Video = 4,
-        Table  = 5
+        Table  = 5,
+        Image = 6
     }
 }

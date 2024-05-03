@@ -31,5 +31,10 @@ namespace Infrastructure.Models.Data.Shared.Card
             GUID = gUID;
             UIConcreteType = UIConcrete.Card;
         }
+
+        public Card()
+        {
+            UIConcreteType = UIConcrete.Card;
+        }
     }
 }
