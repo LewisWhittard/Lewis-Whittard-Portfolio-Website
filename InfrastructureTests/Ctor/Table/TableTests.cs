@@ -1,4 +1,4 @@
-﻿namespace InfrastructureTests.Ctor.Table
+﻿namespace InfrastructureTests.Ctor
 {
     public class TableTests
     {
@@ -6,6 +6,7 @@
         public void Table_Constructor_NoParameters()
         {
             //arrange, act
+            Assert.True(false);
 
             //assert
         }

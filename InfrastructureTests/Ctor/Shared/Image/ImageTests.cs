@@ -1,4 +1,4 @@
-﻿namespace InfrastructureTests.Ctor.Shared.Image
+﻿namespace InfrastructureTests.Ctor
 {
     public class ImageTests
     {
@@ -6,6 +6,7 @@
         public void Image_Constructor_NoParameters()
         {
             //arrange, act
+            Assert.True(false);
 
             //assert
         }

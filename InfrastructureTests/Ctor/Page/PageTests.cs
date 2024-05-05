@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using System;
 
-namespace InfrastructureTests.Ctor.PageTests
+namespace InfrastructureTests.Ctor
 {
     public class PageTests
     {

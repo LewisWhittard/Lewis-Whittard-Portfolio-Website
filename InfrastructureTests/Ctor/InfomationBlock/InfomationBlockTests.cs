@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 
-namespace InfrastructureTests.Ctor.InfomationBlock
+namespace InfrastructureTests.Ctor
 {
     public class InfomationBlockTests
     {

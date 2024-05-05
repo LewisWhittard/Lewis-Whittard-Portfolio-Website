@@ -1,9 +1,8 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using Infrastructure.Models.Data.Carousel;
 
-namespace InfrastructureTests.Ctor.Carousel
+namespace InfrastructureTests.Ctor
 {
-    public class CarouselCardTests
+    public class CarouselTests
     {
         [Fact]
         public void Carousel_Constructor_NoParameters()

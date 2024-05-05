@@ -1,4 +1,4 @@
-﻿namespace InfrastructureTests.Ctor.Shared.Card
+﻿namespace InfrastructureTests.Ctor
 {
     public class CardTests
     {
@@ -6,6 +6,7 @@
         public void Card_Constructor_NoParameters()
         {
             //arrange, act
+            Assert.True(false);
 
             //assert
         }

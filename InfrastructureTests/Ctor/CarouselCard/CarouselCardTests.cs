@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 
-namespace InfrastructureTests.Ctor.CarouselCard
+namespace InfrastructureTests.Ctor
 {
     public class CarouselCardTests
     {
