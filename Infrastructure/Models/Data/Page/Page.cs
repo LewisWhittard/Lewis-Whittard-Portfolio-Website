@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.Page
 
         public Page()
         {
-            
+            UIConcreteType = UIConcrete.Page;
         }
 
         public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InfomationBlock.InfomatonBlock>? infomationBlocks,List<Table.Table>? tables, string gUID, int id,bool deleted,bool inactive)
@@ -36,6 +36,7 @@ namespace Infrastructure.Models.Data.Page
             GUID = gUID;
             Deleted = deleted;
             Inactive = inactive;
+            UIConcreteType = UIConcrete.Page;
         }
 
         public List<IData> CreateIDataList()

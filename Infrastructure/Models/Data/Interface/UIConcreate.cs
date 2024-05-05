@@ -8,6 +8,7 @@
         InfomationBlock = 3,
         Video = 4,
         Table  = 5,
-        Image = 6
+        Image = 6,
+        Page = 7
     }
 }
