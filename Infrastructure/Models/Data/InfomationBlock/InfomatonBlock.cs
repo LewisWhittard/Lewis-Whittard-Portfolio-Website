@@ -18,7 +18,11 @@ namespace Infrastructure.Models.Data.InfomationBlock
 
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
-        
+
+        public InfomatonBlock()
+        {
+            UIConcreteType = UIConcrete.InfomationBlock;
+        }
 
         public InfomatonBlock(int id,bool deleted,bool inactive,List<Image> images,List<Paragraph> paragraphs,List<Heading> headings,int displayOrder,string gUID)
         {
