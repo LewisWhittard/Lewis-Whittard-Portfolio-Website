@@ -42,11 +42,30 @@ namespace Infrastructure.Models.Data.Page
         public List<IData> CreateIDataList()
         {
             List<IData> result = new List<IData>();
-            result.Add((IData)Cards);
-            result.Add((IData)Carousels);
-            result.Add((IData)CarouselCards);
-            result.Add((IData)InfomationBlocks);
-            result.Add((IData)Tables);
+            if (Cards?.Count() > 0)
+            {
+                result.Add((IData)Cards);
+            }
+
+            if (Carousels?.Count() > 0)
+            {
+                result.Add((IData)Carousels);
+            }
+
+            if (CarouselCards?.Count() > 0)
+            {
+                result.Add((IData)CarouselCards);
+            }
+
+            if (InfomationBlocks?.Count() > 0)
+            {
+                result.Add((IData)InfomationBlocks);
+            }
+
+            if (InfomationBlocks?.Count() > 0)
+            {
+                result.Add((IData)Tables);
+            }
 
             return result;
         }
