@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Service.Page;
 using Infrastructure.Repository.Page;
+using Infrastructure.Models.Data.Interface;
 
 namespace InfrastructureTests.Service
 {
@@ -32,18 +33,47 @@ namespace InfrastructureTests.Service
             }
         }
 
-        [Fact]
-        [InlineData("HomePage")]
-        public void GetByPageNameAsIDataList_ReturnsIDataList_WhenPageExists()
+        [Theory]
+        [InlineData("First", false)]
+        [InlineData("Second", false)]
+        [InlineData("Non", false)]
+        [InlineData("Deleted", false)]
+        [InlineData("IncludeInactive", true)]
+        [InlineData("ExcludeInactive", false)]
+        public void GetByPageNameAsIDataList_ReturnsIDataList(string pageName, bool includeInactive)
         {
-            // Arrange
-            Assert.True(false);
+            try
+            {
+                // Arrange
+                var mockRepository = new MockPageRepository();
+                var pageService = new PageService(mockRepository);
 
-            // Act
+                // Act
+                List<IData> pageIDatas = pageService.GetByPageNameAsIDataList(pageName, includeInactive);
 
-            // Assert
+                //assert
+                if (pageName != "First")
+                {
+                    Assert.Equal(pageIDatas.Count(), 0);
+                }
 
-            Assert.True(true);
+                else 
+                {
+                    Assert.Equal(pageIDatas.Count(), 1);
+                }
+            }
+            catch (Exception)
+            {
+                if (pageName == "Non" || pageName == "Deleted" || pageName == "ExcludeInactive")
+                {
+                    Assert.True(true);
+                }
+
+                else 
+                { 
+                    Assert.True(false); 
+                }
+            }
         }
     }
 }

@@ -62,7 +62,7 @@ namespace Infrastructure.Models.Data.Page
                 result.Add((IData)InfomationBlocks);
             }
 
-            if (InfomationBlocks?.Count() > 0)
+            if (Tables?.Count() > 0)
             {
                 result.Add((IData)Tables);
             }
