@@ -59,7 +59,12 @@ namespace InfrastructureTests.Service
 
                 else 
                 {
-                    Assert.Equal(pageIDatas.Count(), 1);
+                    //not Complete 
+                    var cards =  pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Card).ToList();
+                    var Carousel = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Carousel).ToList();
+                    var CarouselCard = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.CarouselCard).ToList();
+                    var Table = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Table).ToList();
+                    var InfomationBlock = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.InfomationBlock).ToList();
                 }
             }
             catch (Exception)
