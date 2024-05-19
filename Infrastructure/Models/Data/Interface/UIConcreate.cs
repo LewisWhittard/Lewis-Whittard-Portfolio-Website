@@ -9,6 +9,10 @@
         Video = 4,
         Table  = 5,
         Image = 6,
-        Page = 7
+        Page = 7,
+        Paragraph = 8,
+        Heading = 9,
+        Header = 10,
+        Column = 11
     }
 }

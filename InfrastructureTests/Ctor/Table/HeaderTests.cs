@@ -1,4 +1,4 @@
-﻿namespace InfrastructureTests.Ctor.Table
+﻿namespace InfrastructureTests.Ctor
 {
     public class HeaderTests
     {
