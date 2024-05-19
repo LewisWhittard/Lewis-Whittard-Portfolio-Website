@@ -59,13 +59,18 @@ namespace InfrastructureTests.Service
 
                 else 
                 {
-                    //not Complete 
-                    Assert.Fail();
                     var cards =  pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Card).ToList();
-                    var Carousel = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Carousel).ToList();
-                    var CarouselCard = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.CarouselCard).ToList();
-                    var Table = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Table).ToList();
-                    var InfomationBlock = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.InfomationBlock).ToList();
+                    Assert.Equal(cards.Count(), 2);
+                    var carousel = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Carousel).ToList();
+                    Assert.Equal(carousel.Count(), 2);
+                    var carouselCard = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.CarouselCard).ToList();
+                    Assert.Equal(carouselCard.Count(), 2);
+                    var table = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Table).ToList();
+                    Assert.Equal(table.Count(), 2);
+                    var infomationBlocks = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.InfomationBlock).ToList();
+                    Assert.Equal(infomationBlocks.Count(), 2);
+                    var videos = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Video).ToList();
+                    Assert.Equal(videos.Count(), 2);
                 }
             }
             catch (Exception)
@@ -77,7 +82,7 @@ namespace InfrastructureTests.Service
 
                 else 
                 { 
-                    Assert.True(false); 
+                    Assert.Fail(); 
                 }
             }
         }

@@ -11,6 +11,7 @@ namespace Infrastructure.Models.Data.Page
         public List<Carousel.Carousel>? Carousels { get; set; }
         public List<CarouselCard.CarouselCard>? CarouselCards { get; set; }
         public List<InfomationBlock.InfomatonBlock>? InfomationBlocks { get; set; }
+        public List<Video.Video>? Videos {  get; set; } 
         public List<Table.Table>? Tables { get; set; }
         public string GUID { get; set; }
         public int Id { get; set; }
@@ -25,7 +26,7 @@ namespace Infrastructure.Models.Data.Page
             UIConcreteType = UIConcrete.Page;
         }
 
-        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InfomationBlock.InfomatonBlock>? infomationBlocks,List<Table.Table>? tables, string gUID, int id,bool deleted,bool inactive)
+        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InfomationBlock.InfomatonBlock>? infomationBlocks,List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id,bool deleted,bool inactive)
         {
             PageName = pageName;
             Cards = cards;
@@ -33,6 +34,7 @@ namespace Infrastructure.Models.Data.Page
             CarouselCards = carouselCard;
             InfomationBlocks = infomationBlocks;
             Tables = tables;
+            Videos = videos;
             GUID = gUID;
             Deleted = deleted;
             Inactive = inactive;
@@ -44,27 +46,32 @@ namespace Infrastructure.Models.Data.Page
             List<IData> result = new List<IData>();
             if (Cards?.Count() > 0)
             {
-                result.Add((IData)Cards);
+                result.AddRange(Cards.ToList().ConvertAll(x => (IData)x));
             }
 
             if (Carousels?.Count() > 0)
             {
-                result.Add((IData)Carousels);
+                result.AddRange(Carousels.ToList().ConvertAll(x => (IData)x));
             }
 
             if (CarouselCards?.Count() > 0)
             {
-                result.Add((IData)CarouselCards);
+                result.AddRange(CarouselCards.ToList().ConvertAll(x => (IData)x));
             }
 
             if (InfomationBlocks?.Count() > 0)
             {
-                result.Add((IData)InfomationBlocks);
+                result.AddRange(InfomationBlocks.ToList().ConvertAll(x => (IData)x));
             }
 
             if (Tables?.Count() > 0)
             {
-                result.Add((IData)Tables);
+                result.AddRange(Tables.ToList().ConvertAll(x => (IData)x));
+            }
+
+            if (Videos?.Count() > 0)
+            {
+                result.AddRange(Videos.ToList().ConvertAll(x => (IData)x));
             }
 
             return result;

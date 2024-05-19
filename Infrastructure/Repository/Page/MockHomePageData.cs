@@ -81,7 +81,7 @@ namespace Infrastructure.Repository.Page
                 carouselCard0
             };
             
-            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,"HomePage",0,false,false);
+            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,null,"HomePage",0,false,false);
             Page = new List<Models.Data.Page.Page>()
             {
                 page0
