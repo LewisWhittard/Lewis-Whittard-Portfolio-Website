@@ -19,7 +19,7 @@ namespace Infrastructure.Models.Data.Table
 
         public Column()
         {
-
+            UIConcreteType = UIConcrete.Column;
         }
 
         public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID, string gUID)
@@ -31,6 +31,7 @@ namespace Infrastructure.Models.Data.Table
             DisplayOrder = displayOrder;
             TableID = tableID;
             GUID = gUID;
+            UIConcreteType = UIConcrete.Column;
         }
     }
 }

@@ -60,6 +60,7 @@ namespace InfrastructureTests.Service
                 else 
                 {
                     //not Complete 
+                    Assert.Fail();
                     var cards =  pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Card).ToList();
                     var Carousel = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Carousel).ToList();
                     var CarouselCard = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.CarouselCard).ToList();

@@ -19,7 +19,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
 
         public Heading()
         {
-            
+            UIConcreteType = UIConcrete.Heading;
         }
 
         public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid,string gUID, int level)
@@ -32,6 +32,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
             InfomationBlockid = infomationBlockid;
             GUID = gUID;
             Level = level;
+            UIConcreteType = UIConcrete.Heading;
         }
     }
 }

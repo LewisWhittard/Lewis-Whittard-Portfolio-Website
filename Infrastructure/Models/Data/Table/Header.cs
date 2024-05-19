@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Table
 
         public Header()
         {
-
+            UIConcreteType = UIConcrete.Header;
         }
 
         public Header(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value, string gUID)
@@ -30,6 +30,7 @@ namespace Infrastructure.Models.Data.Table
             TableID = tableID;
             Value = value;
             GUID = gUID;
+            UIConcreteType = UIConcrete.Header;
         }
     }
 }

@@ -26,11 +26,12 @@ namespace Infrastructure.Models.Data.InfomationBlock
             Inactive = inactive;
             InfomationBlockid = infomationBlockId;
             GUID = gUID;
+            UIConcreteType = UIConcrete.Paragraph;
         }
 
         public Paragraph()
         {
-            
+            UIConcreteType = UIConcrete.Paragraph;
         }
     }
 }
