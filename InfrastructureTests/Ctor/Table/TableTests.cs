@@ -9,7 +9,7 @@ namespace InfrastructureTests.Ctor
         public void Table_Constructor_NoParameters()
         {
             // Arrange & Act
-            var table = new Table();
+            var table = new Infrastructure.Models.Data.Table.Table();
 
             // Assert
             Assert.Equal(0, table.Id);
