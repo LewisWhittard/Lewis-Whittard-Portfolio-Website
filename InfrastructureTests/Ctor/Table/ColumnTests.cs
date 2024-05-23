@@ -22,5 +22,24 @@ namespace InfrastructureTests.Ctor
             Assert.Null(column.GUID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
         }
+
+        [Theory]
+        [InlineData(1, false, true, "Test Value", 10, 20, "ABC123")]
+        [InlineData(2, true, false, "Another Value", 5, 15, "XYZ789")]
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID)
+        {
+            // Act
+            var column = new Column(id, deleted, inactive, value, displayOrder, tableID, gUID);
+
+            // Assert
+            Assert.Equal(id, column.Id);
+            Assert.Equal(deleted, column.Deleted);
+            Assert.Equal(inactive, column.Inactive);
+            Assert.Equal(value, column.Value);
+            Assert.Equal(displayOrder, column.DisplayOrder);
+            Assert.Equal(tableID, column.TableID);
+            Assert.Equal(gUID, column.GUID);
+            Assert.Equal(UIConcrete.Column, column.UIConcreteType);
+        }
     }
 }

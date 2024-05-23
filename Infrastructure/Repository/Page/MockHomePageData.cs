@@ -32,17 +32,17 @@ namespace Infrastructure.Repository.Page
             Header header01 = new Header(1,false,false,1,0, "Result", "HomePageTable0Header1");
             Header header02 = new Header(2, false, false, 2, 0, "Year", "HomePageTable0Header2");
 
-            Column column00 = new Column(0,false,false, "Software Development Technician Level 3", 0,0,0, "HomePageTable0Column0");
-            Column column01 = new Column(1, false, false, "Pass", 1, 0, 0, "HomePageTable0Column1");
-            Column column02 = new Column(2, false, false, "2020", 2, 0, 0, "HomePageTable0Column2");
-            Column column03 = new Column(3, false, false, "BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)", 0, 1, 0, "HomePageTable0Column3");
-            Column column04 = new Column(4, false, false, "Merit, Merit, Pass", 1, 1, 0, "HomePageTable0Column4");
-            Column column05 = new Column(5, false, false, "2016", 2, 1, 0, "HomePageTable0Column5");
+            //Column column00 = new Column(0,false,false, "Software Development Technician Level 3", 0,0,0, "HomePageTable0Column0");
+            //Column column01 = new Column(1, false, false, "Pass", 1, 0, 0, "HomePageTable0Column1");
+            //Column column02 = new Column(2, false, false, "2020", 2, 0, 0, "HomePageTable0Column2");
+            //Column column03 = new Column(3, false, false, "BTEC Level 3 Extended Diploma in Creative Media Production (Game Development) (QCF)", 0, 1, 0, "HomePageTable0Column3");
+            //Column column04 = new Column(4, false, false, "Merit, Merit, Pass", 1, 1, 0, "HomePageTable0Column4");
+            //Column column05 = new Column(5, false, false, "2016", 2, 1, 0, "HomePageTable0Column5");
             List<Header> headers0 = new List<Header>() { header00,header01,header02 };
             List<List<Column>> columns0 = new List<List<Column>>()
             {
-                new List<Column>() { column00, column01, column02 },
-                new List<Column>() { column03, column04, column05 }
+                //new List<Column>() { column00, column01, column02 },
+                //new List<Column>() { column03, column04, column05 }
             };
 
             Table table0 = new Table(0, false, false, 1, headers0, columns0, "HomePage", "HomePageTable0", "Certifications");
@@ -50,21 +50,21 @@ namespace Infrastructure.Repository.Page
             Header header10 = new Header(3, false, false, 0, 1, "Certification", "HomePageTable1Header0");
             Header header11 = new Header(4, false, false, 1, 1, "Result", "HomePageTable1Header1");
             Header header12 = new Header(5, false, false, 2, 1, "Year", "HomePageTable1Header2");
-            Column column10 = new Column(6, false, false, "ISTQB® Certified Tester, Foundation Level (4.0)", 0, 0, 1, "HomePageTable1Column0");
-            Column column11 = new Column(7, false, false, "Pass", 1, 0, 1, "HomePageTable1Column1");
-            Column column12 = new Column(8, false, false, "2024", 2, 0, 1, "HomePageTable1Column2");
-            Column column13 = new Column(9, false, false, "BCS Level 3 Certificate in Programming (603/1192/7)", 0, 1, 1, "HomePageTable1Column3");
-            Column column14 = new Column(10, false, false, "Pass", 1, 1, 1, "HomePageTable1Column4");
-            Column column15 = new Column(11, false, false, "2019", 2, 1, 1, "HomePageTable1Column5");
-            Column column16 = new Column(12, false, false, "BCS Level 3 Certificate in Software Development Context and Methodologies (603/1191/5)", 0, 2, 1, "HomePageTable1Column6");
-            Column column17 = new Column(13, false, false, "Pass", 1, 2, 1, "HomePageTable1Column7");
-            Column column18 = new Column(14, false, false, "2019", 2, 2, 1, "HomePageTable1Column8");
+            //Column column10 = new Column(6, false, false, "ISTQB® Certified Tester, Foundation Level (4.0)", 0, 0, 1, "HomePageTable1Column0");
+            //Column column11 = new Column(7, false, false, "Pass", 1, 0, 1, "HomePageTable1Column1");
+            //Column column12 = new Column(8, false, false, "2024", 2, 0, 1, "HomePageTable1Column2");
+            //Column column13 = new Column(9, false, false, "BCS Level 3 Certificate in Programming (603/1192/7)", 0, 1, 1, "HomePageTable1Column3");
+            //Column column14 = new Column(10, false, false, "Pass", 1, 1, 1, "HomePageTable1Column4");
+            //Column column15 = new Column(11, false, false, "2019", 2, 1, 1, "HomePageTable1Column5");
+            //Column column16 = new Column(12, false, false, "BCS Level 3 Certificate in Software Development Context and Methodologies (603/1191/5)", 0, 2, 1, "HomePageTable1Column6");
+            //Column column17 = new Column(13, false, false, "Pass", 1, 2, 1, "HomePageTable1Column7");
+            //Column column18 = new Column(14, false, false, "2019", 2, 2, 1, "HomePageTable1Column8");
             List<Header> headers1 = new List<Header>() { header10, header11, header12 };
             List<List<Column>> columns1 = new List<List<Column>>()
             {
-                new List<Column>() { column10, column11, column12 },
-                new List<Column>() { column13, column14, column15 },
-                new List<Column>() { column16, column17, column18 }
+                //new List<Column>() { column10, column11, column12 },
+                //new List<Column>() { column13, column14, column15 },
+                //new List<Column>() { column16, column17, column18 }
             };
             Table table1 = new Table(0,false,false,2,headers1,columns1,"HomePage","HomePageTable0", "Certifications");
             List<Table> tables = new List<Table>()

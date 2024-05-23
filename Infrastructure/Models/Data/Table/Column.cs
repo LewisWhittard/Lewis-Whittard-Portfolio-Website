@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.Table
             UIConcreteType = UIConcrete.Column;
         }
 
-        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int rowID, int tableID, string gUID)
+        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID)
         {
             Id = id;
             Deleted = deleted;
