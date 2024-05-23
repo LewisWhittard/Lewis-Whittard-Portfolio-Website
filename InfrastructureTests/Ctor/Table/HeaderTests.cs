@@ -21,5 +21,24 @@ namespace InfrastructureTests.Ctor
             Assert.Null(header.GUID);
             Assert.Equal(UIConcrete.Header, header.UIConcreteType);
         }
+
+        [Theory]
+        [InlineData(1, false, true, 10, 20, "Test Value", "ABC123")]
+        [InlineData(2, true, false, 5, 15, "Another Value", "XYZ789")]
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value, string gUID)
+        {
+            // Act
+            var header = new Header(id, deleted, inactive, displayOrder, tableID, value, gUID);
+
+            // Assert
+            Assert.Equal(id, header.Id);
+            Assert.Equal(deleted, header.Deleted);
+            Assert.Equal(inactive, header.Inactive);
+            Assert.Equal(displayOrder, header.DisplayOrder);
+            Assert.Equal(tableID, header.TableID);
+            Assert.Equal(value, header.Value);
+            Assert.Equal(gUID, header.GUID);
+            Assert.Equal(UIConcrete.Header, header.UIConcreteType);
+        }
     }
 }
