@@ -23,5 +23,25 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
         }
+
+        [Theory]
+        [InlineData(1, false, true, "Test Heading", 10, 1, "ABC123", 1)]
+        [InlineData(2, true, false, "Another Heading", 5, 2, "XYZ789", 2)]
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid, string gUID, int level)
+        {
+            // Act
+            var heading = new Heading(id, deleted, inactive, text, displayOrder, infomationBlockid, gUID, level);
+
+            // Assert
+            Assert.Equal(id, heading.Id);
+            Assert.Equal(deleted, heading.Deleted);
+            Assert.Equal(inactive, heading.Inactive);
+            Assert.Equal(text, heading.Text);
+            Assert.Equal(displayOrder, heading.DisplayOrder);
+            Assert.Equal(infomationBlockid, heading.InfomationBlockid);
+            Assert.Equal(gUID, heading.GUID);
+            Assert.Equal(level, heading.Level);
+            Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
+        }
     }
 }
