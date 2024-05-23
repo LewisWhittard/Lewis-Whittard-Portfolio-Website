@@ -21,5 +21,25 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, paragraph.InfomationBlockid);
             Assert.Null(paragraph.GUID);
         }
+
+        [Theory]
+        [InlineData("Sample text", 1, 100, false, false, 200, "ABC123")]
+        [InlineData("Another sample text", 2, 101, true, true, 201, "DEF456")]
+        // Add more inline data sets for additional test cases if needed
+        public void Constructor_Initializes_Properties_Correctly(string text, int displayOrder, int id, bool deleted, bool inactive, int informationBlockId, string guid)
+        {
+            // Act
+            var paragraph = new Paragraph(text, displayOrder, id, deleted, inactive, informationBlockId, guid);
+
+            // Assert
+            Assert.Equal(text, paragraph.Text);
+            Assert.Equal(displayOrder, paragraph.DisplayOrder);
+            Assert.Equal(id, paragraph.Id);
+            Assert.Equal(deleted, paragraph.Deleted);
+            Assert.Equal(inactive, paragraph.Inactive);
+            Assert.Equal(informationBlockId, paragraph.InfomationBlockid);
+            Assert.Equal(guid, paragraph.GUID);
+            Assert.Equal(UIConcrete.Paragraph, paragraph.UIConcreteType);
+        }
     }
 }
