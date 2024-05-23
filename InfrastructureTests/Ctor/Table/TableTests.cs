@@ -20,7 +20,7 @@ namespace InfrastructureTests.Ctor
             Assert.Null(table.Columns);
             Assert.Null(table.DisplayOrder);
             Assert.Null(table.GUID);
-            Assert.Equal(UIConcrete.InfomationBlock, table.UIConcreteType);
+            Assert.Equal(UIConcrete.Table, table.UIConcreteType);
         }
     }
 }
