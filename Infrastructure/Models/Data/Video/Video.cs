@@ -22,5 +22,19 @@ namespace Infrastructure.Models.Data.Video
         {
             UIConcreteType = UIConcrete.Video;
         }
+
+        public Video(string source, string title, string description, string navigation, int id, bool deleted, bool inactive, int? displayOrder, string guid)
+        {
+            Source = source;
+            Title = title;
+            Description = description;
+            Navigation = navigation;
+            Id = id;
+            Deleted = deleted;
+            Inactive = inactive;
+            DisplayOrder = displayOrder;
+            GUID = guid;
+            UIConcreteType = UIConcrete.Video;
+        }
     }
 }
