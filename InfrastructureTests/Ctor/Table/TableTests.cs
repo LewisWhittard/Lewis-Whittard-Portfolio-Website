@@ -6,7 +6,7 @@ namespace InfrastructureTests.Ctor
     public class TableTests
     {
         [Fact]
-        public void Table_Constructor_NoParameters()
+        public void Table_DefaultConstructor_InitializesProperties()
         {
             // Arrange & Act
             var table = new Infrastructure.Models.Data.Table.Table();
