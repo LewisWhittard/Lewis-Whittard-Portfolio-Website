@@ -2,24 +2,24 @@
 
 namespace InfrastructureTests.Ctor
 {
-    public class InfomationBlockTests
+    public class InformationBlockTests
     {
         [Fact]
-        public void InfomationBlock_Constructor_NoParameters()
+        public void InformationBlock_Constructor_NoParameters()
         {
             //arrange, act
-            Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomationBlock = new Infrastructure.Models.Data.InfomationBlock.InfomatonBlock();
+            Infrastructure.Models.Data.InformationBlock.InfomatonBlock informationBlock = new Infrastructure.Models.Data.InformationBlock.InfomatonBlock();
 
             //assert
-            Assert.Equal(0, infomationBlock.Id);
-            Assert.False(infomationBlock.Deleted);
-            Assert.False(infomationBlock.Inactive);
-            Assert.Null(infomationBlock.Images);
-            Assert.Null(infomationBlock.Paragraphs);
-            Assert.Null(infomationBlock.Headings);
-            Assert.Null(infomationBlock.DisplayOrder);
-            Assert.Null(infomationBlock.GUID);
-            Assert.Equal(UIConcrete.InfomationBlock, infomationBlock.UIConcreteType);
+            Assert.Equal(0, informationBlock.Id);
+            Assert.False(informationBlock.Deleted);
+            Assert.False(informationBlock.Inactive);
+            Assert.Null(informationBlock.Images);
+            Assert.Null(informationBlock.Paragraphs);
+            Assert.Null(informationBlock.Headings);
+            Assert.Null(informationBlock.DisplayOrder);
+            Assert.Null(informationBlock.GUID);
+            Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
         }
     }
 }

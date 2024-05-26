@@ -1,8 +1,8 @@
 ﻿using UIFactory.Factory.Interface;
 
-namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces
+namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock.Interfaces
 {
-    public interface IInfomationBlock
+    public interface IInformationBlock
     {
         public List<Image> Images { get; set; }
         public List<Paragraph> Paragraphs { get; set; }

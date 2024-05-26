@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Models.Data.Carousel;
 using Infrastructure.Models.Data.CarouselCard;
-using Infrastructure.Models.Data.InfomationBlock;
+using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Shared.Card;
 using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.Table;
@@ -41,7 +41,7 @@ namespace Infrastructure.Repository.Page
 
             _pages = new List<Models.Data.Page.Page>()
             {
-                new Models.Data.Page.Page() {PageName = "First", Deleted = false, Inactive = false, Cards = cards, Carousels = carousels, CarouselCards = carouselCards, Tables = tables, Videos = videos, InfomationBlocks = infoBlocks},
+                new Models.Data.Page.Page() {PageName = "First", Deleted = false, Inactive = false, Cards = cards, Carousels = carousels, CarouselCards = carouselCards, Tables = tables, Videos = videos, InformationBlocks = infoBlocks},
                 new Models.Data.Page.Page() {PageName = "Second", Deleted = false, Inactive = false},
                 new Models.Data.Page.Page() {PageName = "Deleted", Deleted = true, Inactive = false},
                 new Models.Data.Page.Page() {PageName = "IncludeInactive", Deleted = false, Inactive = true},

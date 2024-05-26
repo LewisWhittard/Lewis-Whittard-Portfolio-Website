@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.CSHTML.Concrete.Carousel;
 using UIFactory.Factory.CSHTML.Concrete.CarouselCard;
-using UIFactory.Factory.CSHTML.Concrete.InfomationBlock;
+using UIFactory.Factory.CSHTML.Concrete.InformationBlock;
 using UIFactory.Factory.CSHTML.Concrete.Table;
 using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
@@ -58,9 +58,9 @@ namespace UIFactory.Factory.CSHTML
                 case UIConcrete.CarouselCard:
                     var carouselCard = (Infrastructure.Models.Data.CarouselCard.CarouselCard)data;
                     return new CarouselCard(carouselCard,jsonLDData,altData);
-                case UIConcrete.InfomationBlock:
-                    var infomationBlock = (Infrastructure.Models.Data.InfomationBlock.InfomatonBlock)data;
-                    return new InfomatonBlock(infomationBlock,jsonLDData,altData);
+                case UIConcrete.InformationBlock:
+                    var informationBlock = (Infrastructure.Models.Data.InformationBlock.InfomatonBlock)data;
+                    return new InfomatonBlock(informationBlock,jsonLDData,altData);
                 case UIConcrete.Table:
                     var table = (Infrastructure.Models.Data.Table.Table)data;
                     return new Table(table);

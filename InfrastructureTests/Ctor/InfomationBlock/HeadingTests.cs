@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models.Data.InfomationBlock;
+﻿using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Interface;
 
 namespace InfrastructureTests.Ctor
@@ -18,7 +18,7 @@ namespace InfrastructureTests.Ctor
             Assert.False(heading.Inactive);
             Assert.Null(heading.Text);
             Assert.Null(heading.DisplayOrder);
-            Assert.Equal(0, heading.InfomationBlockid);
+            Assert.Equal(0, heading.InformationBlockid);
             Assert.Null(heading.GUID);
             Assert.Equal(0, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
@@ -27,10 +27,10 @@ namespace InfrastructureTests.Ctor
         [Theory]
         [InlineData(1, false, true, "Test Heading", 10, 1, "ABC123", 1)]
         [InlineData(2, true, false, "Another Heading", 5, 2, "XYZ789", 2)]
-        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid, string gUID, int level)
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string gUID, int level)
         {
             // Act
-            var heading = new Heading(id, deleted, inactive, text, displayOrder, infomationBlockid, gUID, level);
+            var heading = new Heading(id, deleted, inactive, text, displayOrder, informationBlockid, gUID, level);
 
             // Assert
             Assert.Equal(id, heading.Id);
@@ -38,7 +38,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(inactive, heading.Inactive);
             Assert.Equal(text, heading.Text);
             Assert.Equal(displayOrder, heading.DisplayOrder);
-            Assert.Equal(infomationBlockid, heading.InfomationBlockid);
+            Assert.Equal(informationBlockid, heading.InformationBlockid);
             Assert.Equal(gUID, heading.GUID);
             Assert.Equal(level, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);

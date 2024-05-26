@@ -19,9 +19,9 @@
             var CarouselCard = (UIFactory.Factory.CSHTML.Concrete.CarouselCard.CarouselCard)item;
             @await Html.PartialAsync("~/Views/Shared/_CarouselCardPartial.cshtml", CarouselCard)
             break;
-        case UI.InfomationBlock:
-            var infomationBlock = (UIFactory.Factory.CSHTML.Concrete.InfomationBlock.InfomatonBlock)item;
-            @await Html.PartialAsync("~/Views/Shared/_InfomatonBlockPartial.cshtml", infomationBlock)
+        case UI.InformationBlock:
+            var informationBlock = (UIFactory.Factory.CSHTML.Concrete.InformationBlock.InfomatonBlock)item;
+            @await Html.PartialAsync("~/Views/Shared/_InfomatonBlockPartial.cshtml", informationBlock)
             break;
         case UI.Table:
             var table = (UIFactory.Factory.CSHTML.Concrete.Table.Table)item;

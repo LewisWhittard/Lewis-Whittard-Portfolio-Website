@@ -1,8 +1,8 @@
-﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
+﻿using Infrastructure.Models.Data.InformationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
 using System.Text.Json.Serialization;
 
-namespace Infrastructure.Models.Data.InfomationBlock
+namespace Infrastructure.Models.Data.InformationBlock
 {
     public class Heading : IData, IHeading
     {
@@ -11,7 +11,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public bool Inactive { get; set; }
         public string Text { get; set; }
         public int? DisplayOrder { get; set; }
-        public int InfomationBlockid { get; set; }
+        public int InformationBlockid { get; set; }
         public string GUID { get; set; }
         public int Level { get; set; }
         [JsonIgnore]
@@ -22,14 +22,14 @@ namespace Infrastructure.Models.Data.InfomationBlock
             UIConcreteType = UIConcrete.Heading;
         }
 
-        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int infomationBlockid,string gUID, int level)
+        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid,string gUID, int level)
         {
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
             Text = text;
             DisplayOrder = displayOrder;
-            InfomationBlockid = infomationBlockid;
+            InformationBlockid = informationBlockid;
             GUID = gUID;
             Level = level;
             UIConcreteType = UIConcrete.Heading;

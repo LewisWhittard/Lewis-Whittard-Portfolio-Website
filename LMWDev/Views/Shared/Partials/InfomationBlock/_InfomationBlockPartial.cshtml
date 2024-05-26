@@ -1,5 +1,5 @@
 ﻿@using System.Data
-@using UIFactory.Factory.CSHTML.Concrete.InfomationBlock
+@using UIFactory.Factory.CSHTML.Concrete.InformationBlock
 @using UIFactory.Factory.CSHTML.Concrete.Interface
 @model InfomatonBlock
 
@@ -10,13 +10,13 @@
     {
         @switch (item.UIType)
         {
-            case UI.InfomationBlockImage:
-                var image = (UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Image)item;
+            case UI.InformationBlockImage:
+                var image = (UIFactory.Factory.CSHTML.Concrete.InformationBlock.Image)item;
                 <img src="~/Images/@image.Source" id="@image.GUID" name="@image.GUID" alt="@image.Alt">
 
                 break;
             
-            case UI.InfomationBlockHeading:
+            case UI.InformationBlockHeading:
                 var heading = (Heading)item;
                 
                 @switch (heading.Level)
@@ -36,7 +36,7 @@
                 <h1>@heading.Text</h1>
                 break;
 
-            case UI.InfomationBlockParagraph:
+            case UI.InformationBlockParagraph:
                 var paragraph = (Paragraph)item;
                 <p>@paragraph.Text</p>
                 break;

@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models.Data.InfomationBlock;
+﻿using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Interface;
 
 namespace InfrastructureTests.Ctor
@@ -18,7 +18,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, paragraph.Id);
             Assert.False(paragraph.Deleted);
             Assert.False(paragraph.Inactive);
-            Assert.Equal(0, paragraph.InfomationBlockid);
+            Assert.Equal(0, paragraph.InformationBlockid);
             Assert.Null(paragraph.GUID);
         }
 
@@ -37,7 +37,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(id, paragraph.Id);
             Assert.Equal(deleted, paragraph.Deleted);
             Assert.Equal(inactive, paragraph.Inactive);
-            Assert.Equal(informationBlockId, paragraph.InfomationBlockid);
+            Assert.Equal(informationBlockId, paragraph.InformationBlockid);
             Assert.Equal(guid, paragraph.GUID);
             Assert.Equal(UIConcrete.Paragraph, paragraph.UIConcreteType);
         }

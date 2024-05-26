@@ -1,9 +1,9 @@
 ﻿using SEO.Models.Alt.Interface;
-using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
+using UIFactory.Factory.CSHTML.Concrete.InformationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
 
-namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
+namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
 {
     public class Image : IImage, ICSHTML, IUI
     {

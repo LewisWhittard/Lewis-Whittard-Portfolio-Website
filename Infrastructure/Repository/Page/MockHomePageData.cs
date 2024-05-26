@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models.Data.InfomationBlock;
+﻿using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.CarouselCard;
@@ -17,16 +17,16 @@ namespace Infrastructure.Repository.Page
 
         public MockHomePageData()
         {
-            Heading heading00 = new Heading(0,false,false,"About Me",0,0, "HomePageInfomationBlock0Heading0", 1);
-            Paragraph paragraph00 = new Paragraph("Having over 5 years experience in the software industry I have worked as a software tester using mostly manual techniques and dabbled with automation. Currently I am transitioning into a support developer role.",1,0,false,false,0, "HomePageInfomationBlock0Paragraph0");
-            Heading heading01 = new Heading(1, false, false, "Hobbies and Interests", 2, 0, "HomePageInfomationBlock0Heading1", 2);
-            Paragraph paragraph01 = new Paragraph("I enjoy improving my skill set by doing side projects outside of my day job, which will be displayed on this portfolio site. Some of this stems for my passion for gaming which I have done from a young age. This helped ignite my interest in computing as a whole. I also do kick boxing for both health and enjoyment.", 4, 1, false, false, 0, "HomePageInfomationBlock0Paragraph1");
-            Image image00 = new Image("LewisWhittard.png", 5,0,false,false, "HomePageInfomationBlock0Image0");
+            Heading heading00 = new Heading(0,false,false,"About Me",0,0, "HomePageInformationBlock0Heading0", 1);
+            Paragraph paragraph00 = new Paragraph("Having over 5 years experience in the software industry I have worked as a software tester using mostly manual techniques and dabbled with automation. Currently I am transitioning into a support developer role.",1,0,false,false,0, "HomePageInformationBlock0Paragraph0");
+            Heading heading01 = new Heading(1, false, false, "Hobbies and Interests", 2, 0, "HomePageInformationBlock0Heading1", 2);
+            Paragraph paragraph01 = new Paragraph("I enjoy improving my skill set by doing side projects outside of my day job, which will be displayed on this portfolio site. Some of this stems for my passion for gaming which I have done from a young age. This helped ignite my interest in computing as a whole. I also do kick boxing for both health and enjoyment.", 4, 1, false, false, 0, "HomePageInformationBlock0Paragraph1");
+            Image image00 = new Image("LewisWhittard.png", 5,0,false,false, "HomePageInformationBlock0Image0");
             List<Heading> headings0 = new List<Heading>() { heading00, heading01 };
             List<Paragraph> paragraphs0 = new List<Paragraph>() { paragraph00, paragraph01 };
             List<Image> images0 = new List<Image> { image00 };
-            InfomatonBlock infomationBLock = new InfomatonBlock(0,false,false,images0,paragraphs0,headings0,0,"HomePageInfomationBlock0");
-            List<InfomatonBlock> infomationBLocks =  new List<InfomatonBlock> { infomationBLock };
+            InfomatonBlock informationBLock = new InfomatonBlock(0,false,false,images0,paragraphs0,headings0,0,"HomePageInformationBlock0");
+            List<InfomatonBlock> informationBLocks =  new List<InfomatonBlock> { informationBLock };
 
             Header header00 = new Header(0,false,false,0,0, "Qualification", "HomePageTable0Header0");
             Header header01 = new Header(1,false,false,1,0, "Result", "HomePageTable0Header1");
@@ -81,7 +81,7 @@ namespace Infrastructure.Repository.Page
                 carouselCard0
             };
             
-            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, infomationBLocks,tables,null,"HomePage",0,false,false);
+            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, informationBLocks,tables,null,"HomePage",0,false,false);
             Page = new List<Models.Data.Page.Page>()
             {
                 page0

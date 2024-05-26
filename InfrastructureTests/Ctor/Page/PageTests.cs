@@ -16,7 +16,7 @@ namespace InfrastructureTests.Ctor
             Assert.Null(page.Cards);
             Assert.Null(page.Carousels);
             Assert.Null(page.CarouselCards);
-            Assert.Null(page.InfomationBlocks);
+            Assert.Null(page.InformationBlocks);
             Assert.Null(page.Tables);
             Assert.Null(page.GUID);
             Assert.Equal(0,page.Id);

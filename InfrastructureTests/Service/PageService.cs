@@ -67,8 +67,8 @@ namespace InfrastructureTests.Service
                     Assert.Equal(carouselCard.Count(), 2);
                     var table = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Table).ToList();
                     Assert.Equal(table.Count(), 2);
-                    var infomationBlocks = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.InfomationBlock).ToList();
-                    Assert.Equal(infomationBlocks.Count(), 2);
+                    var informationBlocks = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.InformationBlock).ToList();
+                    Assert.Equal(informationBlocks.Count(), 2);
                     var videos = pageIDatas.Where(x => x.UIConcreteType == UIConcrete.Video).ToList();
                     Assert.Equal(videos.Count(), 2);
                 }

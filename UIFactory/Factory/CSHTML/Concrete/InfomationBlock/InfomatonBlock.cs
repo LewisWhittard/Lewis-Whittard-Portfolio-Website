@@ -1,12 +1,12 @@
 ﻿using SEO.Models.Alt.Interface;
 using SEO.Models.JsonLD.Interface;
-using UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces;
+using UIFactory.Factory.CSHTML.Concrete.InformationBlock.Interfaces;
 using UIFactory.Factory.CSHTML.Concrete.Interface;
 using UIFactory.Factory.Interface;
 
-namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
+namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
 {
-    public class InfomatonBlock : IInfomationBlock, ICSHTML, IJsonLD, IUI
+    public class InfomatonBlock : IInformationBlock, ICSHTML, IJsonLD, IUI
     {
         public Heading Heading { get; set; }
         public List<Image> Images { get; set; }
@@ -17,10 +17,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
         public UI? UIType { get; set; }
         public string GUID { get; set; }
 
-        private readonly Infrastructure.Models.Data.InfomationBlock.InfomatonBlock _infomatonBlock;
+        private readonly Infrastructure.Models.Data.InformationBlock.InfomatonBlock _infomatonBlock;
         private readonly List<IAltData> _alt;
 
-        public InfomatonBlock(Infrastructure.Models.Data.InfomationBlock.InfomatonBlock infomatonBlock, List<IJsonLDData> JsonLd, List<IAltData> alt)
+        public InfomatonBlock(Infrastructure.Models.Data.InformationBlock.InfomatonBlock infomatonBlock, List<IJsonLDData> JsonLd, List<IAltData> alt)
         {
             _infomatonBlock = infomatonBlock;
             _alt = alt;
@@ -40,7 +40,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock
 				Headings.Add(heading);
 			}
             DisplayOrder = _infomatonBlock.Id;
-            UIType = UI.InfomationBlock;
+            UIType = UI.InformationBlock;
         }
 
 		public List<IUI> ReturnContentsAsListIUI()

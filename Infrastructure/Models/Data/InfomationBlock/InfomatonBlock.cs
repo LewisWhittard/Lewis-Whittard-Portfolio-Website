@@ -1,11 +1,11 @@
-﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
+﻿using Infrastructure.Models.Data.InformationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Shared.Image;
 using System.Text.Json.Serialization;
 
-namespace Infrastructure.Models.Data.InfomationBlock
+namespace Infrastructure.Models.Data.InformationBlock
 {
-    public class InfomatonBlock : IInfomationBlock, IData
+    public class InfomatonBlock : IInformationBlock, IData
     {
         public int Id { get; set; }
         public bool Deleted { get; set; }
@@ -21,7 +21,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
 
         public InfomatonBlock()
         {
-            UIConcreteType = UIConcrete.InfomationBlock;
+            UIConcreteType = UIConcrete.InformationBlock;
         }
 
         public InfomatonBlock(int id,bool deleted,bool inactive,List<Image> images,List<Paragraph> paragraphs,List<Heading> headings,int displayOrder,string gUID)
@@ -35,7 +35,7 @@ namespace Infrastructure.Models.Data.InfomationBlock
             Headings = headings;
             DisplayOrder = displayOrder;
             GUID = gUID;
-            UIConcreteType = UIConcrete.InfomationBlock;
+            UIConcreteType = UIConcrete.InformationBlock;
         }
     }
 }

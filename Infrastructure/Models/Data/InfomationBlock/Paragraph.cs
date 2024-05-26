@@ -1,8 +1,8 @@
-﻿using Infrastructure.Models.Data.InfomationBlock.Interfaces;
+﻿using Infrastructure.Models.Data.InformationBlock.Interfaces;
 using Infrastructure.Models.Data.Interface;
 using System.Text.Json.Serialization;
 
-namespace Infrastructure.Models.Data.InfomationBlock
+namespace Infrastructure.Models.Data.InformationBlock
 {
     public class Paragraph : IParagraph,IData
     {
@@ -11,20 +11,20 @@ namespace Infrastructure.Models.Data.InfomationBlock
         public int Id { get; set; }
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
-        public int InfomationBlockid { get; set; }
+        public int InformationBlockid { get; set; }
         public string GUID { get; set; }
 
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
-        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int infomationBlockId, string gUID)
+        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int informationBlockId, string gUID)
         {
             Text = text;
             DisplayOrder = displayOrder;
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
-            InfomationBlockid = infomationBlockId;
+            InformationBlockid = informationBlockId;
             GUID = gUID;
             UIConcreteType = UIConcrete.Paragraph;
         }

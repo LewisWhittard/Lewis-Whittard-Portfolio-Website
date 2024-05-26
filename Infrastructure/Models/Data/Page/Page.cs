@@ -10,7 +10,7 @@ namespace Infrastructure.Models.Data.Page
         public List<Shared.Card.Card>? Cards { get; set; }
         public List<Carousel.Carousel>? Carousels { get; set; }
         public List<CarouselCard.CarouselCard>? CarouselCards { get; set; }
-        public List<InfomationBlock.InfomatonBlock>? InfomationBlocks { get; set; }
+        public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; set; }
         public List<Video.Video>? Videos {  get; set; } 
         public List<Table.Table>? Tables { get; set; }
         public string GUID { get; set; }
@@ -26,13 +26,13 @@ namespace Infrastructure.Models.Data.Page
             UIConcreteType = UIConcrete.Page;
         }
 
-        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InfomationBlock.InfomatonBlock>? infomationBlocks,List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id,bool deleted,bool inactive)
+        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks,List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id,bool deleted,bool inactive)
         {
             PageName = pageName;
             Cards = cards;
             Carousels = carousels;
             CarouselCards = carouselCard;
-            InfomationBlocks = infomationBlocks;
+            InformationBlocks = informationBlocks;
             Tables = tables;
             Videos = videos;
             GUID = gUID;
@@ -59,9 +59,9 @@ namespace Infrastructure.Models.Data.Page
                 result.AddRange(CarouselCards.ToList().ConvertAll(x => (IData)x));
             }
 
-            if (InfomationBlocks?.Count() > 0)
+            if (InformationBlocks?.Count() > 0)
             {
-                result.AddRange(InfomationBlocks.ToList().ConvertAll(x => (IData)x));
+                result.AddRange(InformationBlocks.ToList().ConvertAll(x => (IData)x));
             }
 
             if (Tables?.Count() > 0)

@@ -1,4 +1,4 @@
-﻿namespace UIFactory.Factory.CSHTML.Concrete.InfomationBlock.Interfaces
+﻿namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock.Interfaces
 {
     public interface IImage
     {

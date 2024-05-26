@@ -1,8 +1,8 @@
 ﻿using Infrastructure.Models.Data.Shared.Image;
 
-namespace Infrastructure.Models.Data.InfomationBlock.Interfaces
+namespace Infrastructure.Models.Data.InformationBlock.Interfaces
 {
-    public interface IInfomationBlock
+    public interface IInformationBlock
     {
         public List<Image> Images { get; set; }
         public List<Paragraph> Paragraphs { get; set; }
