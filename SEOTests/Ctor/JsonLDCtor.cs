@@ -8,6 +8,8 @@ namespace SEOTests.Ctor
         [Theory]
         [InlineData("superClassGUID", UIConcrete.Table, "page", 1, 10, "guid", false, false)]
         [InlineData(null, UIConcrete.InformationBlock, "page2", 2, null, "guid2", true, true)]
+        [InlineData("superClassGUID", UIConcrete.Table, "page", 1, 10, "guid", true, false)]
+        [InlineData(null, UIConcrete.InformationBlock, "page2", 2, null, "guid2", false, true)]
         // Add more test cases as needed
         public void JsonLDData_Constructor_SetsPropertiesCorrectly(
         string superClassGUID, UIConcrete uiConcreteType, string page,
