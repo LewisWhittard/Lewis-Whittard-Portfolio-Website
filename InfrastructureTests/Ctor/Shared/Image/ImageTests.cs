@@ -24,6 +24,8 @@ namespace InfrastructureTests.Ctor
         [Theory]
         [InlineData("example.jpg", 10, 1, false, true, "ABC123")]
         [InlineData("anotherexample.png", null, 2, true, false, "XYZ789")]
+        [InlineData("example.jpg", 10, 1, true, true, "ABC123")]
+        [InlineData("anotherexample.png", null, 2, false, false, "XYZ789")]
         public void Constructor_InitializesPropertiesCorrectly(string source, int? displayOrder, int id, bool deleted, bool inactive, string gUID)
         {
             // Act
