@@ -8,6 +8,8 @@ namespace SEOTests.Ctor
         [Theory]
         [InlineData(1, Name.OGTitle, "Lorem ipsum", "12345678-1234-1234-1234-123456789abc", "UTF-8", false, false, UIConcrete.Table, 2, "HomePage")]
         [InlineData(2, Name.Author, "Dolor sit amet", "87654321-4321-4321-4321-987654321cba", null, true, true, null, null, "AboutPage")]
+        [InlineData(1, Name.OGTitle, "Lorem ipsum", "12345678-1234-1234-1234-123456789abc", "UTF-8", true, false, UIConcrete.Table, 2, "HomePage")]
+        [InlineData(2, Name.Author, "Dolor sit amet", "87654321-4321-4321-4321-987654321cba", null, false, true, null, null, "AboutPage")]
         public void MetaData_Constructor_SetsPropertiesCorrectly(int id, Name name, string content, string guid, string charset, bool deleted, bool inactive, UIConcrete? uiConcreteType, int? displayOrder, string pageName)
         {
             // Arrange, Act
