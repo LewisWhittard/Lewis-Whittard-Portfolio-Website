@@ -23,6 +23,8 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
+        [InlineData("Sample text", 1, 100, true, false, 200, "ABC123")]
+        [InlineData("Another sample text", 2, 101, false, true, 201, "DEF456")]
         [InlineData("Sample text", 1, 100, false, false, 200, "ABC123")]
         [InlineData("Another sample text", 2, 101, true, true, 201, "DEF456")]
         // Add more inline data sets for additional test cases if needed
