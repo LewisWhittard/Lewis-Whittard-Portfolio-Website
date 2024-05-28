@@ -27,6 +27,8 @@ namespace InfrastructureTests.Ctor
         [Theory]
         [InlineData(1, false, true, "Test Heading", 10, 1, "ABC123", 1)]
         [InlineData(2, true, false, "Another Heading", 5, 2, "XYZ789", 2)]
+        [InlineData(1, true, true, "Test Heading", 10, 1, "ABC123", 1)]
+        [InlineData(2, false, false, "Another Heading", 5, 2, "XYZ789", 2)]
         public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string gUID, int level)
         {
             // Act
