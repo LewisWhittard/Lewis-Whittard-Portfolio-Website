@@ -7,7 +7,9 @@ namespace SEOTests.Ctor
     {
         [Theory]
         [InlineData("123456", UIConcrete.Video, "HomePage", 1, "SomeValue", "789012", 1001, false, true)]
-        [InlineData("123456", null, "HomePage", 1, "SomeValue", "789012", 1001, false, true)]
+        [InlineData("123456", null, "HomePage", 1, "SomeValue", "789012", 1001, true, false)]
+        [InlineData("123456", UIConcrete.Video, "HomePage", 1, "SomeValue", "789012", 1001, true, true)]
+        [InlineData("123456", null, "HomePage", 1, "SomeValue", "789012", 1001, false, false)]
         public void MetaData_Constructor_SetsPropertiesCorrectly(string superClassGUID, UIConcrete? uiConcreteType, string page, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
         {
             //arrange, Act
