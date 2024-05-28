@@ -30,6 +30,7 @@ namespace Infrastructure.Models.Data.Table
             Headers = headers;
             Columns = columns;
             UIConcreteType = UIConcrete.Table;
+            DisplayOrder = displayOrder;
             GUID = gUID;
             Title = title;
         }

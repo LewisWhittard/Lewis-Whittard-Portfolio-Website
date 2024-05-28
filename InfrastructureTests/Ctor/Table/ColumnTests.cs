@@ -24,12 +24,12 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData(1, false, true, "Test Value", 10, 20, "ABC123")]
-        [InlineData(2, true, false, "Another Value", 5, 15, "XYZ789")]
-        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID)
+        [InlineData(1, false, true, "Test Value", 10, 20, "ABC123",0)]
+        [InlineData(2, true, false, "Another Value", 5, 15, "XYZ789",1)]
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID, int rowId)
         {
             // Act
-            var column = new Column(id, deleted, inactive, value, displayOrder, tableID, gUID);
+            var column = new Column(id, deleted, inactive, value, displayOrder, tableID, gUID,rowId);
 
             // Assert
             Assert.Equal(id, column.Id);
@@ -40,6 +40,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(tableID, column.TableID);
             Assert.Equal(gUID, column.GUID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
+            Assert.Equal(rowId, column.RowId);
         }
     }
 }

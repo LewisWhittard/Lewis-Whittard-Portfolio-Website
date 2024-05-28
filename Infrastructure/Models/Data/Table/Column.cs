@@ -14,6 +14,7 @@ namespace Infrastructure.Models.Data.Table
         public int? DisplayOrder { get; set; }
         public int TableID { get; set; }
         public string GUID { get; set; }
+        public int RowId { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
@@ -22,7 +23,7 @@ namespace Infrastructure.Models.Data.Table
             UIConcreteType = UIConcrete.Column;
         }
 
-        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID)
+        public Column(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID, int rowId)
         {
             Id = id;
             Deleted = deleted;
@@ -32,6 +33,7 @@ namespace Infrastructure.Models.Data.Table
             TableID = tableID;
             GUID = gUID;
             UIConcreteType = UIConcrete.Column;
+            RowId = rowId;
         }
     }
 }
