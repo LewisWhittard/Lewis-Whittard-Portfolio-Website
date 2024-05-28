@@ -26,6 +26,8 @@ namespace InfrastructureTests.Ctor
         [Theory]
         [InlineData(1, false, true, "Test Value", 10, 20, "ABC123",0)]
         [InlineData(2, true, false, "Another Value", 5, 15, "XYZ789",1)]
+        [InlineData(1, true, true, "Test Value", 10, 20, "ABC123", 0)]
+        [InlineData(2, false, false, "Another Value", 5, 15, "XYZ789", 1)]
         public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID, int rowId)
         {
             // Act
