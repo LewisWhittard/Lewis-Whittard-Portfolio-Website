@@ -38,9 +38,8 @@ namespace InfrastructureTests.Ctor
         public void ParameterizedConstructor_ShouldInitializeWithGivenValues(
             int id, bool deleted, bool inactive, int? displayOrder, string gUID)
         {
-            SetUp();
-
             // Arrange,Act
+            SetUp();
             var carouselCard = new Infrastructure.Models.Data.CarouselCard.CarouselCard(id, deleted, inactive, _cards, displayOrder, gUID);
 
             // Assert
