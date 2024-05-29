@@ -1,10 +1,18 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Shared.Card;
+using Infrastructure.Models.Data.Shared.Image;
 
 namespace InfrastructureTests.Ctor
 {
     public class CardTests
     {
+        private Image _image { get; set; }
+
+        public void SetUp()
+        {
+            _image = new Image("Source", 0, 0, false, false, "GUID");
+        }
+
         [Fact]
         public void Card_Constructor_NoParameters()
         {
@@ -22,6 +30,38 @@ namespace InfrastructureTests.Ctor
             Assert.False(card.Inactive);
             Assert.Null(card.DisplayOrder);
             Assert.Null(card.GUID);
+        }
+
+        [Theory]
+        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, false, 10, "12345-67890")]
+        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, true, 20, "54321-09876")]
+        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, true, 10, "12345-67890")]
+        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, false, 20, "54321-09876")]
+        public void Card_Constructor_SetsPropertiesCorrectly(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID)
+        {
+            SetUp();
+
+            // Act
+            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID);
+
+            // Assert
+            Assert.Equal(_image, card.Image);
+            Assert.Equal(title, card.Title);
+            Assert.Equal(description, card.Description);
+            Assert.Equal(navigation, card.Navigation);
+            Assert.Equal(id, card.Id);
+            Assert.Equal(deleted, card.Deleted);
+            Assert.Equal(inactive, card.Inactive);
+            Assert.Equal(displayOrder, card.DisplayOrder);
+            Assert.Equal(gUID, card.GUID);
+            Assert.Equal(UIConcrete.Card, card.UIConcreteType);
+
+            TearDown();
+        }
+
+        public void TearDown()
+        {
+            _image = null;
         }
     }
 }
