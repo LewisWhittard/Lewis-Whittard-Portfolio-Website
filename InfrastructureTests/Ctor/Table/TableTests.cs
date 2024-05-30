@@ -60,6 +60,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(gUID, table.GUID);
             Assert.Equal(headers, table.Headers);
             Assert.Equal(columnsList, table.Columns);
+            Assert.Equal(UIConcrete.Table, table.UIConcreteType);
             TearDown();
         }
 
@@ -78,6 +79,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(gUID, table.GUID);
             Assert.Equal(headers, table.Headers);
             Assert.Equal(null, table.Columns);
+            Assert.Equal(UIConcrete.Table, table.UIConcreteType);
             TearDown();
         }
 
@@ -96,6 +98,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(gUID, table.GUID);
             Assert.Null(table.Headers);
             Assert.Equal(columnsList, table.Columns);
+            Assert.Equal(UIConcrete.Table, table.UIConcreteType);
             TearDown();
         }
 
