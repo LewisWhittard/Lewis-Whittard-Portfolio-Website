@@ -53,6 +53,8 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(displayOrder, carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
             Assert.Equal(guid, carousel.GUID);
+
+            TearDown();
         }
 
         public void TearDown()
