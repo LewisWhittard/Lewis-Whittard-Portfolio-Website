@@ -25,7 +25,7 @@ namespace Infrastructure.Models.Data.Carousel
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
-            Images = images ?? new List<Shared.Image.Image>(); // Initialize with an empty list if null
+            Images = images; // Initialize with an empty list if null
             DisplayOrder = displayOrder;
             UIConcreteType = UIConcrete.Carousel;
             GUID = guid ?? Guid.NewGuid().ToString(); // Generate a new GUID if none provided
