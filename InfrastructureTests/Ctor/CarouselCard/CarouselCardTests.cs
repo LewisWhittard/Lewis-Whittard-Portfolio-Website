@@ -65,7 +65,7 @@ namespace InfrastructureTests.Ctor
 
         public void TearDown()
         {
-
+            _cards.Clear();
         }
     }
 }
