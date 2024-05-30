@@ -20,15 +20,15 @@ namespace Infrastructure.Models.Data.Carousel
             UIConcreteType = UIConcrete.Carousel;
         }
 
-        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string guid)
+        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string gUID)
         {
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
-            Images = images; // Initialize with an empty list if null
+            Images = images;
             DisplayOrder = displayOrder;
             UIConcreteType = UIConcrete.Carousel;
-            GUID = guid ?? Guid.NewGuid().ToString(); // Generate a new GUID if none provided
+            GUID = gUID;
         }
     }
 }
