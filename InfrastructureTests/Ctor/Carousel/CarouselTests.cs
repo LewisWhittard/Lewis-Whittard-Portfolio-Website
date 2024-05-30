@@ -10,7 +10,7 @@ namespace InfrastructureTests.Ctor
 
 
 
-        public void SetUp()
+        private void SetUp()
         {
             _images = new List<Image>();
 
@@ -57,7 +57,7 @@ namespace InfrastructureTests.Ctor
             TearDown();
         }
 
-        public void TearDown()
+        private void TearDown()
         {
             _images.Clear();
         }
