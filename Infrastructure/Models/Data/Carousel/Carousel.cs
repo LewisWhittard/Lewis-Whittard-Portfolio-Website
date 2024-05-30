@@ -19,5 +19,16 @@ namespace Infrastructure.Models.Data.Carousel
         {
             UIConcreteType = UIConcrete.Carousel;
         }
+
+        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string guid)
+        {
+            Id = id;
+            Deleted = deleted;
+            Inactive = inactive;
+            Images = images ?? new List<Shared.Image.Image>(); // Initialize with an empty list if null
+            DisplayOrder = displayOrder;
+            UIConcreteType = UIConcrete.Carousel;
+            GUID = guid ?? Guid.NewGuid().ToString(); // Generate a new GUID if none provided
+        }
     }
 }
