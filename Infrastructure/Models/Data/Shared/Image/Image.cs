@@ -28,6 +28,7 @@ namespace Infrastructure.Models.Data.Shared.Image
             Deleted = deleted;
             Inactive = inactive;
             GUID = gUID;
+            UIConcreteType = UIConcrete.Image;
         }
     }
 }

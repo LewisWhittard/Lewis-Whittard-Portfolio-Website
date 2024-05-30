@@ -38,6 +38,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(deleted, image.Deleted);
             Assert.Equal(inactive, image.Inactive);
             Assert.Equal(gUID, image.GUID);
+            Assert.Equal(UIConcrete.Image, image.UIConcreteType);
         }
     }
 }
