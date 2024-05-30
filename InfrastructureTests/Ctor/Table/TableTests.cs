@@ -9,7 +9,7 @@ namespace InfrastructureTests.Ctor
         private List<Header> headers = new List<Header>(); 
         private List<List<Column>> columnsList = new List<List<Column>>();
 
-        public void SetUp()
+        private void SetUp()
         {
             headers.Add(new Header(0, false, false, 0, 0, "Header0", "Header0GUID"));
             headers.Add(new Header(1, false, false, 1, 0, "Header1", "Header1GUID"));
@@ -102,7 +102,7 @@ namespace InfrastructureTests.Ctor
             TearDown();
         }
 
-        public void TearDown()
+        private void TearDown()
         {
             headers.Clear();
             columnsList.Clear();

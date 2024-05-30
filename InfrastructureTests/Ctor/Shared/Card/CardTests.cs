@@ -8,7 +8,7 @@ namespace InfrastructureTests.Ctor
     {
         private Image _image { get; set; }
 
-        public void SetUp()
+        private void SetUp()
         {
             _image = new Image("Source", 0, 0, false, false, "GUID");
         }
@@ -59,7 +59,7 @@ namespace InfrastructureTests.Ctor
             TearDown();
         }
 
-        public void TearDown()
+        private void TearDown()
         {
             _image = null;
         }

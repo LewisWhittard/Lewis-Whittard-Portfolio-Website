@@ -8,7 +8,7 @@ namespace InfrastructureTests.Ctor
     {
         private List<Card> _cards { get; set; }
 
-        public void SetUp()
+        private void SetUp()
         {
             Image image0 = new Image("Image0Source",0,0,false,false, "ImageGUID0");
             Image image1 = new Image("Image1Source", 1, 1, false, false, "ImageGUID1");
@@ -63,7 +63,7 @@ namespace InfrastructureTests.Ctor
             TearDown();
         }
 
-        public void TearDown()
+        private void TearDown()
         {
             _cards.Clear();
         }
