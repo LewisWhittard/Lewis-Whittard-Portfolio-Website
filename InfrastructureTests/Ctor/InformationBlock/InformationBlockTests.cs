@@ -52,15 +52,15 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData(0, false, false, 0, "GUID", "PageName")]
-        [InlineData(1, true, true, 1, "GUID1", "PageName1")]
-        [InlineData(2, false, true, 2, "GUID2", "PageName2")]
-        [InlineData(3, true, false, 3, "GUID3", "PageName3")]
-        public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID, string pageName)
+        [InlineData(0, false, false, 0, "GUID")]
+        [InlineData(1, true, true, 1, "GUID1")]
+        [InlineData(2, false, true, 2, "GUID2")]
+        [InlineData(3, true, false, 3, "GUID3")]
+        public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID)
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, pageName, 1);
+            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, 1);
 
             //assert
             Assert.Equal(id, informationBlock.Id);
@@ -71,7 +71,6 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(displayOrder, informationBlock.DisplayOrder);
             Assert.Equal(gUID, informationBlock.GUID);
-            Assert.Equal(pageName, informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
 
             TearDown();
@@ -83,7 +82,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "GUID", "PageName",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "GUID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -94,7 +93,6 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
-            Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
 
             TearDown();
@@ -106,7 +104,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "GUID", "PageName",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "GUID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -117,7 +115,6 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
-            Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
 
             TearDown();
@@ -129,7 +126,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "GUID", "PageName",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "GUID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -140,7 +137,6 @@ namespace InfrastructureTests.Ctor
             Assert.Null(informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
-            Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
 
             TearDown();
