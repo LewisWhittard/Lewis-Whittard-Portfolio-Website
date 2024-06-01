@@ -60,7 +60,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, pageName);
+            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, pageName, 1);
 
             //assert
             Assert.Equal(id, informationBlock.Id);
@@ -83,7 +83,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "GUID", "PageName");
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "GUID", "PageName",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -106,7 +106,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "GUID", "PageName");
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "GUID", "PageName",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -129,7 +129,7 @@ namespace InfrastructureTests.Ctor
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "GUID", "PageName");
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "GUID", "PageName",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);

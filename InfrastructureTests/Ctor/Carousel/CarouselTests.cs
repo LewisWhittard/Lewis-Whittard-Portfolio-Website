@@ -43,7 +43,7 @@ namespace InfrastructureTests.Ctor
         {
             // Act, arrange
             SetUp();
-            var carousel = new Carousel(id, deleted, inactive, _images, displayOrder, guid);
+            var carousel = new Carousel(id, deleted, inactive, _images, displayOrder, guid, 1);
 
             // Assert
             Assert.Equal(id, carousel.Id);

@@ -32,7 +32,7 @@ namespace InfrastructureTests.Ctor
         public void ParameterizedConstructor_ShouldInitializeAllProperties(string source, string title, string description, string navigation, int id, bool deleted, bool inactive, int? displayOrder, string guid)
         {
             // Act
-            var video = new Video(source, title, description, navigation, id, deleted, inactive, displayOrder, guid);
+            var video = new Video(source, title, description, navigation, id, deleted, inactive, displayOrder, guid,1);
 
             // Assert
             Assert.Equal(source, video.Source);

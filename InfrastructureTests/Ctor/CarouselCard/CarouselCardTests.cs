@@ -16,9 +16,9 @@ namespace InfrastructureTests.Ctor
 
             _cards = new List<Card>();
 
-            _cards.Add(new Card(image0,"Title0","Description0","Navigation0",0,false,false,0,"CardGuid0"));
-            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 0, false, false, 0, "CardGuid1"));
-            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 0, false, false, 0, "CardGuid2"));
+            _cards.Add(new Card(image0,"Title0","Description0","Navigation0",0,false,false,0,"CardGuid0",null));
+            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 0, false, false, 0, "CardGuid1", null));
+            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 0, false, false, 0, "CardGuid2", null));
 
         }
 
@@ -49,7 +49,7 @@ namespace InfrastructureTests.Ctor
         {
             // Arrange,Act
             SetUp();
-            var carouselCard = new Infrastructure.Models.Data.CarouselCard.CarouselCard(id, deleted, inactive, _cards, displayOrder, gUID);
+            var carouselCard = new Infrastructure.Models.Data.CarouselCard.CarouselCard(id, deleted, inactive, _cards, displayOrder, gUID,1);
 
             // Assert
             Assert.Equal(id, carouselCard.Id);

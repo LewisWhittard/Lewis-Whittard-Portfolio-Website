@@ -24,7 +24,7 @@ namespace Infrastructure.Repository.Page
             List<Video> videos = new List<Video>();
 
             // Add instances to the lists
-            cards.Add((new Card(null,"","","",0,false,false,0,"")));
+            cards.Add((new Card(null,"","","",0,false,false,0,"",0)));
             //cards.Add(new Card() { Id = 0, Deleted = false, Inactive = false});
             carousels.Add(new Carousel() { Id = 0, Deleted = false, Inactive = false });
             carouselCards.Add(new CarouselCard() { Id = 0, Deleted = false, Inactive = false });

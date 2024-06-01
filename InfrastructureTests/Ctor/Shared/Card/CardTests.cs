@@ -42,7 +42,7 @@ namespace InfrastructureTests.Ctor
             SetUp();
 
             // Act
-            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID);
+            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID, 1);
 
             // Assert
             Assert.Equal(_image, card.Image);

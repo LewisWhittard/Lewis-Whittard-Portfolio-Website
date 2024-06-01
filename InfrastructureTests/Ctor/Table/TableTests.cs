@@ -50,7 +50,7 @@ namespace InfrastructureTests.Ctor
         public void Table_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, tablePage, gUID, title);
+            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, tablePage, gUID, title, 1);
             
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -69,7 +69,7 @@ namespace InfrastructureTests.Ctor
         public void Table_SetProperties_NullColumns(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, null, tablePage, gUID, title);
+            var table = new Table(id, deleted, inactive, displayOrder, headers, null, tablePage, gUID, title, 1);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -88,7 +88,7 @@ namespace InfrastructureTests.Ctor
         public void Table_SetProperties_HeadersNull(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, tablePage, gUID, title);
+            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, tablePage, gUID, title, 1);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
