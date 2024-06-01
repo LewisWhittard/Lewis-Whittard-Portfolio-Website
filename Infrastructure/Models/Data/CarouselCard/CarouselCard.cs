@@ -11,6 +11,7 @@ namespace Infrastructure.Models.Data.CarouselCard
         public bool Inactive { get; set; }
         public List<Shared.Card.Card> Cards { get; set; }
         public int? DisplayOrder { get; set; }
+        public int PageId { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
         public string GUID { get; set; }
@@ -20,7 +21,7 @@ namespace Infrastructure.Models.Data.CarouselCard
             UIConcreteType = UIConcrete.CarouselCard;
         }
 
-        public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string gUID)
+        public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string gUID, int pageId)
         {
             Id = id;
             Deleted = deleted;
@@ -29,6 +30,7 @@ namespace Infrastructure.Models.Data.CarouselCard
             DisplayOrder = displayOrder;
             GUID = gUID;
             UIConcreteType = UIConcrete.CarouselCard;
+            PageId = pageId;
         }
     }
 }

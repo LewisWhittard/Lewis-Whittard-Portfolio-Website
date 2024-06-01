@@ -14,7 +14,8 @@ namespace Infrastructure.Models.Data.Table
         public List<List<Column>>? Columns { get; set; }
         public int? DisplayOrder { get; set; }
         public string GUID { get; set; }
-        [JsonIgnore]
+        public int PageId { get; set; }
+            [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
         public Table()
@@ -22,7 +23,7 @@ namespace Infrastructure.Models.Data.Table
             UIConcreteType = UIConcrete.Table;
         }
 
-        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string webpage, string gUID, string title)
+        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string webpage, string gUID, string title, int pageId)
         {
             Id = id;
             Deleted = deleted;
@@ -33,6 +34,7 @@ namespace Infrastructure.Models.Data.Table
             DisplayOrder = displayOrder;
             GUID = gUID;
             Title = title;
+            PageId = pageId;
         }
     }
 }

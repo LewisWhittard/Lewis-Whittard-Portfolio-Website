@@ -16,6 +16,7 @@ namespace Infrastructure.Models.Data.InformationBlock
         public int? DisplayOrder { get; set; }
         public string GUID { get; set; }
         public string PageName { get; set; }
+        public int PageId { get; set; }
 
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
@@ -25,7 +26,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             UIConcreteType = UIConcrete.InformationBlock;
         }
 
-        public InfomatonBlock(int id,bool deleted,bool inactive,List<Image>? images,List<Paragraph>? paragraphs,List<Heading>? headings,int displayOrder,string gUID,string pageName)
+        public InfomatonBlock(int id,bool deleted,bool inactive,List<Image>? images,List<Paragraph>? paragraphs,List<Heading>? headings,int displayOrder,string gUID,string pageName, int pageId)
         {
 
             Id = id;
@@ -38,6 +39,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             GUID = gUID;
             UIConcreteType = UIConcrete.InformationBlock;
             PageName = pageName;
+            PageId = pageId;
         }
     }
 }

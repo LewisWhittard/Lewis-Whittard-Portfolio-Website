@@ -11,6 +11,7 @@ namespace Infrastructure.Models.Data.Carousel
         public bool Inactive { get; set; }
         public List<Shared.Image.Image> Images { get; set; }
         public int? DisplayOrder { get; set; }
+        public int PageId { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
         public string GUID { get; set; }
@@ -20,7 +21,7 @@ namespace Infrastructure.Models.Data.Carousel
             UIConcreteType = UIConcrete.Carousel;
         }
 
-        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string gUID)
+        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string gUID, int pageId)
         {
             Id = id;
             Deleted = deleted;
@@ -29,6 +30,7 @@ namespace Infrastructure.Models.Data.Carousel
             DisplayOrder = displayOrder;
             UIConcreteType = UIConcrete.Carousel;
             GUID = gUID;
+            PageId = pageId;
         }
     }
 }
