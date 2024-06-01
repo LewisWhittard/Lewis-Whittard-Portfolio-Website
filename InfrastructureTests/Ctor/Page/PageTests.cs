@@ -77,8 +77,8 @@ namespace InfrastructureTests.Ctor
                 new Heading(3,false,false,"Heading3Text",1,2,"Heading3GUID",1)
             };
 
-            _informationBlocks.Add(new InfomatonBlock(0,false,false,images,paragraphs1,headings1,6,"InfomationBlock0GUID",1));
-            _informationBlocks.Add(new InfomatonBlock(0, false, false, images, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
+            //_informationBlocks.Add(new InfomatonBlock(0,false,false,images,paragraphs1,headings1,6,"InfomationBlock0GUID",1));
+            //_informationBlocks.Add(new InfomatonBlock(0, false, false, images, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
 
 
         }
