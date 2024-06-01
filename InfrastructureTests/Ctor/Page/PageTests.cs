@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using System;
 
 namespace InfrastructureTests.Ctor
 {
