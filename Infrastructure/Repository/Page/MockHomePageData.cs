@@ -25,8 +25,8 @@ namespace Infrastructure.Repository.Page
             List<Heading> headings0 = new List<Heading>() { heading00, heading01 };
             List<Paragraph> paragraphs0 = new List<Paragraph>() { paragraph00, paragraph01 };
             List<Image> images0 = new List<Image> { image00 };
-            InfomatonBlock informationBLock = new InfomatonBlock(0,false,false,images0,paragraphs0,headings0,0,"HomePageInformationBlock0");
-            List<InfomatonBlock> informationBLocks =  new List<InfomatonBlock> { informationBLock };
+            //InfomatonBlock informationBLock = new InfomatonBlock(0,false,false,images0,paragraphs0,headings0,0,"HomePageInformationBlock0");
+            //List<InfomatonBlock> informationBLocks =  new List<InfomatonBlock> { informationBLock };
 
             Header header00 = new Header(0,false,false,0,0, "Qualification", "HomePageTable0Header0");
             Header header01 = new Header(1,false,false,1,0, "Result", "HomePageTable0Header1");
@@ -81,11 +81,11 @@ namespace Infrastructure.Repository.Page
                 carouselCard0
             };
             
-            Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, informationBLocks,tables,null,"HomePage",0,false,false);
-            Page = new List<Models.Data.Page.Page>()
-            {
-                page0
-            };
+            //Models.Data.Page.Page page0 = new Models.Data.Page.Page("HomePage",null,null, carouselCards, informationBLocks,tables,null,"HomePage",0,false,false);
+            //Page = new List<Models.Data.Page.Page>()
+            //{
+            //    page0
+            //};
         }
     }
 }
