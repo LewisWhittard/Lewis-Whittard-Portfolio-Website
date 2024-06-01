@@ -82,7 +82,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(headers, table.Headers);
             Assert.Equal(null, table.Columns);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
-            Assert.Equal(1, table.PageId);
+            Assert.Equal(pageId, table.PageId);
             TearDown();
         }
 
@@ -102,7 +102,7 @@ namespace InfrastructureTests.Ctor
             Assert.Null(table.Headers);
             Assert.Equal(columnsList, table.Columns);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
-            Assert.Equal(1, table.PageId);
+            Assert.Equal(pageId, table.PageId);
             TearDown();
         }
 
