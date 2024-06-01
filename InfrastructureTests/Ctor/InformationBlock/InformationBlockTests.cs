@@ -23,6 +23,13 @@ namespace InfrastructureTests.Ctor
             Paragraph Paragraph2 = new Paragraph("Paragrapth2Text", 0, 0, false, false, 0, "Paragrath2GUID");
             Image Image1 = new Image("Image1Source", 0, 0, false, false, "Image1GUID");
             Image Image2 = new Image("Image2Source", 0, 0, false, false, "Image2gUID");
+
+            _headings.Add(heading1);
+            _headings.Add(heading2);
+            _paragraphs.Add(paragraph1);
+            _paragraphs.Add(Paragraph2);
+            _images.Add(Image1);
+            _images.Add(Image2);
         }
 
 
