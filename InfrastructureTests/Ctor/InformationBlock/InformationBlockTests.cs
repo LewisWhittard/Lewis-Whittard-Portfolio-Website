@@ -13,23 +13,23 @@ namespace InfrastructureTests.Ctor
         //SetUp
         public void SetUp()
         {
-            _headings = new List<Heading>();
-            _paragraphs = new List<Paragraph>();
-            _images = new List<Image>();
+            _headings = new List<Heading>
+            {
+                new Heading(0, false, false, "Heading0Test", 0, 0, "Heading0GUID", 0),
+                new Heading(1, false, false, "Heading1Test", 0, 0, "Heading1GUID", 0)
+            };
 
-            Heading heading1 = new Heading(0, false, false, "Heading0Test", 0, 0, "Heading0GUID", 0);
-            Heading heading2 = new Heading(1, false, false, "Heading1Test", 0, 0, "Heading1GUID", 0);
-            Paragraph paragraph1 = new Paragraph("Paragrapth1Text", 0, 0, false, false, 0, "Paragrath1GUID");
-            Paragraph Paragraph2 = new Paragraph("Paragrapth2Text", 0, 0, false, false, 0, "Paragrath2GUID");
-            Image Image1 = new Image("Image1Source", 0, 0, false, false, "Image1GUID");
-            Image Image2 = new Image("Image2Source", 0, 0, false, false, "Image2gUID");
+            _paragraphs = new List<Paragraph>
+            {
+                new Paragraph("Paragrapth1Text", 0, 0, false, false, 0, "Paragrath1GUID"),
+                new Paragraph("Paragrapth2Text", 0, 0, false, false, 0, "Paragrath2GUID")
+            };
 
-            _headings.Add(heading1);
-            _headings.Add(heading2);
-            _paragraphs.Add(paragraph1);
-            _paragraphs.Add(Paragraph2);
-            _images.Add(Image1);
-            _images.Add(Image2);
+            _images = new List<Image>
+            {
+                new Image("Image1Source", 0, 0, false, false, "Image1GUID"),
+                new Image("Image2Source", 0, 0, false, false, "Image2gUID")
+            };
         }
 
 
