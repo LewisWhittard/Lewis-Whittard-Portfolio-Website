@@ -15,11 +15,11 @@ namespace Infrastructure.Models.Data.Shared.Card
         public bool Inactive { get; set; }
         public int? DisplayOrder { get; set; }
         public string GUID { get; set; }
-        public int PageId { get; set; }
+        public int? PageId { get; set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
 
-        public Card(Image.Image image, string title, string description, string navigation,int id,bool deleted,bool inactive,int displayOrder,string gUID, int pageId)
+        public Card(Image.Image image, string title, string description, string navigation,int id,bool deleted,bool inactive,int displayOrder,string gUID, int? pageId)
         {
             Image = image;
             Title = title;
