@@ -1,4 +1,5 @@
-﻿using Infrastructure.Models.Data.Interface;
+﻿using Infrastructure.Models.Data.CarouselCard;
+using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Shared.Card;
 using Infrastructure.Models.Data.Shared.Image;
 
@@ -26,7 +27,7 @@ namespace InfrastructureTests.Ctor
         public void CarouselCard_Constructor_NoParameters()
         {
             //arrange, act
-            Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard = new Infrastructure.Models.Data.CarouselCard.CarouselCard();
+            CarouselCard carouselCard = new CarouselCard();
 
 
             //assert
@@ -37,19 +38,20 @@ namespace InfrastructureTests.Ctor
             Assert.Null(carouselCard.DisplayOrder);
             Assert.Equal(UIConcrete.CarouselCard, carouselCard.UIConcreteType);
             Assert.Null(carouselCard.GUID);
+            Assert.Equal(0, carouselCard.PageId);
         }
 
         [Theory]
-        [InlineData(1, true, false, 5, "test-guid")]
-        [InlineData(2, false, true, 10, "another-guid")]
-        [InlineData(1, true, true, 5, "test-guid")]
-        [InlineData(2, false, false, 10, "another-guid")]
+        [InlineData(1, true, false, 5, "test-guid",5)]
+        [InlineData(2, false, true, 10, "another-guid",6)]
+        [InlineData(1, true, true, 5, "test-guid",7)]
+        [InlineData(2, false, false, 10, "another-guid",8)]
         public void ParameterizedConstructor_ShouldInitializeWithGivenValues(
-            int id, bool deleted, bool inactive, int? displayOrder, string gUID)
+            int id, bool deleted, bool inactive, int? displayOrder, string gUID, int pageId)
         {
             // Arrange,Act
             SetUp();
-            var carouselCard = new Infrastructure.Models.Data.CarouselCard.CarouselCard(id, deleted, inactive, _cards, displayOrder, gUID,1);
+            var carouselCard = new CarouselCard(id, deleted, inactive, _cards, displayOrder, gUID,pageId);
 
             // Assert
             Assert.Equal(id, carouselCard.Id);
@@ -59,6 +61,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(displayOrder, carouselCard.DisplayOrder);
             Assert.Equal(gUID, carouselCard.GUID);
             Assert.Equal(UIConcrete.CarouselCard, carouselCard.UIConcreteType);
+            Assert.Equal(pageId, carouselCard.PageId);
 
             TearDown();
         }
