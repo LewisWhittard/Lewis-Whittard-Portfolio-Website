@@ -39,18 +39,19 @@ namespace InfrastructureTests.Ctor
             Assert.Null(table.DisplayOrder);
             Assert.Null(table.GUID);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
+            Assert.Equal(0, table.PageId);
         }
 
  
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0")]
-        [InlineData(1, false, true, 2, "TablePage1", "Table1GUID", "TableTitle1")]
-        [InlineData(2, true, true, 1, "TablePage2", "Table2GUID", "TableTitle2")]
-        [InlineData(3, false, false, 0, "TablePage3", "Table3GUID", "TableTitle3")]
-        public void Table_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
+        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",4)]
+        [InlineData(1, false, true, 2, "TablePage1", "Table1GUID", "TableTitle1",5)]
+        [InlineData(2, true, true, 1, "TablePage2", "Table2GUID", "TableTitle2",6)]
+        [InlineData(3, false, false, 0, "TablePage3", "Table3GUID", "TableTitle3",7)]
+        public void Table_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, tablePage, gUID, title, 1);
+            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, tablePage, gUID, title, pageId);
             
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -61,15 +62,16 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(headers, table.Headers);
             Assert.Equal(columnsList, table.Columns);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
+            Assert.Equal(pageId, table.PageId);
             TearDown();
         }
 
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0")]
-        public void Table_SetProperties_NullColumns(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
+        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",1)]
+        public void Table_SetProperties_NullColumns(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, null, tablePage, gUID, title, 1);
+            var table = new Table(id, deleted, inactive, displayOrder, headers, null, tablePage, gUID, title, pageId);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -80,15 +82,16 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(headers, table.Headers);
             Assert.Equal(null, table.Columns);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
+            Assert.Equal(1, table.PageId);
             TearDown();
         }
 
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0")]
-        public void Table_SetProperties_HeadersNull(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title)
+        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",1)]
+        public void Table_SetProperties_HeadersNull(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, tablePage, gUID, title, 1);
+            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, tablePage, gUID, title, pageId);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -99,6 +102,7 @@ namespace InfrastructureTests.Ctor
             Assert.Null(table.Headers);
             Assert.Equal(columnsList, table.Columns);
             Assert.Equal(UIConcrete.Table, table.UIConcreteType);
+            Assert.Equal(1, table.PageId);
             TearDown();
         }
 
