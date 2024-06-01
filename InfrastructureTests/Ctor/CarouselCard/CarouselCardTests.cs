@@ -11,15 +11,15 @@ namespace InfrastructureTests.Ctor
 
         private void SetUp()
         {
-            Image image0 = new Image("Image0Source",0,0,false,false, "ImageGUID0");
-            Image image1 = new Image("Image1Source", 1, 1, false, false, "ImageGUID1");
-            Image image2 = new Image("Image2Source", 2, 2, false, false, "ImageGUID2");
+            Image image0 = new Image("Image0Source",0,0,false,false, "ImageGUID0",0,null,null);
+            Image image1 = new Image("Image1Source", 1, 1, false, false, "ImageGUID1", 1, null, null);
+            Image image2 = new Image("Image2Source", 2, 2, false, false, "ImageGUID2", 2, null, null);
 
             _cards = new List<Card>();
 
             _cards.Add(new Card(image0,"Title0","Description0","Navigation0",0,false,false,0,"CardGuid0",null));
-            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 0, false, false, 0, "CardGuid1", null));
-            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 0, false, false, 0, "CardGuid2", null));
+            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 1, false, false, 0, "CardGuid1", null));
+            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 2, false, false, 0, "CardGuid2", null));
 
         }
 

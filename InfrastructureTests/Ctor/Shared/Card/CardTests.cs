@@ -10,7 +10,7 @@ namespace InfrastructureTests.Ctor
 
         private void SetUp()
         {
-            _image = new Image("Source", 0, 0, false, false, "GUID");
+            _image = new Image("Source", 0, 0, false, false, "GUID",null,null,null);
         }
 
         [Fact]

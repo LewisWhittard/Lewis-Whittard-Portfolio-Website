@@ -27,8 +27,8 @@ namespace InfrastructureTests.Ctor
 
             _images = new List<Image>
             {
-                new Image("Image1Source", 0, 0, false, false, "Image1GUID"),
-                new Image("Image2Source", 0, 0, false, false, "Image2gUID")
+                new Image("Image1Source", 0, 0, false, false, "Image1GUID", null, null, null),
+                new Image("Image2Source", 0, 0, false, false, "Image2gUID", null, null, null)
             };
         }
 

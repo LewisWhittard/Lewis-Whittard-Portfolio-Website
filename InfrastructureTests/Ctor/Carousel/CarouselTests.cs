@@ -14,9 +14,9 @@ namespace InfrastructureTests.Ctor
         {
             _images = new List<Image>();
 
-            _images.Add(new Image("ImageSource0", 0, 0, false, false, "ImageGuid0"));
-            _images.Add(new Image("ImageSource1", 1, 1, false, false, "ImageGuid1"));
-            _images.Add(new Image("ImageSource2", 2, 2, false, false, "ImageGuid2"));
+            _images.Add(new Image("ImageSource0", 0, 0, false, false, "ImageGuid0",null,null,0));
+            _images.Add(new Image("ImageSource1", 1, 1, false, false, "ImageGuid1", null, null, 1));
+            _images.Add(new Image("ImageSource2", 2, 2, false, false, "ImageGuid2", null, null, 2));
         }
         [Fact]
         public void Carousel_Constructor_NoParameters()

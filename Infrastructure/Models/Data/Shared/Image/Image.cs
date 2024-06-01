@@ -12,15 +12,19 @@ namespace Infrastructure.Models.Data.Shared.Image
         public bool Deleted { get; set; }
         public bool Inactive { get; set; }
         public string GUID { get; set; }
+
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; set; }
+        public int? InformationBlockId { get; set; }
+        public int? CardId { get; set; }
+        public int? CarouselId { get; set; }
 
         public Image()
         {
             UIConcreteType = UIConcrete.Image;
         }
 
-        public Image(string source, int? displayOrder, int iD, bool deleted, bool inactive, string gUID)
+        public Image(string source, int? displayOrder, int iD, bool deleted, bool inactive, string gUID,int? cardId, int? informationBlockId, int? carouselId)
         {
             Source = source;
             DisplayOrder = displayOrder;
@@ -29,6 +33,10 @@ namespace Infrastructure.Models.Data.Shared.Image
             Inactive = inactive;
             GUID = gUID;
             UIConcreteType = UIConcrete.Image;
+            CardId = cardId;
+            InformationBlockId = informationBlockId;
+            CarouselId = carouselId;
+
         }
     }
 }
