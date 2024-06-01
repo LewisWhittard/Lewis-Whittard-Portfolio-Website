@@ -49,6 +49,7 @@ namespace InfrastructureTests.Ctor
             Assert.Null(informationBlock.DisplayOrder);
             Assert.Null(informationBlock.GUID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+            Assert.Equal(informationBlock.PageId,0);
         }
 
         [Theory]
@@ -73,6 +74,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(displayOrder, informationBlock.DisplayOrder);
             Assert.Equal(gUID, informationBlock.GUID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+            Assert.Equal(pageId, informationBlock.PageId);
 
             TearDown();
         }
@@ -95,6 +97,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+            Assert.Equal(1, informationBlock.PageId);
 
             TearDown();
         }
@@ -117,6 +120,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+            Assert.Equal(1, informationBlock.PageId);
 
             TearDown();
         }
@@ -139,6 +143,7 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, informationBlock.DisplayOrder);
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+            Assert.Equal(1, informationBlock.PageId);
 
             TearDown();
         }
