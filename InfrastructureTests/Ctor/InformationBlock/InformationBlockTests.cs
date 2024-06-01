@@ -52,15 +52,16 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData(0, false, false, 0, "GUID")]
-        [InlineData(1, true, true, 1, "GUID1")]
-        [InlineData(2, false, true, 2, "GUID2")]
-        [InlineData(3, true, false, 3, "GUID3")]
-        public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID)
+        [InlineData(0, false, false, 3, "GUID",6)]
+        [InlineData(1, true, true, 2, "GUID1",7)]
+        [InlineData(2, false, true, 4, "GUID2",8)]
+        [InlineData(3, true, false, 4, "GUID3",9)]
+        [InlineData(3, true, false, 3, "GUID3",10)]
+        public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID,int pageId)
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, 1);
+            InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, pageId);
 
             //assert
             Assert.Equal(id, informationBlock.Id);
