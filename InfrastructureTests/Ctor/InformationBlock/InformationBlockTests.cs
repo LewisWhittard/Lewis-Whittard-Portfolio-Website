@@ -11,7 +11,7 @@ namespace InfrastructureTests.Ctor
         private List<Image> _images { get; set; }
 
         //SetUp
-        public InformationBlockTests()
+        public void SetUp()
         {
             _headings = new List<Heading>();
             _paragraphs = new List<Paragraph>();
@@ -52,6 +52,7 @@ namespace InfrastructureTests.Ctor
         public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID, string pageName)
         {
             //arrange, act
+            SetUp();
             InfomatonBlock informationBlock = new InfomatonBlock(id, deleted, inactive, _images, _paragraphs, _headings, displayOrder, gUID, pageName);
 
             //assert
@@ -74,6 +75,7 @@ namespace InfrastructureTests.Ctor
         public void InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullImages()
         {
             //arrange, act
+            SetUp();
             InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "GUID", "PageName");
 
             //assert
@@ -96,6 +98,7 @@ namespace InfrastructureTests.Ctor
         public void InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullParagraphs()
         {
             //arrange, act
+            SetUp();
             InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "GUID", "PageName");
 
             //assert
@@ -109,6 +112,8 @@ namespace InfrastructureTests.Ctor
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+
+            TearDown();
         }
 
         //InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullHeadings
@@ -116,6 +121,7 @@ namespace InfrastructureTests.Ctor
         public void InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullHeadings()
         {
             //arrange, act
+            SetUp();
             InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "GUID", "PageName");
 
             //assert
