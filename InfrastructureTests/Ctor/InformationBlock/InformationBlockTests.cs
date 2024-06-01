@@ -65,6 +65,8 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(gUID, informationBlock.GUID);
             Assert.Equal(pageName, informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+
+            TearDown();
         }
 
         //InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullImages
@@ -85,6 +87,8 @@ namespace InfrastructureTests.Ctor
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+
+            TearDown();
         }
 
         //InformationBlock_SetProperties_PropertiesAreSetCorrectlyAllowNullParagraphs
@@ -125,6 +129,15 @@ namespace InfrastructureTests.Ctor
             Assert.Equal("GUID", informationBlock.GUID);
             Assert.Equal("PageName", informationBlock.PageName);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
+
+            TearDown();
+        }
+
+        public void TearDown()
+        {
+            _headings = null;
+            _paragraphs = null;
+            _images = null;
         }
     }
 }
