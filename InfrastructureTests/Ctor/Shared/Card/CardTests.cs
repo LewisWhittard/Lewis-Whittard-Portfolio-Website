@@ -33,16 +33,16 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, false, 10, "12345-67890")]
-        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, true, 20, "54321-09876")]
-        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, true, 10, "12345-67890")]
-        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, false, 20, "54321-09876")]
-        public void Card_Constructor_SetsPropertiesCorrectly(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID)
+        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, false, 10, "12345-67890",7)]
+        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, true, 20, "54321-09876",8)]
+        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, true, 10, "12345-67890",9)]
+        [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, false, 20, "54321-09876",10)]
+        public void Card_Constructor_SetsPropertiesCorrectly(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int pageId)
         {
             SetUp();
 
             // Act
-            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID, 1);
+            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID, pageId);
 
             // Assert
             Assert.Equal(_image, card.Image);
@@ -55,6 +55,32 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(displayOrder, card.DisplayOrder);
             Assert.Equal(gUID, card.GUID);
             Assert.Equal(UIConcrete.Card, card.UIConcreteType);
+
+            TearDown();
+        }
+
+        //Card_Constructor_SetsPropertiesCorrectlyAllowNullspageID
+        [Theory]
+        [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, false, 10, "12345-67890",null)]
+        public void Card_Constructor_SetsPropertiesCorrectlyAllowNulls(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int? pageId)
+        {
+            SetUp();
+
+            // Act
+            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID, pageId);
+
+            // Assert
+            Assert.Equal(_image, card.Image);
+            Assert.Equal(title, card.Title);
+            Assert.Equal(description, card.Description);
+            Assert.Equal(navigation, card.Navigation);
+            Assert.Equal(id, card.Id);
+            Assert.Equal(deleted, card.Deleted);
+            Assert.Equal(inactive, card.Inactive);
+            Assert.Equal(displayOrder, card.DisplayOrder);
+            Assert.Equal(gUID, card.GUID);
+            Assert.Equal(UIConcrete.Card, card.UIConcreteType);
+            Assert.Null(card.PageId);
 
             TearDown();
         }
