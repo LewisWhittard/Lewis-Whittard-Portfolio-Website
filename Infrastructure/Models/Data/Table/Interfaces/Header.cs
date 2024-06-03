@@ -8,7 +8,7 @@ namespace Infrastructure.Models.Data.Table.Interfaces
 {
     public interface IHeader
     {
-        public int TableID { get; set; }
-        public string Value { get; set; }
+        int TableID { get; }
+        string Value { get; }
     }
 }
