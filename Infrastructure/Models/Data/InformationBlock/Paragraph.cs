@@ -4,20 +4,19 @@ using System.Text.Json.Serialization;
 
 namespace Infrastructure.Models.Data.InformationBlock
 {
-    public class Paragraph : IParagraph,IData
+    public class Paragraph : IParagraph, IData
     {
-        public string Text { get; set; }
-        public int? DisplayOrder { get; set; }
-        public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
-        public int InformationBlockid { get; set; }
-        public string GUID { get; set; }
-
+        public string Text { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public int Id { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
+        public int InformationBlockid { get; private set; }
+        public string GUID { get; private set; }
         [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
+        public UIConcrete? UIConcreteType { get; private set; }
 
-        public Paragraph(string text,int displayOrder,int id, bool deleted,bool inactive,int informationBlockId, string gUID)
+        public Paragraph(string text, int displayOrder, int id, bool deleted, bool inactive, int informationBlockId, string gUID)
         {
             Text = text;
             DisplayOrder = displayOrder;
