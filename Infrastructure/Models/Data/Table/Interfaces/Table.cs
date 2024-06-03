@@ -2,9 +2,9 @@
 {
     public interface ITable
     {
-        public string Title { get; set; }
-        public List<Header> Headers { get; set; }
-        public List<List<Column>> Columns { get; set; }
-        public int PageId { get; set; }
+        string Title { get; }
+        List<Header> Headers { get; }
+        List<List<Column>> Columns { get; }
+        int PageId { get; }
     }
 }

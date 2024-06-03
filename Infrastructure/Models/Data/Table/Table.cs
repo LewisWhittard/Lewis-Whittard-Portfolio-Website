@@ -6,17 +6,17 @@ namespace Infrastructure.Models.Data.Table
 {
     public class Table : IData, ITable
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
-        public List<Header>? Headers { get; set; }
-        public List<List<Column>>? Columns { get; set; }
-        public int? DisplayOrder { get; set; }
-        public string GUID { get; set; }
-        public int PageId { get; set; }
-            [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
+        public int Id { get; private set; }
+        public string Title { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
+        public List<Header>? Headers { get; private set; }
+        public List<List<Column>>? Columns { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public string GUID { get; private set; }
+        public int PageId { get; private set; }
+        [JsonIgnore]
+        public UIConcrete? UIConcreteType { get; private set; }
 
         public Table()
         {
