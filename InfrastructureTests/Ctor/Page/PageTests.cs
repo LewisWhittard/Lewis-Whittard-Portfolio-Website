@@ -37,8 +37,8 @@ namespace InfrastructureTests.Ctor
 
             List<Image> imagesCarousel0 = new List<Image>
             {
-                new Image("Image0Source", 0, 0, false, false, "Image0GUID", null,null, 0),
-                new Image("Image1Source", 1, 1, false, false, "Image1GUID", null, null,0)
+                new Image("Image0Source", 0, 2, false, false, "Image0GUID", null,null, 0),
+                new Image("Image1Source", 1, 3, false, false, "Image1GUID", null, null,0)
             };
 
             List<Image> imagesCarousel1 = new List<Image>
@@ -77,10 +77,40 @@ namespace InfrastructureTests.Ctor
                 new Heading(3,false,false,"Heading3Text",1,2,"Heading3GUID",1)
             };
 
-            //_informationBlocks.Add(new InfomatonBlock(0,false,false,images,paragraphs1,headings1,6,"InfomationBlock0GUID",1));
-            //_informationBlocks.Add(new InfomatonBlock(0, false, false, images, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
+            List<Image> imagesInfomationBlock0 = new List<Image>
+            {
+                new Image("Image4Source", 0, 4, false, false, "Image4GUID", null,null, 0),
+                new Image("image5Source", 1, 5, false, false, "Image5GUID", null, null,0)
+            };
 
+            List<Image> imagesInfomationBlock1 = new List<Image>
+            {
+                new Image("Image6Source", 0, 6, false, false, "Image6GUID", null,null, 0),
+                new Image("image7Source", 1, 7, false, false, "Image7GUID", null, null,0)
+            };
 
+            _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInfomationBlock0, paragraphs1,headings1,6,"InfomationBlock0GUID",1));
+            _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInfomationBlock1, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
+
+            List<Header> Headers = new List<Header>
+            {
+                new Header(0, false, false, 0, 0, "Header0Value", "Header0GUID"),
+                new Header(1, false, false, 1, 1, "Header1Value", "Header1GUID")
+            };
+
+            //List<List<Column>> columns = new List<List<Column>>()
+            //{
+            //    List<Column> Row0 = new List<Column>()
+            //    {
+            //        new Column(0, false, false,"Column0Value",0,0,"Column0GUID",0),
+            //        new Column(1, false, false, 1, 1, "Column1Value", "Column1GUID")
+            //    },
+            //    List<Column> Row1 = new List<Column>()
+            //    {
+            //        new Column(2, false, false, 0, 2, "Column2Value", "Column2GUID"),
+            //        new Column(3, false, false, 1, 3, "Column3Value", "Column3GUID")
+            //    }
+            //}
         }
 
         [Fact]
