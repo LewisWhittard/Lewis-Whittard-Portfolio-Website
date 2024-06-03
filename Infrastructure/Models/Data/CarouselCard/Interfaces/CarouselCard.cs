@@ -2,8 +2,7 @@
 {
     public interface ICarouselCard
     {
-        public List<Shared.Card.Card> Cards { get; set; }
-        public int PageId { get; set; }
-
+        List<Shared.Card.Card> Cards { get; }
+        int PageId { get; }
     }
 }
