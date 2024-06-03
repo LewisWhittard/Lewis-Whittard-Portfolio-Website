@@ -2,9 +2,9 @@
 {
     public interface IImage
     {
-        public string Source { get; set; }
-        public int? InformationBlockId { get; set; }
-        public int? CardId { get; set; }
-        public int? CarouselId { get; set; }
+        string Source { get; }
+        int? InformationBlockId { get; }
+        int? CardId { get; }
+        int? CarouselId { get; }
     }
 }
