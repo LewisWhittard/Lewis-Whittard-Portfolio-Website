@@ -2,11 +2,11 @@
 {
     public interface IMetaData
     {
-        public int Id { get; set; }
-        public Name Name { get; set; }
-        public string Content { get; set; }
-        public string GUID { get; set; }
-        public string? Charset { get; set; }
-        public string PageName { get; set; }
+        int Id { get; }
+        Name Name { get; }
+        string Content { get; }
+        string GUID { get; }
+        string? Charset { get; }
+        string PageName { get; }
     }
 }

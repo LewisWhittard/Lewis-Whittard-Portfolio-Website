@@ -4,16 +4,16 @@ namespace SEO.Models.Meta.Interface
 {
     public class MetaData : IMetaData, IData
     {
-        public int Id { get; set; }
-        public Name Name { get; set; }
-        public string Content { get; set; }
-        public string GUID { get; set; }
-        public string? Charset { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
-        public UIConcrete? UIConcreteType { get; set; }
-        public int? DisplayOrder { get; set; }
-        public string PageName { get; set; }
+        public int Id { get; private set; }
+        public Name Name { get; private set; }
+        public string Content { get; private set; }
+        public string GUID { get; private set; }
+        public string? Charset { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
+        public UIConcrete? UIConcreteType { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public string PageName { get; private set; }
 
         public MetaData(int id, Name name, string content, string guid, string? charset, bool deleted, bool inactive, UIConcrete? uiConcreteType, int? displayOrder, string pageName)
         {
@@ -31,7 +31,7 @@ namespace SEO.Models.Meta.Interface
 
         public MetaData()
         {
-            
+
         }
     }
 }
