@@ -4,10 +4,10 @@ namespace SEO.Models.Alt.Interface
 {
     public interface IAltData
     {
-        public string SuperClassGUID { get; set; }
-        public UIConcrete? UIConcreteType { get; set; }
-        public string Page { get; set; }
-        public string Value { get; set; }
-        public string GUID { get; set; }
+        string SuperClassGUID { get; }
+        UIConcrete? UIConcreteType { get; }
+        string Page { get; }
+        string Value { get; }
+        string GUID { get; }
     }
 }
