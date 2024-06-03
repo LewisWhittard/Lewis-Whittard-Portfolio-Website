@@ -6,27 +6,27 @@ namespace Infrastructure.Models.Data.Page
 {
     public class Page : IPage, IData
     {
-        public string PageName { get; set; }
-        public List<Shared.Card.Card>? Cards { get; set; }
-        public List<Carousel.Carousel>? Carousels { get; set; }
-        public List<CarouselCard.CarouselCard>? CarouselCards { get; set; }
-        public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; set; }
-        public List<Video.Video>? Videos {  get; set; } 
-        public List<Table.Table>? Tables { get; set; }
-        public string GUID { get; set; }
-        public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
+        public string PageName { get; private set; }
+        public List<Shared.Card.Card>? Cards { get; private set; }
+        public List<Carousel.Carousel>? Carousels { get; private set; }
+        public List<CarouselCard.CarouselCard>? CarouselCards { get; private set; }
+        public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; private set; }
+        public List<Video.Video>? Videos { get; private set; }
+        public List<Table.Table>? Tables { get; private set; }
+        public string GUID { get; private set; }
+        public int Id { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
         [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
-        public int? DisplayOrder { get; set; }
+        public UIConcrete? UIConcreteType { get; private set; }
+        public int? DisplayOrder { get; private set; }
 
         public Page()
         {
             UIConcreteType = UIConcrete.Page;
         }
 
-        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks,List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id,bool deleted,bool inactive)
+        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id, bool deleted, bool inactive)
         {
             PageName = pageName;
             Cards = cards;

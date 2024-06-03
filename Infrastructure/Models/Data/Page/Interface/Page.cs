@@ -4,12 +4,12 @@ namespace Infrastructure.Models.Data.Page.Interface
 {
     public interface IPage
     {
-        public string PageName { get; set; }
-        public List<Shared.Card.Card>? Cards { get; set; }
-        public List<Carousel.Carousel>? Carousels { get; set; }
-        public List<CarouselCard.CarouselCard>? CarouselCards { get; set; }
-        public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; set; }
-        public List<Table.Table>? Tables { get; set; }
-        public List<IData> CreateIDataList();
+        string PageName { get; }
+        List<Shared.Card.Card>? Cards { get; }
+        List<Carousel.Carousel>? Carousels { get; }
+        List<CarouselCard.CarouselCard>? CarouselCards { get; }
+        List<InformationBlock.InfomatonBlock>? InformationBlocks { get; }
+        List<Table.Table>? Tables { get; }
+        List<IData> CreateIDataList();
     }
 }
