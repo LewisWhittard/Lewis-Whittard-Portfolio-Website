@@ -4,12 +4,12 @@ namespace Infrastructure.Models.Data.Interface
 {
     public interface IData
     {
-        public int Id { get; set; }
-        public int? DisplayOrder { get; set; }
-        public string GUID {get; set;}
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
+        int Id { get; }
+        int? DisplayOrder { get; }
+        string GUID { get; }
+        bool Deleted { get; }
+        bool Inactive { get; }
         [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
+        UIConcrete? UIConcreteType { get; }
     }
 }

@@ -2,8 +2,8 @@
 {
     public interface ICarousel
     {
-        public List<Shared.Image.Image> Images { get; set; }
-        public int PageId { get; set; }
+        List<Shared.Image.Image> Images { get; }
+        int PageId { get; }
 
     }
 }

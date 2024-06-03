@@ -6,15 +6,15 @@ namespace Infrastructure.Models.Data.Carousel
 {
     public class Carousel : ICarousel, IData
     {
-        public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
-        public List<Shared.Image.Image> Images { get; set; }
-        public int? DisplayOrder { get; set; }
-        public int PageId { get; set; }
+        public int Id { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
+        public List<Shared.Image.Image> Images { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public int PageId { get; private set; }
         [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
-        public string GUID { get; set; }
+        public UIConcrete? UIConcreteType { get; private set; }
+        public string GUID { get; private set; }
 
         public Carousel()
         {
