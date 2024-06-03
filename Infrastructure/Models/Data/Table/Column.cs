@@ -6,17 +6,16 @@ namespace Infrastructure.Models.Data.Table
 {
     public class Column : IColumn, IData
     {
-
-        public int Id { get; set; }
-        public bool Deleted { get; set; }
-        public bool Inactive { get; set; }
-        public string Value { get; set; }
-        public int? DisplayOrder { get; set; }
-        public int TableID { get; set; }
-        public string GUID { get; set; }
-        public int RowId { get; set; }
+        public int Id { get; private set; }
+        public bool Deleted { get; private set; }
+        public bool Inactive { get; private set; }
+        public string Value { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public int TableID { get; private set; }
+        public string GUID { get; private set; }
+        public int RowId { get; private set; }
         [JsonIgnore]
-        public UIConcrete? UIConcreteType { get; set; }
+        public UIConcrete? UIConcreteType { get; private set; }
 
         public Column()
         {
