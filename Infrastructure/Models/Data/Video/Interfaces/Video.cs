@@ -2,10 +2,10 @@
 {
     public interface IVideo
     {
-        public string Source { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Navigation { get; set; }
-        public int PageId { get; set; }
+        string Source { get; }
+        string Title { get; }
+        string Description { get; }
+        string Navigation { get; }
+        int PageId { get; }
     }
 }
