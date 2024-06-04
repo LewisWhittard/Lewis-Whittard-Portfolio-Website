@@ -2,9 +2,9 @@
 {
     public interface ICard
     {
-        public Image Image { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Navigation { get; set; }
+        Image Image { get; }
+        string Title { get; }
+        string Description { get; }
+        string Navigation { get; }
     }
 }
