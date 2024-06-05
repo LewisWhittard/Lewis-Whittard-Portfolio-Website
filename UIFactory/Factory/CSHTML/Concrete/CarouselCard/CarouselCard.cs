@@ -8,15 +8,15 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
 {
     public class CarouselCard : ICarouselCard, ICSHTML, IJsonLD, IUI
     {
-        public List<Card> Cards { get; set; }
-        public int? DisplayOrder { get; set; }
-        public List<string> JsonLDValues { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public List<Card> Cards { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public List<string> JsonLDValues { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCard;
         private readonly List<IAltData> _alt;
-        
+
 
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCard, List<IJsonLDData> jsonLD, List<IAltData> alt)
         {
@@ -28,7 +28,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
             }
 
             int cardCount = Cards.Count();
-            if (cardCount < 9) 
+            if (cardCount < 9)
             {
                 List<Card> cards = PopulateBlankCards(cardCount);
                 Cards.AddRange(cards);
@@ -49,14 +49,14 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
                 Card card = new Card();
                 blankCards.Add(card);
             }
-            
+
             return blankCards;
         }
 
         public List<List<Card>> ReturnCardsAsRows()
         {
             var cards = Cards.OrderByDescending(x => x.DisplayOrder).ToList();
-            
+
             List<List<Card>> Result = new List<List<Card>>();
             List<Card> rowOne = new List<Card> { cards[0], cards[1], cards[2] };
             List<Card> rowTwo = new List<Card> { cards[3], cards[4], cards[5] };

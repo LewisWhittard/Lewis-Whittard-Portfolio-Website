@@ -7,14 +7,14 @@ namespace UIFactory.Factory.CSHTML.Concrete.CarouselCard
 {
     public class Card : ICard, IUI
     {
-        public Image Image { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Navigation { get; set; }
-        public string Alt { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
-        public int? DisplayOrder { get; set; }
+        public Image Image { get; private set; }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+        public string Navigation { get; private set; }
+        public string Alt { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
+        public int? DisplayOrder { get; private set; }
 
         private readonly Infrastructure.Models.Data.Shared.Card.Card _card;
         private readonly IAltData _alt;

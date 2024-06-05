@@ -2,6 +2,6 @@
 {
     public interface ICarouselCard
     {
-        public List<Card> Cards { get; set; }
+        List<Card> Cards { get; }
     }
 }
