@@ -2,6 +2,6 @@
 {
     public interface IJsonLD
     {
-        public List<string> JsonLDValues { get; set; }
+        List<string> JsonLDValues { get; }
     }
 }

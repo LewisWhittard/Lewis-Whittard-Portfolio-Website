@@ -2,6 +2,6 @@
 {
     public interface ICarousel
     {
-        public List<Image> Images { get; set; }
+        List<Image> Images { get; }
     }
 }

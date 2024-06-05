@@ -8,11 +8,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
 {
     public class Carousel : ICarousel, ICSHTML, IJsonLD, IUI
     {
-        public List<Image> Images { get; set; }
-        public int? DisplayOrder { get; set; }
-        public List<string> JsonLDValues { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public List<Image> Images { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public List<string> JsonLDValues { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private readonly Infrastructure.Models.Data.Carousel.Carousel _carousel;
         private readonly List<IAltData> _alt;

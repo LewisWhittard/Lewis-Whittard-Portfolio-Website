@@ -2,6 +2,6 @@
 {
     public interface IImage
     {
-        public string Source { get; set; }
+        string Source { get; }
     }
 }

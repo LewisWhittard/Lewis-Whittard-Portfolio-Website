@@ -7,11 +7,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.Carousel
 {
     public class Image : IImage, IUI
     {
-        public string Source { get; set; }
-        public int? DisplayOrder { get; set; }
-        public string alt { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public string Source { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public string alt { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
         private readonly IAltData _alt;
