@@ -6,6 +6,7 @@ using Infrastructure.Models.Data.Page;
 using Infrastructure.Models.Data.Shared.Card;
 using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.Table;
+using Infrastructure.Models.Data.Video;
 
 namespace InfrastructureTests.Ctor
 {
@@ -16,9 +17,10 @@ namespace InfrastructureTests.Ctor
         private List<CarouselCard> _carouselCards { get; set; }
         private List<InfomatonBlock> _informationBlocks { get; set; }
         private List<Table> _tables { get; set; }
+        private List<Video> _video { get; set; }
 
 
-        public PageTests()
+        public void SetUp()
         {
             _cards = new List<Card>();
             _carousels = new List<Carousel>();
@@ -138,6 +140,13 @@ namespace InfrastructureTests.Ctor
                 new Table(1, false, false, 1, Headers1, columns1, "gUIDTable1", "Table1Title", 1)
             };
 
+            _video = new List<Video>
+            {
+                new Video("SourceVideo0","TitleVideo0","DescriptionVideo0","NavigationVideo0",0,false,false,0,"GUIDVideo0",0),
+                new Video("SourceVideo1","TitleVideo1","DescriptionVideo1","NavigationVideo1",1,false,false,1,"GUIDVideo1",1)
+
+            };
+
 
         }
         
@@ -155,12 +164,192 @@ namespace InfrastructureTests.Ctor
             Assert.Null(page.CarouselCards);
             Assert.Null(page.InformationBlocks);
             Assert.Null(page.Tables);
+            Assert.Null(page.Videos);
             Assert.Null(page.GUID);
             Assert.Equal(0, page.Id);
             Assert.False(page.Deleted);
             Assert.False(page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
         }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        [InlineData("PageName1", "GUID1", 2, true, false)]
+        [InlineData("PageName2", "GUID2", 3, false, true)]
+        [InlineData("PageName3", "GUID3", 4, true, true)]
+        public void Page_Constructor_WithParameters(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards,page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullCards(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, null, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(null, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullCarousels(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, null, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(null, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullCarouselCards(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, _carousels, null, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(null, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullInformationBlocks(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, _carousels, _carouselCards, null, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(null, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullTables(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, null, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(null, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullVideos(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, _tables, null, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(null, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+
+            TearDown();
+        }
+
 
         public void TearDown()
         {

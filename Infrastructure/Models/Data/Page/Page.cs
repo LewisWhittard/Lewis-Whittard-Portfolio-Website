@@ -28,6 +28,7 @@ namespace Infrastructure.Models.Data.Page
 
         public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id, bool deleted, bool inactive)
         {
+            Id = id;
             PageName = pageName;
             Cards = cards;
             Carousels = carousels;
