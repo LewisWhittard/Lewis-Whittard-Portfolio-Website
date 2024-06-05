@@ -30,8 +30,8 @@ namespace InfrastructureTests.Ctor
 
             List<Image> imagesCards = new List<Image>
                 {
-                    new Image("Image0Source", 0, 0, false, false, "Image0GUID", 0,null,null),
-                    new Image("Image1Source", 1, 1, false, false, "Image1GUID", 1, null, null)
+                    new Image("Image0Source", null, 0, false, false, "Image0GUID", 0,null,null),
+                    new Image("Image1Source", null, 1, false, false, "Image1GUID", 1, null, null)
                 };
 
             _cards.Add(new Card(imagesCards[0], "Card0Title", "Card0Description", "Card0Navigation", 0, false, false, 0, "Card0GUID", 1));
@@ -45,8 +45,8 @@ namespace InfrastructureTests.Ctor
 
             List<Image> imagesCarousel1 = new List<Image>
             {
-                new Image("Image2Source", 2, 2, false, false, "Image2GUID", null, null,1),
-                new Image("Image3Source", 3, 3, false, false, "Image3GUID", null, null,1)
+                new Image("Image2Source", 1, 2, false, false, "Image2GUID", null, null,1),
+                new Image("Image3Source", 2, 3, false, false, "Image3GUID", null, null,1)
             };
 
             _carousels.Add(new Carousel(0, false, false, imagesCarousel0, 2, "Carousel0GUID", 1));
@@ -69,30 +69,36 @@ namespace InfrastructureTests.Ctor
 
             List<Heading> headings1 = new List<Heading>
             {
-                new Heading(0,false,false,"Heading0Text",0,1,"Heading0GUID",0),
-                new Heading(1,false,false,"Heading1Text",1,1,"Heading1GUID",1)
+                new Heading(0,false,false,"Heading0Text",2,1,"Heading0GUID",0),
+                new Heading(1,false,false,"Heading1Text",3,1,"Heading1GUID",1)
             };
 
             List<Heading> headings2 = new List<Heading>
             {
-                new Heading(2,false,false,"Heading2Text",0,2,"Heading2GUID",0),
-                new Heading(3,false,false,"Heading3Text",1,2,"Heading3GUID",1)
+                new Heading(2,false,false,"Heading2Text",4,2,"Heading2GUID",0),
+                new Heading(3,false,false,"Heading3Text",5,2,"Heading3GUID",1)
             };
 
             List<Image> imagesInformationBlock0 = new List<Image>
             {
-                new Image("Image4Source", 0, 4, false, false, "Image4GUID", null,null, 0),
-                new Image("image5Source", 1, 5, false, false, "Image5GUID", null, null,0)
+                new Image("Image4Source", 6, 4, false, false, "Image4GUID", null,null, 0),
+                new Image("image5Source", 7, 5, false, false, "Image5GUID", null, null,0)
             };
 
             List<Image> imagesInformationBlock1 = new List<Image>
             {
-                new Image("Image6Source", 0, 6, false, false, "Image6GUID", null,null, 0),
-                new Image("image7Source", 1, 7, false, false, "Image7GUID", null, null,0)
+                new Image("Image6Source", 8, 6, false, false, "Image6GUID", null,null, 0),
+                new Image("image7Source", 9, 7, false, false, "Image7GUID", null, null,0)
             };
 
             _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0GUID",1));
             _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
+
+            _informationBlocks = new List<InfomatonBlock>
+            {
+                new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0GUID",1),
+                new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 7, "InfomationBlock0GUID", 1)
+            };
 
             List<Header> Headers0 = new List<Header>
             {
@@ -136,14 +142,14 @@ namespace InfrastructureTests.Ctor
 
             _tables = new List<Table>
             {
-                new Table(0,false,false,0,Headers0,columns0,"gUIDTable0","Table0Title",0),
-                new Table(1, false, false, 1, Headers1, columns1, "gUIDTable1", "Table1Title", 1)
+                new Table(0,false,false,8,Headers0,columns0,"gUIDTable0","Table0Title",0),
+                new Table(1, false, false, 9, Headers1, columns1, "gUIDTable1", "Table1Title", 1)
             };
 
             _video = new List<Video>
             {
-                new Video("SourceVideo0","TitleVideo0","DescriptionVideo0","NavigationVideo0",0,false,false,0,"GUIDVideo0",0),
-                new Video("SourceVideo1","TitleVideo1","DescriptionVideo1","NavigationVideo1",1,false,false,1,"GUIDVideo1",1)
+                new Video("SourceVideo0","TitleVideo0","DescriptionVideo0","NavigationVideo0",0,false,false,10,"GUIDVideo0",0),
+                new Video("SourceVideo1","TitleVideo1","DescriptionVideo1","NavigationVideo1",1,false,false,11,"GUIDVideo1",1)
 
             };
 
