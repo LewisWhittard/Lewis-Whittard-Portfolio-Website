@@ -6,13 +6,13 @@ namespace UIFactory.Factory.CSHTML.Concrete.Video
 {
     public class Video : ICSHTML, IVideo, IUI
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Navigation { get; set; }
-        public int? DisplayOrder { get; set; }
-        public string Source { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+        public string Navigation { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public string Source { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private readonly Infrastructure.Models.Data.Video.Video _video;
 
