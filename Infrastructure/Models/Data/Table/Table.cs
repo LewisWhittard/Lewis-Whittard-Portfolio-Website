@@ -23,7 +23,7 @@ namespace Infrastructure.Models.Data.Table
             UIConcreteType = UIConcrete.Table;
         }
 
-        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string webpage, string gUID, string title, int pageId)
+        public Table(int id, bool deleted, bool inactive, int displayOrder, List<Header>? headers, List<List<Column>>? columns, string gUID, string title, int pageId)
         {
             Id = id;
             Deleted = deleted;

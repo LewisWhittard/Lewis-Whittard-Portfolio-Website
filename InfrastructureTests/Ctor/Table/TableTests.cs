@@ -1,12 +1,11 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Table;
-using System;
 
 namespace InfrastructureTests.Ctor
 {
     public class TableTests
     {
-        private List<Header> headers = new List<Header>(); 
+        private List<Header> headers = new List<Header>();
         private List<List<Column>> columnsList = new List<List<Column>>();
 
         private void SetUp()
@@ -15,10 +14,10 @@ namespace InfrastructureTests.Ctor
             headers.Add(new Header(1, false, false, 1, 0, "Header1", "Header1GUID"));
             List<Column> columns0 = new List<Column>();
             List<Column> columns1 = new List<Column>();
-            columns0.Add(new Column(0,false,false,"Column0",0,0,"Column0GUID",0));
-            columns0.Add(new Column(1, false, false, "Column1", 1, 0, "Column1GUID",0));
+            columns0.Add(new Column(0, false, false, "Column0", 0, 0, "Column0GUID", 0));
+            columns0.Add(new Column(1, false, false, "Column1", 1, 0, "Column1GUID", 0));
             columns1.Add(new Column(2, false, false, "Column2", 0, 0, "Column2GUID", 1));
-            columns1.Add(new Column(3, false, false, "Column3", 1, 0, "Column3GUID",1));
+            columns1.Add(new Column(3, false, false, "Column3", 1, 0, "Column3GUID", 1));
             columnsList.Add(columns0);
             columnsList.Add(columns1);
         }
@@ -42,17 +41,17 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(0, table.PageId);
         }
 
- 
+
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",4)]
-        [InlineData(1, false, true, 2, "TablePage1", "Table1GUID", "TableTitle1",5)]
-        [InlineData(2, true, true, 1, "TablePage2", "Table2GUID", "TableTitle2",6)]
-        [InlineData(3, false, false, 0, "TablePage3", "Table3GUID", "TableTitle3",7)]
-        public void Table_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
+        [InlineData(0, true, false, 3, "Table0GUID", "TableTitle0", 4)]
+        [InlineData(1, false, true, 2, "Table1GUID", "TableTitle1", 5)]
+        [InlineData(2, true, true, 1, "Table2GUID", "TableTitle2", 6)]
+        [InlineData(3, false, false, 0, "Table3GUID", "TableTitle3", 7)]
+        public void Table_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, tablePage, gUID, title, pageId);
-            
+            var table = new Table(id, deleted, inactive, displayOrder, headers, columnsList, gUID, title, pageId);
+
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
             Assert.Equal(deleted, table.Deleted);
@@ -67,11 +66,11 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",1)]
-        public void Table_SetProperties_NullColumns(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
+        [InlineData(0, true, false, 3, "Table0GUID", "TableTitle0", 1)]
+        public void Table_SetProperties_NullColumns(int id, bool deleted, bool inactive, int displayOrder, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, headers, null, tablePage, gUID, title, pageId);
+            var table = new Table(id, deleted, inactive, displayOrder, headers, null, gUID, title, pageId);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);
@@ -87,11 +86,11 @@ namespace InfrastructureTests.Ctor
         }
 
         [Theory]
-        [InlineData(0, true, false, 3, "TablePage0", "Table0GUID", "TableTitle0",1)]
-        public void Table_SetProperties_HeadersNull(int id, bool deleted, bool inactive, int displayOrder, string tablePage, string gUID, string title, int pageId)
+        [InlineData(0, true, false, 3, "Table0GUID", "TableTitle0", 1)]
+        public void Table_SetProperties_HeadersNull(int id, bool deleted, bool inactive, int displayOrder, string gUID, string title, int pageId)
         {
             SetUp();
-            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, tablePage, gUID, title, pageId);
+            var table = new Table(id, deleted, inactive, displayOrder, null, columnsList, gUID, title, pageId);
 
             Assert.Equal(id, table.Id);
             Assert.Equal(title, table.Title);

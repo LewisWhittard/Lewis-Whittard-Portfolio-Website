@@ -15,7 +15,7 @@ namespace InfrastructureTests.Ctor
         private List<Carousel> _carousels { get; set; }
         private List<CarouselCard> _carouselCards { get; set; }
         private List<InfomatonBlock> _informationBlocks { get; set; }
-        private List<Table> Tables { get; set; }
+        private List<Table> _tables { get; set; }
 
 
         public PageTests()
@@ -24,7 +24,7 @@ namespace InfrastructureTests.Ctor
             _carousels = new List<Carousel>();
             _carouselCards = new List<CarouselCard>();
             _informationBlocks = new List<InfomatonBlock>();
-            Tables = new List<Table>();
+            _tables = new List<Table>();
 
             List<Image> imagesCards = new List<Image>
                 {
@@ -77,41 +77,70 @@ namespace InfrastructureTests.Ctor
                 new Heading(3,false,false,"Heading3Text",1,2,"Heading3GUID",1)
             };
 
-            List<Image> imagesInfomationBlock0 = new List<Image>
+            List<Image> imagesInformationBlock0 = new List<Image>
             {
                 new Image("Image4Source", 0, 4, false, false, "Image4GUID", null,null, 0),
                 new Image("image5Source", 1, 5, false, false, "Image5GUID", null, null,0)
             };
 
-            List<Image> imagesInfomationBlock1 = new List<Image>
+            List<Image> imagesInformationBlock1 = new List<Image>
             {
                 new Image("Image6Source", 0, 6, false, false, "Image6GUID", null,null, 0),
                 new Image("image7Source", 1, 7, false, false, "Image7GUID", null, null,0)
             };
 
-            _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInfomationBlock0, paragraphs1,headings1,6,"InfomationBlock0GUID",1));
-            _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInfomationBlock1, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
+            _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0GUID",1));
+            _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 6, "InfomationBlock0GUID", 1));
 
-            List<Header> Headers = new List<Header>
+            List<Header> Headers0 = new List<Header>
             {
                 new Header(0, false, false, 0, 0, "Header0Value", "Header0GUID"),
-                new Header(1, false, false, 1, 1, "Header1Value", "Header1GUID")
+                new Header(1, false, false, 1, 0, "Header1Value", "Header1GUID")
             };
 
-            //List<List<Column>> columns = new List<List<Column>>()
-            //{
-            //    List<Column> Row0 = new List<Column>()
-            //    {
-            //        new Column(0, false, false,"Column0Value",0,0,"Column0GUID",0),
-            //        new Column(1, false, false, 1, 1, "Column1Value", "Column1GUID")
-            //    },
-            //    List<Column> Row1 = new List<Column>()
-            //    {
-            //        new Column(2, false, false, 0, 2, "Column2Value", "Column2GUID"),
-            //        new Column(3, false, false, 1, 3, "Column3Value", "Column3GUID")
-            //    }
-            //}
+            List<List<Column>> columns0 = new List<List<Column>>()
+            {
+                new List<Column>
+                {
+                    new Column(0,false,false,"ValueColumn0",0,0,"GUIDColumn0",0),
+                    new Column(1,false,false,"ValueColumn1",1,0,"GUIDColumn1",0)
+                },
+                new List<Column>
+                {
+                    new Column(2,false,false,"ValueColumn2",0,0,"GUIDColumn2",1),
+                    new Column(3,false,false,"ValueColumn3",1,0,"GUIDColumn3",1)
+                }
+            };
+
+            List<Header> Headers1 = new List<Header>
+            {
+                new Header(5, false, false, 0, 1, "Header5Value", "Header5GUID"),
+                new Header(6, false, false, 1, 1, "Header6Value", "Header6GUID")
+            };
+
+            List<List<Column>> columns1 = new List<List<Column>>()
+            {
+                new List<Column>
+                {
+                    new Column(4,false,false,"ValueColumn4",0,1,"GUIDColumn4",0),
+                    new Column(5,false,false,"ValueColumn5",1,1,"GUIDColumn5",0)
+                },
+                new List<Column>
+                {
+                    new Column(6,false,false,"ValueColumn6",0,1,"GUIDColumn6",1),
+                    new Column(7,false,false,"ValueColumn7",1,1,"GUIDColumn7",1)
+                }
+            };
+
+            _tables = new List<Table>
+            {
+                new Table(0,false,false,0,Headers0,columns0,"gUIDTable0","Table0Title",0),
+                new Table(1, false, false, 1, Headers1, columns1, "gUIDTable1", "Table1Title", 1)
+            };
+
+
         }
+        
 
         [Fact]
         public void Page_Constructor_NoParameters()
@@ -133,13 +162,13 @@ namespace InfrastructureTests.Ctor
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
         }
 
-        public void Dispose()
+        public void TearDown()
         {
-            _cards = null;
-            _carousels = null;
-            _carouselCards = null;
-            _informationBlocks = null;
-            Tables = null;
+            _cards.Clear();
+            _carousels.Clear();
+            _carouselCards.Clear();
+            _informationBlocks.Clear();
+            _tables.Clear();
         }
     }
 }
