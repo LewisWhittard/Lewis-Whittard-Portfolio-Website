@@ -8,14 +8,14 @@ namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
 {
     public class InfomatonBlock : IInformationBlock, ICSHTML, IJsonLD, IUI
     {
-        public Heading Heading { get; set; }
-        public List<Image> Images { get; set; }
-        public List<Paragraph> Paragraphs { get; set; }
-        public List<Heading> Headings { get; set; }
-        public int? DisplayOrder { get; set; }
-        public List<string> JsonLDValues { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public Heading Heading { get; private set; }
+        public List<Image> Images { get; private set; }
+        public List<Paragraph> Paragraphs { get; private set; }
+        public List<Heading> Headings { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public List<string> JsonLDValues { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private readonly Infrastructure.Models.Data.InformationBlock.InfomatonBlock _infomatonBlock;
         private readonly List<IAltData> _alt;
@@ -37,30 +37,30 @@ namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
             foreach (var item in _infomatonBlock.Headings)
             {
                 Heading heading = new Heading(item);
-				Headings.Add(heading);
-			}
+                Headings.Add(heading);
+            }
             DisplayOrder = _infomatonBlock.Id;
             UIType = UI.InformationBlock;
         }
 
-		public List<IUI> ReturnContentsAsListIUI()
-		{
-			List<IUI> value = new List<IUI>();
+        public List<IUI> ReturnContentsAsListIUI()
+        {
+            List<IUI> value = new List<IUI>();
 
             foreach (var item in Images)
             {
                 value.Add(item);
             }
             foreach (var item in Paragraphs)
-			{
-				value.Add(item);
-			}
+            {
+                value.Add(item);
+            }
             foreach (var item in Headings)
-			{
-				value.Add(item);
-			}
+            {
+                value.Add(item);
+            }
 
-			return value;
-		}
-	}
+            return value;
+        }
+    }
 }

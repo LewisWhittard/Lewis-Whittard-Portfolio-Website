@@ -2,8 +2,8 @@
 {
     public interface IHeading
     {
-        public string Text { get; set; }
-        public int InformationBlockid { get; set; }
-        public int Level { get; set; }
+        string Text { get; }
+        int InformationBlockid { get; }
+        int Level { get; }
     }
 }

@@ -7,15 +7,15 @@ namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
 {
     public class Image : IImage, ICSHTML, IUI
     {
-        public string Source { get; set; }
-        public int? DisplayOrder { get; set; }
-        public UI? UIType { get; set; }
-        public string Alt { get; set; } 
+        public string Source { get; private set; }
+        public int? DisplayOrder { get; private set; }
+        public UI? UIType { get; private set; }
+        public string Alt { get; private set; }
         private readonly Infrastructure.Models.Data.Shared.Image.Image _image;
         private readonly IAltData _alt;
-        public string GUID { get; set; }
+        public string GUID { get; private set; }
 
-        public Image(Infrastructure.Models.Data.Shared.Image.Image Image,IAltData alt)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image Image, IAltData alt)
         {
             _image = Image;
             GUID = _image.GUID;
@@ -23,7 +23,7 @@ namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock
             Source = _image.Source;
             DisplayOrder = _image.DisplayOrder;
             Alt = _alt.Value;
-            
+
         }
     }
 }

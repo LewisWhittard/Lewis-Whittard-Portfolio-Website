@@ -4,11 +4,10 @@ namespace UIFactory.Factory.CSHTML.Concrete.InformationBlock.Interfaces
 {
     public interface IInformationBlock
     {
-        public List<Image> Images { get; set; }
-        public List<Paragraph> Paragraphs { get; set; }
-        public List<Heading> Headings { get; set; }
+        List<Image> Images { get; }
+        List<Paragraph> Paragraphs { get; }
+        List<Heading> Headings { get; }
 
         public List<IUI> ReturnContentsAsListIUI();
-
     }
 }
