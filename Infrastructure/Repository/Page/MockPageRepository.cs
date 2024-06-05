@@ -11,46 +11,17 @@ namespace Infrastructure.Repository.Page
 {
     public class MockPageRepository : IPageRepository
     {
-        private List<Models.Data.Page.Page> _pages {  get; set; }
+        private List<Models.Data.Page.Page> _pages;
 
         public MockPageRepository()
         {
-            //// Create lists to hold the instances
-            //List<Card> cards = new List<Card>();
-            //List<Carousel> carousels = new List<Carousel>();
-            //List<CarouselCard> carouselCards = new List<CarouselCard>();
-            //List<Table> tables = new List<Table>();
-            //List<InfomatonBlock> infoBlocks = new List<InfomatonBlock>();
-            //List<Video> videos = new List<Video>();
+            _pages = new List<Models.Data.Page.Page>();
 
-            //// Add instances to the lists
-            //cards.Add((new Card(null, "", "", "", 0, false, false, 0, "", 0)));
-            ////cards.Add(new Card() { Id = 0, Deleted = false, Inactive = false});
-            //carousels.Add(new Carousel() { Id = 0, Deleted = false, Inactive = false });
-            //carouselCards.Add(new CarouselCard() { Id = 0, Deleted = false, Inactive = false });
-            //tables.Add(new Table() { Id = 0, Deleted = false, Inactive = false });
-            //infoBlocks.Add(new InfomatonBlock() { Id = 0, Deleted = false, Inactive = false });
-            //videos.Add(new Video() { Id = 0, Deleted = false, Inactive = false });
-
-            //cards.Add(new Card() { Id = 1, Deleted = false, Inactive = false });
-            //carousels.Add(new Carousel() { Id = 1, Deleted = false, Inactive = false });
-            //carouselCards.Add(new CarouselCard() { Id = 1, Deleted = false, Inactive = false });
-            //tables.Add(new Table() { Id = 1, Deleted = false, Inactive = false });
-            //infoBlocks.Add(new InfomatonBlock() { Id = 1, Deleted = false, Inactive = false });
-            //videos.Add(new Video() { Id = 1, Deleted = false, Inactive = false });
-
-            //_pages = new List<Models.Data.Page.Page>()
-            //{
-            //    new Models.Data.Page.Page() {PageName = "First", Deleted = false, Inactive = false, Cards = cards, Carousels = carousels, CarouselCards = carouselCards, Tables = tables, Videos = videos, InformationBlocks = infoBlocks},
-            //    new Models.Data.Page.Page() {PageName = "Second", Deleted = false, Inactive = false},
-            //    new Models.Data.Page.Page() {PageName = "Deleted", Deleted = true, Inactive = false},
-            //    new Models.Data.Page.Page() {PageName = "IncludeInactive", Deleted = false, Inactive = true},
-            //    new Models.Data.Page.Page() {PageName = "ExcludeInactive", Deleted = false, Inactive = true}
-            //};
-
-
-
-
+            _pages.Add(new Models.Data.Page.Page("First", null, null, null, null, null, null, "FirstGUID", 0, false, false));
+            _pages.Add(new Models.Data.Page.Page("Second", null, null, null, null, null, null, "SecondGUID", 0, false, false));
+            _pages.Add(new Models.Data.Page.Page("Deleted", null, null, null, null, null, null, "DeletedGUID", 0, true, false));
+            _pages.Add(new Models.Data.Page.Page("IncludeInactive", null, null, null, null, null, null, "IncludeInactiveGUID", 0, false, true));
+            _pages.Add(new Models.Data.Page.Page("ExcludeInactive", null, null, null, null, null, null, "ExcludeInactiveGUID", 0, true, false));
         }
 
         public List<Models.Data.Page.Page> GetPages(string PageName)
