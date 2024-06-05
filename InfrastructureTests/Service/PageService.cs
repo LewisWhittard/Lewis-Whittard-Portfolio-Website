@@ -86,5 +86,18 @@ namespace InfrastructureTests.Service
                 }
             }
         }
+
+        [Fact]
+        public void PageService_Ctor()
+        {
+            // Arrange
+            var mockRepository = new MockPageRepository();
+
+            // Act
+            var pageService = new PageService(mockRepository);
+
+            // Assert
+            Assert.NotNull(pageService);
+        }
     }
 }
