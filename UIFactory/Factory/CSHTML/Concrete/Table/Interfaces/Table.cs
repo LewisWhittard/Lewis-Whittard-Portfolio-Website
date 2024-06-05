@@ -2,7 +2,7 @@
 {
     public interface ITable
     {
-        public List<Header> Headers { get; set; }
-        public List<List<Column>> Columns { get; set; }
+        List<Header> Headers { get; }
+        List<List<Column>> Columns { get; }
     }
 }

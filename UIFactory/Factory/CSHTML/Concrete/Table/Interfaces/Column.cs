@@ -2,7 +2,7 @@
 {
     public interface IColumn
     {
-        public string Value { get; set; }
-        public int TableID { get; set; }
+        string Value { get; }
+        int TableID { get; }
     }
 }

@@ -6,11 +6,11 @@ namespace UIFactory.Factory.CSHTML.Concrete.Table
 {
     public class Header : ICSHTML, IHeader, IUI
     {
-        public int? DisplayOrder { get; set; }
-        public int TableID { get; set; }
-        public string Value { get; set; }
-        public UI? UIType { get; set; }
-        public string GUID { get; set; }
+        public int? DisplayOrder { get; private set; }
+        public int TableID { get; private set; }
+        public string Value { get; private set; }
+        public UI? UIType { get; private set; }
+        public string GUID { get; private set; }
 
         private readonly Infrastructure.Models.Data.Table.Header _header;
 
