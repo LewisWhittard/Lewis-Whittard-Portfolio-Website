@@ -1,4 +1,5 @@
-﻿using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt;
+using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository.Interface;
 using SEO.Service.AltService.Interface;
 
@@ -31,7 +32,7 @@ namespace SEO.Service.AltService
             return result;
         }
 
-        List<IAltData> IAltService.GetBySuperClassGUID(string superClassGUID, bool includeInactive)
+        List<AltData> IAltService.GetBySuperClassGUID(string superClassGUID, bool includeInactive)
         {
             throw new NotImplementedException();
         }

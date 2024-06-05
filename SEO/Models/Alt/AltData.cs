@@ -7,7 +7,6 @@ namespace SEO.Models.Alt
     {
         public string SuperClassGUID { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
-        public string Page { get; private set; }
         public int? DisplayOrder { get; private set; }
         public string Value { get; private set; }
         public string GUID { get; private set; }
@@ -15,11 +14,10 @@ namespace SEO.Models.Alt
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
 
-        public AltData(string superClassGUID, UIConcrete? uiConcreteType, string page, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
+        public AltData(string superClassGUID, UIConcrete? uiConcreteType, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
         {
             SuperClassGUID = superClassGUID;
             UIConcreteType = uiConcreteType;
-            Page = page;
             DisplayOrder = displayOrder;
             Value = value;
             GUID = guid;

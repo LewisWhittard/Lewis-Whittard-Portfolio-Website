@@ -6,6 +6,5 @@ namespace SEO.Models.JsonLD.Interface
     {
         string SuperClassGUID { get; }
         UIConcrete? UIConcreteType { get; }
-        string Page { get; }
     }
 }

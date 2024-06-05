@@ -6,7 +6,6 @@ namespace SEO.Models.Alt.Interface
     {
         string SuperClassGUID { get; }
         UIConcrete? UIConcreteType { get; }
-        string Page { get; }
         string Value { get; }
         string GUID { get; }
     }
