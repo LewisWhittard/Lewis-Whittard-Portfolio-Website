@@ -1,22 +1,20 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.JsonLD;
+﻿using SEO.Models.JsonLD;
 
 namespace SEOTests.Ctor
 {
     public class JsonLDCtor
     {
         [Theory]
-        [InlineData("superClassGUID", "page", 1, 10, "guid", false, false)]
-        [InlineData(null, "page2", 2, null, "guid2", true, true)]
-        [InlineData("superClassGUID", "page", 1, 10, "guid", true, false)]
-        [InlineData(null, "page2", 2, null, "guid2", false, true)]
+        [InlineData("superClassGUID", 1, 10, "guid", false, false)]
+        [InlineData(null, 2, null, "guid2", true, true)]
+        [InlineData("superClassGUID", 1, 10, "guid", true, false)]
+        [InlineData(null, 2, null, "guid2", false, true)]
         // Add more test cases as needed
         public void JsonLDData_Constructor_SetsPropertiesCorrectly(
-        string superClassGUID, string page,
-        int id, int? displayOrder, string guid, bool deleted, bool inactive)
+        string superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive)
         {
             // Arrange, Act
-            var jsonLDData = new JsonLDData(superClassGUID, null, page, id, displayOrder, guid, deleted, inactive);
+            var jsonLDData = new JsonLDData(superClassGUID, null, id, displayOrder, guid, deleted, inactive);
 
             // Assert
             Assert.Equal(superClassGUID, jsonLDData.SuperClassGUID);
@@ -37,7 +35,6 @@ namespace SEOTests.Ctor
             // Assert
             Assert.Equal(null, jsonLDData.SuperClassGUID);
             Assert.Equal(null, jsonLDData.UIConcreteType);
-            Assert.Equal(null, jsonLDData.Page);
             Assert.Equal(0, jsonLDData.Id);
             Assert.Equal(null, jsonLDData.DisplayOrder);
             Assert.Equal(null, jsonLDData.GUID);
