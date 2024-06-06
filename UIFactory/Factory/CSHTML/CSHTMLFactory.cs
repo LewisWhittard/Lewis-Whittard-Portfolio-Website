@@ -1,9 +1,4 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using UIFactory.Factory.CSHTML.Concrete.Carousel;
-using UIFactory.Factory.CSHTML.Concrete.CarouselCard;
-using UIFactory.Factory.CSHTML.Concrete.InformationBlock;
-using UIFactory.Factory.CSHTML.Concrete.Table;
-using UIFactory.Factory.CSHTML.Concrete.Video;
 using UIFactory.Factory.Interface;
 using Infrastructure.Service.Page.Interface;
 using SEO.Service.JsonLDService.Interface;
@@ -31,45 +26,47 @@ namespace UIFactory.Factory.CSHTML
             _metaService = metaService;
         }
 
-        public List<IUI> CreateUIListByPageName(string PageName)
+        public List<IUI> CreateUIListByPageName(string pageName)
         {
             List<IUI> result = new List<IUI>();
-            var pageData = _pageService.GetByPageNameAsIDataList(PageName, false);
-            List<MetaData> meta = _metaService.GetByPageName(PageName, false);
+            var page = _pageService.GetByPageName(pageName, false);
+            var pageData = _pageService.GetByPageNameAsIDataList(pageName, false);
             foreach (var data in pageData)
             {
-                List<JsonLDData> jsonLD = _jsonLDService.GetBySuperClassGUID(data.GUID, false);
-                List<AltData> alt = _altService.GetBySuperClassGUID(data.GUID, false);
-                var uI = CreateUI(data, jsonLD, alt, meta);
+                var uI = CreateUI(data,true,true,true);
                 result.Add(uI);
             }
             return result;
         }
 
-        private IUI CreateUI(IData data, List<JsonLDData> jsonLDData, List<AltData> altData, List<MetaData> meta)
+        private IUI CreateUI(IData data, bool jsonLDData, bool altData, bool meta)
         {
             switch (data.UIConcreteType)
             {
+                case UIConcrete.Head:
+                    return null;
+                    break;
                 case UIConcrete.Card:
-                    var card = (Infrastructure.Models.Data.Shared.Card.Card)data;
-                    return new Concrete.Card.Card(card, jsonLDData, altData);
+                    return null;
+                    break;
                 case UIConcrete.Carousel:
-                    var carousel = (Infrastructure.Models.Data.Carousel.Carousel)data;
-                    return new Carousel(carousel, jsonLDData, altData);
+                    return null;
+                    break;
                 case UIConcrete.CarouselCard:
-                    var carouselCard = (Infrastructure.Models.Data.CarouselCard.CarouselCard)data;
-                    return new CarouselCard(carouselCard, jsonLDData, altData);
+                    return null;
+                    break;
                 case UIConcrete.InformationBlock:
-                    var informationBlock = (Infrastructure.Models.Data.InformationBlock.InfomatonBlock)data;
-                    return new InfomatonBlock(informationBlock, jsonLDData, altData);
+                    return null;
+                    break;
                 case UIConcrete.Table:
-                    var table = (Infrastructure.Models.Data.Table.Table)data;
-                    return new Table(table);
+                    return null;
+                    break;
                 case UIConcrete.Video:
-                    var video = (Infrastructure.Models.Data.Video.Video)data;
-                    return new Video(video);
+                    return null;
+                    break;
                 default:
-                    throw new ArgumentException("Unknown type: " + data);
+                    throw new Exception("UIConcreteType not found");
+                    break;
             }
         }
     }
