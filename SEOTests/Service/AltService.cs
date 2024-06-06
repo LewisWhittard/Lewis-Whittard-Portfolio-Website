@@ -59,3 +59,4 @@ namespace SEOTests.Service
             Assert.NotNull(altService);
         }
     }
+}
