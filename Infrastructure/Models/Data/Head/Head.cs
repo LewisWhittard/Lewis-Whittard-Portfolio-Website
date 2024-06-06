@@ -12,8 +12,9 @@ namespace Infrastructure.Models.Data.Head
         public bool Inactive { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
         public string Title { get; private set; }
+        public int PageId { get; private set; }
 
-        public Head(int id, bool deleted, bool inactive, string title)
+        public Head(int id,int PageId, bool deleted, bool inactive, string title,int pageId)
         {
             Id = id;
             DisplayOrder = null;
@@ -22,6 +23,7 @@ namespace Infrastructure.Models.Data.Head
             Inactive = inactive;
             UIConcreteType = UIConcrete.Head;
             Title = title;
+            PageId = pageId;
         }
 
         public Head()
