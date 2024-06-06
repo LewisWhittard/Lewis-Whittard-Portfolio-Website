@@ -3,11 +3,7 @@ using UIFactory.Factory.Interface;
 using Infrastructure.Service.Page.Interface;
 using SEO.Service.JsonLDService.Interface;
 using SEO.Service.AltService.Interface;
-using SEO.Models.Alt.Interface;
 using SEO.Service.MetaService.Interface;
-using SEO.Models.Meta.Interface;
-using SEO.Models.JsonLD;
-using SEO.Models.Alt;
 
 namespace UIFactory.Factory.CSHTML
 {
@@ -39,7 +35,7 @@ namespace UIFactory.Factory.CSHTML
             return result;
         }
 
-        private IUI CreateUI(IData data, bool jsonLDData, bool altData, bool meta)
+        private IUI CreateUI(IData data, bool jsonLD, bool alt, bool meta)
         {
             switch (data.UIConcreteType)
             {
