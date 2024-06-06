@@ -51,6 +51,17 @@ namespace SEOTests.Service
                 }
             }
         }
+
+        [Fact]
+        public void MetaService_Ctor()
+        {
+            // Arrange
+            MockMetaRepository mockMetaRepository = new MockMetaRepository();
+            // Act
+            MetaService metaService = new MetaService(mockMetaRepository);
+            // Assert
+            Assert.NotNull(metaService);
+        }
     }
 }
 

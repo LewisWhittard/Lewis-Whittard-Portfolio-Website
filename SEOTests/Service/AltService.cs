@@ -1,6 +1,7 @@
 ﻿using SEO.Models.Alt;
 using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository;
+using SEO.Repository.AltRepository.Interface;
 using SEO.Service.AltService;
 
 namespace SEOTests.Service
@@ -46,5 +47,15 @@ namespace SEOTests.Service
                 }
             }
         }
+
+        [Fact]
+        public void AltService_Ctor()
+        {
+            // Arrange
+            MockAltRepository altRepository = new MockAltRepository();
+            // Act
+            AltService altService = new AltService(altRepository);
+            // Assert
+            Assert.NotNull(altService);
+        }
     }
-}

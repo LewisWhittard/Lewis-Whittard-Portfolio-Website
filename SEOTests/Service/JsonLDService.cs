@@ -45,5 +45,16 @@ namespace SEOTests.Service
                 }
             }
         }
+
+        [Fact]
+        public void JsonLDService_Ctor()
+        {
+            // Arrange
+            MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
+            // Act
+            JsonLDService jsonLDService = new JsonLDService(mockJsonLDRepository);
+            // Assert
+            Assert.NotNull(jsonLDService);
+        }
     }
 }
