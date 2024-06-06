@@ -1,6 +1,6 @@
-﻿@using System.Data
-@using UIFactory.Factory.CSHTML.Concrete.Interface
-@using UIFactory.Factory.Interface
+﻿@    using System.Data
+@    using UIFactory.Factory.CSHTML.Concrete.Interface
+@    using UIFactory.Factory.Interface
 @model List<IUI>
 
 @foreach (var item in Model)
@@ -8,27 +8,27 @@
     @switch (item.UIType)
     {
         case UI.Card:
-            var card = (UIFactory.Factory.CSHTML.Concrete.Card.Card)item;
+            var card = (Card)item;
             @await Html.PartialAsync("~/Views/Shared/_CardPartial.cshtml", card)
             break;
         case UI.Carousel:
-            var carousel = (UIFactory.Factory.CSHTML.Concrete.Carousel.Carousel)item;
+            var carousel = (Carousel)item;
             @await Html.PartialAsync("~/Views/Shared/_CarouselPartial.cshtml", carousel)
             break;
         case UI.CarouselCard:
-            var CarouselCard = (UIFactory.Factory.CSHTML.Concrete.CarouselCard.CarouselCard)item;
+            var CarouselCard = (CarouselCard)item;
             @await Html.PartialAsync("~/Views/Shared/_CarouselCardPartial.cshtml", CarouselCard)
             break;
         case UI.InformationBlock:
-            var informationBlock = (UIFactory.Factory.CSHTML.Concrete.InformationBlock.InfomatonBlock)item;
+            var informationBlock = (InfomatonBlock)item;
             @await Html.PartialAsync("~/Views/Shared/_InfomatonBlockPartial.cshtml", informationBlock)
             break;
         case UI.Table:
-            var table = (UIFactory.Factory.CSHTML.Concrete.Table.Table)item;
+            var table = (Table)item;
             @await Html.PartialAsync("~/Views/Shared/_TablePartial.cshtml", table)
             break;
         case UI.Video:
-            var video = (UIFactory.Factory.CSHTML.Concrete.Video.Video)item;
+            var video = (Video)item;
             @await Html.PartialAsync("~/Views/Shared/_VideoPartial.cshtml", video)
             break;
         default:
