@@ -1,7 +1,5 @@
 ﻿using SEO.Models.Alt;
-using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository;
-using SEO.Repository.AltRepository.Interface;
 using SEO.Service.AltService;
 
 namespace SEOTests.Service
