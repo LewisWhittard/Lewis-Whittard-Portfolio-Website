@@ -11,13 +11,13 @@ namespace SEO.Repository.JsonLDRepositoryRepository
         {
             _jsonLDData = new List<JsonLDData>()
             {
-                //new JsonLDData() {SuperClassGUID = "First", Deleted = false, Inactive = false },
-                //new JsonLDData() {SuperClassGUID = "Second", Deleted = false, Inactive = false},
-                //new JsonLDData() {SuperClassGUID = "Multiple", Deleted = false, Inactive = false},
-                //new JsonLDData() {SuperClassGUID = "Multiple", Deleted = false, Inactive = false},
-                //new JsonLDData() {SuperClassGUID = "Deleted", Deleted = true, Inactive = false},
-                //new JsonLDData() {SuperClassGUID = "IncludeInactive", Deleted = false, Inactive = true},
-                //new JsonLDData() {SuperClassGUID = "ExcludeInactive", Deleted = false, Inactive = true}
+                new JsonLDData("First",0,null,"FirstGUID",false,false),
+                new JsonLDData("Second",1,null,"SecondGUID",false,false),
+                new JsonLDData("Multiple",2,null,"MultipleGUID",false,false),
+                new JsonLDData("Multiple",3,null,"MultipleGUID",false,false),
+                new JsonLDData("IncludeInactive",4,null,"IncludeInactiveGUID",false,true),
+                new JsonLDData("ExcludeInactive",5,null,"ExcludeInactiveGUID",false,true),
+                new JsonLDData("Deleted",6,null,"DeletedGUID",true,false),
             };
         }
 
