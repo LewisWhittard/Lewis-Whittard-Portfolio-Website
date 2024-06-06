@@ -4,6 +4,7 @@ using Infrastructure.Service.Page.Interface;
 using SEO.Service.JsonLDService.Interface;
 using SEO.Service.AltService.Interface;
 using SEO.Service.MetaService.Interface;
+using Infrastructure.Models.Data.Page;
 
 namespace UIFactory.Factory.CSHTML
 {
@@ -25,8 +26,8 @@ namespace UIFactory.Factory.CSHTML
         public List<IUI> CreateUIListByPageName(string pageName)
         {
             List<IUI> result = new List<IUI>();
-            var page = _pageService.GetByPageName(pageName, false);
-            var pageData = _pageService.GetByPageNameAsIDataList(pageName, false);
+            Page page = _pageService.GetByPageName(pageName, false);
+            var pageData = page.CreateIDataList();
             foreach (var data in pageData)
             {
                 var uI = CreateUI(data,true,true,true);
