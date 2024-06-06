@@ -14,7 +14,7 @@ namespace SEOTests.Ctor
         string superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive)
         {
             // Arrange, Act
-            var jsonLDData = new JsonLDData(superClassGUID, null, id, displayOrder, guid, deleted, inactive);
+            var jsonLDData = new JsonLDData(superClassGUID, id, displayOrder, guid, deleted, inactive);
 
             // Assert
             Assert.Equal(superClassGUID, jsonLDData.SuperClassGUID);
