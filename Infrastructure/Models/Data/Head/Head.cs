@@ -13,10 +13,10 @@ namespace Infrastructure.Models.Data.Head
         public UIConcrete? UIConcreteType { get; private set; }
         public string Title { get; private set; }
 
-        public Head(int id, int? displayOrder, bool deleted, bool inactive, string title)
+        public Head(int id, bool deleted, bool inactive, string title)
         {
             Id = id;
-            DisplayOrder = displayOrder;
+            DisplayOrder = null;
             GUID = null;
             Deleted = deleted;
             Inactive = inactive;
