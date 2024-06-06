@@ -7,23 +7,30 @@ namespace SEOTests.Service
     public class MetaServiceTests
     {
         [Theory]
-        [InlineData("First", false)]
-        [InlineData("Second", false)]
-        [InlineData("Multiple", false)]
-        [InlineData("Non", false)]
-        [InlineData("Deleted", false)]
-        [InlineData("IncludeInactive", true)]
-        [InlineData("ExcludeInactive", false)]
-        public void GetByPageName_ReturnsMeta(string pageName, bool includeInactive)
+        //first
+        [InlineData(0, false)]
+        //second
+        [InlineData(1, false)]
+        //multiple
+        [InlineData(2, false)]
+        //non
+        [InlineData(3, false)]
+        //deleted
+        [InlineData(4, false)]
+        //include inactive
+        [InlineData(5, true)]
+        //exclude inactive
+        [InlineData(6, false)]
+        public void GetByPageName_ReturnsMeta(int pageId, bool includeInactive)
         {
             // Arrange
             MockMetaRepository mockMetaRepository = new MockMetaRepository();
             MetaService metaService = new MetaService(mockMetaRepository);
             // Act
-            List<MetaData> metaData = metaService.GetByPageName(pageName, includeInactive);
+            List<MetaData> metaData = metaService.GetByPageId(pageId, includeInactive);
 
             // Assert
-            if (pageName == "Non" || pageName == "Deleted" || pageName == "ExcludeInactive")
+            if (pageId == 3 || pageId == 4 || pageId == 6)
             {
                 Assert.True(metaData.Count() == 0);
             }
@@ -31,14 +38,13 @@ namespace SEOTests.Service
             {
                 foreach (var item in metaData)
                 {
-                    Assert.Equal(pageName, item.PageName);
+                    Assert.Equal(pageId, item.PageId);
                 }
 
-                if (pageName == "Multiple")
+                if (pageId == 2)
                 {
                     Assert.True(metaData.Count() == 2);
                 }
-
                 else
                 {
                     Assert.True(metaData.Count() == 1);

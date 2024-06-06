@@ -4,6 +4,6 @@ namespace SEO.Service.MetaService.Interface
 {
     public interface IMetaService
     {
-        public List<MetaData> GetByPageName(string pageName, bool includeInactive);
+        public List<MetaData> GetByPageId(int pageId, bool includeInactive);
     }
 }

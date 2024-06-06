@@ -13,9 +13,9 @@ namespace SEO.Models.Meta.Interface
         public bool Inactive { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string PageName { get; private set; }
+        public int PageId{ get; private set; }
 
-        public MetaData(int id, Name name, string content, string guid, string? charset, bool deleted, bool inactive, UIConcrete? uiConcreteType, int? displayOrder, string pageName)
+        public MetaData(int id, Name name, string content, string guid, string? charset, bool deleted, bool inactive, UIConcrete? uiConcreteType, int? displayOrder, int pageId)
         {
             Id = id;
             Name = name;
@@ -26,7 +26,7 @@ namespace SEO.Models.Meta.Interface
             Inactive = inactive;
             UIConcreteType = uiConcreteType;
             DisplayOrder = displayOrder;
-            PageName = pageName;
+            PageId = pageId;
         }
 
         public MetaData()

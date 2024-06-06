@@ -13,16 +13,16 @@ namespace SEO.Service.MetaService
             _metaRepository = metaRepository;
         }
 
-        public List<MetaData> GetByPageName(string pageName, bool includeInactive)
+        public List<MetaData> GetByPageId(int pageId, bool includeInactive)
         {
             if (includeInactive == true)
             {
-                return _metaRepository.GetMetaDatas().Where(x => x.PageName == pageName && !x.Deleted).ToList();
+                return _metaRepository.GetMetaDatas().Where(x => x.PageId == pageId && !x.Deleted).ToList();
             }
 
             else
             {
-                return _metaRepository.GetMetaDatas().Where(x => x.PageName == pageName && !x.Deleted && !x.Inactive).ToList();
+                return _metaRepository.GetMetaDatas().Where(x => x.PageId == pageId && !x.Deleted && !x.Inactive).ToList();
             }
         }
     }

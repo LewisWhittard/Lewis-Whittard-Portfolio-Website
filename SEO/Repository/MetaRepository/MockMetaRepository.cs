@@ -11,13 +11,7 @@ namespace SEO.Repository.MockMetaRepository
         {
             _metaDataLDData = new List<MetaData>()
             {
-                //new MetaData() {PageName = "First", Deleted = false, Inactive = false },
-                //new MetaData() {PageName = "Second", Deleted = false, Inactive = false},
-                //new MetaData() {PageName = "Multiple", Deleted = false, Inactive = false},
-                //new MetaData() {PageName = "Multiple", Deleted = false, Inactive = false},
-                //new MetaData() {PageName = "Deleted", Deleted = true, Inactive = false},
-                //new MetaData() {PageName = "IncludeInactive", Deleted = false, Inactive = true},
-                //new MetaData() {PageName = "ExcludeInactive", Deleted = false, Inactive = true}
+
             };
         }
 

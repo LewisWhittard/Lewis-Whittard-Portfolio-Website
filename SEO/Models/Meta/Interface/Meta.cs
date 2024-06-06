@@ -7,6 +7,6 @@
         string Content { get; }
         string GUID { get; }
         string? Charset { get; }
-        string PageName { get; }
+        int PageId { get; }
     }
 }

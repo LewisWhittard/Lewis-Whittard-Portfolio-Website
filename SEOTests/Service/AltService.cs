@@ -1,4 +1,5 @@
-﻿using SEO.Models.Alt.Interface;
+﻿using SEO.Models.Alt;
+using SEO.Models.Alt.Interface;
 using SEO.Repository.AltRepository;
 using SEO.Service.AltService;
 
@@ -20,7 +21,7 @@ namespace SEOTests.Service
             MockAltRepository altRepository = new MockAltRepository();
             AltService altService = new AltService(altRepository);
             // Act
-            List<IAltData> altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
+            List<AltData> altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
 
             // Assert
             if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")

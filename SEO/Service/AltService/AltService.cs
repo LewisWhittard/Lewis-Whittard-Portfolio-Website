@@ -14,9 +14,9 @@ namespace SEO.Service.AltService
             _altRepository = altRepository;
         }
 
-        public List<IAltData> GetBySuperClassGUID(string superClassGUID, bool includeInactive)
+        public List<AltData> GetBySuperClassGUID(string superClassGUID, bool includeInactive)
         {
-            List<IAltData> result = new List<IAltData>();
+            List<AltData> result = new List<AltData>();
 
             if (includeInactive == true) 
             {
@@ -30,11 +30,6 @@ namespace SEO.Service.AltService
             }
 
             return result;
-        }
-
-        List<AltData> IAltService.GetBySuperClassGUID(string superClassGUID, bool includeInactive)
-        {
-            throw new NotImplementedException();
         }
     }
 }
