@@ -13,6 +13,7 @@
         Paragraph = 8,
         Heading = 9,
         Header = 10,
-        Column = 11
+        Column = 11,
+        Head = 12
     }
 }
