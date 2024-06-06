@@ -14,10 +14,10 @@ namespace SEO.Models.Alt
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
 
-        public AltData(string superClassGUID, UIConcrete? uiConcreteType, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
+        public AltData(string superClassGUID, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
         {
             SuperClassGUID = superClassGUID;
-            UIConcreteType = uiConcreteType;
+            UIConcreteType = null;
             DisplayOrder = displayOrder;
             Value = value;
             GUID = guid;
