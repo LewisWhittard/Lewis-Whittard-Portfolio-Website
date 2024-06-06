@@ -1,5 +1,4 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.Alt;
+﻿using SEO.Models.Alt;
 
 namespace SEOTests.Ctor
 {
@@ -13,7 +12,7 @@ namespace SEOTests.Ctor
         public void MetaData_Constructor_SetsPropertiesCorrectly(string superClassGUID, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
         {
             //arrange, Act
-            AltData altData = new AltData(superClassGUID, null, displayOrder, value, guid, id, deleted, inactive);
+            AltData altData = new AltData(superClassGUID, displayOrder, value, guid, id, deleted, inactive);
 
             // Assert
             Assert.Equal(superClassGUID, altData.SuperClassGUID);
