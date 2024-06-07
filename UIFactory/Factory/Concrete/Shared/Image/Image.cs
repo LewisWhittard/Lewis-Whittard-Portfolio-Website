@@ -24,8 +24,8 @@ namespace UIFactory.Factory.Concrete.Shared.Image
             ImageData = _imageData;
             UIConcrete = UIConcrete.Image;
             _altService = altService;
-            SetAltData();
             _jsonLDService = jsonLDService;
+            SetAltData();
             SetJsonLDData();
         }
 
