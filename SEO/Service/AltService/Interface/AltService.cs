@@ -4,6 +4,6 @@ namespace SEO.Service.AltService.Interface
 {
     public interface IAltService
     {
-        public List<AltData> GetBySuperClassGUID(string superClassGUID, bool includeInactive);
+        public AltData GetBySuperClassGUID(string superClassGUID, bool includeInactive);
     }
 }

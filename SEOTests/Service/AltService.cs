@@ -9,7 +9,6 @@ namespace SEOTests.Service
         [Theory]
         [InlineData("First", false)]
         [InlineData("Second", false)]
-        [InlineData("Multiple", false)]
         [InlineData("Non", false)]
         [InlineData("Deleted", false)]
         [InlineData("IncludeInactive", true)]
@@ -20,29 +19,16 @@ namespace SEOTests.Service
             MockAltRepository altRepository = new MockAltRepository();
             AltService altService = new AltService(altRepository);
             // Act
-            List<AltData> altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
+            AltData altData = altService.GetBySuperClassGUID(superClassGUID, includeInactive);
 
             // Assert
             if (superClassGUID == "Non" || superClassGUID == "Deleted" || superClassGUID == "ExcludeInactive")
             {
-                Assert.True(altData.Count() == 0);
+                Assert.Null(altData);
             }
             else
             {
-                foreach (var item in altData)
-                {
-                    Assert.Equal(superClassGUID, item.SuperClassGUID);
-                }
-
-                if (superClassGUID == "Multiple")
-                {
-                    Assert.True(altData.Count() == 2);
-                }
-
-                else
-                {
-                    Assert.True(altData.Count() == 1);
-                }
+                Assert.Equal(superClassGUID, altData.SuperClassGUID);
             }
         }
 

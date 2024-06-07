@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Factory\Concrete\NewFolder\**" />
     <Compile Remove="Factory\CSHTML\Interfaces\**" />
     <Compile Remove="Factory\CSHTML\Interface\**" />
     <Compile Remove="Factory\MAUIBlazor\**" />
+    <EmbeddedResource Remove="Factory\Concrete\NewFolder\**" />
     <EmbeddedResource Remove="Factory\CSHTML\Interfaces\**" />
     <EmbeddedResource Remove="Factory\CSHTML\Interface\**" />
     <EmbeddedResource Remove="Factory\MAUIBlazor\**" />
+    <None Remove="Factory\Concrete\NewFolder\**" />
     <None Remove="Factory\CSHTML\Interfaces\**" />
     <None Remove="Factory\CSHTML\Interface\**" />
     <None Remove="Factory\MAUIBlazor\**" />
@@ -24,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Factory\Concrete\" />
+    <Folder Include="Factory\Concrete\Shared\Card\Card\Interface\" />
   </ItemGroup>
 
 </Project>
