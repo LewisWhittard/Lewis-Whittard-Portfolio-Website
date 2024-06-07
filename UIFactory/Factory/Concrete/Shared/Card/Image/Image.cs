@@ -13,7 +13,7 @@ namespace UIFactory.Factory.Concrete.Shared.Card.Image
         private readonly SEO.Service.JsonLDService.JsonLDService? _jsonLDService;
 
 
-        public Image(Infrastructure.Models.Data.Shared.Image.Image imageData, SEO.Service.AltService.AltService altService, SEO.Service.JsonLDService.JsonLDService jsonLDService)
+        public Image(Infrastructure.Models.Data.Shared.Image.Image imageData, SEO.Service.AltService.AltService? altService, SEO.Service.JsonLDService.JsonLDService? jsonLDService)
         {
             _imageData = imageData;
             ImageData = imageData;
