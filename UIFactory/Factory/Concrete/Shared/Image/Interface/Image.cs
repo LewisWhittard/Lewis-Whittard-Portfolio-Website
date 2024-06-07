@@ -4,6 +4,6 @@
     {
         Infrastructure.Models.Data.Shared.Image.Image ImageData { get; }
         SEO.Models.Alt.AltData? AltData { get; }
-        List<SEO.Models.JsonLD.JsonLDData>? TitleData { get; }
+        List<SEO.Models.JsonLD.JsonLDData>? JsonLDs { get; }
     }
 }
