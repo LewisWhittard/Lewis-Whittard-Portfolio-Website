@@ -1,8 +1,8 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using UIFactory.Factory.Concrete.Interface;
-using UIFactory.Factory.Concrete.Shared.Card.Image.Interface;
+using UIFactory.Factory.Concrete.Shared.Image.Interface;
 
-namespace UIFactory.Factory.Concrete.Shared.Card.Image
+namespace UIFactory.Factory.Concrete.Shared.Image
 {
     public class Image : IImage, IConcreteUI
     {

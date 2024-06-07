@@ -1,4 +1,4 @@
-﻿namespace UIFactory.Factory.Concrete.Shared.Card.Image.Interface
+﻿namespace UIFactory.Factory.Concrete.Shared.Image.Interface
 {
     public interface IImage
     {
