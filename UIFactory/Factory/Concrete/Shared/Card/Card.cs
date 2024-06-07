@@ -15,7 +15,7 @@ namespace UIFactory.Factory.Concrete.Shared.Card
         public JsonLDService? _jsonLDService;
         public AltService? _altService;
 
-        public Card(Infrastructure.Models.Data.Shared.Card.Card card, SEO.Service.AltService.AltService altService, SEO.Service.JsonLDService.JsonLDService? jsonLDService)
+        public Card(Infrastructure.Models.Data.Shared.Card.Card card, AltService altService, JsonLDService? jsonLDService)
         {
             _card = card;
             CardData = _card;
