@@ -9,7 +9,7 @@ namespace UIFactory.Factory.Concrete.Head
     public class Head : Interface.IHead, IConcrete
     {
         public Infrastructure.Models.Data.Head.Head HeadData { get; private set; }
-        public MetaData? MetaData { get; private set; }
+        public List<MetaData>? MetaDatas { get; private set; }
         public List<JsonLDData>? jsonLDDatas { get; private set; }
 
         private readonly Infrastructure.Models.Data.Head.Head _head;
@@ -29,11 +29,11 @@ namespace UIFactory.Factory.Concrete.Head
         {
             if (_metaService != null)
             {
-                MetaData = _metaService.GetByPageId(HeadData.PageId, false).FirstOrDefault();
+                MetaDatas = _metaService.GetByPageId(HeadData.PageId, false);
             }
             else
             {
-                MetaData = null;
+                MetaDatas = null;
             }
         }
 

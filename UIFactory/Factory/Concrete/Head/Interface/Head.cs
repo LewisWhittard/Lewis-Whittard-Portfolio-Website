@@ -6,7 +6,7 @@ namespace UIFactory.Factory.Concrete.Head.Interface
     public interface IHead
     {
         Infrastructure.Models.Data.Head.Head HeadData { get; }
-        MetaData MetaData { get; }
+        List<MetaData> MetaDatas { get; }
         List<JsonLDData> jsonLDDatas { get; }
     }
 }
