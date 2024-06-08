@@ -20,7 +20,6 @@ namespace UIFactory.Factory.Concrete.Head
             SetMetaData();
         }
 
-        //set meta with null protction
         private void SetMetaData()
         {
             if (_metaService != null)
