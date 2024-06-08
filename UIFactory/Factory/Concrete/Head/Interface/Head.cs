@@ -1,4 +1,5 @@
-﻿using SEO.Models.Meta.Interface;
+﻿using SEO.Models.JsonLD;
+using SEO.Models.Meta.Interface;
 
 namespace UIFactory.Factory.Concrete.Head.Interface
 {
@@ -6,5 +7,6 @@ namespace UIFactory.Factory.Concrete.Head.Interface
     {
         Infrastructure.Models.Data.Head.Head HeadData { get; }
         MetaData MetaData { get; }
+        List<JsonLDData> jsonLDDatas { get; }
     }
 }
