@@ -1,5 +1,4 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Service.AltService;
+﻿using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
 using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Shared.Image.Interface;
@@ -11,7 +10,6 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         public Infrastructure.Models.Data.Shared.Image.Image ImageData { get; private set; }
         public SEO.Models.Alt.AltData? AltData { get; private set; }
         public List<SEO.Models.JsonLD.JsonLDData>? JsonLDs { get; private set; }
-        public UIConcrete UIConcrete { get; private set; }
 
         private readonly Infrastructure.Models.Data.Shared.Image.Image _imageData;
         private readonly AltService? _altService;
@@ -22,7 +20,6 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         {
             _imageData = imageData;
             ImageData = _imageData;
-            UIConcrete = UIConcrete.Image;
             _altService = altService;
             _jsonLDService = jsonLDService;
             SetAltData();
