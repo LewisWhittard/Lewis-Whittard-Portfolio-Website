@@ -1,7 +1,7 @@
 ﻿namespace UIFactory.Factory.Concrete.Table.Interface
 {
-    public interface IColumn
+    public interface IColumns
     {
-        Infrastructure.Models.Data.Table.Column ColumnData { get; }
+        List<List<Infrastructure.Models.Data.Table.Column>> ColumnDatas { get; }
     }
 }

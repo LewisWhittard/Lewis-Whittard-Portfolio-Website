@@ -1,17 +1,18 @@
-﻿using UIFactory.Factory.Concrete.Table.Interface;
+﻿using Infrastructure.Models.Data.Table;
+using UIFactory.Factory.Concrete.Table.Interface;
 
 namespace UIFactory.Factory.Concrete.Table
 {
-    public class Column : IColumn
+    public class Columns : IColumns
     {
-        public Infrastructure.Models.Data.Table.Column ColumnData { get; private set; }
+        public List<List<Infrastructure.Models.Data.Table.Column>> ColumnDatas { get; private set; }
 
-        private readonly Infrastructure.Models.Data.Table.Column _column;
+        private readonly List<List<Infrastructure.Models.Data.Table.Column>> _columns;
 
-        public Column(Infrastructure.Models.Data.Table.Column column)
+        public Columns(List<List<Infrastructure.Models.Data.Table.Column>> columns)
         {
-            _column = column;
-            ColumnData = _column;
+            _columns = columns;
+            ColumnDatas = _columns;
         }
     }
 }

@@ -8,6 +8,8 @@ namespace UIFactory.Factory.Concrete.Table
     {
         public Infrastructure.Models.Data.Table.Table TableData { get; private set; }
         public List<JsonLDData> JsonLDs { get; private set; }
+        public Headers Headers { get; private set; }
+        public Columns Columns { get; private set; }
 
 
         private readonly SEO.Service.JsonLDService.JsonLDService _jsonLDService;
@@ -19,6 +21,8 @@ namespace UIFactory.Factory.Concrete.Table
             _jsonLDService = jsonLDService;
             _table = table;
             TableData = _table;
+            Headers = new Headers(TableData.Headers);
+            Columns = new Columns(_table.Columns);
             SetJsonLD();
         }
 
@@ -33,6 +37,5 @@ namespace UIFactory.Factory.Concrete.Table
                 JsonLDs = null;
             }
         }
-
     }
 }
