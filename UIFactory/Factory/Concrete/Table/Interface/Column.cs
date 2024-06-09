@@ -2,6 +2,6 @@
 {
     public interface IColumn
     {
-        public Infrastructure.Models.Data.Table.Column ColumnData { get; }
+        Infrastructure.Models.Data.Table.Column ColumnData { get; }
     }
 }
