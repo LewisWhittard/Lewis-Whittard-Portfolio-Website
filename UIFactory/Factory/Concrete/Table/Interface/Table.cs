@@ -5,6 +5,6 @@
         Infrastructure.Models.Data.Table.Table TableData { get; }
         List<Headers> Headers { get; }
         List<List<Column>> Columns { get; }
-        SEO.Models.JsonLD.Interface.IJsonLDData JsonLD { get; }
+        List<SEO.Models.JsonLD.Interface.IJsonLDData> JsonLD { get; }
     }
 }
