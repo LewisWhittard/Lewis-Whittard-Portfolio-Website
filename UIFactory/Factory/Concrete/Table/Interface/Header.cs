@@ -2,6 +2,6 @@
 {
     public interface IHeader
     {
-        List<Infrastructure.Models.Data.Table.Header> HeaderDatas { get; }
+
     }
 }

@@ -3,6 +3,8 @@
     public interface ITable
     {
         Infrastructure.Models.Data.Table.Table TableData { get; }
-        List<SEO.Models.JsonLD.JsonLDData> JsonLDs { get; }
+        List<Header> Headers { get; }
+        List<List<Columns>> Columns { get; }
+        SEO.Models.JsonLD.Interface.IJsonLDData JsonLD { get; }
     }
 }
