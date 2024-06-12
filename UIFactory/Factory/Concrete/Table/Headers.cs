@@ -5,5 +5,10 @@ namespace UIFactory.Factory.Concrete.Table
     public class Headers : IHeader
     {
         public Infrastructure.Models.Data.Table.Header HeaderData { get; private set; }
+
+        public Headers(Infrastructure.Models.Data.Table.Header Header)
+        {
+            HeaderData = Header;
+        }
     }
 }
