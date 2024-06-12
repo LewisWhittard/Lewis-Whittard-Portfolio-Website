@@ -1,5 +1,4 @@
 ﻿using SEO.Models.JsonLD;
-using SEO.Models.JsonLD.Interface;
 using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Table.Interface;
 
@@ -13,7 +12,7 @@ namespace UIFactory.Factory.Concrete.Table
 
         public List<List<Column>> Columns { get; private set; }
 
-        public List<JsonLDData> JsonLD { get; private set; }
+        public List<JsonLDData> JsonLDDatas { get; private set; }
 
         private readonly Infrastructure.Models.Data.Table.Table _tableData;
         private readonly SEO.Service.JsonLDService.JsonLDService _jsonLDService;
@@ -23,7 +22,7 @@ namespace UIFactory.Factory.Concrete.Table
         {
             _tableData = tableData;
             _jsonLDService = jsonLDService;
-            JsonLD = _jsonLDService.GetBySuperClassGUID(_tableData.GUID,false);
+            JsonLDDatas = _jsonLDService.GetBySuperClassGUID(_tableData.GUID,false);
             TableData = _tableData;
             SetHeaders();
             SetColumns();
