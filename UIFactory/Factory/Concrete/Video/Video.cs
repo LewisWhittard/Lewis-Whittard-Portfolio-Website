@@ -10,14 +10,14 @@ namespace UIFactory.Factory.Concrete.Video
         public List<JsonLDData> JsonLDDatas { get; }
 
         private readonly Infrastructure.Models.Data.Video.Video _video;
-        private readonly JsonLDService _jsonLDDatas;
+        private readonly JsonLDService _jsonLDService;
 
         public Video(Infrastructure.Models.Data.Video.Video videoData, JsonLDService jsonLDService)
         {
             _video = videoData;
-            _jsonLDDatas = jsonLDService;
+            _jsonLDService = jsonLDService;
             VideoData = _video;
-            JsonLDDatas = _jsonLDDatas.GetBySuperClassGUID(_video.GUID,false);
+            JsonLDDatas = _jsonLDService.GetBySuperClassGUID(_video.GUID,false);
         }
     }
 }
