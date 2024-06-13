@@ -30,7 +30,7 @@ namespace UIFactory.Factory.Concrete.Table
 
 
         //set jsonld
-        public void setJsonLD()
+        public void SetJsonLD()
         {
             if (JsonLDDatas != null)
             {
