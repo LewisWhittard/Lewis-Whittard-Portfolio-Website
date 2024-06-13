@@ -12,13 +12,13 @@ namespace UIFactory.Factory.Concrete.Table
 
         public List<List<Column>> Columns { get; private set; }
 
-        public List<JsonLDData> JsonLDDatas { get; private set; }
+        public List<JsonLDData>? JsonLDDatas { get; private set; }
 
         private readonly Infrastructure.Models.Data.Table.Table _tableData;
-        private readonly SEO.Service.JsonLDService.JsonLDService _jsonLDService;
+        private readonly SEO.Service.JsonLDService.JsonLDService? _jsonLDService;
 
 
-        public Table(Infrastructure.Models.Data.Table.Table tableData, SEO.Service.JsonLDService.JsonLDService jsonLDService)
+        public Table(Infrastructure.Models.Data.Table.Table tableData, SEO.Service.JsonLDService.JsonLDService? jsonLDService)
         {
             _tableData = tableData;
             _jsonLDService = jsonLDService;
@@ -28,6 +28,20 @@ namespace UIFactory.Factory.Concrete.Table
             SetColumns();
         }
 
+
+        //set jsonld
+        public void setJsonLD()
+        {
+            if (JsonLDDatas != null)
+            {
+                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(_tableData.GUID, false);
+            }
+            else
+            {
+                JsonLDDatas = null;
+            }
+
+        }
 
         public void SetHeaders()
         {
