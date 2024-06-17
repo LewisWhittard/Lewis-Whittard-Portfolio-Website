@@ -1,4 +1,4 @@
-﻿using SEO.Models.Meta.Interface;
+﻿using SEO.Model.Meta.Interface;
 
 namespace SEO.Repository.MetaRepository.Interface
 {

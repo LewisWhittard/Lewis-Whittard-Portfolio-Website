@@ -1,4 +1,4 @@
-﻿using SEO.Models.Alt;
+﻿using SEO.Model.Alt;
 using SEO.Repository.AltRepository;
 using SEO.Service.AltService;
 

@@ -1,4 +1,4 @@
-﻿using SEO.Models.Alt;
+﻿using SEO.Model.Alt;
 
 namespace SEOTests.Ctor
 {

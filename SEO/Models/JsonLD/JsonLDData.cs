@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.JsonLD.Interface;
+using SEO.Model.JsonLD.Interface;
 
-namespace SEO.Models.JsonLD
+namespace SEO.Model.JsonLD
 {
     public class JsonLDData : IJsonLDData, IData
     {

@@ -1,5 +1,5 @@
-﻿using SEO.Models.JsonLD;
-using SEO.Models.JsonLD.Interface;
+﻿using SEO.Model.JsonLD;
+using SEO.Model.JsonLD.Interface;
 
 namespace SEO.Service.JsonLDService.Interface
 {

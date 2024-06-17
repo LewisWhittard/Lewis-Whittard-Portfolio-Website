@@ -1,5 +1,5 @@
-﻿using SEO.Models.JsonLD;
-using SEO.Models.Meta.Interface;
+﻿using SEO.Model.JsonLD;
+using SEO.Model.Meta.Interface;
 
 namespace UIFactory.Factory.Concrete.Head.Interface
 {

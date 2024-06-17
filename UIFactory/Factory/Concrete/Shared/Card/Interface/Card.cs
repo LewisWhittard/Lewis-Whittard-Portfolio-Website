@@ -1,4 +1,4 @@
-﻿using SEO.Models.JsonLD;
+﻿using SEO.Model.JsonLD;
 
 namespace UIFactory.Factory.Concrete.Shared.Card.Interface
 {

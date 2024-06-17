@@ -1,5 +1,5 @@
-﻿using SEO.Models.JsonLD;
-using SEO.Models.Meta.Interface;
+﻿using SEO.Model.JsonLD;
+using SEO.Model.Meta.Interface;
 using SEO.Service.JsonLDService;
 using SEO.Service.MetaService;
 using UIFactory.Factory.Concrete.Interface;

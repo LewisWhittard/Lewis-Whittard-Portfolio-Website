@@ -7,7 +7,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
     public class InformationBlock : IInformationBlock
     {
         public Infrastructure.Models.Data.InformationBlock.InfomatonBlock InformationBlockData { get; private set; }
-        public List<SEO.Models.JsonLD.JsonLDData>? JsonLDData { get; private set; }
+        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }
         public List<Heading>? Headings { get; private set; }
         public List<Paragraph>? Paragraphs { get; private set; }
         public List<Image>? Images { get; private set; }

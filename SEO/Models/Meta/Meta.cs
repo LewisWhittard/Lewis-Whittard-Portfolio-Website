@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 
-namespace SEO.Models.Meta.Interface
+namespace SEO.Model.Meta.Interface
 {
     public class MetaData : IMetaData, IData
     {

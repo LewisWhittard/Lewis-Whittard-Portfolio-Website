@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 
-namespace SEO.Models.Alt.Interface
+namespace SEO.Model.Alt.Interface
 {
     public interface IAltData
     {

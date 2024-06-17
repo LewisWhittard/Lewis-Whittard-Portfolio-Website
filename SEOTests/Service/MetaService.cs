@@ -1,4 +1,4 @@
-﻿using SEO.Models.Meta.Interface;
+﻿using SEO.Model.Meta.Interface;
 using SEO.Repository.MockMetaRepository;
 using SEO.Service.MetaService;
 

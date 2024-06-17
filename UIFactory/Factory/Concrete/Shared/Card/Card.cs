@@ -1,4 +1,4 @@
-﻿using SEO.Models.JsonLD;
+﻿using SEO.Model.JsonLD;
 using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
 using UIFactory.Factory.Concrete.Interface;

@@ -1,4 +1,4 @@
-﻿namespace SEO.Models.Meta.Interface
+﻿namespace SEO.Model.Meta.Interface
 {
     public interface IMetaData
     {

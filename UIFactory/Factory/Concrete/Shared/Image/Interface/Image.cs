@@ -3,7 +3,7 @@
     public interface IImage
     {
         Infrastructure.Models.Data.Shared.Image.Image ImageData { get; }
-        SEO.Models.Alt.AltData? AltData { get; }
-        List<SEO.Models.JsonLD.JsonLDData>? JsonLDs { get; }
+        SEO.Model.Alt.AltData? AltData { get; }
+        List<SEO.Model.JsonLD.JsonLDData>? JsonLDs { get; }
     }
 }

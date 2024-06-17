@@ -8,8 +8,8 @@ namespace UIFactory.Factory.Concrete.Shared.Image
     public class Image : IImage, IConcrete
     {
         public Infrastructure.Models.Data.Shared.Image.Image ImageData { get; private set; }
-        public SEO.Models.Alt.AltData? AltData { get; private set; }
-        public List<SEO.Models.JsonLD.JsonLDData>? JsonLDs { get; private set; }
+        public SEO.Model.Alt.AltData? AltData { get; private set; }
+        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDs { get; private set; }
 
         private readonly Infrastructure.Models.Data.Shared.Image.Image _imageData;
         private readonly AltService? _altService;

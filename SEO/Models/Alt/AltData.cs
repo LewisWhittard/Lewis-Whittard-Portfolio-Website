@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.Alt.Interface;
+using SEO.Model.Alt.Interface;
 
-namespace SEO.Models.Alt
+namespace SEO.Model.Alt
 {
     public class AltData : IAltData, IData
     {
