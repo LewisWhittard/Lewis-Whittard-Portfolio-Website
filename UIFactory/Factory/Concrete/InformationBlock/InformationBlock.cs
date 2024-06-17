@@ -20,6 +20,8 @@ namespace UIFactory.Factory.Concrete.InformationBlock
             InformationBlockData = _informationBlockDatas;
             _jsonLDService = jsonLDService;
             SetJsonLD();
+            SetHeadings();
+            SetParagraphs();
         }
 
         public void SetJsonLD()
