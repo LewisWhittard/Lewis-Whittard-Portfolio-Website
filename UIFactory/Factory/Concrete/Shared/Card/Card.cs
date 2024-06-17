@@ -12,9 +12,9 @@ namespace UIFactory.Factory.Concrete.Shared.Card
         public List<JsonLDData>? JsonLDs { get; private set; }
         public Infrastructure.Models.Data.Shared.Card.Card CardData { get; private set; }
 
-        public Infrastructure.Models.Data.Shared.Card.Card _card;
-        public JsonLDService? _jsonLDService;
-        public AltService? _altService;
+        private readonly Infrastructure.Models.Data.Shared.Card.Card _card;
+        private readonly JsonLDService? _jsonLDService;
+        private readonly AltService? _altService;
 
         public Card(Infrastructure.Models.Data.Shared.Card.Card card, AltService altService, JsonLDService? jsonLDService)
         {

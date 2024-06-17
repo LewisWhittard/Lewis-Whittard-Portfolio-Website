@@ -7,10 +7,10 @@ namespace UIFactory.Factory.Concrete.Video
     public class Video : IVideo
     {
         public Infrastructure.Models.Data.Video.Video VideoData { get; }
-        public List<JsonLDData> JsonLDDatas { get; }
+        public List<JsonLDData>? JsonLDDatas { get; }
 
         private readonly Infrastructure.Models.Data.Video.Video _video;
-        private readonly JsonLDService _jsonLDService;
+        private readonly JsonLDService? _jsonLDService;
 
         public Video(Infrastructure.Models.Data.Video.Video videoData, JsonLDService jsonLDService)
         {

@@ -6,12 +6,12 @@ namespace UIFactory.Factory.Concrete.CarouselCard
     public class CarouselCard : ICarouselCard
     {
         public Infrastructure.Models.Data.CarouselCard.CarouselCard CarouselCardData { get; private set; }
-        public List<SEO.Models.JsonLD.JsonLDData> JsonLDData { get; private set; }
+        public List<SEO.Models.JsonLD.JsonLDData>? JsonLDData { get; private set; }
 
         private readonly Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCardDatas;
-        private readonly JsonLDService _jsonLDService;
+        private readonly JsonLDService? _jsonLDService;
 
-        public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCardDatas, JsonLDService jsonLDService)
+        public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCardDatas, JsonLDService? jsonLDService)
         {
             _carouselCardDatas = carouselCardDatas;
             _jsonLDService = jsonLDService;
