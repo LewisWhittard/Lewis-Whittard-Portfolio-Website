@@ -2,7 +2,7 @@
 using Infrastructure.Models.Data.Shared.Card;
 using Infrastructure.Models.Data.Shared.Image;
 
-namespace InfrastructureTests.Ctor
+namespace InfrastructureTests.Model
 {
     public class CardTests
     {

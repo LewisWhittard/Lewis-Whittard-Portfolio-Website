@@ -8,7 +8,7 @@ using Infrastructure.Models.Data.Shared.Image;
 using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Video;
 
-namespace InfrastructureTests.Ctor
+namespace InfrastructureTests.Model
 {
     public class PageTests
     {

@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Interface;
 
-namespace InfrastructureTests.Ctor
+namespace InfrastructureTests.Model
 {
     public class ParagraphTests
     {

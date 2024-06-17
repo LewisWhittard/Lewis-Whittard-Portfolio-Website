@@ -2,7 +2,7 @@
 using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Shared.Image;
 
-namespace InfrastructureTests.Ctor
+namespace InfrastructureTests.Model
 {
     public class InformationBlockTests
     {
