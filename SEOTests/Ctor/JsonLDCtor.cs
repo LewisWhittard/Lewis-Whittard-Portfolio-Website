@@ -1,6 +1,6 @@
 ﻿using SEO.Model.JsonLD;
 
-namespace SEOTests.Ctor
+namespace SEOTests.Model
 {
     public class JsonLDCtor
     {

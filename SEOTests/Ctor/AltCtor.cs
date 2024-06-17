@@ -1,6 +1,6 @@
 ﻿using SEO.Model.Alt;
 
-namespace SEOTests.Ctor
+namespace SEOTests.Model
 {
     public class AltCtor
     {

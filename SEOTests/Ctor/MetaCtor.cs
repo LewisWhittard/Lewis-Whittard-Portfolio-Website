@@ -1,6 +1,6 @@
 ﻿using SEO.Model.Meta.Interface;
 
-namespace SEOTests.Ctor
+namespace SEOTests.Model
 {
     public class MetaCtor
     {
