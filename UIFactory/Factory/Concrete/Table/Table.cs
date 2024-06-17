@@ -8,7 +8,7 @@ namespace UIFactory.Factory.Concrete.Table
     {
         public Infrastructure.Models.Data.Table.Table TableData { get; private set; }
 
-        public List<Headers> Headers { get; private set; }
+        public List<Header> Headers { get; private set; }
 
         public List<List<Column>> Columns { get; private set; }
 
@@ -45,10 +45,10 @@ namespace UIFactory.Factory.Concrete.Table
 
         public void SetHeaders()
         {
-            Headers = new List<Headers>();
+            Headers = new List<Header>();
             foreach (var header in TableData.Headers)
             {
-                Headers.Add(new Headers(header));
+                Headers.Add(new Header(header));
             }
         }
 
