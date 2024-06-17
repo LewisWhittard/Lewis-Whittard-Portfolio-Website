@@ -24,7 +24,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
             SetParagraphs();
         }
 
-        public void SetJsonLD()
+        private void SetJsonLD()
         {
             if (InformationBlockData != null)
             {
@@ -36,7 +36,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
             }
         }
 
-        public void SetHeadings()
+        private void SetHeadings()
         {
             if (InformationBlockData != null)
             {
@@ -52,7 +52,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
             }
         }
 
-        public void SetParagraphs()
+        private void SetParagraphs()
         {
             if (InformationBlockData != null)
             {
