@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SEO\SEO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Factory\Concrete\InformationBlock\Interface\" />
+  </ItemGroup>
+
 </Project>

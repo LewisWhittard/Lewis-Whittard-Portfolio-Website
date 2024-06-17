@@ -9,7 +9,7 @@
         public Heading(Infrastructure.Models.Data.InformationBlock.Heading heading)
         {
             _heading = heading;
-            HeadingData
+            HeadingData = _heading;
         }
     }
 }
