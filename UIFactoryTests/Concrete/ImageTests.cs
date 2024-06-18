@@ -22,9 +22,10 @@ namespace UIFactoryTests.Concrete
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 1, false, false, "Second", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Non", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 3, false, false, null, null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Multiple", null, null, null));
         }
 
-        //ImageWithAltDataTheory
+
         [Theory]
         [InlineData(0)]
         [InlineData(1)]
@@ -59,7 +60,7 @@ namespace UIFactoryTests.Concrete
             TearDown();
         }
 
-        //ImageWithAltDataTheory
+
         [Theory]
         [InlineData(0)]
         [InlineData(1)]
@@ -95,6 +96,44 @@ namespace UIFactoryTests.Concrete
         }
 
 
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void Image_Ctor_JsonLDData(int imageId)
+        {
+            Setup();
+
+            //Arrange
+            var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
+            //act
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, null, _jsonLDService);
+
+            //Assert
+            switch (imageId)
+            {
+                case 0:
+                    Assert.Equal("First", ImageConcrete.JsonLDs[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", ImageConcrete.JsonLDs[0].SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Equal(0,ImageConcrete.JsonLDs.Count());
+                    break;
+                case 3:
+                    Assert.Equal(0, ImageConcrete.JsonLDs.Count());
+                    break;
+                case 4:
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDs[1].SuperClassGUID);
+                    break;
+            }
+
+            TearDown();
+        }
 
 
 
