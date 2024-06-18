@@ -9,23 +9,62 @@ namespace UIFactoryTests.Concrete
     {
         private AltService _altService;
         private JsonLDService _jsonLDService;
-        private Infrastructure.Models.Data.Shared.Image.Image _image;
+        private List<Infrastructure.Models.Data.Shared.Image.Image> _imageDatas;
 
         public void Setup()
         {
+            _imageDatas = new List<Infrastructure.Models.Data.Shared.Image.Image>();
             MockAltRepository mockAltRepository = new MockAltRepository();
             _altService = new AltService(mockAltRepository);
             MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
             _jsonLDService = new JsonLDService(mockJsonLDRepository);
-            _image = new Infrastructure.Models.Data.Shared.Image.Image();
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "FirstValue", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 1, false, false, "SecondValue", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Non", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 3, false, false, null, null, null, null));
         }
+
+        //ImageWithAltDataTheory
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void Image_Ctor_AltData(int imageId)
+        {
+            //Arrange
+            var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
+            //act
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, _altService,_jsonLDService);
+
+            //Assert
+            switch (imageId)
+            {
+                case 0:
+                        Assert.Equal("FirstValue", ImageConcrete.AltData.SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("SecondValue", ImageConcrete.AltData.SuperClassGUID);
+                    break;
+                case 3:
+                    Assert.Null(ImageConcrete.AltData);
+                    break;
+                case 4:
+                    Assert.Null(ImageConcrete.AltData);
+                    break;
+            }
+        }
+
+
+
+
 
         //teardown
         public void TearDown()
         {
             _altService = null;
             _jsonLDService = null;
-            _image = null;
+            _imageDatas = null;
         }
     }
 }
