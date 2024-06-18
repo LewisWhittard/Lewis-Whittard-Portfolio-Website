@@ -25,6 +25,8 @@ namespace UIFactory.Factory.Concrete.Carousel
             CarouselData = _carouselData;
             SetJsonLD();
             SetImages();
+            DisplayOrder = (int)_carouselData.DisplayOrder;
+            UIConcreteType = (UIConcrete)_carouselData.UIConcreteType;
         }
 
         private void SetJsonLD()

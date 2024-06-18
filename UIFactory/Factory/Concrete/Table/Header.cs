@@ -13,6 +13,8 @@ namespace UIFactory.Factory.Concrete.Table
         public Header(Infrastructure.Models.Data.Table.Header Header)
         {
             HeaderData = Header;
+            DisplayOrder = (int)Header.DisplayOrder;
+            UIConcreteType = (UIConcrete)Header.UIConcreteType;
         }
     }
 }

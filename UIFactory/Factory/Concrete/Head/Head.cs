@@ -26,6 +26,8 @@ namespace UIFactory.Factory.Concrete.Head
             _jsonLDService = jsonLDService;
             SetMetaData();
             SetJsonLDData();
+            DisplayOrder = (int)_head.DisplayOrder;
+            UIConcreteType = (UIConcrete)_head.UIConcreteType;
         }
 
         private void SetMetaData()

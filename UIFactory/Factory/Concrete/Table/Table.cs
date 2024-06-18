@@ -26,6 +26,8 @@ namespace UIFactory.Factory.Concrete.Table
             TableData = _tableData;
             SetHeaders();
             SetColumns();
+            DisplayOrder = (int)_tableData.DisplayOrder;
+            UIConcreteType = (UIConcrete)_tableData.UIConcreteType;
         }
 
 

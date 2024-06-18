@@ -28,6 +28,8 @@ namespace UIFactory.Factory.Concrete.Shared.Image
             _jsonLDService = jsonLDService;
             SetAltData();
             SetJsonLDData();
+            DisplayOrder = (int)_imageData.DisplayOrder;
+            UIConcreteType = (UIConcrete)_imageData.UIConcreteType;
         }
 
         private void SetAltData()

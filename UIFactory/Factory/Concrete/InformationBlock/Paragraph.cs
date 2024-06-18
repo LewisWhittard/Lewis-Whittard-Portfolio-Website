@@ -16,6 +16,8 @@ namespace UIFactory.Factory.Concrete.InformationBlock
         {
             _paragraph = paragraph;
             paragraph = _paragraph;
+            DisplayOrder = (int)_paragraph.DisplayOrder;
+            UIConcreteType = (UIConcrete)_paragraph.UIConcreteType;
         }
     }
 }

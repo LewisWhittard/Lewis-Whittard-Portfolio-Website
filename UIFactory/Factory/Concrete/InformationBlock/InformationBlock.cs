@@ -31,6 +31,8 @@ namespace UIFactory.Factory.Concrete.InformationBlock
             SetHeadings();
             SetParagraphs();
             SetImages();
+            DisplayOrder = (int)_informationBlockDatas.DisplayOrder;
+            UIConcreteType = (UIConcrete)_informationBlockDatas.UIConcreteType;
         }
 
         private void SetJsonLD()

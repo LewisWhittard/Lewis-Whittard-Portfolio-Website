@@ -13,6 +13,8 @@ namespace UIFactory.Factory.Concrete.Table
         public Column(Infrastructure.Models.Data.Table.Column column)
         {
             ColumnData = column;
+            DisplayOrder = (int)column.DisplayOrder;
+            UIConcreteType = (UIConcrete)column.UIConcreteType;
         }
     }
 }

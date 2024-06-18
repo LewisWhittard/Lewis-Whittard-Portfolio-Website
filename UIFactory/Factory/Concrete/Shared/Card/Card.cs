@@ -28,6 +28,8 @@ namespace UIFactory.Factory.Concrete.Shared.Card
             _altService = altService;
             SetJsonLDData();
             Image = new Image.Image(_card.Image, _altService, _jsonLDService);
+            DisplayOrder = (int)_card.DisplayOrder;
+            UIConcreteType = (UIConcrete)_card.UIConcreteType;
         }
 
         

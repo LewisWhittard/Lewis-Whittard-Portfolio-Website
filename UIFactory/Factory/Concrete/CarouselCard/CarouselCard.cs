@@ -20,6 +20,8 @@ namespace UIFactory.Factory.Concrete.CarouselCard
             _carouselCardDatas = carouselCardDatas;
             _jsonLDService = jsonLDService;
             SetJsonLD();
+            DisplayOrder = (int)_carouselCardDatas.DisplayOrder;
+            UIConcreteType = (UIConcrete)_carouselCardDatas.UIConcreteType;
         }
 
         public void SetJsonLD()

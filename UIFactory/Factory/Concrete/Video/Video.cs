@@ -22,6 +22,8 @@ namespace UIFactory.Factory.Concrete.Video
             _jsonLDService = jsonLDService;
             VideoData = _video;
             SetJsonLD();
+            DisplayOrder = (int)_video.DisplayOrder;
+            UIConcreteType = (UIConcrete)_video.UIConcreteType;
         }
 
         public void SetJsonLD()

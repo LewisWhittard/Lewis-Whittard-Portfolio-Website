@@ -16,6 +16,8 @@ namespace UIFactory.Factory.Concrete.InformationBlock
         {
             _heading = heading;
             HeadingData = _heading;
+            DisplayOrder = (int)_heading.DisplayOrder;
+            UIConcreteType = (UIConcrete)_heading.UIConcreteType;
         }
     }
 }
