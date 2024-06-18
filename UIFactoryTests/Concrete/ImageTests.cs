@@ -37,7 +37,7 @@ namespace UIFactoryTests.Concrete
             //Arrange
             var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
             //act
-            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, _altService,_jsonLDService);
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, _altService,null);
 
             //Assert
             switch (imageId)
@@ -47,6 +47,41 @@ namespace UIFactoryTests.Concrete
                     break;
                 case 1:
                     Assert.Equal("Second", ImageConcrete.AltData.SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Null(ImageConcrete.AltData);
+                    break;
+                case 3:
+                    Assert.Null(ImageConcrete.AltData);
+                    break;
+            }
+
+            TearDown();
+        }
+
+        //ImageWithAltDataTheory
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void Image_CtorNoService_AltData(int imageId)
+        {
+            Setup();
+
+            //Arrange
+            var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
+            //act
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, null, _jsonLDService);
+
+            //Assert
+            switch (imageId)
+            {
+                case 0:
+                    Assert.Null(ImageConcrete.AltData);
+                    break;
+                case 1:
+                    Assert.Null(ImageConcrete.AltData);
                     break;
                 case 2:
                     Assert.Null(ImageConcrete.AltData);
