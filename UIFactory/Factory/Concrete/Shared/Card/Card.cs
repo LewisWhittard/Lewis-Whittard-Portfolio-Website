@@ -6,7 +6,7 @@ using UIFactory.Factory.Concrete.Shared.Card.Interface;
 
 namespace UIFactory.Factory.Concrete.Shared.Card
 {
-    internal class Card : ICard, IConcrete
+    internal class Card : ICard, IConcreteUI
     {
         public Image.Image Image { get; private set; }
         public List<JsonLDData>? JsonLDs { get; private set; }

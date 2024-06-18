@@ -6,7 +6,7 @@ using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.Concrete.Head
 {
-    public class Head : Interface.IHead, IConcrete
+    public class Head : Interface.IHead, IConcreteUI
     {
         public Infrastructure.Models.Data.Head.Head HeadData { get; private set; }
         public List<MetaData>? MetaDatas { get; private set; }

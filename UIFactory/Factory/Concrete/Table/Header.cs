@@ -2,7 +2,7 @@
 
 namespace UIFactory.Factory.Concrete.Table
 {
-    public class Header : IHeader
+    public class Header : IHeader, IConcreteUI
     {
         public Infrastructure.Models.Data.Table.Header HeaderData { get; private set; }
 

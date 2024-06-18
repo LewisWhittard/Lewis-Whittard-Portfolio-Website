@@ -1,9 +1,10 @@
 ﻿using SEO.Service.JsonLDService;
 using UIFactory.Factory.Concrete.CarouselCard.Interface;
+using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.Concrete.CarouselCard
 {
-    public class CarouselCard : ICarouselCard
+    public class CarouselCard : ICarouselCard, IConcreteUI
     {
         public Infrastructure.Models.Data.CarouselCard.CarouselCard CarouselCardData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }

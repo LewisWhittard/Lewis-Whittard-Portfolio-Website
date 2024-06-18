@@ -5,7 +5,7 @@ using UIFactory.Factory.Concrete.Shared.Image.Interface;
 
 namespace UIFactory.Factory.Concrete.Shared.Image
 {
-    public class Image : IImage, IConcrete
+    public class Image : IImage, IConcreteUI
     {
         public Infrastructure.Models.Data.Shared.Image.Image ImageData { get; private set; }
         public SEO.Model.Alt.AltData? AltData { get; private set; }

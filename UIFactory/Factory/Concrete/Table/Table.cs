@@ -4,7 +4,7 @@ using UIFactory.Factory.Concrete.Table.Interface;
 
 namespace UIFactory.Factory.Concrete.Table
 {
-    public class Table : ITable, IConcrete
+    public class Table : ITable, IConcreteUI
     {
         public Infrastructure.Models.Data.Table.Table TableData { get; private set; }
 

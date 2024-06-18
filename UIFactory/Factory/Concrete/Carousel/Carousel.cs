@@ -1,9 +1,10 @@
 ﻿using UIFactory.Factory.Concrete.Carousel.Interface;
 using SEO.Service.AltService;
+using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.Concrete.Carousel
 {
-    public class Carousel : ICarousel
+    public class Carousel : ICarousel, IConcreteUI
     {
         public Infrastructure.Models.Data.Carousel.Carousel CarouselData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDDatas { get; private set; }

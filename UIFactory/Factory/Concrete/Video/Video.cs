@@ -1,10 +1,11 @@
 ﻿using SEO.Model.JsonLD;
 using SEO.Service.JsonLDService;
+using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Video.Interface;
 
 namespace UIFactory.Factory.Concrete.Video
 {
-    public class Video : IVideo
+    public class Video : IVideo, IConcreteUI
     {
         public Infrastructure.Models.Data.Video.Video VideoData { get; private set; }
         public List<JsonLDData>? JsonLDDatas { get; private set; }

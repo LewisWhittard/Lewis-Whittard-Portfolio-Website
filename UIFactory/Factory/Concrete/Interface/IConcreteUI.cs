@@ -4,6 +4,6 @@ namespace UIFactory.Factory.Concrete.Interface
 {
     public interface IConcreteUI
     {
-        UIConcrete UIConcrete { get; }
+
     }
 }

@@ -5,6 +5,7 @@ using SEO.Service.JsonLDService.Interface;
 using SEO.Service.AltService.Interface;
 using SEO.Service.MetaService.Interface;
 using Infrastructure.Models.Data.Page;
+using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.CSHTML
 {
@@ -23,9 +24,9 @@ namespace UIFactory.Factory.CSHTML
             _metaService = metaService;
         }
 
-        public List<IUI> CreateUIListByPageName(string pageName)
+        public List<IConcreteUI> CreateUIListByPageName(string pageName)
         {
-            List<IUI> result = new List<IUI>();
+            List<IConcreteUI> result = new List<IConcreteUI>();
             Page page = _pageService.GetByPageName(pageName, false);
             var pageData = page.CreateIDataList();
             foreach (var data in pageData)
@@ -36,7 +37,7 @@ namespace UIFactory.Factory.CSHTML
             return result;
         }
 
-        private IUI CreateUI(IData data, bool jsonLD, bool alt, bool meta)
+        private IConcreteUI CreateUI(IData data, bool jsonLD, bool alt, bool meta)
         {
             switch (data.UIConcreteType)
             {

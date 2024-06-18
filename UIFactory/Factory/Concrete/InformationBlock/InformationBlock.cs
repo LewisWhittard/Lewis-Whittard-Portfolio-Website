@@ -1,10 +1,11 @@
 ﻿using SEO.Service.AltService;
 using UIFactory.Factory.Concrete.InformationBlock.Interface;
+using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Shared.Image;
 
 namespace UIFactory.Factory.Concrete.InformationBlock
 {
-    public class InformationBlock : IInformationBlock
+    public class InformationBlock : IInformationBlock, IConcreteUI
     {
         public Infrastructure.Models.Data.InformationBlock.InfomatonBlock InformationBlockData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }

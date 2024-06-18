@@ -1,8 +1,9 @@
 ﻿using UIFactory.Factory.Concrete.InformationBlock.Interface;
+using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.Concrete.InformationBlock
 {
-    public class Heading : IHeading
+    public class Heading : IHeading, IConcreteUI
     {
         public Infrastructure.Models.Data.InformationBlock.Heading HeadingData { get; private set; }
 
