@@ -1,6 +1,7 @@
 ﻿using UIFactory.Factory.Concrete.Carousel.Interface;
 using SEO.Service.AltService;
 using UIFactory.Factory.Concrete.Interface;
+using Infrastructure.Models.Data.Interface;
 
 namespace UIFactory.Factory.Concrete.Carousel
 {
@@ -9,6 +10,8 @@ namespace UIFactory.Factory.Concrete.Carousel
         public Infrastructure.Models.Data.Carousel.Carousel CarouselData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDDatas { get; private set; }
         public List<Shared.Image.Image> Images { get; private set; }
+        public int DisplayOrder { get; private set; }
+        public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.Carousel.Carousel _carouselData;
         private readonly SEO.Service.JsonLDService.JsonLDService? _jsonLDService;

@@ -1,4 +1,5 @@
-﻿using SEO.Model.JsonLD;
+﻿using Infrastructure.Models.Data.Interface;
+using SEO.Model.JsonLD;
 using SEO.Service.JsonLDService;
 using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Video.Interface;
@@ -9,6 +10,8 @@ namespace UIFactory.Factory.Concrete.Video
     {
         public Infrastructure.Models.Data.Video.Video VideoData { get; private set; }
         public List<JsonLDData>? JsonLDDatas { get; private set; }
+        public int DisplayOrder { get; private set; }
+        public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.Video.Video _video;
         private readonly JsonLDService? _jsonLDService;

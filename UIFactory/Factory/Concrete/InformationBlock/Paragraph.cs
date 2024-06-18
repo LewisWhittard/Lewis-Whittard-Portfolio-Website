@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Concrete.InformationBlock.Interface;
+﻿using Infrastructure.Models.Data.Interface;
+using UIFactory.Factory.Concrete.InformationBlock.Interface;
 using UIFactory.Factory.Concrete.Interface;
 
 namespace UIFactory.Factory.Concrete.InformationBlock
@@ -6,6 +7,8 @@ namespace UIFactory.Factory.Concrete.InformationBlock
     public class Paragraph : IParagraph, IConcreteUI
     {
         public Infrastructure.Models.Data.InformationBlock.Paragraph ParagraphData { get; private set; }
+        public int DisplayOrder { get; private set; }
+        public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.InformationBlock.Paragraph _paragraph;
 
