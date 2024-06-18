@@ -73,7 +73,7 @@ namespace UIFactoryTests.Concrete
             //Arrange
             var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
             //act
-            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, null, _jsonLDService);
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, null, null);
 
             //Assert
             switch (imageId)
@@ -121,7 +121,7 @@ namespace UIFactoryTests.Concrete
                     Assert.Equal("Second", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 2:
-                    Assert.Equal(0,ImageConcrete.JsonLDs.Count());
+                    Assert.Equal(0, ImageConcrete.JsonLDs.Count());
                     break;
                 case 3:
                     Assert.Equal(0, ImageConcrete.JsonLDs.Count());
@@ -129,6 +129,45 @@ namespace UIFactoryTests.Concrete
                 case 4:
                     Assert.Equal("Multiple", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     Assert.Equal("Multiple", ImageConcrete.JsonLDs[1].SuperClassGUID);
+                    break;
+            }
+
+            TearDown();
+        }
+
+        //Image_CtorNoService_JsonLDData
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void Image_CtorNoService_JsonLDData(int imageId)
+        {
+            Setup();
+
+            //Arrange
+            var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
+            //act
+            var ImageConcrete = new UIFactory.Factory.Concrete.Shared.Image.Image(Image, null, null);
+
+            //Assert
+            switch (imageId)
+            {
+                case 0:
+                    Assert.Null(ImageConcrete.JsonLDs);
+                    break;
+                case 1:
+                    Assert.Null(ImageConcrete.JsonLDs);
+                    break;
+                case 2:
+                    Assert.Null(ImageConcrete.JsonLDs);
+                    break;
+                case 3:
+                    Assert.Null(ImageConcrete.JsonLDs);
+                    break;
+                case 4:
+                    Assert.Null(ImageConcrete.JsonLDs);
                     break;
             }
 
