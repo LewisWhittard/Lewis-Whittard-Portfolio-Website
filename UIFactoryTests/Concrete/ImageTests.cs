@@ -18,8 +18,8 @@ namespace UIFactoryTests.Concrete
             _altService = new AltService(mockAltRepository);
             MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
             _jsonLDService = new JsonLDService(mockJsonLDRepository);
-            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "FirstValue", null, null, null));
-            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 1, false, false, "SecondValue", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "First", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 1, false, false, "Second", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Non", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 3, false, false, null, null, null, null));
         }
@@ -32,6 +32,8 @@ namespace UIFactoryTests.Concrete
         [InlineData(3)]
         public void Image_Ctor_AltData(int imageId)
         {
+            Setup();
+
             //Arrange
             var Image = _imageDatas.Where(x => x.Id == imageId).FirstOrDefault();
             //act
@@ -41,18 +43,20 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                        Assert.Equal("FirstValue", ImageConcrete.AltData.SuperClassGUID);
+                        Assert.Equal("First", ImageConcrete.AltData.SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal("SecondValue", ImageConcrete.AltData.SuperClassGUID);
+                    Assert.Equal("Second", ImageConcrete.AltData.SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Null(ImageConcrete.AltData);
                     break;
                 case 3:
                     Assert.Null(ImageConcrete.AltData);
                     break;
-                case 4:
-                    Assert.Null(ImageConcrete.AltData);
-                    break;
             }
+
+            TearDown();
         }
 
 
