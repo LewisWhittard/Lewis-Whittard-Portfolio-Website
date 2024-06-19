@@ -62,6 +62,43 @@ namespace UIFactoryTests.Concrete
             TearDown();
         }
 
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void Video_CtorNullService_JsonLDData(int videoId)
+        {
+            SetUp();
+            //Arrange
+            var video = Videos.Where(x => x.Id == videoId).FirstOrDefault();
+            //act
+            var videoConcrete = new UIFactory.Factory.Concrete.Video.Video(video,null);
+
+            //Assert
+            switch (videoId)
+            {
+                case 0:
+                    Assert.Null(videoConcrete.JsonLDDatas);
+                    break;
+                case 1:
+                    Assert.Null(videoConcrete.JsonLDDatas);
+                    break;
+                case 2:
+                    Assert.Null(videoConcrete.JsonLDDatas);
+                    break;
+                case 3:
+                    Assert.Null(videoConcrete.JsonLDDatas);
+                    break;
+                case 4:
+                    Assert.Null(videoConcrete.JsonLDDatas);
+                    break;
+
+            }
+            TearDown();
+        }
+
         //TearDown
         private void TearDown()
         {
