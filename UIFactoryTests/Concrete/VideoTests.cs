@@ -23,7 +23,6 @@ namespace UIFactoryTests.Concrete
             Videos.Add(new Video("", "", "", "", 4, false, false, 4, null, 4));
         }
 
-        //Video_Ctor_JsonLDData
         [Theory]
         [InlineData(0)]
         [InlineData(1)]
