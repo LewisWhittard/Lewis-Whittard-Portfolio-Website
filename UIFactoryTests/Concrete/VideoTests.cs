@@ -16,8 +16,8 @@ namespace UIFactoryTests.Concrete
             Videos = new List<Infrastructure.Models.Data.Video.Video>();
             MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
             _jsonLDService = new JsonLDService(mockJsonLDRepository);
-            Videos.Add(new Video("","","","",0,false,false,0,"First",0));
-            Videos.Add(new Video("", "", "", "", 1, false, false, 1, "Second", 1));
+            Videos.Add(new Video("","","","",0,false,false,4,"First",0));
+            Videos.Add(new Video("", "", "", "", 1, false, false, 3, "Second", 1));
             Videos.Add(new Video("", "", "", "", 2, false, false, 2, "Multiple", 2));
             Videos.Add(new Video("", "", "", "", 3, false, false, 3, "Non", 4));
             Videos.Add(new Video("", "", "", "", 4, false, false, 4, null, 4));
@@ -95,6 +95,35 @@ namespace UIFactoryTests.Concrete
                     Assert.Null(videoConcrete.JsonLDDatas);
                     break;
 
+            }
+            TearDown();
+        }
+
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        public void Video_Ctor(int videoId)
+        {
+            SetUp();
+            //Arrange
+            var video = Videos.Where(x => x.Id == videoId).FirstOrDefault();
+            //act
+            var videoConcrete = new UIFactory.Factory.Concrete.Video.Video(video,_jsonLDService);
+
+            //Assert
+            Assert.Equal(video, videoConcrete.VideoData);
+            Assert.Equal(video.DisplayOrder, videoConcrete.DisplayOrder);
+            Assert.Equal(video.UIConcreteType, videoConcrete.UIConcreteType);
+
+            switch (videoId)
+            {
+                case 0:
+                    Assert.Equal("First", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    break;
             }
             TearDown();
         }
