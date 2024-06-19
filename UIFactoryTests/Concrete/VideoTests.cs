@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Models.Data.Video;
-using SEO.Repository.AltRepository;
 using SEO.Repository.JsonLDRepositoryRepository;
 using SEO.Service.JsonLDService;
 
@@ -8,7 +7,7 @@ namespace UIFactoryTests.Concrete
     public class VideoTests
     {
         private JsonLDService _jsonLDService;
-        private List<Infrastructure.Models.Data.Video.Video> Videos;
+        private List<Video> Videos;
 
         //setup
         private void SetUp()
@@ -132,6 +131,7 @@ namespace UIFactoryTests.Concrete
         private void TearDown()
         {
             Videos = null;
+            _jsonLDService = null;
         }
 
     }
