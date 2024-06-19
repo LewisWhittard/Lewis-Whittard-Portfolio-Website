@@ -18,7 +18,7 @@ namespace UIFactoryTests.Concrete
             _altService = new AltService(mockAltRepository);
             MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
             _jsonLDService = new JsonLDService(mockJsonLDRepository);
-            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "First", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 0, false, false, "First", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 2, 1, false, false, "Second", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Non", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 3, false, false, null, null, null, null));
