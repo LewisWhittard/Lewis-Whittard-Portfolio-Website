@@ -133,6 +133,50 @@ namespace UIFactoryTests.Concrete
             TearDown();
         }
 
+        //Table_Ctor_NullJsonLDService
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void Table_Ctor_NullJsonLDService(int Id)
+        {
+            //Arrange
+            SetUp();
+            var table = _table.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var tableConcrete = new UIFactory.Factory.Concrete.Table.Table(table, null);
+
+            //Assert
+            Assert.NotNull(tableConcrete);
+            Assert.Equal(table, tableConcrete.TableData);
+            Assert.Equal(table.DisplayOrder, tableConcrete.DisplayOrder);
+            Assert.Equal(table.UIConcreteType, tableConcrete.UIConcreteType);
+            switch (Id)
+            {
+                case 0:
+                    Assert.Null(tableConcrete.JsonLDDatas);
+                    break;
+                case 1:
+                    Assert.Null(tableConcrete.JsonLDDatas);
+                    break;
+                case 2:
+                    Assert.Null(tableConcrete.JsonLDDatas);
+                    break;
+                case 3:
+                    Assert.Null(tableConcrete.JsonLDDatas);
+                    break;
+                case 4:
+                    Assert.Null(tableConcrete.JsonLDDatas);
+                    break;
+
+            }
+            TearDown();
+        }
+
+
         public void TearDown()
         {
             _table = null;

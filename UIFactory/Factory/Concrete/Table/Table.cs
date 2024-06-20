@@ -22,7 +22,7 @@ namespace UIFactory.Factory.Concrete.Table
         {
             _tableData = tableData;
             _jsonLDService = jsonLDService;
-            JsonLDDatas = _jsonLDService.GetBySuperClassGUID(_tableData.GUID,false);
+            SetJsonLD();
             TableData = _tableData;
             SetHeaders();
             SetColumns();
@@ -34,7 +34,7 @@ namespace UIFactory.Factory.Concrete.Table
         //set jsonld
         public void SetJsonLD()
         {
-            if (JsonLDDatas != null)
+            if (_jsonLDService != null)
             {
                 JsonLDDatas = _jsonLDService.GetBySuperClassGUID(_tableData.GUID, false);
             }
