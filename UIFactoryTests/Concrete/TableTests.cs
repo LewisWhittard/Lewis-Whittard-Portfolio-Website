@@ -1,13 +1,18 @@
 ﻿using Infrastructure.Models.Data.Table;
+using SEO.Repository.JsonLDRepositoryRepository;
+using SEO.Service.JsonLDService;
 
 namespace UIFactoryTests.Concrete
 {
     public class TableTests
     {
         private List<Table> _table;
+        private JsonLDService jsonLDService;
 
         public void SetUp()
         {
+            jsonLDService = new JsonLDService(new MockJsonLDRepository());
+            _table = new List<Table>();
             List<Header> headers0 = new List<Header>();
             List<List<Column>> columnsList0 = new List<List<Column>>();
 
@@ -52,7 +57,7 @@ namespace UIFactoryTests.Concrete
 
             header3.Add(new Header(6, false, false, 0, 3, "Header6", "Header36GUID"));
             header3.Add(new Header(7, false, false, 1, 3, "Header7", "Header37GUID"));
-            
+
             List<Column> columns6 = new List<Column>();
             List<Column> columns7 = new List<Column>();
             columns6.Add(new Column(11, false, false, "Column11", 0, 3, "Column30GUID", 6));
@@ -82,13 +87,55 @@ namespace UIFactoryTests.Concrete
             _table.Add(new Table(2, true, false, 2, header2, columnsList2, "Non", "TableTitle2", 6));
             _table.Add(new Table(3, true, true, 3, header3, columnsList3, null, "TableTitle3", 7));
             _table.Add(new Table(4, false, false, 4, headers4, columnsList4, "Multiple", "TableTitle4", 8));
+        }
 
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void Table_Ctor(int Id)
+        {
+            //Arrange
+            SetUp();
+            var table = _table.Where(x => x.Id == Id).FirstOrDefault();
 
+            //Act
+            var tableConcrete = new UIFactory.Factory.Concrete.Table.Table(table,jsonLDService);
+
+            //Assert
+            Assert.NotNull(tableConcrete);
+            Assert.Equal(table, tableConcrete.TableData);
+            Assert.Equal(table.DisplayOrder, tableConcrete.DisplayOrder);
+            Assert.Equal(table.UIConcreteType, tableConcrete.UIConcreteType);
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Equal("First", tableConcrete.JsonLDDatas[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", tableConcrete.JsonLDDatas[0].SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Equal(0, tableConcrete.JsonLDDatas.Count());
+                    break;
+                case 3:
+                    Assert.Equal(0, tableConcrete.JsonLDDatas.Count());
+                    break;
+                case 4:
+                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[1].SuperClassGUID);
+                    break;
+
+            }
+            TearDown();
         }
 
         public void TearDown()
         {
-
+            _table = null;
         }
 
 
