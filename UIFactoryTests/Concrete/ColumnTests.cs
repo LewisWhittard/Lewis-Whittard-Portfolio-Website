@@ -28,7 +28,7 @@ namespace UIFactoryTests.Concrete
 
             //Assert
             Assert.NotNull(columnConcrete);
-            Assert.Equal(column.Id, columnConcrete.ColumnData.Id);
+            Assert.Equal(column, columnConcrete.ColumnData);
             Assert.Equal(column.DisplayOrder, columnConcrete.DisplayOrder);
             Assert.Equal(column.UIConcreteType, columnConcrete.UIConcreteType);
 

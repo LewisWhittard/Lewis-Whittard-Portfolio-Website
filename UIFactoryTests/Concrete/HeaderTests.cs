@@ -22,13 +22,13 @@ namespace UIFactoryTests.Concrete
             //Arrange
             SetUp();
             var header = _headers.Where(x => x.Id == Id).FirstOrDefault();
-
+            
             //Act
             var headerConcrete = new UIFactory.Factory.Concrete.Table.Header(header);
         
             //Assert
             Assert.NotNull(headerConcrete);
-            Assert.Equal(header.Id, headerConcrete.HeaderData.Id);
+            Assert.Equal(header, headerConcrete.HeaderData);
             Assert.Equal(header.DisplayOrder, headerConcrete.DisplayOrder);
             Assert.Equal(header.UIConcreteType, headerConcrete.UIConcreteType);
 
