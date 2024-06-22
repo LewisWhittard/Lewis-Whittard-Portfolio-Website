@@ -1,15 +1,22 @@
 ﻿using Infrastructure.Models.Data.InformationBlock;
+using SEO.Repository.JsonLDRepositoryRepository;
+using SEO.Service.AltService;
+using SEO.Service.JsonLDService;
 
 namespace UIFactoryTests.Concrete
 {
 
     public class InformationBlockTests
     {
-        private List<InformationBlockTests> _informationBlocks;
-
+        private List<InfomatonBlock> _informationBlocks;
+        private JsonLDService _jsonLDService;
+        private AltService _AltService;
 
         public void SetUp()
         {
+            _informationBlocks = new List<InfomatonBlock>();
+            _jsonLDService = new JsonLDService(new MockJsonLDRepository());
+
             var paragraphs0 = new List<Paragraph>();
             paragraphs0.Add(new Paragraph("Paragraph00", 0, 0, false, false, 0, "ParagraphGUID00"));
             paragraphs0.Add(new Paragraph("Paragraph01", 1, 0, false, false, 0, "ParagraphGUID01"));
@@ -69,13 +76,64 @@ namespace UIFactoryTests.Concrete
             var imageDatas4 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
             imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 8, false, false, "Image40GUID", null, 4, null));
             imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 9, false, false, "Image41GUID", null, 4, null));
-            
-            InfomatonBlock infomatonBlock0 = new InfomatonBlock(0,false,false,imageDatas0,paragraphs0,headings0,4,"First",0);
-            InfomatonBlock infomatonBlock1 = new InfomatonBlock(1, false, false, imageDatas1, paragraphs1, headings1, 3, "Second", 1);
-            InfomatonBlock infomatonBlock2 = new InfomatonBlock(2, false, false, imageDatas2, paragraphs2, headings2, 2, "Non", 2);
-            InfomatonBlock infomatonBlock3 = new InfomatonBlock(3, false, false, imageDatas3, paragraphs3, headings3, 1, null, 3);
-            InfomatonBlock infomatonBlock4 = new InfomatonBlock(4, false, false, imageDatas4, paragraphs4, headings4, 0, "Multiple", 4);
+
+            _informationBlocks.Add((new InfomatonBlock(0, false, false, imageDatas0, paragraphs0, headings0, 4, "First", 0)));
+            _informationBlocks.Add((new InfomatonBlock(1, false, false, imageDatas1, paragraphs1, headings1, 3, "Second", 1)));
+            _informationBlocks.Add((new InfomatonBlock(2, false, false, imageDatas2, paragraphs2, headings2, 2, "Non", 2)));
+            _informationBlocks.Add((new InfomatonBlock(3, false, false, imageDatas3, paragraphs3, headings3, 1, null, 3)));
+            _informationBlocks.Add((new InfomatonBlock(4, false, false, imageDatas4, paragraphs4, headings4, 0, "Multiple", 4)));
 
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void InformationBlock_Ctor(int Id)
+        {
+            //Arrange
+            SetUp();
+            var informationBlock = _informationBlocks.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, _jsonLDService,_AltService);
+
+            //Assert
+            Assert.NotNull(informationBlockConcrete);
+            Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
+            Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
+            Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Equal("First", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    break;
+                case 3:
+                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    break;
+                case 4:
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[1].SuperClassGUID);
+                    break;
+
+            }
+            TearDown();
+        }
+
+        //teardown
+        public void TearDown()
+        {
+            _informationBlocks = null;
+        }
+
     }
 }
