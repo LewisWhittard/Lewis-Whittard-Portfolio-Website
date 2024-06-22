@@ -168,6 +168,55 @@ namespace UIFactoryTests.Concrete
         }
 
 
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void InformationBlock_Ctor_NullJsonLDService(int Id)
+        {
+            //Arrange
+            SetUp();
+            var informationBlock = _informationBlocks.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, null, _AltService);
+
+            //Assert
+            Assert.NotNull(informationBlockConcrete);
+            Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
+            Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
+            Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
+            if (Id == 0)
+            {
+                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassGUID);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassGUID);
+            }
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    break;
+                case 1:
+                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    break;
+                case 2:
+                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    break;
+                case 3:
+                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    break;
+                case 4:
+                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    break;
+
+            }
+            TearDown();
+        }
+
+
 
         //teardown
         public void TearDown()

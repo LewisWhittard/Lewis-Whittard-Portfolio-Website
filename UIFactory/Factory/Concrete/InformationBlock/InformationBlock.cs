@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.Interface;
 using SEO.Service.AltService;
+using SEO.Service.JsonLDService;
 using UIFactory.Factory.Concrete.InformationBlock.Interface;
 using UIFactory.Factory.Concrete.Interface;
 using UIFactory.Factory.Concrete.Shared.Image;
@@ -37,7 +38,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
 
         private void SetJsonLD()
         {
-            if (InformationBlockData != null)
+            if (_jsonLDService != null)
             {
                 JsonLDData = _jsonLDService.GetBySuperClassGUID(InformationBlockData.GUID, false);
             }
