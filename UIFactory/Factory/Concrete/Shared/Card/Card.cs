@@ -7,12 +7,12 @@ using UIFactory.Factory.Concrete.Shared.Card.Interface;
 
 namespace UIFactory.Factory.Concrete.Shared.Card
 {
-    internal class Card : ICard, IConcreteUI
+    public class Card : ICard, IConcreteUI
     {
         public Image.Image Image { get; private set; }
         public List<JsonLDData>? JsonLDs { get; private set; }
         public Infrastructure.Models.Data.Shared.Card.Card CardData { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
 

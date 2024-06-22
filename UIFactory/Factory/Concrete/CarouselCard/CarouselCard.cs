@@ -9,7 +9,7 @@ namespace UIFactory.Factory.Concrete.CarouselCard
     {
         public Infrastructure.Models.Data.CarouselCard.CarouselCard CarouselCardData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.CarouselCard.CarouselCard _carouselCardDatas;

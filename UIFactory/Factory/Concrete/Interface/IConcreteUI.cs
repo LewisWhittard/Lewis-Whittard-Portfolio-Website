@@ -4,7 +4,7 @@ namespace UIFactory.Factory.Concrete.Interface
 {
     public interface IConcreteUI
     {
-        int DisplayOrder { get; }
+        int? DisplayOrder { get; }
         UIConcrete UIConcreteType { get; }
     }
 }

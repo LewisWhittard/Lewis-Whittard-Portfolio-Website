@@ -11,7 +11,7 @@ namespace UIFactory.Factory.Concrete.Table
         public List<Header> Headers { get; private set; }
         public List<List<Column>> Columns { get; private set; }
         public List<JsonLDData>? JsonLDDatas { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.Table.Table _tableData;

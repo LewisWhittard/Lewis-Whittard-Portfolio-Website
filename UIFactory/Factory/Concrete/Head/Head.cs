@@ -12,7 +12,7 @@ namespace UIFactory.Factory.Concrete.Head
         public Infrastructure.Models.Data.Head.Head HeadData { get; private set; }
         public List<MetaData>? MetaDatas { get; private set; }
         public List<JsonLDData>? jsonLDDatas { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.Head.Head _head;

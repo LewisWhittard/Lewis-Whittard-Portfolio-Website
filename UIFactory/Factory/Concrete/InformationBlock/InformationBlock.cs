@@ -14,7 +14,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
         public List<Heading>? Headings { get; private set; }
         public List<Paragraph>? Paragraphs { get; private set; }
         public List<Image>? Images { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.InformationBlock.InfomatonBlock _informationBlockDatas;

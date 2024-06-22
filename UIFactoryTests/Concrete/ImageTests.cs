@@ -23,6 +23,7 @@ namespace UIFactoryTests.Concrete
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Non", null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 3, false, false, null, null, null, null));
             _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Multiple", null, null, null));
+            _imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 5, false, false, null, null, null, null));
         }
 
 
@@ -178,6 +179,7 @@ namespace UIFactoryTests.Concrete
         [Theory]
         [InlineData(0)]
         [InlineData(1)]
+        [InlineData(5)]
         public void Image_Ctor(int imageId)
         {
             Setup();

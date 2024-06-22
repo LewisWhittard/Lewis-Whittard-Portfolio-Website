@@ -10,7 +10,7 @@ namespace UIFactory.Factory.Concrete.Video
     {
         public Infrastructure.Models.Data.Video.Video VideoData { get; private set; }
         public List<JsonLDData>? JsonLDDatas { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
         private readonly Infrastructure.Models.Data.Video.Video _video;

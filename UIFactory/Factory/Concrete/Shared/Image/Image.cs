@@ -11,7 +11,7 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         public Infrastructure.Models.Data.Shared.Image.Image ImageData { get; private set; }
         public SEO.Model.Alt.AltData? AltData { get; private set; }
         public List<SEO.Model.JsonLD.JsonLDData>? JsonLDs { get; private set; }
-        public int DisplayOrder { get; private set; }
+        public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
 
@@ -28,7 +28,7 @@ namespace UIFactory.Factory.Concrete.Shared.Image
             _jsonLDService = jsonLDService;
             SetAltData();
             SetJsonLDData();
-            DisplayOrder = (int)_imageData.DisplayOrder;
+            DisplayOrder = _imageData.DisplayOrder;
             UIConcreteType = (UIConcrete)_imageData.UIConcreteType;
         }
 
