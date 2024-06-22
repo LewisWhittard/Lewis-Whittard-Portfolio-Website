@@ -202,6 +202,16 @@ namespace UIFactoryTests.Concrete
                     break;
             }
 
+            switch (imageId)
+            {
+                case 0:
+                    Assert.Equal(0, ImageConcrete.AltData.Id);
+                    break;
+                case 1:
+                    Assert.Equal(1, ImageConcrete.AltData.Id);
+                    break;
+            }
+
             TearDown();
         }
 
