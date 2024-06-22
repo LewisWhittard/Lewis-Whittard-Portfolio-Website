@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Models.Data.InformationBlock;
+using SEO.Repository.AltRepository;
 using SEO.Repository.JsonLDRepositoryRepository;
 using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
@@ -16,6 +17,7 @@ namespace UIFactoryTests.Concrete
         {
             _informationBlocks = new List<InfomatonBlock>();
             _jsonLDService = new JsonLDService(new MockJsonLDRepository());
+            _AltService = new AltService(new MockAltRepository());
 
             var paragraphs0 = new List<Paragraph>();
             paragraphs0.Add(new Paragraph("Paragraph00", 0, 0, false, false, 0, "ParagraphGUID00"));
@@ -58,8 +60,8 @@ namespace UIFactoryTests.Concrete
             headings4.Add(new Heading(1, false, false, "Heading41Text", 1, 4, "Heading41GUID", 1));
 
             var imageDatas0 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "Image00GUID", null, 0, null));
-            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 1, false, false, "Image01GUID", null, 0, null));
+            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "First", null, 0, null));
+            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 1, false, false, "Second", null, 0, null));
 
             var imageDatas1 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
             imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Image10GUID", null, 1, null));
@@ -105,6 +107,11 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
             Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
+            if (Id == 0)
+            {
+                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassGUID);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassGUID);
+            }
 
             switch (Id)
             {
@@ -128,6 +135,57 @@ namespace UIFactoryTests.Concrete
             }
             TearDown();
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void InformationBlock_Ctor_NullAltService(int Id)
+        {
+            //Arrange
+            SetUp();
+            var informationBlock = _informationBlocks.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, _jsonLDService, null);
+
+            //Assert
+            Assert.NotNull(informationBlockConcrete);
+            Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
+            Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
+            Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
+            if (Id == 0)
+            {
+                Assert.Null(null);
+                Assert.Null(null);
+            }
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Equal("First", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    break;
+                case 3:
+                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    break;
+                case 4:
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[1].SuperClassGUID);
+                    break;
+
+            }
+            TearDown();
+        }
+
+
 
         //teardown
         public void TearDown()
