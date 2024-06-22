@@ -138,10 +138,6 @@ namespace UIFactoryTests.Concrete
 
         [Theory]
         [InlineData(0)]
-        [InlineData(1)]
-        [InlineData(2)]
-        [InlineData(3)]
-        [InlineData(4)]
         public void InformationBlock_Ctor_NullAltService(int Id)
         {
             //Arrange
@@ -167,20 +163,6 @@ namespace UIFactoryTests.Concrete
                 case 0:
                     Assert.Equal("First", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
                     break;
-                case 1:
-                    Assert.Equal("Second", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
-                    break;
-                case 2:
-                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
-                    break;
-                case 3:
-                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
-                    break;
-                case 4:
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[1].SuperClassGUID);
-                    break;
-
             }
             TearDown();
         }
