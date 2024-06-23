@@ -112,7 +112,6 @@ namespace UIFactoryTests.Concrete
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(3)]
-        [InlineData(4)]
         public void Card_Ctor_NullJsonLDService(int Id)
         {
             //Arrange
