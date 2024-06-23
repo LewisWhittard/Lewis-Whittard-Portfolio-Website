@@ -43,6 +43,7 @@ namespace UIFactory.Factory.Concrete.Carousel
 
         private void SetImages()
         {
+            Images = new List<Shared.Image.Image>();
             foreach (var item in CarouselData.Images)
             {
                 Images.Add(new Shared.Image.Image(item,_altService,_jsonLDService));
