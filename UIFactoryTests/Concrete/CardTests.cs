@@ -46,7 +46,6 @@ namespace UIFactoryTests.Concrete
             var cardConcrete = new UIFactory.Factory.Concrete.Shared.Card.Card(card, _altService, _jsonLDService);
 
             //Assert
-            Assert.NotNull(cardConcrete.CardData);
             Assert.Equal(card, cardConcrete.CardData);
             Assert.Equal(card.DisplayOrder, cardConcrete.DisplayOrder);
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
@@ -89,7 +88,6 @@ namespace UIFactoryTests.Concrete
             var cardConcrete = new UIFactory.Factory.Concrete.Shared.Card.Card(card, null, _jsonLDService);
 
             //Assert
-            Assert.NotNull(cardConcrete);
             Assert.Equal(card, cardConcrete.CardData);
             Assert.Equal(card.DisplayOrder, cardConcrete.DisplayOrder);
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
@@ -122,7 +120,6 @@ namespace UIFactoryTests.Concrete
             var cardConcrete = new UIFactory.Factory.Concrete.Shared.Card.Card(card, _altService, null);
 
             //Assert
-            Assert.NotNull(cardConcrete);
             Assert.Equal(card, cardConcrete.CardData);
             Assert.Equal(card.DisplayOrder, cardConcrete.DisplayOrder);
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);

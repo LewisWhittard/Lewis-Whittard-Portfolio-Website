@@ -27,7 +27,6 @@ namespace UIFactoryTests.Concrete
             var paragraphConcrete = new UIFactory.Factory.Concrete.InformationBlock.Paragraph(paragraph);
 
             //Assert
-            Assert.NotNull(paragraphConcrete);
             Assert.Equal(paragraph, paragraphConcrete.ParagraphData);
             Assert.Equal(paragraph.DisplayOrder, paragraphConcrete.DisplayOrder);
             Assert.Equal(paragraph.UIConcreteType, paragraphConcrete.UIConcreteType);

@@ -27,7 +27,6 @@ namespace UIFactoryTests.Concrete
             var headingConcrete = new UIFactory.Factory.Concrete.InformationBlock.Heading(heading);
 
             //Assert
-            Assert.NotNull(headingConcrete);
             Assert.Equal(heading, headingConcrete.HeadingData);
             Assert.Equal(heading.DisplayOrder, headingConcrete.DisplayOrder);
             Assert.Equal(heading.UIConcreteType, headingConcrete.UIConcreteType);

@@ -27,7 +27,6 @@ namespace UIFactoryTests.Concrete
             var headerConcrete = new UIFactory.Factory.Concrete.Table.Header(header);
         
             //Assert
-            Assert.NotNull(headerConcrete);
             Assert.Equal(header, headerConcrete.HeaderData);
             Assert.Equal(header.DisplayOrder, headerConcrete.DisplayOrder);
             Assert.Equal(header.UIConcreteType, headerConcrete.UIConcreteType);

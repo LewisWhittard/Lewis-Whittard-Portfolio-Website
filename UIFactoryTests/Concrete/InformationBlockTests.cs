@@ -103,7 +103,6 @@ namespace UIFactoryTests.Concrete
             var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, _jsonLDService,_AltService);
 
             //Assert
-            Assert.NotNull(informationBlockConcrete);
             Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
             Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
@@ -148,7 +147,6 @@ namespace UIFactoryTests.Concrete
             var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, _jsonLDService, null);
 
             //Assert
-            Assert.NotNull(informationBlockConcrete);
             Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
             Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
@@ -184,7 +182,6 @@ namespace UIFactoryTests.Concrete
             var informationBlockConcrete = new UIFactory.Factory.Concrete.InformationBlock.InformationBlock(informationBlock, null, _AltService);
 
             //Assert
-            Assert.NotNull(informationBlockConcrete);
             Assert.Equal(informationBlock, informationBlockConcrete.InformationBlockData);
             Assert.Equal(informationBlock.DisplayOrder, informationBlockConcrete.DisplayOrder);
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);

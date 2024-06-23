@@ -105,7 +105,6 @@ namespace UIFactoryTests.Concrete
             var tableConcrete = new UIFactory.Factory.Concrete.Table.Table(table,jsonLDService);
 
             //Assert
-            Assert.NotNull(tableConcrete);
             Assert.Equal(table, tableConcrete.TableData);
             Assert.Equal(table.DisplayOrder, tableConcrete.DisplayOrder);
             Assert.Equal(table.UIConcreteType, tableConcrete.UIConcreteType);
@@ -150,7 +149,6 @@ namespace UIFactoryTests.Concrete
             var tableConcrete = new UIFactory.Factory.Concrete.Table.Table(table, null);
 
             //Assert
-            Assert.NotNull(tableConcrete);
             Assert.Equal(table, tableConcrete.TableData);
             Assert.Equal(table.DisplayOrder, tableConcrete.DisplayOrder);
             Assert.Equal(table.UIConcreteType, tableConcrete.UIConcreteType);

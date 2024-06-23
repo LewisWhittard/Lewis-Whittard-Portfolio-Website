@@ -27,7 +27,6 @@ namespace UIFactoryTests.Concrete
             var columnConcrete = new UIFactory.Factory.Concrete.Table.Column(column);
 
             //Assert
-            Assert.NotNull(columnConcrete);
             Assert.Equal(column, columnConcrete.ColumnData);
             Assert.Equal(column.DisplayOrder, columnConcrete.DisplayOrder);
             Assert.Equal(column.UIConcreteType, columnConcrete.UIConcreteType);
