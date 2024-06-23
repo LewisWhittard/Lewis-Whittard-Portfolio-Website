@@ -1,4 +1,5 @@
-﻿using SEO.Repository.AltRepository;
+﻿using Infrastructure.Models.Data.Shared.Card;
+using SEO.Repository.AltRepository;
 using SEO.Repository.JsonLDRepositoryRepository;
 using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
@@ -73,6 +74,37 @@ namespace UIFactoryTests.Concrete
                     break;
             }
 
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData(0)]
+        public void Card_Ctor_NullAltService(int Id)
+        {
+            //Arrange
+            SetUp();
+            var card = _cardDatas.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var cardConcrete = new UIFactory.Factory.Concrete.Shared.Card.Card(card, null, _jsonLDService);
+
+            //Assert
+            Assert.NotNull(cardConcrete);
+            Assert.Equal(card, cardConcrete.CardData);
+            Assert.Equal(card.DisplayOrder, cardConcrete.DisplayOrder);
+            Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
+            if (Id == 0)
+            {
+                Assert.Null(cardConcrete.Image.AltData);
+                Assert.Null(cardConcrete.Image.AltData);
+            }
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Equal("First", cardConcrete.JsonLDs[0].SuperClassGUID);
+                    break;
+            }
             TearDown();
         }
 

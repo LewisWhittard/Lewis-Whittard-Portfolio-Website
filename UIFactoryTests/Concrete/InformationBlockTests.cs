@@ -154,8 +154,8 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Null(null);
-                Assert.Null(null);
+                Assert.Null(informationBlockConcrete.Images.First().AltData);
+                Assert.Null(informationBlockConcrete.Images.Last().AltData);
             }
 
             switch (Id)
