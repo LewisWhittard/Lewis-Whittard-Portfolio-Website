@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Head
         public string Title { get; private set; }
         public int PageId { get; private set; }
 
-        public Head(int id, bool deleted, bool inactive, string title,int pageId)
+        public Head(int id, bool deleted, bool inactive, string title,int pageId, string? gUID)
         {
             Id = id;
             DisplayOrder = null;
