@@ -25,10 +25,10 @@ namespace UIFactoryTests.Concrete
             imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 2, false, false, "Image3GUID", null, 2, null));
             imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 3, false, false, "Image4GUID", null, 3, null));
 
-            _cardDatas.Add(new Card(imageDatas[0], "TitleCard0", "DescriptionCard0", "NavigationCard0", 0, false, false, 0, "First", 0));
-            _cardDatas.Add(new Card(imageDatas[1], "TitleCard1", "DescriptionCard1", "NavigationCard1", 1, false, false, 1, "Second", 1));
-            _cardDatas.Add(new Card(imageDatas[2], "TitleCard2", "DescriptionCard2", "NavigationCard2", 2, false, false, 2, "Non", 2));
-            _cardDatas.Add(new Card(imageDatas[3], "TitleCard3", "DescriptionCard3", "NavigationCard3", 3, false, false, 3, null, 3));
+            _cardDatas.Add(new Card(imageDatas[0], "TitleCard0", "DescriptionCard0", "NavigationCard0", 0, false, false, 0, "First", 0,null));
+            _cardDatas.Add(new Card(imageDatas[1], "TitleCard1", "DescriptionCard1", "NavigationCard1", 1, false, false, 1, "Second", 1, null));
+            _cardDatas.Add(new Card(imageDatas[2], "TitleCard2", "DescriptionCard2", "NavigationCard2", 2, false, false, 2, "Non", 2, null));
+            _cardDatas.Add(new Card(imageDatas[3], "TitleCard3", "DescriptionCard3", "NavigationCard3", 3, false, false, 3, null, 3, null));
         }
 
         [Theory]

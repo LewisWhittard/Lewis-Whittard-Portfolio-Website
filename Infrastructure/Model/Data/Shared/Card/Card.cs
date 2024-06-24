@@ -16,10 +16,11 @@ namespace Infrastructure.Models.Data.Shared.Card
         public int? DisplayOrder { get; private set; }
         public string GUID { get; private set; }
         public int? PageId { get; private set; }
+        public int? CarouselCardId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
 
-        public Card(Image.Image image, string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int? pageId)
+        public Card(Image.Image image, string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int? pageId, int? carouselCardId)
         {
             Image = image;
             Title = title;
@@ -32,6 +33,8 @@ namespace Infrastructure.Models.Data.Shared.Card
             GUID = gUID;
             UIConcreteType = UIConcrete.Card;
             PageId = pageId;
+            CarouselCardId = carouselCardId;
+
         }
 
         public Card()

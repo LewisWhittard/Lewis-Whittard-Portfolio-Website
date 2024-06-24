@@ -34,8 +34,8 @@ namespace InfrastructureTests.Model
                     new Image("Image1Source", null, 1, false, false, "Image1GUID", 1, null, null)
                 };
 
-            _cards.Add(new Card(imagesCards[0], "Card0Title", "Card0Description", "Card0Navigation", 0, false, false, 0, "Card0GUID", 1));
-            _cards.Add(new Card(imagesCards[1], "Card1Title", "Card1Description", "Card1Navigation", 1, false, false, 1, "Card1GUID", 1));
+            _cards.Add(new Card(imagesCards[0], "Card0Title", "Card0Description", "Card0Navigation", 0, false, false, 0, "Card0GUID", 1, null));
+            _cards.Add(new Card(imagesCards[1], "Card1Title", "Card1Description", "Card1Navigation", 1, false, false, 1, "Card1GUID", 1, null));
 
             List<Image> imagesCarousel0 = new List<Image>
             {

@@ -7,5 +7,6 @@
         string Description { get; }
         string Navigation { get; }
         int? PageId { get; }
+        int? CarouselCardId { get; }
     }
 }

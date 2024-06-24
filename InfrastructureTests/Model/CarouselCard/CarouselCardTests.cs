@@ -17,9 +17,9 @@ namespace InfrastructureTests.Model
 
             _cards = new List<Card>();
 
-            _cards.Add(new Card(image0,"Title0","Description0","Navigation0",0,false,false,0,"CardGuid0",null));
-            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 1, false, false, 0, "CardGuid1", null));
-            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 2, false, false, 0, "CardGuid2", null));
+            _cards.Add(new Card(image0,"Title0","Description0","Navigation0",0,false,false,0,"CardGuid0",null, null));
+            _cards.Add(new Card(image1, "Title1", "Description1", "Navigation1", 1, false, false, 0, "CardGuid1", null, null));
+            _cards.Add(new Card(image2, "Title2", "Description2", "Navigation2", 2, false, false, 0, "CardGuid2", null, null));
 
         }
 
