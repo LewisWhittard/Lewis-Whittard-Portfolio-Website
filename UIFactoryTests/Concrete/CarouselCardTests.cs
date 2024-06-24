@@ -20,10 +20,10 @@ namespace UIFactoryTests.Concrete
             _JsonLDService = new JsonLDService(new MockJsonLDRepository());
 
             var imageDatas = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 0, false, false, "First", null, 0, null));
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 1, false, false, "Second", null, 1, null));
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 2, false, false, "Image03GUID", null, 2, null));
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 3, false, false, "Image04GUID", null, 3, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 0, false, false, "First", 0, null, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 1, false, false, "Second", 1, null, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 2, false, false, "Image03GUID", 2, null, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 3, false, false, "Image04GUID", 3, null, null));
 
             List<Card> cardDatas0 = new List<Card>();
             cardDatas0.Add(new Card(imageDatas[0], "TitleCard00", "DescriptionCard00", "NavigationCard00", 0, false, false, 0, "First", 0, null));
@@ -158,6 +158,38 @@ namespace UIFactoryTests.Concrete
                     Assert.Null(carouselCardConcrete.JsonLDData);
                     break;
 
+            }
+            TearDown();
+        }
+
+        [Theory]
+        [InlineData(0)]
+        public void CarouselCard_Ctor_NullAltService(int Id)
+        {
+            //Arrange
+            SetUp();
+            var carouselCard = _carouselCards.Where(x => x.Id == Id).FirstOrDefault();
+
+            //Act
+            var carouselCardConcrete = new UIFactory.Factory.Concrete.CarouselCard.CarouselCard(carouselCard, _JsonLDService, null);
+
+            //Assert
+            Assert.Equal(carouselCard, carouselCardConcrete.CarouselCardData);
+            Assert.Equal(carouselCard.DisplayOrder, carouselCardConcrete.DisplayOrder);
+            Assert.Equal(carouselCard.UIConcreteType, carouselCardConcrete.UIConcreteType);
+            if (Id == 0)
+            {
+                Assert.Null(carouselCardConcrete.Cards[0].Image.AltData);
+                Assert.Null(carouselCardConcrete.Cards[1].Image.AltData);
+                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.JsonLDs[0].SuperClassGUID);
+                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.JsonLDs[0].SuperClassGUID);
+            }
+
+            switch (Id)
+            {
+                case 0:
+                    Assert.Equal("First", carouselCardConcrete.JsonLDData[0].SuperClassGUID);
+                    break;
             }
             TearDown();
         }
