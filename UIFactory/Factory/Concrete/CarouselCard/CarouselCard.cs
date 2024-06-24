@@ -21,7 +21,9 @@ namespace UIFactory.Factory.Concrete.CarouselCard
         public CarouselCard(Infrastructure.Models.Data.CarouselCard.CarouselCard carouselCardDatas, JsonLDService? jsonLDService, AltService altService)
         {
             _carouselCardDatas = carouselCardDatas;
+            CarouselCardData = _carouselCardDatas;
             _jsonLDService = jsonLDService;
+            _altService = altService;
             SetJsonLD();
             SetCards();
             DisplayOrder = (int)_carouselCardDatas.DisplayOrder;
@@ -39,7 +41,7 @@ namespace UIFactory.Factory.Concrete.CarouselCard
 
         public void SetJsonLD()
         {
-            if (CarouselCardData != null)
+            if (_jsonLDService != null)
             {
                 JsonLDData = _jsonLDService.GetBySuperClassGUID(CarouselCardData.GUID, false);
             }
