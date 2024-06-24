@@ -22,14 +22,14 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData(1, true, true, "Title1", 3)]
-        [InlineData(2, false, true, "Title2", 4)]
-        [InlineData(3, true, false, "Title3", 5)]
-        [InlineData(4, false, false, "Title4", 6)]
-        public void Head_Constructor_WithParameters(int id, bool deleted, bool inactive, string title, int pageId)
+        [InlineData(1, true, true, "Title1", 3,"gUIDHead1")]
+        [InlineData(2, false, true, "Title2", 4, "gUIDHead2")]
+        [InlineData(3, true, false, "Title3", 5, "gUIDHead3")]
+        [InlineData(4, false, false, "Title4", 6, "gUIDHead4")]
+        public void Head_Constructor_WithParameters(int id, bool deleted, bool inactive, string title, int pageId, string gUID)
         {
             // Arrange and Act
-            Infrastructure.Models.Data.Head.Head head = new Infrastructure.Models.Data.Head.Head(id, deleted, inactive, title, pageId);
+            Infrastructure.Models.Data.Head.Head head = new Infrastructure.Models.Data.Head.Head(id, deleted, inactive, title, pageId, gUID);
 
             // Assert
             Assert.Equal(id, head.Id);
