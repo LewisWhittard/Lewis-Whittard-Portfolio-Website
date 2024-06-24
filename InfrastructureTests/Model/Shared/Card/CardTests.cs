@@ -10,7 +10,7 @@ namespace InfrastructureTests.Model
 
         private void SetUp()
         {
-            _image = new Image("Source", 0, 0, false, false, "GUID",null,null,null);
+            _image = new Image("Source", 0, 0, false, false, "GUID",0,null,null);
         }
 
         [Fact]
