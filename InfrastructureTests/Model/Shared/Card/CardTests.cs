@@ -1,8 +1,6 @@
-﻿using Infrastructure.Models.Data.CarouselCard;
-using Infrastructure.Models.Data.Interface;
+﻿using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Shared.Card;
 using Infrastructure.Models.Data.Shared.Image;
-using System.ComponentModel;
 
 namespace InfrastructureTests.Model
 {
