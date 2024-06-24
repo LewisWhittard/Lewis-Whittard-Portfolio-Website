@@ -19,24 +19,24 @@ namespace UIFactoryTests.Concrete
             _altService = new AltService(new MockAltRepository());
 
             var imageDatas0 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "First", null, 0, null));
-            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 1, false, false, "Second", null, 0, null));
+            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 0, false, false, "First", null, null, 0));
+            imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 1, false, false, "Second", null, null, 0));
 
             var imageDatas1 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Image10GUID", null, 1, null));
-            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 3, false, false, "Image11GUID", null, 1, null));
+            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Image10GUID", null, null, 1));
+            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 3, false, false, "Image11GUID", null, null, 1));
 
             var imageDatas2 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Image20GUID", null, 2, null));
-            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 5, false, false, "Image21GUID", null, 2, null));
+            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Image20GUID", null, null, 1));
+            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 5, false, false, "Image21GUID", null, null, 1));
 
             var imageDatas3 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 6, false, false, "Image30GUID", null, 3, null));
-            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 7, false, false, "Image31GUID", null, 3, null));
+            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 6, false, false, "Image30GUID", null, null, 1));
+            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 7, false, false, "Image31GUID", null, null, 1));
 
             var imageDatas4 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 8, false, false, "Image40GUID", null, 4, null));
-            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 9, false, false, "Image41GUID", null, 4, null));
+            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 8, false, false, "Image40GUID", null, null, 1));
+            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 9, false, false, "Image41GUID", null, null, 1));
 
             Carousels.Add(new Infrastructure.Models.Data.Carousel.Carousel(0, false, false, imageDatas0, 0, "First", 0));
             Carousels.Add(new Infrastructure.Models.Data.Carousel.Carousel(1, false, false, imageDatas1, 1, "Second", 1));
