@@ -14,12 +14,12 @@ namespace SEO.Service.JsonLDService
         {
             if (includeInactive == true)
             {
-                return _jsonLDRepository.GetJsonLDatas().Where(x => x.PageId == pageId && !x.Deleted).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.PageId == pageId && !x.Deleted).ToList();
             }
 
             else
             {
-                return _jsonLDRepository.GetJsonLDatas().Where(x => x.PageId == pageId && !x.Deleted && !x.Inactive).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.PageId == pageId && !x.Deleted && !x.Inactive).ToList();
             }
         }
 
@@ -32,11 +32,11 @@ namespace SEO.Service.JsonLDService
         {
             if (includeInactive == true)
             {
-                return _jsonLDRepository.GetJsonLDatas().Where(x => x.SuperClassGUID == superClassGUID &&  !x.Deleted).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.SuperClassGUID == superClassGUID &&  !x.Deleted).ToList();
             }
             else
             {
-                return _jsonLDRepository.GetJsonLDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).ToList();
             }
         }
     }
