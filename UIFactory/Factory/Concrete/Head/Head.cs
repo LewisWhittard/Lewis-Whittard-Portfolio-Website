@@ -47,7 +47,7 @@ namespace UIFactory.Factory.Concrete.Head
         {
             if (_jsonLDService != null)
             {
-                jsonLDDatas = _jsonLDService.GetBySuperClassGUID(_head.GUID,false);
+                jsonLDDatas = _jsonLDService.GetByPageId(HeadData.PageId,false);
             }
             else
             {
