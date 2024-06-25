@@ -28,7 +28,7 @@ namespace SEO.Repository.JsonLDRepositoryRepository
             };
         }
 
-        public List<JsonLDData> GetJsonLDs()
+        public List<JsonLDData> GetJsonLDatas()
         {
             return _jsonLDData;
         }
