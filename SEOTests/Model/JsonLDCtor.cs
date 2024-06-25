@@ -4,24 +4,25 @@ namespace SEOTests.Model
 {
     public class JsonLDCtor
     {
+
         [Theory]
-        [InlineData("superClassGUID", 1, 10, "guid", false, false,11)]
-        [InlineData(null, 2, null, "guid2", true, true, 13)]
-        [InlineData("superClassGUID", 1, 10, "guid", true, false, 14)]
-        [InlineData(null, 2, null, "guid2", false, true, null)]
+        [InlineData("SuperClassGUID1", 1, false, false, null)]
+        [InlineData("SuperClassGUID2", 2, true, false, null)]
+        [InlineData("SuperClassGUID3", 3, false, true, null)]
+        [InlineData("SuperClassGUID4", 4, true, true, null)]
+        [InlineData("SuperClassGUID5", 5, false, true, 10)]
+
         // Add more test cases as needed
         public void JsonLDData_Constructor_SetsPropertiesCorrectly(
-        string superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive, int? pageId)
+        string superClassGUID, int id, bool deleted, bool inactive, int? pageId)
         {
             // Arrange, Act
-            var jsonLDData = new JsonLDData(superClassGUID, id, displayOrder, guid, deleted, inactive, pageId);
+            var jsonLDData = new JsonLDData(superClassGUID, id, deleted, inactive, pageId);
 
             // Assert
             Assert.Equal(superClassGUID, jsonLDData.SuperClassGUID);
             Assert.Equal(null, jsonLDData.UIConcreteType);
             Assert.Equal(id, jsonLDData.Id);
-            Assert.Equal(displayOrder, jsonLDData.DisplayOrder);
-            Assert.Equal(guid, jsonLDData.GUID);
             Assert.Equal(deleted, jsonLDData.Deleted);
             Assert.Equal(inactive, jsonLDData.Inactive);
             Assert.Equal(pageId, jsonLDData.PageId);

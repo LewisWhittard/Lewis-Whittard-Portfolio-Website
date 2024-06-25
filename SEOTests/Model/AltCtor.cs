@@ -5,21 +5,19 @@ namespace SEOTests.Model
     public class AltCtor
     {
         [Theory]
-        [InlineData("123456", 1, "SomeValue", "789012", 1001, false, true)]
-        [InlineData("123456", 1, "SomeValue", "789012", 1001, true, false)]
-        [InlineData("123456", 1, "SomeValue", "789012", 1001, true, true)]
-        [InlineData("123456", 1, "SomeValue", "789012", 1001, false, false)]
-        public void MetaData_Constructor_SetsPropertiesCorrectly(string superClassGUID, int? displayOrder, string value, string guid, int id, bool deleted, bool inactive)
+        [InlineData("SuperClassGUID", "Value", 1, false, false)]
+        [InlineData("SuperClassGUID", "Value", 2, true, false)]
+        [InlineData("SuperClassGUID", "Value", 3, false, true)]
+        [InlineData("SuperClassGUID", "Value", 4, true, true)]
+        public void MetaData_Constructor_SetsPropertiesCorrectly(string superClassGUID, string value, int id, bool deleted, bool inactive)
         {
             //arrange, Act
-            AltData altData = new AltData(superClassGUID, displayOrder, value, guid, id, deleted, inactive);
+            AltData altData = new AltData(superClassGUID, value, id, deleted, inactive);
 
             // Assert
             Assert.Equal(superClassGUID, altData.SuperClassGUID);
-            Assert.Equal(null, altData.UIConcreteType); ;
-            Assert.Equal(displayOrder, altData.DisplayOrder);
+            Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(value, altData.Value);
-            Assert.Equal(guid, altData.GUID);
             Assert.Equal(id, altData.Id);
             Assert.Equal(deleted, altData.Deleted);
             Assert.Equal(inactive, altData.Inactive);

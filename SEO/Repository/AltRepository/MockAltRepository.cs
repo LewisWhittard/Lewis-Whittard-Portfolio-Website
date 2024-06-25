@@ -11,12 +11,12 @@ namespace SEO.Repository.AltRepository
         {
             _altData = new List<AltData>()
             {
-                new AltData("First",null,"FirstValue",null,0,false,false),
-                new AltData("Second",null,"SecondValue",null,1,false,false),
-                new AltData("Multiple",null,"MultipleValue",null,2,false,false),
-                new AltData("Multiple",null,"MultipleValue2",null,2,false,false),
-                new AltData("Deleted",null,"DeletedValue",null,4,true,false),
-                new AltData("IncludeInactive",null,"IncludeInactiveValue",null,5,false,true),
+                new AltData("First","FirstValue",0,false,false),
+                new AltData("Second","SecondValue",1,false,false),
+                new AltData("Multiple","MultipleValue",2,false,false),
+                new AltData("Multiple","MultipleValue2",2,false,false),
+                new AltData("Deleted","DeletedValue",4,true,false),
+                new AltData("IncludeInactive","IncludeInactiveValue",5,false,true),
             };
         }
 
