@@ -17,6 +17,7 @@ namespace SEO.Repository.AltRepository
                 new AltData("Multiple","MultipleValue2",2,false,false),
                 new AltData("Deleted","DeletedValue",4,true,false),
                 new AltData("IncludeInactive","IncludeInactiveValue",5,false,true),
+                new AltData(null,"NullValue",6,false,false)
             };
         }
 

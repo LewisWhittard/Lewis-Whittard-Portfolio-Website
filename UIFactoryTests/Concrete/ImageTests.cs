@@ -54,7 +54,7 @@ namespace UIFactoryTests.Concrete
                     Assert.Null(ImageConcrete.AltData);
                     break;
                 case 3:
-                    Assert.Null(ImageConcrete.AltData);
+                    Assert.Equal(null, ImageConcrete.AltData.SuperClassGUID);
                     break;
             }
 
