@@ -5,16 +5,16 @@ namespace SEOTests.Model
     public class JsonLDCtor
     {
         [Theory]
-        [InlineData("superClassGUID", 1, 10, "guid", false, false)]
-        [InlineData(null, 2, null, "guid2", true, true)]
-        [InlineData("superClassGUID", 1, 10, "guid", true, false)]
-        [InlineData(null, 2, null, "guid2", false, true)]
+        [InlineData("superClassGUID", 1, 10, "guid", false, false,11)]
+        [InlineData(null, 2, null, "guid2", true, true, 13)]
+        [InlineData("superClassGUID", 1, 10, "guid", true, false, 14)]
+        [InlineData(null, 2, null, "guid2", false, true, null)]
         // Add more test cases as needed
         public void JsonLDData_Constructor_SetsPropertiesCorrectly(
-        string superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive)
+        string superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive, int? pageId)
         {
             // Arrange, Act
-            var jsonLDData = new JsonLDData(superClassGUID, id, displayOrder, guid, deleted, inactive);
+            var jsonLDData = new JsonLDData(superClassGUID, id, displayOrder, guid, deleted, inactive, pageId);
 
             // Assert
             Assert.Equal(superClassGUID, jsonLDData.SuperClassGUID);
@@ -24,6 +24,7 @@ namespace SEOTests.Model
             Assert.Equal(guid, jsonLDData.GUID);
             Assert.Equal(deleted, jsonLDData.Deleted);
             Assert.Equal(inactive, jsonLDData.Inactive);
+            Assert.Equal(pageId, jsonLDData.PageId);
         }
 
         [Fact]
@@ -40,6 +41,7 @@ namespace SEOTests.Model
             Assert.Equal(null, jsonLDData.GUID);
             Assert.Equal(false, jsonLDData.Deleted);
             Assert.Equal(false, jsonLDData.Inactive);
+            Assert.Equal(null, jsonLDData.PageId);
         }
     }
 }
