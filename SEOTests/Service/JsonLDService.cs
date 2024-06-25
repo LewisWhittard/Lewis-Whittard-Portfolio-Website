@@ -1,9 +1,6 @@
 ﻿using SEO.Model.JsonLD;
-using SEO.Model.Meta.Interface;
 using SEO.Repository.JsonLDRepositoryRepository;
-using SEO.Repository.MockMetaRepository;
 using SEO.Service.JsonLDService;
-using SEO.Service.MetaService;
 
 namespace SEOTests.Service
 {
