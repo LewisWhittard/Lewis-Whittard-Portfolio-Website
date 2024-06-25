@@ -1,4 +1,5 @@
-﻿using SEO.Model.Meta.Interface;
+﻿using SEO.Model.JsonLD;
+using SEO.Model.Meta.Interface;
 using SEO.Repository.JsonLDRepositoryRepository;
 using SEO.Repository.MockMetaRepository;
 using SEO.Service.JsonLDService;
@@ -18,11 +19,10 @@ namespace UIFactoryTests.Concrete
             _metaService = new MetaService(new MockMetaRepository());
             _heads = new List<Infrastructure.Models.Data.Head.Head>();
 
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(0, false, false, "HeadTitle", 4, "First"));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(1, false, false, "HeadTitle", 3, "Second"));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(2, false, false, "HeadTitle", 2, "Non"));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(3, false, false, "HeadTitle", 1, null));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(4, false, false, "HeadTitle", 0, "Multiple"));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(0, false, false, "HeadTitle", 3, null));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(1, false, false, "HeadTitle", 2, null));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(2, false, false, "HeadTitle", 1, null));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(3, false, false, "HeadTitle", 0, null));
         }
 
         [Theory]
@@ -30,7 +30,6 @@ namespace UIFactoryTests.Concrete
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(3)]
-        [InlineData(4)]
         public void Head_Ctor(int headId)
         {
             SetUp();
@@ -45,27 +44,46 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(head.DisplayOrder, headConcrete.DisplayOrder);
             Assert.Equal(head.UIConcreteType, headConcrete.UIConcreteType);
 
-            switch (headId)
+            switch (head.PageId)
             {
                 case 0:
-                    Assert.Equal("First", headConcrete.jsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal(0,headConcrete.jsonLDDatas[0].PageId);
                     break;
                 case 1:
-                    Assert.Equal("Second", headConcrete.jsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal(1, headConcrete.jsonLDDatas[0].PageId);
                     break;
                 case 2:
-                    Assert.Equal(0, headConcrete.jsonLDDatas.Count());
-                    break;
-                case 3:
-                    Assert.Equal(null, headConcrete.jsonLDDatas[0].SuperClassGUID);
-                    break;
-                case 4:
-                    Assert.Equal("Multiple", headConcrete.jsonLDDatas[0].SuperClassGUID);
-                    Assert.Equal("Multiple", headConcrete.jsonLDDatas[1].SuperClassGUID);
+                    Assert.Equal(2, headConcrete.jsonLDDatas[0].PageId);
+                    Assert.Equal(2, headConcrete.jsonLDDatas[1].PageId);
                     Assert.NotEqual(headConcrete.jsonLDDatas[0], headConcrete.jsonLDDatas[1]);
                     break;
+                case 3:
+                    Assert.Equal(0, headConcrete.jsonLDDatas.Count());
+                    break;
+
             }
-            
+
+            switch (head.PageId)
+            {
+                case 0:
+                    Assert.Equal(0, headConcrete.MetaDatas[0].PageId);
+                    break;
+                case 1:
+                    Assert.Equal(1, headConcrete.MetaDatas[0].PageId);
+                    break;
+                case 2:
+                    Assert.Equal(2, headConcrete.MetaDatas[0].PageId);
+                    Assert.Equal(2, headConcrete.MetaDatas[1].PageId);
+                    Assert.NotEqual(headConcrete.MetaDatas[0], headConcrete.MetaDatas[1]);
+                    break;
+                case 3:
+                    Assert.Equal(0, headConcrete.MetaDatas.Count());
+                    break;
+
+            }
+
+
+
             TearDown();
         }
 
