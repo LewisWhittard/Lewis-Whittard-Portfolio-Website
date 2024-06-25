@@ -17,14 +17,14 @@ namespace SEO.Repository.JsonLDRepositoryRepository
                 new JsonLDData("Multiple",3,false,false, null),
                 new JsonLDData("IncludeInactive",4,false,true, null),
                 new JsonLDData("ExcludeInactive",5,false,true, null),
-                new JsonLDData("Deleted",6,true,false, 1),
-                new JsonLDData(null,7,false,false,2),
-                new JsonLDData(null,8,false,false, 3),
-                new JsonLDData(null,9,false,false, 4),
-                new JsonLDData(null,10,false,false, 4),
-                new JsonLDData(null,11,false,true, 5),
-                new JsonLDData(null,12,false,true, 6),
-                new JsonLDData(null,13,true,false, 7)
+                new JsonLDData("Deleted",6,true,false, null),
+                new JsonLDData(null,7,false,false,0),
+                new JsonLDData(null,8,false,false, 1),
+                new JsonLDData(null,9,false,false, 2),
+                new JsonLDData(null,10,false,false, 2),
+                new JsonLDData(null,11,false,true, 4),
+                new JsonLDData(null,12,false,true, 5),
+                new JsonLDData(null,13,true,false, 6)
             };
         }
 
