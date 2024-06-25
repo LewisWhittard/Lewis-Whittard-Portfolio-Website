@@ -115,21 +115,21 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal("Second", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal("Second", informationBlockConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 2:
-                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    Assert.Equal(0, informationBlockConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal(null, informationBlockConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[1].SuperClassGUID);
-                    Assert.NotEqual(informationBlockConcrete.JsonLDData[0], informationBlockConcrete.JsonLDData[1]);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[1].SuperClassGUID);
+                    Assert.NotEqual(informationBlockConcrete.JsonLDDatas[0], informationBlockConcrete.JsonLDDatas[1]);
                     break;
 
             }
@@ -160,7 +160,7 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", informationBlockConcrete.JsonLDData[0].SuperClassGUID);
+                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
             }
             TearDown();
@@ -195,19 +195,19 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    Assert.Null(informationBlockConcrete.JsonLDDatas);
                     break;
                 case 1:
-                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    Assert.Null(informationBlockConcrete.JsonLDDatas);
                     break;
                 case 2:
-                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    Assert.Null(informationBlockConcrete.JsonLDDatas);
                     break;
                 case 3:
-                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    Assert.Null(informationBlockConcrete.JsonLDDatas);
                     break;
                 case 4:
-                    Assert.Null(informationBlockConcrete.JsonLDData);
+                    Assert.Null(informationBlockConcrete.JsonLDDatas);
                     break;
 
             }

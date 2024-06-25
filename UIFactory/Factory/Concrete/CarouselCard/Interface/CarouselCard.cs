@@ -3,6 +3,6 @@
     public interface ICarouselCard
     {
         Infrastructure.Models.Data.CarouselCard.CarouselCard CarouselCardData { get; }
-        List<SEO.Model.JsonLD.JsonLDData> JsonLDData { get; }
+        List<SEO.Model.JsonLD.JsonLDData> JsonLDDatas { get; }
     }
 }

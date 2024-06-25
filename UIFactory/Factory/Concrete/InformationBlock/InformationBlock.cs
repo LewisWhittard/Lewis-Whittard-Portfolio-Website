@@ -10,7 +10,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
     public class InformationBlock : IInformationBlock, IConcreteUI
     {
         public Infrastructure.Models.Data.InformationBlock.InfomatonBlock InformationBlockData { get; private set; }
-        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }
+        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDDatas { get; private set; }
         public List<Heading>? Headings { get; private set; }
         public List<Paragraph>? Paragraphs { get; private set; }
         public List<Image>? Images { get; private set; }
@@ -40,11 +40,11 @@ namespace UIFactory.Factory.Concrete.InformationBlock
         {
             if (_jsonLDService != null)
             {
-                JsonLDData = _jsonLDService.GetBySuperClassGUID(InformationBlockData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(InformationBlockData.GUID, false);
             }
             else
             {
-                JsonLDData = null;
+                JsonLDDatas = null;
             }
         }
 

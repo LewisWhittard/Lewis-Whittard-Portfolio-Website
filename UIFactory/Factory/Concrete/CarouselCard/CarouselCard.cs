@@ -9,7 +9,7 @@ namespace UIFactory.Factory.Concrete.CarouselCard
     public class CarouselCard : ICarouselCard, IConcreteUI
     {
         public Infrastructure.Models.Data.CarouselCard.CarouselCard CarouselCardData { get; private set; }
-        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDData { get; private set; }
+        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDDatas { get; private set; }
         public List<Shared.Card.Card> Cards { get; private set; }
         public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
@@ -43,11 +43,11 @@ namespace UIFactory.Factory.Concrete.CarouselCard
         {
             if (_jsonLDService != null)
             {
-                JsonLDData = _jsonLDService.GetBySuperClassGUID(CarouselCardData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(CarouselCardData.GUID, false);
             }
             else
             {
-                JsonLDData = null;
+                JsonLDDatas = null;
             }
         }
 

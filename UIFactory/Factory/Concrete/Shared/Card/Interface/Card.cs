@@ -6,6 +6,6 @@ namespace UIFactory.Factory.Concrete.Shared.Card.Interface
     {
         Infrastructure.Models.Data.Shared.Card.Card CardData { get; }
         Image.Image Image { get; }
-        List<JsonLDData>? JsonLDs { get; }
+        List<JsonLDData>? JsonLDDatas { get; }
     }
 }

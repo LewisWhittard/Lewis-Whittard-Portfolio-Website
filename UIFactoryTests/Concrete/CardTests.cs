@@ -56,21 +56,21 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal("Second", cardConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal("Second", cardConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 2:
-                    Assert.Equal(0, cardConcrete.JsonLDs.Count());
+                    Assert.Equal(0, cardConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, cardConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal(null, cardConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", cardConcrete.JsonLDs[0].SuperClassGUID);
-                    Assert.Equal("Multiple", cardConcrete.JsonLDs[1].SuperClassGUID);
-                    Assert.NotEqual(cardConcrete.JsonLDs[0], cardConcrete.JsonLDs[1]);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[1].SuperClassGUID);
+                    Assert.NotEqual(cardConcrete.JsonLDDatas[0], cardConcrete.JsonLDDatas[1]);
                     break;
             }
 
@@ -100,7 +100,7 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
             }
             TearDown();
@@ -132,19 +132,19 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Null(cardConcrete.JsonLDs);
+                    Assert.Null(cardConcrete.JsonLDDatas);
                     break;
                 case 1:
-                    Assert.Null(cardConcrete.JsonLDs);
+                    Assert.Null(cardConcrete.JsonLDDatas);
                     break;
                 case 2:
-                    Assert.Null(cardConcrete.JsonLDs);
+                    Assert.Null(cardConcrete.JsonLDDatas);
                     break;
                 case 3:
-                    Assert.Null(cardConcrete.JsonLDs);
+                    Assert.Null(cardConcrete.JsonLDDatas);
                     break;
                 case 4:
-                    Assert.Null(cardConcrete.JsonLDs);
+                    Assert.Null(cardConcrete.JsonLDDatas);
                     break;
 
             }

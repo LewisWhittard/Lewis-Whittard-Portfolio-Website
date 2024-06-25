@@ -10,7 +10,7 @@ namespace UIFactory.Factory.Concrete.Shared.Image
     {
         public Infrastructure.Models.Data.Shared.Image.Image ImageData { get; private set; }
         public SEO.Model.Alt.AltData? AltData { get; private set; }
-        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDs { get; private set; }
+        public List<SEO.Model.JsonLD.JsonLDData>? JsonLDDatas { get; private set; }
         public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
 
@@ -49,11 +49,11 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         {
             if (_jsonLDService != null)
             {
-                JsonLDs = _jsonLDService.GetBySuperClassGUID(ImageData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(ImageData.GUID, false);
             }
             else
             {
-                JsonLDs = null;
+                JsonLDDatas = null;
             }
         }
     }

@@ -10,7 +10,7 @@ namespace UIFactory.Factory.Concrete.Shared.Card
     public class Card : ICard, IConcreteUI
     {
         public Image.Image Image { get; private set; }
-        public List<JsonLDData>? JsonLDs { get; private set; }
+        public List<JsonLDData>? JsonLDDatas { get; private set; }
         public Infrastructure.Models.Data.Shared.Card.Card CardData { get; private set; }
         public int? DisplayOrder { get; private set; }
         public UIConcrete UIConcreteType { get; private set; }
@@ -37,11 +37,11 @@ namespace UIFactory.Factory.Concrete.Shared.Card
         {
             if (_jsonLDService != null)
             {
-                JsonLDs = _jsonLDService.GetBySuperClassGUID(CardData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(CardData.GUID, false);
             }
             else
             {
-                JsonLDs = null;
+                JsonLDDatas = null;
             }
 
         }
