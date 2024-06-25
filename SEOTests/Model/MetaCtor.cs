@@ -20,8 +20,10 @@ namespace SEOTests.Model
             Assert.Equal(charset, metaData.Charset);
             Assert.Equal(deleted, metaData.Deleted);
             Assert.Equal(inactive, metaData.Inactive);
-            Assert.Equal(null,metaData.UIConcreteType);
+            Assert.Null(metaData.UIConcreteType);
             Assert.Equal(PageId, metaData.PageId);
+            Assert.Null(metaData.DisplayOrder);
+            Assert.Null(metaData.GUID);
         }
 
         [Fact]

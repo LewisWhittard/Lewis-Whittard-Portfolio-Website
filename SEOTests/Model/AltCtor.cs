@@ -21,6 +21,8 @@ namespace SEOTests.Model
             Assert.Equal(id, altData.Id);
             Assert.Equal(deleted, altData.Deleted);
             Assert.Equal(inactive, altData.Inactive);
+            Assert.Null(altData.DisplayOrder);
+            Assert.Null(altData.GUID);
         }
 
         [Fact]

@@ -1,4 +1,5 @@
 ﻿using SEO.Model.JsonLD;
+using SEOTests.Service;
 
 namespace SEOTests.Model
 {
@@ -26,6 +27,8 @@ namespace SEOTests.Model
             Assert.Equal(deleted, jsonLDData.Deleted);
             Assert.Equal(inactive, jsonLDData.Inactive);
             Assert.Equal(pageId, jsonLDData.PageId);
+            Assert.Null(jsonLDData.DisplayOrder);
+            Assert.Null(jsonLDData.GUID);
         }
 
         [Fact]
