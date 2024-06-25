@@ -83,11 +83,12 @@ namespace UIFactoryTests.Concrete
                     Assert.Equal(0, carouselConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(0, carouselConcrete.JsonLDDatas.Count());
+                    Assert.Equal(null, carouselConcrete.JsonLDDatas[0].SuperClassGUID);
                     break;
                 case 4:
                     Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[0].SuperClassGUID);
                     Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[1].SuperClassGUID);
+                    Assert.NotEqual(carouselConcrete.JsonLDDatas[0], carouselConcrete.JsonLDDatas[1]);
                     break;
 
             }

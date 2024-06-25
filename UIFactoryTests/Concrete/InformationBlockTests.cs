@@ -124,7 +124,7 @@ namespace UIFactoryTests.Concrete
                     Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
                     break;
                 case 3:
-                    Assert.Equal(0, informationBlockConcrete.JsonLDData.Count());
+                    Assert.Equal(null, informationBlockConcrete.JsonLDData[0].SuperClassGUID);
                     break;
                 case 4:
                     Assert.Equal("Multiple", informationBlockConcrete.JsonLDData[0].SuperClassGUID);

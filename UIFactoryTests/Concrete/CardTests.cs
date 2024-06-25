@@ -65,11 +65,12 @@ namespace UIFactoryTests.Concrete
                     Assert.Equal(0, cardConcrete.JsonLDs.Count());
                     break;
                 case 3:
-                    Assert.Equal(0, cardConcrete.JsonLDs.Count());
+                    Assert.Equal(null, cardConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 4:
                     Assert.Equal("Multiple", cardConcrete.JsonLDs[0].SuperClassGUID);
                     Assert.Equal("Multiple", cardConcrete.JsonLDs[1].SuperClassGUID);
+                    Assert.NotEqual(cardConcrete.JsonLDs[0], cardConcrete.JsonLDs[1]);
                     break;
             }
 
