@@ -12,8 +12,9 @@ namespace SEO.Model.JsonLD
         public string GUID { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
-
-        public JsonLDData(string? superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive)
+        public int? PageId { get; private set; }
+    
+        public JsonLDData(string? superClassGUID, int id, int? displayOrder, string guid, bool deleted, bool inactive, int? pageId)
         {
             SuperClassGUID = superClassGUID;
             UIConcreteType = null;
@@ -22,6 +23,7 @@ namespace SEO.Model.JsonLD
             GUID = guid;
             Deleted = deleted;
             Inactive = inactive;
+            PageId = pageId;
         }
 
         public JsonLDData()
