@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Head
         {
             Id = id;
             DisplayOrder = null;
-            GUID = null;
+            GUID = gUID;
             Deleted = deleted;
             Inactive = inactive;
             UIConcreteType = UIConcrete.Head;

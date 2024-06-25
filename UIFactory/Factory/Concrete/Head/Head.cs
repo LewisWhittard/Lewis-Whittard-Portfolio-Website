@@ -22,11 +22,12 @@ namespace UIFactory.Factory.Concrete.Head
         public Head(Infrastructure.Models.Data.Head.Head head, MetaService? metaService, JsonLDService? jsonLDService)
         {
             _head = head;
+            HeadData = _head;
             _metaService = metaService;
             _jsonLDService = jsonLDService;
             SetMetaData();
             SetJsonLDData();
-            DisplayOrder = (int)_head.DisplayOrder;
+            DisplayOrder = head.DisplayOrder;
             UIConcreteType = (UIConcrete)_head.UIConcreteType;
         }
 

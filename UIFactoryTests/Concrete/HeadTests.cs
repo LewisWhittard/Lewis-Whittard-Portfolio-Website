@@ -10,12 +10,13 @@ namespace UIFactoryTests.Concrete
     {
         private List<Infrastructure.Models.Data.Head.Head> _heads;
         private JsonLDService _jsonLDService;
-        private MetaService _metaData;
+        private MetaService _metaService;
 
         public void SetUp()
         {
             _jsonLDService = new JsonLDService(new MockJsonLDRepository());
-            _metaData = new MetaService(new MockMetaRepository());
+            _metaService = new MetaService(new MockMetaRepository());
+            _heads = new List<Infrastructure.Models.Data.Head.Head>();
 
             _heads.Add(new Infrastructure.Models.Data.Head.Head(0, false, false, "HeadTitle", 4, "First"));
             _heads.Add(new Infrastructure.Models.Data.Head.Head(1, false, false, "HeadTitle", 3, "Second"));
@@ -37,7 +38,7 @@ namespace UIFactoryTests.Concrete
             //Arrange
             var head = _heads.Where(x => x.Id == headId).FirstOrDefault();
             //act
-            var headConcrete = new UIFactory.Factory.Concrete.Head.Head(head, _metaData, _jsonLDService);
+            var headConcrete = new UIFactory.Factory.Concrete.Head.Head(head, _metaService, _jsonLDService);
 
             //Assert
             Assert.Equal(head, headConcrete.HeadData);
@@ -63,7 +64,7 @@ namespace UIFactoryTests.Concrete
                     Assert.Equal("Multiple", headConcrete.jsonLDDatas[1].SuperClassGUID);
                     break;
             }
-
+            
             TearDown();
         }
 
@@ -72,7 +73,7 @@ namespace UIFactoryTests.Concrete
         {
             _heads = null;
             _jsonLDService = null;
-            _metaData = null;
+            _metaService = null;
         }
     }
 }

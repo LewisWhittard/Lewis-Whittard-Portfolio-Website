@@ -34,7 +34,7 @@ namespace InfrastructureTests.Model
             // Assert
             Assert.Equal(id, head.Id);
             Assert.Null(head.DisplayOrder);
-            Assert.Null(head.GUID);
+            Assert.Equal(gUID,head.GUID);
             Assert.Equal(deleted, head.Deleted);
             Assert.Equal(inactive, head.Inactive);
             Assert.Equal(UIConcrete.Head, head.UIConcreteType);
