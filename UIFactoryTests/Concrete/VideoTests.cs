@@ -18,8 +18,8 @@ namespace UIFactoryTests.Concrete
             Videos.Add(new Video("","","","",0,false,false,4,"First",0));
             Videos.Add(new Video("", "", "", "", 1, false, false, 3, "Second", 1));
             Videos.Add(new Video("", "", "", "", 2, false, false, 2, "Multiple", 2));
-            Videos.Add(new Video("", "", "", "", 3, false, false, 3, "Non", 4));
-            Videos.Add(new Video("", "", "", "", 4, false, false, 4, null, 4));
+            Videos.Add(new Video("", "", "", "", 3, false, false, 3, null, 4));
+            Videos.Add(new Video("", "", "", "", 4, false, false, 4, "Non", 4));
         }
 
         [Theory]
