@@ -1,5 +1,8 @@
 ﻿using SEO.Model.Meta.Interface;
+using SEO.Repository.JsonLDRepositoryRepository;
+using SEO.Repository.MockMetaRepository;
 using SEO.Service.JsonLDService;
+using SEO.Service.MetaService;
 
 namespace UIFactoryTests.Concrete
 {
@@ -7,16 +10,61 @@ namespace UIFactoryTests.Concrete
     {
         private List<Infrastructure.Models.Data.Head.Head> _heads;
         private JsonLDService _jsonLDService;
-        private MetaData _metaData;
+        private MetaService _metaData;
 
         public void SetUp()
         {
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(0, false, false, "HeadTitle", 0, "First"));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(1, false, false, "HeadTitle", 1, "Second"));
+            _jsonLDService = new JsonLDService(new MockJsonLDRepository());
+            _metaData = new MetaService(new MockMetaRepository());
+
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(0, false, false, "HeadTitle", 4, "First"));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(1, false, false, "HeadTitle", 3, "Second"));
             _heads.Add(new Infrastructure.Models.Data.Head.Head(2, false, false, "HeadTitle", 2, "Non"));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(3, false, false, "HeadTitle", 3, null));
-            _heads.Add(new Infrastructure.Models.Data.Head.Head(4, false, false, "HeadTitle", 4, "Multiple"));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(3, false, false, "HeadTitle", 1, null));
+            _heads.Add(new Infrastructure.Models.Data.Head.Head(4, false, false, "HeadTitle", 0, "Multiple"));
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(5)]
+        public void Head_Ctor(int headId)
+        {
+            SetUp();
+
+            //Arrange
+            var head = _heads.Where(x => x.Id == headId).FirstOrDefault();
+            //act
+            var headConcrete = new UIFactory.Factory.Concrete.Head.Head(head, _metaData, _jsonLDService);
+
+            //Assert
+            Assert.Equal(head, headConcrete.HeadData);
+            Assert.Equal(head.DisplayOrder, headConcrete.DisplayOrder);
+            Assert.Equal(head.UIConcreteType, headConcrete.UIConcreteType);
+
+            switch (headId)
+            {
+                case 0:
+                    Assert.Equal("First", headConcrete.jsonLDDatas[0].SuperClassGUID);
+                    break;
+                case 1:
+                    Assert.Equal("Second", headConcrete.jsonLDDatas[0].SuperClassGUID);
+                    break;
+                case 2:
+                    Assert.Equal(0, headConcrete.jsonLDDatas.Count());
+                    break;
+                case 3:
+                    Assert.Equal(0, headConcrete.jsonLDDatas.Count());
+                    break;
+                case 4:
+                    Assert.Equal("Multiple", headConcrete.jsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Multiple", headConcrete.jsonLDDatas[1].SuperClassGUID);
+                    break;
+            }
+
+            TearDown();
+        }
+
 
         private void TearDown()
         {
