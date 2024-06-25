@@ -45,10 +45,10 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal(0, ImageConcrete.AltData.Id);
+                    Assert.Equal("First", ImageConcrete.AltData.SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal(1, ImageConcrete.AltData.Id);
+                    Assert.Equal("Second", ImageConcrete.AltData.SuperClassGUID);
                     break;
                 case 2:
                     Assert.Null(ImageConcrete.AltData);
@@ -116,20 +116,22 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal(0, ImageConcrete.JsonLDs[0].Id);
+                    Assert.Equal("First", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal(1, ImageConcrete.JsonLDs[0].Id);
+                    Assert.Equal("Second", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 2:
                     Assert.Equal(0, ImageConcrete.JsonLDs.Count());
                     break;
                 case 3:
-                    Assert.Equal(0, ImageConcrete.JsonLDs.Count());
+                    Assert.Equal(null, ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 4:
-                    Assert.Equal(2, ImageConcrete.JsonLDs[0].Id);
-                    Assert.Equal(3, ImageConcrete.JsonLDs[1].Id);
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDs[0].SuperClassGUID);
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDs[1].SuperClassGUID);
+                    Assert.NotEqual(ImageConcrete.JsonLDs[0], ImageConcrete.JsonLDs[1]);
+
                     break;
             }
 
@@ -197,20 +199,20 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal(0, ImageConcrete.JsonLDs[0].Id);
+                    Assert.Equal("First", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal(1, ImageConcrete.JsonLDs[0].Id);
+                    Assert.Equal("Second", ImageConcrete.JsonLDs[0].SuperClassGUID);
                     break;
             }
 
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal(0, ImageConcrete.AltData.Id);
+                    Assert.Equal("First", ImageConcrete.AltData.SuperClassGUID);
                     break;
                 case 1:
-                    Assert.Equal(1, ImageConcrete.AltData.Id);
+                    Assert.Equal("Second", ImageConcrete.AltData.SuperClassGUID);
                     break;
             }
 
