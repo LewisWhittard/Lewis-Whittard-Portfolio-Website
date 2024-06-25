@@ -30,12 +30,12 @@ namespace UIFactoryTests.Concrete
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(3)]
-        public void Head_Ctor(int headId)
+        public void Head_Ctor(int pageId)
         {
             SetUp();
 
             //Arrange
-            var head = _heads.Where(x => x.Id == headId).FirstOrDefault();
+            var head = _heads.Where(x => x.PageId == pageId).FirstOrDefault();
             //act
             var headConcrete = new UIFactory.Factory.Concrete.Head.Head(head, _metaService, _jsonLDService);
 
@@ -44,7 +44,7 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(head.DisplayOrder, headConcrete.DisplayOrder);
             Assert.Equal(head.UIConcreteType, headConcrete.UIConcreteType);
 
-            switch (head.PageId)
+            switch (pageId)
             {
                 case 0:
                     Assert.Equal(0,headConcrete.jsonLDDatas[0].PageId);
