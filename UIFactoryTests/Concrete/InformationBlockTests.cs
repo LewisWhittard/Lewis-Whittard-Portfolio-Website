@@ -110,6 +110,8 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassGUID);
                 Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassGUID);
+                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].SuperClassGUID);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].SuperClassGUID);
             }
 
             switch (Id)
@@ -155,6 +157,8 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Null(informationBlockConcrete.Images.First().AltData);
                 Assert.Null(informationBlockConcrete.Images.Last().AltData);
+                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].SuperClassGUID);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].SuperClassGUID);
             }
 
             switch (Id)
@@ -190,6 +194,8 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassGUID);
                 Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassGUID);
+                Assert.Null(informationBlockConcrete.Images.First().JsonLDDatas);
+                Assert.Null(informationBlockConcrete.Images.Last().JsonLDDatas);
             }
 
             switch (Id)
