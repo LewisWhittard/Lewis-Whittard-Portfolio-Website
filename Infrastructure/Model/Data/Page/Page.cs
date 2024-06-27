@@ -27,10 +27,11 @@ namespace Infrastructure.Models.Data.Page
             UIConcreteType = UIConcrete.Page;
         }
 
-        public Page(string pageName, List<Shared.Card.Card>? cards, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id, bool deleted, bool inactive)
+        public Page(string pageName, List<Shared.Card.Card>? cards,Head.Head head, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id, bool deleted, bool inactive)
         {
             Id = id;
             PageName = pageName;
+            Head = head;
             Cards = cards;
             Carousels = carousels;
             CarouselCards = carouselCard;
