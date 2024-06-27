@@ -367,6 +367,33 @@ namespace InfrastructureTests.Model
             TearDown();
         }
 
+        //null _head
+        [Theory]
+        [InlineData("PageName", "GUID", 1, false, false)]
+        public void Page_Constructor_WithParametersAllowNullHead(string pageName, string guid, int id, bool deleted, bool inactive)
+        {
+            //arrange, act
+            SetUp();
+            Page page = new Page(pageName, _cards, null, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+
+            //assert
+            Assert.Equal(pageName, page.PageName);
+            Assert.Equal(_cards, page.Cards);
+            Assert.Equal(_carousels, page.Carousels);
+            Assert.Equal(_carouselCards, page.CarouselCards);
+            Assert.Equal(_informationBlocks, page.InformationBlocks);
+            Assert.Equal(_tables, page.Tables);
+            Assert.Equal(_video, page.Videos);
+            Assert.Equal(guid, page.GUID);
+            Assert.Equal(id, page.Id);
+            Assert.Equal(deleted, page.Deleted);
+            Assert.Equal(inactive, page.Inactive);
+            Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Null(page.Head);
+
+            TearDown();
+        }
+
 
         public void TearDown()
         {
