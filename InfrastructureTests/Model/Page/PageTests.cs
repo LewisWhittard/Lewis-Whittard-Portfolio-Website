@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Models.Data.Carousel;
 using Infrastructure.Models.Data.CarouselCard;
+using Infrastructure.Models.Data.Head;
 using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Interface;
 using Infrastructure.Models.Data.Page;
@@ -18,6 +19,8 @@ namespace InfrastructureTests.Model
         private List<InfomatonBlock> _informationBlocks { get; set; }
         private List<Table> _tables { get; set; }
         private List<Video> _video { get; set; }
+        private Head _head { get; set; }
+
 
 
         public void SetUp()
@@ -176,6 +179,7 @@ namespace InfrastructureTests.Model
             Assert.False(page.Deleted);
             Assert.False(page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Null(page.Head);
         }
 
         [Theory]
@@ -187,7 +191,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -202,6 +206,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -212,7 +217,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, null, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, null, _head, _carousels, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -227,6 +232,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -237,7 +243,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, null, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, null, _carouselCards, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -252,6 +258,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -262,7 +269,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, _carousels, null, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, _carousels, null, _informationBlocks, _tables, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -277,6 +284,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -287,7 +295,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, _carousels, _carouselCards, null, _tables, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, _carousels, _carouselCards, null, _tables, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -302,6 +310,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -312,7 +321,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, null, _video, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, _carousels, _carouselCards, _informationBlocks, null, _video, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -327,6 +336,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
@@ -337,7 +347,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            Page page = new Page(pageName, _cards, _carousels, _carouselCards, _informationBlocks, _tables, null, guid, id, deleted, inactive);
+            Page page = new Page(pageName, _cards, _head, _carousels, _carouselCards, _informationBlocks, _tables, null, guid, id, deleted, inactive);
 
             //assert
             Assert.Equal(pageName, page.PageName);
@@ -352,6 +362,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
             Assert.Equal(UIConcrete.Page, page.UIConcreteType);
+            Assert.Equal(_head, page.Head);
 
             TearDown();
         }
