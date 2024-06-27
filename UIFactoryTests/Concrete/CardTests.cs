@@ -52,6 +52,7 @@ namespace UIFactoryTests.Concrete
             if (Id == 0)
             {
                 Assert.Equal("First", cardConcrete.Image.AltData.SuperClassGUID);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassGUID);
             }
             switch (Id)
             {
@@ -95,6 +96,7 @@ namespace UIFactoryTests.Concrete
             if (Id == 0)
             {
                 Assert.Null(cardConcrete.Image.AltData);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassGUID);
             }
 
             switch (Id)
@@ -127,6 +129,7 @@ namespace UIFactoryTests.Concrete
             if (Id == 0)
             {
                 Assert.Equal("First", cardConcrete.Image.AltData.SuperClassGUID);
+                Assert.Null(cardConcrete.Image.JsonLDDatas);
             }
 
             switch (Id)
