@@ -20,7 +20,7 @@ namespace UIFactory.Strategy
 
         public List<IConcreteUI> ExecuteByPageName(string PageName)
         {
-            return (List<IConcreteUI>)_strategy.CreateUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
+            return (List<IConcreteUI>)_strategy.CreateConcreteUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
         }
     }
 }

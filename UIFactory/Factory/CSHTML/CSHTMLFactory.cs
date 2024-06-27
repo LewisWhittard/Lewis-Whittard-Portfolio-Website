@@ -34,7 +34,7 @@ namespace UIFactory.Factory.CSHTML
             _metaService = metaService;
         }
 
-        public List<IConcreteUI> CreateUIListByPageName(string pageName)
+        public List<IConcreteUI> CreateConcreteUIListByPageName(string pageName)
         {
             List<IConcreteUI> result = new List<IConcreteUI>();
             Page page = _pageService.GetByPageName(pageName, false);

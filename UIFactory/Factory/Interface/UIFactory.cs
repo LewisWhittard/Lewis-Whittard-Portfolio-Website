@@ -4,6 +4,6 @@ namespace UIFactory.Factory.Interface
 {
     public interface IUIFactory
     {
-        public List<IConcreteUI> CreateUIListByPageName(string PageName);
+        public List<IConcreteUI> CreateConcreteUIListByPageName(string PageName);
     }
 }
