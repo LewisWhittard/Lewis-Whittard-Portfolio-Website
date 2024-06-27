@@ -6,17 +6,27 @@ using SEO.Service.AltService.Interface;
 using SEO.Service.MetaService.Interface;
 using Infrastructure.Models.Data.Page;
 using UIFactory.Factory.Concrete.Interface;
+using Infrastructure.Models.Data.Head;
+using SEO.Service.MetaService;
+using SEO.Service.JsonLDService;
+using Infrastructure.Models.Data.Shared.Card;
+using SEO.Service.AltService;
+using Infrastructure.Models.Data.Carousel;
+using Infrastructure.Models.Data.CarouselCard;
+using Infrastructure.Models.Data.InformationBlock;
+using Infrastructure.Models.Data.Table;
+using Infrastructure.Models.Data.Video;
 
 namespace UIFactory.Factory.CSHTML
 {
     public class CSHTMLFactory : IUIFactory
     {
         private readonly IPageService _pageService;
-        private readonly IJsonLDService _jsonLDService;
-        private readonly IAltService _altService;
-        private readonly IMetaService _metaService;
+        private readonly IJsonLDService? _jsonLDService;
+        private readonly IAltService? _altService;
+        private readonly IMetaService? _metaService;
 
-        public CSHTMLFactory(IPageService pageService, IJsonLDService jsonLDService, IAltService altService, IMetaService metaService)
+        public CSHTMLFactory(IPageService pageService, IJsonLDService? jsonLDService, IAltService? altService, IMetaService? metaService)
         {
             _pageService = pageService;
             _jsonLDService = jsonLDService;
@@ -31,36 +41,36 @@ namespace UIFactory.Factory.CSHTML
             var pageData = page.CreateIDataList();
             foreach (var data in pageData)
             {
-                var uI = CreateUI(data,true,true,true);
+                var uI = CreateUI(data);
                 result.Add(uI);
             }
             return result;
         }
 
-        private IConcreteUI CreateUI(IData data, bool jsonLD, bool alt, bool meta)
+        private IConcreteUI CreateUI(IData data)
         {
             switch (data.UIConcreteType)
             {
                 case UIConcrete.Head:
-                    return null;
+                    return new Concrete.Head.Head((Head)data,(MetaService?)_metaService,(JsonLDService?)_jsonLDService);
                     break;
                 case UIConcrete.Card:
-                    return null;
+                    return new Concrete.Shared.Card.Card((Card)data,(AltService?)_altService,(JsonLDService?) _jsonLDService);
                     break;
                 case UIConcrete.Carousel:
-                    return null;
+                    return new Concrete.Carousel.Carousel((Carousel)data, (JsonLDService?)_jsonLDService, (AltService?)_altService);
                     break;
                 case UIConcrete.CarouselCard:
-                    return null;
+                    return new Concrete.CarouselCard.CarouselCard((CarouselCard)data, (JsonLDService?)_jsonLDService, (AltService?)_altService);
                     break;
                 case UIConcrete.InformationBlock:
-                    return null;
+                    return new Concrete.InformationBlock.InformationBlock((InfomatonBlock)data, (JsonLDService?)_jsonLDService, (AltService?)_altService);
                     break;
                 case UIConcrete.Table:
-                    return null;
+                    return new Concrete.Table.Table((Table)data, (JsonLDService?)_jsonLDService);
                     break;
                 case UIConcrete.Video:
-                    return null;
+                    return new Concrete.Video.Video((Video)data, (JsonLDService?)_jsonLDService);
                     break;
                 default:
                     throw new Exception("UIConcreteType not found");
