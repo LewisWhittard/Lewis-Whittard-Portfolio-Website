@@ -7,6 +7,7 @@ namespace Infrastructure.Models.Data.Page
     public class Page : IPage, IData
     {
         public string PageName { get; private set; }
+        public Head.Head Head { get; private set; }
         public List<Shared.Card.Card>? Cards { get; private set; }
         public List<Carousel.Carousel>? Carousels { get; private set; }
         public List<CarouselCard.CarouselCard>? CarouselCards { get; private set; }
@@ -45,6 +46,8 @@ namespace Infrastructure.Models.Data.Page
         public List<IData> CreateIDataList()
         {
             List<IData> result = new List<IData>();
+            result.Add(Head);
+
             if (Cards?.Count() > 0)
             {
                 result.AddRange(Cards.ToList().ConvertAll(x => (IData)x));
