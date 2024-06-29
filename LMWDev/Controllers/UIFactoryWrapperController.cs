@@ -33,42 +33,42 @@ namespace LMWDev.Controllers
             _Factories.Add(new UIFactory.Factory.UIFactory(new PageService(new MockPageRepository()), null, new AltService(new MockAltRepository()), null));
         }
 
-        [HttpGet("default/{PageName}")]
+        [HttpGet("default/page/{PageName}")]
         public IActionResult DefaultGetByPageName(string PageName)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[0]);
             return Ok(_UIFactoryStrategy.ExecuteByPageName(PageName));
         }
 
-        [HttpGet("default/{Search}")]
+        [HttpGet("default/search/{Search}")]
         public IActionResult DefaultGetBySearch(string Search)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[0]);
             return Ok(_UIFactoryStrategy.ExecuteBySearch(Search));
         }
 
-        [HttpGet("ajax/{PageName}")]
+        [HttpGet("ajax/page/{PageName}")]
         public IActionResult AjaxGetByPageName(string PageName)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[1]);
             return Ok(_UIFactoryStrategy.ExecuteByPageName(PageName));
         }
 
-        [HttpGet("ajax/{Search}")]
+        [HttpGet("ajax/search/{Search}")]
         public IActionResult AjaxGetBySearch(string Search)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[1]);
             return Ok(_UIFactoryStrategy.ExecuteBySearch(Search));
         }
 
-        [HttpGet("mauiblazor/{PageName}")]
+        [HttpGet("mauiblazor/page/{PageName}")]
         public IActionResult MauiBlazorGetByPageName(string PageName)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[2]);
             return Ok(_UIFactoryStrategy.ExecuteByPageName(PageName));
         }
 
-        [HttpGet("mauiblazor/{Search}")]
+        [HttpGet("mauiblazor/search/{Search}")]
         public IActionResult MauiBlazorGetBySearch(string Search)
         {
             _UIFactoryStrategy.SwitchStrategy(_Factories[2]);
