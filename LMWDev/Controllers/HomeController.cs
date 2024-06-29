@@ -4,8 +4,10 @@ using LMWDev.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SEO.Repository.AltRepository;
+using SEO.Repository.MockMetaRepository;
 using SEO.Service.AltService;
 using SEO.Service.JsonLDService;
+using SEO.Service.MetaService;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UIFactory.Factory.CSHTML;
@@ -22,14 +24,13 @@ namespace LMWDev.Controllers
         public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
-			_uIFactoryStrategy = new UIFactoryStrategy(new CSHTMLFactory(new PageService(new MockPageRepository()), new JsonLDService(), new AltService(new MockAltRepository()), new MetaService()));
+			_uIFactoryStrategy = new UIFactoryStrategy(new UIFactory.Factory.UIFactory(new PageService(new MockPageRepository()), new JsonLDService(), new AltService(new MockAltRepository()), new MetaService(new MockMetaRepository())));
         }
 
 		public IActionResult Index()
 		{
-			List<IUI> uIs = (List<IUI>)_uIFactoryStrategy.ExecuteByPageName("HomePage");
-			HomeModel ViewModel = new HomeModel(false,uIs);
-			return View(ViewModel);
+
+			return View(null);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

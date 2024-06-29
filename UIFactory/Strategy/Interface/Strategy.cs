@@ -8,5 +8,6 @@ namespace UIFactory.Strategy.Interface
         public IUIFactory _strategy { get; set; }
         public void SwitchStrategy(IUIFactory UIFactory);
         public List<IConcreteUI> ExecuteByPageName(string PageName);
+        public List<IConcreteUI> ExecuteBySearch(string Search);
     }
 }

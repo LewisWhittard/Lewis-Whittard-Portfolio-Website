@@ -22,5 +22,10 @@ namespace UIFactory.Strategy
         {
             return (List<IConcreteUI>)_strategy.CreateConcreteUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
         }
+
+        public List<IConcreteUI> ExecuteBySearch(string Search)
+        {
+            return null;
+        }
     }
 }

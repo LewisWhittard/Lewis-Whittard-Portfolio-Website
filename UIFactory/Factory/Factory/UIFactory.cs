@@ -17,16 +17,16 @@ using Infrastructure.Models.Data.InformationBlock;
 using Infrastructure.Models.Data.Table;
 using Infrastructure.Models.Data.Video;
 
-namespace UIFactory.Factory.CSHTML
+namespace UIFactory.Factory
 {
-    public class CSHTMLFactory : IUIFactory
+    public class UIFactory : IUIFactory
     {
         private readonly IPageService _pageService;
         private readonly IJsonLDService? _jsonLDService;
         private readonly IAltService? _altService;
         private readonly IMetaService? _metaService;
 
-        public CSHTMLFactory(IPageService pageService, IJsonLDService? jsonLDService, IAltService? altService, IMetaService? metaService)
+        public UIFactory(IPageService pageService, IJsonLDService? jsonLDService, IAltService? altService, IMetaService? metaService)
         {
             _pageService = pageService;
             _jsonLDService = jsonLDService;
