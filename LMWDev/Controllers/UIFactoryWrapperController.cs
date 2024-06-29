@@ -14,12 +14,12 @@ namespace LMWDev.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UIFactoryStrategyWrapperController : ControllerBase
+    public class UIFactoryStrategyAPIController : ControllerBase
     {
         private UIFactoryStrategy _UIFactoryStrategy;
         private List<UIFactory.Factory.UIFactory> _Factories;
 
-        public UIFactoryStrategyWrapperController()
+        public UIFactoryStrategyAPIController()
         {
             _Factories = new List<UIFactory.Factory.UIFactory>();
 
