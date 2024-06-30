@@ -18,7 +18,7 @@ namespace InfrastructureTests.Model
             Assert.Null(header.DisplayOrder);
             Assert.Equal(0, header.TableID);
             Assert.Null(header.Value);
-            Assert.Null(header.GUID);
+            Assert.Null(header.UIID);
             Assert.Equal(UIConcrete.Header, header.UIConcreteType);
         }
 
@@ -27,10 +27,10 @@ namespace InfrastructureTests.Model
         [InlineData(2, true, false, 5, 15, "Another Value", "XYZ789")]
         [InlineData(1, true, true, 10, 20, "Test Value", "ABC123")]
         [InlineData(2, false, false, 5, 15, "Another Value", "XYZ789")]
-        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value, string gUID)
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, int displayOrder, int tableID, string value, string uIId)
         {
             // Act
-            var header = new Header(id, deleted, inactive, displayOrder, tableID, value, gUID);
+            var header = new Header(id, deleted, inactive, displayOrder, tableID, value, uIId);
 
             // Assert
             Assert.Equal(id, header.Id);
@@ -39,7 +39,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(displayOrder, header.DisplayOrder);
             Assert.Equal(tableID, header.TableID);
             Assert.Equal(value, header.Value);
-            Assert.Equal(gUID, header.GUID);
+            Assert.Equal(uIId, header.UIID);
             Assert.Equal(UIConcrete.Header, header.UIConcreteType);
         }
     }

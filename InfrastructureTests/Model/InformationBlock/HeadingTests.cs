@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.Null(heading.Text);
             Assert.Null(heading.DisplayOrder);
             Assert.Equal(0, heading.InformationBlockid);
-            Assert.Null(heading.GUID);
+            Assert.Null(heading.UIID);
             Assert.Equal(0, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
         }
@@ -29,10 +29,10 @@ namespace InfrastructureTests.Model
         [InlineData(2, true, false, "Another Heading", 5, 2, "XYZ789", 2)]
         [InlineData(1, true, true, "Test Heading", 10, 1, "ABC123", 1)]
         [InlineData(2, false, false, "Another Heading", 5, 2, "XYZ789", 2)]
-        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string gUID, int level)
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string uIId, int level)
         {
             // Act
-            var heading = new Heading(id, deleted, inactive, text, displayOrder, informationBlockid, gUID, level);
+            var heading = new Heading(id, deleted, inactive, text, displayOrder, informationBlockid, uIId, level);
 
             // Assert
             Assert.Equal(id, heading.Id);
@@ -41,7 +41,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(text, heading.Text);
             Assert.Equal(displayOrder, heading.DisplayOrder);
             Assert.Equal(informationBlockid, heading.InformationBlockid);
-            Assert.Equal(gUID, heading.GUID);
+            Assert.Equal(uIId, heading.UIID);
             Assert.Equal(level, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
         }

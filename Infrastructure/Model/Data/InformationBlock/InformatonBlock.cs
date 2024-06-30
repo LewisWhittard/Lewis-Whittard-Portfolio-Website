@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.InformationBlock
         public List<Paragraph>? Paragraphs { get; private set; }
         public List<Heading>? Headings { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
         public int PageId { get; private set; }
 
         [JsonIgnore]
@@ -25,7 +25,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             UIConcreteType = UIConcrete.InformationBlock;
         }
 
-        public InfomatonBlock(int id, bool deleted, bool inactive, List<Image>? images, List<Paragraph>? paragraphs, List<Heading>? headings, int displayOrder, string gUID, int pageId)
+        public InfomatonBlock(int id, bool deleted, bool inactive, List<Image>? images, List<Paragraph>? paragraphs, List<Heading>? headings, int displayOrder, string uIId, int pageId)
         {
 
             Id = id;
@@ -35,7 +35,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             Paragraphs = paragraphs;
             Headings = headings;
             DisplayOrder = displayOrder;
-            GUID = gUID;
+            UIID = uIId;
             UIConcreteType = UIConcrete.InformationBlock;
             PageId = pageId;
         }

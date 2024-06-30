@@ -43,7 +43,7 @@ namespace UIFactory.Factory.Concrete.CarouselCard
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(CarouselCardData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassUIID(CarouselCardData.UIID, false);
             }
             else
             {

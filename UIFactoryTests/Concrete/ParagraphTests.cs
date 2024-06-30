@@ -10,8 +10,8 @@ namespace UIFactoryTests.Concrete
         public void SetUp()
         {
             _paragraphs = new List<Paragraph>();
-            _paragraphs.Add(new Paragraph("Paragraph",0,0,false,false,0,"ParagraphGUID0"));
-            _paragraphs.Add(new Paragraph("Paragraph", 1, 1, false, false, 1, "ParagraphGUID1"));
+            _paragraphs.Add(new Paragraph("Paragraph",0,0,false,false,0,"ParagraphUIID0"));
+            _paragraphs.Add(new Paragraph("Paragraph", 1, 1, false, false, 1, "ParagraphUIID1"));
         }
 
         [Theory]

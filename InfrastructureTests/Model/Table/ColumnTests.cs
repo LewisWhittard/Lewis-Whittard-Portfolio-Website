@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.Null(column.Value);
             Assert.Null(column.DisplayOrder);
             Assert.Equal(0, column.TableID);
-            Assert.Null(column.GUID);
+            Assert.Null(column.UIID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
         }
 
@@ -28,10 +28,10 @@ namespace InfrastructureTests.Model
         [InlineData(2, true, false, "Another Value", 5, 15, "XYZ789",1)]
         [InlineData(1, true, true, "Test Value", 10, 20, "ABC123", 0)]
         [InlineData(2, false, false, "Another Value", 5, 15, "XYZ789", 1)]
-        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string gUID, int rowId)
+        public void Constructor_InitializesPropertiesCorrectly(int id, bool deleted, bool inactive, string value, int displayOrder, int tableID, string uIId, int rowId)
         {
             // Act
-            var column = new Column(id, deleted, inactive, value, displayOrder, tableID, gUID,rowId);
+            var column = new Column(id, deleted, inactive, value, displayOrder, tableID, uIId,rowId);
 
             // Assert
             Assert.Equal(id, column.Id);
@@ -40,7 +40,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(value, column.Value);
             Assert.Equal(displayOrder, column.DisplayOrder);
             Assert.Equal(tableID, column.TableID);
-            Assert.Equal(gUID, column.GUID);
+            Assert.Equal(uIId, column.UIID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
             Assert.Equal(rowId, column.RowId);
         }

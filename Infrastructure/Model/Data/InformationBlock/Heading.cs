@@ -12,7 +12,7 @@ namespace Infrastructure.Models.Data.InformationBlock
         public string Text { get; private set; }
         public int? DisplayOrder { get; private set; }
         public int InformationBlockid { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
         public int Level { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
@@ -22,7 +22,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             UIConcreteType = UIConcrete.Heading;
         }
 
-        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string gUID, int level)
+        public Heading(int id, bool deleted, bool inactive, string text, int displayOrder, int informationBlockid, string uIId, int level)
         {
             Id = id;
             Deleted = deleted;
@@ -30,7 +30,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             Text = text;
             DisplayOrder = displayOrder;
             InformationBlockid = informationBlockid;
-            GUID = gUID;
+            UIID = uIId;
             Level = level;
             UIConcreteType = UIConcrete.Heading;
         }

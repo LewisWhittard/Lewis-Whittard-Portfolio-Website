@@ -22,8 +22,8 @@ namespace UIFactoryTests.Concrete
             var imageDatas = new List<Infrastructure.Models.Data.Shared.Image.Image>();
             imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 0, false, false, "First", null, 0, null));
             imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 1, false, false, "Second", null, 1, null));
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 2, false, false, "Image3GUID", null, 2, null));
-            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 3, false, false, "Image4GUID", null, 3, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 2, false, false, "Image3UIID", null, 2, null));
+            imageDatas.Add(new Infrastructure.Models.Data.Shared.Image.Image("", null, 3, false, false, "Image4UIID", null, 3, null));
 
             _cardDatas.Add(new Card(imageDatas[0], "TitleCard0", "DescriptionCard0", "NavigationCard0", 0, false, false, 0, "First", 0,null));
             _cardDatas.Add(new Card(imageDatas[1], "TitleCard1", "DescriptionCard1", "NavigationCard1", 1, false, false, 1, "Second", 1, null));
@@ -51,26 +51,26 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassGUID);
-                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassGUID);
+                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassUIID);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassUIID);
             }
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 1:
-                    Assert.Equal("Second", cardConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Second", cardConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 2:
                     Assert.Equal(0, cardConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, cardConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal(null, cardConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[0].SuperClassGUID);
-                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[1].SuperClassGUID);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[1].SuperClassUIID);
                     Assert.NotEqual(cardConcrete.JsonLDDatas[0], cardConcrete.JsonLDDatas[1]);
                     break;
             }
@@ -96,13 +96,13 @@ namespace UIFactoryTests.Concrete
             if (Id == 0)
             {
                 Assert.Null(cardConcrete.Image.AltData);
-                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassGUID);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassUIID);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
             }
             TearDown();
@@ -128,7 +128,7 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassGUID);
+                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassUIID);
                 Assert.Null(cardConcrete.Image.JsonLDDatas);
             }
 

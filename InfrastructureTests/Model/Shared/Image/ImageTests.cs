@@ -17,7 +17,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(0, image.Id);
             Assert.False(image.Deleted);
             Assert.False(image.Inactive);
-            Assert.Null(image.GUID);
+            Assert.Null(image.UIID);
             Assert.Equal(UIConcrete.Image, image.UIConcreteType);
         }
 
@@ -26,10 +26,10 @@ namespace InfrastructureTests.Model
         [InlineData("anotherexample.png", null, 2, true, false, "XYZ789",null,1,null)]
         [InlineData("example.jpg", 10, 1, true, true, "ABC123",null,null,1)]
         [InlineData("anotherexample.png", null, 2, false, false, "XYZ789",null,null,null)]
-        public void Constructor_InitializesPropertiesCorrectly(string source, int? displayOrder, int id, bool deleted, bool inactive, string gUID, int? cardId, int? informationBlockId, int? carouselId)
+        public void Constructor_InitializesPropertiesCorrectly(string source, int? displayOrder, int id, bool deleted, bool inactive, string uIId, int? cardId, int? informationBlockId, int? carouselId)
         {
             // Act
-            var image = new Image(source, displayOrder, id, deleted, inactive, gUID,cardId,informationBlockId,carouselId);
+            var image = new Image(source, displayOrder, id, deleted, inactive, uIId,cardId,informationBlockId,carouselId);
 
             // Assert
             Assert.Equal(source, image.Source);
@@ -37,7 +37,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(id, image.Id);
             Assert.Equal(deleted, image.Deleted);
             Assert.Equal(inactive, image.Inactive);
-            Assert.Equal(gUID, image.GUID);
+            Assert.Equal(uIId, image.UIID);
             Assert.Equal(UIConcrete.Image, image.UIConcreteType);
             Assert.Equal(cardId, image.CardId);
             Assert.Equal(informationBlockId, image.InformationBlockId);

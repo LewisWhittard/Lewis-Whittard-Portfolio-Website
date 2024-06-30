@@ -13,18 +13,18 @@ namespace SEO.Service.AltService
             _altRepository = altRepository;
         }
 
-        public AltData GetBySuperClassGUID(string superClassGUID, bool includeInactive)
+        public AltData GetBySuperClassUIID(string superClassUIID, bool includeInactive)
         {
 
             AltData data = null;
 
             if (includeInactive == true) 
             {
-                data = _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted).FirstOrDefault();
+                data = _altRepository.GetAltDatas().Where(x => x.SuperClassUIID == superClassUIID && !x.Deleted).FirstOrDefault();
             }
             else
             {
-                data = _altRepository.GetAltDatas().Where(x => x.SuperClassGUID == superClassGUID && !x.Deleted && !x.Inactive).FirstOrDefault();
+                data = _altRepository.GetAltDatas().Where(x => x.SuperClassUIID == superClassUIID && !x.Deleted && !x.Inactive).FirstOrDefault();
             }
 
             return data;

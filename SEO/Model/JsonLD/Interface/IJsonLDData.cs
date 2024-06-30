@@ -4,7 +4,7 @@ namespace SEO.Model.JsonLD.Interface
 {
     public interface IJsonLDData
     {
-        string SuperClassGUID { get; }
+        string SuperClassUIID { get; }
         UIConcrete? UIConcreteType { get; }
         int? PageId { get; }
     }

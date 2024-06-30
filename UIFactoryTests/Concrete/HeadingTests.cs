@@ -10,8 +10,8 @@ namespace UIFactoryTests.Concrete
         public void SetUp()
         {
             _headings = new List<Heading>();
-            _headings.Add(new Heading(0, false, false, "Heading0Text", 0, 0, "Heading0GUID", 0));
-            _headings.Add(new Heading(1, false, false, "Heading1Text", 1, 1, "Heading1GUID", 1));
+            _headings.Add(new Heading(0, false, false, "Heading0Text", 0, 0, "Heading0UIID", 0));
+            _headings.Add(new Heading(1, false, false, "Heading1Text", 1, 1, "Heading1UIID", 1));
         }
 
         [Theory]

@@ -14,21 +14,21 @@ namespace Infrastructure.Models.Data.CarouselCard
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
 
         public CarouselCard()
         {
             UIConcreteType = UIConcrete.CarouselCard;
         }
 
-        public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string gUID, int pageId)
+        public CarouselCard(int id, bool deleted, bool inactive, List<Shared.Card.Card> cards, int? displayOrder, string uIId, int pageId)
         {
             Id = id;
             Deleted = deleted;
             Inactive = inactive;
             Cards = cards;
             DisplayOrder = displayOrder;
-            GUID = gUID;
+            UIID = uIId;
             UIConcreteType = UIConcrete.CarouselCard;
             PageId = pageId;
         }

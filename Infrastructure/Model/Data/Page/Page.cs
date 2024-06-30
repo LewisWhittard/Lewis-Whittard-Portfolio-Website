@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Page
         public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; private set; }
         public List<Video.Video>? Videos { get; private set; }
         public List<Table.Table>? Tables { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
         public int Id { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
@@ -27,7 +27,7 @@ namespace Infrastructure.Models.Data.Page
             UIConcreteType = UIConcrete.Page;
         }
 
-        public Page(string pageName, List<Shared.Card.Card>? cards,Head.Head? head, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string gUID, int id, bool deleted, bool inactive)
+        public Page(string pageName, List<Shared.Card.Card>? cards,Head.Head? head, List<Carousel.Carousel>? carousels, List<CarouselCard.CarouselCard>? carouselCard, List<InformationBlock.InfomatonBlock>? informationBlocks, List<Table.Table>? tables, List<Video.Video>? videos, string uIId, int id, bool deleted, bool inactive)
         {
             Id = id;
             PageName = pageName;
@@ -38,7 +38,7 @@ namespace Infrastructure.Models.Data.Page
             InformationBlocks = informationBlocks;
             Tables = tables;
             Videos = videos;
-            GUID = gUID;
+            UIID = uIId;
             Deleted = deleted;
             Inactive = inactive;
             UIConcreteType = UIConcrete.Page;

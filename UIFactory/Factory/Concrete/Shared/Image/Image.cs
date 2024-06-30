@@ -36,7 +36,7 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         {
             if (_altService != null)
             {
-                AltData = _altService.GetBySuperClassGUID(ImageData.GUID, false);
+                AltData = _altService.GetBySuperClassUIID(ImageData.UIID, false);
             }
             else
             {
@@ -49,7 +49,7 @@ namespace UIFactory.Factory.Concrete.Shared.Image
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(ImageData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassUIID(ImageData.UIID, false);
             }
             else
             {

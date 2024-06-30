@@ -41,18 +41,18 @@ namespace UIFactoryTests.Concrete
             switch (videoId)
             {
                 case 0:
-                    Assert.Equal("First", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("First", videoConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 1:
-                    Assert.Equal("Second", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Second", videoConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 2:
-                    Assert.Equal("Multiple", videoConcrete.JsonLDDatas[0].SuperClassGUID);
-                    Assert.Equal("Multiple", videoConcrete.JsonLDDatas[1].SuperClassGUID);
+                    Assert.Equal("Multiple", videoConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Multiple", videoConcrete.JsonLDDatas[1].SuperClassUIID);
                     Assert.NotEqual(videoConcrete.JsonLDDatas[0], videoConcrete.JsonLDDatas[1]);
                     break;
                 case 3:
-                    Assert.Equal(null, videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal(null, videoConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 4:
                     Assert.Equal(0, videoConcrete.JsonLDDatas.Count());
@@ -119,10 +119,10 @@ namespace UIFactoryTests.Concrete
             switch (videoId)
             {
                 case 0:
-                    Assert.Equal("First", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("First", videoConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
                 case 1:
-                    Assert.Equal("Second", videoConcrete.JsonLDDatas[0].SuperClassGUID);
+                    Assert.Equal("Second", videoConcrete.JsonLDDatas[0].SuperClassUIID);
                     break;
             }
             TearDown();

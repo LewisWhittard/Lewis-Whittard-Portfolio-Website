@@ -23,7 +23,7 @@ namespace SEOTests.Model
             Assert.Null(metaData.UIConcreteType);
             Assert.Equal(PageId, metaData.PageId);
             Assert.Null(metaData.DisplayOrder);
-            Assert.Null(metaData.GUID);
+            Assert.Null(metaData.UIID);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace SEOTests.Model
             Assert.Equal(0, metaData.Id);
             Assert.Equal(Name.Viewport, metaData.Name);
             Assert.Equal(null, metaData.Content);
-            Assert.Equal(null, metaData.GUID);
+            Assert.Equal(null, metaData.UIID);
             Assert.Equal(null, metaData.Charset);
             Assert.Equal(false, metaData.Deleted);
             Assert.Equal(false, metaData.Inactive);

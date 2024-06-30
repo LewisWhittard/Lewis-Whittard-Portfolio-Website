@@ -10,7 +10,7 @@ namespace InfrastructureTests.Model
 
         private void SetUp()
         {
-            _image = new Image("Source", 0, 0, false, false, "GUID",0,null,null);
+            _image = new Image("Source", 0, 0, false, false, "UIID",0,null,null);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace InfrastructureTests.Model
             Assert.False(card.Deleted);
             Assert.False(card.Inactive);
             Assert.Null(card.DisplayOrder);
-            Assert.Null(card.GUID);
+            Assert.Null(card.UIID);
             Assert.Null(card.PageId);
             Assert.Null(card.CarouselCardId);
 
@@ -41,12 +41,12 @@ namespace InfrastructureTests.Model
         [InlineData("Sample Title 1", "Sample Description 1", "Sample Navigation 1", 1, true, true, 10, "12345-67890",9,55)]
         [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, false, 20, "54321-09876",10,66)]
         [InlineData("Sample Title 2", "Sample Description 2", "Sample Navigation 2", 2, false, false, 20, "54321-09876", null,null)]
-        public void Card_Constructor_SetsPropertiesCorrectly(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int? pageId, int? carouselCardId)
+        public void Card_Constructor_SetsPropertiesCorrectly(string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string uIId, int? pageId, int? carouselCardId)
         {
             SetUp();
 
             // Act
-            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, gUID, pageId, carouselCardId);
+            var card = new Card(_image, title, description, navigation, id, deleted, inactive, displayOrder, uIId, pageId, carouselCardId);
 
             // Assert
             Assert.Equal(_image, card.Image);
@@ -57,7 +57,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, card.Deleted);
             Assert.Equal(inactive, card.Inactive);
             Assert.Equal(displayOrder, card.DisplayOrder);
-            Assert.Equal(gUID, card.GUID);
+            Assert.Equal(uIId, card.UIID);
             Assert.Equal(UIConcrete.Card, card.UIConcreteType);
             Assert.Equal(pageId, card.PageId);
             Assert.Equal(carouselCardId, card.CarouselCardId);

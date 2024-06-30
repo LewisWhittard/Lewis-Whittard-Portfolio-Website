@@ -14,14 +14,14 @@ namespace Infrastructure.Models.Data.Carousel
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
 
         public Carousel()
         {
             UIConcreteType = UIConcrete.Carousel;
         }
 
-        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string gUID, int pageId)
+        public Carousel(int id, bool deleted, bool inactive, List<Shared.Image.Image> images, int? displayOrder, string uIId, int pageId)
         {
             Id = id;
             Deleted = deleted;
@@ -29,7 +29,7 @@ namespace Infrastructure.Models.Data.Carousel
             Images = images;
             DisplayOrder = displayOrder;
             UIConcreteType = UIConcrete.Carousel;
-            GUID = gUID;
+            UIID = uIId;
             PageId = pageId;
         }
     }

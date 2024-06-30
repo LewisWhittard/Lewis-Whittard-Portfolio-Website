@@ -37,7 +37,7 @@ namespace UIFactory.Factory.Concrete.Shared.Card
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetBySuperClassGUID(CardData.GUID, false);
+                JsonLDDatas = _jsonLDService.GetBySuperClassUIID(CardData.UIID, false);
             }
             else
             {

@@ -14,13 +14,13 @@ namespace Infrastructure.Models.Data.Shared.Card
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string GUID { get; private set; }
+        public string UIID { get; private set; }
         public int? PageId { get; private set; }
         public int? CarouselCardId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
 
-        public Card(Image.Image image, string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string gUID, int? pageId, int? carouselCardId)
+        public Card(Image.Image image, string title, string description, string navigation, int id, bool deleted, bool inactive, int displayOrder, string uIId, int? pageId, int? carouselCardId)
         {
             Image = image;
             Title = title;
@@ -30,7 +30,7 @@ namespace Infrastructure.Models.Data.Shared.Card
             Deleted = deleted;
             Inactive = inactive;
             DisplayOrder = displayOrder;
-            GUID = gUID;
+            UIID = uIId;
             UIConcreteType = UIConcrete.Card;
             PageId = pageId;
             CarouselCardId = carouselCardId;
