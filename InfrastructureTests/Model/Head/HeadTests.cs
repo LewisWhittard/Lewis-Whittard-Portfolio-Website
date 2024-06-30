@@ -13,7 +13,7 @@ namespace InfrastructureTests.Model
             // Assert
             Assert.Equal(0, head.Id);
             Assert.Null(head.DisplayOrder);
-            Assert.Null(head.UIID);
+            Assert.Null(head.UIId);
             Assert.False(head.Deleted);
             Assert.False(head.Inactive);
             Assert.Equal(UIConcrete.Head, head.UIConcreteType);
@@ -34,7 +34,7 @@ namespace InfrastructureTests.Model
             // Assert
             Assert.Equal(id, head.Id);
             Assert.Null(head.DisplayOrder);
-            Assert.Equal(uIId,head.UIID);
+            Assert.Equal(uIId,head.UIId);
             Assert.Equal(deleted, head.Deleted);
             Assert.Equal(inactive, head.Inactive);
             Assert.Equal(UIConcrete.Head, head.UIConcreteType);

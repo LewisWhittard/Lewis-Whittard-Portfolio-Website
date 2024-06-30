@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.CarouselCard
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
 
         public CarouselCard()
         {
@@ -28,7 +28,7 @@ namespace Infrastructure.Models.Data.CarouselCard
             Inactive = inactive;
             Cards = cards;
             DisplayOrder = displayOrder;
-            UIID = uIId;
+            UIId = uIId;
             UIConcreteType = UIConcrete.CarouselCard;
             PageId = pageId;
         }

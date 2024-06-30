@@ -28,7 +28,7 @@ namespace SEOTests.Model
             Assert.Equal(inactive, jsonLDData.Inactive);
             Assert.Equal(pageId, jsonLDData.PageId);
             Assert.Null(jsonLDData.DisplayOrder);
-            Assert.Null(jsonLDData.UIID);
+            Assert.Null(jsonLDData.UIId);
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace SEOTests.Model
             Assert.Equal(null, jsonLDData.UIConcreteType);
             Assert.Equal(0, jsonLDData.Id);
             Assert.Equal(null, jsonLDData.DisplayOrder);
-            Assert.Equal(null, jsonLDData.UIID);
+            Assert.Equal(null, jsonLDData.UIId);
             Assert.Equal(false, jsonLDData.Deleted);
             Assert.Equal(false, jsonLDData.Inactive);
             Assert.Equal(null, jsonLDData.PageId);

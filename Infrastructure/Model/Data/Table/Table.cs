@@ -13,7 +13,7 @@ namespace Infrastructure.Models.Data.Table
         public List<Header>? Headers { get; private set; }
         public List<List<Column>>? Columns { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
@@ -32,7 +32,7 @@ namespace Infrastructure.Models.Data.Table
             Columns = columns;
             UIConcreteType = UIConcrete.Table;
             DisplayOrder = displayOrder;
-            UIID = uIId;
+            UIId = uIId;
             Title = title;
             PageId = pageId;
         }

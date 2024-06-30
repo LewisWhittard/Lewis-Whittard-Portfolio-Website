@@ -18,7 +18,7 @@ namespace InfrastructureTests.Model
             Assert.Null(header.DisplayOrder);
             Assert.Equal(0, header.TableID);
             Assert.Null(header.Value);
-            Assert.Null(header.UIID);
+            Assert.Null(header.UIId);
             Assert.Equal(UIConcrete.Header, header.UIConcreteType);
         }
 
@@ -39,7 +39,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(displayOrder, header.DisplayOrder);
             Assert.Equal(tableID, header.TableID);
             Assert.Equal(value, header.Value);
-            Assert.Equal(uIId, header.UIID);
+            Assert.Equal(uIId, header.UIId);
             Assert.Equal(UIConcrete.Header, header.UIConcreteType);
         }
     }

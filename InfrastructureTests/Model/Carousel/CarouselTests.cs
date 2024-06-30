@@ -31,20 +31,20 @@ namespace InfrastructureTests.Model
             Assert.Null(carousel.Images);
             Assert.Null(carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
-            Assert.Null(carousel.UIID);
+            Assert.Null(carousel.UIId);
             Assert.Equal(0, carousel.PageId);
         }
 
         [Theory]
-        [InlineData(1, true, false, 4, "uiid1",3)]
-        [InlineData(2, false, true, 3, "uiid2",4)]
-        [InlineData(3, false, false, 2, "uiid3",5)]
-        [InlineData(4, true, true, 1, "uiid4",6)]
-        public void Constructor_Parameterized_ShouldInitializeProperties(int id, bool deleted, bool inactive, int displayOrder, string uiid, int pageId)
+        [InlineData(1, true, false, 4, "uIId1",3)]
+        [InlineData(2, false, true, 3, "uIId2",4)]
+        [InlineData(3, false, false, 2, "uIId3",5)]
+        [InlineData(4, true, true, 1, "uIId4",6)]
+        public void Constructor_Parameterized_ShouldInitializeProperties(int id, bool deleted, bool inactive, int displayOrder, string uIId, int pageId)
         {
             // Act, arrange
             SetUp();
-            var carousel = new Carousel(id, deleted, inactive, _images, displayOrder, uiid, pageId);
+            var carousel = new Carousel(id, deleted, inactive, _images, displayOrder, uIId, pageId);
 
             // Assert
             Assert.Equal(id, carousel.Id);
@@ -53,7 +53,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_images, carousel.Images);
             Assert.Equal(displayOrder, carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
-            Assert.Equal(uiid, carousel.UIID);
+            Assert.Equal(uIId, carousel.UIId);
             Assert.Equal(pageId, carousel.PageId);
 
             TearDown();

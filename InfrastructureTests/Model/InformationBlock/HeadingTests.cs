@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.Null(heading.Text);
             Assert.Null(heading.DisplayOrder);
             Assert.Equal(0, heading.InformationBlockid);
-            Assert.Null(heading.UIID);
+            Assert.Null(heading.UIId);
             Assert.Equal(0, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
         }
@@ -41,7 +41,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(text, heading.Text);
             Assert.Equal(displayOrder, heading.DisplayOrder);
             Assert.Equal(informationBlockid, heading.InformationBlockid);
-            Assert.Equal(uIId, heading.UIID);
+            Assert.Equal(uIId, heading.UIId);
             Assert.Equal(level, heading.Level);
             Assert.Equal(UIConcrete.Heading, heading.UIConcreteType);
         }

@@ -22,7 +22,7 @@ namespace SEOTests.Model
             Assert.Equal(deleted, altData.Deleted);
             Assert.Equal(inactive, altData.Inactive);
             Assert.Null(altData.DisplayOrder);
-            Assert.Null(altData.UIID);
+            Assert.Null(altData.UIId);
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace SEOTests.Model
             Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(null, altData.DisplayOrder);
             Assert.Equal(null, altData.Value);
-            Assert.Equal(null, altData.UIID);
+            Assert.Equal(null, altData.UIId);
             Assert.Equal(0, altData.Id);
             Assert.Equal(false, altData.Deleted);
             Assert.Equal(false, altData.Inactive);

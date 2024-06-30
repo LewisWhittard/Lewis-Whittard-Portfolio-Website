@@ -11,7 +11,7 @@ namespace Infrastructure.Models.Data.Shared.Image
         public int Id { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
         public int? InformationBlockId { get; private set; }
@@ -30,7 +30,7 @@ namespace Infrastructure.Models.Data.Shared.Image
             Id = iD;
             Deleted = deleted;
             Inactive = inactive;
-            UIID = uIId;
+            UIId = uIId;
             UIConcreteType = UIConcrete.Image;
             CardId = cardId;
             InformationBlockId = informationBlockId;

@@ -7,7 +7,7 @@ namespace Infrastructure.Models.Data.Head
     {
         public int Id { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string? UIID { get; private set; }
+        public string? UIId { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
@@ -18,7 +18,7 @@ namespace Infrastructure.Models.Data.Head
         {
             Id = id;
             DisplayOrder = null;
-            UIID = uIId;
+            UIId = uIId;
             Deleted = deleted;
             Inactive = inactive;
             UIConcreteType = UIConcrete.Head;
