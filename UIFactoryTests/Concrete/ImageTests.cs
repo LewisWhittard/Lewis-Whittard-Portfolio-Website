@@ -45,16 +45,16 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal("First", ImageConcrete.AltData.SuperClassUIID);
+                    Assert.Equal("First", ImageConcrete.AltData.UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", ImageConcrete.AltData.SuperClassUIID);
+                    Assert.Equal("Second", ImageConcrete.AltData.UIId);
                     break;
                 case 2:
                     Assert.Null(ImageConcrete.AltData);
                     break;
                 case 3:
-                    Assert.Equal(null, ImageConcrete.AltData.SuperClassUIID);
+                    Assert.Equal(null, ImageConcrete.AltData.UIId);
                     break;
             }
 
@@ -116,20 +116,20 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal("First", ImageConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", ImageConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", ImageConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", ImageConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, ImageConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, ImageConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, ImageConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", ImageConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", ImageConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", ImageConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(ImageConcrete.JsonLDDatas[0], ImageConcrete.JsonLDDatas[1]);
 
                     break;
@@ -199,20 +199,20 @@ namespace UIFactoryTests.Concrete
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal("First", ImageConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", ImageConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", ImageConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", ImageConcrete.JsonLDDatas[0].UIId);
                     break;
             }
 
             switch (imageId)
             {
                 case 0:
-                    Assert.Equal("First", ImageConcrete.AltData.SuperClassUIID);
+                    Assert.Equal("First", ImageConcrete.AltData.UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", ImageConcrete.AltData.SuperClassUIID);
+                    Assert.Equal("Second", ImageConcrete.AltData.UIId);
                     break;
             }
 

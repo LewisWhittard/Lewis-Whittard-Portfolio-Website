@@ -40,7 +40,7 @@ namespace UIFactory.Factory.Concrete.InformationBlock
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetBySuperClassUIID(InformationBlockData.UIID, false);
+                JsonLDDatas = _jsonLDService.GetByUIId(InformationBlockData.UIID, false);
             }
             else
             {

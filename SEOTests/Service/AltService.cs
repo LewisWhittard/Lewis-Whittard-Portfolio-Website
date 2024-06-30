@@ -13,22 +13,22 @@ namespace SEOTests.Service
         [InlineData("Deleted", false)]
         [InlineData("IncludeInactive", true)]
         [InlineData("ExcludeInactive", false)]
-        public void GetBySuperClassUIID_ReturnsALT(string superClassUIID, bool includeInactive)
+        public void GetByUIId_ReturnsALT(string uIId, bool includeInactive)
         {
             // Arrange
             MockAltRepository altRepository = new MockAltRepository();
             AltService altService = new AltService(altRepository);
             // Act
-            AltData altData = altService.GetBySuperClassUIID(superClassUIID, includeInactive);
+            AltData altData = altService.GetByUIId(uIId, includeInactive);
 
             // Assert
-            if (superClassUIID == "Non" || superClassUIID == "Deleted" || superClassUIID == "ExcludeInactive")
+            if (uIId == "Non" || uIId == "Deleted" || uIId == "ExcludeInactive")
             {
                 Assert.Null(altData);
             }
             else
             {
-                Assert.Equal(superClassUIID, altData.SuperClassUIID);
+                Assert.Equal(uIId, altData.UIId);
             }
         }
 

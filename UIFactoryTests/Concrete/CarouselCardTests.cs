@@ -84,29 +84,29 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(carouselCard.UIConcreteType, carouselCardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.AltData.SuperClassUIID);
-                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.AltData.SuperClassUIID);
-                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.AltData.UIId);
+                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.AltData.UIId);
+                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.JsonLDDatas[0].UIId);
+                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.JsonLDDatas[0].UIId);
             }
             
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", carouselCardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", carouselCardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", carouselCardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", carouselCardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, carouselCardConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, carouselCardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, carouselCardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", carouselCardConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", carouselCardConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", carouselCardConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", carouselCardConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(carouselCardConcrete.JsonLDDatas[0], carouselCardConcrete.JsonLDDatas[1]);
 
                     break;
@@ -136,8 +136,8 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(carouselCard.UIConcreteType, carouselCardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.AltData.SuperClassUIID);
-                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.AltData.SuperClassUIID);
+                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.AltData.UIId);
+                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.AltData.UIId);
                 Assert.Null(carouselCardConcrete.Cards[0].Image.JsonLDDatas);
                 Assert.Null(carouselCardConcrete.Cards[1].Image.JsonLDDatas);
             }
@@ -183,14 +183,14 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Null(carouselCardConcrete.Cards[0].Image.AltData);
                 Assert.Null(carouselCardConcrete.Cards[1].Image.AltData);
-                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", carouselCardConcrete.Cards[0].Image.JsonLDDatas[0].UIId);
+                Assert.Equal("Second", carouselCardConcrete.Cards[1].Image.JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", carouselCardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", carouselCardConcrete.JsonLDDatas[0].UIId);
                     break;
             }
             TearDown();

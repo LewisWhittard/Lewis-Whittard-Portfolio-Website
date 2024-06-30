@@ -5,17 +5,17 @@ namespace SEOTests.Model
     public class AltCtor
     {
         [Theory]
-        [InlineData("SuperClassUIID", "Value", 1, false, false)]
-        [InlineData("SuperClassUIID", "Value", 2, true, false)]
-        [InlineData("SuperClassUIID", "Value", 3, false, true)]
-        [InlineData("SuperClassUIID", "Value", 4, true, true)]
-        public void MetaData_Constructor_SetsPropertiesCorrectly(string superClassUIID, string value, int id, bool deleted, bool inactive)
+        [InlineData("UIId", "Value", 1, false, false)]
+        [InlineData("UIId", "Value", 2, true, false)]
+        [InlineData("UIId", "Value", 3, false, true)]
+        [InlineData("UIId", "Value", 4, true, true)]
+        public void MetaData_Constructor_SetsPropertiesCorrectly(string uIId, string value, int id, bool deleted, bool inactive)
         {
             //arrange, Act
-            AltData altData = new AltData(superClassUIID, value, id, deleted, inactive);
+            AltData altData = new AltData(uIId, value, id, deleted, inactive);
 
             // Assert
-            Assert.Equal(superClassUIID, altData.SuperClassUIID);
+            Assert.Equal(uIId, altData.UIId);
             Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(value, altData.Value);
             Assert.Equal(id, altData.Id);
@@ -32,7 +32,7 @@ namespace SEOTests.Model
             AltData altData = new AltData();
 
             // Assert
-            Assert.Equal(null, altData.SuperClassUIID);
+            Assert.Equal(null, altData.UIId);
             Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(null, altData.DisplayOrder);
             Assert.Equal(null, altData.Value);

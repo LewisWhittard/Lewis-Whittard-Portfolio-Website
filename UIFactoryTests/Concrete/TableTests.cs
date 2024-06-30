@@ -112,20 +112,20 @@ namespace UIFactoryTests.Concrete
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", tableConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", tableConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", tableConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", tableConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, tableConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, tableConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, tableConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", tableConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(tableConcrete.JsonLDDatas[0], tableConcrete.JsonLDDatas[1]);
 
                     break;

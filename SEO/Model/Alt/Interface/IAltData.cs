@@ -4,7 +4,7 @@ namespace SEO.Model.Alt.Interface
 {
     public interface IAltData
     {
-        string SuperClassUIID { get; }
+        string UIId { get; }
         UIConcrete? UIConcreteType { get; }
         string Value { get; }
         string UIID { get; }

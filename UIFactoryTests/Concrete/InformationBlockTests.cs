@@ -108,29 +108,29 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassUIID);
-                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassUIID);
-                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.UIId);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.UIId);
+                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].UIId);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", informationBlockConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", informationBlockConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, informationBlockConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, informationBlockConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, informationBlockConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", informationBlockConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(informationBlockConcrete.JsonLDDatas[0], informationBlockConcrete.JsonLDDatas[1]);
                     break;
 
@@ -157,14 +157,14 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Null(informationBlockConcrete.Images.First().AltData);
                 Assert.Null(informationBlockConcrete.Images.Last().AltData);
-                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", informationBlockConcrete.Images.First().JsonLDDatas[0].UIId);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", informationBlockConcrete.JsonLDDatas[0].UIId);
                     break;
             }
             TearDown();
@@ -192,8 +192,8 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(informationBlock.UIConcreteType, informationBlockConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.SuperClassUIID);
-                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.SuperClassUIID);
+                Assert.Equal("First", informationBlockConcrete.Images.First().AltData.UIId);
+                Assert.Equal("Second", informationBlockConcrete.Images.Last().AltData.UIId);
                 Assert.Null(informationBlockConcrete.Images.First().JsonLDDatas);
                 Assert.Null(informationBlockConcrete.Images.Last().JsonLDDatas);
             }

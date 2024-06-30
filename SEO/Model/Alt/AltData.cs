@@ -5,7 +5,7 @@ namespace SEO.Model.Alt
 {
     public class AltData : IAltData, IData
     {
-        public string SuperClassUIID { get; private set; }
+        public string UIId { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
         public int? DisplayOrder { get; private set; }
         public string Value { get; private set; }
@@ -14,9 +14,9 @@ namespace SEO.Model.Alt
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
 
-        public AltData(string superClassUIID, string value, int id, bool deleted, bool inactive)
+        public AltData(string uIId, string value, int id, bool deleted, bool inactive)
         {
-            SuperClassUIID = superClassUIID;
+            UIId = uIId;
             UIConcreteType = null;
             Value = value;
             Id = id;

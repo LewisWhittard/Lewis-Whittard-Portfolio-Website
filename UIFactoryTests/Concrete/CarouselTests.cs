@@ -67,29 +67,29 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(carousel.UIConcreteType, carouselConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", carouselConcrete.Images.First().AltData.SuperClassUIID);
-                Assert.Equal("Second", carouselConcrete.Images.Last().AltData.SuperClassUIID);
-                Assert.Equal("First", carouselConcrete.Images.First().JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", carouselConcrete.Images.Last().JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", carouselConcrete.Images.First().AltData.UIId);
+                Assert.Equal("Second", carouselConcrete.Images.Last().AltData.UIId);
+                Assert.Equal("First", carouselConcrete.Images.First().JsonLDDatas[0].UIId);
+                Assert.Equal("Second", carouselConcrete.Images.Last().JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", carouselConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", carouselConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", carouselConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", carouselConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, carouselConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, carouselConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, carouselConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", carouselConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(carouselConcrete.JsonLDDatas[0], carouselConcrete.JsonLDDatas[1]);
                     break;
 
@@ -116,14 +116,14 @@ namespace UIFactoryTests.Concrete
             {
                 Assert.Null(carouselConcrete.Images.First().AltData);
                 Assert.Null(carouselConcrete.Images.Last().AltData);
-                Assert.Equal("First", carouselConcrete.Images.First().JsonLDDatas[0].SuperClassUIID);
-                Assert.Equal("Second", carouselConcrete.Images.Last().JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", carouselConcrete.Images.First().JsonLDDatas[0].UIId);
+                Assert.Equal("Second", carouselConcrete.Images.Last().JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", carouselConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", carouselConcrete.JsonLDDatas[0].UIId);
                     break;
             }
             TearDown();
@@ -151,8 +151,8 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(carousel.UIConcreteType, carouselConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", carouselConcrete.Images.First().AltData.SuperClassUIID);
-                Assert.Equal("Second", carouselConcrete.Images.Last().AltData.SuperClassUIID);
+                Assert.Equal("First", carouselConcrete.Images.First().AltData.UIId);
+                Assert.Equal("Second", carouselConcrete.Images.Last().AltData.UIId);
                 Assert.Null(carouselConcrete.Images.First().JsonLDDatas);
                 Assert.Null(carouselConcrete.Images.Last().JsonLDDatas);
             }

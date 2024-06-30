@@ -5,7 +5,7 @@ namespace SEO.Service.JsonLDService.Interface
 {
     public interface IJsonLDService
     {
-        public List<JsonLDData> GetBySuperClassUIID(string superClassUIID, bool includeInactive);
+        public List<JsonLDData> GetByUIId(string uIId, bool includeInactive);
 
     }
 }

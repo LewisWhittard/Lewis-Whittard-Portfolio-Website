@@ -14,16 +14,16 @@ namespace SEOTests.Service
         [InlineData("Deleted", false)]
         [InlineData("IncludeInactive", true)]
         [InlineData("ExcludeInactive", false)]
-        public void GetBySuperClassUIID_ReturnsJsonLD(string superClassUIID, bool includeInactive)
+        public void GetByUIId_ReturnsJsonLD(string uIId, bool includeInactive)
         {
             // Arrange
             MockJsonLDRepository mockJsonLDRepository = new MockJsonLDRepository();
             JsonLDService jsonLDService = new JsonLDService(mockJsonLDRepository);
             // Act
-            List<JsonLDData> jsonLDData = jsonLDService.GetBySuperClassUIID(superClassUIID, includeInactive);
+            List<JsonLDData> jsonLDData = jsonLDService.GetByUIId(uIId, includeInactive);
 
             // Assert
-            if (superClassUIID == "Non" || superClassUIID == "Deleted" || superClassUIID == "ExcludeInactive")
+            if (uIId == "Non" || uIId == "Deleted" || uIId == "ExcludeInactive")
             {
                 Assert.True(jsonLDData.Count() == 0);
             }
@@ -31,10 +31,10 @@ namespace SEOTests.Service
             {
                 foreach (var item in jsonLDData)
                 {
-                    Assert.Equal(superClassUIID, item.SuperClassUIID);
+                    Assert.Equal(uIId, item.UIId);
                 }
 
-                if (superClassUIID == "Multiple")
+                if (uIId == "Multiple")
                 {
                     Assert.True(jsonLDData.Count() == 2);
                 }

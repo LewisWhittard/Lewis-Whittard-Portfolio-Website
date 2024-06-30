@@ -28,15 +28,15 @@ namespace SEO.Service.JsonLDService
             _jsonLDRepository = jsonLDRepository;
         }
 
-        public List<JsonLDData> GetBySuperClassUIID(string superClassUIID, bool includeInactive)
+        public List<JsonLDData> GetByUIId(string uIId, bool includeInactive)
         {
             if (includeInactive == true)
             {
-                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.SuperClassUIID == superClassUIID &&  !x.Deleted).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIId == uIId &&  !x.Deleted).ToList();
             }
             else
             {
-                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.SuperClassUIID == superClassUIID && !x.Deleted && !x.Inactive).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIId == uIId && !x.Deleted && !x.Inactive).ToList();
             }
         }
     }

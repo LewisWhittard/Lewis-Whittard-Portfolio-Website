@@ -51,26 +51,26 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassUIID);
-                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", cardConcrete.Image.AltData.UIId);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].UIId);
             }
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 1:
-                    Assert.Equal("Second", cardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("Second", cardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 2:
                     Assert.Equal(0, cardConcrete.JsonLDDatas.Count());
                     break;
                 case 3:
-                    Assert.Equal(null, cardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal(null, cardConcrete.JsonLDDatas[0].UIId);
                     break;
                 case 4:
-                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[0].SuperClassUIID);
-                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[1].SuperClassUIID);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[0].UIId);
+                    Assert.Equal("Multiple", cardConcrete.JsonLDDatas[1].UIId);
                     Assert.NotEqual(cardConcrete.JsonLDDatas[0], cardConcrete.JsonLDDatas[1]);
                     break;
             }
@@ -96,13 +96,13 @@ namespace UIFactoryTests.Concrete
             if (Id == 0)
             {
                 Assert.Null(cardConcrete.Image.AltData);
-                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].SuperClassUIID);
+                Assert.Equal("First", cardConcrete.Image.JsonLDDatas[0].UIId);
             }
 
             switch (Id)
             {
                 case 0:
-                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].SuperClassUIID);
+                    Assert.Equal("First", cardConcrete.JsonLDDatas[0].UIId);
                     break;
             }
             TearDown();
@@ -128,7 +128,7 @@ namespace UIFactoryTests.Concrete
             Assert.Equal(card.UIConcreteType, cardConcrete.UIConcreteType);
             if (Id == 0)
             {
-                Assert.Equal("First", cardConcrete.Image.AltData.SuperClassUIID);
+                Assert.Equal("First", cardConcrete.Image.AltData.UIId);
                 Assert.Null(cardConcrete.Image.JsonLDDatas);
             }
 
