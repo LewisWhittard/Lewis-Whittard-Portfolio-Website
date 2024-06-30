@@ -47,7 +47,6 @@ namespace Infrastructure.Models.Data.Page
         public List<IData> CreateIDataList()
         {
             List<IData> result = new List<IData>();
-            result.Add(Head);
 
             if (Cards?.Count() > 0)
             {
