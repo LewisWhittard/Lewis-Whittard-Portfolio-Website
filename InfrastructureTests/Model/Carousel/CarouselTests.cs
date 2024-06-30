@@ -31,7 +31,7 @@ namespace InfrastructureTests.Model
             Assert.Null(carousel.Images);
             Assert.Null(carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
-            Assert.Null(carousel.UIID);
+            Assert.Null(carousel.UIId);
             Assert.Equal(0, carousel.PageId);
         }
 
@@ -53,7 +53,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_images, carousel.Images);
             Assert.Equal(displayOrder, carousel.DisplayOrder);
             Assert.Equal(UIConcrete.Carousel, carousel.UIConcreteType);
-            Assert.Equal(uiid, carousel.UIID);
+            Assert.Equal(uiid, carousel.UIId);
             Assert.Equal(pageId, carousel.PageId);
 
             TearDown();

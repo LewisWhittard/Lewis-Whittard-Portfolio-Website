@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Video
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
@@ -34,7 +34,7 @@ namespace Infrastructure.Models.Data.Video
             Deleted = deleted;
             Inactive = inactive;
             DisplayOrder = displayOrder;
-            UIID = uiid;
+            UIId = uiid;
             UIConcreteType = UIConcrete.Video;
             PageId = pageId;
         }

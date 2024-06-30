@@ -20,7 +20,7 @@ namespace InfrastructureTests.Model
             Assert.False(video.Deleted);
             Assert.False(video.Inactive);
             Assert.Null(video.DisplayOrder);
-            Assert.Null(video.UIID);
+            Assert.Null(video.UIId);
             Assert.Equal(UIConcrete.Video, video.UIConcreteType);
             Assert.Equal(0, video.PageId);
 
@@ -44,7 +44,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, video.Deleted);
             Assert.Equal(inactive, video.Inactive);
             Assert.Equal(displayOrder, video.DisplayOrder);
-            Assert.Equal(uiid, video.UIID);
+            Assert.Equal(uiid, video.UIId);
             Assert.Equal(UIConcrete.Video, video.UIConcreteType);
             Assert.Equal(pageId, video.PageId);
         }

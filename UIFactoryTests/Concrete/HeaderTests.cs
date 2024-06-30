@@ -10,8 +10,8 @@ namespace UIFactoryTests.Concrete
         public void SetUp()
         {
             _headers = new List<Header>();
-            _headers.Add(new Header(0,false,false,1,2,"HeaderValue","UIIDHeader0"));
-            _headers.Add(new Header(1, false, false, 2, 3, "HeaderValue1", "UIIDHeader1"));
+            _headers.Add(new Header(0,false,false,1,2,"HeaderValue","UIIdHeader0"));
+            _headers.Add(new Header(1, false, false, 2, 3, "HeaderValue1", "UIIdHeader1"));
         }
 
         [Theory]

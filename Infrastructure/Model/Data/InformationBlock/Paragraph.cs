@@ -12,7 +12,7 @@ namespace Infrastructure.Models.Data.InformationBlock
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
         public int InformationBlockid { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
 
@@ -24,7 +24,7 @@ namespace Infrastructure.Models.Data.InformationBlock
             Deleted = deleted;
             Inactive = inactive;
             InformationBlockid = informationBlockId;
-            UIID = uIId;
+            UIId = uIId;
             UIConcreteType = UIConcrete.Paragraph;
         }
 

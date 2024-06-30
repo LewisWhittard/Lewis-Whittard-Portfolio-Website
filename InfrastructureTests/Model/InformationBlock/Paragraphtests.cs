@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.False(paragraph.Deleted);
             Assert.False(paragraph.Inactive);
             Assert.Equal(0, paragraph.InformationBlockid);
-            Assert.Null(paragraph.UIID);
+            Assert.Null(paragraph.UIId);
         }
 
         [Theory]
@@ -40,7 +40,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, paragraph.Deleted);
             Assert.Equal(inactive, paragraph.Inactive);
             Assert.Equal(informationBlockId, paragraph.InformationBlockid);
-            Assert.Equal(uiid, paragraph.UIID);
+            Assert.Equal(uiid, paragraph.UIId);
             Assert.Equal(UIConcrete.Paragraph, paragraph.UIConcreteType);
         }
     }

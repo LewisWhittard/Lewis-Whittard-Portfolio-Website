@@ -6,7 +6,7 @@ namespace Infrastructure.Models.Data.Interface
     {
         int Id { get; }
         int? DisplayOrder { get; }
-        string UIID { get; }
+        string UIId { get; }
         bool Deleted { get; }
         bool Inactive { get; }
         [JsonIgnore]

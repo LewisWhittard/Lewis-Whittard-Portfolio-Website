@@ -33,113 +33,113 @@ namespace InfrastructureTests.Model
 
             List<Image> imagesCards = new List<Image>
                 {
-                    new Image("Image0Source", null, 0, false, false, "Image0UIID", 0,null,null),
-                    new Image("Image1Source", null, 1, false, false, "Image1UIID", 1, null, null)
+                    new Image("Image0Source", null, 0, false, false, "Image0UIId", 0,null,null),
+                    new Image("Image1Source", null, 1, false, false, "Image1UIId", 1, null, null)
                 };
 
-            _cards.Add(new Card(imagesCards[0], "Card0Title", "Card0Description", "Card0Navigation", 0, false, false, 0, "Card0UIID", 1, null));
-            _cards.Add(new Card(imagesCards[1], "Card1Title", "Card1Description", "Card1Navigation", 1, false, false, 1, "Card1UIID", 1, null));
+            _cards.Add(new Card(imagesCards[0], "Card0Title", "Card0Description", "Card0Navigation", 0, false, false, 0, "Card0UIId", 1, null));
+            _cards.Add(new Card(imagesCards[1], "Card1Title", "Card1Description", "Card1Navigation", 1, false, false, 1, "Card1UIId", 1, null));
 
             List<Image> imagesCarousel0 = new List<Image>
             {
-                new Image("Image0Source", 0, 2, false, false, "Image0UIID", null,null, 0),
-                new Image("Image1Source", 1, 3, false, false, "Image1UIID", null, null,0)
+                new Image("Image0Source", 0, 2, false, false, "Image0UIId", null,null, 0),
+                new Image("Image1Source", 1, 3, false, false, "Image1UIId", null, null,0)
             };
 
             List<Image> imagesCarousel1 = new List<Image>
             {
-                new Image("Image2Source", 1, 2, false, false, "Image2UIID", null, null,1),
-                new Image("Image3Source", 2, 3, false, false, "Image3UIID", null, null,1)
+                new Image("Image2Source", 1, 2, false, false, "Image2UIId", null, null,1),
+                new Image("Image3Source", 2, 3, false, false, "Image3UIId", null, null,1)
             };
 
-            _carousels.Add(new Carousel(0, false, false, imagesCarousel0, 2, "Carousel0UIID", 1));
-            _carousels.Add(new Carousel(1, false, false, imagesCarousel1, 3, "Carousel1UIID", 1));
+            _carousels.Add(new Carousel(0, false, false, imagesCarousel0, 2, "Carousel0UIId", 1));
+            _carousels.Add(new Carousel(1, false, false, imagesCarousel1, 3, "Carousel1UIId", 1));
 
-            _carouselCards.Add(new CarouselCard(0,false,false,_cards,4, "carouselCards0UIID",1));
-            _carouselCards.Add(new CarouselCard(1, false, false, _cards, 5, "carouselCards1UIID", 1));
+            _carouselCards.Add(new CarouselCard(0,false,false,_cards,4, "carouselCards0UIId",1));
+            _carouselCards.Add(new CarouselCard(1, false, false, _cards, 5, "carouselCards1UIId", 1));
 
             List<Paragraph> paragraphs1 = new List<Paragraph>
             {
-                new Paragraph("Paragraph0Text", 0, 0, false, false, 0,"Paragraph0UIID"),
-                new Paragraph("Paragraph1Text", 1, 1, false, false, 0,"Paragraph1UIID"),
+                new Paragraph("Paragraph0Text", 0, 0, false, false, 0,"Paragraph0UIId"),
+                new Paragraph("Paragraph1Text", 1, 1, false, false, 0,"Paragraph1UIId"),
             };
 
             List<Paragraph> paragraphs2 = new List<Paragraph>
             {
-                new Paragraph("Paragraph2Text", 0, 2, false, false, 1,"Paragraph2UIID"),
-                new Paragraph("Paragraph3Text", 1, 3, false, false, 1,"Paragraph3UIID"),
+                new Paragraph("Paragraph2Text", 0, 2, false, false, 1,"Paragraph2UIId"),
+                new Paragraph("Paragraph3Text", 1, 3, false, false, 1,"Paragraph3UIId"),
             };
 
             List<Heading> headings1 = new List<Heading>
             {
-                new Heading(0,false,false,"Heading0Text",2,1,"Heading0UIID",0),
-                new Heading(1,false,false,"Heading1Text",3,1,"Heading1UIID",1)
+                new Heading(0,false,false,"Heading0Text",2,1,"Heading0UIId",0),
+                new Heading(1,false,false,"Heading1Text",3,1,"Heading1UIId",1)
             };
 
             List<Heading> headings2 = new List<Heading>
             {
-                new Heading(2,false,false,"Heading2Text",4,2,"Heading2UIID",0),
-                new Heading(3,false,false,"Heading3Text",5,2,"Heading3UIID",1)
+                new Heading(2,false,false,"Heading2Text",4,2,"Heading2UIId",0),
+                new Heading(3,false,false,"Heading3Text",5,2,"Heading3UIId",1)
             };
 
             List<Image> imagesInformationBlock0 = new List<Image>
             {
-                new Image("Image4Source", 6, 4, false, false, "Image4UIID", null,null, 0),
-                new Image("image5Source", 7, 5, false, false, "Image5UIID", null, null,0)
+                new Image("Image4Source", 6, 4, false, false, "Image4UIId", null,null, 0),
+                new Image("image5Source", 7, 5, false, false, "Image5UIId", null, null,0)
             };
 
             List<Image> imagesInformationBlock1 = new List<Image>
             {
-                new Image("Image6Source", 8, 6, false, false, "Image6UIID", null,null, 0),
-                new Image("image7Source", 9, 7, false, false, "Image7UIID", null, null,0)
+                new Image("Image6Source", 8, 6, false, false, "Image6UIId", null,null, 0),
+                new Image("image7Source", 9, 7, false, false, "Image7UIId", null, null,0)
             };
 
-            _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0UIID",1));
-            _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 6, "InfomationBlock0UIID", 1));
+            _informationBlocks.Add(new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0UIId",1));
+            _informationBlocks.Add(new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 6, "InfomationBlock0UIId", 1));
 
             _informationBlocks = new List<InfomatonBlock>
             {
-                new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0UIID",1),
-                new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 7, "InfomationBlock0UIID", 1)
+                new InfomatonBlock(0,false,false, imagesInformationBlock0, paragraphs1,headings1,6,"InfomationBlock0UIId",1),
+                new InfomatonBlock(0, false, false, imagesInformationBlock1, paragraphs1, headings1, 7, "InfomationBlock0UIId", 1)
             };
 
             List<Header> Headers0 = new List<Header>
             {
-                new Header(0, false, false, 0, 0, "Header0Value", "Header0UIID"),
-                new Header(1, false, false, 1, 0, "Header1Value", "Header1UIID")
+                new Header(0, false, false, 0, 0, "Header0Value", "Header0UIId"),
+                new Header(1, false, false, 1, 0, "Header1Value", "Header1UIId")
             };
 
             List<List<Column>> columns0 = new List<List<Column>>()
             {
                 new List<Column>
                 {
-                    new Column(0,false,false,"ValueColumn0",0,0,"UIIDColumn0",0),
-                    new Column(1,false,false,"ValueColumn1",1,0,"UIIDColumn1",0)
+                    new Column(0,false,false,"ValueColumn0",0,0,"UIIdColumn0",0),
+                    new Column(1,false,false,"ValueColumn1",1,0,"UIIdColumn1",0)
                 },
                 new List<Column>
                 {
-                    new Column(2,false,false,"ValueColumn2",0,0,"UIIDColumn2",1),
-                    new Column(3,false,false,"ValueColumn3",1,0,"UIIDColumn3",1)
+                    new Column(2,false,false,"ValueColumn2",0,0,"UIIdColumn2",1),
+                    new Column(3,false,false,"ValueColumn3",1,0,"UIIdColumn3",1)
                 }
             };
 
             List<Header> Headers1 = new List<Header>
             {
-                new Header(5, false, false, 0, 1, "Header5Value", "Header5UIID"),
-                new Header(6, false, false, 1, 1, "Header6Value", "Header6UIID")
+                new Header(5, false, false, 0, 1, "Header5Value", "Header5UIId"),
+                new Header(6, false, false, 1, 1, "Header6Value", "Header6UIId")
             };
 
             List<List<Column>> columns1 = new List<List<Column>>()
             {
                 new List<Column>
                 {
-                    new Column(4,false,false,"ValueColumn4",0,1,"UIIDColumn4",0),
-                    new Column(5,false,false,"ValueColumn5",1,1,"UIIDColumn5",0)
+                    new Column(4,false,false,"ValueColumn4",0,1,"UIIdColumn4",0),
+                    new Column(5,false,false,"ValueColumn5",1,1,"UIIdColumn5",0)
                 },
                 new List<Column>
                 {
-                    new Column(6,false,false,"ValueColumn6",0,1,"UIIDColumn6",1),
-                    new Column(7,false,false,"ValueColumn7",1,1,"UIIDColumn7",1)
+                    new Column(6,false,false,"ValueColumn6",0,1,"UIIdColumn6",1),
+                    new Column(7,false,false,"ValueColumn7",1,1,"UIIdColumn7",1)
                 }
             };
 
@@ -151,8 +151,8 @@ namespace InfrastructureTests.Model
 
             _video = new List<Video>
             {
-                new Video("SourceVideo0","TitleVideo0","DescriptionVideo0","NavigationVideo0",0,false,false,10,"UIIDVideo0",0),
-                new Video("SourceVideo1","TitleVideo1","DescriptionVideo1","NavigationVideo1",1,false,false,11,"UIIDVideo1",1)
+                new Video("SourceVideo0","TitleVideo0","DescriptionVideo0","NavigationVideo0",0,false,false,10,"UIIdVideo0",0),
+                new Video("SourceVideo1","TitleVideo1","DescriptionVideo1","NavigationVideo1",1,false,false,11,"UIIdVideo1",1)
 
             };
 
@@ -174,7 +174,7 @@ namespace InfrastructureTests.Model
             Assert.Null(page.InformationBlocks);
             Assert.Null(page.Tables);
             Assert.Null(page.Videos);
-            Assert.Null(page.UIID);
+            Assert.Null(page.UIId);
             Assert.Equal(0, page.Id);
             Assert.False(page.Deleted);
             Assert.False(page.Inactive);
@@ -183,10 +183,10 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
-        [InlineData("PageName1", "UIID1", 2, true, false)]
-        [InlineData("PageName2", "UIID2", 3, false, true)]
-        [InlineData("PageName3", "UIID3", 4, true, true)]
+        [InlineData("PageName", "UIId", 1, false, false)]
+        [InlineData("PageName1", "UIId1", 2, true, false)]
+        [InlineData("PageName2", "UIId2", 3, false, true)]
+        [InlineData("PageName3", "UIId3", 4, true, true)]
         public void Page_Constructor_WithParameters(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -201,7 +201,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -212,7 +212,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullCards(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -227,7 +227,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -238,7 +238,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullCarousels(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -253,7 +253,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -264,7 +264,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullCarouselCards(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -279,7 +279,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -290,7 +290,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullInformationBlocks(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -305,7 +305,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(null, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -316,7 +316,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullTables(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -331,7 +331,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(null, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -342,7 +342,7 @@ namespace InfrastructureTests.Model
         }
 
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullVideos(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -357,7 +357,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(null, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);
@@ -369,7 +369,7 @@ namespace InfrastructureTests.Model
 
         //null _head
         [Theory]
-        [InlineData("PageName", "UIID", 1, false, false)]
+        [InlineData("PageName", "UIId", 1, false, false)]
         public void Page_Constructor_WithParametersAllowNullHead(string pageName, string uiid, int id, bool deleted, bool inactive)
         {
             //arrange, act
@@ -384,7 +384,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_informationBlocks, page.InformationBlocks);
             Assert.Equal(_tables, page.Tables);
             Assert.Equal(_video, page.Videos);
-            Assert.Equal(uiid, page.UIID);
+            Assert.Equal(uiid, page.UIId);
             Assert.Equal(id, page.Id);
             Assert.Equal(deleted, page.Deleted);
             Assert.Equal(inactive, page.Inactive);

@@ -12,7 +12,7 @@ namespace Infrastructure.Models.Data.Table
         public int? DisplayOrder { get; private set; }
         public int TableID { get; private set; }
         public string Value { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Infrastructure.Models.Data.Table
             DisplayOrder = displayOrder;
             TableID = tableID;
             Value = value;
-            UIID = uIId;
+            UIId = uIId;
             UIConcreteType = UIConcrete.Header;
         }
     }

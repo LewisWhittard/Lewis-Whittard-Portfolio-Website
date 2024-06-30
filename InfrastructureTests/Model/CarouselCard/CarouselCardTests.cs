@@ -11,9 +11,9 @@ namespace InfrastructureTests.Model
 
         private void SetUp()
         {
-            Image image0 = new Image("Image0Source",0,0,false,false, "ImageUIID0",0,null,null);
-            Image image1 = new Image("Image1Source", 1, 1, false, false, "ImageUIID1", 1, null, null);
-            Image image2 = new Image("Image2Source", 2, 2, false, false, "ImageUIID2", 2, null, null);
+            Image image0 = new Image("Image0Source",0,0,false,false, "ImageUIId0",0,null,null);
+            Image image1 = new Image("Image1Source", 1, 1, false, false, "ImageUIId1", 1, null, null);
+            Image image2 = new Image("Image2Source", 2, 2, false, false, "ImageUIId2", 2, null, null);
 
             _cards = new List<Card>();
 
@@ -37,7 +37,7 @@ namespace InfrastructureTests.Model
             Assert.Null(carouselCard.Cards);
             Assert.Null(carouselCard.DisplayOrder);
             Assert.Equal(UIConcrete.CarouselCard, carouselCard.UIConcreteType);
-            Assert.Null(carouselCard.UIID);
+            Assert.Null(carouselCard.UIId);
             Assert.Equal(0, carouselCard.PageId);
         }
 
@@ -59,7 +59,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(inactive, carouselCard.Inactive);
             Assert.Equal(_cards, carouselCard.Cards);
             Assert.Equal(displayOrder, carouselCard.DisplayOrder);
-            Assert.Equal(uIId, carouselCard.UIID);
+            Assert.Equal(uIId, carouselCard.UIId);
             Assert.Equal(UIConcrete.CarouselCard, carouselCard.UIConcreteType);
             Assert.Equal(pageId, carouselCard.PageId);
 

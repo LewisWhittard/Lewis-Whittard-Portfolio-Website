@@ -7,7 +7,7 @@ namespace SEO.Model.Meta.Interface
         public int Id { get; private set; }
         public Name Name { get; private set; }
         public string Content { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         public string? Charset { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }

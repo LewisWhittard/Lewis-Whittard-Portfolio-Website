@@ -15,7 +15,7 @@ namespace SEOTests.Model
             AltData altData = new AltData(uIId, value, id, deleted, inactive);
 
             // Assert
-            Assert.Equal(uIId, altData.UIID);
+            Assert.Equal(uIId, altData.UIId);
             Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(value, altData.Value);
             Assert.Equal(id, altData.Id);
@@ -31,7 +31,7 @@ namespace SEOTests.Model
             AltData altData = new AltData();
 
             // Assert
-            Assert.Equal(null, altData.UIID);
+            Assert.Equal(null, altData.UIId);
             Assert.Equal(null, altData.UIConcreteType);
             Assert.Equal(null, altData.DisplayOrder);
             Assert.Equal(null, altData.Value);

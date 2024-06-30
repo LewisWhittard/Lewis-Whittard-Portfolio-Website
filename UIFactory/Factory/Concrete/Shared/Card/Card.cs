@@ -37,7 +37,7 @@ namespace UIFactory.Factory.Concrete.Shared.Card
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetByUIId(CardData.UIID, false);
+                JsonLDDatas = _jsonLDService.GetByUIId(CardData.UIId, false);
             }
             else
             {

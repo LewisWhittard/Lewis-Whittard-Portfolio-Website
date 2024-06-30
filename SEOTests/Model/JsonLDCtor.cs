@@ -21,7 +21,7 @@ namespace SEOTests.Model
             var jsonLDData = new JsonLDData(uIId, id, deleted, inactive, pageId);
 
             // Assert
-            Assert.Equal(uIId, jsonLDData.UIID);
+            Assert.Equal(uIId, jsonLDData.UIId);
             Assert.Equal(null, jsonLDData.UIConcreteType);
             Assert.Equal(id, jsonLDData.Id);
             Assert.Equal(deleted, jsonLDData.Deleted);
@@ -37,7 +37,7 @@ namespace SEOTests.Model
             var jsonLDData = new JsonLDData();
 
             // Assert
-            Assert.Equal(null, jsonLDData.UIID);
+            Assert.Equal(null, jsonLDData.UIId);
             Assert.Equal(null, jsonLDData.UIConcreteType);
             Assert.Equal(0, jsonLDData.Id);
             Assert.Equal(null, jsonLDData.DisplayOrder);

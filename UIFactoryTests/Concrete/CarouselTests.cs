@@ -23,20 +23,20 @@ namespace UIFactoryTests.Concrete
             imageDatas0.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 1, false, false, "Second", null, null, 0));
 
             var imageDatas1 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Image10UIID", null, null, 1));
-            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 3, false, false, "Image11UIID", null, null, 1));
+            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 2, false, false, "Image10UIId", null, null, 1));
+            imageDatas1.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 3, false, false, "Image11UIId", null, null, 1));
 
             var imageDatas2 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Image20UIID", null, null, 1));
-            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 5, false, false, "Image21UIID", null, null, 1));
+            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 4, false, false, "Image20UIId", null, null, 1));
+            imageDatas2.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 5, false, false, "Image21UIId", null, null, 1));
 
             var imageDatas3 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 6, false, false, "Image30UIID", null, null, 1));
-            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 7, false, false, "Image31UIID", null, null, 1));
+            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 6, false, false, "Image30UIId", null, null, 1));
+            imageDatas3.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 7, false, false, "Image31UIId", null, null, 1));
 
             var imageDatas4 = new List<Infrastructure.Models.Data.Shared.Image.Image>();
-            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 8, false, false, "Image40UIID", null, null, 1));
-            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 9, false, false, "Image41UIID", null, null, 1));
+            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 0, 8, false, false, "Image40UIId", null, null, 1));
+            imageDatas4.Add(new Infrastructure.Models.Data.Shared.Image.Image("", 1, 9, false, false, "Image41UIId", null, null, 1));
 
             Carousels.Add(new Infrastructure.Models.Data.Carousel.Carousel(0, false, false, imageDatas0, 0, "First", 0));
             Carousels.Add(new Infrastructure.Models.Data.Carousel.Carousel(1, false, false, imageDatas1, 1, "Second", 1));

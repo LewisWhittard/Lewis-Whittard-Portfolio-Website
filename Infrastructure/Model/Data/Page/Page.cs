@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Page
         public List<InformationBlock.InfomatonBlock>? InformationBlocks { get; private set; }
         public List<Video.Video>? Videos { get; private set; }
         public List<Table.Table>? Tables { get; private set; }
-        public string UIID { get; private set; }
+        public string UIId { get; private set; }
         public int Id { get; private set; }
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
@@ -38,7 +38,7 @@ namespace Infrastructure.Models.Data.Page
             InformationBlocks = informationBlocks;
             Tables = tables;
             Videos = videos;
-            UIID = uIId;
+            UIId = uIId;
             Deleted = deleted;
             Inactive = inactive;
             UIConcreteType = UIConcrete.Page;
