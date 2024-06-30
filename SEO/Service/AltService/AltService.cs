@@ -20,11 +20,11 @@ namespace SEO.Service.AltService
 
             if (includeInactive == true) 
             {
-                data = _altRepository.GetAltDatas().Where(x => x.UIId == uIId && !x.Deleted).FirstOrDefault();
+                data = _altRepository.GetAltDatas().Where(x => x.UIID == uIId && !x.Deleted).FirstOrDefault();
             }
             else
             {
-                data = _altRepository.GetAltDatas().Where(x => x.UIId == uIId && !x.Deleted && !x.Inactive).FirstOrDefault();
+                data = _altRepository.GetAltDatas().Where(x => x.UIID == uIId && !x.Deleted && !x.Inactive).FirstOrDefault();
             }
 
             return data;

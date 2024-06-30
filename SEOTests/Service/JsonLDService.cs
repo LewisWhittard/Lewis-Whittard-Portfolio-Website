@@ -31,7 +31,7 @@ namespace SEOTests.Service
             {
                 foreach (var item in jsonLDData)
                 {
-                    Assert.Equal(uIId, item.UIId);
+                    Assert.Equal(uIId, item.UIID);
                 }
 
                 if (uIId == "Multiple")

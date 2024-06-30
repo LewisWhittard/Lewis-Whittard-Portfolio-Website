@@ -32,11 +32,11 @@ namespace SEO.Service.JsonLDService
         {
             if (includeInactive == true)
             {
-                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIId == uIId &&  !x.Deleted).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIID == uIId &&  !x.Deleted).ToList();
             }
             else
             {
-                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIId == uIId && !x.Deleted && !x.Inactive).ToList();
+                return _jsonLDRepository.GetJsonLDDatas().Where(x => x.UIID == uIId && !x.Deleted && !x.Inactive).ToList();
             }
         }
     }

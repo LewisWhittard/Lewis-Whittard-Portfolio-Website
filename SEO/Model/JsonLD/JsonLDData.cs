@@ -5,7 +5,6 @@ namespace SEO.Model.JsonLD
 {
     public class JsonLDData : IJsonLDData, IData
     {
-        public string? UIId { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
         public int Id { get; private set; }
         public int? DisplayOrder { get; private set; }
@@ -16,7 +15,7 @@ namespace SEO.Model.JsonLD
     
         public JsonLDData(string? uIId, int id, bool deleted, bool inactive, int? pageId)
         {
-            UIId = uIId;
+            UIID = uIId;
             UIConcreteType = null;
             Id = id;
             Deleted = deleted;

@@ -28,7 +28,7 @@ namespace SEOTests.Service
             }
             else
             {
-                Assert.Equal(uIId, altData.UIId);
+                Assert.Equal(uIId, altData.UIID);
             }
         }
 
