@@ -36,7 +36,7 @@ namespace UIFactory.Factory.Concrete.Table
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetByUIId(_tableData.UIId, false);
+                JsonLDDatas = _jsonLDService.GetByUIId(_tableData.UIID, false);
             }
             else
             {

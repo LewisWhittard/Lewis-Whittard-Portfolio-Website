@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.False(paragraph.Deleted);
             Assert.False(paragraph.Inactive);
             Assert.Equal(0, paragraph.InformationBlockid);
-            Assert.Null(paragraph.UIId);
+            Assert.Null(paragraph.UIID);
         }
 
         [Theory]
@@ -28,10 +28,10 @@ namespace InfrastructureTests.Model
         [InlineData("Sample text", 1, 100, false, false, 200, "ABC123")]
         [InlineData("Another sample text", 2, 101, true, true, 201, "DEF456")]
         // Add more inline data sets for additional test cases if needed
-        public void Constructor_Initializes_Properties_Correctly(string text, int displayOrder, int id, bool deleted, bool inactive, int informationBlockId, string uIId)
+        public void Constructor_Initializes_Properties_Correctly(string text, int displayOrder, int id, bool deleted, bool inactive, int informationBlockId, string uiid)
         {
             // Act
-            var paragraph = new Paragraph(text, displayOrder, id, deleted, inactive, informationBlockId, uIId);
+            var paragraph = new Paragraph(text, displayOrder, id, deleted, inactive, informationBlockId, uiid);
 
             // Assert
             Assert.Equal(text, paragraph.Text);
@@ -40,7 +40,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, paragraph.Deleted);
             Assert.Equal(inactive, paragraph.Inactive);
             Assert.Equal(informationBlockId, paragraph.InformationBlockid);
-            Assert.Equal(uIId, paragraph.UIId);
+            Assert.Equal(uiid, paragraph.UIID);
             Assert.Equal(UIConcrete.Paragraph, paragraph.UIConcreteType);
         }
     }

@@ -15,19 +15,19 @@ namespace InfrastructureTests.Model
         {
             _headings = new List<Heading>
             {
-                new Heading(0, false, false, "Heading0Test", 0, 0, "Heading0UIId", 0),
-                new Heading(1, false, false, "Heading1Test", 0, 0, "Heading1UIId", 0)
+                new Heading(0, false, false, "Heading0Test", 0, 0, "Heading0UIID", 0),
+                new Heading(1, false, false, "Heading1Test", 0, 0, "Heading1UIID", 0)
             };
 
             _paragraphs = new List<Paragraph>
             {
-                new Paragraph("Paragrapth1Text", 0, 0, false, false, 0, "Paragrath1UIId"),
-                new Paragraph("Paragrapth2Text", 0, 0, false, false, 0, "Paragrath2UIId")
+                new Paragraph("Paragrapth1Text", 0, 0, false, false, 0, "Paragrath1UIID"),
+                new Paragraph("Paragrapth2Text", 0, 0, false, false, 0, "Paragrath2UIID")
             };
 
             _images = new List<Image>
             {
-                new Image("Image1Source", 0, 0, false, false, "Image1UIId", null, null, null),
+                new Image("Image1Source", 0, 0, false, false, "Image1UIID", null, null, null),
                 new Image("Image2Source", 0, 0, false, false, "Image2uIId", null, null, null)
             };
         }
@@ -47,17 +47,17 @@ namespace InfrastructureTests.Model
             Assert.Null(informationBlock.Paragraphs);
             Assert.Null(informationBlock.Headings);
             Assert.Null(informationBlock.DisplayOrder);
-            Assert.Null(informationBlock.UIId);
+            Assert.Null(informationBlock.UIID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
             Assert.Equal(informationBlock.PageId,0);
         }
 
         [Theory]
-        [InlineData(0, false, false, 3, "UIId",6)]
-        [InlineData(1, true, true, 2, "UIId1",7)]
-        [InlineData(2, false, true, 4, "UIId2",8)]
-        [InlineData(3, true, false, 4, "UIId3",9)]
-        [InlineData(3, true, false, 3, "UIId3",10)]
+        [InlineData(0, false, false, 3, "UIID",6)]
+        [InlineData(1, true, true, 2, "UIID1",7)]
+        [InlineData(2, false, true, 4, "UIID2",8)]
+        [InlineData(3, true, false, 4, "UIID3",9)]
+        [InlineData(3, true, false, 3, "UIID3",10)]
         public void InformationBlock_SetProperties_PropertiesAreSetCorrectly(int id, bool deleted, bool inactive, int displayOrder, string uIId,int pageId)
         {
             //arrange, act
@@ -72,7 +72,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_paragraphs, informationBlock.Paragraphs);
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(displayOrder, informationBlock.DisplayOrder);
-            Assert.Equal(uIId, informationBlock.UIId);
+            Assert.Equal(uIId, informationBlock.UIID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
             Assert.Equal(pageId, informationBlock.PageId);
 
@@ -85,7 +85,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "UIId",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, null, _paragraphs, _headings, 0, "UIID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -95,7 +95,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_paragraphs, informationBlock.Paragraphs);
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
-            Assert.Equal("UIId", informationBlock.UIId);
+            Assert.Equal("UIID", informationBlock.UIID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
             Assert.Equal(1, informationBlock.PageId);
 
@@ -108,7 +108,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "UIId",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, null, _headings, 0, "UIID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -118,7 +118,7 @@ namespace InfrastructureTests.Model
             Assert.Null(informationBlock.Paragraphs);
             Assert.Equal(_headings, informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
-            Assert.Equal("UIId", informationBlock.UIId);
+            Assert.Equal("UIID", informationBlock.UIID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
             Assert.Equal(1, informationBlock.PageId);
 
@@ -131,7 +131,7 @@ namespace InfrastructureTests.Model
         {
             //arrange, act
             SetUp();
-            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "UIId",1);
+            InfomatonBlock informationBlock = new InfomatonBlock(0, false, false, _images, _paragraphs, null, 0, "UIID",1);
 
             //assert
             Assert.Equal(0, informationBlock.Id);
@@ -141,7 +141,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(_paragraphs, informationBlock.Paragraphs);
             Assert.Null(informationBlock.Headings);
             Assert.Equal(0, informationBlock.DisplayOrder);
-            Assert.Equal("UIId", informationBlock.UIId);
+            Assert.Equal("UIID", informationBlock.UIID);
             Assert.Equal(UIConcrete.InformationBlock, informationBlock.UIConcreteType);
             Assert.Equal(1, informationBlock.PageId);
 

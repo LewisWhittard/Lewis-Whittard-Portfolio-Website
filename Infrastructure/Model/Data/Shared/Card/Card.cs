@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Shared.Card
         public bool Deleted { get; private set; }
         public bool Inactive { get; private set; }
         public int? DisplayOrder { get; private set; }
-        public string UIId { get; private set; }
+        public string UIID { get; private set; }
         public int? PageId { get; private set; }
         public int? CarouselCardId { get; private set; }
         [JsonIgnore]
@@ -30,7 +30,7 @@ namespace Infrastructure.Models.Data.Shared.Card
             Deleted = deleted;
             Inactive = inactive;
             DisplayOrder = displayOrder;
-            UIId = uIId;
+            UIID = uIId;
             UIConcreteType = UIConcrete.Card;
             PageId = pageId;
             CarouselCardId = carouselCardId;

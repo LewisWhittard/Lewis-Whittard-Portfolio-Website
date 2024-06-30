@@ -33,7 +33,7 @@ namespace UIFactory.Factory.Concrete.Carousel
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetByUIId(_carouselData.UIId, false);
+                JsonLDDatas = _jsonLDService.GetByUIId(_carouselData.UIID, false);
             }
             else
             {

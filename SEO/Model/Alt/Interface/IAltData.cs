@@ -7,6 +7,6 @@ namespace SEO.Model.Alt.Interface
         string UIId { get; }
         UIConcrete? UIConcreteType { get; }
         string Value { get; }
-        string UIId { get; }
+        string UIID { get; }
     }
 }

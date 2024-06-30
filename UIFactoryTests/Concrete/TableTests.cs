@@ -16,54 +16,54 @@ namespace UIFactoryTests.Concrete
             List<Header> headers0 = new List<Header>();
             List<List<Column>> columnsList0 = new List<List<Column>>();
 
-            headers0.Add(new Header(0, false, false, 0, 0, "Header0", "Header00UIId"));
-            headers0.Add(new Header(1, false, false, 1, 0, "Header1", "Header01UIId"));
+            headers0.Add(new Header(0, false, false, 0, 0, "Header0", "Header00UIID"));
+            headers0.Add(new Header(1, false, false, 1, 0, "Header1", "Header01UIID"));
             List<Column> columns0 = new List<Column>();
             List<Column> columns1 = new List<Column>();
-            columns0.Add(new Column(0, false, false, "Column0", 0, 0, "Column00UIId", 0));
-            columns0.Add(new Column(1, false, false, "Column1", 1, 0, "Column01UIId", 0));
-            columns1.Add(new Column(2, false, false, "Column2", 0, 0, "Column02UIId", 1));
-            columns1.Add(new Column(3, false, false, "Column3", 1, 0, "Column03UIId", 1));
+            columns0.Add(new Column(0, false, false, "Column0", 0, 0, "Column00UIID", 0));
+            columns0.Add(new Column(1, false, false, "Column1", 1, 0, "Column01UIID", 0));
+            columns1.Add(new Column(2, false, false, "Column2", 0, 0, "Column02UIID", 1));
+            columns1.Add(new Column(3, false, false, "Column3", 1, 0, "Column03UIID", 1));
             columnsList0.Add(columns0);
             columnsList0.Add(columns1);
 
             List<Header> headers1 = new List<Header>();
             List<List<Column>> columnsList1 = new List<List<Column>>();
 
-            headers1.Add(new Header(2, false, false, 0, 1, "Header2", "Header12UIId"));
-            headers1.Add(new Header(3, false, false, 1, 1, "Header3", "Header13UIId"));
+            headers1.Add(new Header(2, false, false, 0, 1, "Header2", "Header12UIID"));
+            headers1.Add(new Header(3, false, false, 1, 1, "Header3", "Header13UIID"));
             List<Column> columns2 = new List<Column>();
             List<Column> columns3 = new List<Column>();
-            columns2.Add(new Column(4, false, false, "Column4", 0, 1, "Column10UIId", 2));
-            columns2.Add(new Column(5, false, false, "Column5", 1, 1, "Column11UIId", 2));
-            columns3.Add(new Column(6, false, false, "Column6", 0, 1, "Column12UIId", 3));
+            columns2.Add(new Column(4, false, false, "Column4", 0, 1, "Column10UIID", 2));
+            columns2.Add(new Column(5, false, false, "Column5", 1, 1, "Column11UIID", 2));
+            columns3.Add(new Column(6, false, false, "Column6", 0, 1, "Column12UIID", 3));
 
             List<Header> header2 = new List<Header>();
             List<List<Column>> columnsList2 = new List<List<Column>>();
 
-            header2.Add(new Header(4, false, false, 0, 2, "Header4", "Header24UIId"));
-            header2.Add(new Header(5, false, false, 1, 2, "Header5", "Header25UIId"));
+            header2.Add(new Header(4, false, false, 0, 2, "Header4", "Header24UIID"));
+            header2.Add(new Header(5, false, false, 1, 2, "Header5", "Header25UIID"));
 
             List<Column> columns4 = new List<Column>();
             List<Column> columns5 = new List<Column>();
-            columns4.Add(new Column(7, false, false, "Column7", 0, 2, "Column20UIId", 4));
-            columns4.Add(new Column(8, false, false, "Column8", 1, 2, "Column21UIId", 4));
-            columns5.Add(new Column(9, false, false, "Column9", 0, 2, "Column22UIId", 5));
-            columns5.Add(new Column(10, false, false, "Column10", 1, 2, "Column23UIId", 5));
+            columns4.Add(new Column(7, false, false, "Column7", 0, 2, "Column20UIID", 4));
+            columns4.Add(new Column(8, false, false, "Column8", 1, 2, "Column21UIID", 4));
+            columns5.Add(new Column(9, false, false, "Column9", 0, 2, "Column22UIID", 5));
+            columns5.Add(new Column(10, false, false, "Column10", 1, 2, "Column23UIID", 5));
             columnsList1.Add(columns2);
 
             List<Header> header3 = new List<Header>();
             List<List<Column>> columnsList3 = new List<List<Column>>();
 
-            header3.Add(new Header(6, false, false, 0, 3, "Header6", "Header36UIId"));
-            header3.Add(new Header(7, false, false, 1, 3, "Header7", "Header37UIId"));
+            header3.Add(new Header(6, false, false, 0, 3, "Header6", "Header36UIID"));
+            header3.Add(new Header(7, false, false, 1, 3, "Header7", "Header37UIID"));
 
             List<Column> columns6 = new List<Column>();
             List<Column> columns7 = new List<Column>();
-            columns6.Add(new Column(11, false, false, "Column11", 0, 3, "Column30UIId", 6));
-            columns6.Add(new Column(12, false, false, "Column12", 1, 3, "Column31UIId", 6));
-            columns7.Add(new Column(13, false, false, "Column13", 0, 3, "Column32UIId", 7));
-            columns7.Add(new Column(14, false, false, "Column14", 1, 3, "Column33UIId", 7));
+            columns6.Add(new Column(11, false, false, "Column11", 0, 3, "Column30UIID", 6));
+            columns6.Add(new Column(12, false, false, "Column12", 1, 3, "Column31UIID", 6));
+            columns7.Add(new Column(13, false, false, "Column13", 0, 3, "Column32UIID", 7));
+            columns7.Add(new Column(14, false, false, "Column14", 1, 3, "Column33UIID", 7));
             columnsList2.Add(columns4);
             columnsList2.Add(columns5);
             columnsList3.Add(columns6);
@@ -72,15 +72,15 @@ namespace UIFactoryTests.Concrete
             List<Header> headers4 = new List<Header>();
             List<List<Column>> columnsList4 = new List<List<Column>>();
 
-            headers4.Add(new Header(8, false, false, 0, 4, "Header8", "Header48UIId"));
-            headers4.Add(new Header(9, false, false, 1, 4, "Header9", "Header49UIId"));
+            headers4.Add(new Header(8, false, false, 0, 4, "Header8", "Header48UIID"));
+            headers4.Add(new Header(9, false, false, 1, 4, "Header9", "Header49UIID"));
 
             List<Column> columns8 = new List<Column>();
             List<Column> columns9 = new List<Column>();
-            columns8.Add(new Column(15, false, false, "Column15", 0, 4, "Column50UIId", 8));
-            columns8.Add(new Column(16, false, false, "Column16", 1, 4, "Column51UIId", 8));
+            columns8.Add(new Column(15, false, false, "Column15", 0, 4, "Column50UIID", 8));
+            columns8.Add(new Column(16, false, false, "Column16", 1, 4, "Column51UIID", 8));
             columns9.Add(new Column(17, false, false, "Column17", 0, 4, "Column52UID", 9));
-            columns9.Add(new Column(18, false, false, "Column18", 1, 4, "Column53UIId", 9));
+            columns9.Add(new Column(18, false, false, "Column18", 1, 4, "Column53UIID", 9));
 
             _table.Add(new Table(0, false, false, 0, headers0, columnsList0, "First", "TableTitle0", 4));
             _table.Add(new Table(1, false, true, 1, headers1, columnsList1, "Second", "TableTitle1", 5));

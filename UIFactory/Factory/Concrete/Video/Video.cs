@@ -30,7 +30,7 @@ namespace UIFactory.Factory.Concrete.Video
         {
             if (_jsonLDService != null)
             {
-                JsonLDDatas = _jsonLDService.GetByUIId(_video.UIId, false);
+                JsonLDDatas = _jsonLDService.GetByUIId(_video.UIID, false);
             }
             else
             {

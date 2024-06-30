@@ -10,8 +10,8 @@ namespace UIFactoryTests.Concrete
         public void SetUp()
         {
             _columns = new List<Column>();
-            _columns.Add(new Column(0,false,false,"ColumnValue",2,3,"ColumnUIId",0));
-            _columns.Add(new Column(1, false, false, "ColumnValue", 3, 4, "ColumnUIId", 1));
+            _columns.Add(new Column(0,false,false,"ColumnValue",2,3,"ColumnUIID",0));
+            _columns.Add(new Column(1, false, false, "ColumnValue", 3, 4, "ColumnUIID", 1));
         }
 
         [Theory]

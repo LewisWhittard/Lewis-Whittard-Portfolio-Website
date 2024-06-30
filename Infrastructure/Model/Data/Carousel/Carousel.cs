@@ -14,7 +14,7 @@ namespace Infrastructure.Models.Data.Carousel
         public int PageId { get; private set; }
         [JsonIgnore]
         public UIConcrete? UIConcreteType { get; private set; }
-        public string UIId { get; private set; }
+        public string UIID { get; private set; }
 
         public Carousel()
         {
@@ -29,7 +29,7 @@ namespace Infrastructure.Models.Data.Carousel
             Images = images;
             DisplayOrder = displayOrder;
             UIConcreteType = UIConcrete.Carousel;
-            UIId = uIId;
+            UIID = uIId;
             PageId = pageId;
         }
     }

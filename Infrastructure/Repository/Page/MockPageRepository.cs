@@ -54,11 +54,11 @@ namespace Infrastructure.Repository.Page
             Head head = new Head();
 
             _pages = new List<Models.Data.Page.Page>();
-            _pages.Add(new Models.Data.Page.Page("First", cards,head, carousels, carouselCards, informationBlocks, tables, videos, "FirstUIId", 0, false, false));
-            _pages.Add(new Models.Data.Page.Page("Second", null, null , null, null, null, null, null, "SecondUIId", 0, false, false));
-            _pages.Add(new Models.Data.Page.Page("Deleted", null,null, null, null, null, null, null, "DeletedUIId", 0, true, false));
-            _pages.Add(new Models.Data.Page.Page("IncludeInactive",null, null, null, null, null, null, null, "IncludeInactiveUIId", 0, false, true));
-            _pages.Add(new Models.Data.Page.Page("ExcludeInactive", null, null, null, null, null, null, null, "ExcludeInactiveUIId", 0, true, false));
+            _pages.Add(new Models.Data.Page.Page("First", cards,head, carousels, carouselCards, informationBlocks, tables, videos, "FirstUIID", 0, false, false));
+            _pages.Add(new Models.Data.Page.Page("Second", null, null , null, null, null, null, null, "SecondUIID", 0, false, false));
+            _pages.Add(new Models.Data.Page.Page("Deleted", null,null, null, null, null, null, null, "DeletedUIID", 0, true, false));
+            _pages.Add(new Models.Data.Page.Page("IncludeInactive",null, null, null, null, null, null, null, "IncludeInactiveUIID", 0, false, true));
+            _pages.Add(new Models.Data.Page.Page("ExcludeInactive", null, null, null, null, null, null, null, "ExcludeInactiveUIID", 0, true, false));
         }
 
         public List<Models.Data.Page.Page> GetPages(string PageName)

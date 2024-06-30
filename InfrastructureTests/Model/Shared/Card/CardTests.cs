@@ -10,7 +10,7 @@ namespace InfrastructureTests.Model
 
         private void SetUp()
         {
-            _image = new Image("Source", 0, 0, false, false, "UIId",0,null,null);
+            _image = new Image("Source", 0, 0, false, false, "UIID",0,null,null);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace InfrastructureTests.Model
             Assert.False(card.Deleted);
             Assert.False(card.Inactive);
             Assert.Null(card.DisplayOrder);
-            Assert.Null(card.UIId);
+            Assert.Null(card.UIID);
             Assert.Null(card.PageId);
             Assert.Null(card.CarouselCardId);
 
@@ -57,7 +57,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(deleted, card.Deleted);
             Assert.Equal(inactive, card.Inactive);
             Assert.Equal(displayOrder, card.DisplayOrder);
-            Assert.Equal(uIId, card.UIId);
+            Assert.Equal(uIId, card.UIID);
             Assert.Equal(UIConcrete.Card, card.UIConcreteType);
             Assert.Equal(pageId, card.PageId);
             Assert.Equal(carouselCardId, card.CarouselCardId);

@@ -19,7 +19,7 @@ namespace InfrastructureTests.Model
             Assert.Null(column.Value);
             Assert.Null(column.DisplayOrder);
             Assert.Equal(0, column.TableID);
-            Assert.Null(column.UIId);
+            Assert.Null(column.UIID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
         }
 
@@ -40,7 +40,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(value, column.Value);
             Assert.Equal(displayOrder, column.DisplayOrder);
             Assert.Equal(tableID, column.TableID);
-            Assert.Equal(uIId, column.UIId);
+            Assert.Equal(uIId, column.UIID);
             Assert.Equal(UIConcrete.Column, column.UIConcreteType);
             Assert.Equal(rowId, column.RowId);
         }

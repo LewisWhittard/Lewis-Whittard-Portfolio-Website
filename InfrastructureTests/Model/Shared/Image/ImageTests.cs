@@ -17,7 +17,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(0, image.Id);
             Assert.False(image.Deleted);
             Assert.False(image.Inactive);
-            Assert.Null(image.UIId);
+            Assert.Null(image.UIID);
             Assert.Equal(UIConcrete.Image, image.UIConcreteType);
         }
 
@@ -37,7 +37,7 @@ namespace InfrastructureTests.Model
             Assert.Equal(id, image.Id);
             Assert.Equal(deleted, image.Deleted);
             Assert.Equal(inactive, image.Inactive);
-            Assert.Equal(uIId, image.UIId);
+            Assert.Equal(uIId, image.UIID);
             Assert.Equal(UIConcrete.Image, image.UIConcreteType);
             Assert.Equal(cardId, image.CardId);
             Assert.Equal(informationBlockId, image.InformationBlockId);
