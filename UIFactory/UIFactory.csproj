@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Factory\CSHTML\Interfaces\**" />
-    <Compile Remove="Factory\CSHTML\Interface\**" />
+    <Compile Remove="Factory\Factory\Interfaces\**" />
+    <Compile Remove="Factory\Factory\Interface\**" />
     <Compile Remove="Factory\MAUIBlazor\**" />
-    <EmbeddedResource Remove="Factory\CSHTML\Interfaces\**" />
-    <EmbeddedResource Remove="Factory\CSHTML\Interface\**" />
+    <EmbeddedResource Remove="Factory\Factory\Interfaces\**" />
+    <EmbeddedResource Remove="Factory\Factory\Interface\**" />
     <EmbeddedResource Remove="Factory\MAUIBlazor\**" />
-    <None Remove="Factory\CSHTML\Interfaces\**" />
-    <None Remove="Factory\CSHTML\Interface\**" />
+    <None Remove="Factory\Factory\Interfaces\**" />
+    <None Remove="Factory\Factory\Interface\**" />
     <None Remove="Factory\MAUIBlazor\**" />
   </ItemGroup>
 

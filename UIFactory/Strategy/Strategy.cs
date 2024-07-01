@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Interface;
+﻿using UIFactory.Factory.Concrete.Interface;
+using UIFactory.Factory.Interface;
 using UIFactory.Strategy.Interface;
 
 namespace UIFactory.Strategy
@@ -17,9 +18,14 @@ namespace UIFactory.Strategy
             _strategy = UIFactory;
         }
 
-        public List<IUI> ExecuteByPageName(string PageName)
+        public List<IConcreteUI> ExecuteByPageName(string PageName)
         {
-            return (List<IUI>)_strategy.CreateUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
+            return (List<IConcreteUI>)_strategy.CreateConcreteUIListByPageName(PageName).OrderBy(x => x.DisplayOrder);
+        }
+
+        public List<IConcreteUI> ExecuteBySearch(string Search)
+        {
+            return null;
         }
     }
 }

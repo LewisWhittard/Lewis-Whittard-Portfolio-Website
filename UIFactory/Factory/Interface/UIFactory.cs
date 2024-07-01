@@ -1,7 +1,9 @@
-﻿namespace UIFactory.Factory.Interface
+﻿using UIFactory.Factory.Concrete.Interface;
+
+namespace UIFactory.Factory.Interface
 {
     public interface IUIFactory
     {
-        public List<IUI> CreateUIListByPageName(string PageName);
+        public List<IConcreteUI> CreateConcreteUIListByPageName(string PageName);
     }
 }

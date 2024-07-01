@@ -1,14 +1,33 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.Alt.Interface;
+﻿using SEO.Model.Alt;
+using SEO.Repository.AltRepository.Interface;
 using SEO.Service.AltService.Interface;
 
 namespace SEO.Service.AltService
 {
     public class AltService : IAltService
     {
-        public List<IAltData> GetBySuperClassGUID(IData data)
+        private readonly IAltRepository _altRepository;
+
+        public AltService(IAltRepository altRepository)
         {
-            throw new NotImplementedException();
+            _altRepository = altRepository;
+        }
+
+        public AltData GetByUIId(string uIId, bool includeInactive)
+        {
+
+            AltData data = null;
+
+            if (includeInactive == true) 
+            {
+                data = _altRepository.GetAltDatas().Where(x => x.UIId == uIId && !x.Deleted).FirstOrDefault();
+            }
+            else
+            {
+                data = _altRepository.GetAltDatas().Where(x => x.UIId == uIId && !x.Deleted && !x.Inactive).FirstOrDefault();
+            }
+
+            return data;
         }
     }
 }

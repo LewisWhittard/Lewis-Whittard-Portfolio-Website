@@ -1,11 +1,11 @@
-﻿using Infrastructure.Models.Data.Interface;
-using SEO.Models.JsonLD.Interface;
+﻿using SEO.Model.JsonLD;
+using SEO.Model.JsonLD.Interface;
 
 namespace SEO.Service.JsonLDService.Interface
 {
     public interface IJsonLDService
     {
-        public List<IJsonLDData> GetBySuperClassGUID(IData data);
+        public List<JsonLDData> GetByUIId(string uIId, bool includeInactive);
 
     }
 }

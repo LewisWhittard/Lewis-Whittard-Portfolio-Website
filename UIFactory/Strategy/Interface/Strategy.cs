@@ -1,4 +1,5 @@
-﻿using UIFactory.Factory.Interface;
+﻿using UIFactory.Factory.Concrete.Interface;
+using UIFactory.Factory.Interface;
 
 namespace UIFactory.Strategy.Interface
 {
@@ -6,6 +7,7 @@ namespace UIFactory.Strategy.Interface
     {
         public IUIFactory _strategy { get; set; }
         public void SwitchStrategy(IUIFactory UIFactory);
-        public List<IUI> ExecuteByPageName(string PageName);
+        public List<IConcreteUI> ExecuteByPageName(string PageName);
+        public List<IConcreteUI> ExecuteBySearch(string Search);
     }
 }
