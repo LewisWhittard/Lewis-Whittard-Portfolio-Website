@@ -11,7 +11,7 @@ namespace EditableHTMLAttributes.Service.Tag
             _tagRepository = tagRepository;
         }
 
-        public Model.Tag GetByInformationBlockId(int id, bool inactive)
+        public Model.Tag GetByUIId(int id, bool inactive)
         {
             if (inactive == false)
             {

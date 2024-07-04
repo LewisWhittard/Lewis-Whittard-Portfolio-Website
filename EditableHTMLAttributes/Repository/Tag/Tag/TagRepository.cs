@@ -4,9 +4,11 @@ namespace EditableHTMLAttributes.Repository.Tag.Tag
 {
     internal class TagRepository : ITagRepository
     {
-        public List<Model.Tag> GetByInformationBlockId(int id)
+        private List<Model.Tag> _tag;
+
+        public List<Model.Tag> GetByUIId(int id)
         {
-            throw new NotImplementedException();
+            return _tag.Where(x => x.UIId == id).ToList();
         }
     }
 }
