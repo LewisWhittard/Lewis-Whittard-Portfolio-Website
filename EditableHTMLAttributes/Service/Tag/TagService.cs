@@ -11,15 +11,15 @@ namespace EditableHTMLAttributes.Service.Tag
             _tagRepository = tagRepository;
         }
 
-        public List<Model.Tag> GetByInformationBlockId(int id, bool inactive)
+        public Model.Tag GetByInformationBlockId(int id, bool inactive)
         {
             if (inactive == false)
             {
-                return _tagRepository.GetByInformationBlockId(id).Where(x => x.Inactive == false).ToList();
+                return _tagRepository.GetByInformationBlockId(id).Where(x => x.Inactive == false).FirstOrDefault();
             }
             else
             {
-                return _tagRepository.GetByInformationBlockId(id);
+                return _tagRepository.GetByInformationBlockId(id).FirstOrDefault();
             }
         }
     }
