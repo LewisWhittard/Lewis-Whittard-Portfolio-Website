@@ -15,11 +15,11 @@ namespace EditableHTMLAttributes.Service.Tag
         {
             if (inactive == false)
             {
-                return _tagRepository.GetByInformationBlockId(id).Where(x => x.Inactive == false).FirstOrDefault();
+                return _tagRepository.GetByUIId(id).Where(x => x.Inactive == false).FirstOrDefault();
             }
             else
             {
-                return _tagRepository.GetByInformationBlockId(id).FirstOrDefault();
+                return _tagRepository.GetByUIId(id).FirstOrDefault();
             }
         }
     }
