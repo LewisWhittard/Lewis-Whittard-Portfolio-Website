@@ -3,11 +3,11 @@ using EditableHTMLAttributes.Repository.Tag.Tag.Interface;
 
 namespace EditableHTMLAttributes.Repository.Tag.Tag
 {
-    internal class TagRepository : ITagRepository
+    internal class MockTagRepository : ITagRepository
     {
         private List<Model.Tag> _tag;
 
-        public TagRepository()
+        public MockTagRepository()
         {
             _tag.Add(new Model.Tag(0,TagType.Article,false,false,3));
             _tag.Add(new Model.Tag(1, TagType.Article, true, true, 2));
