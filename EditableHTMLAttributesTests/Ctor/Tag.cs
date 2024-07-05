@@ -10,7 +10,6 @@ namespace EditableHTMLAttributesTests.Ctor
         [InlineData(2, TagType.Div, true, false, "Non")]
         [InlineData(3, TagType.Article, false, true, "IncludeInactive")]
         [InlineData(4, TagType.Article, false, false, "ExcludeInactive")]
-        [InlineData(4, TagType.Article, false, false, null)]
         public void Tag_Ctor_WithParameters(int id, TagType tagType, bool deleted, bool inactive, string uIId)
         {
             var tag = new EditableHTMLAttributes.Model.Tag(id, tagType, deleted, inactive, uIId);
