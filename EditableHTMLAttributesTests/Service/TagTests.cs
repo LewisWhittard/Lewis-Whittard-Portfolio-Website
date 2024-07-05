@@ -1,8 +1,5 @@
 ﻿using EditableHTMLAttributes.Repository.Tag;
 using EditableHTMLAttributes.Service.Tag;
-using Infrastructure.Repository.Page;
-using Infrastructure.Service.Page;
-using System.Xml.Schema;
 
 namespace EditableHTMLAttributesTests.Service
 {
