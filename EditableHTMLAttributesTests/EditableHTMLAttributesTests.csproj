@@ -24,4 +24,8 @@
     <Folder Include="Service\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EditableHTMLAttributes\EditableHTMLAttributes.csproj" />
+  </ItemGroup>
+
 </Project>
