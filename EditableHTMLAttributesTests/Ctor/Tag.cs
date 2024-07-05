@@ -1,5 +1,4 @@
-﻿using EditableHTMLAttributes.Model;
-using EditableHTMLAttributes.Model.Interface;
+﻿using EditableHTMLAttributes.Model.Interface;
 
 namespace EditableHTMLAttributesTests.Ctor
 {
@@ -10,12 +9,12 @@ namespace EditableHTMLAttributesTests.Ctor
         [InlineData(2, TagType.Article, false, true, 3)]
         [InlineData(3, TagType.Div, true, true, 2)]
         [InlineData(4, null, false, false, 1)]
-        public void Tag_Ctor_WithParameters(int id, TagType type, bool deleted, bool inactive, int uIId)
+        public void Tag_Ctor_WithParameters(int id, TagType tagType, bool deleted, bool inactive, int uIId)
         {
-            var tag = new EditableHTMLAttributes.Model.Tag(id, type, deleted, inactive, uIId);
+            var tag = new EditableHTMLAttributes.Model.Tag(id, tagType, deleted, inactive, uIId);
 
             Assert.True(tag.Id == id);
-            Assert.True(tag.Type == type);
+            Assert.True(tag.Type == tagType);
             Assert.True(tag.Deleted == deleted);
             Assert.True(tag.Inactive == inactive);
             Assert.True(tag.UIId == uIId);
