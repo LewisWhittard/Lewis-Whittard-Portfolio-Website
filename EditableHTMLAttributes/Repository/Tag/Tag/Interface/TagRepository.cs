@@ -1,9 +1,7 @@
-﻿using EditableHTMLAttributes.Model;
-
-namespace EditableHTMLAttributes.Repository.Tag.Tag.Interface
+﻿namespace EditableHTMLAttributes.Repository.Tag.Tag.Interface
 {
     public interface ITagRepository
     {
-        public List<Model.Tag> GetByUIId(int id);
+        public List<Model.Tag> GetByUIId(string uIID);
     }
 }

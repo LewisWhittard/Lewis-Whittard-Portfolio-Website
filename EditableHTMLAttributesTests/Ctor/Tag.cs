@@ -5,11 +5,13 @@ namespace EditableHTMLAttributesTests.Ctor
     public class Tag
     {
         [Theory]
-        [InlineData(1, TagType.Section, true, false, 4)]
-        [InlineData(2, TagType.Article, false, true, 3)]
-        [InlineData(3, TagType.Div, true, true, 2)]
-        [InlineData(4, null, false, false, 1)]
-        public void Tag_Ctor_WithParameters(int id, TagType tagType, bool deleted, bool inactive, int uIId)
+        [InlineData(0, TagType.Article, false, false, "Frist")]
+        [InlineData(1, TagType.Section, false, false, "Second")]
+        [InlineData(2, TagType.Div, true, false, "Non")]
+        [InlineData(3, TagType.Article, false, true, "IncludeInactive")]
+        [InlineData(4, TagType.Article, false, false, "ExcludeInactive")]
+        [InlineData(4, TagType.Article, false, false, null)]
+        public void Tag_Ctor_WithParameters(int id, TagType tagType, bool deleted, bool inactive, string uIId)
         {
             var tag = new EditableHTMLAttributes.Model.Tag(id, tagType, deleted, inactive, uIId);
 
@@ -29,7 +31,7 @@ namespace EditableHTMLAttributesTests.Ctor
             Assert.True(tag.Type == 0);
             Assert.True(tag.Deleted == false);
             Assert.True(tag.Inactive == false);
-            Assert.True(tag.UIId == 0);
+            Assert.True(tag.UIId == null);
         }
     }
 }

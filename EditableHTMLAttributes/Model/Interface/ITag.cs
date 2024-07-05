@@ -6,6 +6,6 @@
         TagType Type { get; }
         bool Deleted { get; }
         bool Inactive { get; }
-        int UIId { get; }
+        string UIId { get; }
     }
 }

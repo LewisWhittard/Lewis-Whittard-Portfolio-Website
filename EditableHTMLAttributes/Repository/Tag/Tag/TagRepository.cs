@@ -1,23 +1,25 @@
 ﻿using EditableHTMLAttributes.Model.Interface;
 using EditableHTMLAttributes.Repository.Tag.Tag.Interface;
 
-namespace EditableHTMLAttributes.Repository.Tag.Tag
+namespace EditableHTMLAttributes.Repository.Tag
 {
-    internal class MockTagRepository : ITagRepository
+    public class MockTagRepository : ITagRepository
     {
         private List<Model.Tag> _tag;
 
         public MockTagRepository()
         {
-            _tag.Add(new Model.Tag(0,TagType.Article,false,false,3));
-            _tag.Add(new Model.Tag(1, TagType.Article, true, true, 2));
-            _tag.Add(new Model.Tag(2, TagType.Article, true, false, 1));
-            _tag.Add(new Model.Tag(3, TagType.Article, false, true, 0));
+            _tag = new List<Model.Tag>();
+            _tag.Add(new Model.Tag(0,TagType.Article,false,false,"First"));
+            _tag.Add(new Model.Tag(1, TagType.Section, false, false, "Second"));
+            _tag.Add(new Model.Tag(3, TagType.Article, false, true, "IncludeInactive"));
+            _tag.Add(new Model.Tag(4, TagType.Article, false, true, "ExcludeInactive"));
+            _tag.Add(new Model.Tag(5, TagType.Article, true, false, "Deleted"));
         }
 
-        public List<Model.Tag> GetByUIId(int id)
+        public List<Model.Tag> GetByUIId(string UUId)
         {
-            return _tag.Where(x => x.UIId == id).ToList();
+            return _tag.Where(x => x.UIId == UUId).ToList();
         }
     }
 }

@@ -11,15 +11,15 @@ namespace EditableHTMLAttributes.Service.Tag
             _tagRepository = tagRepository;
         }
 
-        public Model.Tag GetByUIId(int id, bool inactive)
+        public Model.Tag GetByUIId(string uIId, bool includeInactive)
         {
-            if (inactive == false)
+            if (includeInactive == false)
             {
-                return _tagRepository.GetByUIId(id).Where(x => x.Inactive == false).FirstOrDefault();
+                return _tagRepository.GetByUIId(uIId).Where(x => x.Inactive == false && x.Deleted == false).FirstOrDefault();
             }
             else
             {
-                return _tagRepository.GetByUIId(id).FirstOrDefault();
+                return _tagRepository.GetByUIId(uIId).Where(x => x.Deleted == false).FirstOrDefault();
             }
         }
     }
