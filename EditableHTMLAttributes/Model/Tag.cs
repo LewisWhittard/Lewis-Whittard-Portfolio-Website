@@ -11,7 +11,6 @@ namespace EditableHTMLAttributes.Model
         public bool Inactive { get; private set; }
         public string UIId { get; private set; }
         public UIConcrete? UIConcreteType { get; private set; }
-        public int? DisplayerOrder { get; private set; }
         public int? DisplayOrder { get; private set; }
 
         public Tag()
