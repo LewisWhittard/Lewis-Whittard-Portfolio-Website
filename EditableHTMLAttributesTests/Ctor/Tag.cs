@@ -19,6 +19,8 @@ namespace EditableHTMLAttributesTests.Ctor
             Assert.True(tag.Deleted == deleted);
             Assert.True(tag.Inactive == inactive);
             Assert.True(tag.UIId == uIId);
+            Assert.Null(tag.UIConcreteType);
+            Assert.Null(tag.DisplayOrder);
         }
 
         [Fact]
@@ -31,6 +33,8 @@ namespace EditableHTMLAttributesTests.Ctor
             Assert.True(tag.Deleted == false);
             Assert.True(tag.Inactive == false);
             Assert.True(tag.UIId == null);
+            Assert.Null(tag.UIConcreteType);
+            Assert.Null(tag.DisplayOrder);
         }
     }
 }
