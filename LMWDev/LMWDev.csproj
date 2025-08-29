@@ -22,4 +22,8 @@
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml.user" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
+  </ItemGroup>
+
 </Project>

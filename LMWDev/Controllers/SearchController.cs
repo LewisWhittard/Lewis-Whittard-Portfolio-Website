@@ -2,18 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using LMWDev.Models;
 using LMWDev.SpreadsheetConnection;
+using Page_Library.Search.Service;
+using Page_Library.Search.Repository;
 
 namespace LMWDev.Controllers
 {
 	public class SearchController : Controller
 	{
-		private readonly SearchService _searchService;
+		private readonly  PageSearchService _pageSearchService;
 
-		public IActionResult Index()
+        public SearchController()
+        {
+			_pageSearchService = new PageSearchService(new JsonPageSearchRepository(@"./Json/Search/Search.json"));
+        }
+
+        public IActionResult Index()
 		{
+			var test = _pageSearchService.Search();
+
 			SearchModel SearchModel = new SearchModel();
 			SpreadsheetConnectionClass Spreadsheet = new SpreadsheetConnectionClass();
 
