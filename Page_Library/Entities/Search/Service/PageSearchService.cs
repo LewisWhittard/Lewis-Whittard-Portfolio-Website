@@ -21,16 +21,25 @@ namespace Page_Library.Entities.Search.Service
             }
         }
 
-        public override List<ISearchResult> Search(int Id)
+        public override List<ISearchResult> Search(
+            int id,
+            bool programming,
+            bool testing,
+            bool games,
+            bool threeDAssets,
+            bool twoDAssets,
+            bool blog)
         {
             try
             {
-                return _repository.Search(Id);
+                return _repository.Search(id, programming, testing, games, threeDAssets, twoDAssets, blog);
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while searching with ID: {Id}.", ex);
+                throw new ApplicationException($"An error occurred while searching with ID: {id}.", ex);
             }
         }
+
+
     }
 }

@@ -8,6 +8,12 @@ namespace Page_Library.Entities.Search.Repository.Base
     {
         public abstract List<ISearchResult> Search();
 
-        public abstract List<ISearchResult> Search(int Id);
+        public abstract List<ISearchResult> Search(int Id,
+            bool programming,
+            bool testing,
+            bool games,
+            bool threeDAssets,
+            bool twoDAssets,
+            bool blog);
     }
 }

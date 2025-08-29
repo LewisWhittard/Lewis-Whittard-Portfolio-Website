@@ -10,6 +10,8 @@ namespace LMWDev.Controllers
 {
 	public class SearchController : Controller
 	{
+		private readonly SearchService _searchService;
+
 		public IActionResult Index()
 		{
 			SearchModel SearchModel = new SearchModel();
