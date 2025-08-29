@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMWDev", "LMWDev\LMWDev.csproj", "{A06F689C-189E-46DD-A924-8020EE623F58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMWDev", "LMWDev\LMWDev.csproj", "{A06F689C-189E-46DD-A924-8020EE623F58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{90874FAB-49DE-44C9-85AB-5576620781BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{0CA66A16-7042-405E-9B78-A9E9418A28EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{C00073EE-6407-431C-8AB7-AC05FD7A5D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Page_Library", "Page_Library\Page_Library.csproj", "{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,18 @@ Global
 		{A06F689C-189E-46DD-A924-8020EE623F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A06F689C-189E-46DD-A924-8020EE623F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A06F689C-189E-46DD-A924-8020EE623F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CA66A16-7042-405E-9B78-A9E9418A28EE} = {90874FAB-49DE-44C9-85AB-5576620781BC}
+		{C00073EE-6407-431C-8AB7-AC05FD7A5D53} = {0CA66A16-7042-405E-9B78-A9E9418A28EE}
+		{DE70EEDF-F7A0-4046-AB26-8599AFCE6A87} = {C00073EE-6407-431C-8AB7-AC05FD7A5D53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3328E80D-68B4-4CFC-8520-892E666B82C7}
