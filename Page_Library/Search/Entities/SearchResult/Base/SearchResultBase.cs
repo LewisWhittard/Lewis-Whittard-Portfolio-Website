@@ -1,6 +1,6 @@
-﻿using Page_Library.Entities.Search.Entities.SearchResult.Interface;
+﻿using Page_Library.Search.Entities.SearchResult.Interface;
 
-namespace Page_Library.Entities.Search.Entities.SearchResult.Base
+namespace Page_Library.Search.Entities.SearchResult.Base
 {
     public abstract class SearchResultBase : ISearchResult
     {

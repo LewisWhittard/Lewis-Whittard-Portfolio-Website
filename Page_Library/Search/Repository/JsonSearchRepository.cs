@@ -1,9 +1,9 @@
-﻿using Page_Library.Entities.Search.Entities.SearchResult;
-using Page_Library.Entities.Search.Entities.SearchResult.Interface;
-using Page_Library.Entities.Search.Repository.Base;
+﻿using Page_Library.Search.Entities.SearchResult;
+using Page_Library.Search.Entities.SearchResult.Interface;
+using Page_Library.Search.Repository.Base;
 using System.Text.Json;
 
-namespace Page_Library.Entities.Search.Repository
+namespace Page_Library.Search.Repository
 {
     public class JsonPageSearchRepository : PageSearchRepositoryBase
     {

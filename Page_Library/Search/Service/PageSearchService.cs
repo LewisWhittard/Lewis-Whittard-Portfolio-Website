@@ -1,7 +1,8 @@
-﻿using Page_Library.Entities.Search.Entities.SearchResult.Interface;
-using Page_Library.Entities.Search.Repository.Interface;
+﻿using Page_Library.Search.Entities.SearchResult.Interface;
+using Page_Library.Search.Repository.Interface;
+using Page_Library.Search.Service.Base;
 
-namespace Page_Library.Entities.Search.Service
+namespace Page_Library.Search.Service
 {
     public class PageSearchService : PageSearchServiceBase
     {
@@ -13,13 +14,15 @@ namespace Page_Library.Entities.Search.Service
         {
             try
             {
-                return _repository.Search();
+                return _repository.Search().ToList() ?? new List<ISearchResult>();
             }
             catch (Exception ex)
             {
                 throw new ApplicationException("An error occurred while performing a search operation.", ex);
             }
         }
+
+
 
         public override List<ISearchResult> Search(
             int id,

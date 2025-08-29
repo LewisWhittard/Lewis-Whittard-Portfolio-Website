@@ -1,6 +1,6 @@
-﻿using Page_Library.Entities.Search.Entities.SearchResult.Base;
+﻿using Page_Library.Search.Entities.SearchResult.Base;
 
-namespace Page_Library.Entities.Search.Entities.SearchResult
+namespace Page_Library.Search.Entities.SearchResult
 {
     public class SearchResult : SearchResultBase
     {

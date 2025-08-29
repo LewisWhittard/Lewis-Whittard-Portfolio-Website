@@ -1,8 +1,7 @@
-﻿using Page_Library.Entities.Search.Entities.SearchResult.Base;
-using Page_Library.Entities.Search.Entities.SearchResult.Interface;
-using Page_Library.Entities.Search.Repository.Interface;
+﻿using Page_Library.Search.Entities.SearchResult.Interface;
+using Page_Library.Search.Repository.Interface;
 
-namespace Page_Library.Entities.Search.Repository.Base
+namespace Page_Library.Search.Repository.Base
 {
     public abstract class PageSearchRepositoryBase : IPageSearchRepository
     {

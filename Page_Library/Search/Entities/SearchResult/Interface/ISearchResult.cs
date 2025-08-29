@@ -1,4 +1,4 @@
-﻿namespace Page_Library.Entities.Search.Entities.SearchResult.Interface
+﻿namespace Page_Library.Search.Entities.SearchResult.Interface
 {
     public class ISearchResult
     {
