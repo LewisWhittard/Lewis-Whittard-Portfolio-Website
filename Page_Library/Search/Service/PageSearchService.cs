@@ -60,6 +60,8 @@ namespace Page_Library.Search.Service
                     toReturn.Add(item);
                 }
 
+                toReturn.Reverse();
+                
                 return toReturn;
             }
             catch (Exception ex)
