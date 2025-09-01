@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using LMWDev.Models;
-using LMWDev.SpreadsheetConnection;
 using Page_Library.Search.Service;
 using Page_Library.Search.Repository;
 using Page_Library.Content.Repository;
@@ -21,89 +17,18 @@ namespace LMWDev.Controllers
 
         public IActionResult Index()
 		{
-			var test = _pageSearchService.Search();
+			var results = _pageSearchService.Search();
 
-			SearchModel SearchModel = new SearchModel();
-			SpreadsheetConnectionClass Spreadsheet = new SpreadsheetConnectionClass();
-
-			var UnfilteredResults  = Spreadsheet.SearchRowResults.ToList();
-			var UnfilteredImages = Spreadsheet.ImagesTable.ToList();
-
+			SearchViewModel model = new SearchViewModel(results);
 			
-			SearchModel.Search = null;
-			SearchModel.BlogCategory = true;
-			SearchModel.GamesCategory = true;
-			SearchModel.ProgrammingCategory = true;
-			SearchModel.ThreeDAssetsCategory = true;
-			SearchModel.TwoDAssetCategory = true;
-			SearchModel.TestingCategory = true;
-			SearchModel.FlexibleMeta = false;
 
-			SearchResultFunctions SearchResultFunctionsClass = new SearchResultFunctions();
-
-			var FilteredByCategory = SearchResultFunctionsClass.FilterOnCategory(UnfilteredResults, SearchModel.ProgrammingCategory, SearchModel.TestingCategory, SearchModel.GamesCategory,SearchModel.ThreeDAssetsCategory, SearchModel.TwoDAssetCategory, SearchModel.BlogCategory);
-
-			List<SearchRowResultsSingle> FilteredByTitleAndDescription = new List<SearchRowResultsSingle>();
-
-
-		
-				FilteredByTitleAndDescription = FilteredByCategory.ToList();
-			
-			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
-
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
-
-			FinalResults.Reverse();
-			
-			SearchModel.ListOfSingleSearchResults = FinalResults;
-
-			return View(SearchModel);
+			return View(model);
 		}
 
-		public IActionResult Modified(string Search, bool Blog, bool Games, bool Programming, bool ThreeD, bool TwoD, bool Testing)
+		public IActionResult Modified(SearchViewModel search)
 		{
-			SearchModel SearchModel = new SearchModel();
-			SpreadsheetConnectionClass Spreadsheet = new SpreadsheetConnectionClass();
 
-			var UnfilteredResults = Spreadsheet.SearchRowResults.ToList();
-			var UnfilteredImages = Spreadsheet.ImagesTable.ToList();
-
-
-			SearchModel.Search = Search;
-			SearchModel.BlogCategory = Blog;
-			SearchModel.GamesCategory = Games;
-			SearchModel.ProgrammingCategory = Programming;
-			SearchModel.ThreeDAssetsCategory = ThreeD;
-			SearchModel.TwoDAssetCategory = TwoD;
-			SearchModel.TestingCategory = Testing;
-			SearchModel.FlexibleMeta = false;
-
-			SearchResultFunctions SearchResultFunctionsClass = new SearchResultFunctions();
-
-			var FilteredByCategory = SearchResultFunctionsClass.FilterOnCategory(UnfilteredResults, Programming, Testing, Games, ThreeD, TwoD, Blog);
-
-			List<SearchRowResultsSingle> FilteredByTitleAndDescription = new List<SearchRowResultsSingle>();
-
-
-			if (Search != null)
-			{
-				FilteredByTitleAndDescription = SearchResultFunctionsClass.FilterOnTitleAndDescription(FilteredByCategory, Search);
-			}
-
-			else
-			{
-				FilteredByTitleAndDescription = FilteredByCategory.ToList();
-			}
-
-			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
-
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
-
-			FinalResults.Reverse();
-
-			SearchModel.ListOfSingleSearchResults = FinalResults;
-
-			return View(SearchModel);
+			return View(null);
 		}
 	}
 }
