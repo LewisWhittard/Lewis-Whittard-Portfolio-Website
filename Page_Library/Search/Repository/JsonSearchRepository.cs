@@ -18,7 +18,9 @@ namespace Page_Library.Search.Repository
         private List<ISearchResult> LoadData()
         {
             if (!File.Exists(_jsonFilePath))
+            {
                 return new List<ISearchResult>();
+            }
 
             try
             {
@@ -58,7 +60,7 @@ namespace Page_Library.Search.Repository
         }
 
         public override List<ISearchResult> Search(
-            int id,
+            string searchTerm,
             bool programming,
             bool testing,
             bool games,
@@ -71,7 +73,7 @@ namespace Page_Library.Search.Repository
                 var results = LoadData() ?? new List<ISearchResult>();
 
                 // Filter by ID first
-                var filteredResults = results.Where(r => r.ID == id).ToList();
+                var filteredResults = results.Where(r => r.Title.Contains(searchTerm) ||r.Title == searchTerm || r.Description.Contains(searchTerm) || r.Description == searchTerm).ToList();
 
                 // Apply category filters
                 var categoryFilters = new Dictionary<string, bool>
@@ -93,7 +95,7 @@ namespace Page_Library.Search.Repository
             }
             catch (Exception ex)
             {
-                throw new Exception($"Search by ID ({id}) with category filters failed.", ex);
+                throw new Exception($"Search by ID ({searchTerm}) with category filters failed.", ex);
             }
         }
 

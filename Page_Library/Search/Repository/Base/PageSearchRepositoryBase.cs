@@ -7,7 +7,7 @@ namespace Page_Library.Search.Repository.Base
     {
         public abstract List<ISearchResult> Search();
 
-        public abstract List<ISearchResult> Search(int Id,
+        public abstract List<ISearchResult> Search(string searchTerm,
             bool programming,
             bool testing,
             bool games,

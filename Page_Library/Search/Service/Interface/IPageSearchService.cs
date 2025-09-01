@@ -6,7 +6,7 @@ namespace Page_Library.Search.Service.Interface
     {
         public abstract List<ISearchResult> Search();
 
-        public abstract List<ISearchResult> Search(int id,
+        public abstract List<ISearchResult> Search(string searchTerm,
             bool programming,
             bool testing,
             bool games,

@@ -1,5 +1,4 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
-using Page_Library.Content.Repository.Interface;
+﻿using Page_Library.Content.Repository.Interface;
 using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Interface;
 using Page_Library.Search.Service.Interface;
@@ -19,12 +18,6 @@ namespace Page_Library.Search.Service.Base
 
         public abstract List<ISearchResult> Search();
 
-        public abstract List<ISearchResult> Search(int id,
-            bool programming,
-            bool testing,
-            bool games,
-            bool threeDAssets,
-            bool twoDAssets,
-            bool blog);
+        public abstract List<ISearchResult> Search(string searchTerm, bool programming, bool testing, bool games, bool threeDAssets, bool twoDAssets, bool blog);
     }
 }
