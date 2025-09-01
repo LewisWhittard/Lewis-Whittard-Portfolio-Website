@@ -1,4 +1,5 @@
 ﻿using Page_Library.Search.Entities.SearchResult;
+using Page_Library.Search.Entities.SearchResult.DTO;
 using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Base;
 using System.Text.Json;
@@ -22,8 +23,16 @@ namespace Page_Library.Search.Repository
             try
             {
                 var json = File.ReadAllText(_jsonFilePath);
-                var results = JsonSerializer.Deserialize<List<SearchResult>>(json) ?? new List<SearchResult>();
-                return results.Cast<ISearchResult>().ToList();
+                var results = JsonSerializer.Deserialize<List<SearchResultDTO>>(json) ?? new List<SearchResultDTO>();
+
+                List<ISearchResult> toReturn = new List<ISearchResult>();
+
+                foreach (var item in results)
+                {
+                    toReturn.Add(new SearchResult(item));
+                }
+
+                return toReturn;
             }
             catch (JsonException ex)
             {

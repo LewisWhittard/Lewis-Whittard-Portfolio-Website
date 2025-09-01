@@ -1,12 +1,15 @@
-﻿using Page_Library.Search.Entities.SearchResult.Interface;
+﻿using Page_Library.Content.Entities.Content.Interface;
+using Page_Library.Content.Repository.Interface;
+using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Interface;
 using Page_Library.Search.Service.Base;
+using System.Reflection.Metadata;
 
 namespace Page_Library.Search.Service
 {
     public class PageSearchService : PageSearchServiceBase
     {
-        public PageSearchService(IPageSearchRepository Repository) : base(Repository)
+        public PageSearchService(IPageSearchRepository PageSearchRepository, IContentRepository ContentRepository) : base(PageSearchRepository, ContentRepository)
         {
         }
 
@@ -14,7 +17,18 @@ namespace Page_Library.Search.Service
         {
             try
             {
-                return _repository.Search().ToList() ?? new List<ISearchResult>();
+                var searchResults = _PageSearchRepository.Search();
+
+                List<ISearchResult> toReturn = new List<ISearchResult>();
+
+                foreach (var item in searchResults)
+                {
+                    IContent content = _ContentRepository.GetContentById(item.ContentID);
+                    item.SetContent(content);
+                    toReturn.Add(item);
+                }
+
+                return toReturn;
             }
             catch (Exception ex)
             {
@@ -35,7 +49,18 @@ namespace Page_Library.Search.Service
         {
             try
             {
-                return _repository.Search(id, programming, testing, games, threeDAssets, twoDAssets, blog);
+                var searchResults = _PageSearchRepository.Search(id, programming, testing, games, threeDAssets, twoDAssets, blog);
+
+                List<ISearchResult> toReturn = new List<ISearchResult>();
+                
+                foreach (var item in searchResults)
+                {
+                    IContent content  =_ContentRepository.GetContentById(item.ContentID);
+                    item.SetContent(content);
+                    toReturn.Add(item);
+                }
+
+                return toReturn;
             }
             catch (Exception ex)
             {

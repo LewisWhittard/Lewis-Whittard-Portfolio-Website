@@ -1,4 +1,6 @@
-﻿using Page_Library.Search.Entities.SearchResult.Interface;
+﻿using Page_Library.Content.Entities.Content.Interface;
+using Page_Library.Content.Repository.Interface;
+using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Interface;
 using Page_Library.Search.Service.Interface;
 
@@ -6,11 +8,13 @@ namespace Page_Library.Search.Service.Base
 {
     public abstract class PageSearchServiceBase : IPageSearchService
     {
-        private protected readonly IPageSearchRepository _repository;
+        private protected readonly IPageSearchRepository _PageSearchRepository;
+        private protected readonly IContentRepository _ContentRepository;
 
-        protected PageSearchServiceBase(IPageSearchRepository Repository)
+        protected PageSearchServiceBase(IPageSearchRepository PageSearchRepository, IContentRepository ContentRepository)
         {
-            _repository = Repository;
+            _PageSearchRepository = PageSearchRepository;
+            _ContentRepository = ContentRepository;
         }
 
         public abstract List<ISearchResult> Search();

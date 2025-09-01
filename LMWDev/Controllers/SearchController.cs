@@ -6,6 +6,7 @@ using LMWDev.Models;
 using LMWDev.SpreadsheetConnection;
 using Page_Library.Search.Service;
 using Page_Library.Search.Repository;
+using Page_Library.Content.Repository;
 
 namespace LMWDev.Controllers
 {
@@ -15,7 +16,7 @@ namespace LMWDev.Controllers
 
         public SearchController()
         {
-			_pageSearchService = new PageSearchService(new JsonPageSearchRepository(@"./Json/Search/Search.json"));
+			_pageSearchService = new PageSearchService(new JsonPageSearchRepository(@"./Json/Search/Search.json"),new JsonContentRepository(@"./Json/Content/Content.json"));
         }
 
         public IActionResult Index()
