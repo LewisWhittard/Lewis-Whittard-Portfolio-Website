@@ -61,7 +61,6 @@ namespace Page_Library.Search.Service
                 }
 
                 toReturn.Reverse();
-                
                 return toReturn;
             }
             catch (Exception ex)
