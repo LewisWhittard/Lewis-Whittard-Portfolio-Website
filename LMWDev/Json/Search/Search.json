@@ -1,0 +1,37 @@
+﻿[
+	{
+		"ID": 0,
+		"Title": "Part 1 of My Portfolio Completed!",
+		"Description": "This portfolio will be the home of all side projects and learning pieces done outside of work including Programming, Games, 2D and 3D Assets.",
+		"ContentID": 0,
+		"Category": "Blog"
+	},
+	{
+		"ID": 1,
+		"Title": "Lewis Matthew Whittard Software Development Logo",
+		"Description": "This Logo was created using a mix of Blender and GIMP.",
+		"ContentID": 0,
+		"Category": "TwoDAssets"
+	},
+	{
+		"ID": 2,
+		"Title": "My Portfolio – Website Development",
+		"Description": "My portfolio website Made with MVC.Net Core (C#,CSHTML,Bootstrap), Libre Office Calc, ClosedXML and Canva.",
+		"ImageID": 0,
+		"Category": "Programming"
+	},
+	{
+		"ID": 3,
+		"Title": "UI Test Automation Portfolio Piece",
+		"Description": "UI Test Automation portfolio piece, I used the following tools: C#, Selenium, NUnit,  Libre Office Impress and Microsoft Video Editor.",
+		"ContentID": 2,
+		"Category": "Testing"
+	},
+	{
+		"ID": 4,
+		"Title": "Cogetta",
+		"Description": "A substitution cipher written in Python 3.",
+		"ContentID": 3,
+		"Category": "Programming"
+	}
+]

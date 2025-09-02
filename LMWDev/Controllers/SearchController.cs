@@ -1,98 +1,51 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using LMWDev.Models;
-using LMWDev.SpreadsheetConnection;
+using Page_Library.Search.Service;
+using Page_Library.Search.Repository;
+using Page_Library.Content.Repository;
+using System.Diagnostics;
+using System;
 
 namespace LMWDev.Controllers
 {
-	public class SearchController : Controller
-	{
-		public IActionResult Index()
-		{
-			SearchModel SearchModel = new SearchModel();
-			SpreadsheetConnectionClass Spreadsheet = new SpreadsheetConnectionClass();
+    public class SearchController : Controller
+    {
+        private readonly PageSearchService _pageSearchService;
+        private readonly ILogger<SearchController> _logger;
+        private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
-			var UnfilteredResults  = Spreadsheet.SearchRowResults.ToList();
-			var UnfilteredImages = Spreadsheet.ImagesTable.ToList();
+        public SearchController(ILogger<SearchController> logger)
+        {
+            _logger = logger;
+            try
+            {
+                _pageSearchService = new PageSearchService(new JsonPageSearchRepository(@"./Json/Search/Search.json"), new JsonContentRepository(@"./Json/Content/Content.json"));
+                _logger.LogInformation("PageSearchService initialized successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to initialize PageSearchService.");
+                throw;
+            }
+        }
 
-			
-			SearchModel.Search = null;
-			SearchModel.BlogCategory = true;
-			SearchModel.GamesCategory = true;
-			SearchModel.ProgrammingCategory = true;
-			SearchModel.ThreeDAssetsCategory = true;
-			SearchModel.TwoDAssetCategory = true;
-			SearchModel.TestingCategory = true;
-			SearchModel.FlexibleMeta = false;
-
-			SearchResultFunctions SearchResultFunctionsClass = new SearchResultFunctions();
-
-			var FilteredByCategory = SearchResultFunctionsClass.FilterOnCategory(UnfilteredResults, SearchModel.ProgrammingCategory, SearchModel.TestingCategory, SearchModel.GamesCategory,SearchModel.ThreeDAssetsCategory, SearchModel.TwoDAssetCategory, SearchModel.BlogCategory);
-
-			List<SearchRowResultsSingle> FilteredByTitleAndDescription = new List<SearchRowResultsSingle>();
-
-
-		
-				FilteredByTitleAndDescription = FilteredByCategory.ToList();
-			
-			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
-
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
-
-			FinalResults.Reverse();
-			
-			SearchModel.ListOfSingleSearchResults = FinalResults;
-
-			return View(SearchModel);
-		}
-
-		public IActionResult Modified(string Search, bool Blog, bool Games, bool Programming, bool ThreeD, bool TwoD, bool Testing)
-		{
-			SearchModel SearchModel = new SearchModel();
-			SpreadsheetConnectionClass Spreadsheet = new SpreadsheetConnectionClass();
-
-			var UnfilteredResults = Spreadsheet.SearchRowResults.ToList();
-			var UnfilteredImages = Spreadsheet.ImagesTable.ToList();
-
-
-			SearchModel.Search = Search;
-			SearchModel.BlogCategory = Blog;
-			SearchModel.GamesCategory = Games;
-			SearchModel.ProgrammingCategory = Programming;
-			SearchModel.ThreeDAssetsCategory = ThreeD;
-			SearchModel.TwoDAssetCategory = TwoD;
-			SearchModel.TestingCategory = Testing;
-			SearchModel.FlexibleMeta = false;
-
-			SearchResultFunctions SearchResultFunctionsClass = new SearchResultFunctions();
-
-			var FilteredByCategory = SearchResultFunctionsClass.FilterOnCategory(UnfilteredResults, Programming, Testing, Games, ThreeD, TwoD, Blog);
-
-			List<SearchRowResultsSingle> FilteredByTitleAndDescription = new List<SearchRowResultsSingle>();
-
-
-			if (Search != null)
-			{
-				FilteredByTitleAndDescription = SearchResultFunctionsClass.FilterOnTitleAndDescription(FilteredByCategory, Search);
-			}
-
-			else
-			{
-				FilteredByTitleAndDescription = FilteredByCategory.ToList();
-			}
-
-			var CoverImageFiltered = SearchResultFunctionsClass.FilterOnCoverImage(UnfilteredImages);
-
-			var FinalResults = SearchResultFunctionsClass.AddCoverImageAndButtonIdToResults(CoverImageFiltered, FilteredByTitleAndDescription);
-
-			FinalResults.Reverse();
-
-			SearchModel.ListOfSingleSearchResults = FinalResults;
-
-			return View(SearchModel);
-		}
-	}
+        public IActionResult Index(SearchViewModel viewModel)
+        {
+            using var activity = ActivitySource.StartActivity("SearchController.Index");
+            {
+                try
+                {
+                    SearchViewModel model; 
+                    _logger.LogInformation($"Executing filtered search with parameters", viewModel);
+                    model = new SearchViewModel(_pageSearchService.Search(viewModel.Search, viewModel.ProgrammingCategory, viewModel.TestingCategory, viewModel.GamesCategory, viewModel.ThreeDAssetsCategory, viewModel.TwoDAssetCategory, viewModel.BlogCategory));
+                    return View(model);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error occurred during search operation."); throw new Exception("Something went wrong during the search operation.");
+                }
+            }
+        }
+    }
 }
