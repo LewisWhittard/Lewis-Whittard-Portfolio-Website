@@ -12,30 +12,6 @@ namespace Page_Library.Search.Service
         {
         }
 
-        public override List<ISearchResult> Search()
-        {
-            try
-            {
-                var searchResults = _PageSearchRepository.Search();
-
-                List<ISearchResult> toReturn = new List<ISearchResult>();
-
-                foreach (var item in searchResults)
-                {
-                    IContent content = _ContentRepository.GetContentById(item.ContentID);
-                    item.SetContent(content);
-                    toReturn.Add(item);
-                }
-
-                toReturn.Reverse();
-                return toReturn;
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while performing a search operation.", ex);
-            }
-        }
-
         public override List<ISearchResult> Search(string searchTerm, bool programming, bool testing, bool games, bool threeDAssets, bool twoDAssets, bool blog)
         {
             try

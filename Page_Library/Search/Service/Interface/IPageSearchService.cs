@@ -4,7 +4,6 @@ namespace Page_Library.Search.Service.Interface
 {
     public interface IPageSearchService
     {
-        public abstract List<ISearchResult> Search();
 
         public abstract List<ISearchResult> Search(string searchTerm,
             bool programming,

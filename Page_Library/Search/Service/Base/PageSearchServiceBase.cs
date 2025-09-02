@@ -16,8 +16,6 @@ namespace Page_Library.Search.Service.Base
             _ContentRepository = ContentRepository;
         }
 
-        public abstract List<ISearchResult> Search();
-
         public abstract List<ISearchResult> Search(string searchTerm, bool programming, bool testing, bool games, bool threeDAssets, bool twoDAssets, bool blog);
     }
 }

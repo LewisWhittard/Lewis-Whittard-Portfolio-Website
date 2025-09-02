@@ -5,7 +5,6 @@ namespace Page_Library.Search.Repository.Base
 {
     public abstract class PageSearchRepositoryBase : IPageSearchRepository
     {
-        public abstract List<ISearchResult> Search();
 
         public abstract List<ISearchResult> Search(string searchTerm,
             bool programming,
