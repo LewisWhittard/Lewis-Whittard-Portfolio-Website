@@ -46,19 +46,6 @@ namespace Page_Library.Search.Repository
             }
         }
 
-        public override List<ISearchResult> Search()
-        {
-            try
-            {
-                var results = LoadData() ?? new List<ISearchResult>();
-                return results.Any() ? results : new List<ISearchResult>();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Search operation failed.", ex);
-            }
-        }
-
         public override List<ISearchResult> Search(
             string searchTerm,
             bool programming,
