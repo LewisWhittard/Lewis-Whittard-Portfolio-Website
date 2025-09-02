@@ -72,8 +72,17 @@ namespace Page_Library.Search.Repository
             {
                 var results = LoadData() ?? new List<ISearchResult>();
 
+                List<ISearchResult> filteredResults = null;
+
                 // Filter by ID first
-                var filteredResults = results.Where(r => r.Title.Contains(searchTerm) ||r.Title == searchTerm || r.Description.Contains(searchTerm) || r.Description == searchTerm).ToList();
+                if (!string.IsNullOrWhiteSpace(searchTerm))
+                {
+                    filteredResults = results.Where(r => r.Title.Contains(searchTerm) || r.Title == searchTerm || r.Description.Contains(searchTerm) || r.Description == searchTerm).ToList();
+                }
+                else
+                {
+                    filteredResults = results.ToList();
+                }
 
                 // Apply category filters
                 var categoryFilters = new Dictionary<string, bool>

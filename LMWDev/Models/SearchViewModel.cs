@@ -6,19 +6,19 @@ namespace LMWDev.Models
 	public class SearchViewModel
 	{
 		public string Search { get; set; }
-		public bool GamesCategory { get; set; }
-		public bool ProgrammingCategory { get; set; }
-		public bool TestingCategory { get; set; }
-		public bool ThreeDAssetsCategory {get;set;}
-		public bool TwoDAssetCategory { get; set; }
-		public bool BlogCategory { get; set; }
+        public bool GamesCategory { get; set; } = true;
+        public bool ProgrammingCategory { get; set; } = true;
+        public bool TestingCategory { get; set; } = true;
+        public bool ThreeDAssetsCategory { get; set; } = true;
+        public bool TwoDAssetCategory { get; set; } = true;
+        public bool BlogCategory { get; set; } = true;
         public bool FlexibleMeta = false;
 
 		public List<ISearchResult> Results { get; set; }
 
         public SearchViewModel()
         {
-            
+
         }
 
         public SearchViewModel(List<ISearchResult> results)

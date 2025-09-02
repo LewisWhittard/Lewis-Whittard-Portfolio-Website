@@ -6,7 +6,7 @@ using Page_Library.Search.Repository;
 using Page_Library.Content.Repository;
 using System.Diagnostics;
 using System;
-using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 namespace LMWDev.Controllers
 {
     public class SearchController : Controller
@@ -36,16 +36,9 @@ namespace LMWDev.Controllers
             {
                 try
                 {
-                    SearchViewModel model; if (string.IsNullOrWhiteSpace(viewModel?.Search))
-                    {
-                        _logger.LogInformation("Executing default search.");
-                        model = new SearchViewModel(_pageSearchService.Search());
-                    }
-                    else
-                    {
-                        _logger.LogInformation($"Executing filtered search with parameters", viewModel);
-                        model = new SearchViewModel(_pageSearchService.Search(viewModel.Search, viewModel.ProgrammingCategory, viewModel.TestingCategory, viewModel.GamesCategory, viewModel.ThreeDAssetsCategory, viewModel.TwoDAssetCategory, viewModel.BlogCategory));
-                    }
+                    SearchViewModel model; 
+                    _logger.LogInformation($"Executing filtered search with parameters", viewModel);
+                    model = new SearchViewModel(_pageSearchService.Search(viewModel.Search, viewModel.ProgrammingCategory, viewModel.TestingCategory, viewModel.GamesCategory, viewModel.ThreeDAssetsCategory, viewModel.TwoDAssetCategory, viewModel.BlogCategory));
                     return View(model);
                 }
                 catch (Exception ex)

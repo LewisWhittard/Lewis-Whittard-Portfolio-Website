@@ -16,7 +16,7 @@
     <div class="container mt-5">
         <h2 class="mb-4">Search</h2>
 
-        <form asp-action="Search" method="post">
+        <form asp-action="Index" method="post">
             <div class="row mb-3">
                 <div class="col-md-8">
                     <input asp-for="Search" class="form-control" placeholder="Search..." />
@@ -70,7 +70,6 @@
                                     <h5 class="mb-1">@result.Title</h5>
                                     <p class="mb-1">@result.Description</p>
                                     <small class="text-muted">Category: @result.Category</small><br />
-                                    <small class="text-muted">Content: @result.Content.Name</small><br />
                                     <a href="@Url.Action("Index", "PortfolioPiece", new { Id = result.ContentID })" class="btn btn-sm btn-outline-primary mt-2">
                                         View Portfolio Piece
                                     </a>
