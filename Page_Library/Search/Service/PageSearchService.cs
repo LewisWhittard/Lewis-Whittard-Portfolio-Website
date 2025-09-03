@@ -22,7 +22,7 @@ namespace Page_Library.Search.Service
 
                 foreach (var item in searchResults)
                 {
-                    IContent content = _ContentRepository.GetContentById(item.ContentID);
+                    IContent content = _ContentRepository.GetContent(item.ContentID);
                     item.SetContent(content);
                     toReturn.Add(item);
                 }

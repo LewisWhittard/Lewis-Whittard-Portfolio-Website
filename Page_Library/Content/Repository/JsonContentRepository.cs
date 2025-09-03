@@ -44,7 +44,7 @@ namespace Page_Library.Content.Repository
             }
         }
 
-        public override IContent GetContentById(int id)
+        public override IContent GetContent(int id)
         {
             return LoadData().FirstOrDefault(x => x.ID == id);
         }

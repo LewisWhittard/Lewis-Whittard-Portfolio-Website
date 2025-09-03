@@ -4,6 +4,6 @@ namespace Page_Library.Content.Repository.Interface
 {
     public interface IContentRepository
     {
-        public abstract IContent GetContentById(int id);
+        public abstract IContent GetContent(int id);
     }
 }
