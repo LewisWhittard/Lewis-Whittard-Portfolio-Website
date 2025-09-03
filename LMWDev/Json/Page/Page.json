@@ -1,0 +1,282 @@
+[
+	{
+		"externalId": 0,
+		"title": "Part 1 of My Portfolio Completed!",
+		"createDate": "2025-09-02T00:00:00Z",
+		"updateDate": "2025-09-02T00:00:00Z",
+		"publishDate": "2025-09-02T00:00:00Z",
+		"meta": {
+			"metaTitle": "Part 1 of My Portfolio Completed!",
+			"metaDescription": "Introduction to my portfolio project, why I built it, what it will host, tools used, and future plans.",
+			"metaKeywords": [ "Portfolio", "Software Development", "Projects", "Personal Branding" ],
+			"metaImageId": null
+		},
+		"contentBlocks": [
+			{
+				"blockType": "Header",
+				"level": "H1",
+				"alignment": "Center",
+				"text": "Part 1 of My Portfolio Completed!"
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "Why did I build this?"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "After 7 months of working on a side project and it being shelved, I came the realisation that not every project is going to make it out the door..."
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Secondly, this will bring a new sense of personal branding and consistency to my online presence..."
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "I also have vertically integrated my distribution channels and platform..."
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "What will it host?"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "This portfolio will be the home of all side projects and learning pieces done outside of work..."
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "Tools Used"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "MVC.net Core, Canva, Libre Office Calc, Github, ClosedXML,Github."
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "What’s in store in future?"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Part 2 will include landing pages for SEO..."
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Secondly, I would like to automate the testing for my portfolio..."
+			}
+		]
+	},
+	{
+		"externalId": 1,
+		"title": "Lewis Matthew Whittard Software Development Logo",
+		"createDate": "2025-09-02T00:00:00Z",
+		"updateDate": "2025-09-02T00:00:00Z",
+		"publishDate": "2025-09-02T00:00:00Z",
+		"meta": {
+			"metaTitle": "Lewis Matthew Whittard Software Development Logo",
+			"metaDescription": "A custom-designed logo created with Blender, GIMP, and Poppins typeface, ensuring accessibility with color contrast checks.",
+			"metaKeywords": [ "Logo Design", "Blender", "GIMP", "Branding" ],
+			"metaImageId": 0
+		},
+		"contentBlocks": [
+			{
+				"blockType": "Header",
+				"level": "H1",
+				"alignment": "Center",
+				"text": "Lewis Matthew Whittard Software Development Logo"
+			},
+			{
+				"blockType": "Image",
+				"alignment": "Center",
+				"mediaId": 0,
+				"altText": "Lewis Matthew Whittard Software Development Logo"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "I created the shape of the logo in 3D using Blender..."
+			}
+		]
+	},
+	{
+		"externalId": 2,
+		"title": "My Portfolio – Website Development",
+		"createDate": "2025-09-02T00:00:00Z",
+		"updateDate": "2025-09-02T00:00:00Z",
+		"publishDate": "2025-09-02T00:00:00Z",
+		"meta": {
+			"metaTitle": "My Portfolio – Website Development",
+			"metaDescription": "A breakdown of the tools used to create my portfolio website, including MVC.net Core, Canva, and Github.",
+			"metaKeywords": [ "Portfolio Website", "MVC.net Core", "Web Development" ],
+			"metaImageId": null
+		},
+		"contentBlocks": [
+			{
+				"blockType": "Header",
+				"level": "H1",
+				"alignment": "Center",
+				"text": "My Portfolio – Website Development"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "To create my portfolio Website I used the following tools..."
+			},
+			{
+				"blockType": "Hyperlink",
+				"alignment": "Center",
+				"url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"linkText": "View Source on GitHub"
+			}
+		]
+	},
+	{
+		"externalId": 3,
+		"title": "UI Test Automation Portfolio Piece",
+		"createDate": "2025-09-02T00:00:00Z",
+		"updateDate": "2025-09-02T00:00:00Z",
+		"publishDate": "2025-09-02T00:00:00Z",
+		"meta": {
+			"metaTitle": "UI Test Automation Portfolio Piece",
+			"metaDescription": "Portfolio piece showcasing UI test automation using C#, Selenium, and NUnit with supporting tools.",
+			"metaKeywords": [ "Test Automation", "Selenium", "NUnit", "C#" ],
+			"metaImageId": 1
+		},
+		"contentBlocks": [
+			{
+				"blockType": "Header",
+				"level": "H1",
+				"alignment": "Center",
+				"text": "UI Test Automation Portfolio Piece"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "To create my UI test automation portfolio piece, I used the following tools..."
+			},
+			{
+				"blockType": "Video",
+				"mediaId": 1,
+				"caption": "UI Test Automation Portfolio Piece"
+			},
+			{
+				"blockType": "Hyperlink",
+				"alignment": "Center",
+				"url": "https://github.com/LewisWhittard/LMWSelenium",
+				"linkText": "View Source on GitHub"
+			}
+		]
+	},
+	{
+		"externalId": 4,
+		"title": "Cogetta",
+		"createDate": "2025-09-02T00:00:00Z",
+		"updateDate": "2025-09-02T00:00:00Z",
+		"publishDate": "2025-09-02T00:00:00Z",
+		"meta": {
+			"metaTitle": "Cogetta",
+			"metaDescription": "Cogetta is a substitution cipher written in Python 3 with supporting documentation, logo, and video assets.",
+			"metaKeywords": [ "Cogetta", "Python", "Cryptography", "Cipher" ],
+			"metaImageId": 4
+		},
+		"contentBlocks": [
+			{
+				"blockType": "Header",
+				"level": "H1",
+				"alignment": "Center",
+				"text": "Cogetta"
+			},
+			{
+				"blockType": "Video",
+				"mediaId": 4,
+				"caption": "Cogetta Demo"
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "What is Cogetta?"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Cogetta is a substitution cipher written in python 3."
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "Where can I download Cogetta?"
+			},
+			{
+				"blockType": "Hyperlink",
+				"alignment": "Center",
+				"url": "https://github.com/LewisWhittard/Cogetta",
+				"linkText": "Download Cogetta on GitHub"
+			},
+			{
+				"blockType": "Header",
+				"level": "H2",
+				"alignment": "Center",
+				"text": "What tools did I use to develop Cogetta?"
+			},
+			{
+				"blockType": "Header",
+				"level": "H3",
+				"alignment": "Center",
+				"text": "Programming"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Python 3, Thonny IDE, Github"
+			},
+			{
+				"blockType": "Header",
+				"level": "H3",
+				"alignment": "Center",
+				"text": "Logo"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Blender, GIMP 2.8"
+			},
+			{
+				"blockType": "Header",
+				"level": "H3",
+				"alignment": "Center",
+				"text": "Documents"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Libre Office Draw"
+			},
+			{
+				"blockType": "Header",
+				"level": "H3",
+				"alignment": "Center",
+				"text": "Video"
+			},
+			{
+				"blockType": "Paragraph",
+				"alignment": "Center",
+				"bodyText": "Libre Office Impress, Microsoft Video Editor, OBS Studio"
+			}
+		]
+	}
+]
