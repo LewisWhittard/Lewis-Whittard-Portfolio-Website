@@ -5,10 +5,10 @@ namespace Page_Library.Page.Entities.Page.Base
 {
     public abstract class PageBase
     {
-        public int externalId { get; private set; }
-        public string title { get; private set; }
-        public string publishDate { get; private set; }
-        public MetaDTO meta { get; private set; }
-        public List<ContentBlockDTO> contentBlocks { get; private set; }
+        public int ExternalId { get; private set; }
+        public string Title { get; private set; }
+        public string PublishDate { get; private set; }
+        public MetaDTO Meta { get; private set; }
+        public List<ContentBlockDTO> ContentBlocks { get; private set; }
     }
 }

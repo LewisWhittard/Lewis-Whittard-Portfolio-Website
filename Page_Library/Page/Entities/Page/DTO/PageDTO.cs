@@ -3,11 +3,11 @@ using Page_Library.Page.Entities.MetaData.DTO;
 
 public class PortfolioEntryDTO
 {
-    public int externalId { get; set; }
-    public string title { get; set; }
-    public string publishDate { get; set; }
-    public MetaDTO meta { get; set; }
-    public List<ContentBlockDTO> contentBlocks { get; set; }
+    public int ExternalId { get; set; }
+    public string Title { get; set; }
+    public string PublishDate { get; set; }
+    public MetaDTO Meta { get; set; }
+    public List<ContentBlockDTO> ContentBlocks { get; set; }
 }
 
 

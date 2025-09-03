@@ -5,10 +5,10 @@ namespace Page_Library.Page.Entities.Page.Interface
 {
     public interface IPage
     {
-        public int externalId { get; }
-        public string title { get; }
-        public string publishDate { get; }
-        public MetaDTO meta { get; }
-        public List<ContentBlockDTO> contentBlocks { get; }
+        public int ExternalId { get; }
+        public string Title { get; }
+        public string PublishDate { get; }
+        public MetaDTO Meta { get; }
+        public List<ContentBlockDTO> ContentBlocks { get; }
     }
 }
