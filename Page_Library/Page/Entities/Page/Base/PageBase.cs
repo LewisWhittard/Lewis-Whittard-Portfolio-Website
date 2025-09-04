@@ -1,5 +1,6 @@
-﻿using Page_Library.Page.Entities.ContentBlock.DTO;
+﻿using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Page.Entities.MetaData.DTO;
+using Page_Library.Page.Entities.Page.DTO;
 
 namespace Page_Library.Page.Entities.Page.Base
 {
@@ -9,6 +10,14 @@ namespace Page_Library.Page.Entities.Page.Base
         public string Title { get; private set; }
         public string PublishDate { get; private set; }
         public MetaDTO Meta { get; private set; }
-        public List<ContentBlockDTO> ContentBlocks { get; private set; }
+        public List<IContent> ContentBlocks { get; private set; }
+
+        protected PageBase(PageDTO page)
+        {
+            ExternalId = page.ExternalId;
+            Title = page.Title;
+            PublishDate = page.PublishDate;
+            Meta = page.Meta;
+        }
     }
 }
