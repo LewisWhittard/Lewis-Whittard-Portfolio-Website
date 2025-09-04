@@ -5,7 +5,7 @@ namespace Page_Library.Page.Entities.ContentBlock
 {
     public class ParagraphBlock : ContentBlockBase
     {
-        public string BodyText { get; set; }
+        public string BodyText { get; private set; }
 
         public ParagraphBlock(ContentBlockDTO dto) : base(dto)
         {

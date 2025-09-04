@@ -10,8 +10,8 @@ namespace Page_Library.Page.Entities.ContentBlock
 {
     public class HeaderBlock : ContentBlockBase
     {
-        public string Level { get; set; }  // e.g., "H1", "H2", "H3"
-        public string Text { get; set; }
+        public string Level { get; private set; }  // e.g., "H1", "H2", "H3"
+        public string Text { get; private set; }
 
         public HeaderBlock(ContentBlockDTO dto) : base(dto)
         {
