@@ -12,9 +12,11 @@ namespace Page_Library.Page.Service.Base
         private protected readonly IContentBlockFactory _contentBlockFactory;
         private protected readonly IContentRepository _contentRepository;
 
-        public PageServiceBase(IPageRepository pageRepository, IContentBlockFactory contentBlockFactory)
+        public PageServiceBase(IPageRepository pageRepository, IContentBlockFactory contentBlockFactory, IContentRepository contentBlockRepository)
         {
             _pageRepository = pageRepository;
+            _contentRepository = contentBlockRepository;
+            _contentBlockFactory = contentBlockFactory;
         }
 
         public IPage GetPage(int Id)
