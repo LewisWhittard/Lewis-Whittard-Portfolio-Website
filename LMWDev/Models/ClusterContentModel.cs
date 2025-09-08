@@ -12,5 +12,10 @@ namespace LMWDev.Models
             Page = page;
             FlexibleMeta = false;
         }
+
+        public ClusterContentModel()
+        {
+            
+        }
     }
 }
