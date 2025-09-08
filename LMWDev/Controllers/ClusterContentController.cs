@@ -4,6 +4,7 @@ using Page_Library.Page.Service;
 using Page_Library.Page.Repository;
 using Page_Library.Page.Factory;
 using Page_Library.Content.Repository;
+using LMWDev.Models;
 
 namespace LMWDev.Controllers
 {
@@ -20,9 +21,9 @@ namespace LMWDev.Controllers
 		{
 			var page = Page.GetPage(Id);
 
-			Clust
+            ClusterContentModel viewModel = new ClusterContentModel(page);
 
-			return View(null);
+			return View(viewModel);
 		}
 	}
 }
