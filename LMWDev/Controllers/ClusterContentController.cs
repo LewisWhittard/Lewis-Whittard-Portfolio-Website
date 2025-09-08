@@ -1,29 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Page_Library.Page.Service.Interface;
 using Page_Library.Page.Service;
 using Page_Library.Page.Repository;
 using Page_Library.Page.Factory;
 using Page_Library.Content.Repository;
 using LMWDev.Models;
+using System.Diagnostics;
+using System;
 
 namespace LMWDev.Controllers
 {
-	public class ClusterContentController : Controller
-	{
-		private readonly IPageService Page;
+    public class ClusterContentController : Controller
+    {
+        private readonly IPageService _pageService;
+        private readonly ILogger<ClusterContentController> _logger;
+        private static readonly ActivitySource ActivitySource = new("LMWDev.ClusterContentController");
 
-        public ClusterContentController()
+        public ClusterContentController(ILogger<ClusterContentController> logger)
         {
-			Page = new PageService(new JsonPageRepository(@"./Json/Page/Page.json"), new ContentBlockFactory(), new JsonContentRepository(@"./Json/Content/Content.json"));
+            _logger = logger;
+            try
+            {
+                _pageService = new PageService(
+                    new JsonPageRepository(@"./Json/Page/Page.json"),
+                    new ContentBlockFactory(),
+                    new JsonContentRepository(@"./Json/Content/Content.json")
+                );
+                _logger.LogInformation("PageService initialized successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to initialize PageService.");
+                throw;
+            }
         }
 
-        public IActionResult Index(int Id)
-		{
-			var page = Page.GetPage(Id);
+        public IActionResult Index(int id)
+        {
+            using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
+            try
+            {
+                _logger.LogInformation("Fetching page with ID: {Id}", id);
+                var page = _pageService.GetPage(id);
+                activity?.SetTag("page.id", id);
+                activity?.SetTag("page.title", page?.Title);
 
-            ClusterContentModel viewModel = new ClusterContentModel(page);
-
-			return View(viewModel);
-		}
-	}
+                var viewModel = new ClusterContentModel(page);
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while loading ClusterContent for ID: {Id}", id);
+                activity?.SetTag("error", true);
+                activity?.SetTag("exception.message", ex.Message);
+                throw new Exception("Something went wrong while loading the page.");
+            }
+        }
+    }
 }
+
