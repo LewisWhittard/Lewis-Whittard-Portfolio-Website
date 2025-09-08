@@ -25,6 +25,8 @@ namespace LMWDev.Controllers
         public IActionResult Index(int Id)
 		{
 			Page.GetPage(Id);
+
+
 			return View(null);
 		}
 	}
