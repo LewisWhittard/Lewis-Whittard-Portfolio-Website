@@ -1,12 +1,7 @@
 ﻿using Page_Library.Content.Entities.Content.DTO;
-using Page_Library.Content.Entities.Content.Interface;
-using Page_Library.Content.Repository.Interface;
+using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Repository.Base;
-using Page_Library.Search.Entities.SearchResult.Interface;
-using Page_Library.Search.Repository;
-using Page_Library.Search.Repository.Interface;
-using System.Reflection.Metadata;
 using System.Text.Json;
 
 namespace Page_Library.Page.Repository
@@ -15,7 +10,7 @@ namespace Page_Library.Page.Repository
     {
         private readonly string _pageRepositoryPath;
 
-        public JsonPageRepository(string pageRepositoryPath) : base(pageRepositoryPath)
+        public JsonPageRepository(string pageRepositoryPath)
         {
             _pageRepositoryPath = pageRepositoryPath;
         }
@@ -25,7 +20,7 @@ namespace Page_Library.Page.Repository
             try
             {
                 var result = LoadData().Where(x => x.ExternalId == Id);
-                return result;
+                return (IPage)result;
             }
             catch (Exception)
             {
@@ -44,7 +39,7 @@ namespace Page_Library.Page.Repository
             try
             {
                 var json = File.ReadAllText(_pageRepositoryPath);
-                var results = JsonSerializer.Deserialize<List<contentDTO>>(json) ?? new List<contentDTO>();
+                var results = JsonSerializer.Deserialize<List<PageDTO>>(json) ?? new List<PageDTO>();
 
                 List<IPage> toReturn = new List<IPage>();
 

@@ -11,11 +11,11 @@ namespace Page_Library.Page.Entities.ContentBlock
         public string Caption { get; private set; }
         public IContent Content { get; private set; }
 
-        public VideoBlock(ContentBlockDTO dto, IContent Content) : base(dto)
+        public VideoBlock(ContentBlockDTO dto, IContent content) : base(dto)
         {
             MediaId = dto.MediaId ?? -1;
             Caption = dto.Caption;
-            dto.content
+            Content = content;
         }
     }
 

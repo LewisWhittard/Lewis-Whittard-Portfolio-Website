@@ -6,6 +6,7 @@ using Page_Library.Page.Entities.MetaData.DTO;
 using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Factory;
+using Page_Library.Page.Factory.Interface;
 
 namespace Page_Library.Page.Entities.Page.Base
 {
@@ -16,7 +17,7 @@ namespace Page_Library.Page.Entities.Page.Base
         public string PublishDate { get; private set; }
         public MetaDTO Meta { get; private set; }
         public List<IContentBlock> ContentBlocks { get; private set; }
-        private List<ContentBlockDTO> ContentBlockDTO;
+        private List<ContentBlockDTO>? ContentBlockDTO;
 
         protected PageBase(PageDTO dto)
         {
@@ -24,10 +25,10 @@ namespace Page_Library.Page.Entities.Page.Base
             Title = dto.Title;
             PublishDate = dto.PublishDate;
             Meta = dto.Meta;
-            ContentBlocks = dto.ContentBlocks;
+            ContentBlockDTO = dto.ContentBlocks;
         }
 
-        public override void SetUpPolymorthContentBlocks(IContentRepository contentRepository, ContentBlockFactory contentBlockFactory)
+        public void SetUpPolymorphContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory)
         {
             List<IContentBlock> contentBlocks = new List<IContentBlock>();
 
@@ -43,7 +44,7 @@ namespace Page_Library.Page.Entities.Page.Base
                 {
                     if (item.BlockType == "Video" || item.BlockType == "Image")
                     {
-                        var mediaContent = contentRepository.GetContent(item.MediaId);
+                        var mediaContent = contentRepository.GetContent((int)item.MediaId);
                         contentBlocks.Add(contentBlockFactory.CreateContentBlock(item, mediaContent));
                     }
                     else

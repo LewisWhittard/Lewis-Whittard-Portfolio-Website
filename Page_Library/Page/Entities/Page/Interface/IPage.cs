@@ -14,7 +14,7 @@ namespace Page_Library.Page.Entities.Page.Interface
         public MetaDTO Meta { get; }
         public List<IContentBlock> ContentBlocks { get; }
 
-        public abstract void SetUpPolymorthContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory);
+        public abstract void SetUpPolymorphContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory);
 
     }
 }

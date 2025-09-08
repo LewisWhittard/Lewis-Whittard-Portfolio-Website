@@ -9,7 +9,7 @@ namespace Page_Library.Page.Entities.Page.DTO
         public string Title { get; set; }
         public string PublishDate { get; set; }
         public MetaDTO Meta { get; set; }
-        public List<ContentBlockDTO> ContentBlocks { get; set; }
+        public List<ContentBlockDTO>? ContentBlocks { get; set; }
     }
 }
 

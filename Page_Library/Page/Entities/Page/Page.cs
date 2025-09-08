@@ -6,7 +6,7 @@ namespace Page_Library.Page.Entities.Page
 {
     public class Page : PageBase
     {
-        public Page(PageDTO page, List<IContentBlock> contentBlocks) : base(page,contentBlocks)
+        public Page(PageDTO page) : base(page)
         {
         }
     }
