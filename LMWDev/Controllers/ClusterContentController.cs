@@ -1,10 +1,4 @@
-﻿using LMWDev.SpreadsheetConnection;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LMWDev.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Page_Library.Page.Service.Interface;
 using Page_Library.Page.Service;
 using Page_Library.Page.Repository;
@@ -24,8 +18,9 @@ namespace LMWDev.Controllers
 
         public IActionResult Index(int Id)
 		{
-			Page.GetPage(Id);
+			var page = Page.GetPage(Id);
 
+			Clust
 
 			return View(null);
 		}
