@@ -5,9 +5,9 @@ using Page_Library.Page.Service.Base;
 
 namespace Page_Library.Page.Service
 {
-    public abstract class PageService : PageServiceBase
+    public class PageService : PageServiceBase
     {
-        protected PageService(IPageRepository pageRepository, IContentBlockFactory contentBlockFactory, IContentRepository contentBlockRepository) : base(pageRepository, contentBlockFactory, contentBlockRepository)
+        public PageService(IPageRepository pageRepository, IContentBlockFactory contentBlockFactory, IContentRepository contentBlockRepository) : base(pageRepository, contentBlockFactory, contentBlockRepository)
         {
         }
     }
