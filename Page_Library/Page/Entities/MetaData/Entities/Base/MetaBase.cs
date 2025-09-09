@@ -1,0 +1,23 @@
+﻿using Page_Library.Page.Entities.MetaData.Entities.DTO;
+
+namespace Page_Library.Page.Entities.MetaData.Entities.Base
+{
+    public class MetaBase : IMeta
+    {
+        public string MetaTitle { get; private set; }
+
+        public string MetaDescription {get; private set; }
+
+        public List<string> MetaKeywords { get; private set; }
+
+        public int? MetaImageId {get; private set; }
+
+        public MetaBase(MetaDTO dto)
+        {
+            MetaTitle = dto.MetaTitle;
+            MetaDescription = dto.MetaDescription;
+            MetaKeywords = dto.MetaKeywords;
+            MetaImageId = dto.MetaImageId;
+        }
+    }
+}

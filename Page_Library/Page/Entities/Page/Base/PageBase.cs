@@ -2,7 +2,9 @@
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock.Interface;
-using Page_Library.Page.Entities.MetaData.DTO;
+using Page_Library.Page.Entities.MetaData.Entities;
+using Page_Library.Page.Entities.MetaData.Entities.Base;
+using Page_Library.Page.Entities.MetaData.Entities.DTO;
 using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Factory;
@@ -15,7 +17,7 @@ namespace Page_Library.Page.Entities.Page.Base
         public int ExternalId { get; private set; }
         public string Title { get; private set; }
         public string PublishDate { get; private set; }
-        public MetaDTO Meta { get; private set; }
+        public IMeta Meta { get; private set; }
         public List<IContentBlock> ContentBlocks { get; private set; }
         private List<ContentBlockDTO>? ContentBlockDTO;
 
@@ -24,7 +26,7 @@ namespace Page_Library.Page.Entities.Page.Base
             ExternalId = dto.ExternalId;
             Title = dto.Title;
             PublishDate = dto.PublishDate;
-            Meta = dto.Meta;
+            Meta = new Meta(dto.Meta);
             ContentBlockDTO = dto.ContentBlocks;
         }
 
