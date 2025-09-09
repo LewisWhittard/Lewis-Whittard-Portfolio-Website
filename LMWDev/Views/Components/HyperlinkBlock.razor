@@ -1,0 +1,11 @@
+﻿@using Page_Library.Page.Entities.ContentBlock
+@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.HyperlinkBlock Block { get; set; }
+}
+
+<a href="@Block?.Url" target="_blank" rel="noopener noreferrer">
+    @Block?.LinkText
+</a>

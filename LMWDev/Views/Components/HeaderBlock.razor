@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.HeaderBlock Block { get; set; }
+
+    private string GetTag()
+    {
+        var level = Block.Level.ToUpperInvariant();
+
+        switch (level)
+        {
+            case "H1":
+                return "h1";
+            case "H2":
+                return "h2";
+            case "H3":
+                return "h3";
+            case "H4":
+                return "h4";
+            case "H5":
+                return "h5";
+            case "H6":
+                return "h6";
+            default:
+                return "h1";
+        }
+    }
+}
+
+@{
+    var tag = GetTag();
+    var text = Block?.Text ?? string.Empty;
+}
+
+<@tag>@text</@tag>
+
