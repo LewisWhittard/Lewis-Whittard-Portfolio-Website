@@ -2,11 +2,11 @@
 
 @code {
     [Parameter]
-    public List<IContentBlock> Block { get; set; }
+    public List<IContentBlock> Blocks { get; set; }
 }
 
 <body>
-    @foreach (var block in Block)
+    @foreach (var block in Blocks)
     {
         switch (block)
         {
