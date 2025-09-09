@@ -1,0 +1,17 @@
+﻿@using Page_Library.Page.Entities.ContentBlock
+@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.ImageBlock Block { get; set; }
+}
+
+@if (Block?.Content?.Path != null)
+{
+    <img src="@Block.Content.Path" alt="@Block.AltText" />
+}
+else
+{
+    <p>Image not available.</p>
+}
+

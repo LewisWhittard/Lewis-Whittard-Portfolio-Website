@@ -1,0 +1,26 @@
+﻿@using Page_Library.Page.Entities.ContentBlock
+@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.VideoBlock Block { get; set; }
+}
+
+@if (Block?.Content?.Path != null)
+{
+    <div>
+        <video controls width="640">
+            <source src="@Block.Content.Path" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        @if (!string.IsNullOrWhiteSpace(Block.Caption))
+        {
+            <p>@Block.Caption</p>
+        }
+    </div>
+}
+else
+{
+    <p>Video not available.</p>
+}
