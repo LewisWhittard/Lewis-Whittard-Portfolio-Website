@@ -1,0 +1,38 @@
+﻿@using Page_Library.Page.Entities.ContentBlock.Interface
+
+@code {
+    [Parameter]
+    public List<IContentBlock> Block { get; set; }
+}
+
+<body>
+    @foreach (var block in Block)
+    {
+        switch (block)
+        {
+            case Page_Library.Page.Entities.ContentBlock.HeaderBlock header:
+                <HeaderBlock Block="header" />
+                break;
+
+            case Page_Library.Page.Entities.ContentBlock.HyperlinkBlock hyperlink:
+                <HyperlinkBlock Block="hyperlink" />
+                break;
+
+            case Page_Library.Page.Entities.ContentBlock.ImageBlock image:
+                <ImageBlock Block="image" />
+                break;
+
+            case Page_Library.Page.Entities.ContentBlock.ParagraphBlock paragraph:
+                <ParagraphBlock Block="paragraph" />
+                break;
+
+            case Page_Library.Page.Entities.ContentBlock.VideoBlock video:
+                <VideoBlock Block="video" />
+                break;
+
+            default:
+                <p>Unknown block type</p>
+                break;
+        }
+    }
+</body>
