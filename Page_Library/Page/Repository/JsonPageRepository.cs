@@ -19,8 +19,8 @@ namespace Page_Library.Page.Repository
         {
             try
             {
-                var result = LoadData().Where(x => x.ExternalId == Id);
-                return (IPage)result;
+                var result = LoadData().Where(x => x.ExternalId == Id).FirstOrDefault();
+                return result;
             }
             catch (Exception)
             {
