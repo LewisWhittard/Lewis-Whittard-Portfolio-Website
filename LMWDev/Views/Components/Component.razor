@@ -1,0 +1,30 @@
+﻿@code {
+    [Parameter]
+    public string MetaTitle { get; set; }
+
+    [Parameter]
+    public string MetaDescription { get; set; }
+
+    [Parameter]
+    public List<string> MetaKeywords { get; set; }
+
+    [Parameter]
+    public string MetaImage { get; set; } // Now a string instead of int
+
+    private string GetImageUrl(string imageName)
+    {
+        // Replace with your actual image URL logic
+        return $"/images/{imageName}.jpg";
+    }
+}
+
+<head>
+    <title>@MetaTitle</title>
+    <meta name="description" content="@MetaDescription" />
+    <meta name="keywords" content="@string.Join(", ", MetaKeywords)" />
+    @if (!string.IsNullOrWhiteSpace(MetaImage))
+    {
+        <meta property="og:image" content="@GetImageUrl(MetaImage)" />
+    }
+</head>
+
