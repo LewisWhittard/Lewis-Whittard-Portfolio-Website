@@ -1,4 +1,4 @@
-﻿namespace Page_Library.Page.Entities.MetaData.Entities.DTO
+﻿namespace Page_Library.Page.Entities.MetaData.DTO
 {
     public class MetaDTO
     {

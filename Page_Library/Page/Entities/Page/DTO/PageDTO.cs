@@ -1,5 +1,5 @@
 ﻿using Page_Library.Page.Entities.ContentBlock.DTO;
-using Page_Library.Page.Entities.MetaData.Entities.DTO;
+using Page_Library.Page.Entities.MetaData.DTO;
 
 namespace Page_Library.Page.Entities.Page.DTO
 {

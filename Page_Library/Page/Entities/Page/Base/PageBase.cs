@@ -4,7 +4,7 @@ using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock.Interface;
 using Page_Library.Page.Entities.MetaData.Entities;
 using Page_Library.Page.Entities.MetaData.Entities.Base;
-using Page_Library.Page.Entities.MetaData.Entities.DTO;
+using Page_Library.Page.Entities.MetaData.Interface;
 using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Factory;
