@@ -23,7 +23,8 @@ namespace Page_Library.Page.Service.Base
         {
             var results = _pageRepository.GetPage(Id);
             results.SetUpPolymorphContentBlocks(_contentRepository, _contentBlockFactory);
-            return _pageRepository.GetPage(Id);
+            results.Meta.SetContent(_contentRepository);
+            return results;
         }
     }
 }
