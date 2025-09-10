@@ -1,0 +1,13 @@
+﻿@code {
+    [Parameter]
+    public Page_Library.Page.Entities.MetaData.Interface.IMeta meta { get; set; }
+}
+
+<head>
+    <title>@meta.MetaTitle</title>
+    <meta name="description" content="@meta.MetaDescription" />
+    <meta name="keywords" content="@string.Join(", ", meta.MetaKeywords)" />
+    <meta property="og:image" content="@meta.MetaContent.Path" />
+    
+</head>
+
