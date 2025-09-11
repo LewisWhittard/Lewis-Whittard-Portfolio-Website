@@ -57,6 +57,8 @@ namespace Page_Library.Page.Entities.Page.Base
                     Console.WriteLine($"Error processing item with MediaId {item.MediaId}: {ex.Message}");
                 }
             }
+
+            ContentBlocks = contentBlocks;
         }
     }
 }

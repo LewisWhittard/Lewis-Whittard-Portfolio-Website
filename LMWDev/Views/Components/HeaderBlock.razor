@@ -4,34 +4,40 @@
     [Parameter]
     public Page_Library.Page.Entities.ContentBlock.HeaderBlock Block { get; set; }
 
-    private string GetTag()
+    private RenderFragment RenderHeader => builder =>
     {
-        var level = Block.Level.ToUpperInvariant();
+        var level = Block?.Level?.ToUpperInvariant() ?? "H1";
+        var text = Block?.Text ?? string.Empty;
 
         switch (level)
         {
             case "H1":
-                return "h1";
+                builder.OpenElement(0, "h1");
+                break;
             case "H2":
-                return "h2";
+                builder.OpenElement(0, "h2");
+                break;
             case "H3":
-                return "h3";
+                builder.OpenElement(0, "h3");
+                break;
             case "H4":
-                return "h4";
+                builder.OpenElement(0, "h4");
+                break;
             case "H5":
-                return "h5";
+                builder.OpenElement(0, "h5");
+                break;
             case "H6":
-                return "h6";
+                builder.OpenElement(0, "h6");
+                break;
             default:
-                return "h1";
+                builder.OpenElement(0, "h1");
+                break;
         }
-    }
+
+        builder.AddContent(1, text);
+        builder.CloseElement();
+    };
 }
 
-@{
-    var tag = GetTag();
-    var text = Block?.Text ?? string.Empty;
-}
-
-<@tag>@text</@tag>
+@RenderHeader
 
