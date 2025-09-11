@@ -1,11 +1,16 @@
 ﻿@using Page_Library.Page.Entities.ContentBlock.Interface
-
 @code {
-    [Parameter]
-    public List<IContentBlock> Blocks { get; set; }
+    [Parameter] public List<IContentBlock> Blocks { get; set; }
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string PublishDate { get; set; }
 }
 
 <body>
+    <section class="page-header">
+        <h1>@Title</h1>
+        <p class="publish-date">Published on: @PublishDate</p>
+    </section>
+
     @foreach (var block in Blocks)
     {
         switch (block)

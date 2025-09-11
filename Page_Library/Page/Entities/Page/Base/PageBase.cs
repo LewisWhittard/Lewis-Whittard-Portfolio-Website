@@ -1,13 +1,10 @@
-﻿using Page_Library.Content.Entities.Content.DTO;
-using Page_Library.Content.Repository.Interface;
+﻿using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock.Interface;
-using Page_Library.Page.Entities.MetaData.Entities;
-using Page_Library.Page.Entities.MetaData.Entities.Base;
+using Page_Library.Page.Entities.MetaData;
 using Page_Library.Page.Entities.MetaData.Interface;
 using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
-using Page_Library.Page.Factory;
 using Page_Library.Page.Factory.Interface;
 
 namespace Page_Library.Page.Entities.Page.Base
