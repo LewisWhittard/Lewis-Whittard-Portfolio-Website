@@ -6,9 +6,18 @@
     public Page_Library.Page.Entities.ContentBlock.ImageBlock Block { get; set; }
 }
 
+
 @if (Block?.Content?.Path != null)
 {
-    <img src="/Images/@Block.Content.Path" alt="@Block.AltText" />
+    var imageContent = Block.Content as Page_Library.Content.Entities.Content.Image;
+    if (imageContent != null)
+    {
+        <img src="/Images/@Block.Content.Path" alt="@imageContent.Alt" />
+    }
+    else
+    {
+        <p>Invalid image content type.</p>
+    }
 }
 else
 {
