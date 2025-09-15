@@ -14,7 +14,7 @@ namespace Page_Library_Tests.Content.Entities.Image
                 Name = "Test Name",
                 Path = "/test/path.jpg",
                 Alt = "Test Alt",
-                Type = "Image"
+                ContentType = "Image"
             };
 
             // Act
@@ -25,7 +25,7 @@ namespace Page_Library_Tests.Content.Entities.Image
             Assert.Equal(contentDTO.Name, image.Name);
             Assert.Equal(contentDTO.Path, image.Path);
             Assert.Equal(contentDTO.Alt, image.Alt);
-            Assert.Equal(contentDTO.Type, image.Type);
+            Assert.Equal(contentDTO.ContentType, image.ContentType);
         }
     }
 }
