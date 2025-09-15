@@ -1,6 +1,6 @@
 ﻿using Page_Library.Content.Entities.Content.DTO;
 
-namespace Page_Library_Tests.Content.Entities
+namespace Page_Library_Tests.Content.Entities.Content
 {
     public class Content
     {
