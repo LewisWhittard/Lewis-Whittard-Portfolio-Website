@@ -13,8 +13,6 @@ namespace Page_Library.Page.Factory
         {
             switch (dto.BlockType)
             {
-                switch (dto.BlockType)
-            {
                 case "Header":
                     return new HeaderBlock(dto);
 
