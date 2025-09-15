@@ -24,14 +24,15 @@ namespace Page_Library.Search.Service
                 foreach (var item in searchResults)
                 {
                     IContent content = _ContentRepository.GetContent(item.ContentID);
-                    if (content.ContentType == "Image")
+                    if (content is Image imageContent)
                     {
-                        item.SetContent((Image)content);
+                        item.SetContent(imageContent);
                     }
                     else
                     {
-                        throw new Exception("Not an Image");
+                        throw new InvalidCastException($"Content with ID {item.ContentID} is not of type Image.");
                     }
+
 
                     toReturn.Add(item);
                 }
