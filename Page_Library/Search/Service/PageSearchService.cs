@@ -1,4 +1,5 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
+﻿using Page_Library.Content.Entities.Content;
+using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Interface;
@@ -25,7 +26,7 @@ namespace Page_Library.Search.Service
                     IContent content = _ContentRepository.GetContent(item.ContentID);
                     if (content.Type == "Image")
                     {
-                        item.SetContent(content);
+                        item.SetContent((Image)content);
                     }
                     else
                     {
