@@ -12,7 +12,7 @@ namespace Page_Library.Page.Entities.ContentBlock
 
         public ImageBlock(ContentBlockDTO dto, IContent content) : base(dto)
         {
-            MediaId = dto.MediaId ?? -1;
+            MediaId = (int)dto.MediaId;
             AltText = dto.AltText;
             Content = content;
         }
