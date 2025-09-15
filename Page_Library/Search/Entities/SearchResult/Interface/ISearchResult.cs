@@ -1,4 +1,5 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
+﻿using Page_Library.Content.Entities.Content;
+using Page_Library.Content.Entities.Content.Interface;
 
 namespace Page_Library.Search.Entities.SearchResult.Interface
 {
@@ -8,9 +9,9 @@ namespace Page_Library.Search.Entities.SearchResult.Interface
         public string Title { get; }
         public string Description { get; }
         public int ContentID { get; }
-        public IContent Content { get; }
+        public Image Content { get; }
         public string Category { get; }
 
-        public abstract void SetContent(IContent content);
+        public abstract void SetContent(Image content);
     }
 }
