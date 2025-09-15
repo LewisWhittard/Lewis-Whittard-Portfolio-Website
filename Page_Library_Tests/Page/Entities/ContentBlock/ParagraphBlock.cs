@@ -17,7 +17,7 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             };
 
             // Act
-            var block = new Page_Library.Page.Entities.ContentBlock.HyperlinkBlock.ParagraphBlock(dto);
+            var block = new Page_Library.Page.Entities.ContentBlock.ParagraphBlock(dto);
 
             // Assert
             Assert.Equal("Paragraph", block.BlockType);
