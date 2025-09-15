@@ -10,15 +10,14 @@ namespace Page_Library.Content.Entities.Content.Base
         public string Name { get; private set; }
 
         public string Path { get; private set; }
-
-        public string Alt { get; private set; }
+        
+        public string Type { get; private set; }
 
         public ContentBase(contentDTO dto)
         {
             ID = dto.ID;
             Name = dto.Name;
             Path = dto.Path;
-            Alt = dto.Alt;
         }
     }
 }
