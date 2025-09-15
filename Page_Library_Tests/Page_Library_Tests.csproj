@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Page\Entities\ContentBlock\" />
+    <Folder Include="Page\Entities\ContentBlock\NewFolder\" />
     <Folder Include="Search\" />
   </ItemGroup>
 

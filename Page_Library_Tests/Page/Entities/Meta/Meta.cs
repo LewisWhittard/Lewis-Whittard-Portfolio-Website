@@ -27,7 +27,4 @@ namespace Page_Library_Tests.Page.Entities.Meta
             Assert.Equal(dto.MetaImageId, meta.MetaImageId);
         }
     }
-
-
-}
 }
