@@ -1,7 +1,8 @@
 ﻿using Moq;
 using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock;
-using Page_Library.Content.Entities.Content.Interface;
+using Page_Library.Content.Entities.Content.DTO;
+using Page_Library.Content.Entities.Content;
 
 namespace Page_Library_Tests.Page.Entities.ContentBlock
 {
@@ -19,17 +20,28 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
                 AltText = "A scenic mountain view"
             };
 
-            var mockContent = new Mock<IContent>();
+            // Arrange
+            var contentDTO = new contentDTO
+            {
+                ID = 1,
+                Name = "Test Name",
+                Path = "/test/path.jpg",
+                Alt = "Test Alt",
+                ContentType = "Image"
+            };
 
             // Act
-            var block = new ImageBlock(dto, mockContent.Object);
+            var image = new Image(contentDTO);
+
+            // Act
+            var block = new ImageBlock(dto, image);
 
             // Assert
             Assert.Equal("Image", block.BlockType);
             Assert.Equal("Center", block.Alignment);
             Assert.Equal(42, block.MediaId);
             Assert.Equal("A scenic mountain view", block.AltText);
-            Assert.Equal(mockContent.Object, block.Content);
+            Assert.Equal(image, block.Content);
         }
     }
 }

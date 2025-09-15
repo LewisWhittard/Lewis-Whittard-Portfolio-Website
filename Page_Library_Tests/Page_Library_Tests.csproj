@@ -22,10 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Search\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
   </ItemGroup>
 

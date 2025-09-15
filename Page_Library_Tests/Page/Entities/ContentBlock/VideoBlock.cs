@@ -1,6 +1,7 @@
 ﻿using Moq;
-using Page_Library.Content.Entities.Content.Interface;
+using Page_Library.Content.Entities.Content;
 using Page_Library.Page.Entities.ContentBlock.DTO;
+using Page_Library.Content.Entities.Content.DTO;
 
 namespace Page_Library_Tests.Page.Entities.ContentBlock
 {
@@ -18,17 +19,27 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
                 Caption = "Watch this amazing clip"
             };
 
-            var mockContent = new Mock<IContent>();
+            // Arrange
+            var contentDTO = new contentDTO()
+            {
+                ID = 1,
+                Name = "Test Name",
+                Path = "/test/path.jpg",
+                Description = "Test desc",
+                ContentType = "Video"
+            };
+
+            Video video = new Video(contentDTO);
 
             // Act
-            var block = new Page_Library.Page.Entities.ContentBlock.VideoBlock(dto, mockContent.Object);
+            var block = new Page_Library.Page.Entities.ContentBlock.VideoBlock(dto, video);
 
             // Assert
             Assert.Equal("Video", block.BlockType);
             Assert.Equal("Right", block.Alignment);
             Assert.Equal(99, block.MediaId);
             Assert.Equal("Watch this amazing clip", block.Caption);
-            Assert.Equal(mockContent.Object, block.Content);
+            Assert.Equal(video, block.Content);
         }
     }
 }
