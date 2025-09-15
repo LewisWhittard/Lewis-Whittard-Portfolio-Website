@@ -7,5 +7,6 @@
         public string Path { get; set; }
         public string Alt { get; set; }
         public string ContentType { get; set; }
+        public string Description { get; set; }
     }
 }
