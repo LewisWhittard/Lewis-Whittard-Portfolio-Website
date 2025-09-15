@@ -13,7 +13,7 @@ namespace Page_Library.Page.Entities.ContentBlock
 
         public VideoBlock(ContentBlockDTO dto, IContent content) : base(dto)
         {
-            MediaId = dto.MediaId ?? -1;
+            MediaId = (int)dto.MediaId;
             Caption = dto.Caption;
             Content = content;
         }
