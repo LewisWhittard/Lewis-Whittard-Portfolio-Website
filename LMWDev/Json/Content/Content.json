@@ -4,34 +4,34 @@
 		"Name": "LMWLogo",
 		"Path": "LMWlogo.png",
 		"Alt": "Lewis Matthew Whittard Software Development",
-		"Type":  "Image"
+		"ContentType":  "Image"
 	},
 	{
 		"ID": 1,
 		"Name": "UI Test Automation Portfolio Piece",
 		"Path": "SeleniumPortfolioPiece.mp4",
 		"Alt": "Selenium Test Automation Frame Work",
-		"Type": "Image"
+		"ContentType": "Image"
 	},
 	{
 		"ID": 2,
 		"Name": "Test Automation",
 		"Path": "TestIconSquare.png",
 		"Alt": "Test Automation",
-		"Type": "Image"
+		"ContentType": "Image"
 	},
 	{
 		"ID": 3,
 		"Name": "Cogetta Logo",
 		"Path": "CogettaPlain.png",
 		"Alt": "Cogetta Logo",
-		"Type": "Image"
+		"ContentType": "Image"
 	},
 	{
 		"ID": 4,
 		"Name": "Cogetta Portfolio Video",
 		"Path": "CogettaPortfolioVideo.mp4",
 		"Alt": "Cogetta Portfolio Video",
-		"Type": "Image"
+		"ContentType": "Video"
 	}
 ]

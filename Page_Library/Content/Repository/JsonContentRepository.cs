@@ -29,7 +29,13 @@ namespace Page_Library.Content.Repository
 
                 foreach (var item in results)
                 {
-                    toReturn.Add(new Entities.Content.Image(item));
+                    if (item.ContentType == "Image")
+                    {
+                        toReturn.Add(new Entities.Content.Image(item));
+                    }
+                    else
+                    {
+                    }
                 }
 
                 return toReturn;

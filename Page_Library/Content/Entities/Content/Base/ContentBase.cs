@@ -11,13 +11,15 @@ namespace Page_Library.Content.Entities.Content.Base
 
         public string Path { get; private set; }
         
-        public string Type { get; private set; }
+        public string ContentType { get; private set; }
 
         public ContentBase(contentDTO dto)
         {
             ID = dto.ID;
             Name = dto.Name;
             Path = dto.Path;
+            ContentType = dto.ContentType;
+
         }
     }
 }

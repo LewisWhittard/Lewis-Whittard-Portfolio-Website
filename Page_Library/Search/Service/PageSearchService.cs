@@ -24,7 +24,7 @@ namespace Page_Library.Search.Service
                 foreach (var item in searchResults)
                 {
                     IContent content = _ContentRepository.GetContent(item.ContentID);
-                    if (content.Type == "Image")
+                    if (content.ContentType == "Image")
                     {
                         item.SetContent((Image)content);
                     }
