@@ -1,4 +1,5 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
+﻿using Page_Library.Content.Entities.Content;
+using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Page.Entities.ContentBlock;
 using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock.Interface;
@@ -12,20 +13,34 @@ namespace Page_Library.Page.Factory
         {
             switch (dto.BlockType)
             {
+                switch (dto.BlockType)
+            {
                 case "Header":
                     return new HeaderBlock(dto);
+
                 case "Hyperlink":
                     return new HyperlinkBlock(dto);
+
                 case "Image":
-                    return new ImageBlock(dto, content);
+                    if (content is Image imageContent)
+                    {
+                        return new ImageBlock(dto, imageContent);
+                    }
+                    throw new InvalidCastException("Content is not of type ImageContent");
+
                 case "Paragraph":
                     return new ParagraphBlock(dto);
+
                 case "Video":
-                    return new VideoBlock(dto, content);
+                    if (content is Video videoContent)
+                    {
+                        return new VideoBlock(dto, videoContent);
+                    }
+                    throw new InvalidCastException("Content is not of type VideoContent");
+
                 default:
                     throw new ArgumentException($"Unsupported block type: {dto.BlockType}");
             }
-
         }
     }
 }
