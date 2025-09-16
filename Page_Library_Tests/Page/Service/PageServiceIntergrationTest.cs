@@ -25,7 +25,6 @@ namespace Page_Library_Tests.Page.Service
 
             Assert.NotNull(result.ContentBlocks);
             Assert.True(0 < result.ContentBlocks.Count());
-
             Assert.Equal(id, result.ExternalId);
         }
 
