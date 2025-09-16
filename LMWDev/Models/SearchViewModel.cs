@@ -12,7 +12,6 @@ namespace LMWDev.Models
         public bool ThreeDAssetsCategory { get; set; } = true;
         public bool TwoDAssetCategory { get; set; } = true;
         public bool BlogCategory { get; set; } = true;
-        public bool FlexibleMeta = false;
 
 		public List<ISearchResult> Results { get; set; }
 

@@ -5,12 +5,10 @@ namespace LMWDev.Models
     public class ClusterContentModel
     {
         public IPage Page { get; set; }
-        public bool FlexibleMeta { get; set; }
 
         public ClusterContentModel(IPage page)
         {
             Page = page;
-            FlexibleMeta = false;
         }
 
         public ClusterContentModel()
