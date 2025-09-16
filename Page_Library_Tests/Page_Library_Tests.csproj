@@ -49,8 +49,4 @@
     <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Search\Service\" />
-  </ItemGroup>
-
 </Project>

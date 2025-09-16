@@ -62,7 +62,7 @@
 			"MetaTitle": "Test Project Link",
 			"MetaDescription": "Testing hyperlinks in portfolio.",
 			"MetaKeywords": [ "Project", "Link", "Test" ],
-			"MetaImageId": null
+			"MetaImageId": 0
 		},
 		"ContentBlocks": [
 			{
