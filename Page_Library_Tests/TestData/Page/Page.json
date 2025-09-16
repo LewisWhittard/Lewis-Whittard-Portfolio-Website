@@ -1,0 +1,82 @@
+[
+	{
+		"ExternalId": 0,
+		"Title": "Test Portfolio Intro",
+		"CreateDate": "2025-01-01T00:00:00Z",
+		"UpdateDate": "2025-01-02T00:00:00Z",
+		"PublishDate": "2025-01-03T00:00:00Z",
+		"Meta": {
+			"MetaTitle": "Test Portfolio Intro",
+			"MetaDescription": "Quick intro to the test portfolio.",
+			"MetaKeywords": [ "Test", "Portfolio", "Intro" ],
+			"MetaImageId": null
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H1",
+				"Alignment": "Center",
+				"Text": "Test Portfolio Intro"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Center",
+				"BodyText": "This is a short test entry."
+			}
+		]
+	},
+	{
+		"ExternalId": 1,
+		"Title": "Test Logo",
+		"CreateDate": "2025-01-05T00:00:00Z",
+		"UpdateDate": "2025-01-05T00:00:00Z",
+		"PublishDate": "2025-01-06T00:00:00Z",
+		"Meta": {
+			"MetaTitle": "Test Logo",
+			"MetaDescription": "Simple logo test item.",
+			"MetaKeywords": [ "Logo", "Test" ],
+			"MetaImageId": 10
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H1",
+				"Alignment": "Left",
+				"Text": "Test Logo"
+			},
+			{
+				"BlockType": "Image",
+				"Alignment": "Center",
+				"MediaId": 0,
+				"AltText": "Test Logo Image"
+			}
+		]
+	},
+	{
+		"ExternalId": 2,
+		"Title": "Test Project Link",
+		"CreateDate": "2025-01-07T00:00:00Z",
+		"UpdateDate": "2025-01-07T00:00:00Z",
+		"PublishDate": "2025-01-08T00:00:00Z",
+		"Meta": {
+			"MetaTitle": "Test Project Link",
+			"MetaDescription": "Testing hyperlinks in portfolio.",
+			"MetaKeywords": [ "Project", "Link", "Test" ],
+			"MetaImageId": null
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H1",
+				"Alignment": "Center",
+				"Text": "Test Project Link"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "Center",
+				"Url": "https://example.com",
+				"LinkText": "Go to Example"
+			}
+		]
+	}
+]
