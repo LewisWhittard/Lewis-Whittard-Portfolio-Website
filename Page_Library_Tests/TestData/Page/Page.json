@@ -76,6 +76,12 @@
 				"Alignment": "Center",
 				"Url": "https://example.com",
 				"LinkText": "Go to Example"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "Center",
+				"Url": "https://example.com",
+				"LinkText": "Go to Example"
 			}
 		]
 	}

@@ -9,9 +9,9 @@ namespace Page_Library_Tests.Page.Service
     public class PageServiceIntergrationTest
     {
         [Theory]
-        [InlineData(0)]
-        [InlineData(1)]
-        public void PageService_GetPageById_Correctly(int id)
+        [InlineData(0,2)]
+        [InlineData(2,3)]
+        public void PageService_GetPageById_Correctly(int id, int contentBlockCount)
         {
             var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
             JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
@@ -23,8 +23,7 @@ namespace Page_Library_Tests.Page.Service
 
             IPage result = service.GetPage(id);
 
-            Assert.NotNull(result.ContentBlocks);
-            Assert.True(0 < result.ContentBlocks.Count());
+            Assert.Equal(contentBlockCount, result.ContentBlocks.Count());
             Assert.Equal(id, result.ExternalId);
         }
 
