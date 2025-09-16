@@ -23,6 +23,9 @@ namespace Page_Library_Tests.Page.Service
 
             IPage result = service.GetPage(id);
 
+            Assert.NotNull(result.ContentBlocks);
+            Assert.True(0 < result.ContentBlocks.Count());
+
             Assert.Equal(id, result.ExternalId);
         }
 
