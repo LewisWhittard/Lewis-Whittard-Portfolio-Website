@@ -64,7 +64,7 @@ namespace Page_Library.Search.Repository
                 // Filter by ID first
                 if (!string.IsNullOrWhiteSpace(searchTerm))
                 {
-                    filteredResults = results.Where(r => r.Title.Contains(searchTerm) || r.Title == searchTerm || r.Description.Contains(searchTerm) || r.Description == searchTerm).ToList();
+                    filteredResults = results.Where(r => r.Title.ToLower().Contains(searchTerm.ToLower()) || r.Title.ToLower() == searchTerm.ToLower() || r.Description.ToLower().Contains(searchTerm.ToLower()) || r.Description.ToLower() == searchTerm.ToLower()).ToList();
                 }
                 else
                 {

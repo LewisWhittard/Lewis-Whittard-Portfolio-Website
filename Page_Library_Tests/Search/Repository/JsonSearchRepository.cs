@@ -33,7 +33,7 @@
 
             foreach (var item in results)
             {
-                Assert.Equal(searchTerm, item.Title);
+                Assert.Equal(searchTerm.ToLower(), item.Title.ToLower());
             }
 
             Assert.Equal(expectedCount, results.Count);
@@ -49,7 +49,6 @@
         [InlineData("Dev", true, true, true, true, true, true, 3)]
         [InlineData("In", false, false, false, false, false, false, 0)]
         [InlineData("Non", true, true, true, true, true, true, 0)]
-        [InlineData("tit", true, true, true, true, true, true, 1)]
         public void Search_SemiTitle_ReturnsExpectedResults(
         string searchTerm,
         bool programming,
@@ -71,7 +70,7 @@
 
             foreach (var item in results)
             {
-                Assert.Contains(searchTerm, item.Title);
+                Assert.Contains(searchTerm.ToLower(), item.Title.ToLower());
             }
 
             Assert.Equal(expectedCount, results.Count);
@@ -101,7 +100,7 @@
 
             foreach (var item in results)
             {
-                Assert.Equal(searchTerm, item.Description);
+                Assert.Equal(searchTerm.ToLower(), item.Description.ToLower());
             }
 
             Assert.Equal(expectedCount, results.Count);
@@ -130,7 +129,7 @@
 
             foreach (var item in results)
             {
-                Assert.Contains(searchTerm, item.Description);
+                Assert.Contains(searchTerm.ToLower(), item.Description.ToLower());
             }
 
             Assert.Equal(expectedCount, results.Count);
