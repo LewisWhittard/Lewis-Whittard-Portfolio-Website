@@ -1,7 +1,7 @@
 ﻿[
 	{
 		"ID": 0,
-		"Title": "language",
+		"Title": "Language",
 		"Description": "not applicable for this test",
 		"ContentID": 0,
 		"Category": "Programming"
@@ -15,7 +15,7 @@
 	},
 	{
 		"ID": 2,
-		"Title": "engine",
+		"Title": "Engine",
 		"Description": "not applicable for this test",
 		"ContentID": 0,
 		"Category": "Games"
@@ -58,14 +58,7 @@
 	{
 		"ID": 8,
 		"Title": "not applicable for this test",
-		"Description": "test description",
-		"ContentID": 0,
-		"Category": "Programming"
-	},
-	{
-		"ID": 9,
-		"Title": "title test",
-		"Description": "not applicable for this test",
+		"Description": "Test description",
 		"ContentID": 0,
 		"Category": "Programming"
 	},
@@ -86,14 +79,14 @@
 	{
 		"ID": 12,
 		"Title": "not applicable for this test",
-		"Description": "description test 2",
+		"Description": "Description test 2",
 		"ContentID": 0,
 		"Category": "Programming"
 	},
 	{
 		"ID": 13,
 		"Title": "not applicable for this test",
-		"Description": "description test 2",
+		"Description": "Description test 2",
 		"ContentID": 0,
 		"Category": "Programming"
 	}
