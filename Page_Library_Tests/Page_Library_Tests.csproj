@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -47,6 +47,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Page\Service\" />
+    <Folder Include="Search\Service\" />
   </ItemGroup>
 
 </Project>
