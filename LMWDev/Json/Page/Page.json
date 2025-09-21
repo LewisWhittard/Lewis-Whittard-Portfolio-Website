@@ -1,27 +1,75 @@
 [
 	{
 		"ExternalId": 0,
-		"Title": "Test Portfolio Intro",
-		"CreateDate": "2025-01-01T00:00:00Z",
-		"UpdateDate": "2025-01-02T00:00:00Z",
-		"PublishDate": "2025-01-03T00:00:00Z",
+		"Title": "Portfolio Website Completed!",
+		"CreateDate": "2022-02-24",
+		"UpdateDate": "2022-02-24",
+		"PublishDate": "2022-02-24",
 		"Meta": {
 			"MetaTitle": "Test Portfolio Intro",
-			"MetaDescription": "Quick intro to the test portfolio.",
-			"MetaKeywords": [ "Test", "Portfolio", "Intro" ],
-			"MetaImageId": null
+			"MetaDescription": "This blog post explains why I have built my portfolio website to display my sides and out of work projects.",
+			"MetaKeywords": [ "MVC.Net", "Core", "Portfolio", "Games", "Blogs", "Programming", "Software", "Development", "Dev", "3D", "Models", "2D", "Models" ],
+			"MetaImageId": 1
 		},
 		"ContentBlocks": [
 			{
 				"BlockType": "Header",
-				"Level": "H1",
-				"Alignment": "Center",
-				"Text": "Test Portfolio Intro"
+				"Level": "H2",
+				"Alignment": "center",
+				"Text": "Why did I build this?"
 			},
 			{
 				"BlockType": "Paragraph",
-				"Alignment": "Center",
-				"BodyText": "This is a short test entry."
+				"Alignment": "Left",
+				"BodyText": "After 7 months of working on a side project and it being shelved, I came the realisation that not every project is going to make it out the door. This in turn creates an issue if I am uploading to social media few and far between. It makes it hard for people to follow what I am working on, so a portfolio website seemed to perfect solution to centralise and allow elements of projects if not completed to be uploaded and easily sifted through. So I made it my first New Years resolution to make it happen."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Secondly, this will bring a new sense of personal branding and consistency to my online presence, allowing me to link back to the portfolio on social media and keeping record of what I have done in a manageable way."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "I also have vertically integrated my distribution channels and platform, allowing to continue in the event of social media or shop front outage, or loss in popularity of particular platforms. It really allows for more robust continuity."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What will it host?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "This portfolio will be the home of all side projects and learning pieces done outside of work including Programming, Games, 2D and 3D Assets."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Tools Used"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "MVC.net Core, Canva, Libre Office Calc, Github, ClosedXML,Github."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What’s in store in future?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Part 2 will include landing pages for SEO after some feedback was given. This will allow search engines to find my site easier and make for a better user experience."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Secondly, I would like to automate the testing for my portfolio. Not only would this speed up updates, it would allow for me to show my test automation skills publicly."
 			}
 		]
 	},

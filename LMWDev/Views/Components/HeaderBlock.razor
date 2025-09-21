@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components
 
+@using Microsoft.AspNetCore.Components
+
 @code {
     [Parameter]
     public Page_Library.Page.Entities.ContentBlock.HeaderBlock Block { get; set; }
@@ -8,33 +10,22 @@
     {
         var level = Block?.Level?.ToUpperInvariant() ?? "H1";
         var text = Block?.Text ?? string.Empty;
+        var align = Block?.Alignment?.ToLowerInvariant() ?? "left"; // Default to left
 
-        switch (level)
+        var tag = level switch
         {
-            case "H1":
-                builder.OpenElement(0, "h1");
-                break;
-            case "H2":
-                builder.OpenElement(0, "h2");
-                break;
-            case "H3":
-                builder.OpenElement(0, "h3");
-                break;
-            case "H4":
-                builder.OpenElement(0, "h4");
-                break;
-            case "H5":
-                builder.OpenElement(0, "h5");
-                break;
-            case "H6":
-                builder.OpenElement(0, "h6");
-                break;
-            default:
-                builder.OpenElement(0, "h1");
-                break;
-        }
+            "H1" => "h1",
+            "H2" => "h2",
+            "H3" => "h3",
+            "H4" => "h4",
+            "H5" => "h5",
+            "H6" => "h6",
+            _ => "h1"
+        };
 
-        builder.AddContent(1, text);
+        builder.OpenElement(0, tag);
+        builder.AddAttribute(1, "style", $"text-align:{align};");
+        builder.AddContent(2, text);
         builder.CloseElement();
     };
 }
