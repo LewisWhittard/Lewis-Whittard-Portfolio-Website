@@ -15,7 +15,7 @@
 			{
 				"BlockType": "Header",
 				"Level": "H2",
-				"Alignment": "center",
+				"Alignment": "left",
 				"Text": "Why did I build this?"
 			},
 			{
