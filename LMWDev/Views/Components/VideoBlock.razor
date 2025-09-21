@@ -10,18 +10,22 @@
 {
     var imageContent = Block.Content as Page_Library.Content.Entities.Content.Video;
 
-    <figure>
-        <video controls width="640">
-            <source src="@Block.Content.Path" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <figcaption>@imageContent.Description</figcaption>
-    </figure>
-    
-    @if (!string.IsNullOrWhiteSpace(Block.Caption))
-    {
-        <p>@Block.Caption</p>
-    }
+    <div style="text-align: center;">
+        <figure style="display: inline-block;">
+            <video controls width="640">
+                <source src="/Videos/@Block.Content.Path" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>@imageContent.Description</figcaption>
+        </figure>
+
+        @if (!string.IsNullOrWhiteSpace(Block.Caption))
+        {
+            <p>@Block.Caption</p>
+        }
+    </div>
+
+
 }
 else
 {
