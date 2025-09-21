@@ -4,7 +4,16 @@
 @code {
     [Parameter]
     public Page_Library.Page.Entities.ContentBlock.ParagraphBlock Block { get; set; }
+
+    private string GetTextAlignment() => Block?.Alignment?.ToLower() switch
+    {
+        "left" => "left",
+        "right" => "right",
+        "center" => "center",
+        _ => "left" // default alignment
+    };
 }
 
-<p>@Block?.BodyText</p>
+<p style="text-align:@GetTextAlignment()">@Block?.BodyText</p>
+
 
