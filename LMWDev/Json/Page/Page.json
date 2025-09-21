@@ -75,56 +75,71 @@
 	},
 	{
 		"ExternalId": 1,
-		"Title": "Test Logo",
-		"CreateDate": "2025-01-05T00:00:00Z",
-		"UpdateDate": "2025-01-05T00:00:00Z",
-		"PublishDate": "2025-01-06T00:00:00Z",
+		"Title": "Lewis Matthew Whittard Software Development Logo",
+		"CreateDate": "2022-02-24",
+		"UpdateDate": "2022-02-24",
+		"PublishDate": "2022-02-24",
 		"Meta": {
-			"MetaTitle": "Test Logo",
-			"MetaDescription": "Simple logo test item.",
-			"MetaKeywords": [ "Logo", "Test" ],
+			"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
+			"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
+			"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
 			"MetaImageId": 10
 		},
 		"ContentBlocks": [
 			{
-				"BlockType": "Header",
-				"Level": "H1",
-				"Alignment": "Left",
-				"Text": "Test Logo"
-			},
-			{
 				"BlockType": "Image",
 				"Alignment": "Center",
 				"MediaId": 0,
-				"AltText": "Test Logo Image"
+				"AltText": "Lewis Matthew Whittard Software Development Logo"
+			},
+			{
+				"BlockType": "Paragrath",
+				"Alignment": "Center",
+				"MediaId": 0,
+				"AltText": "I created the shape of the logo in 3D using Blender. Then I flattened a render in GIMP using the fuzzy select tool and bucket fill tool. Once done, I added text using the typeface named Poppins that is under the SIL Open Font License. Finally, I picked a background colour using a colour contrast checker to help ensure maximum accessibility."
 			}
+
 		]
 	},
 	{
 		"ExternalId": 2,
-		"Title": "Test Project Link",
-		"CreateDate": "2025-01-07T00:00:00Z",
-		"UpdateDate": "2025-01-07T00:00:00Z",
-		"PublishDate": "2025-01-08T00:00:00Z",
+		"Title": "My Portfolio – Website Development",
+		"CreateDate": "2022-02-24",
+		"UpdateDate": "2022-02-24",
+		"PublishDate": "2022-02-24",
 		"Meta": {
-			"MetaTitle": "Test Project Link",
-			"MetaDescription": "Testing hyperlinks in portfolio.",
+			"MetaTitle": "My Portfolio – Website Development",
+			"MetaDescription": "MVC.Net Core,Canva,Libre Office Calc,Github,C#,Bootstrap,CSHTML,Software Development, Website Development",
 			"MetaKeywords": [ "Project", "Link", "Test" ],
-			"MetaImageId": null
+			"MetaImageId": 0
 		},
 		"ContentBlocks": [
 			{
-				"BlockType": "Header",
-				"Level": "H1",
-				"Alignment": "Center",
-				"Text": "Test Project Link"
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "To create my portfolio Website I used the following tools: MVC.net Core, Canva, Libre Office Calc, and Github."
 			},
 			{
 				"BlockType": "Hyperlink",
 				"Alignment": "Center",
-				"Url": "https://example.com",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
 				"LinkText": "Go to Example"
 			}
 		]
-	}
+		{
+			"ExternalId": 3,
+			"Title": "My Portfolio – Website Development",
+			"CreateDate": "2022-02-24",
+			"UpdateDate": "2022-02-24",
+			"PublishDate": "2022-02-24",
+			"Meta": {
+				"MetaTitle": "My Portfolio – Website Development",
+				"MetaDescription": "MVC.Net Core,Canva,Libre Office Calc,Github,C#,Bootstrap,CSHTML,Software Development, Website Development",
+				"MetaKeywords": [ "Project", "Link", "Test" ],
+				"MetaImageId": 0
+			},
+			"ContentBlocks": [
+
+			]
+		}
 ]
