@@ -8,13 +8,11 @@ namespace Page_Library.Page.Entities.ContentBlock
     {
 
         public int MediaId { get; private set; }
-        public string Caption { get; private set; }
         public Video Content { get; private set; }
 
         public VideoBlock(ContentBlockDTO dto, Video content) : base(dto)
         {
             MediaId = (int)dto.MediaId;
-            Caption = dto.Caption;
             Content = content;
         }
     }

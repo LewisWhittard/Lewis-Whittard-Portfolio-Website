@@ -8,12 +8,10 @@ namespace Page_Library.Page.Entities.ContentBlock
     {
         public int MediaId { get; private set; }
         public Image Content { get; private set; }
-        public string AltText { get; private set; }
 
         public ImageBlock(ContentBlockDTO dto, Image content) : base(dto)
         {
             MediaId = (int)dto.MediaId;
-            AltText = dto.AltText;
             Content = content;
         }
     }

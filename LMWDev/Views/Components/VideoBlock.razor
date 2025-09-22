@@ -19,9 +19,9 @@
             <figcaption>@imageContent.Description</figcaption>
         </figure>
 
-        @if (!string.IsNullOrWhiteSpace(Block.Caption))
+        @if (!string.IsNullOrWhiteSpace(Block.Content.Description))
         {
-            <p>@Block.Caption</p>
+            <p>@Block.Content.Description</p>
         }
     </div>
 

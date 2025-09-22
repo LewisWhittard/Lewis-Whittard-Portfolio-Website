@@ -16,8 +16,7 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             {
                 BlockType = "Image",
                 Alignment = "Center",
-                MediaId = 42,
-                AltText = "A scenic mountain view"
+                MediaId = 42
             };
 
             // Arrange
@@ -40,7 +39,6 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             Assert.Equal("Image", block.BlockType);
             Assert.Equal("Center", block.Alignment);
             Assert.Equal(42, block.MediaId);
-            Assert.Equal("A scenic mountain view", block.AltText);
             Assert.Equal(image, block.Content);
         }
     }

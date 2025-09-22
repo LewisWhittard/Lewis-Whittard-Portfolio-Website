@@ -15,8 +15,7 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             {
                 BlockType = "Video",
                 Alignment = "Right",
-                MediaId = 99,
-                Caption = "Watch this amazing clip"
+                MediaId = 99
             };
 
             // Arrange
@@ -38,7 +37,6 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             Assert.Equal("Video", block.BlockType);
             Assert.Equal("Right", block.Alignment);
             Assert.Equal(99, block.MediaId);
-            Assert.Equal("Watch this amazing clip", block.Caption);
             Assert.Equal(video, block.Content);
         }
     }
