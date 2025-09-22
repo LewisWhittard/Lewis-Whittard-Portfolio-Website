@@ -89,8 +89,7 @@
 			{
 				"BlockType": "Image",
 				"Alignment": "left",
-				"MediaId": 0,
-				"AltText": "Lewis Matthew Whittard Software Development Logo"
+				"MediaId": 0
 			},
 			{
 				"BlockType": "Paragraph",
@@ -147,8 +146,7 @@
 				{
 					"BlockType": "Video",
 					"Alignment": "Center",
-					"MediaId": 1,
-					"Caption": "UI Test Automation Demonstration"
+					"MediaId": 1
 				},
 				{
 					"BlockType": "Hyperlink",
@@ -213,8 +211,7 @@
 			{
 				"BlockType": "Video",
 				"Alignment": "left",
-				"MediaId": 4,
-				"Caption": "Cogetta Cipher Demonstration"
+				"MediaId": 4
 			},
 			{
 				"BlockType": "Header",
