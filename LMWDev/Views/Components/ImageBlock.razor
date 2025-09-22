@@ -1,0 +1,32 @@
+﻿@using Page_Library.Page.Entities.ContentBlock
+@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.ImageBlock Block { get; set; }
+
+    private Page_Library.Content.Entities.Content.Image ImageContent =>
+        Block?.Content as Page_Library.Content.Entities.Content.Image;
+
+    private string GetAlignmentStyle()
+    {
+        return Block?.Alignment?.ToLower() switch
+        {
+            "left" => "text-align: left;",
+            "right" => "text-align: right;",
+            _ => "text-align: center;"
+        };
+    }
+}
+
+@if (!string.IsNullOrWhiteSpace(ImageContent?.Path))
+{
+    <div style="@GetAlignmentStyle()">
+        <img src="/Images/@ImageContent.Path" alt="@ImageContent.Alt" />
+    </div>
+}
+else
+{
+    <p>Image not available or invalid content type.</p>
+}
+

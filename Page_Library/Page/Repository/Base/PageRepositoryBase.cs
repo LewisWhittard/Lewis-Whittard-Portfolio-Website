@@ -5,6 +5,11 @@ namespace Page_Library.Page.Repository.Base
 {
     public abstract class PageRepositoryBase : IPageRepository
     {
-        public abstract List<IPage> GetPage(int Id);
+        protected PageRepositoryBase()
+        {
+            
+        }
+
+        public abstract IPage GetPage(int Id);
     }
 }

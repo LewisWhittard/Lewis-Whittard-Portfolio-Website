@@ -64,14 +64,14 @@
                     {
                         <li class="list-group-item">
                             <div class="d-flex align-items-start">
-                                <img src="@Url.Content("~/Images/" + result.Content.Path)" alt="@result.Content.Alt" class="img-fluid me-3" style="width:100px; height:auto; object-fit:cover;" />
+                                <img src="@Url.Content("~/Images/" + result.Content.Path)" alt="@result.Content." class="img-fluid me-3" style="width:100px; height:auto; object-fit:cover;" />
 
                                 <div>
                                     <h5 class="mb-1">@result.Title</h5>
                                     <p class="mb-1">@result.Description</p>
                                     <small class="text-muted">Category: @result.Category</small><br />
-                                    <a href="@Url.Action("Index", "PortfolioPiece", new { Id = result.ContentID })" class="btn btn-sm btn-outline-primary mt-2">
-                                        View Portfolio Piece
+                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" class="btn btn-sm btn-outline-primary mt-2">
+                                        View
                                     </a>
                                 </div>
                             </div>

@@ -29,7 +29,19 @@ namespace Page_Library.Content.Repository
 
                 foreach (var item in results)
                 {
-                    toReturn.Add(new Entities.Content.Content(item));
+                    switch (item.ContentType)
+                    {
+                        case "Image":
+                            toReturn.Add(new Entities.Content.Image(item));
+                            break;
+
+                        case "Video":
+                            toReturn.Add(new Entities.Content.Video(item));
+                            break;
+
+                        default:
+                            throw new Exception($"Unsupported content type: {item.ContentType}");
+                    }
                 }
 
                 return toReturn;

@@ -6,14 +6,6 @@
 		}
 	</style>
 
-	@if (Model.FlexibleMeta == true)
-	{
-		foreach (var item in Model.Meta)
-		{
-			<meta id="@item.iD" name="@item.name" content="@item.content">
-		}
-	}
-
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - Lewis Whittard Software Development</title>

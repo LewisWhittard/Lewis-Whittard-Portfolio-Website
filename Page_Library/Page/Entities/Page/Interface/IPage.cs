@@ -1,14 +1,20 @@
-﻿using Page_Library.Page.Entities.ContentBlock.DTO;
-using Page_Library.Page.Entities.MetaData.DTO;
+﻿using Page_Library.Content.Repository.Interface;
+using Page_Library.Page.Entities.ContentBlock.DTO;
+using Page_Library.Page.Entities.ContentBlock.Interface;
+using Page_Library.Page.Entities.MetaData.Interface;
+using Page_Library.Page.Factory.Interface;
 
 namespace Page_Library.Page.Entities.Page.Interface
 {
     public interface IPage
     {
-        public int externalId { get; }
-        public string title { get; }
-        public string publishDate { get; }
-        public MetaDTO meta { get; }
-        public List<ContentBlockDTO> contentBlocks { get; }
+        public int ExternalId { get; }
+        public string Title { get; }
+        public string PublishDate { get; }
+        public IMeta Meta { get; }
+        public List<IContentBlock> ContentBlocks { get; }
+
+        public abstract void SetUpPolymorphContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory);
+
     }
 }

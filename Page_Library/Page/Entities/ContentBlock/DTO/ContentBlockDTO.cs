@@ -8,8 +8,6 @@
         public string? Text { get; set; }      // For Header blocks
         public string? BodyText { get; set; }  // For Paragraph blocks
         public int? MediaId { get; set; }     // For Image or Video blocks
-        public string? AltText { get; set; }   // For Image blocks
-        public string? Caption { get; set; }   // For Video blocks
         public string? Url { get; set; }       // For Hyperlink blocks
         public string? LinkText { get; set; }  // For Hyperlink blocks
     }

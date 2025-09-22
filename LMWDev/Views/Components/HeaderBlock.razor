@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Components
+
+@code {
+    [Parameter]
+    public Page_Library.Page.Entities.ContentBlock.HeaderBlock Block { get; set; }
+
+    private RenderFragment RenderHeader => builder =>
+    {
+        var level = Block?.Level?.ToUpperInvariant() ?? "H1";
+        var text = Block?.Text ?? string.Empty;
+        var align = Block?.Alignment?.ToLowerInvariant() ?? "left"; // Default to left
+
+        var tag = level switch
+        {
+            "H1" => "h1",
+            "H2" => "h2",
+            "H3" => "h3",
+            "H4" => "h4",
+            "H5" => "h5",
+            "H6" => "h6",
+            _ => "h1"
+        };
+
+        builder.OpenElement(0, tag);
+        builder.AddAttribute(1, "style", $"text-align:{align};");
+        builder.AddContent(2, text);
+        builder.CloseElement();
+    };
+}
+
+@RenderHeader
+

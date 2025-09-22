@@ -1,4 +1,5 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
+﻿using Page_Library.Content.Entities.Content;
+using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Search.Entities.SearchResult.Interface;
 using Page_Library.Search.Repository.Interface;
@@ -23,7 +24,16 @@ namespace Page_Library.Search.Service
                 foreach (var item in searchResults)
                 {
                     IContent content = _ContentRepository.GetContent(item.ContentID);
-                    item.SetContent(content);
+                    if (content is Image imageContent)
+                    {
+                        item.SetContent(imageContent);
+                    }
+                    else
+                    {
+                        throw new InvalidCastException($"Content with ID {item.ContentID} is not of type Image.");
+                    }
+
+
                     toReturn.Add(item);
                 }
 

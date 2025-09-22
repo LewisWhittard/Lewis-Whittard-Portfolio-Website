@@ -4,6 +4,6 @@ namespace Page_Library.Page.Repository.Interface
 {
     public interface IPageRepository
     {
-        public abstract List<IPage> GetPage(int Id);
+        public abstract IPage GetPage(int Id);
     }
 }

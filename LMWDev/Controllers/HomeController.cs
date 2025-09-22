@@ -21,7 +21,6 @@ namespace LMWDev.Controllers
 		public IActionResult Index()
 		{
 			HomeModel ViewModel = new HomeModel();
-			ViewModel.FlexibleMeta = false;
 			return View(ViewModel);
 		}
 
