@@ -178,7 +178,7 @@
 			},
 			{
 				"BlockType": "Hyperlink",
-				"Alignment": "Center",
+				"Alignment": "left",
 				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
 				"LinkText": "To Github Repository"
 			}
