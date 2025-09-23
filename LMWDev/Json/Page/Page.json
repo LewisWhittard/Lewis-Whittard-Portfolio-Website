@@ -2,8 +2,6 @@
 	{
 		"ExternalId": 0,
 		"Title": "Portfolio Website Completed!",
-		"CreateDate": "2022-02-24",
-		"UpdateDate": "2022-02-24",
 		"PublishDate": "2022-02-24",
 		"Meta": {
 			"MetaTitle": "Portfolio Website Completed!",
@@ -76,14 +74,12 @@
 	{
 		"ExternalId": 1,
 		"Title": "Lewis Matthew Whittard Software Development Logo",
-		"CreateDate": "2022-02-24",
-		"UpdateDate": "2022-02-24",
 		"PublishDate": "2022-02-24",
 		"Meta": {
 			"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
 			"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
 			"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
-			"MetaImageId": 10
+			"MetaImageId": 3
 		},
 		"ContentBlocks": [
 			{
@@ -102,8 +98,6 @@
 	{
 		"ExternalId": 2,
 		"Title": "My Portfolio – Website Development",
-		"CreateDate": "2022-02-24",
-		"UpdateDate": "2022-02-24",
 		"PublishDate": "2022-02-24",
 		"Meta": {
 			"MetaTitle": "My Portfolio – Website Development",
@@ -119,7 +113,7 @@
 			},
 			{
 				"BlockType": "Hyperlink",
-				"Alignment": "Center",
+				"Alignment": "left",
 				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
 				"LinkText": "To Github Repository"
 			}
@@ -128,8 +122,6 @@
 	{
 		"ExternalId": 3,
 		"Title": "UI Test Automation Portfolio Piece",
-		"CreateDate": "2022-03-19",
-		"UpdateDate": "2022-03-19",
 		"PublishDate": "2022-03-19",
 		"Meta": {
 			"MetaTitle": "UI Test Automation Portfolio Piece",
@@ -159,8 +151,6 @@
 	{
 		"ExternalId": 2,
 		"Title": "My Portfolio – Website Development",
-		"CreateDate": "2022-03-19",
-		"UpdateDate": "2022-03-19",
 		"PublishDate": "2022-03-19",
 		"Meta": {
 			"MetaTitle": "My Portfolio – Website Development",
@@ -185,8 +175,6 @@
 	{
 		"ExternalId": 4,
 		"Title": "Cogetta",
-		"CreateDate": "2022-11-14",
-		"UpdateDate": "2022-11-14",
 		"PublishDate": "2022-11-14",
 		"Meta": {
 			"MetaTitle": "Cogetta Cipher in Python",
