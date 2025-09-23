@@ -11,16 +11,14 @@
     var imageContent = Block.Content as Page_Library.Content.Entities.Content.Video;
 
     <div style="text-align: @Block.Alignment;">
-        <figure style="display: inline-block;">
-            <video controls width="640">
+        <figure style="display: inline-block; max-width: 100%; width: 100%;">
+            <video controls style="width: 100%; height: auto;">
                 <source src="/Videos/@Block.Content.Path" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
             <figcaption>@imageContent.Description</figcaption>
         </figure>
     </div>
-
-
 }
 else
 {
