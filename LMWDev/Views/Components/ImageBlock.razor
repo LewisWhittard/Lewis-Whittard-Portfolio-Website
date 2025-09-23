@@ -22,7 +22,7 @@
 @if (!string.IsNullOrWhiteSpace(ImageContent?.Path))
 {
     <div style="@GetAlignmentStyle()">
-        <img src="/Images/@ImageContent.Path" alt="@ImageContent.Alt" />
+        <img src="/Images/@ImageContent.Path" alt="@ImageContent.Alt" style="width:100%;"/>
     </div>
 }
 else
