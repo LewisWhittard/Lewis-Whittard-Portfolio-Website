@@ -1,0 +1,121 @@
+﻿using OpenQA.Selenium;
+using LMWSelenium.PageModels.StandardPage;
+
+namespace LMWSelenium.PageModels.PageModels
+{
+	class HomePage : PageModelBase
+	{
+		public IWebElement HomeNavBarButton { get; private set; }
+		public IWebElement SearchNavBarButton { get; private set; }
+		public IWebElement ProgrammingButton { get; private set; }
+		public IWebElement TestingButton { get; private set; }
+		public IWebElement GamesButton { get; private set; }
+		public IWebElement ThreeDAssetsButton { get; private set; }
+		public IWebElement TwoDBAssetsButton { get; private set; }
+		public IWebElement BlogButton { get; private set; }
+		public IWebElement LMWLogo { get; private set; }
+		public IWebElement Linkedin { get; private set; }
+		
+
+		public HomePage(IWebDriver driver, string url)
+		{
+            Driver = driver;
+			NavigateToHomepage("");
+			HomeNavBarButton = FindElementById("HomeNavBarButton");
+			SearchNavBarButton = FindElementById("SearchNavBarButton");
+			ProgrammingButton = FindElementById("ProgrammingButton");
+			TestingButton = FindElementById("TestingButton");
+			GamesButton = FindElementById("GamesButton");
+			ThreeDAssetsButton = FindElementById("ThreeDAssetsButton");
+			TwoDBAssetsButton = FindElementById("TwoDAssetsButton");
+			BlogButton = FindElementById("BlogButton");
+			LMWLogo = FindElementById("LogoLink");
+			Linkedin = FindElementById("Linkedin");
+		}
+
+        public void NavigateToHomepage(string url)
+        {
+			NavigateToPage(url);
+        }
+
+        public void TestHomeNavBarButton(IWebDriver driver)
+		{
+			ClickButton(HomeNavBarButton);
+			AssertAreEqual(driver.Title, "Home Page - Lewis Whittard Software Development");
+		}
+
+		public void TestSearchNavBarButton(IWebDriver driver)
+		{
+			ClickButton(SearchNavBarButton);
+			WaitUntilURLContainsValue("search");
+			WaitUntilTitleContainsValue("Search");
+			AssertAreEqual(driver.Title, "Search - Lewis Whittard Software Development");
+			
+		}
+
+		public void TestProgrammingButton(IWebDriver driver)
+		{
+			ClickButton(ProgrammingButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+
+		}
+
+		public void TestTestButton(IWebDriver driver)
+		{
+			ClickButton(TestingButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+		}
+
+		public void TestGamesButton(IWebDriver driver)
+		{
+			ClickButton(GamesButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+		}
+
+		public void TestTwoDAssetsButton(IWebDriver driver)
+		{
+			ClickButton(TwoDBAssetsButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+		}
+
+		public void TestThreeDAssetsButton(IWebDriver driver)
+		{
+			ClickButton(ThreeDAssetsButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+		}
+
+		public void TestBlogButton(IWebDriver driver)
+		{
+			ClickButton(BlogButton);
+			WaitUntilURLContainsValue("Modified");
+			WaitUntilTitleContainsValue("Modified");
+			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+		}
+
+		public void TestLogoButton(IWebDriver driver)
+		{
+			ClickButton(LMWLogo);
+			AssertAreEqual(driver.Title, "Home Page - Lewis Whittard Software Development");
+		}
+
+		public void TestLinkedinButton(IWebDriver driver)
+		{
+			ClickButton(Linkedin);
+			CloseDriver();
+			SwitchTab(driver, 0);
+			WaitUntilURLContainsValue("https://www.linkedin.com/");
+			AssertContains(driver.Url, "https://www.linkedin.com/");
+		}
+
+	}
+}
