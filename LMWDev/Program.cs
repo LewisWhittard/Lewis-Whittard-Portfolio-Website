@@ -47,7 +47,8 @@ namespace LMWDev
                                 .SetResourceBuilder(ResourceBuilder.CreateDefault()
                                     .AddService("LMWDevService", serviceVersion: "1.0.0", serviceInstanceId: Environment.MachineName))
                                 .AddSource("LMWDev.SearchController") // Match your ActivitySource name
-                                .AddSource("LMWDev.ClusterContentController") // Match your ActivitySource name
+                                .AddSource("LMWDev.HomeController")
+                                .AddSource("LMWDev.ClusterContentController")// Match your ActivitySource name
                                 .AddAspNetCoreInstrumentation()
                                 .AddHttpClientInstrumentation()
                                 .SetSampler(new AlwaysOnSampler()) // Collect all traces
