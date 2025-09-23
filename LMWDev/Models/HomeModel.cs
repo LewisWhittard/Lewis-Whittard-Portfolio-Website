@@ -7,6 +7,6 @@ namespace LMWDev.Models
 {
 	public class HomeModel
 	{
-
+		public bool Meta { get; set; } = false;
 	}
 }
