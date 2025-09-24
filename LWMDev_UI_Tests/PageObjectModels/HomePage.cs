@@ -41,10 +41,9 @@ namespace LMWSelenium.PageModels.PageModels
 			NavigateToPage(url);
         }
 
-        public void TestHomeNavBarButton()
+        public void ClickHomeNavBarButton()
 		{
 			ClickButton(HomeNavBarButton);
-			AssertAreEqual(Driver.Title, "Home Page - Lewis Whittard Software Development");
 		}
 
 		public void CLickSearchNavBarButton()

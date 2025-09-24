@@ -26,3 +26,15 @@ Feature: Browser Navigation and Page Title Verification
       | edge    |
       | safari  |
 
+    Scenario Outline: Open browser and click home on the navigation bar
+        Given I use Browser "<browser>"
+        When I go to "https://localhost:44325/" and use the home button
+        Then the page title is "Home Page - Lewis Whittard Software Development"
+
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
+

@@ -56,5 +56,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.CLickSearchNavBarButton();
         }
 
+        [When("I go to {string} and use the home button")]
+        public void WhenIGoToAndUseTheHomeButton(string p0)
+        {
+            _homePage.NavigateToHomepage(p0);
+            _homePage.SetUpPage();
+
+        }
+
+
     }
 }
