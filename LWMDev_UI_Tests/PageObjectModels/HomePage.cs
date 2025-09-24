@@ -41,36 +41,34 @@ namespace LMWSelenium.PageModels.PageModels
 			NavigateToPage(url);
         }
 
-        public void TestHomeNavBarButton(IWebDriver driver)
+        public void TestHomeNavBarButton()
 		{
 			ClickButton(HomeNavBarButton);
-			AssertAreEqual(driver.Title, "Home Page - Lewis Whittard Software Development");
+			AssertAreEqual(Driver.Title, "Home Page - Lewis Whittard Software Development");
 		}
 
-		public void TestSearchNavBarButton(IWebDriver driver)
+		public void CLickSearchNavBarButton()
 		{
 			ClickButton(SearchNavBarButton);
 			WaitUntilURLContainsValue("search");
 			WaitUntilTitleContainsValue("Search");
-			AssertAreEqual(driver.Title, "Search - Lewis Whittard Software Development");
-			
 		}
 
-		public void TestProgrammingButton(IWebDriver driver)
+		public void TestProgrammingButton()
 		{
 			ClickButton(ProgrammingButton);
 			WaitUntilURLContainsValue("Modified");
 			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			AssertAreEqual(Driver.Title, "Search Modified - Lewis Whittard Software Development");
 
 		}
 
-		public void TestTestButton(IWebDriver driver)
+		public void TestTestButton()
 		{
 			ClickButton(TestingButton);
 			WaitUntilURLContainsValue("Modified");
 			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			AssertAreEqual(Driver.Title, "Search Modified - Lewis Whittard Software Development");
 		}
 
 		public void TestGamesButton(IWebDriver driver)

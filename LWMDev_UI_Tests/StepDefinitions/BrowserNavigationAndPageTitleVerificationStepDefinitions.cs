@@ -47,5 +47,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.AssertAreEqual(p0,_homePage.Driver.Title);
             _homePage.Driver.Quit();
         }
+
+        [When("I go to {string} and use the search button")]
+        public void WhenIGoToAndUseTheSearchButton(string p0)
+        {
+            _homePage.NavigateToHomepage(p0);
+            _homePage.SetUpPage();
+            _homePage.CLickSearchNavBarButton();
+        }
+
     }
 }
