@@ -7,7 +7,7 @@ using OpenQA.Selenium.Safari;
 namespace LWMDev_UI_Tests.StepDefinitions
 {
     [Binding]
-    public class BrowserNavigationAndPageTitleVerificationStepDefinitions
+    public class HompageStepDefintions
     {
         private HomePage _homePage;
 
@@ -63,6 +63,22 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.SetUpPage();
 
         }
+
+        [When("I go to {string} and use the Linkedin button")]
+        public void WhenIGoToAndUseTheLinkedinButton(string p0)
+        {
+            _homePage.NavigateToHomepage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickLinkedinButton();
+        }
+
+        [Then("I have arrived at linkedin")]
+        public void ThenIHaveArrivedAtLinkedin()
+        {
+            _homePage.WaitUntilURLContainsValue("https://www.linkedin.com/");
+            _homePage.AssertAreEqual(_homePage.Driver.Url, "https://www.linkedin.com/in/lewis-whittard-092167157/");
+        }
+
 
 
     }

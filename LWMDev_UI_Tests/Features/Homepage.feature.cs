@@ -19,24 +19,21 @@ namespace LWMDev_UI_Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class BrowserNavigationAndPageTitleVerificationFeature : object, Xunit.IClassFixture<BrowserNavigationAndPageTitleVerificationFeature.FixtureData>, Xunit.IAsyncLifetime
+    public partial class HomepageFeature : object, Xunit.IClassFixture<HomepageFeature.FixtureData>, Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Browser Navigation and Page Title Verification", "  This feature tests opening a browser, navigating to a URL, and verifying the pa" +
-                "ge title.\r\n\r\nFeature: Browser Navigation and Page Title Verification\r\n  This fea" +
-                "ture tests opening different browsers, navigating to a URL, and verifying the pa" +
-                "ge title.", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Homepage", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
 #line 1 "Homepage.feature"
 #line hidden
         
-        public BrowserNavigationAndPageTitleVerificationFeature(BrowserNavigationAndPageTitleVerificationFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public HomepageFeature(HomepageFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -95,20 +92,20 @@ namespace LWMDev_UI_Tests.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Open browser and verify homepage title")]
-        [Xunit.TraitAttribute("FeatureTitle", "Browser Navigation and Page Title Verification")]
-        [Xunit.TraitAttribute("Description", "Open browser and verify homepage title")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify homepage title")]
+        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
+        [Xunit.TraitAttribute("Description", "Verify homepage title")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
         [Xunit.InlineDataAttribute("edge", new string[0])]
         [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task OpenBrowserAndVerifyHomepageTitle(string browser, string[] exampleTags)
+        public async System.Threading.Tasks.Task VerifyHomepageTitle(string browser, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Open browser and verify homepage title", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify homepage title", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 3
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -118,33 +115,33 @@ namespace LWMDev_UI_Tests.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 8
+#line 4
     await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 5
     await testRunner.WhenAsync("I go to \"https://localhost:44325/\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 6
     await testRunner.ThenAsync("the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Open browser and click search on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Browser Navigation and Page Title Verification")]
-        [Xunit.TraitAttribute("Description", "Open browser and click search on the navigation bar")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click search on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
+        [Xunit.TraitAttribute("Description", "Click search on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
         [Xunit.InlineDataAttribute("edge", new string[0])]
         [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task OpenBrowserAndClickSearchOnTheNavigationBar(string browser, string[] exampleTags)
+        public async System.Threading.Tasks.Task ClickSearchOnTheNavigationBar(string browser, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Open browser and click search on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 13
    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -154,33 +151,33 @@ namespace LWMDev_UI_Tests.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 18
+#line 14
     await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 19
+#line 15
     await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 16
     await testRunner.ThenAsync("the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Open browser and click home on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Browser Navigation and Page Title Verification")]
-        [Xunit.TraitAttribute("Description", "Open browser and click home on the navigation bar")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click home on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
+        [Xunit.TraitAttribute("Description", "Click home on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
         [Xunit.InlineDataAttribute("edge", new string[0])]
         [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task OpenBrowserAndClickHomeOnTheNavigationBar(string browser, string[] exampleTags)
+        public async System.Threading.Tasks.Task ClickHomeOnTheNavigationBar(string browser, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Open browser and click home on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click home on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -190,14 +187,50 @@ namespace LWMDev_UI_Tests.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 30
+#line 26
         await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 27
         await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 28
         await testRunner.ThenAsync("the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click Linkedin button")]
+        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
+        [Xunit.TraitAttribute("Description", "Click Linkedin button")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickLinkedinButton(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Linkedin button", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 37
+        this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 38
+        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 39
+        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 40
+        await testRunner.ThenAsync("I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -210,12 +243,12 @@ namespace LWMDev_UI_Tests.Features
             
             async System.Threading.Tasks.Task Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await BrowserNavigationAndPageTitleVerificationFeature.FeatureSetupAsync();
+                await HomepageFeature.FeatureSetupAsync();
             }
             
             async System.Threading.Tasks.Task Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await BrowserNavigationAndPageTitleVerificationFeature.FeatureTearDownAsync();
+                await HomepageFeature.FeatureTearDownAsync();
             }
         }
     }
