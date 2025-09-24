@@ -120,7 +120,7 @@ namespace LMWSelenium.PageModels.PageModels
 			ClickButton(SearchButton);
 			WaitUntilURLContainsValue("Modified");
 			WaitUntilTitleContainsValue( "Modified");
-			AssertAreEqual("Search Modified - Lewis Whittard Software Development");
+			AssertAreEqual("Search Modified - Lewis Whittard Software Development", driver.Title);
 		}
 
 		public void SearchTestAllTickBoxesTrueResultPost(IWebDriver driver)

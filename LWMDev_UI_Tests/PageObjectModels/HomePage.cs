@@ -17,21 +17,24 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement Linkedin { get; private set; }
 		
 
-		public HomePage(IWebDriver driver, string url)
+		public HomePage(IWebDriver driver)
 		{
             Driver = driver;
-			NavigateToHomepage("");
-			HomeNavBarButton = FindElementById("HomeNavBarButton");
-			SearchNavBarButton = FindElementById("SearchNavBarButton");
-			ProgrammingButton = FindElementById("ProgrammingButton");
-			TestingButton = FindElementById("TestingButton");
-			GamesButton = FindElementById("GamesButton");
-			ThreeDAssetsButton = FindElementById("ThreeDAssetsButton");
-			TwoDBAssetsButton = FindElementById("TwoDAssetsButton");
-			BlogButton = FindElementById("BlogButton");
-			LMWLogo = FindElementById("LogoLink");
-			Linkedin = FindElementById("Linkedin");
 		}
+
+		public void SetUpPage()
+		{
+            HomeNavBarButton = FindElementById("HomeNavBarButton");
+            SearchNavBarButton = FindElementById("SearchNavBarButton");
+            ProgrammingButton = FindElementById("ProgrammingButton");
+            TestingButton = FindElementById("TestingButton");
+            GamesButton = FindElementById("GamesButton");
+            ThreeDAssetsButton = FindElementById("ThreeDAssetsButton");
+            TwoDBAssetsButton = FindElementById("TwoDAssetsButton");
+            BlogButton = FindElementById("BlogButton");
+            LMWLogo = FindElementById("LogoLink");
+            Linkedin = FindElementById("Linkedin");
+        }
 
         public void NavigateToHomepage(string url)
         {
