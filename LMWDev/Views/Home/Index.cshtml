@@ -121,16 +121,21 @@
 			</tr>
 		</tbody>
 	</table>
-
 	<h2>What I do</h2>
 	<div class="row">
 		<div class="OverlayContainer1">
 			<img src="~/Images/Software.png" alt="Software" class="image">
 			<div class="overlay">
-				<form action="@Url.Action("Modified", "Search")" method="post">
+				<form asp-action="FromHome" asp-controller="Search" method="post">
 					<div class="ButtonOverlay">
 						<button type="submit" id="ProgrammingButton" class="btn btn-primary">Programming</button>
-						<input type="hidden" id="Programming" name="Programming" value="TRUE">
+						<input type="hidden" name="Search.Search" value="Programming">
+						<input type="hidden" name="Search.ProgrammingCategory" value="true">
+						<input type="hidden" name="Search.TestingCategory" value="false">
+						<input type="hidden" name="Search.GamesCategory" value="false">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="false">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="false">
+						<input type="hidden" name="Search.BlogCategory" value="false">
 					</div>
 				</form>
 			</div>
@@ -138,50 +143,71 @@
 
 		<div class="OverlayContainer2">
 			<img src="~/Images/Testing.png" alt="Testing" class="image">
-
 			<div class="overlay">
-				<form action="@Url.Action("Modified", "Search")" method="post">
+				<form asp-action="FromHome" asp-controller="Search" method="post">
 					<div class="ButtonOverlay">
 						<button type="submit" id="TestingButton" class="btn btn-primary">Testing</button>
-						<input type="hidden" id="Testing" name="Testing" value="TRUE">
+						<input type="hidden" name="Search.Search" value="Testing">
+						<input type="hidden" name="Search.ProgrammingCategory" value="false">
+						<input type="hidden" name="Search.TestingCategory" value="true">
+						<input type="hidden" name="Search.GamesCategory" value="false">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="false">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="false">
+						<input type="hidden" name="Search.BlogCategory" value="false">
 					</div>
 				</form>
 			</div>
 		</div>
+
 		<div class="OverlayContainer3">
 			<img src="~/Images/Games.png" alt="Games" class="image">
-
 			<div class="overlay">
-				<form action="@Url.Action("Modified", "Search")" method="post">
+				<form asp-action="FromHome" asp-controller="Search" method="post">
 					<div class="ButtonOverlay">
 						<button type="submit" id="GamesButton" class="btn btn-primary">Games</button>
-						<input type="hidden" id="Games" name="Games" value="TRUE">
+						<input type="hidden" name="Search.Search" value="Games">
+						<input type="hidden" name="Search.ProgrammingCategory" value="false">
+						<input type="hidden" name="Search.TestingCategory" value="false">
+						<input type="hidden" name="Search.GamesCategory" value="true">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="false">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="false">
+						<input type="hidden" name="Search.BlogCategory" value="false">
 					</div>
 				</form>
 			</div>
-
 		</div>
+
 		<div class="OverlayContainer4">
 			<img src="~/Images/2DAssets.png" alt="2DAssets" class="image">
 			<div class="overlay">
-				<div class="overlay">
-					<form action="@Url.Action("Modified", "Search")" method="post">
-						<div class="ButtonOverlay">
-							<button type="submit" id="TwoDAssetsButton" class="btn btn-primary">2D Assets</button>
-							<input type="hidden" id="TwoDAssets" name="TwoD" value="TRUE">
-						</div>
-					</form>
-				</div>
+				<form asp-action="FromHome" asp-controller="Search" method="post">
+					<div class="ButtonOverlay">
+						<button type="submit" id="TwoDAssetsButton" class="btn btn-primary">2D Assets</button>
+						<input type="hidden" name="Search.Search" value="2D Assets">
+						<input type="hidden" name="Search.ProgrammingCategory" value="false">
+						<input type="hidden" name="Search.TestingCategory" value="false">
+						<input type="hidden" name="Search.GamesCategory" value="false">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="true">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="false">
+						<input type="hidden" name="Search.BlogCategory" value="false">
+					</div>
+				</form>
 			</div>
 		</div>
 
 		<div class="OverlayContainer5">
 			<img src="~/Images/3DAssets.png" alt="3DAssets" class="image">
 			<div class="overlay">
-				<form action="@Url.Action("Modified", "Search")" method="post">
+				<form asp-action="FromHome" asp-controller="Search" method="post">
 					<div class="ButtonOverlay">
 						<button type="submit" id="ThreeDAssetsButton" class="btn btn-primary">3D Assets</button>
-						<input type="hidden" id="ThreeDAssets" name="ThreeD" value="TRUE">
+						<input type="hidden" name="Search.Search" value="3D Assets">
+						<input type="hidden" name="Search.ProgrammingCategory" value="false">
+						<input type="hidden" name="Search.TestingCategory" value="false">
+						<input type="hidden" name="Search.GamesCategory" value="false">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="false">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="true">
+						<input type="hidden" name="Search.BlogCategory" value="false">
 					</div>
 				</form>
 			</div>
@@ -190,16 +216,20 @@
 		<div class="OverlayContainer6">
 			<img src="~/Images/Blog.png" alt="Blog" class="image">
 			<div class="overlay">
-				<form action="@Url.Action("Modified", "Search")" method="post">
+				<form asp-action="FromHome" asp-controller="Search" method="post">
 					<div class="ButtonOverlay">
 						<button type="submit" id="BlogButton" class="btn btn-primary">Blog</button>
-						<input type="hidden" id="Blog" name="Blog" value="TRUE">
+						<input type="hidden" name="Search.Search" value="Blog">
+						<input type="hidden" name="Search.ProgrammingCategory" value="false">
+						<input type="hidden" name="Search.TestingCategory" value="false">
+						<input type="hidden" name="Search.GamesCategory" value="false">
+						<input type="hidden" name="Search.TwoDAssetCategory" value="false">
+						<input type="hidden" name="Search.ThreeDAssetsCategory" value="false">
+						<input type="hidden" name="Search.BlogCategory" value="true">
 					</div>
 				</form>
 			</div>
 		</div>
-
 	</div>
-
 </body>
 
