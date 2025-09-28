@@ -132,14 +132,18 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the {int}D Assets button")]
         public void WhenIGoToAndUseTheDAssetsButton(string p0, int p1)
         {
-            throw new PendingStepException();
-        }
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickGamesButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
 
         [Then("I have arrived at the search page with the {int}D Assets tickbox ticked")]
         public void ThenIHaveArrivedAtTheSearchPageWithTheDAssetsTickboxTicked(int p0)
         {
-            throw new PendingStepException();
-        }
+			_searchPage.SetUpPage();
+			_searchPage.CheckThreeDButtonPost();
+		}
 
         [When("I go to {string} and use the Blog button")]
         public void WhenIGoToAndUseTheBlogButton(string p0)
@@ -150,8 +154,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [Then("I have arrived at the search page with the Blog tickbox ticked")]
         public void ThenIHaveArrivedAtTheSearchPageWithTheBlogTickboxTicked()
         {
-            throw new PendingStepException();
-        }
+			_searchPage.SetUpPage();
+			_searchPage.BlogButtonPost();
+		}
 
 
     }

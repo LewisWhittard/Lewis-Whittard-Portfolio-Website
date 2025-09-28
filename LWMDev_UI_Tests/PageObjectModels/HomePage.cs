@@ -71,28 +71,26 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilURLContainsValue("Search?GamesCategory=True&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
 		}
 
-		public void TestTwoDAssetsButton(IWebDriver driver)
+		public void ClickTwoDAssetsButton(IWebDriver driver)
 		{
 			ClickButton(TwoDBAssetsButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=True&BlogCategory=False&Meta=False");
 		}
 
-		public void TestThreeDAssetsButton(IWebDriver driver)
+		public void ClickThreeDAssetsButton(IWebDriver driver)
 		{
-			ClickButton(ThreeDAssetsButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			{
+				ClickButton(ThreeDAssetsButton);
+				WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=True&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
+			}
 		}
 
-		public void TestBlogButton(IWebDriver driver)
+		public void ClickBlogButton(IWebDriver driver)
 		{
-			ClickButton(BlogButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			{
+				ClickButton(BlogButton);
+				WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=True&Meta=False");
+			}
 		}
 
 		public void TestLogoButton(IWebDriver driver)
