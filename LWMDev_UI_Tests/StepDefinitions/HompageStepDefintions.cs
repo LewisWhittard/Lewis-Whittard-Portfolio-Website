@@ -100,14 +100,18 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the testing button")]
         public void WhenIGoToAndUseTheTestingButton(string p0)
         {
-
-        }
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickTestButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
 
         [Then("I have arrived at the search page with the testing tickbox ticked")]
         public void ThenIHaveArrivedAtTheSearchPageWithTheTestingTickboxTicked()
         {
-            throw new PendingStepException();
-        }
+			_searchPage.SetUpPage();
+			_searchPage.CheckTestingButtonPost();
+		}
 
         [When("I go to {string} and use the games button")]
         public void WhenIGoToAndUseTheGamesButton(string p0)
