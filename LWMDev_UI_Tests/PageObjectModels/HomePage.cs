@@ -53,12 +53,11 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilTitleContainsValue("Search");
 		}
 
-		public void TestProgrammingButton()
+		public void ClickProgrammingButton()
 		{
 			ClickButton(ProgrammingButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(Driver.Title, "Search Modified - Lewis Whittard Software Development");
+			WaitUntilURLContainsValue("search");
+			WaitUntilTitleContainsValue("search");
 
 		}
 

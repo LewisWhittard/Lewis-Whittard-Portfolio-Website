@@ -16,21 +16,26 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement linkedin { get; private set; }
 
-		public SearchPage(IWebDriver driver, string url)
+		public SearchPage(IWebDriver driver)
 		{
 			Driver = driver;
-			SearchBox = FindElementById("Search");
-			SearchButton = FindElementById( "SearchButton");
-			ProgrammingTickBox = FindElementById("Programming");
-			TwoDAssetsTickBox = FindElementById("TwoDAssets");
-			ThreeDAssetsTickBox = FindElementById("ThreeDAssets");
-			TestingTickBox = FindElementById("Testing");
-			GamesTickBox = FindElementById("Games");
-			BlogTickBox = FindElementById("Blog");
-			LMWLogo = FindElementById("LogoLink");
-			linkedin = FindElementById( "Linkedin");
+
 
 		}
+
+		public void SetUpPage()
+		{
+            SearchBox = FindElementById("Search");
+            SearchButton = FindElementById("SearchButton");
+            ProgrammingTickBox = FindElementById("Programming");
+            TwoDAssetsTickBox = FindElementById("TwoDAssets");
+            ThreeDAssetsTickBox = FindElementById("ThreeDAssets");
+            TestingTickBox = FindElementById("Testing");
+            GamesTickBox = FindElementById("Games");
+            BlogTickBox = FindElementById("Blog");
+            LMWLogo = FindElementById("LogoLink");
+            linkedin = FindElementById("Linkedin");
+        }
 
 		public void CheckSearchButtonPost()
 		{
