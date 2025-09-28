@@ -65,12 +65,10 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=False&TestingCategory=True&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
 		}
 
-		public void TestGamesButton(IWebDriver driver)
+		public void ClickGamesButton()
 		{
 			ClickButton(GamesButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
+			WaitUntilURLContainsValue("Search?GamesCategory=True&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
 		}
 
 		public void TestTwoDAssetsButton(IWebDriver driver)

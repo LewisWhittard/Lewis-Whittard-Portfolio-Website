@@ -116,14 +116,18 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the games button")]
         public void WhenIGoToAndUseTheGamesButton(string p0)
         {
-            throw new PendingStepException();
-        }
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickGamesButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
 
         [Then("I have arrived at the search page with the games tickbox ticked")]
         public void ThenIHaveArrivedAtTheSearchPageWithTheGamesTickboxTicked()
         {
-            throw new PendingStepException();
-        }
+			_searchPage.SetUpPage();
+			_searchPage.CheckGamesButtonPost();
+		}
 
         [When("I go to {string} and use the {int}D Assets button")]
         public void WhenIGoToAndUseTheDAssetsButton(string p0, int p1)
