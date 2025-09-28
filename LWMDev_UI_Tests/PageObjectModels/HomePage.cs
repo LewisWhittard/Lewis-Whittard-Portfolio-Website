@@ -56,9 +56,7 @@ namespace LMWSelenium.PageModels.PageModels
 		public void ClickProgrammingButton()
 		{
 			ClickButton(ProgrammingButton);
-			WaitUntilURLContainsValue("search");
-			WaitUntilTitleContainsValue("search");
-
+			WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=True&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
 		}
 
 		public void TestTestButton()

@@ -46,6 +46,18 @@
         | edge    |
         | safari  |
 
+    Scenario Outline: Click programming button
+        Given I use Browser "<browser>"
+        When I go to "https://localhost:44325/" and use the programming button
+        Then I have arrived at the search page with the programming tickbox ticked
+
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
+
     Scenario Outline: Click testing button
         Given I use Browser "<browser>"
         When I go to "https://localhost:44325/" and use the testing button

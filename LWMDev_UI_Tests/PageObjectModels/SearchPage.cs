@@ -27,12 +27,12 @@ namespace LMWSelenium.PageModels.PageModels
 		{
             SearchBox = FindElementById("Search");
             SearchButton = FindElementById("SearchButton");
-            ProgrammingTickBox = FindElementById("Programming");
-            TwoDAssetsTickBox = FindElementById("TwoDAssets");
-            ThreeDAssetsTickBox = FindElementById("ThreeDAssets");
-            TestingTickBox = FindElementById("Testing");
-            GamesTickBox = FindElementById("Games");
-            BlogTickBox = FindElementById("Blog");
+            ProgrammingTickBox = FindElementById("ProgrammingCategory");
+            TwoDAssetsTickBox = FindElementById("TwoDAssetCategory");
+            ThreeDAssetsTickBox = FindElementById("ThreeDAssetsCategory");
+            TestingTickBox = FindElementById("TestingCategory");
+            GamesTickBox = FindElementById("GamesCategory");
+            BlogTickBox = FindElementById("BlogCategory");
             LMWLogo = FindElementById("LogoLink");
             linkedin = FindElementById("Linkedin");
         }

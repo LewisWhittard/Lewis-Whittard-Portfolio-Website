@@ -10,6 +10,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
     public class HompageStepDefintions
     {
         private HomePage _homePage;
+        private SearchPage _searchPage;
 
         [Given("I use Browser {string}")]
         public void GivenIUseBrowser(string browser)
@@ -79,6 +80,70 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.AssertAreEqual(_homePage.Driver.Url, "https://www.linkedin.com/in/lewis-whittard-092167157/");
         }
 
+        [When("I go to {string} and use the programming button")]
+        public void WhenIGoToAndUseTheProgrammingButton(string p0)
+        {
+            _homePage.NavigateToHomepage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickProgrammingButton();
+            _searchPage = new SearchPage(_homePage.Driver);
+        }
+
+        [Then("I have arrived at the search page with the programming tickbox ticked")]
+        public void ThenIHaveArrivedAtTheSearchPageWithTheProgrammingTickboxTicked()
+        {
+            _searchPage.SetUpPage();
+            _searchPage.CheckProgrammingButtonPost();
+        }
+
+
+        [When("I go to {string} and use the testing button")]
+        public void WhenIGoToAndUseTheTestingButton(string p0)
+        {
+
+        }
+
+        [Then("I have arrived at the search page with the testing tickbox ticked")]
+        public void ThenIHaveArrivedAtTheSearchPageWithTheTestingTickboxTicked()
+        {
+            throw new PendingStepException();
+        }
+
+        [When("I go to {string} and use the games button")]
+        public void WhenIGoToAndUseTheGamesButton(string p0)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then("I have arrived at the search page with the games tickbox ticked")]
+        public void ThenIHaveArrivedAtTheSearchPageWithTheGamesTickboxTicked()
+        {
+            throw new PendingStepException();
+        }
+
+        [When("I go to {string} and use the {int}D Assets button")]
+        public void WhenIGoToAndUseTheDAssetsButton(string p0, int p1)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then("I have arrived at the search page with the {int}D Assets tickbox ticked")]
+        public void ThenIHaveArrivedAtTheSearchPageWithTheDAssetsTickboxTicked(int p0)
+        {
+            throw new PendingStepException();
+        }
+
+        [When("I go to {string} and use the Blog button")]
+        public void WhenIGoToAndUseTheBlogButton(string p0)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then("I have arrived at the search page with the Blog tickbox ticked")]
+        public void ThenIHaveArrivedAtTheSearchPageWithTheBlogTickboxTicked()
+        {
+            throw new PendingStepException();
+        }
 
 
     }
