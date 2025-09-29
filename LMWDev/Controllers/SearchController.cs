@@ -47,5 +47,10 @@ namespace LMWDev.Controllers
                 }
             }
         }
-    }
+
+		public IActionResult FromHome(HomeModel viewModel)
+		{
+            return RedirectToAction("Index", "Search", viewModel.Search);
+		}
+	}
 }
