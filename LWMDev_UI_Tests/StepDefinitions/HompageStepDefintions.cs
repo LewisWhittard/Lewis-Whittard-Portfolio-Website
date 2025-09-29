@@ -38,7 +38,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string}")]
         public void WhenIGoTo(string p0)
         {
-            _homePage.NavigateToHomepage(p0);
+            _homePage.NavigateToPage(p0);
         }
 
 
@@ -52,7 +52,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the search button")]
         public void WhenIGoToAndUseTheSearchButton(string p0)
         {
-            _homePage.NavigateToHomepage(p0);
+            _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
             _homePage.CLickSearchNavBarButton();
         }
@@ -60,7 +60,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the home button")]
         public void WhenIGoToAndUseTheHomeButton(string p0)
         {
-            _homePage.NavigateToHomepage(p0);
+            _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
 
         }
@@ -68,7 +68,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the Linkedin button")]
         public void WhenIGoToAndUseTheLinkedinButton(string p0)
         {
-            _homePage.NavigateToHomepage(p0);
+            _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
             _homePage.ClickLinkedinButton();
         }
@@ -85,7 +85,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the programming button")]
         public void WhenIGoToAndUseTheProgrammingButton(string p0)
         {
-            _homePage.NavigateToHomepage(p0);
+            _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
             _homePage.ClickProgrammingButton();
             _searchPage = new SearchPage(_homePage.Driver);
@@ -104,7 +104,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the testing button")]
         public void WhenIGoToAndUseTheTestingButton(string p0)
         {
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickTestButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -122,7 +122,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the games button")]
         public void WhenIGoToAndUseTheGamesButton(string p0)
         {
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickGamesButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -140,7 +140,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the ThreeDAssets button")]
         public void WhenIGoToAndUseThreeDAssetsButton(string p0, int p1)
         {
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickThreeDAssetsButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -149,7 +149,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("I go to {string} and use the Blog button")]
         public void WhenIGoToAndUseTheBlogButton(string p0)
         {
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickBlogButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -167,7 +167,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the TwoD Assets button")]
 		public void WhenIGoToAndUseTheTwoDAssetsButton(string p0)
 		{
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickTwoDAssetsButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -176,7 +176,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the ThreeD Assets button")]
 		public void WhenIGoToAndUseTheThreeDAssetsButton(string p0)
 		{
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
 			_homePage.ClickThreeDAssetsButton();
 			_searchPage = new SearchPage(_homePage.Driver);
@@ -201,7 +201,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[When("I go to {string} and use the logo button")]
 		public void WhenIGoToAndUseTheLogoButton(string p0)
 		{
-			_homePage.NavigateToHomepage(p0);
+			_homePage.NavigateToPage(p0);
 			_homePage.SetUpPage();
             _homePage.ClickLogoButton();
         }

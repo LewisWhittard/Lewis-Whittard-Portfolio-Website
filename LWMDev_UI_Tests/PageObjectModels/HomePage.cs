@@ -36,11 +36,6 @@ namespace LMWSelenium.PageModels.PageModels
             Linkedin = FindElementById("Linkedin");
         }
 
-        public void NavigateToHomepage(string url)
-        {
-			NavigateToPage(url);
-        }
-
         public void ClickHomeNavBarButton()
 		{
 			ClickButton(HomeNavBarButton);
