@@ -8,7 +8,7 @@ namespace LMWSelenium.PageModels.StandardPage
 	{
         public IWebDriver Driver { get; private protected set; }
 
-        private protected void NavigateToPage(String url)
+        public void NavigateToPage(String url)
 		{
 			Driver.Navigate().GoToUrl(url);
 		}
