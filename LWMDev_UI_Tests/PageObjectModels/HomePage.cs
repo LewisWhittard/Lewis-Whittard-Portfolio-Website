@@ -93,10 +93,9 @@ namespace LMWSelenium.PageModels.PageModels
 			}
 		}
 
-		public void TestLogoButton(IWebDriver driver)
+		public void ClickLogoButton()
 		{
 			ClickButton(LMWLogo);
-			AssertAreEqual(driver.Title, "Home Page - Lewis Whittard Software Development");
 		}
 
 		public void ClickLinkedinButton()

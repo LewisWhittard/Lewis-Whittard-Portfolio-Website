@@ -117,3 +117,15 @@
         | firefox |
         | edge    |
         | safari  |
+
+    Scenario Outline: Click logo on the navigation bar
+        Given I use Browser "<browser>"
+        When I go to "https://localhost:44325/" and use the logo button
+        Then the page title is "Home Page - Lewis Whittard Software Development"
+
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |

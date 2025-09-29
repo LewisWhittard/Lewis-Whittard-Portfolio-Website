@@ -198,5 +198,13 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_homePage.Driver.Quit();
 		}
 
-	}
+		[When("I go to {string} and use the logo button")]
+		public void WhenIGoToAndUseTheLogoButton(string p0)
+		{
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+            _homePage.ClickLogoButton();
+        }
+
+    }
 }
