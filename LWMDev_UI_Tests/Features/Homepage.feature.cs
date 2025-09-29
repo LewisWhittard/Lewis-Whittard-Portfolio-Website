@@ -371,10 +371,10 @@ namespace LWMDev_UI_Tests.Features
         await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 87
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the 2D Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the TwoD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 88
-        await testRunner.ThenAsync("I have arrived at the search page with the 2D Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("I have arrived at the search page with the TwoD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -407,10 +407,10 @@ namespace LWMDev_UI_Tests.Features
         await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 99
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the 3D Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the ThreeD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 100
-        await testRunner.ThenAsync("I have arrived at the search page with the 3D Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("I have arrived at the search page with the ThreeD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

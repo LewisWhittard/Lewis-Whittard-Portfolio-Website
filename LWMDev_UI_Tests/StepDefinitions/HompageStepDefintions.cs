@@ -78,9 +78,11 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _homePage.WaitUntilURLContainsValue("https://www.linkedin.com/");
             _homePage.AssertAreEqual(_homePage.Driver.Url, "https://www.linkedin.com/in/lewis-whittard-092167157/");
-        }
+			_homePage.Driver.Quit();
 
-        [When("I go to {string} and use the programming button")]
+		}
+
+		[When("I go to {string} and use the programming button")]
         public void WhenIGoToAndUseTheProgrammingButton(string p0)
         {
             _homePage.NavigateToHomepage(p0);
@@ -94,10 +96,12 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.SetUpPage();
             _searchPage.CheckProgrammingButtonPost();
-        }
+			_homePage.Driver.Quit();
+
+		}
 
 
-        [When("I go to {string} and use the testing button")]
+		[When("I go to {string} and use the testing button")]
         public void WhenIGoToAndUseTheTestingButton(string p0)
         {
 			_homePage.NavigateToHomepage(p0);
@@ -111,9 +115,11 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
 			_searchPage.SetUpPage();
 			_searchPage.CheckTestingButtonPost();
+			_homePage.Driver.Quit();
+
 		}
 
-        [When("I go to {string} and use the games button")]
+		[When("I go to {string} and use the games button")]
         public void WhenIGoToAndUseTheGamesButton(string p0)
         {
 			_homePage.NavigateToHomepage(p0);
@@ -127,37 +133,70 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
 			_searchPage.SetUpPage();
 			_searchPage.CheckGamesButtonPost();
+			_homePage.Driver.Quit();
+
 		}
 
-        [When("I go to {string} and use the {int}D Assets button")]
-        public void WhenIGoToAndUseTheDAssetsButton(string p0, int p1)
+		[When("I go to {string} and use the ThreeDAssets button")]
+        public void WhenIGoToAndUseThreeDAssetsButton(string p0, int p1)
         {
 			_homePage.NavigateToHomepage(p0);
 			_homePage.SetUpPage();
-			_homePage.ClickGamesButton();
+			_homePage.ClickThreeDAssetsButton();
 			_searchPage = new SearchPage(_homePage.Driver);
-		}
-
-        [Then("I have arrived at the search page with the {int}D Assets tickbox ticked")]
-        public void ThenIHaveArrivedAtTheSearchPageWithTheDAssetsTickboxTicked(int p0)
-        {
-			_searchPage.SetUpPage();
-			_searchPage.CheckThreeDButtonPost();
 		}
 
         [When("I go to {string} and use the Blog button")]
         public void WhenIGoToAndUseTheBlogButton(string p0)
         {
-            throw new PendingStepException();
-        }
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickBlogButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
 
         [Then("I have arrived at the search page with the Blog tickbox ticked")]
         public void ThenIHaveArrivedAtTheSearchPageWithTheBlogTickboxTicked()
         {
 			_searchPage.SetUpPage();
 			_searchPage.BlogButtonPost();
+			_homePage.Driver.Quit();
+
 		}
 
+		[When("I go to {string} and use the TwoD Assets button")]
+		public void WhenIGoToAndUseTheTwoDAssetsButton(string p0)
+		{
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickTwoDAssetsButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
 
-    }
+		[When("I go to {string} and use the ThreeD Assets button")]
+		public void WhenIGoToAndUseTheThreeDAssetsButton(string p0)
+		{
+			_homePage.NavigateToHomepage(p0);
+			_homePage.SetUpPage();
+			_homePage.ClickThreeDAssetsButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
+
+		[Then("I have arrived at the search page with the TwoD Assets tickbox ticked")]
+		public void ThenIHaveArrivedAtTheSearchPageWithTheTwoDAssetsTickboxTicked()
+		{
+			_searchPage.SetUpPage();
+			_searchPage.CheckTwoDButtonPost();
+			_homePage.Driver.Quit();
+		}
+
+		[Then("I have arrived at the search page with the ThreeD Assets tickbox ticked")]
+		public void ThenIHaveArrivedAtTheSearchPageWithTheThreeDAssetsTickboxTicked()
+		{
+			_searchPage.SetUpPage();
+			_searchPage.CheckThreeDButtonPost();
+			_homePage.Driver.Quit();
+		}
+
+	}
 }

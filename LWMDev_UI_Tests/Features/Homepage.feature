@@ -84,8 +84,8 @@
 
    Scenario Outline: Click 2D Assets button
         Given I use Browser "<browser>"
-        When I go to "https://localhost:44325/" and use the 2D Assets button
-        Then I have arrived at the search page with the 2D Assets tickbox ticked
+        When I go to "https://localhost:44325/" and use the TwoD Assets button
+        Then I have arrived at the search page with the TwoD Assets tickbox ticked
 
         Examples:
         | browser |
@@ -96,8 +96,8 @@
    
     Scenario Outline: Click 3D Assets button
         Given I use Browser "<browser>"
-        When I go to "https://localhost:44325/" and use the 3D Assets button
-        Then I have arrived at the search page with the 3D Assets tickbox ticked
+        When I go to "https://localhost:44325/" and use the ThreeD Assets button
+        Then I have arrived at the search page with the ThreeD Assets tickbox ticked
 
         Examples:
         | browser |

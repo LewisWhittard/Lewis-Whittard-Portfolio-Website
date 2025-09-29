@@ -71,13 +71,13 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilURLContainsValue("Search?GamesCategory=True&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=False&BlogCategory=False&Meta=False");
 		}
 
-		public void ClickTwoDAssetsButton(IWebDriver driver)
+		public void ClickTwoDAssetsButton()
 		{
 			ClickButton(TwoDBAssetsButton);
 			WaitUntilURLContainsValue("Search?GamesCategory=False&ProgrammingCategory=False&TestingCategory=False&ThreeDAssetsCategory=False&TwoDAssetCategory=True&BlogCategory=False&Meta=False");
 		}
 
-		public void ClickThreeDAssetsButton(IWebDriver driver)
+		public void ClickThreeDAssetsButton()
 		{
 			{
 				ClickButton(ThreeDAssetsButton);
@@ -85,7 +85,7 @@ namespace LMWSelenium.PageModels.PageModels
 			}
 		}
 
-		public void ClickBlogButton(IWebDriver driver)
+		public void ClickBlogButton()
 		{
 			{
 				ClickButton(BlogButton);
