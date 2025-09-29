@@ -1,210 +1,194 @@
+using System;
 using LMWSelenium.PageModels.PageModels;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Safari;
+using Reqnroll;
 
 namespace LWMDev_UI_Tests.StepDefinitions
 {
-    [Binding]
-    public class HompageStepDefintions
-    {
-        private HomePage _homePage;
-        private SearchPage _searchPage;
-
-        [Given("I use Browser {string}")]
-        public void GivenIUseBrowser(string browser)
-        {
-            switch (browser)
-            {
-                case "chrome":
-                    _homePage = new HomePage(new ChromeDriver());
-                    break;
-                case "firefox":
-                    _homePage = new HomePage(new FirefoxDriver());
-                    break;
-                case "edge":
-                    _homePage = new HomePage(new EdgeDriver());
-                    break;
-                case "safari":
-                    _homePage = new HomePage(new SafariDriver());
-                    break;
-                default:
-                    throw new ArgumentException($"Unsupported browser: {browser}");
-            }
-
-        }
-
-        [When("I go to {string}")]
-        public void WhenIGoTo(string p0)
-        {
-            _homePage.NavigateToPage(p0);
-        }
+	[Binding]
+	public class HomepageStepDefinitions
+	{
+		private HomePage _homePage;
+		private SearchPage _searchPage;
 
 
-        [Then("the page title is {string}")]
-        public void ThenThePageTitleIs(string p0)
-        {
-            _homePage.AssertAreEqual(p0,_homePage.Driver.Title);
-            _homePage.Driver.Quit();
-        }
-
-        [When("I go to {string} and use the search button")]
-        public void WhenIGoToAndUseTheSearchButton(string p0)
-        {
-            _homePage.NavigateToPage(p0);
-            _homePage.SetUpPage();
-            _homePage.CLickSearchNavBarButton();
-        }
-
-        [When("I go to {string} and use the home button")]
-        public void WhenIGoToAndUseTheHomeButton(string p0)
-        {
-            _homePage.NavigateToPage(p0);
-            _homePage.SetUpPage();
-
-        }
-
-        [When("I go to {string} and use the Linkedin button")]
-        public void WhenIGoToAndUseTheLinkedinButton(string p0)
-        {
-            _homePage.NavigateToPage(p0);
-            _homePage.SetUpPage();
-            _homePage.ClickLinkedinButton();
-        }
-
-        [Then("I have arrived at linkedin")]
-        public void ThenIHaveArrivedAtLinkedin()
-        {
-            _homePage.WaitUntilURLContainsValue("https://www.linkedin.com/");
-            _homePage.AssertAreEqual(_homePage.Driver.Url, "https://www.linkedin.com/in/lewis-whittard-092167157/");
-			_homePage.Driver.Quit();
-
+		[Given("Homepage: I use Browser {string}")]
+		public void GivenHomepageIUseBrowser(string browser)
+		{
+			switch (browser.ToLower())
+			{
+				case "chrome":
+					_homePage = new HomePage(new ChromeDriver());
+					break;
+				case "firefox":
+					_homePage = new HomePage(new FirefoxDriver());
+					break;
+				case "edge":
+					_homePage = new HomePage(new EdgeDriver());
+					break;
+				case "safari":
+					_homePage = new HomePage(new SafariDriver());
+					break;
+				default:
+					throw new ArgumentException($"Unsupported browser: {browser}");
+			}
 		}
 
-		[When("I go to {string} and use the programming button")]
-        public void WhenIGoToAndUseTheProgrammingButton(string p0)
-        {
-            _homePage.NavigateToPage(p0);
-            _homePage.SetUpPage();
-            _homePage.ClickProgrammingButton();
-            _searchPage = new SearchPage(_homePage.Driver);
-        }
-
-        [Then("I have arrived at the search page with the programming tickbox ticked")]
-        public void ThenIHaveArrivedAtTheSearchPageWithTheProgrammingTickboxTicked()
-        {
-            _searchPage.SetUpPage();
-            _searchPage.CheckProgrammingButtonPost();
-			_homePage.Driver.Quit();
-
+		[When("Homepage: I go to {string}")]
+		public void WhenHomepageIGoTo(string url)
+		{
+			_homePage.NavigateToPage(url);
 		}
 
+		[Then("Homepage: the page title is {string}")]
+		public void ThenHomepagePageTitleIs(string expectedTitle)
+		{
+			_homePage.AssertAreEqual(expectedTitle, _homePage.Driver.Title);
+			_homePage.Driver.Quit();
+		}
 
-		[When("I go to {string} and use the testing button")]
-        public void WhenIGoToAndUseTheTestingButton(string p0)
-        {
-			_homePage.NavigateToPage(p0);
+		[When("Homepage: I go to {string} and use the search button")]
+		public void WhenHomepageUseSearchButton(string url)
+		{
+			_homePage.NavigateToPage(url);
+			_homePage.SetUpPage();
+			_homePage.CLickSearchNavBarButton();
+		}
+
+		[When("Homepage: I go to {string} and use the home button")]
+		public void WhenHomepageUseHomeButton(string url)
+		{
+			_homePage.NavigateToPage(url);
+			_homePage.SetUpPage();
+		}
+
+		[When("Homepage: I go to {string} and use the Linkedin button")]
+		public void WhenHomepageUseLinkedinButton(string url)
+		{
+			_homePage.NavigateToPage(url);
+			_homePage.SetUpPage();
+			_homePage.ClickLinkedinButton();
+		}
+
+		[Then("Homepage: I have arrived at linkedin")]
+		public void ThenHomepageArrivedAtLinkedin()
+		{
+			_homePage.WaitUntilURLContainsValue("https://www.linkedin.com/");
+			_homePage.AssertAreEqual(_homePage.Driver.Url, "https://www.linkedin.com/in/lewis-whittard-092167157/");
+			_homePage.Driver.Quit();
+		}
+
+		[When("Homepage: I go to {string} and use the programming button")]
+		public void WhenHomepageUseProgrammingButton(string url)
+		{
+			_homePage.NavigateToPage(url);
+			_homePage.SetUpPage();
+			_homePage.ClickProgrammingButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
+
+		[Then("Homepage: I have arrived at the search page with the programming tickbox ticked")]
+		public void ThenHomepageProgrammingTickboxChecked()
+		{
+			_searchPage.SetUpPage();
+			_searchPage.CheckProgrammingButtonPost();
+			_homePage.Driver.Quit();
+		}
+
+		[When("Homepage: I go to {string} and use the testing button")]
+		public void WhenHomepageUseTestingButton(string url)
+		{
+			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
 			_homePage.ClickTestButton();
 			_searchPage = new SearchPage(_homePage.Driver);
 		}
 
-        [Then("I have arrived at the search page with the testing tickbox ticked")]
-        public void ThenIHaveArrivedAtTheSearchPageWithTheTestingTickboxTicked()
-        {
+		[Then("Homepage: I have arrived at the search page with the testing tickbox ticked")]
+		public void ThenHomepageTestingTickboxChecked()
+		{
 			_searchPage.SetUpPage();
 			_searchPage.CheckTestingButtonPost();
 			_homePage.Driver.Quit();
-
 		}
 
-		[When("I go to {string} and use the games button")]
-        public void WhenIGoToAndUseTheGamesButton(string p0)
-        {
-			_homePage.NavigateToPage(p0);
+		[When("Homepage: I go to {string} and use the games button")]
+		public void WhenHomepageUseGamesButton(string url)
+		{
+			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
 			_homePage.ClickGamesButton();
 			_searchPage = new SearchPage(_homePage.Driver);
 		}
 
-        [Then("I have arrived at the search page with the games tickbox ticked")]
-        public void ThenIHaveArrivedAtTheSearchPageWithTheGamesTickboxTicked()
-        {
+		[Then("Homepage: I have arrived at the search page with the games tickbox ticked")]
+		public void ThenHomepageGamesTickboxChecked()
+		{
 			_searchPage.SetUpPage();
 			_searchPage.CheckGamesButtonPost();
 			_homePage.Driver.Quit();
-
 		}
 
-		[When("I go to {string} and use the ThreeDAssets button")]
-        public void WhenIGoToAndUseThreeDAssetsButton(string p0, int p1)
-        {
-			_homePage.NavigateToPage(p0);
-			_homePage.SetUpPage();
-			_homePage.ClickThreeDAssetsButton();
-			_searchPage = new SearchPage(_homePage.Driver);
-		}
-
-        [When("I go to {string} and use the Blog button")]
-        public void WhenIGoToAndUseTheBlogButton(string p0)
-        {
-			_homePage.NavigateToPage(p0);
+		[When("Homepage: I go to {string} and use the Blog button")]
+		public void WhenHomepageUseBlogButton(string url)
+		{
+			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
 			_homePage.ClickBlogButton();
 			_searchPage = new SearchPage(_homePage.Driver);
 		}
 
-        [Then("I have arrived at the search page with the Blog tickbox ticked")]
-        public void ThenIHaveArrivedAtTheSearchPageWithTheBlogTickboxTicked()
-        {
+		[Then("Homepage: I have arrived at the search page with the Blog tickbox ticked")]
+		public void ThenHomepageBlogTickboxChecked()
+		{
 			_searchPage.SetUpPage();
 			_searchPage.BlogButtonPost();
 			_homePage.Driver.Quit();
-
 		}
 
-		[When("I go to {string} and use the TwoD Assets button")]
-		public void WhenIGoToAndUseTheTwoDAssetsButton(string p0)
+		[When("Homepage: I go to {string} and use the TwoD Assets button")]
+		public void WhenHomepageUseTwoDAssetsButton(string url)
 		{
-			_homePage.NavigateToPage(p0);
+			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
 			_homePage.ClickTwoDAssetsButton();
 			_searchPage = new SearchPage(_homePage.Driver);
 		}
 
-		[When("I go to {string} and use the ThreeD Assets button")]
-		public void WhenIGoToAndUseTheThreeDAssetsButton(string p0)
-		{
-			_homePage.NavigateToPage(p0);
-			_homePage.SetUpPage();
-			_homePage.ClickThreeDAssetsButton();
-			_searchPage = new SearchPage(_homePage.Driver);
-		}
-
-		[Then("I have arrived at the search page with the TwoD Assets tickbox ticked")]
-		public void ThenIHaveArrivedAtTheSearchPageWithTheTwoDAssetsTickboxTicked()
+		[Then("Homepage: I have arrived at the search page with the TwoD Assets tickbox ticked")]
+		public void ThenHomepageTwoDAssetsTickboxChecked()
 		{
 			_searchPage.SetUpPage();
 			_searchPage.CheckTwoDButtonPost();
 			_homePage.Driver.Quit();
 		}
 
-		[Then("I have arrived at the search page with the ThreeD Assets tickbox ticked")]
-		public void ThenIHaveArrivedAtTheSearchPageWithTheThreeDAssetsTickboxTicked()
+		[When("Homepage: I go to {string} and use the ThreeD Assets button")]
+		public void WhenHomepageUseThreeDAssetsButton(string url)
+		{
+			_homePage.NavigateToPage(url);
+			_homePage.SetUpPage();
+			_homePage.ClickThreeDAssetsButton();
+			_searchPage = new SearchPage(_homePage.Driver);
+		}
+
+		[Then("Homepage: I have arrived at the search page with the ThreeD Assets tickbox ticked")]
+		public void ThenHomepageThreeDAssetsTickboxChecked()
 		{
 			_searchPage.SetUpPage();
 			_searchPage.CheckThreeDButtonPost();
 			_homePage.Driver.Quit();
 		}
 
-		[When("I go to {string} and use the logo button")]
-		public void WhenIGoToAndUseTheLogoButton(string p0)
+		[When("Homepage: I go to {string} and use the logo button")]
+		public void WhenHomepageUseLogoButton(string url)
 		{
-			_homePage.NavigateToPage(p0);
+			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
-            _homePage.ClickLogoButton();
-        }
-
-    }
+			_homePage.ClickLogoButton();
+		}
+	}
 }

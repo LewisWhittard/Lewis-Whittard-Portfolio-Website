@@ -116,13 +116,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 4
-    await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 5
-    await testRunner.WhenAsync("I go to \"https://localhost:44325/\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 6
-    await testRunner.ThenAsync("the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+    await testRunner.ThenAsync("Homepage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -152,13 +152,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 14
-    await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 15
-    await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 16
-    await testRunner.ThenAsync("the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+    await testRunner.ThenAsync("Homepage: the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -188,13 +188,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 26
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 27
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 28
-        await testRunner.ThenAsync("the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -224,13 +224,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 38
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 39
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 40
-        await testRunner.ThenAsync("I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -260,13 +260,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 50
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 51
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the programming button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the programming button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 52
-        await testRunner.ThenAsync("I have arrived at the search page with the programming tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the programming tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -296,13 +296,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 62
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 63
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the testing button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the testing button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 64
-        await testRunner.ThenAsync("I have arrived at the search page with the testing tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the testing tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -332,13 +332,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 74
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 75
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the games button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the games button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 76
-        await testRunner.ThenAsync("I have arrived at the search page with the games tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the games tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -368,13 +368,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 86
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 87
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the TwoD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the TwoD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 88
-        await testRunner.ThenAsync("I have arrived at the search page with the TwoD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the TwoD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -404,13 +404,14 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 98
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 99
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the ThreeD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the ThreeD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 100
-        await testRunner.ThenAsync("I have arrived at the search page with the ThreeD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the ThreeD Assets tickbox ticked" +
+                        "", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -440,13 +441,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 110
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 111
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the Blog button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the Blog button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 112
-        await testRunner.ThenAsync("I have arrived at the search page with the Blog tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the Blog tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -476,13 +477,13 @@ namespace LWMDev_UI_Tests.Features
             {
                 await this.ScenarioStartAsync();
 #line 122
-        await testRunner.GivenAsync(string.Format("I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 123
-        await testRunner.WhenAsync("I go to \"https://localhost:44325/\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 124
-        await testRunner.ThenAsync("the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+        await testRunner.ThenAsync("Homepage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
