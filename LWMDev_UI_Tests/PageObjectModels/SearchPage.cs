@@ -14,7 +14,9 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement TwoDAssetsTickBox { get; private set; }
 		public IWebElement BlogTickBox { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
-		public IWebElement linkedin { get; private set; }
+		public IWebElement Linkedin { get; private set; }
+		public IWebElement HomeNavBarButton { get; private set; }
+		public IWebElement SearchNavBarButton { get; private set; }
 
 		public SearchPage(IWebDriver driver)
 		{
@@ -34,8 +36,10 @@ namespace LMWSelenium.PageModels.PageModels
             GamesTickBox = FindElementById("GamesCategory");
             BlogTickBox = FindElementById("BlogCategory");
             LMWLogo = FindElementById("LogoLink");
-            linkedin = FindElementById("Linkedin");
-        }
+            Linkedin = FindElementById("Linkedin");
+			HomeNavBarButton = FindElementById("HomeNavBarButton");
+			SearchNavBarButton = FindElementById("SearchNavBarButton");
+		}
 
 		public void CheckSearchButtonPost()
 		{
@@ -208,6 +212,29 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilElementIsStale(BlogTickBox);
 		}
 
+		public void ClickHomeNavBarButton()
+		{
+			ClickButton(HomeNavBarButton);
+			WaitUntilTitleContainsValue("Home Page - Lewis Whittard Software Development");
+		}
 
+		public void CLickSearchNavBarButton()
+		{
+			ClickButton(SearchNavBarButton);
+			WaitUntilURLContainsValue("search");
+			WaitUntilTitleContainsValue("Search");
+		}
+
+		public void ClickLogoButton()
+		{
+			ClickButton(LMWLogo);
+		}
+
+		public void ClickLinkedinButton()
+		{
+			ClickButton(Linkedin);
+			CloseDriver();
+			SwitchTab(Driver, 0);
+		}
 	}
 }
