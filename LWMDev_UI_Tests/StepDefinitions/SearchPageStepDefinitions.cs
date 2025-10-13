@@ -135,7 +135,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		}
 
 
-		[Then(" SearchPage: search items should be filtered by tick box")]
+		[Then("SearchPage: search items should be filtered by tick box")]
 		public void ThenResultsAreFilteredByTheTickBox()
 		{
 			_searchPage.DontFindElementById("SearchResult 0");
@@ -143,6 +143,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.FindElementById("SearchResult 2");
 			_searchPage.DontFindElementById("SearchResult 3");
 			_searchPage.FindElementById("SearchResult 4");
+			_searchPage.QuitDriver();
 		}
 
 		[Then("SearchPage: search items should be filtered by search box")]
@@ -165,6 +166,23 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _searchPage.QuitDriver();
         }
 
+        [When("SearchPage: I untick all the search boxes")]
+        public void WhenSearchPageIUntickAllTheSearchBoxes()
+        {
+			_searchPage.SetUpPage();
+            _searchPage.ClickProgrammingTickBox();
+            _searchPage.ClickTwoDAssetsTickBox();
+            _searchPage.ClickBlogTickBox();
+            _searchPage.ClickGamesTickBox();
+            _searchPage.ClickThreeDAssetsTickBox();
+            _searchPage.ClickTestingTickBox();
+        }
 
+        [When("SearchPage: I click programming And Search")]
+        public void WhenSearchPageIClickProgrammingAndSearch()
+        {
+            _searchPage.ClickProgrammingTickBox();
+			_searchPage.ClickSearchButton();
+        }
     }
 }

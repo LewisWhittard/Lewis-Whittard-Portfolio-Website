@@ -101,8 +101,16 @@ Examples:
 	| safari  | SearchResultButton 3 | https://localhost:44325/ClusterContent/Index/3 |
 	| chrome  | SearchResultButton 4 | https://localhost:44325/ClusterContent/Index/4 |
 
-Scenario Outline: I go to the search page and the programming tickbox is ticked only
+Scenario Outline: I go to the search and use only one tickbox
 	Given SearchPage: I use Browser "<browser>"
 	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: and search
-	Then SearchPage: I click a "<SearchResult>" result and go through to the page "<ExpectedURL>"
+	And SearchPage: I untick all the search boxes
+	And SearchPage: I click programming And Search
+	Then SearchPage: search items should be filtered by tick box
+	
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
