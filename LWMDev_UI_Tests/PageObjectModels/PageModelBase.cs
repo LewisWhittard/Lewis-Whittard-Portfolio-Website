@@ -68,7 +68,7 @@ namespace LMWSelenium.PageModels.StandardPage
 			
 			if (ReturnElement != null)
 				{
-					throw new InvalidOperationException("Failed Found Button");
+					throw new InvalidOperationException("Failed to not find element");
 				}
 
 

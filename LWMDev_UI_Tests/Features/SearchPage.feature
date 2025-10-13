@@ -47,3 +47,42 @@ Scenario Outline: Click search on the navigation bar
         | firefox |
         | edge    |
         | safari  |
+
+    Scenario Outline: I go to the search page
+        Given SearchPage: I use Browser "<browser>"
+        When SearchPage: I go to "https://localhost:44325/search"
+        Then SearchPage: all search items should be visible
+
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
+
+
+Scenario Outline: I go to the search page and search with no tick boxes
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search"
+    And SearchPage: I untick all the search boxes and search
+    Then SearchPage: No search items should be visible
+
+    Examples:
+      | browser |
+      | chrome  |
+      | firefox |
+      | edge    |
+      | safari  |
+
+Scenario Outline: I go to the search page and search with all tick boxes
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search"
+    And SearchPage: and search
+    Then SearchPage: all search items should be visible
+
+    Examples:
+      | browser |
+      | chrome  |
+      | firefox |
+      | edge    |
+      | safari  |

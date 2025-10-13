@@ -175,28 +175,6 @@ namespace LMWSelenium.PageModels.PageModels
 			ClickButton(BlogTickBox);
 		}
 
-		public void SearchTestAllTickBoxesTrue(IWebDriver driver)
-		{
-			SendTextToInput(SearchBox, "Part 1 of My Portfolio Completed!");
-			ClickButton(ProgrammingTickBox);
-			ClickButton(TestingTickBox);
-			ClickButton(GamesTickBox);
-			ClickButton(ThreeDAssetsTickBox);
-			ClickButton(TwoDAssetsTickBox);
-			ClickButton(BlogTickBox);
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue( "Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
-		}
-
-		public void SearchTestAllTickBoxesFalsePost(IWebDriver driver)
-		{
-			CheckAllTickboxValuesAreFalse();
-			AssertAreEqual(SearchBox.GetAttribute("value"), "Part 1 of My Portfolio Completed!");
-			DontFindElementById("0Button");
-		}
-
 		public void CheckAllTickBoxesAreStale(IWebDriver driver)
 		{
 			WaitUntilElementIsStale(ProgrammingTickBox);

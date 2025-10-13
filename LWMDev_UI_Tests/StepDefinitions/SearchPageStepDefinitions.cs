@@ -90,5 +90,71 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.ClickLogoButton();
 		}
 
+		[Then("SearchPage: all search items should be visible")]
+		public void ThenAllSearchItemsShouldBeVisible()
+		{
+			_searchPage.FindElementById("SearchResult 0");
+			_searchPage.FindElementById("SearchResult 1");
+			_searchPage.FindElementById("SearchResult 2");
+			_searchPage.FindElementById("SearchResult 3");
+			_searchPage.FindElementById("SearchResult 4");
+			_searchPage.QuitDriver();
+		}
+
+		[When("SearchPage: I untick all the search boxes and search")]
+		public void WhenSearchPageIUntickAllTheSearchBoxesAndSearch()
+		{
+			_searchPage.SetUpPage();
+			_searchPage.ClickProgrammingTickBox();
+			_searchPage.ClickTwoDAssetsTickBox();
+			_searchPage.ClickBlogTickBox();
+			_searchPage.ClickGamesTickBox();
+			_searchPage.ClickThreeDAssetsTickBox();
+			_searchPage.ClickTestingTickBox();
+			_searchPage.ClickSearchButton();
+
+		}
+
+		[When("SearchPage: and search")]
+		public void WhenSearchPageAndSearch()
+		{
+			_searchPage.SetUpPage();
+			_searchPage.ClickSearchButton();
+		}
+
+
+		[Then("SearchPage: No search items should be visible")]
+		public void ThenSearchPageNoSearchItemsShouldBeVisible()
+		{
+			_searchPage.DontFindElementById("SearchResult 0");
+			_searchPage.DontFindElementById("SearchResult 1");
+			_searchPage.DontFindElementById("SearchResult 2");
+			_searchPage.DontFindElementById("SearchResult 3");
+			_searchPage.DontFindElementById("SearchResult 4");
+			_searchPage.QuitDriver();
+		}
+
+
+		[Then(" SearchPage: search items should be filtered by tick box")]
+		public void ThenResultsAreFilteredByTheTickBox()
+		{
+			_searchPage.DontFindElementById("SearchResult 0");
+			_searchPage.DontFindElementById("SearchResult 1");
+			_searchPage.FindElementById("SearchResult 2");
+			_searchPage.DontFindElementById("SearchResult 3");
+			_searchPage.FindElementById("SearchResult 4");
+		}
+
+		[Then("SearchPage: search items should be filtered by search box")]
+		public void ThenResultsAreFilteredByTheSearchBox()
+		{
+			_searchPage.DontFindElementById("SearchResult 0");
+			_searchPage.DontFindElementById("SearchResult 1");
+			_searchPage.DontFindElementById("SearchResult 2");
+			_searchPage.FindElementById("SearchResult 3");
+			_searchPage.DontFindElementById("SearchResult 4");
+		}
+
+
 	}
 }
