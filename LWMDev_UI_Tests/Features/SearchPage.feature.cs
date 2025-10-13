@@ -350,6 +350,48 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
+        [Xunit.SkippableTheoryAttribute(DisplayName="I go to the search page and search with all tick boxes and click a search result")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "I go to the search page and search with all tick boxes and click a search result")]
+        [Xunit.InlineDataAttribute("chrome", "SearchResultButton 0", "https://localhost:44325/ClusterContent/Index/0", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "SearchResultButton 1", "https://localhost:44325/ClusterContent/Index/1", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "SearchResultButton 2", "https://localhost:44325/ClusterContent/Index/2", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "SearchResultButton 3", "https://localhost:44325/ClusterContent/Index/3", new string[0])]
+        [Xunit.InlineDataAttribute("chrome", "SearchResultButton 4", "https://localhost:44325/ClusterContent/Index/4", new string[0])]
+        public async System.Threading.Tasks.Task IGoToTheSearchPageAndSearchWithAllTickBoxesAndClickASearchResult(string browser, string searchResult, string expectedURL, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("SearchResult", searchResult);
+            argumentsOfScenario.Add("ExpectedURL", expectedURL);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("I go to the search page and search with all tick boxes and click a search result", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 90
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 91
+  await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 92
+  await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 93
+  await testRunner.AndAsync("SearchPage: and search", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 94
+  await testRunner.ThenAsync(string.Format("SearchPage: I click a \"{0}\" result and go through to the page \"{1}\"", searchResult, expectedURL), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : object, Xunit.IAsyncLifetime

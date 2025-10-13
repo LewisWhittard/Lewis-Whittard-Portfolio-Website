@@ -86,3 +86,18 @@ Scenario Outline: I go to the search page and search with all tick boxes
       | firefox |
       | edge    |
       | safari  |
+
+Scenario Outline: I go to the search page and search with all tick boxes and click a search result
+  Given SearchPage: I use Browser "<browser>"
+  When SearchPage: I go to "https://localhost:44325/search"
+  And SearchPage: and search
+  Then SearchPage: I click a "<SearchResult>" result and go through to the page "<ExpectedURL>"
+
+Examples:
+  | browser | SearchResult           | ExpectedURL                                         |
+  | chrome  | SearchResultButton 0   | https://localhost:44325/ClusterContent/Index/0     |
+  | firefox | SearchResultButton 1   | https://localhost:44325/ClusterContent/Index/1     |
+  | edge    | SearchResultButton 2   | https://localhost:44325/ClusterContent/Index/2     |
+  | safari  | SearchResultButton 3   | https://localhost:44325/ClusterContent/Index/3     |
+  | chrome  | SearchResultButton 4   | https://localhost:44325/ClusterContent/Index/4     |
+

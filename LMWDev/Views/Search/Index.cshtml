@@ -70,7 +70,7 @@
                                     <h5 class="mb-1">@result.Title</h5>
                                     <p class="mb-1">@result.Description</p>
                                     <small class="text-muted">Category: @result.Category</small><br />
-                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" class="btn btn-sm btn-outline-primary mt-2">
+                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" id="SearchResultButton @result.ID" class="btn btn-sm btn-outline-primary mt-2">
                                         View
                                     </a>
                                 </div>

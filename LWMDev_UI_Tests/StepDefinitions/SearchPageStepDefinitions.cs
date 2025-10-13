@@ -155,6 +155,16 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.DontFindElementById("SearchResult 4");
 		}
 
+        [Then("SearchPage: I click a {string} result and go through to the page {string}")]
+        public void ThenSearchPageIClickAResultAndGoThroughToThePage(string p0, string p1)
+        {
+			_searchPage.SetUpPage();
+            var searchItem = _searchPage.FindElementById(p0);
+            _searchPage.ClickButton(searchItem);
+            _searchPage.WaitUntilURLContainsValue(p1);
+            _searchPage.QuitDriver();
+        }
 
-	}
+
+    }
 }
