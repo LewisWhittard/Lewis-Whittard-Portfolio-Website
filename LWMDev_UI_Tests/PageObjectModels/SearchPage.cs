@@ -165,19 +165,14 @@ namespace LMWSelenium.PageModels.PageModels
 			DontFindElementById("0Button");
 		}
 
-		public void SearchTestAllTickBoxesFalse(IWebDriver driver)
+		public void SearchTestAllTickBoxesFalse()
 		{
-			SendTextToInput(SearchBox, "Part 1 of My Portfolio Completed!");
 			ClickButton(ProgrammingTickBox);
 			ClickButton(TestingTickBox);
 			ClickButton(GamesTickBox);
 			ClickButton(ThreeDAssetsTickBox);
 			ClickButton(TwoDAssetsTickBox);
 			ClickButton(BlogTickBox);
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
 		}
 
 		public void SearchTestAllTickBoxesTrue(IWebDriver driver)
@@ -235,6 +230,46 @@ namespace LMWSelenium.PageModels.PageModels
 			ClickButton(Linkedin);
 			CloseDriver();
 			SwitchTab(Driver, 0);
+		}
+
+		public void ClickProgrammingTickBox()
+		{
+			ClickButton(ProgrammingTickBox);
+		}
+
+		public void ClickTestingTickBox()
+		{
+			ClickButton(TestingTickBox);
+		}
+
+		public void ClickGamesTickBox()
+		{
+			ClickButton(GamesTickBox);
+		}
+
+		public void ClickThreeDAssetsTickBox()
+		{
+			ClickButton(ThreeDAssetsTickBox);
+		}
+
+		public void ClickTwoDAssetsTickBox()
+		{
+			ClickButton(TwoDAssetsTickBox);
+		}
+
+		public void ClickBlogTickBox()
+		{
+			ClickButton(BlogTickBox);
+		}
+
+		public void ClickSearchButton()
+		{
+			ClickButton(SearchButton);
+		}
+
+		public void Search(string searchTerm)
+		{
+			SendTextToInput(SearchBox, searchTerm);
 		}
 	}
 }
