@@ -152,8 +152,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.DontFindElementById("SearchResult 0");
 			_searchPage.DontFindElementById("SearchResult 1");
 			_searchPage.DontFindElementById("SearchResult 2");
-			_searchPage.FindElementById("SearchResult 3");
-			_searchPage.DontFindElementById("SearchResult 4");
+			_searchPage.DontFindElementById("SearchResult 3");
+			_searchPage.FindElementById("SearchResult 4");
+			_searchPage.QuitDriver();
 		}
 
         [Then("SearchPage: I click a {string} result and go through to the page {string}")]
@@ -178,11 +179,19 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _searchPage.ClickTestingTickBox();
         }
 
-        [When("SearchPage: I click programming And Search")]
-        public void WhenSearchPageIClickProgrammingAndSearch()
-        {
-            _searchPage.ClickProgrammingTickBox();
+		[When("SearchPage: I click programming And Search")]
+		public void WhenSearchPageIClickProgrammingAndSearch()
+		{
+			_searchPage.ClickProgrammingTickBox();
 			_searchPage.ClickSearchButton();
+		}
+
+        [When("SearchPage: Search by the term Cogetta")]
+        public void WhenSearchPageSearchByTheTermCogetta()
+        {
+            _searchPage.SetUpPage();
+            _searchPage.Search("Cogetta");
+            _searchPage.ClickSearchButton();
         }
     }
 }

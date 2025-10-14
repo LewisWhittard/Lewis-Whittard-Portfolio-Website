@@ -50,33 +50,30 @@ namespace LMWSelenium.PageModels.StandardPage
 			return ReturnElement;
 		}
 
-		public void DontFindElementById(string id)
-		{
-			IWebElement ReturnElement = null;
+        public void DontFindElementById(string id)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(2));
 
+            bool elementNotFound = wait.Until(driver =>
+            {
+                try
+                {
+                    driver.FindElement(By.Id(id));
+                    return false; // Element is still present
+                }
+                catch (NoSuchElementException)
+                {
+                    return true; // Element is not found
+                }
+            });
 
+            if (!elementNotFound)
+            {
+                throw new InvalidOperationException("Failed to not find element");
+            }
+        }
 
-			try
-			{
-				ReturnElement = Driver.FindElement(By.Id(id));
-			}
-			catch (Exception)
-			{
-
-				
-			}
-			
-			if (ReturnElement != null)
-				{
-					throw new InvalidOperationException("Failed to not find element");
-				}
-
-
-
-			
-		}
-
-		public void CloseDriver()
+        public void CloseDriver()
 		{
 			Driver.Close();
 		}

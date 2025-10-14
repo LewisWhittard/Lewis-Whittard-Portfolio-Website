@@ -114,3 +114,16 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: I go to the search and search a term
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search"
+	And SearchPage: Search by the term Cogetta 
+	Then SearchPage: search items should be filtered by search box
+	
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
