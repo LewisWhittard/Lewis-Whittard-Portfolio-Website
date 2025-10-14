@@ -62,7 +62,7 @@
                 <ul class="list-group">
                     @foreach (var result in Model.Results)
                     {
-                        <li class="list-group-item">
+                        <li class="list-group-item" id="SearchResult @result.ID">
                             <div class="d-flex align-items-start">
                                 <img src="@Url.Content("~/Images/" + result.Content.Path)" alt="@result.Content." class="img-fluid me-3" style="width:100px; height:auto; object-fit:cover;" />
 
@@ -70,7 +70,7 @@
                                     <h5 class="mb-1">@result.Title</h5>
                                     <p class="mb-1">@result.Description</p>
                                     <small class="text-muted">Category: @result.Category</small><br />
-                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" class="btn btn-sm btn-outline-primary mt-2">
+                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" id="SearchResultButton @result.ID" class="btn btn-sm btn-outline-primary mt-2">
                                         View
                                     </a>
                                 </div>

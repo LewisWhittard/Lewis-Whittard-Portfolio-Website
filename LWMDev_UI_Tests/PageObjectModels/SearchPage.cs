@@ -14,7 +14,9 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement TwoDAssetsTickBox { get; private set; }
 		public IWebElement BlogTickBox { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
-		public IWebElement linkedin { get; private set; }
+		public IWebElement Linkedin { get; private set; }
+		public IWebElement HomeNavBarButton { get; private set; }
+		public IWebElement SearchNavBarButton { get; private set; }
 
 		public SearchPage(IWebDriver driver)
 		{
@@ -34,8 +36,10 @@ namespace LMWSelenium.PageModels.PageModels
             GamesTickBox = FindElementById("GamesCategory");
             BlogTickBox = FindElementById("BlogCategory");
             LMWLogo = FindElementById("LogoLink");
-            linkedin = FindElementById("Linkedin");
-        }
+            Linkedin = FindElementById("Linkedin");
+			HomeNavBarButton = FindElementById("HomeNavBarButton");
+			SearchNavBarButton = FindElementById("SearchNavBarButton");
+		}
 
 		public void CheckSearchButtonPost()
 		{
@@ -161,41 +165,14 @@ namespace LMWSelenium.PageModels.PageModels
 			DontFindElementById("0Button");
 		}
 
-		public void SearchTestAllTickBoxesFalse(IWebDriver driver)
+		public void SearchTestAllTickBoxesFalse()
 		{
-			SendTextToInput(SearchBox, "Part 1 of My Portfolio Completed!");
 			ClickButton(ProgrammingTickBox);
 			ClickButton(TestingTickBox);
 			ClickButton(GamesTickBox);
 			ClickButton(ThreeDAssetsTickBox);
 			ClickButton(TwoDAssetsTickBox);
 			ClickButton(BlogTickBox);
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
-		}
-
-		public void SearchTestAllTickBoxesTrue(IWebDriver driver)
-		{
-			SendTextToInput(SearchBox, "Part 1 of My Portfolio Completed!");
-			ClickButton(ProgrammingTickBox);
-			ClickButton(TestingTickBox);
-			ClickButton(GamesTickBox);
-			ClickButton(ThreeDAssetsTickBox);
-			ClickButton(TwoDAssetsTickBox);
-			ClickButton(BlogTickBox);
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue( "Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
-		}
-
-		public void SearchTestAllTickBoxesFalsePost(IWebDriver driver)
-		{
-			CheckAllTickboxValuesAreFalse();
-			AssertAreEqual(SearchBox.GetAttribute("value"), "Part 1 of My Portfolio Completed!");
-			DontFindElementById("0Button");
 		}
 
 		public void CheckAllTickBoxesAreStale(IWebDriver driver)
@@ -208,6 +185,69 @@ namespace LMWSelenium.PageModels.PageModels
 			WaitUntilElementIsStale(BlogTickBox);
 		}
 
+		public void ClickHomeNavBarButton()
+		{
+			ClickButton(HomeNavBarButton);
+			WaitUntilTitleContainsValue("Home Page - Lewis Whittard Software Development");
+		}
 
+		public void CLickSearchNavBarButton()
+		{
+			ClickButton(SearchNavBarButton);
+			WaitUntilURLContainsValue("search");
+			WaitUntilTitleContainsValue("Search");
+		}
+
+		public void ClickLogoButton()
+		{
+			ClickButton(LMWLogo);
+		}
+
+		public void ClickLinkedinButton()
+		{
+			ClickButton(Linkedin);
+			CloseDriver();
+			SwitchTab(Driver, 0);
+		}
+
+		public void ClickProgrammingTickBox()
+		{
+			ClickButton(ProgrammingTickBox);
+		}
+
+		public void ClickTestingTickBox()
+		{
+			ClickButton(TestingTickBox);
+		}
+
+		public void ClickGamesTickBox()
+		{
+			ClickButton(GamesTickBox);
+		}
+
+		public void ClickThreeDAssetsTickBox()
+		{
+			ClickButton(ThreeDAssetsTickBox);
+		}
+
+		public void ClickTwoDAssetsTickBox()
+		{
+			ClickButton(TwoDAssetsTickBox);
+		}
+
+		public void ClickBlogTickBox()
+		{
+			ClickButton(BlogTickBox);
+		}
+
+		public void ClickSearchButton()
+		{
+			ClickButton(SearchButton);
+		}
+
+		public void Search(string searchTerm)
+		{
+			SendTextToInput(SearchBox, searchTerm);
+		}
 	}
 }
