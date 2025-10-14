@@ -40,7 +40,7 @@ namespace LMWDev
                         options.AddOtlpExporter(otlpOptions =>
                         {
                             otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
-                            otlpOptions.Headers = "x-honeycomb-team=Iof84w2kAeeUqvIFOg9p3Y,x-honeycomb-dataset=LMWDevService";
+                            otlpOptions.Headers = "x-honeycomb-team= Key Here,x-honeycomb-dataset=LMWDevService";
                         });
                     });
                 })
@@ -65,7 +65,7 @@ namespace LMWDev
                                 .AddOtlpExporter(otlpOptions =>
                                 {
                                     otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
-                                    otlpOptions.Headers = "x-honeycomb-team=Iof84w2kAeeUqvIFOg9p3Y,x-honeycomb-dataset=LMWDevService";
+                                    otlpOptions.Headers = "x-honeycomb-team=KEY Here,x-honeycomb-dataset=LMWDevService";
                                 });
                         });
                 })
