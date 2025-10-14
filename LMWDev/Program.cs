@@ -5,8 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Logs;
+using OpenTelemetry.Exporter;
 using System;
-using Microsoft.Extensions.Options;
 
 namespace LMWDev
 {
@@ -25,7 +25,7 @@ namespace LMWDev
                     logging.AddConsole();
                     logging.AddDebug();
 
-                    // OpenTelemetry logging
+                    // OpenTelemetry logging with Honeycomb
                     logging.AddOpenTelemetry(options =>
                     {
                         options.IncludeFormattedMessage = true;
@@ -35,7 +35,13 @@ namespace LMWDev
                         options.SetResourceBuilder(ResourceBuilder.CreateDefault()
                             .AddService("LMWDevService", serviceVersion: "1.0.0", serviceInstanceId: Environment.MachineName));
 
-                        options.AddConsoleExporter(); // Logs to console
+                        options.AddConsoleExporter();
+
+                        options.AddOtlpExporter(otlpOptions =>
+                        {
+                            otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
+                            otlpOptions.Headers = "x-honeycomb-team=Key,x-honeycomb-dataset=LMWDevService";
+                        });
                     });
                 })
                 .ConfigureServices((hostContext, services) =>
@@ -46,13 +52,21 @@ namespace LMWDev
                             builder
                                 .SetResourceBuilder(ResourceBuilder.CreateDefault()
                                     .AddService("LMWDevService", serviceVersion: "1.0.0", serviceInstanceId: Environment.MachineName))
-                                .AddSource("LMWDev.SearchController") // Match your ActivitySource name
+                                .AddSource("LMWDev.SearchController")
                                 .AddSource("LMWDev.HomeController")
-                                .AddSource("LMWDev.ClusterContentController")// Match your ActivitySource name
+                                .AddSource("LMWDev.ClusterContentController")
                                 .AddAspNetCoreInstrumentation()
                                 .AddHttpClientInstrumentation()
-                                .SetSampler(new AlwaysOnSampler()) // Collect all traces
-                                .AddConsoleExporter(options => options.Targets = OpenTelemetry.Exporter.ConsoleExporterOutputTargets.Debug ); // Traces to console
+                                .SetSampler(new AlwaysOnSampler())
+                                .AddConsoleExporter(options =>
+                                {
+                                    options.Targets = OpenTelemetry.Exporter.ConsoleExporterOutputTargets.Debug;
+                                })
+                                .AddOtlpExporter(otlpOptions =>
+                                {
+                                    otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
+                                    otlpOptions.Headers = "x-honeycomb-team=Key,x-honeycomb-dataset=LMWDevService";
+                                });
                         });
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
