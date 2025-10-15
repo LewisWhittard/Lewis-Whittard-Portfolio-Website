@@ -16,7 +16,7 @@ namespace Page_Library_Tests.Search.Service
         [InlineData("Dev", true, true, true, true, true, true, 3)]
         [InlineData("Nonexistent", true, true, true, true, true, true, 0)]
         [InlineData("Intro", false, false, false, false, false, false, 0)]
-        public void SearchService_GetPageById_Correctly(string searchTerm,
+        public void SearchService_GetSearchResults_Correctly(string searchTerm,
         bool programming,
         bool testing,
         bool games,
