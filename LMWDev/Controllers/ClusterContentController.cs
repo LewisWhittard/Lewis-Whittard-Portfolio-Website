@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Page_Library.Page.Service.Interface;
-using Page_Library.Page.Service;
-using Page_Library.Page.Repository;
-using Page_Library.Page.Factory;
-using Page_Library.Content.Repository;
 using LMWDev.Models;
 using System.Diagnostics;
 using System;
@@ -17,16 +13,12 @@ namespace LMWDev.Controllers
         private readonly ILogger<ClusterContentController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.ClusterContentController");
 
-        public ClusterContentController(ILogger<ClusterContentController> logger)
+        public ClusterContentController(ILogger<ClusterContentController> logger, IPageService pageService)
         {
             _logger = logger;
             try
             {
-                _pageService = new PageService(
-                    new JsonPageRepository(@"./Json/Page/Page.json"),
-                    new ContentBlockFactory(),
-                    new JsonContentRepository(@"./Json/Content/Content.json")
-                );
+                _pageService = pageService;
                 _logger.LogInformation("PageService initialized successfully.");
             }
             catch (Exception ex)
