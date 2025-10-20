@@ -7,6 +7,12 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Exporter;
 using System;
+using Page_Library.Content.Repository.Interface;
+using Page_Library.Content.Repository;
+using Page_Library.Search.Repository.Interface;
+using Page_Library.Search.Repository;
+using Page_Library.Search.Service.Interface;
+using Page_Library.Search.Service;
 
 namespace LMWDev
 {
@@ -46,6 +52,22 @@ namespace LMWDev
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
+                    // ?? Place your DI registrations here
+                    services.AddScoped<IPageSearchRepository>(provider =>
+                    {
+                        var logger = provider.GetRequiredService<ILogger<JsonPageSearchRepository>>();
+                        return new JsonPageSearchRepository(@"./Json/Search/Search.json");
+                    });
+
+                    services.AddScoped<IContentRepository>(provider =>
+                    {
+                        var logger = provider.GetRequiredService<ILogger<JsonContentRepository>>();
+                        return new JsonContentRepository(@"./Json/Content/Content.json");
+                    });
+
+                    services.AddScoped<IPageSearchService, PageSearchService>();
+
+
                     services.AddOpenTelemetry()
                         .WithTracing(builder =>
                         {
@@ -73,5 +95,6 @@ namespace LMWDev
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
