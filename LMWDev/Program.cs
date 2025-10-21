@@ -5,8 +5,19 @@ using Microsoft.Extensions.DependencyInjection;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Logs;
-using OpenTelemetry.Exporter;
 using System;
+using Page_Library.Content.Repository.Interface;
+using Page_Library.Content.Repository;
+using Page_Library.Search.Repository.Interface;
+using Page_Library.Search.Repository;
+using Page_Library.Search.Service.Interface;
+using Page_Library.Search.Service;
+using Page_Library.Page.Repository.Interface;
+using Page_Library.Page.Repository;
+using Page_Library.Page.Factory.Interface;
+using Page_Library.Page.Factory;
+using Page_Library.Page.Service;
+using Page_Library.Page.Service.Interface;
 
 namespace LMWDev
 {
@@ -46,7 +57,37 @@ namespace LMWDev
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddOpenTelemetry()
+                    // Scoped registrations for search-related services
+                    services.AddScoped<IPageSearchRepository>(provider =>
+                        new JsonPageSearchRepository(@"./Json/Search/Search.json"));
+
+                    services.AddScoped<IContentRepository>(provider =>
+                        new JsonContentRepository(@"./Json/Content/Content.json"));
+
+                    services.AddScoped<IPageSearchService, PageSearchService>();
+
+                    // Singleton registrations for page-related services
+                    services.AddSingleton<IPageRepository>(provider =>
+                        new JsonPageRepository(@"./Json/Page/Page.json"));
+
+                    services.AddSingleton<IContentRepository>(provider =>
+                        new JsonContentRepository(@"./Json/Content/Content.json"));
+
+                    services.AddSingleton<IContentBlockFactory, ContentBlockFactory>();
+
+                    services.AddSingleton<IPageService>(provider =>
+                    {
+                        var pageRepo = provider.GetRequiredService<IPageRepository>();
+                        var contentRepo = provider.GetRequiredService<IContentRepository>();
+                        var blockFactory = provider.GetRequiredService<IContentBlockFactory>();
+
+                        return new PageService(pageRepo, blockFactory, contentRepo);
+                    });
+               
+
+
+
+        services.AddOpenTelemetry()
                         .WithTracing(builder =>
                         {
                             builder
@@ -73,5 +114,6 @@ namespace LMWDev
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }

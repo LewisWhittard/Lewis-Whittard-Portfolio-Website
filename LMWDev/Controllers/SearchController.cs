@@ -1,26 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using LMWDev.Models;
-using Page_Library.Search.Service;
-using Page_Library.Search.Repository;
-using Page_Library.Content.Repository;
 using System.Diagnostics;
 using System;
+using Page_Library.Search.Service.Interface;
 
 namespace LMWDev.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly PageSearchService _pageSearchService;
+        private readonly IPageSearchService _pageSearchService;
         private readonly ILogger<SearchController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
-        public SearchController(ILogger<SearchController> logger)
+        public SearchController(IPageSearchService pageSearchService,ILogger<SearchController> logger)
         {
             _logger = logger;
             try
             {
-                _pageSearchService = new PageSearchService(new JsonPageSearchRepository(@"./Json/Search/Search.json"), new JsonContentRepository(@"./Json/Content/Content.json"));
+                _pageSearchService = pageSearchService;
                 _logger.LogInformation("PageSearchService initialized successfully.");
             }
             catch (Exception ex)
