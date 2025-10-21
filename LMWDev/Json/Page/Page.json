@@ -149,30 +149,6 @@
 		]
 	},
 	{
-		"ExternalId": 2,
-		"Title": "My Portfolio – Website Development",
-		"PublishDate": "2022-03-19",
-		"Meta": {
-			"MetaTitle": "My Portfolio – Website Development",
-			"MetaDescription": "MVC.Net Core,Canva,Libre Office Calc,Github,C#,Bootstrap,CSHTML,Software Development, Website Development",
-			"MetaKeywords": [ "Project", "Link", "Test" ],
-			"MetaImageId": 0
-		},
-		"ContentBlocks": [
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "To create my portfolio Website I used the following tools: MVC.net Core, Canva, Libre Office Calc, and Github."
-			},
-			{
-				"BlockType": "Hyperlink",
-				"Alignment": "left",
-				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
-				"LinkText": "To Github Repository"
-			}
-		]
-	},
-	{
 		"ExternalId": 4,
 		"Title": "Cogetta",
 		"PublishDate": "2022-11-14",
