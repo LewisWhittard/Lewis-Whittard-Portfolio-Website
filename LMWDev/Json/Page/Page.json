@@ -101,8 +101,8 @@
 		"PublishDate": "2022-02-24",
 		"Meta": {
 			"MetaTitle": "My Portfolio – Website Development",
-			"MetaDescription": "MVC.Net Core,Canva,Libre Office Calc,Github,C#,Bootstrap,CSHTML,Software Development, Website Development",
-			"MetaKeywords": [ "Project", "Link", "Test" ],
+			"MetaDescription": "This page showcases the portfolio website and links to the github code.",
+			"MetaKeywords": [ "MVC.Net", "Core", "Canva", "Libre", "Office", "Calc", "Github", "C#", "Bootstrap", "CSHTML", "Software", "Development", "Website", "Development" ],
 			"MetaImageId": 0
 		},
 		"ContentBlocks": [
