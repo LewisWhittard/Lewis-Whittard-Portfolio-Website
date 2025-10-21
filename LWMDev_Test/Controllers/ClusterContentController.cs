@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LWMDev_Test.Controllers
 {
-    public class ClusterContentControllerTests
+    public class ClusterContentController
     {
         [Theory]
         [InlineData(1)]
@@ -18,7 +18,7 @@ namespace LWMDev_Test.Controllers
         public void ClusterContentController_ReturnIndexViewModel_Correctly(int ID)
         {
             // Arrange
-            var loggerMock = new Mock<ILogger<ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
 
             var mockPages = new List<Mock<IPage>>
@@ -35,7 +35,7 @@ namespace LWMDev_Test.Controllers
                 .Setup(service => service.GetPage(2))
                 .Returns(mockPages[1].Object);
 
-            var controller = new ClusterContentController(loggerMock.Object, pageServiceMock.Object);
+            var controller = new LMWDev.Controllers.ClusterContentController(loggerMock.Object, pageServiceMock.Object);
 
             // Act
             var result = controller.Index(ID);
