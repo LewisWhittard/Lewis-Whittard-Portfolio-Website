@@ -10,6 +10,6 @@ namespace Page_Library.Page.Repository.Base
             
         }
 
-        public abstract IPage GetPage(int Id);
+        public abstract IPage GetPage(string Id);
     }
 }

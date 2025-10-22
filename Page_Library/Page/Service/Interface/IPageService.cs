@@ -4,6 +4,6 @@ namespace Page_Library.Page.Service.Interface
 {
     public interface IPageService
     {
-        public abstract IPage GetPage(int id);
+        public abstract IPage GetPage(string id);
     }
 }
