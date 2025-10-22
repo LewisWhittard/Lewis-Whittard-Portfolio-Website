@@ -18,9 +18,9 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: 🔨 Build
-        working-directory: tests/LWMDev_Test
+        working-directory: .tests/LWMDev_Test
         run: dotnet build --configuration Release
 
       - name: 🧪 Run Tests
-        working-directory: tests/LWMDev_Test
+        working-directory: .tests/LWMDev_Test
         run: dotnet test --no-build --verbosity detailed
