@@ -21,11 +21,15 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: 📂 Show repo structure (debug)
-        run: ls -R
-
       - name: 🔧 Restore dependencies
         run: dotnet restore ./LMWDev_Test/LMWDev_Test.csproj
 
       - name: 🧪 Run tests
         run: dotnet test ./LMWDev_Test/LMWDev_Test.csproj --verbosity detailed
+
+      - name: 📎 Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./LMWDev_Test/TestResults/test-results.trx
+
