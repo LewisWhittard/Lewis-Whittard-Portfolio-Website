@@ -1,1 +1,31 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD Pipeline
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build and Test (.NET)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧰 Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x' # Adjust as needed
+
+              - name: Restore dependencies
+      run: dotnet restore Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj
+
+    - name: Build project
+      run: dotnet build Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj --no-restore
+
+    - name: Run tests
+      run: dotnet test Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj --no-build --verbosity normal
