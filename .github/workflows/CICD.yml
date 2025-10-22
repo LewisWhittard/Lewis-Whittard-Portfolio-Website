@@ -20,10 +20,10 @@ jobs:
 
 
       - name: Restore dependencies
-        run: dotnet restore Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj
+        run: dotnet restore LWMDev_Test/LWMDev_Test.csproj
 
       - name: Build project
-        run: dotnet build Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj --no-restore
+        run: dotnet build LWMDev_Test/LWMDev_Test.csproj --no-restore
 
       - name: Run tests
-        run: dotnet test Lewis-Whittard-Portfolio-Website/LWMDev_Test/LWMDev_Test.csproj --no-build --verbosity normal
+        run: dotnet test LWMDev_Test/LWMDev_Test.csproj --no-build --verbosity normal
