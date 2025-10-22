@@ -13,9 +13,9 @@ namespace LMWDev_Test.Controllers
     public class ClusterContentController
     {
         [Theory]
-        [InlineData(1)]
-        [InlineData(2)]
-        public void ClusterContentController_ReturnIndexViewModel_Correctly(int ID)
+        [InlineData("1",0)]
+        [InlineData("2",1)]
+        public void ClusterContentController_ReturnIndexViewModel_Correctly(string id, int count)
         {
             // Arrange
             var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
@@ -28,21 +28,21 @@ namespace LMWDev_Test.Controllers
             };
 
             pageServiceMock
-                .Setup(service => service.GetPage(1))
+                .Setup(service => service.GetPage("1"))
                 .Returns(mockPages[0].Object);
 
             pageServiceMock
-                .Setup(service => service.GetPage(2))
+                .Setup(service => service.GetPage("2"))
                 .Returns(mockPages[1].Object);
 
             var controller = new LMWDev.Controllers.ClusterContentController(loggerMock.Object, pageServiceMock.Object);
 
             // Act
-            var result = controller.Index(ID);
+            var result = controller.Index(id);
 
             // Assert
             var model = Assert.IsType<ClusterContentModel>(((ViewResult)result).Model);
-            Assert.Equal(mockPages[ID - 1].Object, model.Page); // Adjusted index
+            Assert.Equal(mockPages[count].Object, model.Page); // Adjusted index
         }
     }
 }
