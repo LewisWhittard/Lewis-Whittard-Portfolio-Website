@@ -8,7 +8,7 @@ namespace Page_Library.Page.Entities.Page.Interface
 {
     public interface IPage
     {
-        public int ExternalId { get; }
+        public string ExternalId { get; }
         public string Title { get; }
         public string PublishDate { get; }
         public IMeta Meta { get; }

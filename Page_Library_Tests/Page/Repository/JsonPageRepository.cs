@@ -3,9 +3,9 @@
     public class JsonPageRepository
     {
         [Theory]
-        [InlineData(0)]
-        [InlineData(1)]
-        public void GetPage_ByID_ReturnsCorrectly(int id)
+        [InlineData("0")]
+        [InlineData("1")]
+        public void GetPage_ByID_ReturnsCorrectly(string id)
         {
             // Arrange
             var jsonPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");

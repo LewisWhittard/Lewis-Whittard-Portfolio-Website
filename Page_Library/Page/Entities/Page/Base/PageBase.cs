@@ -11,7 +11,7 @@ namespace Page_Library.Page.Entities.Page.Base
 {
     public abstract class PageBase : IPage
     {
-        public int ExternalId { get; private set; }
+        public string ExternalId { get; private set; }
         public string Title { get; private set; }
         public string PublishDate { get; private set; }
         public IMeta Meta { get; private set; }

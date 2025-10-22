@@ -9,9 +9,9 @@ namespace Page_Library_Tests.Page.Service
     public class PageServiceIntergrationTest
     {
         [Theory]
-        [InlineData(0,2)]
-        [InlineData(2,3)]
-        public void PageService_GetPageById_Correctly(int id, int contentBlockCount)
+        [InlineData("0",2)]
+        [InlineData("2",3)]
+        public void PageService_GetPageById_Correctly(string id, int contentBlockCount)
         {
             var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
             JsonPageRepository PageRepository = new JsonPageRepository(PagePath);

@@ -15,7 +15,7 @@ namespace Page_Library.Page.Repository
             _pageRepositoryPath = pageRepositoryPath;
         }
 
-        public override IPage GetPage(int Id)
+        public override IPage GetPage(string Id)
         {
             try
             {

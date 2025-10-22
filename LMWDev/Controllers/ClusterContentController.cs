@@ -28,7 +28,7 @@ namespace LMWDev.Controllers
             }
         }
 
-        public IActionResult Index(int id)
+        public IActionResult Index(string id)
         {
             using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
             try
