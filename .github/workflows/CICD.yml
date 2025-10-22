@@ -20,10 +20,10 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-
+          
       - name: 🔧 Restore dependencies
-        run: dotnet restore ./LMWDev_Test/LMWDev_Test.csproj
-
+        run: ls -R
+        
       - name: 🔨 Build project
         run: dotnet build ./LMWDev_Test/LMWDev_Test.csproj --configuration Release
 
