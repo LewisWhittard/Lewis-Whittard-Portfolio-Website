@@ -8,6 +8,7 @@ namespace Page_Library.Page.Entities.Page.DTO
         public string ExternalId { get; set; }
         public string Title { get; set; }
         public string PublishDate { get; set; }
+        public string Category {  get; set; }
         public MetaDTO Meta { get; set; }
         public List<ContentBlockDTO>? ContentBlocks { get; set; }
     }
