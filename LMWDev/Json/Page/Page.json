@@ -77,7 +77,6 @@
 		"Title": "Lewis Matthew Whittard Software Development Logo",
 		"PublishDate": "2022-02-24",
 		"Category": "Creative Works",
-		"Meta": {
 			"Meta": {
 				"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
 				"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
@@ -123,36 +122,36 @@
 				}
 			]
 		},
-		{
-			"ExternalId": "3",
-			"Title": "UI Test Automation Portfolio Piece",
-			"PublishDate": "2022-03-19",
-			"Category": "Software Development",
-			"Meta": {
-				"MetaTitle": "UI Test Automation Portfolio Piece",
-				"MetaDescription": "This Page Showcases My UI Test Automation Portfolio Piece.",
-				"MetaKeywords": [ "C#", "Selenium", "NUnit", "Test", "Automation", "UI", "Testing", "Testing", "DOTNET", "Core", "Chrome", "FireFox", "Edge", "Safari", "Windows", "Mac", "OS", "Test", "Automation", "Framework" ],
-				"MetaImageId": 2
-			},
-			"ContentBlocks": [
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "To create my UI test automation portfolio piece, I used the following tools: C#, Selenium, NUnit, Libre Office Impress, and Microsoft Video Editor."
-				},
-				{
-					"BlockType": "Video",
-					"Alignment": "left",
-					"MediaId": 1
-				},
-				{
-					"BlockType": "Hyperlink",
-					"Alignment": "left",
-					"Url": "https://github.com/LewisWhittard/LMWSelenium",
-					"LinkText": "To Github Repository"
-				}
-			]
+	{
+		"ExternalId": "3",
+		"Title": "UI Test Automation Portfolio Piece",
+		"PublishDate": "2022-03-19",
+		"Category": "Software Development, Creative Works",
+		"Meta": {
+			"MetaTitle": "UI Test Automation Portfolio Piece",
+			"MetaDescription": "This Page Showcases My UI Test Automation Portfolio Piece.",
+			"MetaKeywords": [ "C#", "Selenium", "NUnit", "Test", "Automation", "UI", "Testing", "Testing", "DOTNET", "Core", "Chrome", "FireFox", "Edge", "Safari", "Windows", "Mac", "OS", "Test", "Automation", "Framework" ],
+			"MetaImageId": 2
 		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "To create my UI test automation portfolio piece, I used the following tools: C#, Selenium, NUnit, Libre Office Impress, and Microsoft Video Editor."
+			},
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 1
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/LMWSelenium",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
 		{
 			"ExternalId": "4",
 			"Title": "Cogetta",
