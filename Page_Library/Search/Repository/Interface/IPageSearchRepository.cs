@@ -11,4 +11,6 @@ public interface IPageSearchRepository
             bool threeDAssets,
             bool twoDAssets,
             bool blog);
+
+    public abstract List<ISearchResult> Search(string searchTerm, string category);
 }

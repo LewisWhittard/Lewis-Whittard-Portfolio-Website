@@ -13,5 +13,8 @@ namespace Page_Library.Search.Repository.Base
             bool threeDAssets,
             bool twoDAssets,
             bool blog);
+
+        public abstract List<ISearchResult> Search(string searchTerm, string category);
+
     }
 }
