@@ -31,7 +31,7 @@ namespace Page_Library.Page.Repository
 
         }
 
-        public override List<IPage> GetPages(string? searchTerm, string Category)
+        public override List<IPage> GetPages(string? searchTerm, string category)
         {
             try
             {
@@ -39,29 +39,40 @@ namespace Page_Library.Page.Repository
 
                 if (string.IsNullOrEmpty(searchTerm))
                 {
-                    var result = data.Where(r => r.Category.ToLower() == Category.ToLower()).ToList();
+                    var result = data.Where(r => r.Category.ToLower() == category.ToLower()).ToList();
                     return data;
+                }
+                else if (category.ToLower() == "all")
+                {
+                    var result = data.Where(r =>
+                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    ).ToList();
+                    
+                    return result;
                 }
                 else
                 {
                     var result = data.Where(r =>
-                        r.Title.ToLower().Contains(searchTerm.ToLower()) ||
-                        r.Title.ToLower() == searchTerm.ToLower() ||
-                        r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
-                        r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
                     ).ToList();
-                    
-                    result = result.Where(r => r.Category.ToLower() == Category.ToLower()).ToList();
-                   
-
+                    result = result.Where(r => r.Category.ToLower() == category.ToLower()).ToList();
                     return result;
                 }
+
+
+
             }
             catch (Exception ex)
             {
                 throw new Exception("Error occurred while fetching pages", ex);
             }
-        }
+}
 
 
         private List<IPage> LoadData()
