@@ -12,7 +12,7 @@ namespace Page_Library.Page.Repository.Base
 
         public abstract IPage GetPage(string Id);
 
-        public abstract List<IPage> GetPages(string? searchTerm, string Category);
+        public abstract List<IPage> GetPages(string? searchTerm, string category);
 
 
     }
