@@ -31,6 +31,39 @@ namespace Page_Library.Page.Repository
 
         }
 
+        public override List<IPage> GetPages(string? searchTerm, string Category)
+        {
+            try
+            {
+                var data = LoadData();
+
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    var result = data.Where(r => r.Category.ToLower() == Category.ToLower()).ToList();
+                    return data;
+                }
+                else
+                {
+                    var result = data.Where(r =>
+                        r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                        r.Title.ToLower() == searchTerm.ToLower() ||
+                        r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                        r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    ).ToList();
+                    
+                    result = result.Where(r => r.Category.ToLower() == Category.ToLower()).ToList();
+                   
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error occurred while fetching pages", ex);
+            }
+        }
+
+
         private List<IPage> LoadData()
         {
             if (!File.Exists(_pageRepositoryPath))
