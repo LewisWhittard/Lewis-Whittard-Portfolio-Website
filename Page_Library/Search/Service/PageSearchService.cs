@@ -1,29 +1,47 @@
 ﻿using Page_Library.Content.Entities.Content;
 using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Content.Repository.Interface;
+using Page_Library.Page.Entities.Page.Interface;
+using Page_Library.Page.Repository.Interface;
+using Page_Library.Search.Entities.SearchResult;
+using Page_Library.Search.Entities.SearchResult.DTO;
 using Page_Library.Search.Entities.SearchResult.Interface;
-using Page_Library.Search.Repository.Interface;
 using Page_Library.Search.Service.Base;
 
 namespace Page_Library.Search.Service
 {
     public class PageSearchService : PageSearchServiceBase
     {
-        public PageSearchService(IPageSearchRepository PageSearchRepository, IContentRepository ContentRepository) : base(PageSearchRepository, ContentRepository)
+        public PageSearchService(IPageRepository PageRepository, IContentRepository ContentRepository) : base(PageRepository, ContentRepository)
         {
         }
 
-        public override List<ISearchResult> Search(string searchTerm, bool programming, bool testing, bool games, bool threeDAssets, bool twoDAssets, bool blog)
+        private List<ISearchResult> createSearchResults(List<IPage> pages)
+        {
+            var toReturn = new List<ISearchResult>();
+            foreach (IPage page in pages)
+            {
+                page.Meta.SetContent(_ContentRepository);
+                var SearchResult = new SearchResult(page);
+                toReturn.Add(SearchResult);
+            }
+
+            return toReturn;
+        }
+
+        public override List<ISearchResult> Search(string searchTerm, string category)
         {
             try
             {
-                var searchResults = _PageSearchRepository.Search(searchTerm, programming, testing, games, threeDAssets, twoDAssets, blog);
+                var pages = _PageRepository.GetPages(searchTerm, category);
 
                 List<ISearchResult> toReturn = new List<ISearchResult>();
 
                 foreach (var item in searchResults)
                 {
-                    IContent content = _ContentRepository.GetContent(item.ContentID);
+
+
+
                     if (content is Image imageContent)
                     {
                         item.SetContent(imageContent);
