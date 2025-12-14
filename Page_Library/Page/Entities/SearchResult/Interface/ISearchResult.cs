@@ -1,10 +1,10 @@
 ﻿using Page_Library.Content.Entities.Content;
-using Page_Library.Content.Entities.Content.Interface;
 
 namespace Page_Library.Page.Entities.SearchResult.Interface
 {
     public interface ISearchResult
     {
+        public string ExternalId { get; }
         public string Title { get; }
         public string Description { get; }
         public int ContentID { get; }

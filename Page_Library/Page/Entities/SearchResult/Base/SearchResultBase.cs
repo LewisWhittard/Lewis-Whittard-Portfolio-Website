@@ -2,12 +2,11 @@
 using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Entities.SearchResult.Interface;
-using Page_Library.Search.Entities.SearchResult.DTO;
-
 namespace Page_Library.Page.Entities.SearchResult.Base
 {
     public abstract class SearchResultBase : ISearchResult
     {
+        public string ExternalId { get; set; }
         public string Title { get; private set; }
         public string Description { get; private set; }
         public int ContentID { get; private set; }
@@ -16,6 +15,7 @@ namespace Page_Library.Page.Entities.SearchResult.Base
 
         public SearchResultBase(IPage page)
         {
+            ExternalId = page.ExternalId;
             Title = page.Title;
             Description = page.Meta.MetaDescription;
             ContentID = page.Meta.Content.ID;

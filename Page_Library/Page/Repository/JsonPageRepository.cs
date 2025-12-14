@@ -36,11 +36,14 @@ namespace Page_Library.Page.Repository
             try
             {
                 var data = LoadData();
-
-                if (string.IsNullOrEmpty(searchTerm))
+                if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(category))
+                {
+                    return data; 
+                }
+                else if (string.IsNullOrEmpty(searchTerm))
                 {
                     var result = data.Where(r => r.Category.ToLower() == category.ToLower()).ToList();
-                    return data;
+                    return result;
                 }
                 else if (category.ToLower() == "all")
                 {

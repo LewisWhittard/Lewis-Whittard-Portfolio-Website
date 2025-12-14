@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using DocumentFormat.OpenXml.Office.Word;
 using Page_Library.Page.Entities.SearchResult.Interface;
 
 namespace LMWDev.Models
@@ -8,6 +7,7 @@ namespace LMWDev.Models
 	{
 		public string Search { get; set; }
         public string Category { get; set; }
+        public bool Meta = false;
 
         public List<ISearchResult> Results { get; set; }
 

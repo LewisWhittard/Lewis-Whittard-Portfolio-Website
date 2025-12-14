@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using LMWDev.Models;
 using System.Diagnostics;
 using System;
-using Page_Library.Search.Service.Interface;
 using Page_Library.Page.Service.Interface;
 
 namespace LMWDev.Controllers
@@ -14,12 +13,12 @@ namespace LMWDev.Controllers
         private readonly ILogger<SearchController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
-        public SearchController(IPageService pageSearchService,ILogger<SearchController> logger)
+        public SearchController(IPageService pageService,ILogger<SearchController> logger)
         {
             _logger = logger;
             try
             {
-                _pageSearchService = pageSearchService;
+                _pageService = pageService;
                 _logger.LogInformation("Page Service initialized successfully.");
             }
             catch (Exception ex)
