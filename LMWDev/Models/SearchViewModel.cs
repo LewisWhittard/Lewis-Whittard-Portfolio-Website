@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Page_Library.Search.Entities.SearchResult.Interface;
+using Page_Library.Page.Entities.SearchResult.Interface;
 
 namespace LMWDev.Models
 {

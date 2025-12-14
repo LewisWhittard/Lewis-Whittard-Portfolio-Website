@@ -1,7 +1,7 @@
-﻿using Page_Library.Search.Entities.SearchResult.Base;
-using Page_Library.Search.Entities.SearchResult.DTO;
-using Page_Library.Content.Entities.Content;
+﻿using Page_Library.Content.Entities.Content;
 using Page_Library.Content.Entities.Content.DTO;
+using Page_Library.Page.Entities.SearchResult.Base;
+using Page_Library.Page.Entities.SearchResult.DTO;
 
 namespace Page_Library_Tests.Search.Entites.SearchResult
 {
