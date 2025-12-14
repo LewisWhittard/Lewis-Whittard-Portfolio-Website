@@ -4,22 +4,23 @@ using LMWDev.Models;
 using System.Diagnostics;
 using System;
 using Page_Library.Search.Service.Interface;
+using Page_Library.Page.Service.Interface;
 
 namespace LMWDev.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly IPageSearchService _pageSearchService;
+        private readonly IPageService _pageService;
         private readonly ILogger<SearchController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
-        public SearchController(IPageSearchService pageSearchService,ILogger<SearchController> logger)
+        public SearchController(IPageService pageSearchService,ILogger<SearchController> logger)
         {
             _logger = logger;
             try
             {
                 _pageSearchService = pageSearchService;
-                _logger.LogInformation("PageSearchService initialized successfully.");
+                _logger.LogInformation("Page Service initialized successfully.");
             }
             catch (Exception ex)
             {
@@ -36,7 +37,7 @@ namespace LMWDev.Controllers
                 {
                     SearchViewModel model; 
                     _logger.LogInformation($"Executing filtered search with parameters", viewModel);
-                    model = new SearchViewModel(_pageSearchService.Search(viewModel.Search, viewModel.ProgrammingCategory, viewModel.TestingCategory, viewModel.GamesCategory, viewModel.ThreeDAssetsCategory, viewModel.TwoDAssetCategory, viewModel.BlogCategory));
+                    model = new SearchViewModel(_pageService.Search(viewModel.Search,viewModel.Category));
                     return View(model);
                 }
                 catch (Exception ex)
@@ -45,10 +46,5 @@ namespace LMWDev.Controllers
                 }
             }
         }
-
-		public IActionResult FromHome(HomeModel viewModel)
-		{
-            return RedirectToAction("Index", "Search", viewModel.Search);
-		}
 	}
 }
