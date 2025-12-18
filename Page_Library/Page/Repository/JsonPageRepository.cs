@@ -36,24 +36,13 @@ namespace Page_Library.Page.Repository
             try
             {
                 var data = LoadData();
-                if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(category))
+                if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(category) || category.ToLower() == "all" && string.IsNullOrEmpty(searchTerm))
                 {
                     return data; 
                 }
                 else if (string.IsNullOrEmpty(searchTerm))
                 {
-                    var result = data.Where(r => r.Category.ToLower() == category.ToLower()).ToList();
-                    return result;
-                }
-                else if (category.ToLower() == "all")
-                {
-                    var result = data.Where(r =>
-                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
-                    r.Title.ToLower() == searchTerm.ToLower() ||
-                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
-                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
-                    ).ToList();
-                    
+                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
                     return result;
                 }
                 else
@@ -63,8 +52,8 @@ namespace Page_Library.Page.Repository
                     r.Title.ToLower() == searchTerm.ToLower() ||
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
-                    ).ToList();
-                    result = result.Where(r => r.Category.ToLower() == category.ToLower()).ToList();
+                    ).Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
+                    
                     return result;
                 }
 
