@@ -8,7 +8,7 @@
 			"MetaTitle": "Portfolio Website Completed!",
 			"MetaDescription": "This blog post explains why I have built my portfolio website to display my sides and out of work projects.",
 			"MetaKeywords": [ "MVC.Net", "Core", "Portfolio", "Games", "Blogs", "Programming", "Software", "Development", "Dev", "3D", "Models", "2D", "Models" ],
-			"MetaImageId": 1
+			"MetaImageId": 0
 		},
 		"ContentBlocks": [
 			{
@@ -81,7 +81,7 @@
 				"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
 				"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
 				"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
-				"MetaImageId": 3
+				"MetaImageId": 0
 			},
 			"ContentBlocks": [
 				{
@@ -126,7 +126,7 @@
 		"ExternalId": "3",
 		"Title": "UI Test Automation Portfolio Piece",
 		"PublishDate": "2022-03-19",
-		"Category": "Software Development, Creative Works",
+		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "UI Test Automation Portfolio Piece",
 			"MetaDescription": "This Page Showcases My UI Test Automation Portfolio Piece.",
@@ -156,7 +156,7 @@
 			"ExternalId": "4",
 			"Title": "Cogetta",
 			"PublishDate": "2022-11-14",
-			"Category": "Software Development",
+			"Category": "Software Development, Creative Works",
 			"Meta": {
 				"MetaTitle": "Cogetta Cipher in Python",
 				"MetaDescription": "An overview of Cogetta, a substitution cipher written in Python 3, including tools used and download link.",
@@ -290,7 +290,7 @@
 					"C#",
 					"Software Engineering"
 				],
-				"MetaImageId": 1
+				"MetaImageId": 0
 			},
 			"ContentBlocks": [
 				{

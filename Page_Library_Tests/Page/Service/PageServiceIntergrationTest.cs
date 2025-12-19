@@ -27,6 +27,145 @@ namespace Page_Library_Tests.Page.Service
             Assert.Equal(id, result.ExternalId);
         }
 
+        [Theory]
+        [InlineData("","")]
+        [InlineData(null,null)]
+        public void PageService_SearchNull_correctly(string searchTerm, string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(searchTerm, category);
+
+            Assert.True(result[0].ExternalId == "2");
+            Assert.True(result[1].ExternalId == "1");
+            Assert.True(result[2].ExternalId == "0");
+            Assert.True(result.Count() == 3);
+
+
+        }
+
+        [Fact]
+        public void PageService_CategoryIsCreativeWorks_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "Creative Works");
+
+            Assert.True(result[0].ExternalId == "2");
+            Assert.True(result[1].ExternalId == "1");
+            Assert.True(result.Count() == 2);
+        }
+
+        [Fact]
+        public void PageService_CategoryIsSoftwareDevelopment_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "Software Development");
+
+            Assert.True(result[0].ExternalId == "1");
+            Assert.True(result[1].ExternalId == "0");
+            Assert.True(result.Count() == 2);
+        }
+
+        [Fact]
+        public void PageService_SearchAll_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "All");
+
+            Assert.True(result[0].ExternalId == "2");
+            Assert.True(result[1].ExternalId == "1");
+            Assert.True(result[2].ExternalId == "0");
+            Assert.True(result.Count() == 3);
+        }
+
+
+        [Theory]
+        [InlineData("All")]
+        [InlineData("Creative Works")]
+        [InlineData("Software Development")]
+        public void PageService_SearchForNothingValid_Correctly(string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search("Nothing to bring back", category);
+            
+            Assert.True(result.Count() == 0);
+        }
+
+        [Theory]
+        //software development all test
+        [InlineData("Test Portfolio Intro", "All")]
+        [InlineData("Quick intro to the test portfolio.", "All")]
+        //software development catagory test
+        [InlineData("Test Portfolio Intro", "Software Development")]
+        [InlineData("Quick intro to the test portfolio.", "Software Development")]
+        //Creative works all test
+        [InlineData("Test Project Link", "All")]
+        [InlineData("Testing hyperlinks in portfolio.", "All")]
+        //creative works category test
+        [InlineData("Test Project Link", "Creative Works")]
+        [InlineData("Testing hyperlinks in portfolio.", "Creative Works")]
+        //mixed test software development
+        [InlineData("Test Logo", "All")]
+        [InlineData("Simple logo test item.", "All")]
+        [InlineData("Test Logo", "Software Development")]
+        [InlineData("Simple logo test item.", "Software Development")]
+        [InlineData("Test Logo", "Creative Works")]
+        [InlineData("Simple logo test item.", "Creative Works")]
+        //Alternative meta title tests
+        //-software development all test
+        [InlineData("Meta Test Portfolio Intro", "All")]
+        //-software development catagory test
+        [InlineData("Meta Test Portfolio Intro", "Software Development")]
+        //-Creative works all test
+        [InlineData("Meta Test Project Link", "All")]
+        //-creative works category test
+        [InlineData("Meta Test Project Link", "Creative Works")]
+        //-mixed test software development
+        [InlineData("Meta Test Logo", "All")]
+        [InlineData("Meta Test Logo", "Software Development")]
+        [InlineData("Meta Test Logo", "Creative Works")]
+        public void PageService_Search_Correctly(string searchTerm,string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(searchTerm, category);
+
+            Assert.True(result.Count() == 1);
+        }
 
     }
 }

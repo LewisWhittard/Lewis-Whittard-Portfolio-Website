@@ -31,6 +31,57 @@ namespace Page_Library.Page.Repository
 
         }
 
+        public override List<IPage> GetPages(string? searchTerm, string category)
+        {
+            try
+            {
+                var data = LoadData();
+                if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(category) || category.ToLower() == "all" && string.IsNullOrEmpty(searchTerm))
+                {
+                    return data; 
+                }
+                else if (string.IsNullOrEmpty(searchTerm))
+                {
+                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
+                    return result;
+                }
+                else if (category == "All")
+                {
+                    var result = data.Where(r =>
+                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaTitle.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    ).ToList();
+
+                    return result;
+                }
+                else
+                {
+                    var result = data.Where(r =>
+                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaTitle.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    ).Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
+
+                    return result;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error occurred while fetching pages", ex);
+            }
+}
+
+
         private List<IPage> LoadData()
         {
             if (!File.Exists(_pageRepositoryPath))
