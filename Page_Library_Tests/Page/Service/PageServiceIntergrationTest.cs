@@ -101,5 +101,24 @@ namespace Page_Library_Tests.Page.Service
             Assert.True(result.Count() == 3);
         }
 
+
+        [Theory]
+        [InlineData("All")]
+        [InlineData("Creative Works")]
+        [InlineData("Software Development")]
+        public void PageService_SearchForNothingValid_correctly(string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search("Nothing to bring back", category);
+            
+            Assert.True(result.Count() == 0);
+        }
+
     }
 }
