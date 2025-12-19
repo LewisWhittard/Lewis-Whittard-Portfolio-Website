@@ -141,6 +141,19 @@ namespace Page_Library_Tests.Page.Service
         [InlineData("Test Logo", "Creative Works")]
         [InlineData("Simple logo test item.", "Creative Works")]
         //Alternative meta title tests
+        //-software development all test
+        [InlineData("Meta Test Portfolio Intro", "All")]
+        //-software development catagory test
+        [InlineData("Meta Test Portfolio Intro", "Software Development")]
+        //-Creative works all test
+        [InlineData("Meta Test Project Link", "All")]
+        //-creative works category test
+        [InlineData("Meta Test Project Link", "Creative Works")]
+        //-mixed test software development
+        [InlineData("Meta Test Logo", "All")]
+        [InlineData("Meta Test Logo", "Software Development")]
+        [InlineData("Meta Test Logo", "Creative Works")]
+
 
         public void PageService_Search_Correctly(string searchTerm,string category)
         {
