@@ -12,7 +12,6 @@
   <ItemGroup>
     <None Remove="TestData\Content\Content.json" />
     <None Remove="TestData\Page\Page.json" />
-    <None Remove="TestData\Search\Search.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,11 +22,6 @@
     </Content>
     <Content Include="TestData\Page\Page.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="TestData\Search\Search.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
