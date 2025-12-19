@@ -49,21 +49,57 @@ namespace Page_Library_Tests.Page.Service
 
         }
 
-        //[Theory]
-        //[InlineData("Software Development")]
-        //[InlineData(null, null]
-        //public void PageService_SearchCategory_correctly(string category)
-        //{
+        [Fact]
+        public void PageService_CategoryIsCreativeWorks_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
 
-        //}
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "Creative Works");
 
-        //[Theory]
-        //[InlineData("", "")]
-        //[InlineData(null, null]
-        //public void PageService_SearchCategory_correctly(string search, string category)
-        //{
+            Assert.True(result[0].ExternalId == "2");
+            Assert.True(result[1].ExternalId == "1");
+            Assert.True(result.Count() == 2);
+        }
 
-        //}
+        [Fact]
+        public void PageService_CategoryIsSoftwareDevelopment_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "Software Development");
+
+            Assert.True(result[0].ExternalId == "1");
+            Assert.True(result[1].ExternalId == "0");
+            Assert.True(result.Count() == 2);
+        }
+
+        [Fact]
+        public void PageService_SearchAll_correctly()
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(null, "All");
+
+            Assert.True(result[0].ExternalId == "2");
+            Assert.True(result[1].ExternalId == "1");
+            Assert.True(result[2].ExternalId == "0");
+            Assert.True(result.Count() == 3);
+        }
 
     }
 }
