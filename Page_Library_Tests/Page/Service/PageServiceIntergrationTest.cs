@@ -140,6 +140,8 @@ namespace Page_Library_Tests.Page.Service
         [InlineData("Simple logo test item.", "Software Development")]
         [InlineData("Test Logo", "Creative Works")]
         [InlineData("Simple logo test item.", "Creative Works")]
+        //Alternative meta title tests
+
         public void PageService_Search_Correctly(string searchTerm,string category)
         {
             var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
