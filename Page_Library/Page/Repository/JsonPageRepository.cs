@@ -50,6 +50,8 @@ namespace Page_Library.Page.Repository
                     var result = data.Where(r =>
                     r.Title.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaTitle.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
                     ).ToList();
@@ -61,6 +63,8 @@ namespace Page_Library.Page.Repository
                     var result = data.Where(r =>
                     r.Title.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaTitle.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
                     ).Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
