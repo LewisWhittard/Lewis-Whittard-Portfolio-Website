@@ -45,6 +45,17 @@ namespace Page_Library.Page.Repository
                     var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
                     return result;
                 }
+                else if (category == "All")
+                {
+                    var result = data.Where(r =>
+                    r.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Title.ToLower() == searchTerm.ToLower() ||
+                    r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
+                    r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
+                    ).ToList();
+
+                    return result;
+                }
                 else
                 {
                     var result = data.Where(r =>
@@ -53,7 +64,7 @@ namespace Page_Library.Page.Repository
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
                     ).Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
-                    
+
                     return result;
                 }
 

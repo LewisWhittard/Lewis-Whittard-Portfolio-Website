@@ -106,7 +106,7 @@ namespace Page_Library_Tests.Page.Service
         [InlineData("All")]
         [InlineData("Creative Works")]
         [InlineData("Software Development")]
-        public void PageService_SearchForNothingValid_correctly(string category)
+        public void PageService_SearchForNothingValid_Correctly(string category)
         {
             var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
             JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
@@ -118,6 +118,40 @@ namespace Page_Library_Tests.Page.Service
             var result = service.Search("Nothing to bring back", category);
             
             Assert.True(result.Count() == 0);
+        }
+
+        [Theory]
+        //software development all test
+        [InlineData("Test Portfolio Intro", "All")]
+        [InlineData("Quick intro to the test portfolio.", "All")]
+        //software development catagory test
+        [InlineData("Test Portfolio Intro", "Software Development")]
+        [InlineData("Quick intro to the test portfolio.", "Software Development")]
+        //Creative works all test
+        [InlineData("Test Project Link", "All")]
+        [InlineData("Testing hyperlinks in portfolio.", "All")]
+        //creative works category test
+        [InlineData("Test Project Link", "Creative Works")]
+        [InlineData("Testing hyperlinks in portfolio.", "Creative Works")]
+        //mixed test software development
+        [InlineData("Test Logo", "All")]
+        [InlineData("Simple logo test item.", "All")]
+        [InlineData("Test Logo", "Software Development")]
+        [InlineData("Simple logo test item.", "Software Development")]
+        [InlineData("Test Logo", "Creative Works")]
+        [InlineData("Simple logo test item.", "Creative Works")]
+        public void PageService_Search_Correctly(string searchTerm,string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(searchTerm, category);
+
+            Assert.True(result.Count() == 1);
         }
 
     }
