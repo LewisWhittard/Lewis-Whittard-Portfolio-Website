@@ -87,6 +87,7 @@ namespace LMWDev
                                 .AddSource("LMWDev.SearchController")
                                 .AddSource("LMWDev.HomeController")
                                 .AddSource("LMWDev.ClusterContentController")
+                                .AddSource("LMWDev.PillarPageController")
                                 .AddAspNetCoreInstrumentation()
                                 .AddHttpClientInstrumentation()
                                 .SetSampler(new AlwaysOnSampler())
