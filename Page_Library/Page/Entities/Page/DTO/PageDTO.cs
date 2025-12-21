@@ -6,6 +6,7 @@ namespace Page_Library.Page.Entities.Page.DTO
     public class PageDTO
     {
         public string ExternalId { get; set; }
+        public string PageType { get; set; }
         public string Title { get; set; }
         public string PublishDate { get; set; }
         public string Category {  get; set; }

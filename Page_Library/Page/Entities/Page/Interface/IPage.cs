@@ -9,6 +9,7 @@ namespace Page_Library.Page.Entities.Page.Interface
     public interface IPage
     {
         public string ExternalId { get; }
+        public string PageType { get; }
         public string Title { get; }
         public string PublishDate { get; }
         public string Category {  get; }
