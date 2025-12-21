@@ -2,7 +2,7 @@
 	{
 		"ExternalId": "0",
 		"Title": "Portfolio Website Completed!",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"PublishDate": "2022-02-24",
 		"Category": "Software Development",
 		"Meta": {
@@ -75,7 +75,7 @@
 	},
 	{
 		"ExternalId": "1",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"Title": "Lewis Matthew Whittard Software Development Logo",
 		"PublishDate": "2022-02-24",
 		"Category": "Creative Works",
@@ -101,7 +101,7 @@
 	},
 	{
 		"ExternalId": "2",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"Title": "My Portfolio – Website Development",
 		"PublishDate": "2022-02-24",
 		"Category": "Software Development",
@@ -127,7 +127,7 @@
 	},
 	{
 		"ExternalId": "3",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"Title": "UI Test Automation Portfolio Piece",
 		"PublishDate": "2022-03-19",
 		"Category": "Software Development",
@@ -158,7 +158,7 @@
 	},
 	{
 		"ExternalId": "4",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"Title": "Cogetta",
 		"PublishDate": "2022-11-14",
 		"Category": "Software Development, Creative Works",
@@ -265,7 +265,7 @@
 
 	{
 		"ExternalId": "5",
-		"PageType": "Content Cluster Page",
+		"PageType": "Cluster Content Page",
 		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
 		"PublishDate": "2025-10-19",
 		"Category": "Software Development",
