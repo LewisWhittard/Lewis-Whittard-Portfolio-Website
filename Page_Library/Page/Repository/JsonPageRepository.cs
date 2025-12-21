@@ -42,7 +42,7 @@ namespace Page_Library.Page.Repository
                 }
                 else if (string.IsNullOrEmpty(searchTerm))
                 {
-                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList().Where(r => r.PageType == "Content Cluster Page").ToList();
+                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList().Where(r => r.PageType == "Cluster Content Page").ToList();
                     return result;
                 }
                 else if (category == "All")
