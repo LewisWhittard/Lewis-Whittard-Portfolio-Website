@@ -1,8 +1,10 @@
 ﻿@using Page_Library.Page.Entities.ContentBlock.Interface
 @code {
     [Parameter] public List<IContentBlock> Blocks { get; set; }
+    [Parameter] public List<SearchResult>? SearchResults { get; set; }
     [Parameter] public string Title { get; set; }
     [Parameter] public string PublishDate { get; set; }
+    [Parameter] public string? SearchResultsHeader { get; set; }
 }
 
 <body>
@@ -39,5 +41,25 @@
                 <p>Unknown block type</p>
                 break;
         }
+    }
+
+    @if (SearchResultsHeader != null)
+    {
+    <h2>@SearchResultsHeader</h2>
+    }
+    
+    @if (SearchResults != null && SearchResults.Any())
+    {
+        <div class="mt-4">
+            <h4>Search Results</h4>
+            <ul class="list-group">
+                @foreach (var result in SearchResults)
+                {
+                    <component type="typeof(SearchResult)"
+                               render-mode="ServerPrerendered"
+                               param-Result="result" />
+                }
+            </ul>
+        </div>
     }
 </body>
