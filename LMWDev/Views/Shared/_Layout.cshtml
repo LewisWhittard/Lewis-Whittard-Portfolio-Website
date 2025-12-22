@@ -42,10 +42,23 @@
                             <a class="nav-link text-light" id="HomeNavBarButton" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" id="SoftwareDevelopmentNavBarButton" asp-area="" asp-controller="PillarPage" asp-action="index/SoftwareDevelopment">Software Development</a>
+                            <a class="nav-link text-light" id="SoftwareDevelopmentNavBarButton"
+                               asp-area=""
+                               asp-controller="PillarPage"
+                               asp-action="Index"
+                               asp-route-id="softwaredevelopment">
+                                Software Development
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-light" id="CreativeWorksNavBarButton" asp-area="" asp-controller="PillarPage" asp-action="index/CreativeWorks"> Creative Works</a>
+                            <a class="nav-link text-light" id="CreativeWorksNavBarButton"
+                               asp-area=""
+                               asp-controller="PillarPage"
+                               asp-action="Index"
+                               asp-route-id="creativeworks">
+                                Creative Works
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" id="SearchNavBarButton" asp-area="" asp-controller="search" asp-action="index">Search</a>

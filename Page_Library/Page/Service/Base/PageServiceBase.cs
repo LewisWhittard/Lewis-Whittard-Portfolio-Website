@@ -21,9 +21,9 @@ namespace Page_Library.Page.Service.Base
             _contentBlockFactory = contentBlockFactory;
         }
 
-        public IPage GetPage(string Id)
+        public IPage GetPage(string id)
         {
-            var results = _pageRepository.GetPage(Id);
+            var results = _pageRepository.GetPage(id);
             results.SetUpPolymorphContentBlocks(_contentRepository, _contentBlockFactory);
             results.Meta.SetContent(_contentRepository);
             return results;

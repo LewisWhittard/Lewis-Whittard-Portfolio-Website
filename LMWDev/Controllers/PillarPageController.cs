@@ -28,26 +28,26 @@ namespace LMWDev.Controllers
             }
         }
 
-        public IActionResult Index(string externalID)
+        public IActionResult Index(string id)
         {
             using var activity = new Activity("PillarPage.Index").Start();
 
-            _logger.LogInformation("Index action started with ExternalID: {ExternalID}", externalID);
-            activity?.AddTag("external.id", externalID);
+            _logger.LogInformation("Index action started with ExternalID: {ExternalID}", id);
+            activity?.AddTag("external.id", id);
 
             try
             {
-                var page = _pageService.GetPage(externalID);
+                var page = _pageService.GetPage(id);
 
                 if (page == null)
                 {
-                    _logger.LogWarning("No page found for ExternalID: {ExternalID}", externalID);
+                    _logger.LogWarning("No page found for ExternalID: {ExternalID}", id);
                     activity?.AddTag("page.found", false);
                     return NotFound();
                 }
 
                 activity?.AddTag("page.category", page.Category);
-                _logger.LogInformation("Page retrieved successfully for ExternalID: {ExternalID}", externalID);
+                _logger.LogInformation("Page retrieved successfully for ExternalID: {ExternalID}", id);
 
                 var search = _pageService.Search(null, page.Category);
 
@@ -55,12 +55,12 @@ namespace LMWDev.Controllers
 
                 var viewModel = new PillarPageModel(page, search);
 
-                _logger.LogInformation("Returning view for ExternalID: {ExternalID}", externalID);
+                _logger.LogInformation("Returning view for ExternalID: {ExternalID}", id);
                 return View(viewModel);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while processing ExternalID: {ExternalID}", externalID);
+                _logger.LogError(ex, "Error occurred while processing ExternalID: {ExternalID}", id);
                 activity?.AddTag("error", true);
                 activity?.AddTag("error.message", ex.Message);
 
