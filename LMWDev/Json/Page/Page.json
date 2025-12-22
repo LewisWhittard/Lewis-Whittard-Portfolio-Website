@@ -2,6 +2,7 @@
 	{
 		"ExternalId": "0",
 		"Title": "Portfolio Website Completed!",
+		"PageType": "Cluster Content Page",
 		"PublishDate": "2022-02-24",
 		"Category": "Software Development",
 		"Meta": {
@@ -74,56 +75,59 @@
 	},
 	{
 		"ExternalId": "1",
+		"PageType": "Cluster Content Page",
 		"Title": "Lewis Matthew Whittard Software Development Logo",
 		"PublishDate": "2022-02-24",
 		"Category": "Creative Works",
-			"Meta": {
-				"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
-				"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
-				"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
-				"MetaImageId": 0
+		"Meta": {
+			"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
+			"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
+			"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Image",
+				"Alignment": "left",
+				"MediaId": 0
 			},
-			"ContentBlocks": [
-				{
-					"BlockType": "Image",
-					"Alignment": "left",
-					"MediaId": 0
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "I created the shape of the logo in 3D using Blender. Then I flattened a render in GIMP using the fuzzy select tool and bucket fill tool. Once done, I added text using the typeface named Poppins that is under the SIL Open Font License. Finally, I picked a background colour using a colour contrast checker to help ensure maximum accessibility."
-				}
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I created the shape of the logo in 3D using Blender. Then I flattened a render in GIMP using the fuzzy select tool and bucket fill tool. Once done, I added text using the typeface named Poppins that is under the SIL Open Font License. Finally, I picked a background colour using a colour contrast checker to help ensure maximum accessibility."
+			}
 
-			]
+		]
+	},
+	{
+		"ExternalId": "2",
+		"PageType": "Cluster Content Page",
+		"Title": "My Portfolio – Website Development",
+		"PublishDate": "2022-02-24",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "My Portfolio – Website Development",
+			"MetaDescription": "This page showcases the portfolio website and links to the github code.",
+			"MetaKeywords": [ "MVC.Net", "Core", "Canva", "Libre", "Office", "Calc", "Github", "C#", "Bootstrap", "CSHTML", "Software", "Development", "Website", "Development" ],
+			"MetaImageId": 0
 		},
-		{
-			"ExternalId": "2",
-			"Title": "My Portfolio – Website Development",
-			"PublishDate": "2022-02-24",
-			"Category": "Software Development",
-			"Meta": {
-				"MetaTitle": "My Portfolio – Website Development",
-				"MetaDescription": "This page showcases the portfolio website and links to the github code.",
-				"MetaKeywords": [ "MVC.Net", "Core", "Canva", "Libre", "Office", "Calc", "Github", "C#", "Bootstrap", "CSHTML", "Software", "Development", "Website", "Development" ],
-				"MetaImageId": 0
+		"ContentBlocks": [
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "To create my portfolio Website I used the following tools: MVC.net Core, Canva, Libre Office Calc, and Github."
 			},
-			"ContentBlocks": [
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "Left",
-					"BodyText": "To create my portfolio Website I used the following tools: MVC.net Core, Canva, Libre Office Calc, and Github."
-				},
-				{
-					"BlockType": "Hyperlink",
-					"Alignment": "left",
-					"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
-					"LinkText": "To Github Repository"
-				}
-			]
-		},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
 	{
 		"ExternalId": "3",
+		"PageType": "Cluster Content Page",
 		"Title": "UI Test Automation Portfolio Piece",
 		"PublishDate": "2022-03-19",
 		"Category": "Software Development",
@@ -152,224 +156,326 @@
 			}
 		]
 	},
-		{
-			"ExternalId": "4",
-			"Title": "Cogetta",
-			"PublishDate": "2022-11-14",
-			"Category": "Software Development, Creative Works",
-			"Meta": {
-				"MetaTitle": "Cogetta Cipher in Python",
-				"MetaDescription": "An overview of Cogetta, a substitution cipher written in Python 3, including tools used and download link.",
-				"MetaKeywords": [
-					"Cogetta",
-					"Cipher",
-					"Python",
-					"Thonny",
-					"Blender",
-					"GIMP",
-					"LibreOffice",
-					"OBS",
-					"Video Editor",
-					"Github",
-					"Encryption",
-					"Substitution"
-				],
-				"MetaImageId": 3
-			},
-			"ContentBlocks": [
-				{
-					"BlockType": "Video",
-					"Alignment": "left",
-					"MediaId": 4
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "What is Cogetta?"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Cogetta is a substitution cipher written in Python 3."
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "Where can I download Cogetta?"
-				},
-				{
-					"BlockType": "Hyperlink",
-					"Alignment": "left",
-					"Url": "https://github.com/LewisWhittard/Cogetta",
-					"LinkText": "To Github Repository"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "What tools did I use to develop Cogetta?"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H3",
-					"Alignment": "left",
-					"Text": "Programming"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Python 3, Thonny IDE, Github"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H3",
-					"Alignment": "left",
-					"Text": "Logo"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "lefr",
-					"BodyText": "Blender, GIMP 2.8"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H3",
-					"Alignment": "left",
-					"Text": "Documents"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Libre Office Draw"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H3",
-					"Alignment": "left",
-					"Text": "Video"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Libre Office Impress, Microsoft Video Editor, OBS Studio"
-				}
-			]
+	{
+		"ExternalId": "4",
+		"PageType": "Cluster Content Page",
+		"Title": "Cogetta",
+		"PublishDate": "2022-11-14",
+		"Category": "Software Development, Creative Works",
+		"Meta": {
+			"MetaTitle": "Cogetta Cipher in Python",
+			"MetaDescription": "An overview of Cogetta, a substitution cipher written in Python 3, including tools used and download link.",
+			"MetaKeywords": [
+				"Cogetta",
+				"Cipher",
+				"Python",
+				"Thonny",
+				"Blender",
+				"GIMP",
+				"LibreOffice",
+				"OBS",
+				"Video Editor",
+				"Github",
+				"Encryption",
+				"Substitution"
+			],
+			"MetaImageId": 3
 		},
-
-		{
-			"ExternalId": "5",
-			"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
-			"PublishDate": "2025-10-19",
-			"Category": "Software Development",
-			"Meta": {
-				"MetaTitle": "Marginal Gains Sprint – Portfolio Architecture & Testing Strategy",
-				"MetaDescription": "Discover how I applied marginal gains to modernise my portfolio website architecture, testing strategy, observability, and UI using Blazor, OpenTelemetry, and clean design principles.",
-				"MetaKeywords": [
-					"Marginal Gains",
-					"Portfolio Website",
-					"Software Architecture",
-					"Service–Repository Pattern",
-					"Object-Oriented Design",
-					"Testing Strategy",
-					"BDD",
-					"Unit Testing",
-					"Integration Testing",
-					"OpenTelemetry",
-					"Honeycomb",
-					"Observability",
-					"Blazor",
-					"MVC",
-					"Modular UI",
-					"Content Blocks",
-					"Brownfield Development",
-					"Clean Code",
-					"Career Growth",
-					"DotNet",
-					"C#",
-					"Software Engineering"
-				],
-				"MetaImageId": 0
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 4
 			},
-			"ContentBlocks": [
-				{
-					"BlockType": "Video",
-					"Alignment": "left",
-					"MediaId": 5
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Over the past month and a half, I’ve been applying a series of targeted improvements to my personal portfolio website codebase and architecture to start preparing it for the world of career elevation and conversations. Small changes, big results. Here’s a snapshot of what’s been done:"
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "🔧 Backend & Architecture"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "I standardised the codebase using design patterns such as the Service–Repository pattern to achieve a cleaner separation of concerns. Alongside this, I applied core object-oriented principles — abstraction, encapsulation, polymorphism, and interfaces — to reinforce clarity and maintainability. To improve modularity, I separated services and controllers into a dedicated library, making the architecture more scalable. I also replaced spreadsheet files with JSON to ensure consistency and future-proof data handling. Finally, I enhanced error handling throughout the system to bolster resilience and streamline diagnostics."
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "🧪 Testing Strategy: Complex Logic Meets Happy Path I’ve adopted a pragmatic testing strategy:"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "Unit and integration tests now carry the weight of validating complex logic and internal behaviours with precision, ensuring that the system functions reliably under varied conditions. Meanwhile, BDD scenarios are reserved for the happy path, confirming that key user journeys behave as expected and remain intuitive. This layered approach keeps the test suite lean and focused, aligning it with real-world usage while maintaining deep coverage where it matters most."
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "📊 Observability"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "I integrated OpenTelemetry and connected it to Honeycomb to enhance system observability, enabling clearer visibility into backend operations and more actionable performance insights. This setup allows for distributed tracing and diagnostics, making it easier to identify bottlenecks and optimise behaviour in real-world conditions."
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "📊 Frontend & UI"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "I adopted Blazor within the MVC paradigm to enable modern, component-driven development that supports clean separation and reusability. To enhance flexibility and maintainability, I introduced content blocks for modular UI management, allowing for easier updates and consistent layout control. The homepage was refreshed to deliver a cleaner, more engaging experience for visitors. "
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "✅ Conclusion"
-				},
-				{
-					"BlockType": "Paragraph",
-					"Alignment": "left",
-					"BodyText": "This is all part of a marginal gains approach refining each layer of the stack to build a more resilient, scalable, and maintainable system, even when working within brownfield realities."
-				},
-				{
-					"BlockType": "Header",
-					"Level": "H2",
-					"Alignment": "left",
-					"Text": "🔗 Links"
-				},
-				{
-					"BlockType": "Hyperlink",
-					"Alignment": "left",
-					"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
-					"LinkText": "To Github Repository"
-				}
-			]
-		}
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What is Cogetta?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Cogetta is a substitution cipher written in Python 3."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Where can I download Cogetta?"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Cogetta",
+				"LinkText": "To Github Repository"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What tools did I use to develop Cogetta?"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Programming"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Python 3, Thonny IDE, Github"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Logo"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "lefr",
+				"BodyText": "Blender, GIMP 2.8"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Documents"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Libre Office Draw"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Video"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Libre Office Impress, Microsoft Video Editor, OBS Studio"
+			}
+		]
+	},
+
+	{
+		"ExternalId": "5",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
+		"PublishDate": "2025-10-19",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Marginal Gains Sprint – Portfolio Architecture & Testing Strategy",
+			"MetaDescription": "Discover how I applied marginal gains to modernise my portfolio website architecture, testing strategy, observability, and UI using Blazor, OpenTelemetry, and clean design principles.",
+			"MetaKeywords": [
+				"Marginal Gains",
+				"Portfolio Website",
+				"Software Architecture",
+				"Service–Repository Pattern",
+				"Object-Oriented Design",
+				"Testing Strategy",
+				"BDD",
+				"Unit Testing",
+				"Integration Testing",
+				"OpenTelemetry",
+				"Honeycomb",
+				"Observability",
+				"Blazor",
+				"MVC",
+				"Modular UI",
+				"Content Blocks",
+				"Brownfield Development",
+				"Clean Code",
+				"Career Growth",
+				"DotNet",
+				"C#",
+				"Software Engineering"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 5
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Over the past month and a half, I’ve been applying a series of targeted improvements to my personal portfolio website codebase and architecture to start preparing it for the world of career elevation and conversations. Small changes, big results. Here’s a snapshot of what’s been done:"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔧 Backend & Architecture"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I standardised the codebase using design patterns such as the Service–Repository pattern to achieve a cleaner separation of concerns. Alongside this, I applied core object-oriented principles — abstraction, encapsulation, polymorphism, and interfaces — to reinforce clarity and maintainability. To improve modularity, I separated services and controllers into a dedicated library, making the architecture more scalable. I also replaced spreadsheet files with JSON to ensure consistency and future-proof data handling. Finally, I enhanced error handling throughout the system to bolster resilience and streamline diagnostics."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🧪 Testing Strategy: Complex Logic Meets Happy Path I’ve adopted a pragmatic testing strategy:"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Unit and integration tests now carry the weight of validating complex logic and internal behaviours with precision, ensuring that the system functions reliably under varied conditions. Meanwhile, BDD scenarios are reserved for the happy path, confirming that key user journeys behave as expected and remain intuitive. This layered approach keeps the test suite lean and focused, aligning it with real-world usage while maintaining deep coverage where it matters most."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📊 Observability"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I integrated OpenTelemetry and connected it to Honeycomb to enhance system observability, enabling clearer visibility into backend operations and more actionable performance insights. This setup allows for distributed tracing and diagnostics, making it easier to identify bottlenecks and optimise behaviour in real-world conditions."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📊 Frontend & UI"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I adopted Blazor within the MVC paradigm to enable modern, component-driven development that supports clean separation and reusability. To enhance flexibility and maintainability, I introduced content blocks for modular UI management, allowing for easier updates and consistent layout control. The homepage was refreshed to deliver a cleaner, more engaging experience for visitors. "
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✅ Conclusion"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This is all part of a marginal gains approach refining each layer of the stack to build a more resilient, scalable, and maintainable system, even when working within brownfield realities."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
+	{
+		"ExternalId": "softwaredevelopment",
+		"PageType":  "Pillar Page",
+		"Title": "Software Development",
+		"PublishDate": "2025/12/21",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Software Development Portfolio & Engineering Practices",
+			"MetaDescription": "A pillar page covering my software development work including testing, development practices, and support processes.",
+			"MetaKeywords": [ "Software Development", "Testing", "Development", "Support", "Programming", "Sustained Engineering", "Portfolio" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Overview"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Software development has been a core part of my professional and personal journey. This page acts as a central hub for everything related to my engineering work, from testing methodologies to development practices and long-term support strategies."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Testing"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Testing is a fundamental part of delivering reliable software. I focus on automated testing, unit testing, integration testing, and UI Automation testing to ensure that projects remain stable as they grow. My goal is to build confidence in every release and demonstrate strong testing discipline across my portfolio."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Development"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "My development work spans web applications, tools, and experimental projects. I enjoy exploring new technologies, refining my coding standards, and building solutions that solve real problems. This section will showcase development logs, technical breakdowns, and insights gained from hands-on experience."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Support and Sustained Engineering"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Support and sustained engineering play a vital role in ensuring that software remains stable, performant, and maintainable throughout its lifecycle. My approach focuses on long-term stewardship of each project—addressing technical debt, refining architecture, and implementing structured maintenance practices. This includes proactive support processes, Application Performance Monitoring (APM), iterative improvements, and lifecycle planning to ensure systems continue to operate reliably as technologies, user expectations, and environments evolve."
+			}
+		]
+	},
+	{
+		"ExternalId": "creativeworks",
+		"PageType": "Pillar Page",
+		"Title": "Creative Works",
+		"PublishDate": "2025/12/21",
+		"Category": "Creative Works",
+		"Meta": {
+			"MetaTitle": "Creative Works and Visual Design Portfolio",
+			"MetaDescription": "A pillar page showcasing my creative projects including digital assets and game development.",
+			"MetaKeywords": [ "Creative Works", "Digital Assets", "3D Models", "2D Art", "Portfolio" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Overview"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Creativity plays a major role in my work beyond software development. This page brings together my artistic explorations — from 2D and 3D digital assets to interactive projects — into a single space. It serves as a central showcase for experimentation, learning, and creative exploration."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Digital Assets"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Digital assets include 2D artwork, 3D models, textures, UI elements, and other creative pieces produced for personal projects or experimentation. This section highlights my design process, tools used, and the evolution of my artistic style over time."
+			}
+		]
+	}
 ]

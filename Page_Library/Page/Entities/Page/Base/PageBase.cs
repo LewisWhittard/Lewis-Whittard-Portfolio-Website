@@ -12,6 +12,7 @@ namespace Page_Library.Page.Entities.Page.Base
     public abstract class PageBase : IPage
     {
         public string ExternalId { get; private set; }
+        public string PageType { get; private set; }
         public string Title { get; private set; }
         public string PublishDate { get; private set; }
         public string Category {  get; private set; }
@@ -22,6 +23,7 @@ namespace Page_Library.Page.Entities.Page.Base
         protected PageBase(PageDTO dto)
         {
             ExternalId = dto.ExternalId;
+            PageType = dto.PageType;
             Title = dto.Title;
             PublishDate = dto.PublishDate;
             Category = dto.Category;

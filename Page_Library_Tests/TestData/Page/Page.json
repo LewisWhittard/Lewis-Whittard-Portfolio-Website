@@ -1,6 +1,7 @@
 [
 	{
 		"ExternalId": "0",
+		"PageType": "Cluster Content Page",
 		"Title": "Test Portfolio Intro",
 		"CreateDate": "2025-01-01T00:00:00Z",
 		"UpdateDate": "2025-01-02T00:00:00Z",
@@ -28,6 +29,7 @@
 	},
 	{
 		"ExternalId": "1",
+		"PageType": "Cluster Content Page",
 		"Title": "Test Logo",
 		"CreateDate": "2025-01-05T00:00:00Z",
 		"UpdateDate": "2025-01-05T00:00:00Z",
@@ -56,6 +58,7 @@
 	},
 	{
 		"ExternalId": "2",
+		"PageType": "Cluster Content Page",
 		"Title": "Test Project Link",
 		"CreateDate": "2025-01-07T00:00:00Z",
 		"UpdateDate": "2025-01-07T00:00:00Z",

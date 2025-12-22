@@ -38,11 +38,11 @@ namespace Page_Library.Page.Repository
                 var data = LoadData();
                 if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(category) || category.ToLower() == "all" && string.IsNullOrEmpty(searchTerm))
                 {
-                    return data; 
+                    return data.Where(r => r.PageType == "Cluster Content Page").ToList(); 
                 }
                 else if (string.IsNullOrEmpty(searchTerm))
                 {
-                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
+                    var result = data.Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList().Where(r => r.PageType == "Cluster Content Page").ToList();
                     return result;
                 }
                 else if (category == "All")
@@ -54,7 +54,7 @@ namespace Page_Library.Page.Repository
                     r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
-                    ).ToList();
+                    ).Where(r => r.PageType == "Cluster Content Page").ToList();
 
                     return result;
                 }
@@ -67,7 +67,7 @@ namespace Page_Library.Page.Repository
                     r.Meta.MetaTitle.ToLower() == searchTerm.ToLower() ||
                     r.Meta.MetaDescription.ToLower().Contains(searchTerm.ToLower()) ||
                     r.Meta.MetaDescription.ToLower() == searchTerm.ToLower()
-                    ).Where(r => r.Category.ToLower().Contains(category.ToLower())).ToList();
+                    ).Where(r => r.Category.ToLower().Contains(category.ToLower())).Where(r => r.PageType == "Cluster Content Page").ToList();
 
                     return result;
                 }
