@@ -167,5 +167,22 @@ namespace Page_Library_Tests.Page.Service
             Assert.True(result.Count() == 1);
         }
 
+        [Theory]
+        [InlineData("Creative Works", "Creative Works")]
+        [InlineData("Creative Works", "All")]
+        [InlineData("Software Development", "Software Development")]
+        public void PageService_Search_DontFindPillarPage(string searchTerm, string category)
+        {
+            var PagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+            JsonPageRepository PageRepository = new JsonPageRepository(PagePath);
+            ContentBlockFactory factory = new ContentBlockFactory();
+            var ContentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+            JsonContentRepository contentRepository = new JsonContentRepository(ContentPath);
+
+            PageService service = new PageService(PageRepository, factory, contentRepository);
+            var result = service.Search(searchTerm, category);
+
+            Assert.True(result.Count() == 0);
+        }
     }
 }
