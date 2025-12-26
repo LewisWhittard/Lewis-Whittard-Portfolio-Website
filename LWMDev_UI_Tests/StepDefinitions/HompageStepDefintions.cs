@@ -87,5 +87,21 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_homePage.SetUpPage();
 			_homePage.ClickLogoButton();
 		}
-	}
+
+        [When("Homepage: I go to {string} and use the Github button")]
+        public void WhenHomepageIGoToAndUseTheGithubButton(string p0)
+        {
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickGithubButton();
+        }
+
+        [Then("Homepage: I have arrived at Github")]
+        public void ThenHomepageIHaveArrivedAtGithub()
+        {
+            _homePage.WaitUntilURLContainsValue("https://github.com/");
+            _homePage.AssertAreEqual(_homePage.Driver.Url, "https://github.com/LewisWhittard");
+            _homePage.Driver.Quit();
+        }
+    }
 }

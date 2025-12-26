@@ -38,6 +38,13 @@
         Given Homepage: I use Browser "<browser>"
         When Homepage: I go to "https://localhost:44325/" and use the Linkedin button
         Then Homepage: I have arrived at linkedin
+        
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
 
 
     Scenario Outline: Click logo on the navigation bar
@@ -56,3 +63,10 @@
         Given Homepage: I use Browser "<browser>"
         When Homepage: I go to "https://localhost:44325/" and use the Github button
         Then Homepage: I have arrived at Github
+        
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
