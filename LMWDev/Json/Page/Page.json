@@ -1,6 +1,6 @@
 [
 	{
-		"ExternalId": "0",
+		"ExternalId": "portfolio-website-completed",
 		"Title": "Portfolio Website Completed!",
 		"PageType": "Cluster Content Page",
 		"PublishDate": "2022-02-24",
@@ -74,7 +74,7 @@
 		]
 	},
 	{
-		"ExternalId": "1",
+		"ExternalId": "lewis-matthew-whittard-software-development-logo",
 		"PageType": "Cluster Content Page",
 		"Title": "Lewis Matthew Whittard Software Development Logo",
 		"PublishDate": "2022-02-24",
@@ -100,9 +100,9 @@
 		]
 	},
 	{
-		"ExternalId": "2",
+		"ExternalId": "my-portfolio–website-development",
 		"PageType": "Cluster Content Page",
-		"Title": "My Portfolio – Website Development",
+		"Title": "My Portfolio Website Development",
 		"PublishDate": "2022-02-24",
 		"Category": "Software Development",
 		"Meta": {
@@ -126,7 +126,7 @@
 		]
 	},
 	{
-		"ExternalId": "3",
+		"ExternalId": "ui-test-automation-portfolio-piece",
 		"PageType": "Cluster Content Page",
 		"Title": "UI Test Automation Portfolio Piece",
 		"PublishDate": "2022-03-19",
@@ -157,7 +157,7 @@
 		]
 	},
 	{
-		"ExternalId": "4",
+		"ExternalId": "cogetta",
 		"PageType": "Cluster Content Page",
 		"Title": "Cogetta",
 		"PublishDate": "2022-11-14",
@@ -264,7 +264,7 @@
 	},
 
 	{
-		"ExternalId": "5",
+		"ExternalId": "from-reflection-to-action-the-marginal-gains-sprint",
 		"PageType": "Cluster Content Page",
 		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
 		"PublishDate": "2025-10-19",
@@ -379,7 +379,7 @@
 		]
 	},
 	{
-		"ExternalId": "softwaredevelopment",
+		"ExternalId": "software-development",
 		"PageType":  "Pillar Page",
 		"Title": "Software Development",
 		"PublishDate": "2025/12/21",
@@ -441,7 +441,7 @@
 		]
 	},
 	{
-		"ExternalId": "creativeworks",
+		"ExternalId": "creative-works",
 		"PageType": "Pillar Page",
 		"Title": "Creative Works",
 		"PublishDate": "2025/12/21",
