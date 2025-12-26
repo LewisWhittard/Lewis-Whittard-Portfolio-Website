@@ -54,5 +54,5 @@
 
     Scenario Outline: Click Github button
         Given Homepage: I use Browser "<browser>"
-        When Homepage: I go to "https://localhost:44325/" and use the Linkedin button
+        When Homepage: I go to "https://localhost:44325/" and use the Github button
         Then Homepage: I have arrived at Github
