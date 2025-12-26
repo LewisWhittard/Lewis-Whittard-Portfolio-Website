@@ -100,5 +100,21 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.FindElementById("SearchResult 4");
 			_searchPage.QuitDriver();
 		}
+
+        [When("SearchPage: I go to {string} and use the Github button")]
+        public void WhenSearchPageIGoToAndUseTheGithubButton(string p0)
+        {
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.ClickGithubButton();
+        }
+
+        [Then("SearchPage: I have arrived at Github")]
+        public void ThenSearchPageIHaveArrivedAtGithub()
+        {
+            _searchPage.WaitUntilURLContainsValue("https://github.com/");
+            _searchPage.AssertAreEqual(_searchPage.Driver.Url, "https://github.com/LewisWhittard");
+            _searchPage.Driver.Quit();
+        }
     }
 }
