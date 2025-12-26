@@ -9,6 +9,7 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement SearchNavBarButton { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
+		public IWebElement Github { get; private set; }
 		
 
 		public ClusterContentPageModel(IWebDriver driver)
@@ -22,6 +23,7 @@ namespace LMWSelenium.PageModels.PageModels
             SearchNavBarButton = FindElementById("SearchNavBarButton");
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
+			Github = FindElementById("Github");
         }
 
         public void ClickHomeNavBarButton()
@@ -49,5 +51,12 @@ namespace LMWSelenium.PageModels.PageModels
 			SwitchTab(Driver, 0);
 		}
 
-	}
+        public void ClickGithubButton()
+        {
+            ClickButton(Github);
+            CloseDriver();
+            SwitchTab(Driver, 0);
+        }
+
+    }
 }
