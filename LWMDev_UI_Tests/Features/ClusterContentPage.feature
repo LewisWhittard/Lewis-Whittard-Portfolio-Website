@@ -18,7 +18,7 @@ Examples:
 
 Scenario Outline: Click search on the navigation bar
     Given ClusterContent: I use Browser "<browser>"
-    When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the search button
+    When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the search button
     Then ClusterContent: the page title is "Search - Lewis Whittard Software Development"
 
     Examples:
@@ -30,7 +30,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click home on the navigation bar
         Given ClusterContent: I use Browser "<browser>"
-        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the home button
+        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the home button
         Then ClusterContent: the page title is "Home Page - Lewis Whittard Software Development"
 
         Examples:
@@ -42,7 +42,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click Linkedin button
         Given ClusterContent: I use Browser "<browser>"
-        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the Linkedin button
+        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the Linkedin button
         Then ClusterContent: I have arrived at linkedin
 
         Examples:
@@ -54,7 +54,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click logo on the navigation bar
         Given ClusterContent: I use Browser "<browser>"
-        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the logo button
+        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the logo button
         Then ClusterContent: the page title is "Home Page - Lewis Whittard Software Development"
 
         Examples:
@@ -66,7 +66,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click Github button
         Given ClusterContent: I use Browser "<browser>"
-        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the Github button
+        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the Github button
         Then ClusterContent: I have arrived at Github
 
         Examples:

@@ -165,8 +165,8 @@ this.ScenarioInitialize(scenarioInfo);
     await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 21
-    await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 22
     await testRunner.ThenAsync("ClusterContent: the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -202,8 +202,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 33
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 34
         await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
@@ -240,8 +240,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 45
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 46
         await testRunner.ThenAsync("ClusterContent: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -277,8 +277,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 57
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 58
         await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
@@ -315,8 +315,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 69
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 70
         await testRunner.ThenAsync("ClusterContent: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
