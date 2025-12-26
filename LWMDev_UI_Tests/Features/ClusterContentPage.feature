@@ -6,16 +6,16 @@ Scenario Outline: Verify Cluster title for multiple pages
   Then ClusterContent: the page title is "<expectedTitle>"
 
 Examples:
-  | browser | pageIndex | expectedTitle                                                                 |
-  | chrome  | 0         | Portfolio Website Completed! - Lewis Whittard Software Development            |
-  | firefox | 0         | Portfolio Website Completed! - Lewis Whittard Software Development            |
-  | edge    | 0         | Portfolio Website Completed! - Lewis Whittard Software Development            |
-  | safari  | 0         | Portfolio Website Completed! - Lewis Whittard Software Development            |
-  | chrome  | 1         | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
-  | firefox | 1         | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
-  | edge    | 1         | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
-  | safari  | 1         | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
-   
+  | browser | pageIndex                                               | expectedTitle                                                                                   |
+  | chrome  | portfolio-website-completed                      | Portfolio Website Completed! - Lewis Whittard Software Development                              |
+  | firefox | portfolio-website-completed                      | Portfolio Website Completed! - Lewis Whittard Software Development                              |
+  | edge    | portfolio-website-completed                      | Portfolio Website Completed! - Lewis Whittard Software Development                              |
+  | safari  | portfolio-website-completed                      | Portfolio Website Completed! - Lewis Whittard Software Development                              |
+  | chrome  | lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development          |
+  | firefox | lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development          |
+  | edge    | lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development          |
+  | safari  | lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development          |
+
 Scenario Outline: Click search on the navigation bar
     Given ClusterContent: I use Browser "<browser>"
     When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the search button

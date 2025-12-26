@@ -95,17 +95,17 @@ namespace LWMDev_UI_Tests.Features
         [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages")]
         [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
         [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages")]
-        [Xunit.InlineDataAttribute("chrome", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("chrome", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("chrome", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("chrome", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("firefox", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("edge", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("safari", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
         public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
         {
