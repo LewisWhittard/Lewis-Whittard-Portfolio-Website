@@ -95,17 +95,17 @@ namespace LWMDev_UI_Tests.Features
         [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages")]
         [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
         [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages")]
-        [Xunit.InlineDataAttribute("chrome", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "0", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("chrome", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("chrome", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("chrome", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("firefox", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("edge", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "1", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+        [Xunit.InlineDataAttribute("safari", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
             "pment", new string[0])]
         public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
         {
@@ -165,8 +165,8 @@ this.ScenarioInitialize(scenarioInfo);
     await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 21
-    await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 22
     await testRunner.ThenAsync("ClusterContent: the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -202,8 +202,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 33
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 34
         await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
@@ -240,8 +240,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 45
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 46
         await testRunner.ThenAsync("ClusterContent: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -277,8 +277,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 57
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 58
         await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
@@ -315,8 +315,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 69
-        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/0\" and use " +
-                        "the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+                        "ebsite-completed\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 70
         await testRunner.ThenAsync("ClusterContent: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
