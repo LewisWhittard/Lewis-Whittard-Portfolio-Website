@@ -59,3 +59,15 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Click Github button
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" and use the Github button
+	Then SearchPage: I have arrived at Github
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
