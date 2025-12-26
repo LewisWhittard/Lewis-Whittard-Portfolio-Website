@@ -60,67 +60,11 @@ Examples:
 	| edge    |
 	| safari  |
 
-
-Scenario Outline: I go to the search page and search with no tick boxes
+Scenario Outline: Click Github button
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: I untick all the search boxes and search
-	Then SearchPage: No search items should be visible
+	When SearchPage: I go to "https://localhost:44325/search" and use the Github button
+	Then SearchPage: I have arrived at Github
 
-Examples:
-	| browser |
-	| chrome  |
-	| firefox |
-	| edge    |
-	| safari  |
-
-Scenario Outline: I go to the search page and search with all tick boxes
-	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: and search
-	Then SearchPage: all search items should be visible
-
-Examples:
-	| browser |
-	| chrome  |
-	| firefox |
-	| edge    |
-	| safari  |
-
-Scenario Outline: I go to the search page and search with all tick boxes and click a search result
-	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: and search
-	Then SearchPage: I click a "<SearchResult>" result and go through to the page "<ExpectedURL>"
-
-Examples:
-	| browser | SearchResult         | ExpectedURL                                    |
-	| chrome  | SearchResultButton 0 | https://localhost:44325/ClusterContent/Index/0 |
-	| firefox | SearchResultButton 1 | https://localhost:44325/ClusterContent/Index/1 |
-	| edge    | SearchResultButton 2 | https://localhost:44325/ClusterContent/Index/2 |
-	| safari  | SearchResultButton 3 | https://localhost:44325/ClusterContent/Index/3 |
-	| chrome  | SearchResultButton 4 | https://localhost:44325/ClusterContent/Index/4 |
-
-Scenario Outline: I go to the search and use only one tickbox
-	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: I untick all the search boxes
-	And SearchPage: I click programming And Search
-	Then SearchPage: search items should be filtered by tick box
-	
-Examples:
-	| browser |
-	| chrome  |
-	| firefox |
-	| edge    |
-	| safari  |
-
-Scenario Outline: I go to the search and search a term
-	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: Search by the term Cogetta 
-	Then SearchPage: search items should be filtered by search box
-	
 Examples:
 	| browser |
 	| chrome  |

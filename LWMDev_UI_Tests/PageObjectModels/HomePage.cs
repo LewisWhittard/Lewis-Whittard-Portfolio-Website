@@ -15,6 +15,7 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement BlogButton { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
+		public IWebElement Github { get; private set; }
 		
 
 		public HomePage(IWebDriver driver)
@@ -26,14 +27,9 @@ namespace LMWSelenium.PageModels.PageModels
 		{
             HomeNavBarButton = FindElementById("HomeNavBarButton");
             SearchNavBarButton = FindElementById("SearchNavBarButton");
-            ProgrammingButton = FindElementById("ProgrammingButton");
-            TestingButton = FindElementById("TestingButton");
-            GamesButton = FindElementById("GamesButton");
-            ThreeDAssetsButton = FindElementById("ThreeDAssetsButton");
-            TwoDBAssetsButton = FindElementById("TwoDAssetsButton");
-            BlogButton = FindElementById("BlogButton");
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
+			Github = FindElementById("Github");
         }
 
         public void ClickHomeNavBarButton()
@@ -100,5 +96,11 @@ namespace LMWSelenium.PageModels.PageModels
 			SwitchTab(Driver, 0);
 		}
 
-	}
+        public void ClickGithubButton()
+        {
+            ClickButton(Github);
+            CloseDriver();
+            SwitchTab(Driver, 0);
+        }
+    }
 }

@@ -101,97 +101,20 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_searchPage.QuitDriver();
 		}
 
-		[When("SearchPage: I untick all the search boxes and search")]
-		public void WhenSearchPageIUntickAllTheSearchBoxesAndSearch()
-		{
-			_searchPage.SetUpPage();
-			_searchPage.ClickProgrammingTickBox();
-			_searchPage.ClickTwoDAssetsTickBox();
-			_searchPage.ClickBlogTickBox();
-			_searchPage.ClickGamesTickBox();
-			_searchPage.ClickThreeDAssetsTickBox();
-			_searchPage.ClickTestingTickBox();
-			_searchPage.ClickSearchButton();
-
-		}
-
-		[When("SearchPage: and search")]
-		public void WhenSearchPageAndSearch()
-		{
-			_searchPage.SetUpPage();
-			_searchPage.ClickSearchButton();
-		}
-
-
-		[Then("SearchPage: No search items should be visible")]
-		public void ThenSearchPageNoSearchItemsShouldBeVisible()
-		{
-			_searchPage.DontFindElementById("SearchResult 0");
-			_searchPage.DontFindElementById("SearchResult 1");
-			_searchPage.DontFindElementById("SearchResult 2");
-			_searchPage.DontFindElementById("SearchResult 3");
-			_searchPage.DontFindElementById("SearchResult 4");
-			_searchPage.QuitDriver();
-		}
-
-
-		[Then("SearchPage: search items should be filtered by tick box")]
-		public void ThenResultsAreFilteredByTheTickBox()
-		{
-			_searchPage.DontFindElementById("SearchResult 0");
-			_searchPage.DontFindElementById("SearchResult 1");
-			_searchPage.FindElementById("SearchResult 2");
-			_searchPage.DontFindElementById("SearchResult 3");
-			_searchPage.FindElementById("SearchResult 4");
-			_searchPage.QuitDriver();
-		}
-
-		[Then("SearchPage: search items should be filtered by search box")]
-		public void ThenResultsAreFilteredByTheSearchBox()
-		{
-			_searchPage.DontFindElementById("SearchResult 0");
-			_searchPage.DontFindElementById("SearchResult 1");
-			_searchPage.DontFindElementById("SearchResult 2");
-			_searchPage.DontFindElementById("SearchResult 3");
-			_searchPage.FindElementById("SearchResult 4");
-			_searchPage.QuitDriver();
-		}
-
-        [Then("SearchPage: I click a {string} result and go through to the page {string}")]
-        public void ThenSearchPageIClickAResultAndGoThroughToThePage(string p0, string p1)
+        [When("SearchPage: I go to {string} and use the Github button")]
+        public void WhenSearchPageIGoToAndUseTheGithubButton(string p0)
         {
-			_searchPage.SetUpPage();
-            var searchItem = _searchPage.FindElementById(p0);
-            _searchPage.ClickButton(searchItem);
-            _searchPage.WaitUntilURLContainsValue(p1);
-            _searchPage.QuitDriver();
-        }
-
-        [When("SearchPage: I untick all the search boxes")]
-        public void WhenSearchPageIUntickAllTheSearchBoxes()
-        {
-			_searchPage.SetUpPage();
-            _searchPage.ClickProgrammingTickBox();
-            _searchPage.ClickTwoDAssetsTickBox();
-            _searchPage.ClickBlogTickBox();
-            _searchPage.ClickGamesTickBox();
-            _searchPage.ClickThreeDAssetsTickBox();
-            _searchPage.ClickTestingTickBox();
-        }
-
-		[When("SearchPage: I click programming And Search")]
-		public void WhenSearchPageIClickProgrammingAndSearch()
-		{
-			_searchPage.ClickProgrammingTickBox();
-			_searchPage.ClickSearchButton();
-		}
-
-        [When("SearchPage: Search by the term Cogetta")]
-        public void WhenSearchPageSearchByTheTermCogetta()
-        {
+            _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
-            _searchPage.Search("Cogetta");
-            _searchPage.ClickSearchButton();
+            _searchPage.ClickGithubButton();
+        }
+
+        [Then("SearchPage: I have arrived at Github")]
+        public void ThenSearchPageIHaveArrivedAtGithub()
+        {
+            _searchPage.WaitUntilURLContainsValue("https://github.com/");
+            _searchPage.AssertAreEqual(_searchPage.Driver.Url, "https://github.com/LewisWhittard");
+            _searchPage.Driver.Quit();
         }
     }
 }

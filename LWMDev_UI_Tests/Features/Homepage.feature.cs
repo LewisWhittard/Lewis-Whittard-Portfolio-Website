@@ -236,223 +236,6 @@ namespace LWMDev_UI_Tests.Features
             await this.ScenarioCleanupAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click programming button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click programming button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task ClickProgrammingButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click programming button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 49
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 50
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 51
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the programming button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 52
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the programming tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click testing button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click testing button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task ClickTestingButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click testing button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 61
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 62
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 63
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the testing button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 64
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the testing tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click games button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click games button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task ClickGamesButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click games button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 73
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 74
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 75
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the games button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 76
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the games tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click 2D Assets button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click 2D Assets button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task Click2DAssetsButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click 2D Assets button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 85
-   this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 86
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 87
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the TwoD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 88
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the TwoD Assets tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click 3D Assets button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click 3D Assets button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task Click3DAssetsButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click 3D Assets button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 97
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 98
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 99
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the ThreeD Assets button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 100
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the ThreeD Assets tickbox ticked" +
-                        "", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click Blog button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
-        [Xunit.TraitAttribute("Description", "Click Blog button")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task ClickBlogButton(string browser, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Blog button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 109
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 110
-        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 111
-        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the Blog button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 112
-        await testRunner.ThenAsync("Homepage: I have arrived at the search page with the Blog tickbox ticked", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
         [Xunit.SkippableTheoryAttribute(DisplayName="Click logo on the navigation bar")]
         [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
         [Xunit.TraitAttribute("Description", "Click logo on the navigation bar")]
@@ -466,7 +249,7 @@ namespace LWMDev_UI_Tests.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click logo on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 121
+#line 50
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -476,14 +259,50 @@ namespace LWMDev_UI_Tests.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 122
+#line 51
         await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 123
+#line 52
         await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 124
+#line 53
         await testRunner.ThenAsync("Homepage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click Github button")]
+        [Xunit.TraitAttribute("FeatureTitle", "Homepage")]
+        [Xunit.TraitAttribute("Description", "Click Github button")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickGithubButton(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Github button", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 62
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 63
+        await testRunner.GivenAsync(string.Format("Homepage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 64
+        await testRunner.WhenAsync("Homepage: I go to \"https://localhost:44325/\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 65
+        await testRunner.ThenAsync("Homepage: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

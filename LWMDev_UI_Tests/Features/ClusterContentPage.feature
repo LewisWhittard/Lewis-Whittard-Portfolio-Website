@@ -63,3 +63,15 @@ Scenario Outline: Click search on the navigation bar
         | firefox |
         | edge    |
         | safari  |
+
+    Scenario Outline: Click Github button
+        Given ClusterContent: I use Browser "<browser>"
+        When ClusterContent: I go to "https://localhost:44325/ClusterContent/Index/0" and use the Github button
+        Then ClusterContent: I have arrived at Github
+
+        Examples:
+        | browser |
+        | chrome  |
+        | firefox |
+        | edge    |
+        | safari  |
