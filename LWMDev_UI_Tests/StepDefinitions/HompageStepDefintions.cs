@@ -62,6 +62,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
+			_homePage.ClickHomeNavBarButton();
 		}
 
 		[When("Homepage: I go to {string} and use the Linkedin button")]

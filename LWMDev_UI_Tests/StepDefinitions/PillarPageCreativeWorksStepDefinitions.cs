@@ -63,6 +63,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickHomeNavBarButton();
         }
 
         [When("PillarCreativeWorks: I go to {string} and use the Linkedin button")]
