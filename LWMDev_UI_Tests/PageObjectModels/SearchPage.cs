@@ -12,8 +12,10 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
 		public IWebElement Github { get; private set; }
+        public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
+        public IWebElement CreativeWorksNavBarButton { get; private set; }
 
-		public SearchPage(IWebDriver driver)
+        public SearchPage(IWebDriver driver)
 		{
 			Driver = driver;
 

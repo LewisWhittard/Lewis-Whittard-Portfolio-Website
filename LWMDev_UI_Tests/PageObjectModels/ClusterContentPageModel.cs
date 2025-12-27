@@ -10,6 +10,8 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
 		public IWebElement Github { get; private set; }
+		public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
+		public IWebElement CreativeWorksNavBarButton { get; private set; }
 		
 
 		public ClusterContentPageModel(IWebDriver driver)
