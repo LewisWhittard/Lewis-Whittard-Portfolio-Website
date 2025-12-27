@@ -6,11 +6,11 @@ Scenario Outline: Verify Cluster title for multiple pages
   Then PillarCreativeWorks: the page title is "<expectedTitle>"
 
 Examples:
-  | browser | pageIndex            | expectedTitle                                              |
-  | chrome  | software-development | Software Development - Lewis Whittard Software Development |
-  | firefox | software-development | Software Development - Lewis Whittard Software Development |
-  | edge    | software-development | Software Development - Lewis Whittard Software Development |
-  | safari  | software-development | Software Development - Lewis Whittard Software Development |
+  | browser | pageIndex      | expectedTitle                                        |
+  | chrome  | creative-works | Creative Works - Lewis Whittard Software Development |
+  | firefox | creative-works | Creative Works - Lewis Whittard Software Development |
+  | edge    | creative-works | Creative Works - Lewis Whittard Software Development |
+  | safari  | creative-works | Creative Works - Lewis Whittard Software Development |
 
 Scenario Outline: Click search on the navigation bar
     Given PillarCreativeWorks: I use Browser "<browser>"
@@ -62,7 +62,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click Github button
         Given PillarCreativeWorks: I use Browser "<browser>"
-        When PillarCreativeWorks: I go to "hhttps://localhost:44325/PillarPage/Index/creative-works" and use the Github button
+        When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/creative-works" and use the Github button
         Then PillarCreativeWorks: I have arrived at Github
 
         Examples:
