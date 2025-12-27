@@ -121,8 +121,8 @@ this.ScenarioInitialize(scenarioInfo);
   await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 5
-  await testRunner.WhenAsync(string.Format("PillarSoftwareDevelopment: I go to \"https://localhost:44325/clustercontent/Index/" +
-                            "{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+  await testRunner.WhenAsync(string.Format("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/{0}\"" +
+                            "", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 6
   await testRunner.ThenAsync(string.Format("PillarSoftwareDevelopment: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -158,8 +158,8 @@ this.ScenarioInitialize(scenarioInfo);
     await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 17
-    await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/ClusterContent/Index/" +
-                        "portfolio-website-completed\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+                        "ware-development\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 18
     await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Search - Lewis Whittard Software De" +
@@ -196,8 +196,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 29
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/ClusterContent/Index/" +
-                        "portfolio-website-completed\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+                        "ware-development\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 30
         await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
@@ -234,8 +234,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 41
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/ClusterContent/Index/" +
-                        "portfolio-website-completed\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+                        "ware-development\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 42
         await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -271,8 +271,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 53
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/ClusterContent/Index/" +
-                        "portfolio-website-completed\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+                        "ware-development\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 54
         await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
@@ -309,8 +309,8 @@ this.ScenarioInitialize(scenarioInfo);
         await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 65
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/ClusterContent/Index/" +
-                        "portfolio-website-completed\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+                        "ware-development\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 66
         await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
