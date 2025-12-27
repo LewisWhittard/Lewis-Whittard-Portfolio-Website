@@ -101,7 +101,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         public void ThenPillarSoftwareDevelopmentIHaveArrivedAtGithub()
         {
             _PillarPageSoftwareDevelopment.WaitUntilURLContainsValue("https://github.com/");
-            _PillarPageSoftwareDevelopment.AssertAreEqual(_homePage.Driver.Url, "https://github.com/LewisWhittard");
+            _PillarPageSoftwareDevelopment.AssertAreEqual(_PillarPageSoftwareDevelopment.Driver.Url, "https://github.com/LewisWhittard");
             _PillarPageSoftwareDevelopment.Driver.Quit();
         }
     }
