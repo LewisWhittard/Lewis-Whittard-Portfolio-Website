@@ -2,7 +2,7 @@
 
 Scenario Outline: Verify Cluster title for multiple pages
   Given PillarCreativeWorks: I use Browser "<browser>"
-  When PillarCreativeWorks: I go to "https://localhost:44325/clustercontent/Index/<pageIndex>"
+  When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
   Then PillarCreativeWorks: the page title is "<expectedTitle>"
 
 Examples:
@@ -14,7 +14,7 @@ Examples:
 
 Scenario Outline: Click search on the navigation bar
     Given PillarCreativeWorks: I use Browser "<browser>"
-    When PillarCreativeWorks: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the search button
+    When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/creative-works" and use the search button
     Then PillarCreativeWorks: the page title is "Search - Lewis Whittard Software Development"
 
     Examples:
@@ -26,7 +26,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click home on the navigation bar
         Given PillarCreativeWorks: I use Browser "<browser>"
-        When PillarCreativeWorks: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the home button
+        When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/creative-works" and use the home button
         Then PillarCreativeWorks: the page title is "Home Page - Lewis Whittard Software Development"
 
         Examples:
@@ -38,7 +38,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click Linkedin button
         Given PillarCreativeWorks: I use Browser "<browser>"
-        When PillarCreativeWorks: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the Linkedin button
+        When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/creative-works" and use the Linkedin button
         Then PillarCreativeWorks: I have arrived at linkedin
 
         Examples:
@@ -50,7 +50,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click logo on the navigation bar
         Given PillarCreativeWorks: I use Browser "<browser>"
-        When PillarCreativeWorks: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the logo button
+        When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/creative-works" and use the logo button
         Then PillarCreativeWorks: the page title is "Home Page - Lewis Whittard Software Development"
 
         Examples:
@@ -62,7 +62,7 @@ Scenario Outline: Click search on the navigation bar
 
     Scenario Outline: Click Github button
         Given PillarCreativeWorks: I use Browser "<browser>"
-        When PillarCreativeWorks: I go to "https://localhost:44325/ClusterContent/Index/portfolio-website-completed" and use the Github button
+        When PillarCreativeWorks: I go to "hhttps://localhost:44325/PillarPage/Index/creative-works" and use the Github button
         Then PillarCreativeWorks: I have arrived at Github
 
         Examples:
