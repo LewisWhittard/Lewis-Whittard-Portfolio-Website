@@ -120,7 +120,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("Homepage: I go to {string} and use the Software Development button")]
         public void WhenHomepageIGoToAndUseTheSoftwareDevelopmentButton(string p0)
         {
-            throw new PendingStepException();
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.ClickSoftwareDevelopmentNavBarButton();
         }
 
         [When("Homepage: I go to {string} and use the Creative Works button")]
