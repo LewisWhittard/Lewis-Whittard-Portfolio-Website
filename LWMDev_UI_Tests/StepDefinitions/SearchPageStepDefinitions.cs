@@ -93,12 +93,13 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		[Then("SearchPage: all search items should be visible")]
 		public void ThenAllSearchItemsShouldBeVisible()
 		{
-			_searchPage.FindElementById("SearchResult 0");
-			_searchPage.FindElementById("SearchResult 1");
-			_searchPage.FindElementById("SearchResult 2");
-			_searchPage.FindElementById("SearchResult 3");
-			_searchPage.FindElementById("SearchResult 4");
-			_searchPage.QuitDriver();
+			_searchPage.FindElementById("SearchResultButton-from-reflection-to-action-the-marginal-gains-sprint");
+			_searchPage.FindElementById("SearchResultButton-cogetta");
+			_searchPage.FindElementById("SearchResultButton-ui-test-automation-portfolio-piece");
+			_searchPage.FindElementById("SearchResultButton-my-portfolio-website-development");
+			_searchPage.FindElementById("SearchResultButton-lewis-matthew-whittard-software-development-logo");
+            _searchPage.FindElementById("SearchResultButton-portfolio-website-completed");
+            _searchPage.QuitDriver();
 		}
 
         [When("SearchPage: I go to {string} and use the Github button")]
