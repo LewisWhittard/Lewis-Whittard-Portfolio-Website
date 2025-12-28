@@ -27,7 +27,7 @@ Examples:
 Scenario Outline: Click home on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
 	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the home button
-	Then PillarSoftwareDevelopment: the page title is "Creative Works - Lewis Whittard Software Development"
+	Then PillarSoftwareDevelopment: the page title is "Home Page - Lewis Whittard Software Development"
 
 Examples:
 	| browser |

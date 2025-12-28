@@ -200,8 +200,8 @@ this.ScenarioInitialize(scenarioInfo);
                         "ware-development\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 30
- await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Creative Works - Lewis Whittard Sof" +
-                        "tware Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
+                        " Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
