@@ -104,5 +104,22 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.AssertAreEqual(_homePage.Driver.Url, "https://github.com/LewisWhittard");
             _homePage.Driver.Quit();
         }
+
+        [When("Homepage: I go to {string} and use the Software Development button")]
+        public void WhenHomepageIGoToAndUseTheSoftwareDevelopmentButton(string p0)
+        {
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickSoftwareDevelopmentNavBarButton();
+        }
+
+        [When("Homepage: I go to {string} and use the Creative Works button")]
+        public void WhenHomepageIGoToAndUseTheCreativeWorksButton(string p0)
+        {
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickCreativeWorksNavBarButton();
+        }
+
     }
 }

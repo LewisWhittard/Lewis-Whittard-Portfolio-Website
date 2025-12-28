@@ -10,6 +10,8 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
 		public IWebElement Github { get; private set; }
+		public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
+		public IWebElement CreativeWorksNavBarButton { get; private set; }
 		
 
 		public ClusterContentPageModel(IWebDriver driver)
@@ -24,6 +26,8 @@ namespace LMWSelenium.PageModels.PageModels
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
 			Github = FindElementById("Github");
+            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -58,5 +62,18 @@ namespace LMWSelenium.PageModels.PageModels
             SwitchTab(Driver, 0);
         }
 
+		public void ClickSoftwareDevelopmentNavBarButton()
+		{
+			ClickButton(SoftwareDevelopmentNavBarButton);
+            WaitUntilURLContainsValue("software-development");
+            WaitUntilTitleContainsValue("Software Development");
+        }
+
+        public void ClickCreativeWorksNavBarButton()
+        {
+            ClickButton(CreativeWorksNavBarButton);
+            WaitUntilURLContainsValue("creative-works");
+            WaitUntilTitleContainsValue("Creative Works");
+        }
     }
 }

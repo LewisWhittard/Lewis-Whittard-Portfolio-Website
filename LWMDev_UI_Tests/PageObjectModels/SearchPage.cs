@@ -12,8 +12,10 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
 		public IWebElement Github { get; private set; }
+        public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
+        public IWebElement CreativeWorksNavBarButton { get; private set; }
 
-		public SearchPage(IWebDriver driver)
+        public SearchPage(IWebDriver driver)
 		{
 			Driver = driver;
 
@@ -29,7 +31,9 @@ namespace LMWSelenium.PageModels.PageModels
 			HomeNavBarButton = FindElementById("HomeNavBarButton");
 			SearchNavBarButton = FindElementById("SearchNavBarButton");
 			Github = FindElementById("Github");
-		}
+            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+        }
 
 		public void ClickHomeNavBarButton()
 		{
@@ -72,5 +76,19 @@ namespace LMWSelenium.PageModels.PageModels
 		{
 			SendTextToInput(SearchBox, searchTerm);
 		}
-	}
+
+        public void ClickSoftwareDevelopmentNavBarButton()
+        {
+            ClickButton(SoftwareDevelopmentNavBarButton);
+            WaitUntilURLContainsValue("software-development");
+            WaitUntilTitleContainsValue("Software Development");
+        }
+
+        public void ClickCreativeWorksNavBarButton()
+        {
+            ClickButton(CreativeWorksNavBarButton);
+            WaitUntilURLContainsValue("creative-works");
+            WaitUntilTitleContainsValue("Creative Works");
+        }
+    }
 }

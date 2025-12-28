@@ -105,5 +105,22 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageCreativeWorks.AssertAreEqual(_PillarPageCreativeWorks.Driver.Url, "https://github.com/LewisWhittard");
             _PillarPageCreativeWorks.Driver.Quit();
         }
+
+        [When("PillarCreativeWorks: I go to {string} and use the Software Development button")]
+        public void WhenPillarCreativeWorksIGoToAndUseTheSoftwareDevelopmentButton(string p0)
+        {
+            _PillarPageCreativeWorks.NavigateToPage(p0);
+            _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickSoftwareDevelopmentNavBarButton();
+        }
+
+        [When("PillarCreativeWorks: I go to {string} and use the Creative Works button")]
+        public void WhenPillarCreativeWorksIGoToAndUseTheCreativeWorksButton(string p0)
+        {
+            _PillarPageCreativeWorks.NavigateToPage(p0);
+            _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickCreativeWorksNavBarButton();
+        }
+
     }
 }
