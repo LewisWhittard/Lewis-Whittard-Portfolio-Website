@@ -74,7 +74,7 @@ Examples:
 
 Scenario Outline: Click Software Development on the navigation bar
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/" and use the Software Development button
+	When SearchPage: I go to "https://localhost:44325/search" and use the Software Development button
 	Then SearchPage: the page title is "Software Development - Lewis Whittard Software Development"
 
 Examples:
@@ -86,7 +86,7 @@ Examples:
 
 Scenario Outline: Click Creative Works on the navigation bar
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/" and use the Creative Works button
+	When SearchPage: I go to "https://localhost:44325/search" and use the Creative Works button
 	Then SearchPage: the page title is "Creative Works - Lewis Whittard Software Development"
 
 Examples:

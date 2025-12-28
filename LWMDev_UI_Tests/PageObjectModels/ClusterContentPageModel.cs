@@ -26,6 +26,8 @@ namespace LMWSelenium.PageModels.PageModels
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
 			Github = FindElementById("Github");
+            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -64,14 +66,14 @@ namespace LMWSelenium.PageModels.PageModels
 		{
 			ClickButton(SoftwareDevelopmentNavBarButton);
             WaitUntilURLContainsValue("software-development");
-            WaitUntilTitleContainsValue("Software-Development");
+            WaitUntilTitleContainsValue("Software Development");
         }
 
         public void ClickCreativeWorksNavBarButton()
         {
             ClickButton(CreativeWorksNavBarButton);
             WaitUntilURLContainsValue("creative-works");
-            WaitUntilTitleContainsValue("Creative-Works");
+            WaitUntilTitleContainsValue("Creative Works");
         }
     }
 }

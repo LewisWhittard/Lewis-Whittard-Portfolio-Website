@@ -335,8 +335,8 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 77
- await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/\" and use the Software Development b" +
-                        "utton", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" and use the Software Develop" +
+                        "ment button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 78
  await testRunner.ThenAsync("SearchPage: the page title is \"Software Development - Lewis Whittard Software Dev" +
@@ -373,7 +373,8 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 89
- await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/\" and use the Creative Works button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" and use the Creative Works b" +
+                        "utton", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 90
  await testRunner.ThenAsync("SearchPage: the page title is \"Creative Works - Lewis Whittard Software Developme" +

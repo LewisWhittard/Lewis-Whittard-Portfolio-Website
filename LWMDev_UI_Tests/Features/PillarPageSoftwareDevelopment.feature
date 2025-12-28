@@ -87,7 +87,7 @@ Examples:
 Scenario Outline: Click Creative Works on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
 	When PillarSoftwareDevelopment: I go to "https://localhost:44325/" and use the Creative Works button
-	Then PillarSoftwareDevelopment: the page title is "Home Page - Lewis Whittard Software Development"
+	Then PillarSoftwareDevelopment: the page title is "Creative Works - Lewis Whittard Software Development"
 
 Examples:
 	| browser |
