@@ -432,6 +432,43 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click search option")]
+        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("Description", "Click search option")]
+        [Xunit.InlineDataAttribute("chrome", "SearchResultButton-cogetta", "Cogetta - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "SearchResultButton-lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+            "pment", new string[0])]
+        public async System.Threading.Tasks.Task ClickSearchOption(string browser, string searchResult, string title, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("SearchResult", searchResult);
+            argumentsOfScenario.Add("Title", title);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search option", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 111
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 112
+  await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 113
+  await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/search\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 114
+  await testRunner.ThenAsync(string.Format("PillarCreativeWorks: I click the search result \"{0}\" and the title is \"{1}\"", searchResult, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : object, Xunit.IAsyncLifetime

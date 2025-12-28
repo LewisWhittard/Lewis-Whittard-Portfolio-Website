@@ -127,5 +127,16 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.FindClusterContent();
         }
+
+        [Then("PillarSoftwareDevelopment: I click the search result {string} and the title is {string}")]
+        public void ThenPillarSoftwareDevelopmentIClickTheSearchResultAndTheTitleIs(string p0, string p1)
+        {
+            var searchResult = _PillarPageSoftwareDevelopment.FindElementById(p0);
+            _PillarPageSoftwareDevelopment.ClickButton(searchResult);
+            _PillarPageSoftwareDevelopment.WaitUntilTitleContainsValue(p1);
+            _PillarPageSoftwareDevelopment.CloseDriver();
+            _PillarPageSoftwareDevelopment.QuitDriver();
+        }
+
     }
 }

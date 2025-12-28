@@ -130,5 +130,15 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageCreativeWorks.QuitDriver();
         }
 
+        [Then("PillarCreativeWorks: I click the search result {string} and the title is {string}")]
+        public void ThenPillarCreativeWorksIClickTheSearchResultAndTheTitleIs(string p0, string p1)
+        {
+            var searchResult = _PillarPageCreativeWorks.FindElementById(p0);
+            _PillarPageCreativeWorks.ClickButton(searchResult);
+            _PillarPageCreativeWorks.WaitUntilTitleContainsValue(p1);
+            _PillarPageCreativeWorks.CloseDriver();
+            _PillarPageCreativeWorks.QuitDriver();
+        }
+
     }
 }
