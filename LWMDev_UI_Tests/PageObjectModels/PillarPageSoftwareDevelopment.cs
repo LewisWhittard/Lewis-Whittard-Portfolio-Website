@@ -120,5 +120,14 @@ namespace LMWSelenium.PageModels.PageModels
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
         }
+
+        public void FindClusterContent()
+        {
+            FindElementById("SearchResult-from-reflection-to-action-the-marginal-gains-sprint");
+            FindElementById("SearchResult-cogetta");
+            FindElementById("SearchResult-ui-test-automation-portfolio-piece");
+            FindElementById("SearchResult-my-portfolio-website-development");
+            FindElementById("SearchResult-portfolio-website-completed");
+        }
     }
 }
