@@ -104,5 +104,19 @@ namespace LMWSelenium.PageModels.PageModels
             CloseDriver();
             SwitchTab(Driver, 0);
         }
+
+        public void ClickSoftwareDevelopmentNavBarButton()
+        {
+            ClickButton(SoftwareDevelopmentNavBarButton);
+            WaitUntilURLContainsValue("software-development");
+            WaitUntilTitleContainsValue("Software-Development");
+        }
+
+        public void ClickCreativeWorksNavBarButton()
+        {
+            ClickButton(CreativeWorksNavBarButton);
+            WaitUntilURLContainsValue("creative-works");
+            WaitUntilTitleContainsValue("Creative-Works");
+        }
     }
 }
