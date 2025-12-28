@@ -924,6 +924,78 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click search option after search")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Click search option after search")]
+        [Xunit.InlineDataAttribute("chrome", "SearchResultButton-cogetta", "Cogetta - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "SearchResultButton-ui-test-automation-portfolio-piece", "UI Test Automation Portfolio Piece - Lewis Whittard Software Development", new string[0])]
+        public async System.Threading.Tasks.Task ClickSearchOptionAfterSearch(string browser, string searchResult, string title, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("SearchResult", searchResult);
+            argumentsOfScenario.Add("Title", title);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search option after search", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 255
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 256
+  await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 257
+  await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 258
+  await testRunner.ThenAsync(string.Format("SearchPage: I click the search result \"{0}\" and the title is \"{1}\"", searchResult, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click search option before search")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Click search option before search")]
+        [Xunit.InlineDataAttribute("chrome", "SearchResultButton-cogetta", "Cogetta - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "SearchResultButton-ui-test-automation-portfolio-piece", "UI Test Automation Portfolio Piece - Lewis Whittard Software Development", new string[0])]
+        public async System.Threading.Tasks.Task ClickSearchOptionBeforeSearch(string browser, string searchResult, string title, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("SearchResult", searchResult);
+            argumentsOfScenario.Add("Title", title);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search option before search", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 265
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 266
+  await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 267
+  await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 268
+  await testRunner.ThenAsync(string.Format("SearchPage: I click the search result \"{0}\" and the title is \"{1}\"", searchResult, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : object, Xunit.IAsyncLifetime

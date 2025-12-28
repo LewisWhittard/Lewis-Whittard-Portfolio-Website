@@ -375,5 +375,18 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _searchPage.CloseDriver();
             _searchPage.QuitDriver();
         }
+
+        [Then("SearchPage: I click the search result {string} and the title is {string}")]
+        public void ThenSearchPageIClickTheSearchResultAndTheTitleIs(string p0, string p1)
+        {
+            var searchResult = _searchPage.FindElementById(p0);
+            _searchPage.ClickButton(searchResult);
+            _searchPage.WaitUntilTitleContainsValue(p1);
+            _searchPage.CloseDriver();
+            _searchPage.QuitDriver();
+
+        }
+
+
     }
 }

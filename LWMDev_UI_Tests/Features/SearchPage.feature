@@ -251,3 +251,23 @@ Scenario Outline: Search Category all - Creative Works
 Examples:
     | browser | searchTerm |
     | Chrome  | Logo       |
+
+Scenario Outline: Click search option after search
+  Given SearchPage: I use Browser "<browser>"
+  When SearchPage: I go to "https://localhost:44325/search" and use the search button
+  Then SearchPage: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                          | Title                                                                    |
+  | chrome  | SearchResultButton-cogetta                            | Cogetta - Lewis Whittard Software Development                            |
+  | firefox | SearchResultButton-ui-test-automation-portfolio-piece | UI Test Automation Portfolio Piece - Lewis Whittard Software Development |
+
+Scenario Outline: Click search option before search
+  Given SearchPage: I use Browser "<browser>"
+  When SearchPage: I go to "https://localhost:44325/search"
+  Then SearchPage: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                          | Title                                                                    |
+  | chrome  | SearchResultButton-cogetta                            | Cogetta - Lewis Whittard Software Development                            |
+  | firefox | SearchResultButton-ui-test-automation-portfolio-piece | UI Test Automation Portfolio Piece - Lewis Whittard Software Development |
