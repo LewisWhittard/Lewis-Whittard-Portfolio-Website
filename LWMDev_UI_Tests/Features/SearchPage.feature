@@ -95,3 +95,39 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Search Category only All
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" select All and search
+	Then SearchPage: Then find the results based on the all category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category only Software Development
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" select Software Development and search
+	Then SearchPage: Then find the results based on the Software Development category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category only Creative Works
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" and select Creative Works and search
+	Then SearchPage: Then find the results based on the Creative Works category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
