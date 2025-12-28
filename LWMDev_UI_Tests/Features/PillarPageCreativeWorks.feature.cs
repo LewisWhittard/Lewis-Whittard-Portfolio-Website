@@ -92,21 +92,21 @@ namespace LWMDev_UI_Tests.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Pillar title for multiple pages")]
         [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
-        [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages")]
+        [Xunit.TraitAttribute("Description", "Verify Pillar title for multiple pages")]
         [Xunit.InlineDataAttribute("chrome", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("firefox", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("edge", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("safari", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        public async System.Threading.Tasks.Task VerifyPillarTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             argumentsOfScenario.Add("pageIndex", pageIndex);
             argumentsOfScenario.Add("expectedTitle", expectedTitle);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Cluster title for multiple pages", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Pillar title for multiple pages", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -389,6 +389,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 90
  await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Creative Works - Lewis Whittard Software " +
                         "Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify brings back correct cluster content")]
+        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("Description", "Verify brings back correct cluster content")]
+        [Xunit.InlineDataAttribute("chrome", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
+        public async System.Threading.Tasks.Task VerifyBringsBackCorrectClusterContent(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("pageIndex", pageIndex);
+            argumentsOfScenario.Add("expectedTitle", expectedTitle);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify brings back correct cluster content", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 99
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 100
+ await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 101
+ await testRunner.WhenAsync(string.Format("PillarCreativeWorks: I go to \"https://localhost:44325/PillarPage/Index/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 102
+ await testRunner.ThenAsync("PillarCreativeWorks: PillarCreativeWorks: The pillar pages brings back the correc" +
+                        "t cluster content", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
