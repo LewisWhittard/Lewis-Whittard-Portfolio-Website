@@ -134,5 +134,77 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _searchPage.ClickCreativeWorksNavBarButton();
         }
 
+        [When("SearchPage: I go to {string} select All and search")]
+        public void WhenSearchPageIGoToSelectAllAndSearch(string p0)
+        {
+			_searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.PopluateSearchDropDown("All");
+			_searchPage.ClickSearchButton();
+        }
+
+        [Then("SearchPage: Then find the results based on the all category")]
+        public void ThenSearchPageThenFindTheResultsBasedOnTheAllCategory()
+        {
+            _searchPage.FindElementById("SearchResultButton-from-reflection-to-action-the-marginal-gains-sprint");
+            _searchPage.FindElementById("SearchResultButton-cogetta");
+            _searchPage.FindElementById("SearchResultButton-ui-test-automation-portfolio-piece");
+            _searchPage.FindElementById("SearchResultButton-my-portfolio-website-development");
+            _searchPage.FindElementById("SearchResultButton-lewis-matthew-whittard-software-development-logo");
+            _searchPage.FindElementById("SearchResultButton-portfolio-website-completed");
+
+            _searchPage.CloseDriver();
+            _searchPage.QuitDriver();
+        }
+
+        [When("SearchPage: I go to {string} select Software Development and search")]
+        public void WhenSearchPageIGoToSelectSoftwareDevelopmentAndSearch(string p0)
+        {
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.PopluateSearchDropDown("Software Development");
+            _searchPage.ClickSearchButton();
+        }
+
+        [Then("SearchPage: Then find the results based on the Software Development category")]
+        public void ThenSearchPageThenFindTheResultsBasedOnTheSoftwareDevelopmentCategory()
+        {
+            _searchPage.FindElementById("SearchResultButton-from-reflection-to-action-the-marginal-gains-sprint");
+            _searchPage.FindElementById("SearchResultButton-cogetta");
+            _searchPage.FindElementById("SearchResultButton-ui-test-automation-portfolio-piece");
+            _searchPage.FindElementById("SearchResultButton-my-portfolio-website-development");
+            _searchPage.FindElementById("SearchResultButton-portfolio-website-completed");
+            _searchPage.DontFindElementById("SearchResultButton-lewis-matthew-whittard-software-development-logo");
+
+            _searchPage.CloseDriver();
+            _searchPage.QuitDriver();
+
+        }
+
+        [When("SearchPage: I go to {string} and select Creative Works and search")]
+        public void WhenSearchPageIGoToAndSelectCreativeWorksAndSearch(string p0)
+        {
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.PopluateSearchDropDown("Creative Works");
+            _searchPage.ClickSearchButton();
+        }
+
+        [Then("SearchPage: Then find the results based on the Creative Works category")]
+        public void ThenSearchPageThenFindTheResultsBasedOnTheCreativeWorksCategory()
+        {
+            _searchPage.FindElementById("SearchResultButton-cogetta");
+            _searchPage.FindElementById("SearchResultButton-lewis-matthew-whittard-software-development-logo");
+
+            _searchPage.DontFindElementById("SearchResultButton-from-reflection-to-action-the-marginal-gains-sprint");
+            _searchPage.DontFindElementById("SearchResultButton-ui-test-automation-portfolio-piece");
+            _searchPage.DontFindElementById("SearchResultButton-my-portfolio-website-development");
+            _searchPage.DontFindElementById("SearchResultButton-portfolio-website-completed");
+
+            _searchPage.CloseDriver();
+            _searchPage.QuitDriver();
+        }
+
+
     }
 }

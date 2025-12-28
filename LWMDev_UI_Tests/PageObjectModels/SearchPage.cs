@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using LMWSelenium.PageModels.StandardPage;
+using OpenQA.Selenium.Support.UI;
+
 
 namespace LMWSelenium.PageModels.PageModels
 {
@@ -14,6 +16,7 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement Github { get; private set; }
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
+		public IWebElement SearchDropDown { get; private set; }
 
         public SearchPage(IWebDriver driver)
 		{
@@ -33,6 +36,7 @@ namespace LMWSelenium.PageModels.PageModels
 			Github = FindElementById("Github");
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+			SearchDropDown = FindElementById("Category");
         }
 
 		public void ClickHomeNavBarButton()
@@ -90,5 +94,11 @@ namespace LMWSelenium.PageModels.PageModels
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
         }
+
+		public void PopluateSearchDropDown(string value)
+		{
+			this.SelectDropdownOption(SearchDropDown,value);
+		}
+
     }
 }
