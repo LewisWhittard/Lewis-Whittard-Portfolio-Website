@@ -120,5 +120,11 @@ namespace LMWSelenium.PageModels.PageModels
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
         }
+
+		public void FindClusterContent()
+		{
+			FindElementById("SearchResult-cogetta");
+			FindElementById("SearchResult-lewis-matthew-whittard-software-development-logo");
+        }
     }
 }

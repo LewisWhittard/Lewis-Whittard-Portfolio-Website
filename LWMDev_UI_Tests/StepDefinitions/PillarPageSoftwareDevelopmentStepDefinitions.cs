@@ -122,5 +122,10 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageSoftwareDevelopment.ClickCreativeWorksNavBarButton();
         }
 
+        [Then("PillarSoftwareDevelopment: The pillar pages brings back the correct cluster content")]
+        public void ThenPillarSoftwareDevelopmentThePillarPagesBringsBackTheCorrectClusterContent()
+        {
+            _PillarPageSoftwareDevelopment.FindClusterContent();
+        }
     }
 }

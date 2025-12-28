@@ -1,6 +1,6 @@
 ﻿Feature: Pillar Page Creative Works
 
-Scenario Outline: Verify Cluster title for multiple pages
+Scenario Outline: Verify Pillar title for multiple pages
 	Given PillarCreativeWorks: I use Browser "<browser>"
 	When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
 	Then PillarCreativeWorks: the page title is "<expectedTitle>"
@@ -95,3 +95,15 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Verify brings back correct cluster content
+	Given PillarCreativeWorks: I use Browser "<browser>"
+	When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
+	Then PillarCreativeWorks: The pillar pages brings back the correct cluster content
+
+Examples:
+	| browser | pageIndex      | expectedTitle                                        |
+	| chrome  | creative-works | Creative Works - Lewis Whittard Software Development |
+	| firefox | creative-works | Creative Works - Lewis Whittard Software Development |
+	| edge    | creative-works | Creative Works - Lewis Whittard Software Development |
+	| safari  | creative-works | Creative Works - Lewis Whittard Software Development |

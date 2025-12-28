@@ -95,3 +95,15 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Verify brings back correct cluster content
+	Given PillarSoftwareDevelopment: I use Browser "<browser>"
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
+	Then PillarSoftwareDevelopment: The pillar pages brings back the correct cluster content
+
+Examples:
+	| browser | pageIndex            | expectedTitle                                              |
+	| chrome  | software-development | Software Development - Lewis Whittard Software Development |
+	| firefox | software-development | Software Development - Lewis Whittard Software Development |
+	| edge    | software-development | Software Development - Lewis Whittard Software Development |
+	| safari  | software-development | Software Development - Lewis Whittard Software Development |

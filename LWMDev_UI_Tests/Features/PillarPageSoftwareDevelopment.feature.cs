@@ -395,6 +395,46 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify brings back correct cluster content")]
+        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Software Development")]
+        [Xunit.TraitAttribute("Description", "Verify brings back correct cluster content")]
+        [Xunit.InlineDataAttribute("chrome", "software-development", "Software Development - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "software-development", "Software Development - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "software-development", "Software Development - Lewis Whittard Software Development", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "software-development", "Software Development - Lewis Whittard Software Development", new string[0])]
+        public async System.Threading.Tasks.Task VerifyBringsBackCorrectClusterContent(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("pageIndex", pageIndex);
+            argumentsOfScenario.Add("expectedTitle", expectedTitle);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify brings back correct cluster content", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 99
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 100
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 101
+ await testRunner.WhenAsync(string.Format("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/{0}\"" +
+                            "", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 102
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: The pillar pages brings back the correct cluster conte" +
+                        "nt", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : object, Xunit.IAsyncLifetime
