@@ -118,14 +118,14 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 4
-  await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 5
-  await testRunner.WhenAsync(string.Format("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/{0}\"" +
+ await testRunner.WhenAsync(string.Format("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/{0}\"" +
                             "", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 6
-  await testRunner.ThenAsync(string.Format("PillarSoftwareDevelopment: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync(string.Format("PillarSoftwareDevelopment: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -155,14 +155,14 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 16
-    await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 17
-    await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
                         "ware-development\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 18
-    await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Search - Lewis Whittard Software De" +
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Search - Lewis Whittard Software De" +
                         "velopment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -183,7 +183,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click home on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 27
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -193,15 +193,15 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 28
-        await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 29
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
                         "ware-development\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 30
-        await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
-                        " Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Creative Works - Lewis Whittard Sof" +
+                        "tware Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -221,7 +221,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Linkedin button", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 39
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -231,14 +231,14 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 40
-        await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 41
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
                         "ware-development\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 42
-        await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -258,7 +258,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click logo on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 51
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -268,14 +268,14 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 52
-        await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 53
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
                         "ware-development\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 54
-        await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
                         " Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -296,7 +296,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Github button", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 63
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -306,14 +306,90 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 64
-        await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 65
-        await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/PillarPage/Index/soft" +
                         "ware-development\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 66
-        await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click Software Development on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Software Development")]
+        [Xunit.TraitAttribute("Description", "Click Software Development on the navigation bar")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickSoftwareDevelopmentOnTheNavigationBar(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Software Development on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 75
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 76
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 77
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/\" and use the Softwar" +
+                        "e Development button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 78
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Software Development - Lewis Whitta" +
+                        "rd Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click Creative Works on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Software Development")]
+        [Xunit.TraitAttribute("Description", "Click Creative Works on the navigation bar")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickCreativeWorksOnTheNavigationBar(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Creative Works on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 87
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 88
+ await testRunner.GivenAsync(string.Format("PillarSoftwareDevelopment: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 89
+ await testRunner.WhenAsync("PillarSoftwareDevelopment: I go to \"https://localhost:44325/\" and use the Creativ" +
+                        "e Works button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 90
+ await testRunner.ThenAsync("PillarSoftwareDevelopment: the page title is \"Home Page - Lewis Whittard Software" +
+                        " Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

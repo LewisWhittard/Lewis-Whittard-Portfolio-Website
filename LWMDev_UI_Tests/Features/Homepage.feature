@@ -74,7 +74,7 @@ Examples:
 Scenario Outline: Click Software Development on the navigation bar
 	Given Homepage: I use Browser "<browser>"
 	When Homepage: I go to "https://localhost:44325/" and use the Software Development button
-	Then Homepage: the page title is "Home Page - Lewis Whittard Software Development"
+	Then Homepage: the page title is "Software Development - Lewis Whittard Software Development"
 
 Examples:
 	| browser |
@@ -86,7 +86,7 @@ Examples:
 Scenario Outline: Click Creative Works on the navigation bar
 	Given Homepage: I use Browser "<browser>"
 	When Homepage: I go to "https://localhost:44325/" and use the Creative Works button
-	Then Homepage: the page title is "Home Page - Lewis Whittard Software Development"
+	Then Homepage: the page title is "Creative Works - Lewis Whittard Software Development"
 
 Examples:
 	| browser |

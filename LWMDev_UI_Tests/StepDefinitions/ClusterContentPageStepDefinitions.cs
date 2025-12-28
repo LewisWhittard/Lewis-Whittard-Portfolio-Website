@@ -108,16 +108,16 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _clusterContentPageModel.Driver.Quit();
         }
 
-        [When("Homepage: I go to {string} and use the Software Development button")]
-        public void WhenHomepageIGoToAndUseTheSoftwareDevelopmentButton(string p0)
+        [When("ClusterContent: I go to {string} and use the Software Development button")]
+        public void WhenClusterContentIGoToAndUseTheSoftwareDevelopmentButton(string p0)
         {
             _clusterContentPageModel.NavigateToPage(p0);
             _clusterContentPageModel.SetUpPage();
             _clusterContentPageModel.ClickSoftwareDevelopmentNavBarButton();
         }
 
-        [When("Homepage: I go to {string} and use the Creative Works button")]
-        public void WhenHomepageIGoToAndUseTheCreativeWorksButton(string p0)
+        [When("ClusterContent: I go to {string} and use the Creative Works button")]
+        public void WhenClusterContentIGoToAndUseTheCreativeWorksButton(string p0)
         {
             _clusterContentPageModel.NavigateToPage(p0);
             _clusterContentPageModel.SetUpPage();

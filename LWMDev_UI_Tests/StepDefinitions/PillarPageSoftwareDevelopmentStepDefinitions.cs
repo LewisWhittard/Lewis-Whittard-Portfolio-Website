@@ -106,16 +106,16 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageSoftwareDevelopment.Driver.Quit();
         }
 
-        [When("Homepage: I go to {string} and use the Software Development button")]
-        public void WhenHomepageIGoToAndUseTheSoftwareDevelopmentButton(string p0)
+        [When("PillarSoftwareDevelopment: I go to {string} and use the Software Development button")]
+        public void WhenPillarSoftwareDevelopmentIGoToAndUseTheSoftwareDevelopmentButton(string p0)
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(p0);
             _PillarPageSoftwareDevelopment.SetUpPage();
             _PillarPageSoftwareDevelopment.ClickSoftwareDevelopmentNavBarButton();
         }
 
-        [When("Homepage: I go to {string} and use the Creative Works button")]
-        public void WhenHomepageIGoToAndUseTheCreativeWorksButton(string p0)
+        [When("PillarSoftwareDevelopment: I go to {string} and use the Creative Works button")]
+        public void WhenPillarSoftwareDevelopmentIGoToAndUseTheCreativeWorksButton(string p0)
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(p0);
             _PillarPageSoftwareDevelopment.SetUpPage();
