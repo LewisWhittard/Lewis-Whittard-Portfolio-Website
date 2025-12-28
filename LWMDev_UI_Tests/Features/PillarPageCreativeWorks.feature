@@ -107,3 +107,13 @@ Examples:
 	| firefox | creative-works | Creative Works - Lewis Whittard Software Development |
 	| edge    | creative-works | Creative Works - Lewis Whittard Software Development |
 	| safari  | creative-works | Creative Works - Lewis Whittard Software Development |
+
+Scenario Outline: Click search option
+  Given PillarCreativeWorks: I use Browser "<browser>"
+  When PillarCreativeWorks: I go to "https://localhost:44325/search"
+  Then PillarCreativeWorks: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                                        | Title                                                                                  |
+  | chrome  | SearchResultButton-cogetta                                          | Cogetta - Lewis Whittard Software Development                                          |
+  | firefox | SearchResultButton-lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
