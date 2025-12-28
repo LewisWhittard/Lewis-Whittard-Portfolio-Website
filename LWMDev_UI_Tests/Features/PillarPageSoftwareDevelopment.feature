@@ -107,3 +107,13 @@ Examples:
 	| firefox | software-development | Software Development - Lewis Whittard Software Development |
 	| edge    | software-development | Software Development - Lewis Whittard Software Development |
 	| safari  | software-development | Software Development - Lewis Whittard Software Development |
+
+Scenario Outline: Click search option
+  Given PillarSoftwareDevelopment: I use Browser "<browser>"
+  When PillarSoftwareDevelopment: I go to "https://localhost:44325/search"
+  Then PillarSoftwareDevelopment: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                          | Title                                                                    |
+  | chrome  | SearchResultButton-cogetta                            | Cogetta - Lewis Whittard Software Development                            |
+  | firefox | SearchResultButton-ui-test-automation-portfolio-piece | UI Test Automation Portfolio Piece - Lewis Whittard Software Development |
