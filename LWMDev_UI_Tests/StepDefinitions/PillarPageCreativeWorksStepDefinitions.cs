@@ -122,8 +122,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageCreativeWorks.ClickCreativeWorksNavBarButton();
         }
 
-        [Then("PillarCreativeWorks: PillarCreativeWorks: The pillar pages brings back the correct cluster content")]
-        public void ThenPillarCreativeWorksPillarCreativeWorksThePillarPagesBringsBackTheCorrectClusterContent()
+        [Then("PillarCreativeWorks: The pillar pages brings back the correct cluster content")]
+        public void ThenPillarCreativeWorksThePillarPagesBringsBackTheCorrectClusterContent()
         {
             _PillarPageCreativeWorks.FindClusterContent();
             _PillarPageCreativeWorks.CloseDriver();

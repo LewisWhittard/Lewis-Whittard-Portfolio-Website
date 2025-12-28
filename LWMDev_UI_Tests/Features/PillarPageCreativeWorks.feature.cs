@@ -426,8 +426,7 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.WhenAsync(string.Format("PillarCreativeWorks: I go to \"https://localhost:44325/PillarPage/Index/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 102
- await testRunner.ThenAsync("PillarCreativeWorks: PillarCreativeWorks: The pillar pages brings back the correc" +
-                        "t cluster content", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("PillarCreativeWorks: The pillar pages brings back the correct cluster content", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

@@ -99,7 +99,7 @@ Examples:
 Scenario Outline: Verify brings back correct cluster content
 	Given PillarCreativeWorks: I use Browser "<browser>"
 	When PillarCreativeWorks: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
-	Then PillarCreativeWorks: PillarCreativeWorks: The pillar pages brings back the correct cluster content
+	Then PillarCreativeWorks: The pillar pages brings back the correct cluster content
 
 Examples:
 	| browser | pageIndex      | expectedTitle                                        |
