@@ -116,7 +116,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
         [When("Homepage: I go to {string} and use the Creative Works button")]
         public void WhenHomepageIGoToAndUseTheCreativeWorksButton(string p0)
         {
-            throw new PendingStepException();
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickCreativeWorksNavBarButton();
         }
 
     }
