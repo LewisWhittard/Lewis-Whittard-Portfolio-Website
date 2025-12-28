@@ -6,7 +6,7 @@
     public Page_Library.Page.Entities.ContentBlock.HyperlinkBlock Block { get; set; }
 }
 
-<div class="text-@Block?.Alignment mb-5">
+<div style="text-align:@Block?.Alignment;">
     <a href="@Block?.Url" target="_blank" rel="noopener noreferrer">
         @Block?.LinkText
     </a>

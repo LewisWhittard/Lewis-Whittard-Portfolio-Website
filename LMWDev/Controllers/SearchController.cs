@@ -3,23 +3,23 @@ using Microsoft.Extensions.Logging;
 using LMWDev.Models;
 using System.Diagnostics;
 using System;
-using Page_Library.Page.Service.Interface;
+using Page_Library.Search.Service.Interface;
 
 namespace LMWDev.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly IPageService _pageService;
+        private readonly IPageSearchService _pageSearchService;
         private readonly ILogger<SearchController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
-        public SearchController(IPageService pageService,ILogger<SearchController> logger)
+        public SearchController(IPageSearchService pageSearchService,ILogger<SearchController> logger)
         {
             _logger = logger;
             try
             {
-                _pageService = pageService;
-                _logger.LogInformation("Page Service initialized successfully.");
+                _pageSearchService = pageSearchService;
+                _logger.LogInformation("PageSearchService initialized successfully.");
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace LMWDev.Controllers
                 {
                     SearchViewModel model; 
                     _logger.LogInformation($"Executing filtered search with parameters", viewModel);
-                    model = new SearchViewModel(_pageService.Search(viewModel.Search,viewModel.Category));
+                    model = new SearchViewModel(_pageSearchService.Search(viewModel.Search, viewModel.ProgrammingCategory, viewModel.TestingCategory, viewModel.GamesCategory, viewModel.ThreeDAssetsCategory, viewModel.TwoDAssetCategory, viewModel.BlogCategory));
                     return View(model);
                 }
                 catch (Exception ex)
@@ -45,5 +45,10 @@ namespace LMWDev.Controllers
                 }
             }
         }
+
+		public IActionResult FromHome(HomeModel viewModel)
+		{
+            return RedirectToAction("Index", "Search", viewModel.Search);
+		}
 	}
 }

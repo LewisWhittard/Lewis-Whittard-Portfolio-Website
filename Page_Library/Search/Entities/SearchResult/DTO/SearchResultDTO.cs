@@ -1,4 +1,4 @@
-﻿namespace Page_Library.Page.Entities.SearchResult.DTO
+﻿namespace Page_Library.Search.Entities.SearchResult.DTO
 {
     public class SearchResultDTO
     {

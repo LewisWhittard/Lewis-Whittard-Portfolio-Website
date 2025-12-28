@@ -12,6 +12,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
     public class ClusterContentPageStepDefinitions
     {
 		private ClusterContentPageModel _clusterContentPageModel;
+		private SearchPage _searchPage;
 
 		[Given("ClusterContent: I use Browser {string}")]
 		public void GivenIUseBrowser(string browser)
@@ -92,39 +93,5 @@ namespace LWMDev_UI_Tests.StepDefinitions
 			_clusterContentPageModel.ClickLogoButton();
 		}
 
-        [When("ClusterContent: I go to {string} and use the Github button")]
-        public void WhenClusterContentIGoToAndUseTheGithubButton(string p0)
-        {
-            _clusterContentPageModel.NavigateToPage(p0);
-            _clusterContentPageModel.SetUpPage();
-            _clusterContentPageModel.ClickGithubButton();
-        }
-
-        [Then("ClusterContent: I have arrived at Github")]
-        public void ThenClusterContentIHaveArrivedAtGithub()
-        {
-            _clusterContentPageModel.WaitUntilURLContainsValue("https://github.com/");
-            _clusterContentPageModel.AssertAreEqual(_clusterContentPageModel.Driver.Url, "https://github.com/LewisWhittard");
-            _clusterContentPageModel.Driver.Quit();
-        }
-
-        [When("ClusterContent: I go to {string} and use the Software Development button")]
-        public void WhenClusterContentIGoToAndUseTheSoftwareDevelopmentButton(string p0)
-        {
-            _clusterContentPageModel.NavigateToPage(p0);
-            _clusterContentPageModel.SetUpPage();
-            _clusterContentPageModel.ClickSoftwareDevelopmentNavBarButton();
-        }
-
-        [When("ClusterContent: I go to {string} and use the Creative Works button")]
-        public void WhenClusterContentIGoToAndUseTheCreativeWorksButton(string p0)
-        {
-            _clusterContentPageModel.NavigateToPage(p0);
-            _clusterContentPageModel.SetUpPage();
-            _clusterContentPageModel.ClickCreativeWorksNavBarButton();
-        }
-
-
-
-    }
+	}
 }

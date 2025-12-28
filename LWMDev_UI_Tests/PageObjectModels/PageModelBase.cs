@@ -156,11 +156,5 @@ namespace LMWSelenium.PageModels.StandardPage
                 }
             });
         }
-
-        public void SelectDropdownOption(IWebElement dropdownElement, string visibleText)
-        {
-            var select = new SelectElement(dropdownElement);
-            select.SelectByText(visibleText);
-        }
     }
 }

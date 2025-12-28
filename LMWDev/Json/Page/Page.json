@@ -1,15 +1,13 @@
 [
 	{
-		"ExternalId": "portfolio-website-completed",
+		"ExternalId": "0",
 		"Title": "Portfolio Website Completed!",
-		"PageType": "Cluster Content Page",
 		"PublishDate": "2022-02-24",
-		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "Portfolio Website Completed!",
 			"MetaDescription": "This blog post explains why I have built my portfolio website to display my sides and out of work projects.",
 			"MetaKeywords": [ "MVC.Net", "Core", "Portfolio", "Games", "Blogs", "Programming", "Software", "Development", "Dev", "3D", "Models", "2D", "Models" ],
-			"MetaImageId": 0
+			"MetaImageId": 1
 		},
 		"ContentBlocks": [
 			{
@@ -74,16 +72,14 @@
 		]
 	},
 	{
-		"ExternalId": "lewis-matthew-whittard-software-development-logo",
-		"PageType": "Cluster Content Page",
+		"ExternalId": "1",
 		"Title": "Lewis Matthew Whittard Software Development Logo",
 		"PublishDate": "2022-02-24",
-		"Category": "Creative Works",
 		"Meta": {
 			"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
 			"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
 			"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
-			"MetaImageId": 0
+			"MetaImageId": 3
 		},
 		"ContentBlocks": [
 			{
@@ -100,11 +96,9 @@
 		]
 	},
 	{
-		"ExternalId": "my-portfolio-website-development",
-		"PageType": "Cluster Content Page",
-		"Title": "My Portfolio Website Development",
+		"ExternalId": "2",
+		"Title": "My Portfolio – Website Development",
 		"PublishDate": "2022-02-24",
-		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "My Portfolio – Website Development",
 			"MetaDescription": "This page showcases the portfolio website and links to the github code.",
@@ -126,11 +120,9 @@
 		]
 	},
 	{
-		"ExternalId": "ui-test-automation-portfolio-piece",
-		"PageType": "Cluster Content Page",
+		"ExternalId": "3",
 		"Title": "UI Test Automation Portfolio Piece",
 		"PublishDate": "2022-03-19",
-		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "UI Test Automation Portfolio Piece",
 			"MetaDescription": "This Page Showcases My UI Test Automation Portfolio Piece.",
@@ -157,11 +149,9 @@
 		]
 	},
 	{
-		"ExternalId": "cogetta",
-		"PageType": "Cluster Content Page",
+		"ExternalId": "4",
 		"Title": "Cogetta",
 		"PublishDate": "2022-11-14",
-		"Category": "Software Development, Creative Works",
 		"Meta": {
 			"MetaTitle": "Cogetta Cipher in Python",
 			"MetaDescription": "An overview of Cogetta, a substitution cipher written in Python 3, including tools used and download link.",
@@ -264,11 +254,9 @@
 	},
 
 	{
-		"ExternalId": "from-reflection-to-action-the-marginal-gains-sprint",
-		"PageType": "Cluster Content Page",
+		"ExternalId": "5",
 		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
 		"PublishDate": "2025-10-19",
-		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "Marginal Gains Sprint – Portfolio Architecture & Testing Strategy",
 			"MetaDescription": "Discover how I applied marginal gains to modernise my portfolio website architecture, testing strategy, observability, and UI using Blazor, OpenTelemetry, and clean design principles.",
@@ -296,7 +284,7 @@
 				"C#",
 				"Software Engineering"
 			],
-			"MetaImageId": 0
+			"MetaImageId": 1
 		},
 		"ContentBlocks": [
 			{
@@ -375,106 +363,6 @@
 				"Alignment": "left",
 				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
 				"LinkText": "To Github Repository"
-			}
-		]
-	},
-	{
-		"ExternalId": "software-development",
-		"PageType":  "Pillar Page",
-		"Title": "Software Development",
-		"PublishDate": "2025/12/21",
-		"Category": "Software Development",
-		"Meta": {
-			"MetaTitle": "Software Development Portfolio & Engineering Practices",
-			"MetaDescription": "A pillar page covering my software development work including testing, development practices, and support processes.",
-			"MetaKeywords": [ "Software Development", "Testing", "Development", "Support", "Programming", "Sustained Engineering", "Portfolio" ],
-			"MetaImageId": 0
-		},
-		"ContentBlocks": [
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Overview"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "Software development has been a core part of my professional and personal journey. This page acts as a central hub for everything related to my engineering work, from testing methodologies to development practices and long-term support strategies."
-			},
-
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Testing"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "Testing is a fundamental part of delivering reliable software. I focus on automated testing, unit testing, integration testing, and UI Automation testing to ensure that projects remain stable as they grow. My goal is to build confidence in every release and demonstrate strong testing discipline across my portfolio."
-			},
-
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Development"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "My development work spans web applications, tools, and experimental projects. I enjoy exploring new technologies, refining my coding standards, and building solutions that solve real problems. This section will showcase development logs, technical breakdowns, and insights gained from hands-on experience."
-			},
-
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Support and Sustained Engineering"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "Support and sustained engineering play a vital role in ensuring that software remains stable, performant, and maintainable throughout its lifecycle. My approach focuses on long-term stewardship of each project—addressing technical debt, refining architecture, and implementing structured maintenance practices. This includes proactive support processes, Application Performance Monitoring (APM), iterative improvements, and lifecycle planning to ensure systems continue to operate reliably as technologies, user expectations, and environments evolve."
-			}
-		]
-	},
-	{
-		"ExternalId": "creative-works",
-		"PageType": "Pillar Page",
-		"Title": "Creative Works",
-		"PublishDate": "2025/12/21",
-		"Category": "Creative Works",
-		"Meta": {
-			"MetaTitle": "Creative Works and Visual Design Portfolio",
-			"MetaDescription": "A pillar page showcasing my creative projects including digital assets and game development.",
-			"MetaKeywords": [ "Creative Works", "Digital Assets", "3D Models", "2D Art", "Portfolio" ],
-			"MetaImageId": 0
-		},
-		"ContentBlocks": [
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Overview"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "Creativity plays a major role in my work beyond software development. This page brings together my artistic explorations — from 2D and 3D digital assets to interactive projects — into a single space. It serves as a central showcase for experimentation, learning, and creative exploration."
-			},
-
-			{
-				"BlockType": "Header",
-				"Level": "H2",
-				"Alignment": "left",
-				"Text": "Digital Assets"
-			},
-			{
-				"BlockType": "Paragraph",
-				"Alignment": "Left",
-				"BodyText": "Digital assets include 2D artwork, 3D models, textures, UI elements, and other creative pieces produced for personal projects or experimentation. This section highlights my design process, tools used, and the evolution of my artistic style over time."
 			}
 		]
 	}

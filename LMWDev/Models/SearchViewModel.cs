@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
-using Page_Library.Page.Entities.SearchResult.Interface;
+using Page_Library.Search.Entities.SearchResult.Interface;
 
 namespace LMWDev.Models
 {
 	public class SearchViewModel
 	{
 		public string Search { get; set; }
-        public string Category { get; set; }
-        public bool Meta = false;
+        public bool GamesCategory { get; set; } = true;
+        public bool ProgrammingCategory { get; set; } = true;
+        public bool TestingCategory { get; set; } = true;
+        public bool ThreeDAssetsCategory { get; set; } = true;
+        public bool TwoDAssetCategory { get; set; } = true;
+        public bool BlogCategory { get; set; } = true;
+        public bool Meta { get; set; } = false;
 
         public List<ISearchResult> Results { get; set; }
 
@@ -19,17 +24,32 @@ namespace LMWDev.Models
         public SearchViewModel(List<ISearchResult> results)
         {
 			Results = results;
-            Category = "All";
+            GamesCategory = true;
+            ProgrammingCategory = true;
+            TestingCategory = true;
+            ThreeDAssetsCategory = true;
+            TwoDAssetCategory = true;
+            BlogCategory = true;
         }
         
         
         public SearchViewModel(
         string search,
-        string category,
+        bool gamesCategory,
+        bool programmingCategory,
+        bool testingCategory,
+        bool threeDAssetsCategory,
+        bool twoDAssetCategory,
+        bool blogCategory,
         List<ISearchResult> results)
         {
             Search = search;
-            Category = category;
+            GamesCategory = gamesCategory;
+            ProgrammingCategory = programmingCategory;
+            TestingCategory = testingCategory;
+            ThreeDAssetsCategory = threeDAssetsCategory;
+            TwoDAssetCategory = twoDAssetCategory;
+            BlogCategory = blogCategory;
             Results = results;
         }
     }

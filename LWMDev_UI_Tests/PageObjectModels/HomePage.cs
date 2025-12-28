@@ -15,12 +15,9 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement BlogButton { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
-		public IWebElement Github { get; private set; }
-        public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
-        public IWebElement CreativeWorksNavBarButton { get; private set; }
+		
 
-
-        public HomePage(IWebDriver driver)
+		public HomePage(IWebDriver driver)
 		{
             Driver = driver;
 		}
@@ -29,11 +26,14 @@ namespace LMWSelenium.PageModels.PageModels
 		{
             HomeNavBarButton = FindElementById("HomeNavBarButton");
             SearchNavBarButton = FindElementById("SearchNavBarButton");
+            ProgrammingButton = FindElementById("ProgrammingButton");
+            TestingButton = FindElementById("TestingButton");
+            GamesButton = FindElementById("GamesButton");
+            ThreeDAssetsButton = FindElementById("ThreeDAssetsButton");
+            TwoDBAssetsButton = FindElementById("TwoDAssetsButton");
+            BlogButton = FindElementById("BlogButton");
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
-			Github = FindElementById("Github");
-            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
-            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -100,25 +100,5 @@ namespace LMWSelenium.PageModels.PageModels
 			SwitchTab(Driver, 0);
 		}
 
-        public void ClickGithubButton()
-        {
-            ClickButton(Github);
-            CloseDriver();
-            SwitchTab(Driver, 0);
-        }
-
-        public void ClickSoftwareDevelopmentNavBarButton()
-        {
-            ClickButton(SoftwareDevelopmentNavBarButton);
-            WaitUntilURLContainsValue("software-development");
-            WaitUntilTitleContainsValue("Software Development");
-        }
-
-        public void ClickCreativeWorksNavBarButton()
-        {
-            ClickButton(CreativeWorksNavBarButton);
-            WaitUntilURLContainsValue("creative-works");
-            WaitUntilTitleContainsValue("Creative Works");
-        }
-    }
+	}
 }

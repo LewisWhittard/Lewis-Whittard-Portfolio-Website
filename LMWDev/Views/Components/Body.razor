@@ -1,11 +1,8 @@
 ﻿@using Page_Library.Page.Entities.ContentBlock.Interface
-@using Page_Library.Page.Entities.SearchResult.Interface
 @code {
     [Parameter] public List<IContentBlock> Blocks { get; set; }
-    [Parameter] public List<ISearchResult>? SearchResults { get; set; }
     [Parameter] public string Title { get; set; }
     [Parameter] public string PublishDate { get; set; }
-    [Parameter] public string? SearchResultsHeader { get; set; }
 }
 
 <body>
@@ -42,22 +39,5 @@
                 <p>Unknown block type</p>
                 break;
         }
-    }
-
-    @if (SearchResultsHeader != null)
-    {
-    <h2>@SearchResultsHeader</h2>
-    }
-    
-    @if (SearchResults != null && SearchResults.Any())
-    {
-        <div class="mt-4">
-            <ul class="list-group">
-                @foreach (var result in SearchResults)
-                {
-                    <SearchResult Result="result" />
-                }
-            </ul>
-        </div>
     }
 </body>
