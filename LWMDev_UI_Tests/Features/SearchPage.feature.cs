@@ -457,19 +457,17 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category only Creative Works")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Creative Works - Mixed")]
         [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
-        [Xunit.TraitAttribute("Description", "Search Category only Creative Works")]
-        [Xunit.InlineDataAttribute("chrome", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", new string[0])]
-        [Xunit.InlineDataAttribute("edge", new string[0])]
-        [Xunit.InlineDataAttribute("safari", new string[0])]
-        public async System.Threading.Tasks.Task SearchCategoryOnlyCreativeWorks(string browser, string[] exampleTags)
+        [Xunit.TraitAttribute("Description", "Search Category Creative Works - Mixed")]
+        [Xunit.InlineDataAttribute("Chrome", "Cogetta", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryCreativeWorks_Mixed(string browser, string searchTerm, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category only Creative Works", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Creative Works - Mixed", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 123
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -481,14 +479,446 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 124
- await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 125
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Creative Works an" +
+                            "d search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 126
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the Creative Works category and Cogett" +
+                        "a search", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Creative Works - Spesific")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Creative Works - Spesific")]
+        [Xunit.InlineDataAttribute("Chrome", "Logo", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryCreativeWorks_Spesific(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Creative Works - Spesific", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 133
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 134
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 135
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Creative Works an" +
+                            "d search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 136
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the Creative Works category and Logo s" +
+                        "earch", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Creative Works - No Result")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Creative Works - No Result")]
+        [Xunit.InlineDataAttribute("Chrome", "No Result", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryCreativeWorks_NoResult(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Creative Works - No Result", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 143
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 144
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 145
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Creative Works an" +
+                            "d search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 146
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the Creative Works category and No Res" +
+                        "ult", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category All")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category All")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryAll(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category All", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 152
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 153
+ await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 154
+ await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" select All and search", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 155
+ await testRunner.ThenAsync("SearchPage: Then find the results based on the all category", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Software Development")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Software Development")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategorySoftwareDevelopment(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Software Development", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 164
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 165
+ await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 166
+ await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" select Software Development " +
+                        "and search", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 167
+ await testRunner.ThenAsync("SearchPage: Then find the results based on the Software Development category", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Creative Works")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryCreativeWorks(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Creative Works", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 176
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 177
+ await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 178
  await testRunner.WhenAsync("SearchPage: I go to \"https://localhost:44325/search\" and select Creative Works an" +
                         "d search", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 126
+#line 179
  await testRunner.ThenAsync("SearchPage: Then find the results based on the Creative Works category", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Software development - Mixed")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Software development - Mixed")]
+        [Xunit.InlineDataAttribute("Chrome", "Cogetta", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategorySoftwareDevelopment_Mixed(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Software development - Mixed", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 188
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 189
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 190
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Software Developm" +
+                            "ent and search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 191
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the  Software Development category and" +
+                        " Cogetta search", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Software development - Spesific")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Software development - Spesific")]
+        [Xunit.InlineDataAttribute("Chrome", "Marginal gains", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategorySoftwareDevelopment_Spesific(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Software development - Spesific", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 198
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 199
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 200
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Software Developm" +
+                            "ent and search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 201
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the Software Development category and " +
+                        "Marginal gains", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category Software development - No Result")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category Software development - No Result")]
+        [Xunit.InlineDataAttribute("Chrome", "No Result", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategorySoftwareDevelopment_NoResult(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category Software development - No Result", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 208
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 209
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 210
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select Software Developm" +
+                            "ent and search \"{0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 211
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the Software Development category and " +
+                        "No Result", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category All - Mixed")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category All - Mixed")]
+        [Xunit.InlineDataAttribute("Chrome", "Cogetta", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryAll_Mixed(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category All - Mixed", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 217
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 218
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 219
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select all and search \"{" +
+                            "0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 220
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the  all category and Cogetta search", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category All - Software Development")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category All - Software Development")]
+        [Xunit.InlineDataAttribute("Chrome", "Marginal gains", new string[0])]
+        [Xunit.InlineDataAttribute("Chrome", "", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryAll_SoftwareDevelopment(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category All - Software Development", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 227
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 228
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 229
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select all and search \"{" +
+                            "0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 230
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the all category and Marginal gains", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category All - No Result")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category All - No Result")]
+        [Xunit.InlineDataAttribute("Chrome", "No Result", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryAll_NoResult(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category All - No Result", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 237
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 238
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 239
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select all and search \"{" +
+                            "0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 240
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the all category and No Result", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Search Category all - Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "SearchPage")]
+        [Xunit.TraitAttribute("Description", "Search Category all - Creative Works")]
+        [Xunit.InlineDataAttribute("Chrome", "Logo", new string[0])]
+        public async System.Threading.Tasks.Task SearchCategoryAll_CreativeWorks(string browser, string searchTerm, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("searchTerm", searchTerm);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search Category all - Creative Works", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 246
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 247
+    await testRunner.GivenAsync(string.Format("SearchPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 248
+    await testRunner.WhenAsync(string.Format("SearchPage: I go to \"https://localhost:44325/search\" and select all and search \"{" +
+                            "0}\"", searchTerm), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 249
+    await testRunner.ThenAsync("SearchPage: Then find the results based on the all category and Logo search", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
