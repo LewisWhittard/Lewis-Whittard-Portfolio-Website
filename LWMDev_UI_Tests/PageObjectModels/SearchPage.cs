@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using LMWSelenium.PageModels.StandardPage;
+using OpenQA.Selenium.Support.UI;
+
 
 namespace LMWSelenium.PageModels.PageModels
 {
@@ -7,18 +9,16 @@ namespace LMWSelenium.PageModels.PageModels
 	{
 		public IWebElement SearchBox { get; private set; }
 		public IWebElement SearchButton { get; private set; }
-		public IWebElement ProgrammingTickBox { get; private set; }
-		public IWebElement TestingTickBox { get; private  set; }
-		public IWebElement GamesTickBox { get; private set; }
-		public IWebElement ThreeDAssetsTickBox { get; private set; }
-		public IWebElement TwoDAssetsTickBox { get; private set; }
-		public IWebElement BlogTickBox { get; private set; }
 		public IWebElement LMWLogo { get; private set; }
 		public IWebElement Linkedin { get; private set; }
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
+		public IWebElement Github { get; private set; }
+        public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
+        public IWebElement CreativeWorksNavBarButton { get; private set; }
+		public IWebElement SearchDropDown { get; private set; }
 
-		public SearchPage(IWebDriver driver)
+        public SearchPage(IWebDriver driver)
 		{
 			Driver = driver;
 
@@ -29,161 +29,15 @@ namespace LMWSelenium.PageModels.PageModels
 		{
             SearchBox = FindElementById("Search");
             SearchButton = FindElementById("SearchButton");
-            ProgrammingTickBox = FindElementById("ProgrammingCategory");
-            TwoDAssetsTickBox = FindElementById("TwoDAssetCategory");
-            ThreeDAssetsTickBox = FindElementById("ThreeDAssetsCategory");
-            TestingTickBox = FindElementById("TestingCategory");
-            GamesTickBox = FindElementById("GamesCategory");
-            BlogTickBox = FindElementById("BlogCategory");
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
 			HomeNavBarButton = FindElementById("HomeNavBarButton");
 			SearchNavBarButton = FindElementById("SearchNavBarButton");
-		}
-
-		public void CheckSearchButtonPost()
-		{
-			CheckTickBoxValueIsTrue(ProgrammingTickBox);
-			CheckTickBoxValueIsTrue(TestingTickBox);
-			CheckTickBoxValueIsTrue(GamesTickBox);
-			CheckTickBoxValueIsTrue(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsTrue(TwoDAssetsTickBox);
-			CheckTickBoxValueIsTrue(BlogTickBox);
-		}
-
-		public void CheckAllTickboxValuesAreFalse()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-		}
-
-		public void CheckProgrammingButtonPost()
-		{
-			CheckTickBoxValueIsTrue(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-
-		}
-
-		public void CheckTestingButtonPost()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsTrue(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-		}
-
-		public void CheckGamesButtonPost()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsTrue(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-		}
-
-		public void CheckThreeDButtonPost()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsTrue(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-		}
-
-		public void CheckTwoDButtonPost()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsTrue(TwoDAssetsTickBox);
-			CheckTickBoxValueIsFalse(BlogTickBox);
-		}
-
-		public void BlogButtonPost()
-		{
-			CheckTickBoxValueIsFalse(ProgrammingTickBox);
-			CheckTickBoxValueIsFalse(TestingTickBox);
-			CheckTickBoxValueIsFalse(GamesTickBox);
-			CheckTickBoxValueIsFalse(ThreeDAssetsTickBox);
-			CheckTickBoxValueIsFalse(TwoDAssetsTickBox);
-			CheckTickBoxValueIsTrue(BlogTickBox);
-		}
-
-		public void SearchTestAllTickBoxesTrueResult(IWebDriver driver)
-		{
-			SendTextToInput(SearchBox, "Part 1 of My Portfolio Completed!");
-			CheckSearchButtonPost();
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue("Modified");
-			WaitUntilTitleContainsValue( "Modified");
-			AssertAreEqual("Search Modified - Lewis Whittard Software Development", driver.Title);
-		}
-
-		public void SearchTestAllTickBoxesTrueResultPost(IWebDriver driver)
-		{
-			CheckSearchButtonPost();
-			IWebElement ResultButton = FindElementById( "0Button");
-			ClickButton(ResultButton);
-			WaitUntilURLContainsValue("PortfolioPiece");
-			WaitUntilTitleContainsValue( "Portfolio Piece");
-			AssertAreEqual(driver.Title, "Portfolio Piece - Lewis Whittard Software Development");
-
-		}
-
-
-
-		public void SearchTestAllTickBoxesTrueNoResult(IWebDriver driver)
-		{
-			CheckSearchButtonPost();
-			SendTextToInput(SearchBox, "no result");
-			ClickButton(SearchButton);
-			WaitUntilURLContainsValue( "Modified");
-			WaitUntilTitleContainsValue("Modified");
-			AssertAreEqual(driver.Title, "Search Modified - Lewis Whittard Software Development");
-
-
-
-		}
-
-		public void SearchTestAllTicketBoxesTrueNoResultPost(IWebDriver driver)
-		{
-			CheckSearchButtonPost();
-			AssertAreEqual(SearchBox.GetAttribute("value"), "no result");
-			DontFindElementById("0Button");
-		}
-
-		public void SearchTestAllTickBoxesFalse()
-		{
-			ClickButton(ProgrammingTickBox);
-			ClickButton(TestingTickBox);
-			ClickButton(GamesTickBox);
-			ClickButton(ThreeDAssetsTickBox);
-			ClickButton(TwoDAssetsTickBox);
-			ClickButton(BlogTickBox);
-		}
-
-		public void CheckAllTickBoxesAreStale(IWebDriver driver)
-		{
-			WaitUntilElementIsStale(ProgrammingTickBox);
-			WaitUntilElementIsStale(TestingTickBox);
-			WaitUntilElementIsStale(GamesTickBox);
-			WaitUntilElementIsStale(ThreeDAssetsTickBox);
-			WaitUntilElementIsStale(TwoDAssetsTickBox);
-			WaitUntilElementIsStale(BlogTickBox);
-		}
+			Github = FindElementById("Github");
+            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+			SearchDropDown = FindElementById("Category");
+        }
 
 		public void ClickHomeNavBarButton()
 		{
@@ -210,37 +64,14 @@ namespace LMWSelenium.PageModels.PageModels
 			SwitchTab(Driver, 0);
 		}
 
-		public void ClickProgrammingTickBox()
-		{
-			ClickButton(ProgrammingTickBox);
-		}
+        public void ClickGithubButton()
+        {
+            ClickButton(Github);
+            CloseDriver();
+            SwitchTab(Driver, 0);
+        }
 
-		public void ClickTestingTickBox()
-		{
-			ClickButton(TestingTickBox);
-		}
-
-		public void ClickGamesTickBox()
-		{
-			ClickButton(GamesTickBox);
-		}
-
-		public void ClickThreeDAssetsTickBox()
-		{
-			ClickButton(ThreeDAssetsTickBox);
-		}
-
-		public void ClickTwoDAssetsTickBox()
-		{
-			ClickButton(TwoDAssetsTickBox);
-		}
-
-		public void ClickBlogTickBox()
-		{
-			ClickButton(BlogTickBox);
-		}
-
-		public void ClickSearchButton()
+        public void ClickSearchButton()
 		{
 			ClickButton(SearchButton);
 		}
@@ -249,5 +80,25 @@ namespace LMWSelenium.PageModels.PageModels
 		{
 			SendTextToInput(SearchBox, searchTerm);
 		}
-	}
+
+        public void ClickSoftwareDevelopmentNavBarButton()
+        {
+            ClickButton(SoftwareDevelopmentNavBarButton);
+            WaitUntilURLContainsValue("software-development");
+            WaitUntilTitleContainsValue("Software Development");
+        }
+
+        public void ClickCreativeWorksNavBarButton()
+        {
+            ClickButton(CreativeWorksNavBarButton);
+            WaitUntilURLContainsValue("creative-works");
+            WaitUntilTitleContainsValue("Creative Works");
+        }
+
+		public void PopluateSearchDropDown(string value)
+		{
+			this.SelectDropdownOption(SearchDropDown,value);
+		}
+
+    }
 }

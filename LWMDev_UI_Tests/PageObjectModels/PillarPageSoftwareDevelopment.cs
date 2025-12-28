@@ -3,7 +3,7 @@ using LMWSelenium.PageModels.StandardPage;
 
 namespace LMWSelenium.PageModels.PageModels
 {
-	class HomePage : PageModelBase
+	class PillarPageSoftwareDevelopment : PageModelBase
 	{
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
@@ -20,7 +20,7 @@ namespace LMWSelenium.PageModels.PageModels
         public IWebElement CreativeWorksNavBarButton { get; private set; }
 
 
-        public HomePage(IWebDriver driver)
+        public PillarPageSoftwareDevelopment(IWebDriver driver)
 		{
             Driver = driver;
 		}
@@ -32,8 +32,8 @@ namespace LMWSelenium.PageModels.PageModels
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
 			Github = FindElementById("Github");
-            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
-            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+			SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+			CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -119,6 +119,15 @@ namespace LMWSelenium.PageModels.PageModels
             ClickButton(CreativeWorksNavBarButton);
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
+        }
+
+        public void FindClusterContent()
+        {
+            FindElementById("SearchResult-from-reflection-to-action-the-marginal-gains-sprint");
+            FindElementById("SearchResult-cogetta");
+            FindElementById("SearchResult-ui-test-automation-portfolio-piece");
+            FindElementById("SearchResult-my-portfolio-website-development");
+            FindElementById("SearchResult-portfolio-website-completed");
         }
     }
 }

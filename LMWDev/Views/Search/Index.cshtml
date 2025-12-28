@@ -1,4 +1,5 @@
-﻿@model LMWDev.Models.SearchViewModel
+﻿@using LMWDev.Views.Components
+@model LMWDev.Models.SearchViewModel
 
 @{
 	ViewData["Title"] = "Search";
@@ -27,31 +28,12 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Categories:</label>
-                <div class="form-check form-check-inline">
-                    <input asp-for="GamesCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="GamesCategory">Games</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="ProgrammingCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="ProgrammingCategory">Programming</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="TestingCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="TestingCategory">Testing</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="ThreeDAssetsCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="ThreeDAssetsCategory">3D Assets</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="TwoDAssetCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="TwoDAssetCategory">2D Assets</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="BlogCategory" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="BlogCategory">Blog</label>
-                </div>
+                <label asp-for="Category" class="form-label">Category:</label>
+                <select asp-for="Category" class="form-select">
+                    <option value="All">All</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Creative Works">Creative Works</option>
+                </select>
             </div>
         </form>
 
@@ -62,20 +44,9 @@
                 <ul class="list-group">
                     @foreach (var result in Model.Results)
                     {
-                        <li class="list-group-item" id="SearchResult @result.ID">
-                            <div class="d-flex align-items-start">
-                                <img src="@Url.Content("~/Images/" + result.Content.Path)" alt="@result.Content." class="img-fluid me-3" style="width:100px; height:auto; object-fit:cover;" />
-
-                                <div>
-                                    <h5 class="mb-1">@result.Title</h5>
-                                    <p class="mb-1">@result.Description</p>
-                                    <small class="text-muted">Category: @result.Category</small><br />
-                                    <a href="@Url.Action("Index", "ClusterContent", new { Id = result.ID })" id="SearchResultButton @result.ID" class="btn btn-sm btn-outline-primary mt-2">
-                                        View
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
+                        <component type="typeof(SearchResult)"
+                                   render-mode="ServerPrerendered"
+                                   param-Result="result" />
                     }
                 </ul>
             </div>

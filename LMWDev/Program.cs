@@ -8,10 +8,6 @@ using OpenTelemetry.Logs;
 using System;
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Content.Repository;
-using Page_Library.Search.Repository.Interface;
-using Page_Library.Search.Repository;
-using Page_Library.Search.Service.Interface;
-using Page_Library.Search.Service;
 using Page_Library.Page.Repository.Interface;
 using Page_Library.Page.Repository;
 using Page_Library.Page.Factory.Interface;
@@ -57,14 +53,9 @@ namespace LMWDev
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    // Scoped registrations for search-related services
-                    services.AddScoped<IPageSearchRepository>(provider =>
-                        new JsonPageSearchRepository(@"./Json/Search/Search.json"));
 
                     services.AddScoped<IContentRepository>(provider =>
                         new JsonContentRepository(@"./Json/Content/Content.json"));
-
-                    services.AddScoped<IPageSearchService, PageSearchService>();
 
                     // Singleton registrations for page-related services
                     services.AddSingleton<IPageRepository>(provider =>
@@ -96,6 +87,7 @@ namespace LMWDev
                                 .AddSource("LMWDev.SearchController")
                                 .AddSource("LMWDev.HomeController")
                                 .AddSource("LMWDev.ClusterContentController")
+                                .AddSource("LMWDev.PillarPageController")
                                 .AddAspNetCoreInstrumentation()
                                 .AddHttpClientInstrumentation()
                                 .SetSampler(new AlwaysOnSampler())

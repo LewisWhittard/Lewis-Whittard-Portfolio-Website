@@ -60,12 +60,10 @@ Examples:
 	| edge    |
 	| safari  |
 
-
-Scenario Outline: I go to the search page and search with no tick boxes
+Scenario Outline: Click Github button
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: I untick all the search boxes and search
-	Then SearchPage: No search items should be visible
+	When SearchPage: I go to "https://localhost:44325/search" and use the Github button
+	Then SearchPage: I have arrived at Github
 
 Examples:
 	| browser |
@@ -74,11 +72,10 @@ Examples:
 	| edge    |
 	| safari  |
 
-Scenario Outline: I go to the search page and search with all tick boxes
+Scenario Outline: Click Software Development on the navigation bar
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: and search
-	Then SearchPage: all search items should be visible
+	When SearchPage: I go to "https://localhost:44325/search" and use the Software Development button
+	Then SearchPage: the page title is "Software Development - Lewis Whittard Software Development"
 
 Examples:
 	| browser |
@@ -87,27 +84,11 @@ Examples:
 	| edge    |
 	| safari  |
 
-Scenario Outline: I go to the search page and search with all tick boxes and click a search result
+Scenario Outline: Click Creative Works on the navigation bar
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: and search
-	Then SearchPage: I click a "<SearchResult>" result and go through to the page "<ExpectedURL>"
+	When SearchPage: I go to "https://localhost:44325/search" and use the Creative Works button
+	Then SearchPage: the page title is "Creative Works - Lewis Whittard Software Development"
 
-Examples:
-	| browser | SearchResult         | ExpectedURL                                    |
-	| chrome  | SearchResultButton 0 | https://localhost:44325/ClusterContent/Index/0 |
-	| firefox | SearchResultButton 1 | https://localhost:44325/ClusterContent/Index/1 |
-	| edge    | SearchResultButton 2 | https://localhost:44325/ClusterContent/Index/2 |
-	| safari  | SearchResultButton 3 | https://localhost:44325/ClusterContent/Index/3 |
-	| chrome  | SearchResultButton 4 | https://localhost:44325/ClusterContent/Index/4 |
-
-Scenario Outline: I go to the search and use only one tickbox
-	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: I untick all the search boxes
-	And SearchPage: I click programming And Search
-	Then SearchPage: search items should be filtered by tick box
-	
 Examples:
 	| browser |
 	| chrome  |
@@ -115,15 +96,178 @@ Examples:
 	| edge    |
 	| safari  |
 
-Scenario Outline: I go to the search and search a term
+Scenario Outline: Search Category only All
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/search"
-	And SearchPage: Search by the term Cogetta 
-	Then SearchPage: search items should be filtered by search box
-	
+	When SearchPage: I go to "https://localhost:44325/search" select All and search
+	Then SearchPage: Then find the results based on the all category
+
 Examples:
 	| browser |
 	| chrome  |
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Search Category only Software Development
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" select Software Development and search
+	Then SearchPage: Then find the results based on the Software Development category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category Creative Works - Mixed
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Creative Works and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the Creative Works category and Cogetta search 
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | Cogetta    |
+
+
+Scenario Outline: Search Category Creative Works - Spesific
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Creative Works and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the Creative Works category and Logo search
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | Logo       |
+
+
+Scenario Outline: Search Category Creative Works - No Result
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Creative Works and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the Creative Works category and No Result
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | No Result  |
+
+Scenario Outline: Search Category All
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" select All and search 
+	Then SearchPage: Then find the results based on the all category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category Software Development
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" select Software Development and search
+	Then SearchPage: Then find the results based on the Software Development category
+
+Examples:
+	| browser | 
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category Creative Works
+	Given SearchPage: I use Browser "<browser>"
+	When SearchPage: I go to "https://localhost:44325/search" and select Creative Works and search
+	Then SearchPage: Then find the results based on the Creative Works category
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
+
+Scenario Outline: Search Category Software development - Mixed
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Software Development and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the  Software Development category and Cogetta search 
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | Cogetta    |
+
+
+Scenario Outline: Search Category Software development - Spesific
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Software Development and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the Software Development category and Marginal gains
+
+Examples:
+    | browser | searchTerm     |
+    | Chrome  | Marginal gains |
+
+
+Scenario Outline: Search Category Software development - No Result
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select Software Development and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the Software Development category and No Result
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | No Result  |
+
+Scenario Outline: Search Category All - Mixed
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select all and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the  all category and Cogetta search 
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | Cogetta    |
+
+
+Scenario Outline: Search Category All - Software Development
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select all and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the all category and Marginal gains
+
+Examples:
+    | browser | searchTerm     |
+    | Chrome  | Marginal gains |
+    | Chrome  |                |
+
+Scenario Outline: Search Category All - No Result
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select all and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the all category and No Result
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | No Result  |
+
+Scenario Outline: Search Category all - Creative Works
+    Given SearchPage: I use Browser "<browser>"
+    When SearchPage: I go to "https://localhost:44325/search" and select all and search "<searchTerm>"
+    Then SearchPage: Then find the results based on the all category and Logo search
+
+Examples:
+    | browser | searchTerm |
+    | Chrome  | Logo       |
+
+Scenario Outline: Click search option after search
+  Given SearchPage: I use Browser "<browser>"
+  When SearchPage: I go to "https://localhost:44325/search" and use the search button
+  Then SearchPage: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                          | Title                                                                    |
+  | chrome  | SearchResultButton-cogetta                            | Cogetta - Lewis Whittard Software Development                            |
+  | firefox | SearchResultButton-ui-test-automation-portfolio-piece | UI Test Automation Portfolio Piece - Lewis Whittard Software Development |
+
+Scenario Outline: Click search option before search
+  Given SearchPage: I use Browser "<browser>"
+  When SearchPage: I go to "https://localhost:44325/search"
+  Then SearchPage: I click the search result "<SearchResult>" and the title is "<Title>"
+
+Examples:
+  | browser | SearchResult                                          | Title                                                                    |
+  | chrome  | SearchResultButton-cogetta                            | Cogetta - Lewis Whittard Software Development                            |
+  | firefox | SearchResultButton-ui-test-automation-portfolio-piece | UI Test Automation Portfolio Piece - Lewis Whittard Software Development |

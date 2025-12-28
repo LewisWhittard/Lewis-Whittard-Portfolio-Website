@@ -3,7 +3,7 @@ using LMWSelenium.PageModels.StandardPage;
 
 namespace LMWSelenium.PageModels.PageModels
 {
-	class HomePage : PageModelBase
+	class PillarPageCreativeWorks : PageModelBase
 	{
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
@@ -20,7 +20,7 @@ namespace LMWSelenium.PageModels.PageModels
         public IWebElement CreativeWorksNavBarButton { get; private set; }
 
 
-        public HomePage(IWebDriver driver)
+        public PillarPageCreativeWorks(IWebDriver driver)
 		{
             Driver = driver;
 		}
@@ -119,6 +119,12 @@ namespace LMWSelenium.PageModels.PageModels
             ClickButton(CreativeWorksNavBarButton);
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
+        }
+
+		public void FindClusterContent()
+		{
+			FindElementById("SearchResult-cogetta");
+			FindElementById("SearchResult-lewis-matthew-whittard-software-development-logo");
         }
     }
 }
