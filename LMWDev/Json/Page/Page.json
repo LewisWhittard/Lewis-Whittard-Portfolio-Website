@@ -400,7 +400,7 @@
 			{
 				"BlockType": "Paragraph",
 				"Alignment": "Left",
-				"BodyText": "Software development has been a core part of my professional and personal journey. This page acts as a central hub for everything related to my engineering work, from testing methodologies to development practices and long-term support strategies."
+				"BodyText": "Software development has been a core part of my professional and personal journey. This page acts as a central hub for everything related to my portfolio engineering work, from testing methodologies to development practices and long-term support strategies."
 			},
 
 			{
@@ -424,7 +424,7 @@
 			{
 				"BlockType": "Paragraph",
 				"Alignment": "Left",
-				"BodyText": "My development work spans web applications, tools, and experimental projects. I enjoy exploring new technologies, refining my coding standards, and building solutions that solve real problems. This section will showcase development logs, technical breakdowns, and insights gained from hands-on experience."
+				"BodyText": "My development work spans web applications, native applications, and experimental projects. I enjoy exploring new technologies, refining my coding standards, and building solutions that solve real problems. This section will showcase development logs, technical breakdowns, and insights gained from hands-on experience."
 			},
 
 			{
@@ -436,7 +436,7 @@
 			{
 				"BlockType": "Paragraph",
 				"Alignment": "Left",
-				"BodyText": "Support and sustained engineering play a vital role in ensuring that software remains stable, performant, and maintainable throughout its lifecycle. My approach focuses on long-term stewardship of each project—addressing technical debt, refining architecture, and implementing structured maintenance practices. This includes proactive support processes, Application Performance Monitoring (APM), iterative improvements, and lifecycle planning to ensure systems continue to operate reliably as technologies, user expectations, and environments evolve."
+				"BodyText": "Support and sustained engineering play a vital role. Addressing technical debt, refining architecture, and implementing structured maintenance practices are all parts of my approach. This includes Application Performance Monitoring (APM), iterative improvements, and lifecycle planning to ensure systems continue to operate reliably as technologies, user expectations, and environments evolve."
 			}
 		]
 	},
