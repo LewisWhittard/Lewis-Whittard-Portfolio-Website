@@ -477,5 +477,113 @@
 				"BodyText": "Digital assets include 2D artwork, 3D models, textures, UI elements, and other creative pieces produced for personal projects or experimentation. This section highlights my design process, tools used, and the evolution of my artistic style over time."
 			}
 		]
+	},
+	{
+		"ExternalId": "search-structure-and-SEO-upgrade",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 Release 1.2.0 — Search, Structure, and SEO Upgrade",
+		"PublishDate": "2026-01-01",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Release 1.2.0 – Search Overhaul, SEO Improvements & UI Enhancements",
+			"MetaDescription": "Explore the improvements in Release 1.2.0, including a rebuilt internal search system, SEO‑optimised URLs, new pillar pages, and refined mobile‑friendly UI updates.",
+			"MetaKeywords": [
+				"Internal Search",
+				"Search Overhaul",
+				"SEO",
+				"URL Structure",
+				"Pillar Pages",
+				"Razor Components",
+				"Mobile Responsiveness",
+				"Portfolio Website",
+				"Software Development",
+				"DotNet",
+				"C#",
+				"UI UX"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 6
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This release strengthens the foundations of the portfolio by modernising search, improving navigation, refining SEO, and enhancing the user experience across devices. It continues the marginal‑gains approach: targeted improvements that compound into a cleaner, more scalable, and more professional system."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔍 Enhancements & New Features"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The internal search system has been completely rebuilt to support two dedicated content pillars: Software Development and Creative Works, with an All option for combined results. This makes discovery more intuitive and aligns the search experience with the structure of the portfolio."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Search and page data have been unified into a single JSON file used across the profile. This reduces duplication, improves maintainability, and ensures consistent behaviour throughout the system."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "URL ID's have been updated to improve search engine visibility and strengthen the portfolio’s SEO performance. This supports long‑term discoverability."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Dedicated pillar pages for Software Development and Creative Works have been introduced. These pages provide clearer navigation, better content grouping, and a more intentional browsing experience."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🎨 UI & UX Improvements"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A series of mobile‑friendly improvements have been implemented to ensure a smoother, more consistent experience across devices."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The search row has been refactored into a reusable Razor component, reducing duplication and simplifying future updates. This supports a more modular UI architecture and cleaner codebase."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A new GitHub button has been added to the footer, providing quick access to the GitHub profile and reinforcing the portfolio’s developer‑focused identity."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✅ Summary"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Release 1.2.0 strengthens the portfolio’s structure, search experience, and user interface. By unifying JSON files, improving SEO, and refining navigation, this update lays the groundwork for future scalability, searchability, and a more polished professional presence."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To GitHub Repository"
+			}
+		]
 	}
 ]
