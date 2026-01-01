@@ -40,5 +40,12 @@
 		"Path": "MarginalGainsSprintLWMDevPortfolioWebsite20251019.mp4",
 		"Description": "my Portfolio website marginal gains sprint",
 		"ContentType": "Video"
+	},
+	{
+		"ID": 6,
+		"Name": "🚀 Release 1.2.0 — Search, Structure, and SEO Upgrade",
+		"Path": "PortfolioRelease1.2.0.mp4",
+		"Description": "Release 1.2.0 video covering the search overhaul, SEO improvements, and UI updates.",
+		"ContentType": "Video"
 	}
 ]
