@@ -486,7 +486,7 @@
 		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "Release 1.2.0 – Search Overhaul, SEO Improvements & UI Enhancements",
-			"MetaDescription": "Explore the improvements in Release 1.2.0, including a rebuilt internal search system, SEO‑optimised URLs, new pillar pages, and refined mobile‑friendly UI updates.",
+			"MetaDescription": "Explore the improvements in Release 1.2.0, including a rebuilt internal search system, SEO‑optimised URL slugs, new pillar pages, and refined mobile‑friendly UI updates.",
 			"MetaKeywords": [
 				"Internal Search",
 				"Search Overhaul",
