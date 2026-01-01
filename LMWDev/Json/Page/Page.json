@@ -533,7 +533,7 @@
 			{
 				"BlockType": "Paragraph",
 				"Alignment": "left",
-				"BodyText": "URL ID's have been updated to improve search engine visibility and strengthen the portfolio’s SEO performance. This supports long‑term discoverability."
+				"BodyText": "Numeric URL IDs have been replaced with descriptive, SEO‑friendly slugs to improve search visibility and strengthen long‑term discoverability across the portfolio."
 			},
 			{
 				"BlockType": "Paragraph",
