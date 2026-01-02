@@ -28,6 +28,7 @@ namespace LMWDev.Controllers
             }
         }
 
+        [Route("{id}")]
         public IActionResult Index(string id)
         {
             using var activity = new Activity("PillarPage.Index").Start();
