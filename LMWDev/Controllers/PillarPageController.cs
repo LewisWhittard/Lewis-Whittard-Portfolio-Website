@@ -38,6 +38,11 @@ namespace LMWDev.Controllers
 
             try
             {
+                if (id != "software-development" && id != "creative-works")
+                {
+                    return NotFound();
+                }
+
                 var page = _pageService.GetPage(id);
 
                 if (page == null)
