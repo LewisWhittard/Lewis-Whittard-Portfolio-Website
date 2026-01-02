@@ -28,6 +28,7 @@ namespace LMWDev.Controllers
             }
         }
 
+        [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
             using var activity = ActivitySource.StartActivity("SearchController.Index");
