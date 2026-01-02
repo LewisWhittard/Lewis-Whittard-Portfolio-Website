@@ -28,6 +28,7 @@ namespace LMWDev.Controllers
             }
         }
 
+        [Route("{id}")]
         public IActionResult Index(string id)
         {
             using var activity = new Activity("PillarPage.Index").Start();
@@ -37,6 +38,11 @@ namespace LMWDev.Controllers
 
             try
             {
+                if (id != "software-development" && id != "creative-works")
+                {
+                    return NotFound();
+                }
+
                 var page = _pageService.GetPage(id);
 
                 if (page == null)
