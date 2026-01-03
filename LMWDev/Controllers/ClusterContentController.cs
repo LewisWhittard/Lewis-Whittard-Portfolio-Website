@@ -28,13 +28,49 @@ namespace LMWDev.Controllers
             }
         }
 
-        public IActionResult Index(string id)
+        [Route("{pillar}/{id}")]
+        public IActionResult Index(string pillar,string id)
         {
             using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
             try
             {
                 _logger.LogInformation("Fetching page with ID: {Id}", id);
                 var page = _pageService.GetPage(id);
+
+                if (page == null)
+                {
+                    return NotFound();
+                }
+
+                
+                else if (page.Category == "Software Development")
+                {
+                    if (pillar != "/software-development")
+                    {
+                        return NotFound();
+                    }
+                }
+                else if (page.Category == "Creative Works")
+                {
+                    if (pillar != "/creative-works")
+                    {
+                        return NotFound();
+                    }
+                }
+                else if (page.Category.Contains(","))
+                {
+
+                }
+                else
+                {
+                    return NotFound();
+                }
+
+                if (page.PageType != "Cluster Content Page")
+                {
+                    return NotFound();
+                }
+
                 activity?.SetTag("page.id", id);
                 activity?.SetTag("page.title", page?.Title);
 
