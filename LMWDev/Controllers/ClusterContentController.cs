@@ -45,14 +45,14 @@ namespace LMWDev.Controllers
                 
                 else if (page.Category == "Software Development")
                 {
-                    if (pillar != "/software-development")
+                    if (pillar != "software-development")
                     {
                         return NotFound();
                     }
                 }
                 else if (page.Category == "Creative Works")
                 {
-                    if (pillar != "/creative-works")
+                    if (pillar != "creative-works")
                     {
                         return NotFound();
                     }
