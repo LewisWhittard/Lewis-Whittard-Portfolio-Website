@@ -17,12 +17,30 @@
             </small>
         </div>
 
-        <a href="/ClusterContent/index/@Result.ExternalId"
-           id="SearchResultButton-@Result.ExternalId"
-           class="btn btn-sm btn-outline-primary ms-3">
-            View
-        </a>
-
+        @if (Result.Category == "Software Development")
+        {
+            <a href="/software-development/@Result.ExternalId"
+               id="SearchResultButton-@Result.ExternalId"
+               class="btn btn-sm btn-outline-primary ms-3">
+                View
+            </a>
+        }
+        else if (Result.Category == "Creative Works")
+        {
+            <a href="/creative-works/@Result.ExternalId"
+               id="SearchResultButton-@Result.ExternalId"
+               class="btn btn-sm btn-outline-primary ms-3">
+                View
+            </a>
+        }
+        else if (Result.Category.Contains(","))
+        {
+            <a href="/intersections/@Result.ExternalId"
+               id="SearchResultButton-@Result.ExternalId"
+               class="btn btn-sm btn-outline-primary ms-3">
+                View
+            </a>
+        }
     </div>
 </div>
 
