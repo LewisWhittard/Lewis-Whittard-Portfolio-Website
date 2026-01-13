@@ -14,56 +14,56 @@
     </video>
 
     <div class="content-wrapper">
-    <section class="page-header">
-        <h1>@Title</h1>
-        <p class="publish-date">Published on: @PublishDate</p>
-    </section>
+        <section class="page-header">
+            <h1>@Title</h1>
+            <p class="publish-date">Published on: @PublishDate</p>
+        </section>
 
-    @foreach (var block in Blocks)
-    {
-        switch (block)
+        @foreach (var block in Blocks)
         {
-            case Page_Library.Page.Entities.ContentBlock.HeaderBlock header:
-                <HeaderBlock Block="header" />
-                break;
+            switch (block)
+            {
+                case Page_Library.Page.Entities.ContentBlock.HeaderBlock header:
+                    <HeaderBlock Block="header" />
+                    break;
 
-            case Page_Library.Page.Entities.ContentBlock.HyperlinkBlock hyperlink:
-                <HyperlinkBlock Block="hyperlink" />
-                break;
+                case Page_Library.Page.Entities.ContentBlock.HyperlinkBlock hyperlink:
+                    <HyperlinkBlock Block="hyperlink" />
+                    break;
 
-            case Page_Library.Page.Entities.ContentBlock.ImageBlock image:
-                <ImageBlock Block="image" />
-                break;
+                case Page_Library.Page.Entities.ContentBlock.ImageBlock image:
+                    <ImageBlock Block="image" />
+                    break;
 
-            case Page_Library.Page.Entities.ContentBlock.ParagraphBlock paragraph:
-                <ParagraphBlock Block="paragraph" />
-                break;
+                case Page_Library.Page.Entities.ContentBlock.ParagraphBlock paragraph:
+                    <ParagraphBlock Block="paragraph" />
+                    break;
 
-            case Page_Library.Page.Entities.ContentBlock.VideoBlock video:
-                <VideoBlock Block="video" />
-                break;
+                case Page_Library.Page.Entities.ContentBlock.VideoBlock video:
+                    <VideoBlock Block="video" />
+                    break;
 
-            default:
-                <p>Unknown block type</p>
-                break;
+                default:
+                    <p>Unknown block type</p>
+                    break;
+            }
         }
-    }
 
-    @if (SearchResultsHeader != null)
-    {
-    <h2>@SearchResultsHeader</h2>
-    }
-    
-    @if (SearchResults != null && SearchResults.Any())
-    {
-        <div class="mt-4">
-            <ul class="list-group">
-                @foreach (var result in SearchResults)
-                {
-                    <SearchResult Result="result" />
-                }
-            </ul>
-        </div>
-    }
-    </div> 
+        @if (SearchResultsHeader != null)
+        {
+            <h2>@SearchResultsHeader</h2>
+        }
+
+        @if (SearchResults != null && SearchResults.Any())
+        {
+            <div class="mt-4">
+                <ul class="list-group">
+                    @foreach (var result in SearchResults)
+                    {
+                        <SearchResult Result="result" />
+                    }
+                </ul>
+            </div>
+        }
+    </div>
 </body>

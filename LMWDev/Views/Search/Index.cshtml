@@ -2,15 +2,15 @@
 @model LMWDev.Models.SearchViewModel
 
 @{
-	ViewData["Title"] = "Search";
+    ViewData["Title"] = "Search";
 }
 
 <head>
-	<!-- Page title shown in browser tab -->
-	<title>Search</title>
+    <!-- Page title shown in browser tab -->
+    <title>Search</title>
 
-	<!-- Character encoding -->
-	<meta charset="UTF-8">
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
 </head>
 
 <body>
@@ -18,43 +18,43 @@
         <source src="~/Videos/WebsiteBackground.mp4" type="video/mp4">
     </video>
     <div class="content-wrapper">
-    <div class="container mt-5">
-        <h2 class="mb-4">Search</h2>
+        <div class="container mt-5">
+            <h2 class="mb-4">Search</h2>
 
-        <form asp-action="Index" method="post">
-            <div class="row mb-3">
-                <div class="col-md-8">
-                    <input asp-for="Search" class="form-control" placeholder="Search..." />
+            <form asp-action="Index" method="post">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <input asp-for="Search" class="form-control" placeholder="Search..." />
+                    </div>
+                    <div class="col-md-4">
+                        <button id="SearchButton" type="submit" class="btn btn-primary w-100">Search</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <button id="SearchButton" type="submit" class="btn btn-primary w-100">Search</button>
+
+                <div class="mb-3">
+                    <label asp-for="Category" class="form-label">Category:</label>
+                    <select asp-for="Category" class="form-select">
+                        <option value="All">All</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="Creative Works">Creative Works</option>
+                    </select>
                 </div>
-            </div>
+            </form>
 
-            <div class="mb-3">
-                <label asp-for="Category" class="form-label">Category:</label>
-                <select asp-for="Category" class="form-select">
-                    <option value="All">All</option>
-                    <option value="Software Development">Software Development</option>
-                    <option value="Creative Works">Creative Works</option>
-                </select>
-            </div>
-        </form>
-
-        @if (Model.Results != null && Model.Results.Any())
-        {
-            <div class="mt-4">
-                <h4>Search Results</h4>
-                <ul class="list-group">
-                    @foreach (var result in Model.Results)
-                    {
-                        <component type="typeof(SearchResult)"
-                                   render-mode="ServerPrerendered"
-                                   param-Result="result" />
-                    }
-                </ul>
-            </div>
-        }
-    </div>
+            @if (Model.Results != null && Model.Results.Any())
+            {
+                <div class="mt-4">
+                    <h4>Search Results</h4>
+                    <ul class="list-group">
+                        @foreach (var result in Model.Results)
+                        {
+                            <component type="typeof(SearchResult)"
+                                       render-mode="ServerPrerendered"
+                                       param-Result="result" />
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
     </div>>
 </body>
