@@ -75,13 +75,21 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - @DateTime.Now.Year Lewis Matthew Whittard Software Development            @*<a target="_blank" href=""><img height="32" style="float: right; margin:4px" src="~/Images/Youtube.png" /></a>
-			<a target="_blank" href=""><img height="32" style="float: right; margin:4px" src="~/Images/Twitter.png" /></a>*@
-			<a target="_blank" style="float: right; margin:4px" id="Linkedin" href="https://www.linkedin.com/in/lewis-whittard-092167157/"><img height="32" style="float: right; margin:4px" src="~/Images/Linkedin.png" /></a>
-            <a target="_blank" style="float: right; margin:4px" id="Github" href="https://github.com/LewisWhittard"><img height="32" style="float: right; margin:4px" src="~/Images/github-mark.png" /></a>
-			@*<a target="_blank" href=""><img height="32" style="float: right; margin:4px" src="~/Images/Instagram.png" /></a>
-			<a target="_blank" href=""><img height="32" style="float: right; margin:4px" src="~/Images/Facebook.png" /></a>*@
+        <div class="container py-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+            <span class="mb-2 mb-md-0">
+                &copy; 2022 - @DateTime.Now.Year Lewis Matthew Whittard Software Development
+            </span>
+
+            <div class="d-flex ms-md-auto">
+                <a target="_blank" href="https://www.linkedin.com/in/lewis-whittard-092167157/" class="ms-3">
+                    <img height="32" src="~/Images/Linkedin.png" />
+                </a>
+                <a target="_blank" href="https://github.com/LewisWhittard" class="ms-3">
+                    <img height="32" src="~/Images/github-mark.png" />
+                </a>
+            </div>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
