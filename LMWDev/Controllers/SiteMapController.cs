@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text;
 
-[Route("sitemap.xml")]
-public class SiteMapController : Controller
+namespace LMWDev.Controllers
 {
-    [HttpGet]
-    public IActionResult Index()
+    [Route("sitemap.xml")]
+    public class SitemapController : Controller
     {
-        // Build the base URL dynamically (e.g., https://yourdomain.com)
-        var baseUrl = $"{Request.Scheme}://{Request.Host}";
+        [HttpGet]
+        public IActionResult Index()
+        {
+            // Build the base URL dynamically (e.g., https://yourdomain.com)
+            var baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-        var xml = $@"<?xml version=""1.0"" encoding=""UTF-8""?>
+            var xml = $@"<?xml version=""1.0"" encoding=""UTF-8""?>
 <urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">
 
   <url>
@@ -59,6 +61,7 @@ public class SiteMapController : Controller
 
 </urlset>";
 
-        return Content(xml, "application/xml", Encoding.UTF8);
+            return Content(xml, "application/xml", Encoding.UTF8);
+        }
     }
 }
