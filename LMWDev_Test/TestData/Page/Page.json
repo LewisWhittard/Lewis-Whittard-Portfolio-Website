@@ -1,0 +1,589 @@
+[
+	{
+		"ExternalId": "portfolio-website-completed",
+		"Title": "Portfolio Website Completed!",
+		"PageType": "Cluster Content Page",
+		"PublishDate": "2022-02-24",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Portfolio Website Completed!",
+			"MetaDescription": "This blog post explains why I have built my portfolio website to display my sides and out of work projects.",
+			"MetaKeywords": [ "MVC.Net", "Core", "Portfolio", "Games", "Blogs", "Programming", "Software", "Development", "Dev", "3D", "Models", "2D", "Models" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Why did I build this?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "After 7 months of working on a side project and it being shelved, I came the realisation that not every project is going to make it out the door. This in turn creates an issue if I am uploading to social media few and far between. It makes it hard for people to follow what I am working on, so a portfolio website seemed to perfect solution to centralise and allow elements of projects if not completed to be uploaded and easily sifted through. So I made it my first New Years resolution to make it happen."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Secondly, this will bring a new sense of personal branding and consistency to my online presence, allowing me to link back to the portfolio on social media and keeping record of what I have done in a manageable way."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "I also have vertically integrated my distribution channels and platform, allowing to continue in the event of social media or shop front outage, or loss in popularity of particular platforms. It really allows for more robust continuity."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What will it host?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "This portfolio will be the home of all side projects and learning pieces done outside of work including Programming, Games, 2D and 3D Assets."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Tools Used"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "MVC.net Core, Canva, Libre Office Calc, Github, ClosedXML,Github."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What’s in store in future?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Part 2 will include landing pages for SEO after some feedback was given. This will allow search engines to find my site easier and make for a better user experience."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Secondly, I would like to automate the testing for my portfolio. Not only would this speed up updates, it would allow for me to show my test automation skills publicly."
+			}
+		]
+	},
+	{
+		"ExternalId": "lewis-matthew-whittard-software-development-logo",
+		"PageType": "Cluster Content Page",
+		"Title": "Lewis Matthew Whittard Software Development Logo",
+		"PublishDate": "2022-02-24",
+		"Category": "Creative Works",
+		"Meta": {
+			"MetaTitle": "Lewis Matthew Whittard Software Development Logo",
+			"MetaDescription": "This page showcases the Logo I use for my portfolio and side projects.",
+			"MetaKeywords": [ "Logo", "Design", "2D", "Assets", "Blender", "GIMP" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Image",
+				"Alignment": "left",
+				"MediaId": 0
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I created the shape of the logo in 3D using Blender. Then I flattened a render in GIMP using the fuzzy select tool and bucket fill tool. Once done, I added text using the typeface named Poppins that is under the SIL Open Font License. Finally, I picked a background colour using a colour contrast checker to help ensure maximum accessibility."
+			}
+
+		]
+	},
+	{
+		"ExternalId": "my-portfolio-website-development",
+		"PageType": "Cluster Content Page",
+		"Title": "My Portfolio Website Development",
+		"PublishDate": "2022-02-24",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "My Portfolio – Website Development",
+			"MetaDescription": "This page showcases the portfolio website and links to the github code.",
+			"MetaKeywords": [ "MVC.Net", "Core", "Canva", "Libre", "Office", "Calc", "Github", "C#", "Bootstrap", "CSHTML", "Software", "Development", "Website", "Development" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "To create my portfolio Website I used the following tools: MVC.net Core, Canva, Libre Office Calc, and Github."
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
+	{
+		"ExternalId": "ui-test-automation-portfolio-piece",
+		"PageType": "Cluster Content Page",
+		"Title": "UI Test Automation Portfolio Piece",
+		"PublishDate": "2022-03-19",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "UI Test Automation Portfolio Piece",
+			"MetaDescription": "This Page Showcases My UI Test Automation Portfolio Piece.",
+			"MetaKeywords": [ "C#", "Selenium", "NUnit", "Test", "Automation", "UI", "Testing", "Testing", "DOTNET", "Core", "Chrome", "FireFox", "Edge", "Safari", "Windows", "Mac", "OS", "Test", "Automation", "Framework" ],
+			"MetaImageId": 2
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "To create my UI test automation portfolio piece, I used the following tools: C#, Selenium, NUnit, Libre Office Impress, and Microsoft Video Editor."
+			},
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 1
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/LMWSelenium",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
+	{
+		"ExternalId": "cogetta",
+		"PageType": "Cluster Content Page",
+		"Title": "Cogetta",
+		"PublishDate": "2022-11-14",
+		"Category": "Software Development, Creative Works",
+		"Meta": {
+			"MetaTitle": "Cogetta Cipher in Python",
+			"MetaDescription": "An overview of Cogetta, a substitution cipher written in Python 3, including tools used and download link.",
+			"MetaKeywords": [
+				"Cogetta",
+				"Cipher",
+				"Python",
+				"Thonny",
+				"Blender",
+				"GIMP",
+				"LibreOffice",
+				"OBS",
+				"Video Editor",
+				"Github",
+				"Encryption",
+				"Substitution"
+			],
+			"MetaImageId": 3
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 4
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What is Cogetta?"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Cogetta is a substitution cipher written in Python 3."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Where can I download Cogetta?"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Cogetta",
+				"LinkText": "To Github Repository"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "What tools did I use to develop Cogetta?"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Programming"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Python 3, Thonny IDE, Github"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Logo"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "lefr",
+				"BodyText": "Blender, GIMP 2.8"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Documents"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Libre Office Draw"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H3",
+				"Alignment": "left",
+				"Text": "Video"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Libre Office Impress, Microsoft Video Editor, OBS Studio"
+			}
+		]
+	},
+
+	{
+		"ExternalId": "from-reflection-to-action-the-marginal-gains-sprint",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
+		"PublishDate": "2025-10-19",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Marginal Gains Sprint – Portfolio Architecture & Testing Strategy",
+			"MetaDescription": "Discover how I applied marginal gains to modernise my portfolio website architecture, testing strategy, observability, and UI using Blazor, OpenTelemetry, and clean design principles.",
+			"MetaKeywords": [
+				"Marginal Gains",
+				"Portfolio Website",
+				"Software Architecture",
+				"Service–Repository Pattern",
+				"Object-Oriented Design",
+				"Testing Strategy",
+				"BDD",
+				"Unit Testing",
+				"Integration Testing",
+				"OpenTelemetry",
+				"Honeycomb",
+				"Observability",
+				"Blazor",
+				"MVC",
+				"Modular UI",
+				"Content Blocks",
+				"Brownfield Development",
+				"Clean Code",
+				"Career Growth",
+				"DotNet",
+				"C#",
+				"Software Engineering"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 5
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Over the past month and a half, I’ve been applying a series of targeted improvements to my personal portfolio website codebase and architecture to start preparing it for the world of career elevation and conversations. Small changes, big results. Here’s a snapshot of what’s been done:"
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔧 Backend & Architecture"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I standardised the codebase using design patterns such as the Service–Repository pattern to achieve a cleaner separation of concerns. Alongside this, I applied core object-oriented principles — abstraction, encapsulation, polymorphism, and interfaces — to reinforce clarity and maintainability. To improve modularity, I separated services and controllers into a dedicated library, making the architecture more scalable. I also replaced spreadsheet files with JSON to ensure consistency and future-proof data handling. Finally, I enhanced error handling throughout the system to bolster resilience and streamline diagnostics."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🧪 Testing Strategy: Complex Logic Meets Happy Path I’ve adopted a pragmatic testing strategy:"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Unit and integration tests now carry the weight of validating complex logic and internal behaviours with precision, ensuring that the system functions reliably under varied conditions. Meanwhile, BDD scenarios are reserved for the happy path, confirming that key user journeys behave as expected and remain intuitive. This layered approach keeps the test suite lean and focused, aligning it with real-world usage while maintaining deep coverage where it matters most."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📊 Observability"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I integrated OpenTelemetry and connected it to Honeycomb to enhance system observability, enabling clearer visibility into backend operations and more actionable performance insights. This setup allows for distributed tracing and diagnostics, making it easier to identify bottlenecks and optimise behaviour in real-world conditions."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📊 Frontend & UI"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "I adopted Blazor within the MVC paradigm to enable modern, component-driven development that supports clean separation and reusability. To enhance flexibility and maintainability, I introduced content blocks for modular UI management, allowing for easier updates and consistent layout control. The homepage was refreshed to deliver a cleaner, more engaging experience for visitors. "
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✅ Conclusion"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This is all part of a marginal gains approach refining each layer of the stack to build a more resilient, scalable, and maintainable system, even when working within brownfield realities."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To Github Repository"
+			}
+		]
+	},
+	{
+		"ExternalId": "software-development",
+		"PageType":  "Pillar Page",
+		"Title": "Software Development",
+		"PublishDate": "2025/12/21",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Software Development Portfolio & Engineering Practices",
+			"MetaDescription": "A pillar page covering my software development work including testing, development practices, and support processes.",
+			"MetaKeywords": [ "Software Development", "Testing", "Development", "Support", "Programming", "Sustained Engineering", "Portfolio" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Overview"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Software development has been a core part of my professional and personal journey. This page acts as a central hub for everything related to my portfolio engineering work, from testing methodologies to development practices and long-term support strategies."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Testing"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Testing is a fundamental part of delivering reliable software. I focus on automated testing, unit testing, integration testing, and UI Automation testing to ensure that projects remain stable as they grow. My goal is to build confidence in every release and demonstrate strong testing discipline across my portfolio."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Development"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "My development work spans web applications, native applications, and experimental projects. I enjoy exploring new technologies, refining my coding standards, and building solutions that solve real problems. This section will showcase development logs, technical breakdowns, and insights gained from hands-on experience."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Support and Sustained Engineering"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Support and sustained engineering play a vital role. Addressing technical debt, refining architecture, and implementing structured maintenance practices are all parts of my approach. This includes Application Performance Monitoring (APM), iterative improvements, and lifecycle planning to ensure systems continue to operate reliably as technologies, user expectations, and environments evolve."
+			}
+		]
+	},
+	{
+		"ExternalId": "creative-works",
+		"PageType": "Pillar Page",
+		"Title": "Creative Works",
+		"PublishDate": "2025/12/21",
+		"Category": "Creative Works",
+		"Meta": {
+			"MetaTitle": "Creative Works and Visual Design Portfolio",
+			"MetaDescription": "A pillar page showcasing my creative projects including digital assets and game development.",
+			"MetaKeywords": [ "Creative Works", "Digital Assets", "3D Models", "2D Art", "Portfolio" ],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Overview"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Creativity plays a major role in my work beyond software development. This page brings together my artistic explorations — from 2D and 3D digital assets to interactive projects — into a single space. It serves as a central showcase for experimentation, learning, and creative exploration."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "Digital Assets"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "Left",
+				"BodyText": "Digital assets include 2D artwork, 3D models, textures, UI elements, and other creative pieces produced for personal projects or experimentation. This section highlights my design process, tools used, and the evolution of my artistic style over time."
+			}
+		]
+	},
+	{
+		"ExternalId": "search-structure-and-SEO-upgrade",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 Release 1.2.0 — Search, Structure, and SEO Upgrade",
+		"PublishDate": "2026-01-01",
+		"Category": "Software Development",
+		"Meta": {
+			"MetaTitle": "Release 1.2.0 – Search Overhaul, SEO Improvements & UI Enhancements",
+			"MetaDescription": "Explore the improvements in Release 1.2.0, including a rebuilt internal search system, SEO‑optimised URL slugs, new pillar pages, and refined mobile‑friendly UI updates.",
+			"MetaKeywords": [
+				"Internal Search",
+				"Search Overhaul",
+				"SEO",
+				"URL Structure",
+				"Pillar Pages",
+				"Razor Components",
+				"Mobile Responsiveness",
+				"Portfolio Website",
+				"Software Development",
+				"DotNet",
+				"C#",
+				"UI UX"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 6
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This release strengthens the foundations of the portfolio by modernising search, improving navigation, refining SEO, and enhancing the user experience across devices. It continues the marginal‑gains approach: targeted improvements that compound into a cleaner, more scalable, and more professional system."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔍 Enhancements & New Features"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The internal search system has been completely rebuilt to support two dedicated content pillars: Software Development and Creative Works, with an All option for combined results. This makes discovery more intuitive and aligns the search experience with the structure of the portfolio."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Search and page data have been unified into a single JSON file used across the profile. This reduces duplication, improves maintainability, and ensures consistent behaviour throughout the system."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Numeric URL IDs have been replaced with descriptive, SEO‑friendly slugs to improve search visibility and strengthen long‑term discoverability across the portfolio."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Dedicated pillar pages for Software Development and Creative Works have been introduced. These pages provide clearer navigation, better content grouping, and a more intentional browsing experience."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🎨 UI & UX Improvements"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A series of mobile‑friendly improvements have been implemented to ensure a smoother, more consistent experience across devices."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The search row has been refactored into a reusable Razor component, reducing duplication and simplifying future updates. This supports a more modular UI architecture and cleaner codebase."
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A new GitHub button has been added to the footer, providing quick access to the GitHub profile and reinforcing the portfolio’s developer‑focused identity."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✅ Summary"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Release 1.2.0 strengthens the portfolio’s structure, search experience, and user interface. By unifying JSON files, improving SEO, and refining navigation, this update lays the groundwork for future scalability, searchability, and a more polished professional presence."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To GitHub Repository"
+			}
+		]
+	}
+]

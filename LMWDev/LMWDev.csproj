@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
+    <ProjectReference Include="..\Sitemap_Library\Sitemap_Library.csproj" />
   </ItemGroup>
 
 </Project>
