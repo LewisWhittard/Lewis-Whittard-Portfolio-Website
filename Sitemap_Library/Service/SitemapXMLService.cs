@@ -21,7 +21,7 @@ namespace Sitemap_Library.Service
             sb.AppendLine();
 
             sb.AppendLine("  <url>");
-            sb.AppendLine($"    <loc>{_baseUrl}/</loc>");
+            sb.AppendLine($"    <loc>{_baseUrl}</loc>");
             sb.AppendLine("  </url>");
             sb.AppendLine();
 
