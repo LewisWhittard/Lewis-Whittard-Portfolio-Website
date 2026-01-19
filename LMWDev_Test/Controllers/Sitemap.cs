@@ -1,6 +1,11 @@
 ﻿using LMWDev.Controllers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
+using Page_Library.Page.Entities.Page.DTO;
+using Page_Library.Page.Repository;
+using Page_Library.Page.Repository.Interface;
+using Sitemap_Library.Service;
 
 namespace LMWDev_Test.Controllers
 {
@@ -10,11 +15,15 @@ namespace LMWDev_Test.Controllers
         public void Index_ReturnsExpectedXmlContent()
         {
             // Arrange
-            var controller = new SitemapController();
-
+            IPageRepository pageRepository = new JsonPageRepository(Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json"));
             var httpContext = new DefaultHttpContext();
             httpContext.Request.Scheme = "https";
             httpContext.Request.Host = new HostString("example.com");
+
+            var accessor = new HttpContextAccessor { HttpContext = httpContext };
+
+            var service = new SitemapXMLService(pageRepository, accessor);
+            var controller = new SitemapController(service);
 
             controller.ControllerContext = new ControllerContext
             {
@@ -42,7 +51,7 @@ namespace LMWDev_Test.Controllers
             Assert.Contains("https://example.com/creative-works/lewis-matthew-whittard-software-development-logo", xml);
 
             Assert.StartsWith("<?xml", xml.TrimStart());
-            Assert.EndsWith("</urlset>", xml);
+            Assert.EndsWith("</urlset>", xml.TrimEnd());
         }
     }
 }

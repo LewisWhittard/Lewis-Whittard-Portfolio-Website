@@ -1,19 +1,23 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
-using OpenTelemetry.Trace;
-using OpenTelemetry.Resources;
+using Microsoft.Extensions.Options;
 using OpenTelemetry.Logs;
-using System;
-using Page_Library.Content.Repository.Interface;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Page_Library.Content.Repository;
-using Page_Library.Page.Repository.Interface;
-using Page_Library.Page.Repository;
-using Page_Library.Page.Factory.Interface;
+using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Factory;
+using Page_Library.Page.Factory.Interface;
+using Page_Library.Page.Repository;
+using Page_Library.Page.Repository.Interface;
 using Page_Library.Page.Service;
 using Page_Library.Page.Service.Interface;
+using Sitemap_Library.Service;
+using Sitemap_Library.Service.Interface;
+using System;
 
 namespace LMWDev
 {
@@ -74,11 +78,21 @@ namespace LMWDev
 
                         return new PageService(pageRepo, blockFactory, contentRepo);
                     });
-               
+
+                    services.AddHttpContextAccessor();
+
+                    services.AddSingleton<ISiteMapService>(provider =>
+                    {
+                        var pageRepo = provider.GetRequiredService<IPageRepository>();
+                        var http = provider.GetRequiredService<IHttpContextAccessor>();
+
+                        return new SitemapXMLService(pageRepo, http);
+                    });
 
 
 
-        services.AddOpenTelemetry()
+
+                    services.AddOpenTelemetry()
                         .WithTracing(builder =>
                         {
                             builder
