@@ -64,5 +64,27 @@ namespace LMWDev_Test.Controllers
             else
                 Assert.Equal(mockSearchResultsTwo, model.Results);
         }
+
+        [Fact]
+        public void Index_Returns404_WhenPageNotFound()
+        {
+            // Arrange
+            var loggerMock = new Mock<ILogger<LMWDev.Controllers.PillarPageController>>();
+            var pageServiceMock = new Mock<IPageService>();
+
+            pageServiceMock.Setup(s => s.GetPage("unknown-route"))
+                           .Returns((IPage)null);
+
+            var controller = new LMWDev.Controllers.PillarPageController(
+                loggerMock.Object,
+                pageServiceMock.Object
+            );
+
+            // Act
+            var result = controller.Index("unknown-route");
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
     }
 }
