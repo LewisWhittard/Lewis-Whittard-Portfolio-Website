@@ -1,6 +1,6 @@
 ﻿Feature: Pillar Page Creative Works
 
-Scenario Outline: Verify Pillar title for multiple pages
+Scenario Outline: Verify Pillar title
 	Given PillarCreativeWorks: I use Browser "<browser>"
 	When PillarCreativeWorks: I go to "https://localhost:44325/<pageIndex>"
 	Then PillarCreativeWorks: the page title is "<expectedTitle>"

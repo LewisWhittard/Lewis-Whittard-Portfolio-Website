@@ -92,21 +92,21 @@ namespace LWMDev_UI_Tests.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Pillar title for multiple pages")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Pillar title")]
         [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
-        [Xunit.TraitAttribute("Description", "Verify Pillar title for multiple pages")]
+        [Xunit.TraitAttribute("Description", "Verify Pillar title")]
         [Xunit.InlineDataAttribute("chrome", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("firefox", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("edge", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("safari", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        public async System.Threading.Tasks.Task VerifyPillarTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        public async System.Threading.Tasks.Task VerifyPillarTitle(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             argumentsOfScenario.Add("pageIndex", pageIndex);
             argumentsOfScenario.Add("expectedTitle", expectedTitle);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Pillar title for multiple pages", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Pillar title", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -118,7 +118,7 @@ namespace LMWSelenium.PageModels.PageModels
         {
             ClickButton(CreativeWorksNavBarButton);
             WaitUntilURLContainsValue("creative-works");
-            WaitUntilTitleContainsValue("creative-works");
+            WaitUntilTitleContainsValue("Creative Works");
         }
 
 		public void FindClusterContent()
