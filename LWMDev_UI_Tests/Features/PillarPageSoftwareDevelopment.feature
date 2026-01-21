@@ -2,7 +2,7 @@
 
 Scenario Outline: Verify Cluster title for multiple pages
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/<pageIndex>"
 	Then PillarSoftwareDevelopment: the page title is "<expectedTitle>"
 
 Examples:
@@ -14,7 +14,7 @@ Examples:
 
 Scenario Outline: Click search on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the search button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the search button
 	Then PillarSoftwareDevelopment: the page title is "Search - Lewis Whittard Software Development"
 
 Examples:
@@ -26,7 +26,7 @@ Examples:
 
 Scenario Outline: Click home on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the home button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the home button
 	Then PillarSoftwareDevelopment: the page title is "Home Page - Lewis Whittard Software Development"
 
 Examples:
@@ -38,7 +38,7 @@ Examples:
 
 Scenario Outline: Click Linkedin button
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the Linkedin button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the Linkedin button
 	Then PillarSoftwareDevelopment: I have arrived at linkedin
 
 Examples:
@@ -50,7 +50,7 @@ Examples:
 
 Scenario Outline: Click logo on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the logo button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the logo button
 	Then PillarSoftwareDevelopment: the page title is "Home Page - Lewis Whittard Software Development"
 
 Examples:
@@ -62,7 +62,7 @@ Examples:
 
 Scenario Outline: Click Github button
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/software-development" and use the Github button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the Github button
 	Then PillarSoftwareDevelopment: I have arrived at Github
 
 Examples:
@@ -74,7 +74,7 @@ Examples:
 
 Scenario Outline: Click Software Development on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/" and use the Software Development button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the Software Development button
 	Then PillarSoftwareDevelopment: the page title is "Software Development - Lewis Whittard Software Development"
 
 Examples:
@@ -86,7 +86,7 @@ Examples:
 
 Scenario Outline: Click Creative Works on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/" and use the Creative Works button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the Creative Works button
 	Then PillarSoftwareDevelopment: the page title is "Creative Works - Lewis Whittard Software Development"
 
 Examples:
@@ -98,7 +98,7 @@ Examples:
 
 Scenario Outline: Verify brings back correct cluster content
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/PillarPage/Index/<pageIndex>"
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/<pageIndex>"
 	Then PillarSoftwareDevelopment: The pillar pages brings back the correct cluster content
 
 Examples:
@@ -110,7 +110,7 @@ Examples:
 
 Scenario Outline: Click search option
   Given PillarSoftwareDevelopment: I use Browser "<browser>"
-  When PillarSoftwareDevelopment: I go to "https://localhost:44325/search"
+  When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development"
   Then PillarSoftwareDevelopment: I click the search result "<SearchResult>" and the title is "<Title>"
 
 Examples:
