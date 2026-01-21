@@ -8,6 +8,7 @@ namespace LMWDev.Models
 		public string Search { get; set; }
         public string Category { get; set; }
         public bool Meta = false;
+        public bool ShouldNotBeIndexed { get; set; } = true;
 
         public List<ISearchResult> Results { get; set; }
 

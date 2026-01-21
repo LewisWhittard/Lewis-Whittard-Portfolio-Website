@@ -8,6 +8,8 @@ namespace LMWDev.Models
 	public class HomeModel
 	{
 		public bool Meta { get; set; } = false;
-		public SearchViewModel Search { get; set; }
+        public bool ShouldNotBeIndexed { get; set; } = false;
+
+        public SearchViewModel Search { get; set; }
 	}
 }

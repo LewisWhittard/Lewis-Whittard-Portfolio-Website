@@ -6,6 +6,7 @@ namespace LMWDev.Models
     {
         public IPage Page { get; set; }
         public bool Meta { get; set; } = true;
+        public bool ShouldNotBeIndexed { get; set; } = false;
 
 
         public ClusterContentModel(IPage page)

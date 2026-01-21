@@ -9,6 +9,7 @@ namespace LMWDev.Models
         public IPage Page { get; set; }
         public bool Meta { get; set; } = true;
         public List<ISearchResult> Results { get; set; }
+        public bool ShouldNotBeIndexed { get; set; } = false;
 
 
 

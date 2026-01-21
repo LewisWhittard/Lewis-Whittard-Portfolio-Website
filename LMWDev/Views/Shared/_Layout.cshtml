@@ -21,6 +21,11 @@
         <!-- Optional: Meta image if needed -->
         <meta property="og:image" content="~/images/@Model.Page.Meta.Content.Path" />
     }
+    @if (Model.ShouldNotBeIndexed)
+    {
+        <meta name="robots" content="noindex, follow">
+    }
+
     </head>
 
 <body>
