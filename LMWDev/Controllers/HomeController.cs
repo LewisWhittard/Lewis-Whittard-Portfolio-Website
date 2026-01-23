@@ -23,7 +23,7 @@ namespace LMWDev.Controllers
 			using var activity = ActivitySource.StartActivity("Index Action");
 			try
 			{
-				var viewModel = new HomeModel();
+				var viewModel = new HomeModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
 				_logger.LogInformation("Rendering Index view");
 				return View(viewModel);
 			}

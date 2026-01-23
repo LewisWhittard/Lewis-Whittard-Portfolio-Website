@@ -6,12 +6,16 @@
     [Parameter] public string Title { get; set; }
     [Parameter] public string PublishDate { get; set; }
     [Parameter] public string? SearchResultsHeader { get; set; }
+    [Parameter] public bool BackgroundEnabled { get; set; }
 }
 
 <body>
-    <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
-        <source src="/Videos/WebsiteBackground.mp4" type="video/mp4">
-    </video>
+    @if (BackgroundEnabled)
+    {
+        <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
+            <source src="/Videos/WebsiteBackground.mp4" type="video/mp4">
+        </video>
+    }
 
     <div class="content-wrapper">
         <section class="page-header">

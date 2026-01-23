@@ -9,7 +9,12 @@ namespace LMWDev.Models
 	{
 		public bool Meta { get; set; } = false;
         public bool ShouldNotBeIndexed { get; set; } = false;
-
+        public bool BackgroundEnabled { get; set; }
         public SearchViewModel Search { get; set; }
-	}
+
+        public HomeModel(bool backgroundEnabled)
+        {
+            BackgroundEnabled = backgroundEnabled;
+        }
+    }
 }

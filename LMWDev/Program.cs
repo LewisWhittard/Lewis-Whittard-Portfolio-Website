@@ -57,6 +57,14 @@ namespace LMWDev
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddDistributedMemoryCache();
+
+                    services.AddSession(options =>
+                    {
+                        options.IdleTimeout = TimeSpan.FromHours(1);
+                        options.Cookie.HttpOnly = true;
+                        options.Cookie.IsEssential = true;
+                    });
 
                     services.AddScoped<IContentRepository>(provider =>
                         new JsonContentRepository(@"./Json/Content/Content.json"));

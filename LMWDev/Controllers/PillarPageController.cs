@@ -1,4 +1,5 @@
 ﻿using LMWDev.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Page_Library.Page.Service.Interface;
@@ -59,7 +60,7 @@ namespace LMWDev.Controllers
 
                 _logger.LogInformation("Search completed for category: {Category}", page.Category);
 
-                var viewModel = new PillarPageModel(page, search);
+                var viewModel = new PillarPageModel(page, search, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
 
                 _logger.LogInformation("Returning view for ExternalID: {ExternalID}", id);
                 return View(viewModel);
