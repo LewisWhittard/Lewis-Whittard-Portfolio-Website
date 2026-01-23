@@ -4,7 +4,7 @@
 }
 
 <body>
-    @if (Model.BackgroundEnabled)
+    @if (!Model.BackgroundDisabled)
     {
         <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
             <source src="~/Videos/WebsiteBackground.mp4" type="video/mp4">

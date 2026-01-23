@@ -6,11 +6,11 @@
     [Parameter] public string Title { get; set; }
     [Parameter] public string PublishDate { get; set; }
     [Parameter] public string? SearchResultsHeader { get; set; }
-    [Parameter] public bool BackgroundEnabled { get; set; }
+    [Parameter] public bool BackgroundDisabled { get; set; }
 }
 
 <body>
-    @if (BackgroundEnabled)
+    @if (!BackgroundDisabled)
     {
         <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
             <source src="/Videos/WebsiteBackground.mp4" type="video/mp4">

@@ -9,7 +9,7 @@ namespace LMWDev.Models
         public string Category { get; set; }
         public bool Meta = false;
         public bool ShouldNotBeIndexed { get; set; } = true;
-        public bool BackgroundEnabled { get; set; }
+        public bool BackgroundDisabled { get; set; }
 
         public List<ISearchResult> Results { get; set; }
 
@@ -18,11 +18,11 @@ namespace LMWDev.Models
 
         }
 
-        public SearchViewModel(List<ISearchResult> results, bool backgroundEnabled)
+        public SearchViewModel(List<ISearchResult> results, bool backgroundDisabled)
         {
 			Results = results;
             Category = "All";
-            BackgroundEnabled = backgroundEnabled;
+            BackgroundDisabled = backgroundDisabled;
         }
         
         

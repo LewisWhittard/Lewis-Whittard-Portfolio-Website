@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace LMWDev.Controllers
 {
@@ -14,17 +15,23 @@ namespace LMWDev.Controllers
             // Toggle it
             HttpContext.Session.SetString("BackgroundDisabled", (!disabled).ToString().ToLower());
 
-            // Build the current URL
-            var url = Request.Headers["Referer"].ToString();
+            // Get referer
+            var referer = Request.Headers["Referer"].ToString();
 
-            
-            if (!Url.IsLocalUrl(url))
+            // Build your base URL (authority only)
+            var baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+            // Validate referer
+            if (string.IsNullOrWhiteSpace(referer) ||
+                !Uri.TryCreate(referer, UriKind.Absolute, out var refererUri) ||
+                !refererUri.Host.Equals(Request.Host.Host, StringComparison.OrdinalIgnoreCase))
             {
-                url = Url.Action("Index", "Home"); // fallback
+                // Fallback to home
+                return Redirect(Url.Action("Index", "Home"));
             }
 
-            // Redirect back to the page
-            return Redirect(url);
+            // Safe redirect
+            return Redirect(referer);
         }
     }
 }
