@@ -5,7 +5,7 @@ using System;
 
 namespace LMWDev.Controllers
 {
-    public class accessibilityController : Controller
+    public class AccessibilityController : Controller
     {
         public IActionResult SetBackgroundActive()
         {
