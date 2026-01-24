@@ -68,6 +68,33 @@ namespace LMWDev_Test.Controllers
         }
 
         [Fact]
+        public void TogglesBackground_TrueFalseTrue_AcrossMultipleCalls()
+        {
+            // Arrange
+            var context = new DefaultHttpContext();
+            context.Session = new TestSession();
+            context.Session.SetString("BackgroundDisabled", "true");
+
+            context.Request.Headers["Referer"] = "https://example.com/page";
+            context.Request.Scheme = "https";
+            context.Request.Host = new HostString("example.com");
+
+            var controller = CreateController(context);
+
+            // Act 1 — true → false
+            controller.SetBackgroundActive();
+            var afterFirstToggle = context.Session.GetString("BackgroundDisabled");
+
+            // Act 2 — false → true
+            controller.SetBackgroundActive();
+            var afterSecondToggle = context.Session.GetString("BackgroundDisabled");
+
+            // Assert
+            Assert.Equal("false", afterFirstToggle);
+            Assert.Equal("true", afterSecondToggle);
+        }
+
+        [Fact]
         public void RedirectsToHome_WhenRefererMissing()
         {
             var context = new DefaultHttpContext();
