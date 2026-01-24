@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LMWDev.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Page_Library.Page.Service.Interface;
-using LMWDev.Models;
-using System.Diagnostics;
 using System;
+using System.Diagnostics;
 
 namespace LMWDev.Controllers
 {
@@ -28,7 +29,7 @@ namespace LMWDev.Controllers
             }
         }
 
-        [Route("{pillar}/{id}")]
+        [Route("{pillar:regex(^(software-development|creative-works|intersections)$)}/{id}")]
         public IActionResult Index(string pillar,string id)
         {
             using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
@@ -74,7 +75,7 @@ namespace LMWDev.Controllers
                 activity?.SetTag("page.id", id);
                 activity?.SetTag("page.title", page?.Title);
 
-                var viewModel = new ClusterContentModel(page);
+                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
                 return View(viewModel);
             }
             catch (Exception ex)

@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LMWDev.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using LMWDev.Models;
-using System.Diagnostics;
-using System;
 using Page_Library.Page.Service.Interface;
+using System;
+using System.Diagnostics;
 
 namespace LMWDev.Controllers
 {
@@ -37,7 +38,7 @@ namespace LMWDev.Controllers
                 {
                     SearchViewModel model; 
                     _logger.LogInformation($"Executing filtered search with parameters", viewModel);
-                    model = new SearchViewModel(_pageService.Search(viewModel.Search,viewModel.Category));
+                    model = new SearchViewModel(_pageService.Search(viewModel.Search,viewModel.Category), Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
                     return View(model);
                 }
                 catch (Exception ex)
