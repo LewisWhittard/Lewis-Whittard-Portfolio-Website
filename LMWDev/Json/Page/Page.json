@@ -585,5 +585,155 @@
 				"LinkText": "To GitHub Repository"
 			}
 		]
+	},
+	{
+		"ExternalId": "3d-background-wcag-and-seo-update",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 Release 1.3.1 — 3D Background, WCAG Controls & SEO Improvements",
+		"PublishDate": "2026-02-01",
+		"Category": "Software Development, Creative Works",
+		"Meta": {
+			"MetaTitle": "Release 1.3.1 – 3D Background, WCAG Accessibility & SEO Enhancements",
+			"MetaDescription": "Explore Release 1.3.1, featuring a new 3D prerendered background video, WCAG‑compliant motion controls, automatic sitemap generation, improved routing, and a hybrid video format with higher production values.",
+			"MetaKeywords": [
+				"3D Background",
+				"WCAG",
+				"Accessibility",
+				"SEO",
+				"Sitemap Generation",
+				"Routing",
+				"Hybrid Video Format",
+				"Clipchamp",
+				"Blender",
+				"Portfolio Website",
+				"Software Development",
+				"DotNet",
+				"C#"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 7
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This release enhances the portfolio with a new 3D prerendered background, a WCAG‑compliant control to disable the background video, improved routing, automatic sitemap generation, and a hybrid video format that elevates the visual identity of the site."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✨ 1.3.0 — 3D Prerendered Background Video"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A new prerendered 3D background video adds depth, motion, and visual richness to the portfolio. The animation was created in Blender and then converted through Clipchamp as an MP4 to ensure smooth playback, efficient compression, and broad device compatibility. This replaces the previous blank background with a more modern and dynamic aesthetic while maintaining strong performance and SEO friendliness."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "👁️ 1.3.1 — WCAG 2.2.2 Background Video Toggle"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A new accessibility‑focused toggle allows users to hide the background video at any time. This feature supports WCAG 2.2.2 (Pause, Stop, Hide) by giving users control over motion and visual intensity. It reduces distraction, improves usability for motion‑sensitive users, enhances performance on lower‑power devices, and avoids layout shifts. The toggle is fully integrated into MVC ASP.NET using the session to persist user preferences across page loads."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🎞️ 1.3.0 — New Hybrid Video Format"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "This release introduces a new experimental video format that blends multiple production techniques into a single cohesive visual style. The format combines 3D rendering techniques developed in Blender, Clipchamp MP4 export and optimisation, and outdoor real‑world filming to add natural texture and motion. By merging digital and physical elements, this hybrid approach allows for higher polish and production values, giving the portfolio a more cinematic and atmospheric visual identity."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔤 1.3.0 — Refined Body Typeface"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The body typeface has been updated to improve readability and visual balance across both desktop and mobile displays. This refinement enhances the overall polish and consistency of the portfolio’s typography."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔀 1.3.0 — Improved Routing & 404 Handling"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Routing has been strengthened across all content types to improve reliability, SEO clarity, and user experience. The site now uses more SEO‑friendly URL routes, includes stronger protection against invalid or injected paths, and features a refined 404 page for missing or mistyped routes, resulting in a more predictable and secure navigation experience."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🗺️ 1.3.0 — Automatic Sitemap Generation"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "The site now generates its XML sitemap automatically, ensuring search engines always receive an accurate and up‑to‑date structure. The sitemap includes automated cluster pages, static pillar pages, and the home page, while intentionally excluding the internal search page to avoid indexing non‑content routes. This enhancement improves long‑term discoverability and SEO health."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "♻️ 1.3.0 — CSS Cache Invalidation"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "A new CSS cache‑busting mechanism ensures that updated styling is always served correctly. This prevents outdated styles from persisting after deployments and ensures users consistently receive the latest design updates."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📱 1.3.0 — Mobile Improvements"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Several mobile‑focused refinements improve consistency and usability across devices. Footer spacing and layout have been adjusted, and the colour of the mobile navigation menu icon has been updated to enhance clarity and visual balance."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "✅ Summary"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Release 1.3.1 delivers a blend of visual, structural, and accessibility enhancements. With a new 3D background video rendered in Blender and converted through Clipchamp as an MP4, a hybrid video format that enables higher production values, automatic sitemap generation, improved routing, mobile refinements, and a WCAG‑compliant toggle integrated via session state, this update strengthens the portfolio’s performance, usability, and long‑term scalability."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
+				"BlockType": "Hyperlink",
+				"Alignment": "left",
+				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
+				"LinkText": "To GitHub Repository"
+			}
+		]
 	}
 ]
