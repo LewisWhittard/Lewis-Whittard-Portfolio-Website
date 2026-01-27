@@ -643,7 +643,7 @@
 			{
 				"BlockType": "Paragraph",
 				"Alignment": "left",
-				"BodyText": "A new accessibility‑focused toggle allows users to hide the background video at any time. This feature supports WCAG 2.2.2 (Pause, Stop, Hide) by giving users control over motion and visual intensity. It reduces distraction, improves usability for motion‑sensitive users, enhances performance on lower‑power devices, and avoids layout shifts. The toggle is fully integrated into MVC ASP.NET using the session to persist user preferences across page loads."
+				"BodyText": "A new accessibility‑focused toggle allows users to hide the background video at any time. This feature supports WCAG 2.2.2 (Pause, Stop, Hide) by giving users control over motion and visual intensity. It reduces distraction, improves usability for motion‑sensitive users, enhances performance on lower‑power devices, and avoids layout shifts. The toggle is fully integrated using the session to persist user preferences across page loads."
 			},
 			{
 				"BlockType": "Header",
