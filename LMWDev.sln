@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sitemap", "Sitemap", "{02EA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitemap_Library", "Sitemap_Library\Sitemap_Library.csproj", "{176D929C-9649-48D7-864D-F8EBC67A1896}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitemap_Library_Tests", "Sitemap_Library_Tests\Sitemap_Library_Tests.csproj", "{1591DE54-CDBD-41B4-BEDD-FE32BC29F302}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{176D929C-9649-48D7-864D-F8EBC67A1896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176D929C-9649-48D7-864D-F8EBC67A1896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176D929C-9649-48D7-864D-F8EBC67A1896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1591DE54-CDBD-41B4-BEDD-FE32BC29F302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1591DE54-CDBD-41B4-BEDD-FE32BC29F302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1591DE54-CDBD-41B4-BEDD-FE32BC29F302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1591DE54-CDBD-41B4-BEDD-FE32BC29F302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{4D24F2E0-0794-47A0-96AE-778AD63611E6} = {355E2A12-8C00-4D04-BDE9-9946084ECA33}
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {0CA66A16-7042-405E-9B78-A9E9418A28EE}
 		{176D929C-9649-48D7-864D-F8EBC67A1896} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1591DE54-CDBD-41B4-BEDD-FE32BC29F302} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3328E80D-68B4-4CFC-8520-892E666B82C7}

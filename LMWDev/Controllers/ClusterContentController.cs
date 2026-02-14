@@ -60,7 +60,15 @@ namespace LMWDev.Controllers
                 }
                 else if (page.Category.Contains(","))
                 {
+                    if (pillar == "software-development")
+                    {
+                        return NotFound();
+                    }
 
+                    else if (pillar == "creative-works")
+                    {
+                        return NotFound();
+                    }
                 }
                 else
                 {
