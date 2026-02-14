@@ -154,5 +154,60 @@ namespace LMWDev_Test.Controllers
             var notFound = Assert.IsType<NotFoundResult>(result);
             Assert.Equal(404, notFound.StatusCode);
         }
+
+        [Theory]
+        [InlineData("1", "software-development")]
+        [InlineData("1", "creative-works")]
+        public void ClusterContentController_CommaCategory_WrongPillar_404(string id, string pillar)
+        {
+            // Arrange
+            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var pageServiceMock = new Mock<IPageService>();
+
+            var pageMock = new Mock<IPage>();
+            pageMock.Setup(p => p.Category).Returns("Software Development, Creative Works");
+            pageMock.Setup(p => p.PageType).Returns("Cluster Content Page");
+
+            pageServiceMock.Setup(s => s.GetPage(id)).Returns(pageMock.Object);
+
+            var controller = CreateControllerWithSession(
+                loggerMock.Object,
+                pageServiceMock.Object
+            );
+
+            // Act
+            var result = controller.Index(pillar, id);
+
+            // Assert
+            var notFound = Assert.IsType<NotFoundResult>(result);
+            Assert.Equal(404, notFound.StatusCode);
+        }
+
+        [Theory]
+        [InlineData("1", "intersections")]
+        public void ClusterContentController_NonCommaCategory_IntersectionsPillar_404(string id, string pillar)
+        {
+            // Arrange
+            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var pageServiceMock = new Mock<IPageService>();
+
+            var pageMock = new Mock<IPage>();
+            pageMock.Setup(p => p.Category).Returns("Software Development");
+            pageMock.Setup(p => p.PageType).Returns("Cluster Content Page");
+
+            pageServiceMock.Setup(s => s.GetPage(id)).Returns(pageMock.Object);
+
+            var controller = CreateControllerWithSession(
+                loggerMock.Object,
+                pageServiceMock.Object
+            );
+
+            // Act
+            var result = controller.Index(pillar, id);
+
+            // Assert
+            var notFound = Assert.IsType<NotFoundResult>(result);
+            Assert.Equal(404, notFound.StatusCode);
+        }
     }
 }
