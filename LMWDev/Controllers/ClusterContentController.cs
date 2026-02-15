@@ -1,4 +1,5 @@
-﻿using LMWDev.Models;
+﻿using JsonLD_Library.Service.Interface;
+using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,15 +12,17 @@ namespace LMWDev.Controllers
     public class ClusterContentController : Controller
     {
         private readonly IPageService _pageService;
+        private readonly IJsonLDService _jsonLDService;
         private readonly ILogger<ClusterContentController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.ClusterContentController");
 
-        public ClusterContentController(ILogger<ClusterContentController> logger, IPageService pageService)
+        public ClusterContentController(ILogger<ClusterContentController> logger, IPageService pageService, IJsonLDService jsonLDService)
         {
             _logger = logger;
             try
             {
                 _pageService = pageService;
+                _jsonLDService = jsonLDService;
                 _logger.LogInformation("PageService initialized successfully.");
             }
             catch (Exception ex)
@@ -37,7 +40,7 @@ namespace LMWDev.Controllers
             {
                 _logger.LogInformation("Fetching page with ID: {Id}", id);
                 var page = _pageService.GetPage(id);
-
+                var jsonLD = _jsonLDService.GenerateJsonLDCulsterContentPage(page);
                 if (page == null)
                 {
                     return NotFound();
@@ -83,7 +86,7 @@ namespace LMWDev.Controllers
                 activity?.SetTag("page.id", id);
                 activity?.SetTag("page.title", page?.Title);
 
-                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
                 return View(viewModel);
             }
             catch (Exception ex)

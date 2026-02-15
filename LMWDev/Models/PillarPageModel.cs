@@ -11,6 +11,8 @@ namespace LMWDev.Models
         public List<ISearchResult> Results { get; set; }
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
+        public string JsonLD { get; set; }
+
 
 
 
