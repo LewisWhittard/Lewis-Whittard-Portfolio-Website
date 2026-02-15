@@ -86,7 +86,7 @@ namespace LMWDev.Controllers
                 activity?.SetTag("page.id", id);
                 activity?.SetTag("page.title", page?.Title);
 
-                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
                 return View(viewModel);
             }
             catch (Exception ex)

@@ -28,6 +28,13 @@
         <meta name="robots" content="noindex, follow">
     }
 
+    @if (Model.JsonLD != null)
+    {
+        <script type="application/ld+json">
+            @Html.Raw(Model.JsonLD)
+        </script>
+    }
+
     </head>
 
 <body>

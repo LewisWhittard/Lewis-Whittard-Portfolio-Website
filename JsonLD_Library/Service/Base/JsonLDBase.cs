@@ -24,63 +24,68 @@ namespace JsonLD_Library.Service.Base
             // Collect images
             var images = page.ContentBlocks
                 .OfType<ImageBlock>()
-                .Select(image => new
+                .Select(image => new Dictionary<string, object?>
                 {
-                    @type = "ImageObject",
-                    url = $"{baseUrl}{image.Content.Path}",
-                    caption = image.Content.Alt
+                    ["@type"] = "ImageObject",
+                    ["url"] = $"{baseUrl}/{image.Content.Path}",
+                    ["caption"] = image.Content.Alt
                 })
                 .ToList();
 
             // Collect videos
             var videos = page.ContentBlocks
                 .OfType<VideoBlock>()
-                .Select(video => new
+                .Select(video => new Dictionary<string, object?>
                 {
-                    @type = "VideoObject",
-                    name = video.Content.Name,
-                    description = video.Content.Description,
-                    url = $"{baseUrl}{video.Content.Path}"
+                    ["@type"] = "VideoObject",
+                    ["name"] = video.Content.Name,
+                    ["description"] = video.Content.Description,
+                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
                 })
                 .ToList();
 
             // Meta image
-            var metaImage = page.Meta?.Content?.Path != null
-                ? new[]
-                {
-            new
-            {
-                @type = "ImageObject",
-                url = $"{baseUrl}{page.Meta.Content.Path}"
-            }
-                }
-                : null;
+            List<Dictionary<string, object?>>? metaImage = null;
 
-            var allImages = (metaImage ?? Enumerable.Empty<object>())
+            if (page.Meta?.Content?.Path != null)
+            {
+                metaImage = new List<Dictionary<string, object?>>
+                {
+                    new Dictionary<string, object?>
+                    {
+                        ["@type"] = "ImageObject",
+                        ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
+                    }
+                };
+            }
+
+            var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
                 .Concat(images)
                 .ToList();
 
-            var jsonLd = new
+            // Build JSON-LD using dictionaries so @ keys serialize correctly
+            var jsonLd = new Dictionary<string, object?>
             {
-                @context = "https://schema.org",
-                @type = page.JsonLDType,
-                headline = page.Title,
-                description = page.Meta?.MetaDescription,
-                datePublished = page.PublishDate?.ToString(),
-                author = new
+                ["@context"] = "https://schema.org",
+                ["@type"] = page.JsonLDType,
+                ["headline"] = page.Title,
+                ["description"] = page.Meta?.MetaDescription,
+                ["datePublished"] = page.PublishDate?.ToString(),
+
+                ["author"] = new Dictionary<string, object?>
                 {
-                    @type = "Person",
-                    name = page.Author
+                    ["@type"] = "Person",
+                    ["name"] = page.Author
                 },
 
-                mainEntityOfPage = new
+                ["mainEntityOfPage"] = new Dictionary<string, object?>
                 {
-                    @type = "WebPage",
-                    @id = $"{baseUrl}/{pillarSlug}/{page.ExternalId}"
+                    ["@type"] = "WebPage",
+                    ["@id"] = $"{baseUrl}/{pillarSlug}/{page.ExternalId}"
                 },
 
-                image = allImages.Any() ? allImages : null,
-                video = videos.Any() ? videos : null
+                ["image"] = allImages.Any() ? allImages : null,
+                ["video"] = videos.Any() ? videos : null
             };
 
             return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
@@ -105,4 +110,3 @@ namespace JsonLD_Library.Service.Base
         }
     }
 }
-

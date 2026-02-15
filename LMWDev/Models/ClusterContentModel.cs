@@ -8,12 +8,14 @@ namespace LMWDev.Models
         public bool Meta { get; set; } = true;
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
+        public string JsonLD { get; set; }
 
 
-        public ClusterContentModel(IPage page, bool backgroundDisabled)
+        public ClusterContentModel(IPage page, bool backgroundDisabled, string jsonLD)
         {
             Page = page;
             BackgroundDisabled = backgroundDisabled;
+            JsonLD = jsonLD;
         }
 
         public ClusterContentModel()
