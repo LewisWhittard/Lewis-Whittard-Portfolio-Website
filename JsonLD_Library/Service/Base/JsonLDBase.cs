@@ -9,9 +9,16 @@ namespace JsonLD_Library.Service.Base
 {
     public class JsonLDBase : IJsonLDService
     {
-        public string GenerateJsonLDCulsterContentPage(IHttpContextAccessor http, IPage page)
+        private readonly IHttpContextAccessor _http;
+
+        public JsonLDBase(IHttpContextAccessor http)
         {
-            var baseUrl = $"{http.HttpContext.Request.Scheme}://{http.HttpContext.Request.Host}";
+            _http = http;
+        }
+
+        public string GenerateJsonLDCulsterContentPage(IPage page)
+        {
+            var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
             var pillarSlug = GetPillarSlug(page);
 
             // Collect images

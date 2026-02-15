@@ -32,6 +32,8 @@ namespace Page_Library.Page.Entities.Page.Base
             Category = dto.Category;
             Meta = new Meta(dto.Meta);
             ContentBlockDTO = dto.ContentBlocks;
+            JsonLDType = dto.JsonLDType;
+            Author = dto.Author;
         }
 
         public void SetUpPolymorphContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory)
