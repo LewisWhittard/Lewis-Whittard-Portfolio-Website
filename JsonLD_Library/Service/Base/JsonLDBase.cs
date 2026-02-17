@@ -31,7 +31,7 @@ namespace JsonLD_Library.Service.Base
 
                 ["name"] = "Lewis Whittard – Developer & Support Analyst",
                 ["url"] = baseUrl,
-                ["description"] = "Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications, certifications, and personal interests including kickboxing, snowboarding, computing history, and Formula 1.",
+                ["description"] = "Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications and certifications.",
 
                 ["isPartOf"] = new Dictionary<string, object?>
                 {
