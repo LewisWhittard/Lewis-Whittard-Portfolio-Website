@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Http;
 using Page_Library.Page.Entities.ContentBlock;
 using Page_Library.Page.Entities.Page.Interface;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Encodings.Web;
 
 namespace JsonLD_Library.Service.Base
 {
@@ -14,6 +16,44 @@ namespace JsonLD_Library.Service.Base
         public JsonLDBase(IHttpContextAccessor http)
         {
             _http = http;
+        }
+
+
+
+        public string GenerateJsonLDHomePage()
+        {
+            var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
+
+            var jsonLd = new Dictionary<string, object?>
+            {
+                ["@context"] = "https://schema.org",
+                ["@type"] = "WebPage",
+
+                ["name"] = "Lewis Whittard – Developer & Support Analyst",
+                ["url"] = baseUrl,
+                ["description"] = "Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications, certifications, and personal interests including kickboxing, snowboarding, computing history, and Formula 1.",
+
+                ["isPartOf"] = new Dictionary<string, object?>
+                {
+                    ["@type"] = "WebSite",
+                    ["url"] = baseUrl,
+                    ["name"] = "Lewis Whittard Portfolio"
+                },
+
+                ["primaryImageOfPage"] = new Dictionary<string, object?>
+                {
+                    ["@type"] = "ImageObject",
+                    ["url"] = $"{baseUrl}/Images/LewisWhittard.jpg",
+                    ["caption"] = "Picture of Lewis Whittard"
+                }
+            };
+
+            return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            });
         }
 
         public string GenerateJsonLDCulsterContentPage(IPage page)

@@ -14,9 +14,10 @@ namespace LMWDev.Models
         public string JsonLD { get; set; }
 
 
-        public HomeModel(bool backgroundDisabled)
+        public HomeModel(bool backgroundDisabled, string jsonLD)
         {
             BackgroundDisabled = backgroundDisabled;
+            JsonLD = jsonLD;
         }
     }
 }
