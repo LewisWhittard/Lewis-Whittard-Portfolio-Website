@@ -1,4 +1,6 @@
-﻿using LMWDev.Models;
+﻿using JsonLD_Library.Service;
+using JsonLD_Library.Service.Interface;
+using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,13 +14,15 @@ namespace LMWDev.Controllers
     {
         private readonly IPageService _pageService;
         private readonly ILogger<PillarPageController> _logger;
+        private readonly IJsonLDService _jsonLDService;
         private static readonly ActivitySource ActivitySource = new("LMWDev.PillarPageController");
 
-        public PillarPageController(ILogger<PillarPageController> logger, IPageService pageService)
+        public PillarPageController(ILogger<PillarPageController> logger, IPageService pageService, IJsonLDService jsonLDService)
         {
             _logger = logger;
             try
             {
+                _jsonLDService = jsonLDService;
                 _pageService = pageService;
                 _logger.LogInformation("PageService initialized successfully.");
             }
@@ -60,7 +64,9 @@ namespace LMWDev.Controllers
 
                 _logger.LogInformation("Search completed for category: {Category}", page.Category);
 
-                var viewModel = new PillarPageModel(page, search, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+                var jsonLD = _jsonLDService.GenerateJsonLDPillarPage(page,search);
+
+                var viewModel = new PillarPageModel(page, search, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
 
                 _logger.LogInformation("Returning view for ExternalID: {ExternalID}", id);
                 return View(viewModel);
