@@ -6,6 +6,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Page_Library.Page.Entities.SearchResult.Interface;
+using System.Text.RegularExpressions;
 
 namespace JsonLD_Library.Service.Base
 {
@@ -18,6 +19,25 @@ namespace JsonLD_Library.Service.Base
             _http = http;
         }
 
+        // ---------------------------------------------------------
+        // EMOJI SANITISATION
+        // ---------------------------------------------------------
+        private static readonly Regex EmojiRegex = new Regex(
+            @"\p{Cs}",
+            RegexOptions.Compiled
+        );
+
+        private string RemoveEmojis(string? input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return input ?? string.Empty;
+
+            return EmojiRegex.Replace(input, string.Empty);
+        }
+
+        // ---------------------------------------------------------
+        // HOMEPAGE JSON-LD
+        // ---------------------------------------------------------
         public string GenerateJsonLDHomePage()
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
@@ -27,22 +47,24 @@ namespace JsonLD_Library.Service.Base
                 ["@context"] = "https://schema.org",
                 ["@type"] = "WebPage",
 
-                ["name"] = "Lewis Whittard – Developer & Support Analyst",
+                ["name"] = RemoveEmojis("Lewis Whittard – Developer & Support Analyst"),
                 ["url"] = baseUrl,
-                ["description"] = "Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications and certifications.",
+                ["description"] = RemoveEmojis(
+                    "Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications and certifications."
+                ),
 
                 ["isPartOf"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "WebSite",
                     ["url"] = baseUrl,
-                    ["name"] = "Lewis Whittard Portfolio"
+                    ["name"] = RemoveEmojis("Lewis Whittard Portfolio")
                 },
 
                 ["primaryImageOfPage"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "ImageObject",
                     ["url"] = $"{baseUrl}/Images/LewisWhittard.jpg",
-                    ["caption"] = "Picture of Lewis Whittard"
+                    ["caption"] = RemoveEmojis("Picture of Lewis Whittard")
                 }
             };
 
@@ -54,10 +76,13 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
+        // ---------------------------------------------------------
+        // CLUSTER CONTENT PAGE JSON-LD
+        // ---------------------------------------------------------
         public string GenerateJsonLDCulsterContentPage(IPage page)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
-            var pillarSlug = GetPillarSlug(page.Category); // UPDATED
+            var pillarSlug = GetPillarSlug(page.Category);
 
             // Collect images
             var images = page.ContentBlocks
@@ -66,7 +91,7 @@ namespace JsonLD_Library.Service.Base
                 {
                     ["@type"] = "ImageObject",
                     ["url"] = $"{baseUrl}/{image.Content.Path}",
-                    ["caption"] = image.Content.Alt
+                    ["caption"] = RemoveEmojis(image.Content.Alt)
                 })
                 .ToList();
 
@@ -76,8 +101,8 @@ namespace JsonLD_Library.Service.Base
                 .Select(video => new Dictionary<string, object?>
                 {
                     ["@type"] = "VideoObject",
-                    ["name"] = video.Content.Name,
-                    ["description"] = video.Content.Description,
+                    ["name"] = RemoveEmojis(video.Content.Name),
+                    ["description"] = RemoveEmojis(video.Content.Description),
                     ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
                 })
                 .ToList();
@@ -106,14 +131,14 @@ namespace JsonLD_Library.Service.Base
             {
                 ["@context"] = "https://schema.org",
                 ["@type"] = page.JsonLDType,
-                ["headline"] = page.Title,
-                ["description"] = page.Meta?.MetaDescription,
+                ["headline"] = RemoveEmojis(page.Title),
+                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
                 ["datePublished"] = page.PublishDate?.ToString(),
 
                 ["author"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "Person",
-                    ["name"] = page.Author
+                    ["name"] = RemoveEmojis(page.Author)
                 },
 
                 ["mainEntityOfPage"] = new Dictionary<string, object?>
@@ -133,52 +158,13 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
+        // ---------------------------------------------------------
+        // PILLAR PAGE JSON-LD
+        // ---------------------------------------------------------
         public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> ClustercontentPages)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
-            var pillarSlug = GetPillarSlug(page.Category); // UPDATED
-
-            // Collect images
-            var images = page.ContentBlocks
-                .OfType<ImageBlock>()
-                .Select(image => new Dictionary<string, object?>
-                {
-                    ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/{image.Content.Path}",
-                    ["caption"] = image.Content.Alt
-                })
-                .ToList();
-
-            // Collect videos
-            var videos = page.ContentBlocks
-                .OfType<VideoBlock>()
-                .Select(video => new Dictionary<string, object?>
-                {
-                    ["@type"] = "VideoObject",
-                    ["name"] = video.Content.Name,
-                    ["description"] = video.Content.Description,
-                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
-                })
-                .ToList();
-
-            // Meta image
-            List<Dictionary<string, object?>>? metaImage = null;
-
-            if (page.Meta?.Content?.Path != null)
-            {
-                metaImage = new List<Dictionary<string, object?>>
-                {
-                    new Dictionary<string, object?>
-                    {
-                        ["@type"] = "ImageObject",
-                        ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
-                    }
-                };
-            }
-
-            var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
-                .Concat(images)
-                .ToList();
+            var pillarSlug = GetPillarSlug(page.Category);
 
             // Build hasPart
             List<Dictionary<string, object?>>? hasPart = null;
@@ -189,12 +175,12 @@ namespace JsonLD_Library.Service.Base
 
                 foreach (var child in ClustercontentPages)
                 {
-                    var childSlug = GetPillarSlug(child.Category); // UPDATED
+                    var childSlug = GetPillarSlug(child.Category);
 
                     hasPart.Add(new Dictionary<string, object?>
                     {
                         ["@type"] = "WebPage",
-                        ["name"] = child.Title,
+                        ["name"] = RemoveEmojis(child.Title),
                         ["url"] = $"{baseUrl}/{childSlug}/{child.ExternalId}"
                     });
                 }
@@ -205,10 +191,9 @@ namespace JsonLD_Library.Service.Base
             {
                 ["@context"] = "https://schema.org",
                 ["@type"] = "WebPage",
-                ["name"] = page.Title,
-                ["headline"] = page.Title,
-                ["description"] = page.Meta?.MetaDescription,
-                ["datePublished"] = page.PublishDate?.ToString(),
+                ["name"] = RemoveEmojis(page.Title),
+                ["headline"] = RemoveEmojis(page.Title),
+                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
 
                 ["mainEntityOfPage"] = new Dictionary<string, object?>
                 {
@@ -216,13 +201,10 @@ namespace JsonLD_Library.Service.Base
                     ["@id"] = $"{baseUrl}/{pillarSlug}"
                 },
 
-                ["image"] = allImages.Any() ? allImages : null,
-                ["video"] = videos.Any() ? videos : null,
-
                 ["about"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "Thing",
-                    ["name"] = page.Category,
+                    ["name"] = RemoveEmojis(page.Category),
                     ["url"] = $"{baseUrl}/{pillarSlug}"
                 },
 
@@ -237,10 +219,12 @@ namespace JsonLD_Library.Service.Base
         }
 
         // ---------------------------------------------------------
-        // ONLY THIS METHOD REMAINS
+        // PILLAR SLUG MAPPING
         // ---------------------------------------------------------
         private string GetPillarSlug(string category)
         {
+            category = RemoveEmojis(category);
+
             if (category == "Software Development")
                 return "software-development";
 
