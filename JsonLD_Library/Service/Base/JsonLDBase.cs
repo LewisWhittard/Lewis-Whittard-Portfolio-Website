@@ -5,7 +5,6 @@ using Page_Library.Page.Entities.Page.Interface;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Encodings.Web;
 using Page_Library.Page.Entities.SearchResult.Interface;
 
 namespace JsonLD_Library.Service.Base
@@ -18,8 +17,6 @@ namespace JsonLD_Library.Service.Base
         {
             _http = http;
         }
-
-
 
         public string GenerateJsonLDHomePage()
         {
@@ -60,7 +57,7 @@ namespace JsonLD_Library.Service.Base
         public string GenerateJsonLDCulsterContentPage(IPage page)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
-            var pillarSlug = GetPillarSlug(page);
+            var pillarSlug = GetPillarSlug(page.Category); // UPDATED
 
             // Collect images
             var images = page.ContentBlocks
@@ -104,7 +101,7 @@ namespace JsonLD_Library.Service.Base
                 .Concat(images)
                 .ToList();
 
-            // Build JSON-LD using dictionaries so @ keys serialize correctly
+            // Build JSON-LD
             var jsonLd = new Dictionary<string, object?>
             {
                 ["@context"] = "https://schema.org",
@@ -139,9 +136,9 @@ namespace JsonLD_Library.Service.Base
         public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> ClustercontentPages)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
-            var pillarSlug = GetPillarSlug(page);
+            var pillarSlug = GetPillarSlug(page.Category); // UPDATED
 
-            // Collect images from content blocks
+            // Collect images
             var images = page.ContentBlocks
                 .OfType<ImageBlock>()
                 .Select(image => new Dictionary<string, object?>
@@ -152,7 +149,7 @@ namespace JsonLD_Library.Service.Base
                 })
                 .ToList();
 
-            // Collect videos from content blocks
+            // Collect videos
             var videos = page.ContentBlocks
                 .OfType<VideoBlock>()
                 .Select(video => new Dictionary<string, object?>
@@ -170,22 +167,19 @@ namespace JsonLD_Library.Service.Base
             if (page.Meta?.Content?.Path != null)
             {
                 metaImage = new List<Dictionary<string, object?>>
-        {
-            new Dictionary<string, object?>
-            {
-                ["@type"] = "ImageObject",
-                ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
-            }
-        };
+                {
+                    new Dictionary<string, object?>
+                    {
+                        ["@type"] = "ImageObject",
+                        ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
+                    }
+                };
             }
 
             var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
                 .Concat(images)
                 .ToList();
 
-            // -----------------------------------------
-            // Build hasPart using foreach (correct place)
-            // -----------------------------------------
             // Build hasPart
             List<Dictionary<string, object?>>? hasPart = null;
 
@@ -195,7 +189,7 @@ namespace JsonLD_Library.Service.Base
 
                 foreach (var child in ClustercontentPages)
                 {
-                    var childSlug = GetPillarSlug(child.Category);
+                    var childSlug = GetPillarSlug(child.Category); // UPDATED
 
                     hasPart.Add(new Dictionary<string, object?>
                     {
@@ -206,8 +200,7 @@ namespace JsonLD_Library.Service.Base
                 }
             }
 
-
-            // Pillar-specific JSON-LD
+            // Build JSON-LD
             var jsonLd = new Dictionary<string, object?>
             {
                 ["@context"] = "https://schema.org",
@@ -243,20 +236,9 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
-
-        private string GetPillarSlug(IPage page)
-        {
-            if (page.Category == "Software Development")
-                return "software-development";
-
-            if (page.Category == "Creative Works")
-                return "creative-works";
-
-            if (page.Category.Contains(","))
-                return "intersections";
-
-            return "intersections";
-        }
+        // ---------------------------------------------------------
+        // ONLY THIS METHOD REMAINS
+        // ---------------------------------------------------------
         private string GetPillarSlug(string category)
         {
             if (category == "Software Development")
