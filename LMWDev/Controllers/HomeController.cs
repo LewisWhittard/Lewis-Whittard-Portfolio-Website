@@ -1,4 +1,6 @@
-﻿using LMWDev.Models;
+﻿using JsonLD_Library.Service;
+using JsonLD_Library.Service.Interface;
+using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,9 +14,11 @@ namespace LMWDev.Controllers
 	{
 		private readonly ILogger<HomeController> _logger;
 		private static readonly ActivitySource ActivitySource = new ActivitySource("LMWDev.HomeController");
+		private readonly IJsonLDService _jsonLDService;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, IJsonLDService jsonLDService)
 		{
+			_jsonLDService = jsonLDService;
 			_logger = logger;
 		}
 
@@ -23,7 +27,8 @@ namespace LMWDev.Controllers
 			using var activity = ActivitySource.StartActivity("Index Action");
 			try
 			{
-				var viewModel = new HomeModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+                string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+				var viewModel = new HomeModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
 				_logger.LogInformation("Rendering Index view");
 				return View(viewModel);
 			}
