@@ -18,10 +18,6 @@ namespace JsonLD_Library.Service.Base
         {
             _http = http;
         }
-
-        // ---------------------------------------------------------
-        // EMOJI SANITISATION
-        // ---------------------------------------------------------
         private static readonly Regex EmojiRegex = new Regex(
             @"\p{Cs}",
             RegexOptions.Compiled
@@ -35,9 +31,6 @@ namespace JsonLD_Library.Service.Base
             return EmojiRegex.Replace(input, string.Empty);
         }
 
-        // ---------------------------------------------------------
-        // HOMEPAGE JSON-LD
-        // ---------------------------------------------------------
         public string GenerateJsonLDHomePage()
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
@@ -76,13 +69,156 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
-        // ---------------------------------------------------------
-        // CLUSTER CONTENT PAGE JSON-LD
-        // ---------------------------------------------------------
-        public string GenerateJsonLDCulsterContentPage(IPage page)
+        public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> clusterContentPages)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
             var pillarSlug = GetPillarSlug(page.Category);
+
+            // -----------------------------
+            // IMAGES
+            // -----------------------------
+            var images = page.ContentBlocks
+                .OfType<ImageBlock>()
+                .Select(image => new Dictionary<string, object?>
+                {
+                    ["@type"] = "ImageObject",
+                    ["url"] = $"{baseUrl}/{image.Content.Path}",
+                    ["caption"] = RemoveEmojis(image.Content.Alt)?.Trim()
+                })
+                .ToList();
+
+            if (page.Meta?.Content?.Path is string metaPath)
+            {
+                images.Insert(0, new Dictionary<string, object?>
+                {
+                    ["@type"] = "ImageObject",
+                    ["url"] = $"{baseUrl}/{metaPath}"
+                });
+            }
+
+            // -----------------------------
+            // VIDEOS
+            // -----------------------------
+            var videos = page.ContentBlocks
+                .OfType<VideoBlock>()
+                .Select(video => new Dictionary<string, object?>
+                {
+                    ["@type"] = "VideoObject",
+                    ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
+                    ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
+                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
+                })
+                .ToList();
+
+            // -----------------------------
+            // hasPart (cluster pages)
+            // -----------------------------
+            List<Dictionary<string, object?>>? hasPart = null;
+
+            if (clusterContentPages != null && clusterContentPages.Count > 0)
+            {
+                hasPart = clusterContentPages.Select(child =>
+                {
+                    var childSlug = GetPillarSlug(child.Category);
+
+                    return new Dictionary<string, object?>
+                    {
+                        ["@type"] = "WebPage",
+                        ["name"] = RemoveEmojis(child.Title)?.Trim(),
+                        ["url"] = $"{baseUrl}/{childSlug}/{child.ExternalId}"
+                    };
+
+                }).ToList();
+            }
+
+            // -----------------------------
+            // BREADCRUMB
+            // -----------------------------
+            var breadcrumbItems = new List<Dictionary<string, object?>>();
+            int position = 1;
+
+            breadcrumbItems.Add(new Dictionary<string, object?>
+            {
+                ["@type"] = "ListItem",
+                ["position"] = position++,
+                ["name"] = "Home",
+                ["item"] = $"{baseUrl}/"
+            });
+
+            breadcrumbItems.Add(new Dictionary<string, object?>
+            {
+                ["@type"] = "ListItem",
+                ["position"] = position++,
+                ["name"] = RemoveEmojis(page.Title)?.Trim(),
+                ["item"] = $"{baseUrl}/{pillarSlug}"
+            });
+
+            var breadcrumb = new Dictionary<string, object?>
+            {
+                ["@type"] = "BreadcrumbList",
+                ["itemListElement"] = breadcrumbItems
+            };
+
+            // -----------------------------
+            // ROOT JSON-LD
+            // -----------------------------
+            var jsonLd = new Dictionary<string, object?>
+            {
+                ["@context"] = "https://schema.org",
+                ["@type"] = "CollectionPage",
+
+                ["name"] = RemoveEmojis(page.Title)?.Trim(),
+                ["headline"] = RemoveEmojis(page.Title)?.Trim(),
+                ["description"] = RemoveEmojis(page.Meta?.MetaDescription)?.Trim(),
+                ["url"] = $"{baseUrl}/{pillarSlug}",
+
+                ["breadcrumb"] = breadcrumb
+            };
+
+            if (hasPart != null)
+            {
+                jsonLd["hasPart"] = hasPart;
+            }
+
+            if (images.Any())
+            {
+                jsonLd["image"] = images;
+            }
+
+            if (videos.Any())
+            {
+                jsonLd["video"] = videos;
+            }
+
+            return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+            });
+        }
+
+
+
+        private string GetPillarSlug(string category)
+        {
+            category = RemoveEmojis(category);
+
+            if (category == "Software Development")
+                return "software-development";
+
+            if (category == "Creative Works")
+                return "creative-works";
+
+            if (category.Contains(","))
+                return "intersections";
+
+            return "intersections";
+        }
+
+
+        public string GenerateJsonLDCulsterContentPage(IPage page)
+        {
+            var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
 
             // Collect images
             var images = page.ContentBlocks
@@ -113,20 +249,87 @@ namespace JsonLD_Library.Service.Base
             if (page.Meta?.Content?.Path != null)
             {
                 metaImage = new List<Dictionary<string, object?>>
-                {
-                    new Dictionary<string, object?>
-                    {
-                        ["@type"] = "ImageObject",
-                        ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
-                    }
-                };
+        {
+            new Dictionary<string, object?>
+            {
+                ["@type"] = "ImageObject",
+                ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
+            }
+        };
             }
 
             var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
                 .Concat(images)
                 .ToList();
 
-            // Build JSON-LD
+            // ---------------------------------------------------------
+            // 🔹 Build Breadcrumbs
+            // ---------------------------------------------------------
+            var breadcrumbItems = new List<Dictionary<string, object?>>();
+
+            // 1. Home
+            breadcrumbItems.Add(new Dictionary<string, object?>
+            {
+                ["@type"] = "ListItem",
+                ["position"] = 1,
+                ["item"] = new Dictionary<string, object?>
+                {
+                    ["@id"] = baseUrl,
+                    ["name"] = "Home"
+                }
+            });
+
+            // 2. Pillars
+            var pillars = GetPillarsForCategory(page.Category);
+            bool multiplePillars = page.Category.Contains(",");
+
+            foreach (var pillar in pillars)
+            {
+                breadcrumbItems.Add(new Dictionary<string, object?>
+                {
+                    ["@type"] = "ListItem",
+                    ["position"] = 2,
+                    ["item"] = new Dictionary<string, object?>
+                    {
+                        ["@id"] = $"{baseUrl}/{pillar.pillar}",
+                        ["name"] = RemoveEmojis(pillar.name)
+                    }
+                });
+            }
+
+            string pageUrl;
+
+            // Build page URL
+            if (page.Category.Contains(","))
+            {
+                pageUrl = $"{baseUrl}/intersections/{page.ExternalId}";
+            }
+            else
+            {
+                pageUrl = $"{baseUrl}/{string.Join("/", pillars.Select(p => p.pillar))}/{page.ExternalId}";
+            }
+
+            // 3. Current page
+            breadcrumbItems.Add(new Dictionary<string, object?>
+            {
+                ["@type"] = "ListItem",
+                ["position"] = 3,
+                ["item"] = new Dictionary<string, object?>
+                {
+                    ["@id"] = pageUrl,
+                    ["name"] = RemoveEmojis(page.Title)
+                }
+            });
+
+            var breadcrumb = new Dictionary<string, object?>
+            {
+                ["@type"] = "BreadcrumbList",
+                ["itemListElement"] = breadcrumbItems
+            };
+
+            // ---------------------------------------------------------
+            // 🔹 Build JSON-LD
+            // ---------------------------------------------------------
             var jsonLd = new Dictionary<string, object?>
             {
                 ["@context"] = "https://schema.org",
@@ -144,72 +347,24 @@ namespace JsonLD_Library.Service.Base
                 ["mainEntityOfPage"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "WebPage",
-                    ["@id"] = $"{baseUrl}/{pillarSlug}/{page.ExternalId}"
+                    ["@id"] = pageUrl
                 },
 
-                ["image"] = allImages.Any() ? allImages : null,
-                ["video"] = videos.Any() ? videos : null
+                ["breadcrumb"] = breadcrumb
             };
 
-            return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
+            // ---------------------------------------------------------
+            // 🔹 Conditional image/video assignment
+            // ---------------------------------------------------------
+            if (allImages.Any())
             {
-                WriteIndented = true,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
-            });
-        }
-
-        // ---------------------------------------------------------
-        // PILLAR PAGE JSON-LD
-        // ---------------------------------------------------------
-        public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> ClustercontentPages)
-        {
-            var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
-            var pillarSlug = GetPillarSlug(page.Category);
-
-            // Build hasPart
-            List<Dictionary<string, object?>>? hasPart = null;
-
-            if (ClustercontentPages != null && ClustercontentPages.Count > 0)
-            {
-                hasPart = new List<Dictionary<string, object?>>();
-
-                foreach (var child in ClustercontentPages)
-                {
-                    var childSlug = GetPillarSlug(child.Category);
-
-                    hasPart.Add(new Dictionary<string, object?>
-                    {
-                        ["@type"] = "WebPage",
-                        ["name"] = RemoveEmojis(child.Title),
-                        ["url"] = $"{baseUrl}/{childSlug}/{child.ExternalId}"
-                    });
-                }
+                jsonLd["image"] = allImages;
             }
 
-            // Build JSON-LD
-            var jsonLd = new Dictionary<string, object?>
+            if (videos.Any())
             {
-                ["@context"] = "https://schema.org",
-                ["@type"] = "WebPage",
-                ["name"] = RemoveEmojis(page.Title),
-                ["headline"] = RemoveEmojis(page.Title),
-                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
-
-                ["mainEntityOfPage"] = new Dictionary<string, object?>
-                {
-                    ["@type"] = "WebPage",
-                    ["@id"] = $"{baseUrl}/{pillarSlug}"
-                },
-
-                ["about"] = new Dictionary<string, object?>
-                {
-                    ["@type"] = "Thing",
-                    ["name"] = RemoveEmojis(page.Category),
-                    ["url"] = $"{baseUrl}/{pillarSlug}"
-                },
-
-                ["hasPart"] = hasPart
-            };
+                jsonLd["video"] = videos;
+            }
 
             return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
             {
@@ -218,23 +373,22 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
-        // ---------------------------------------------------------
-        // PILLAR SLUG MAPPING
-        // ---------------------------------------------------------
-        private string GetPillarSlug(string category)
+        private List<(string pillar, string name)> GetPillarsForCategory(string category)
         {
-            category = RemoveEmojis(category);
+            var list = new List<(string slug, string name)>();
+            var normalized = category?.Trim().ToLowerInvariant() ?? string.Empty;
 
-            if (category == "Software Development")
-                return "software-development";
+            if (normalized.Contains("software"))
+            {
+                list.Add(("software-development", "Software Development"));
+            }
 
-            if (category == "Creative Works")
-                return "creative-works";
+            if (normalized.Contains("creative"))
+            {
+                list.Add(("creative-works", "Creative Works"));
+            }
 
-            if (category.Contains(","))
-                return "intersections";
-
-            return "intersections";
+            return list;
         }
     }
 }
