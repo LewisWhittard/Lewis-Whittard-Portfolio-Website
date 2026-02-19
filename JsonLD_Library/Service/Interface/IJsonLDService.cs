@@ -8,7 +8,7 @@ namespace JsonLD_Library.Service.Interface
     {
         public string GenerateJsonLDCulsterContentPage(IPage page);
         public string GenerateJsonLDHomePage();
-        public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> ClustercontentPages);
+        public string GenerateJsonLDPillarPage(IPage page, List<ISearchResult> clusterContentPages);
 
     }
 }
