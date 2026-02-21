@@ -8,4 +8,4 @@ The site follows a pillar‑page content model supported by a category‑aligned
 
 ## Automation & Reliability
 
-Reliability is maintained through a comprehensive automation test suite, using xUnit for unit and integration testing and Selenium for full end‑to‑end browser automation. Behaviour‑driven development scenarios are implemented with ReqnRoll, providing executable specifications that validate user‑facing behaviour. Application observability is enhanced through OpenTelemetry instrumentation, delivering consistent span naming, structured tagging, and high‑signal traces that support long‑term maintainability as the platform evolves.
+Reliability is maintained through a comprehensive automation test suite, using xUnit for unit and integration testing and Selenium for full end‑to‑end browser automation. Behaviour‑driven development scenarios are implemented with ReqnRoll, providing executable specifications that validate user‑facing behaviour. OpenTelemetry instrumentation is included for APM compatibility, ensuring the application can integrate cleanly with modern observability platforms as the system evolves.
