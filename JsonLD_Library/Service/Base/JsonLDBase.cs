@@ -220,7 +220,7 @@ namespace JsonLD_Library.Service.Base
                 {
                     ["@type"] = "ImageObject",
                     ["url"] = $"{baseUrl}/{image.Content.Path}",
-                    ["caption"] = RemoveEmojis(image.Content.Alt)
+                    ["caption"] = RemoveEmojis(image.Content.Alt)?.Trim()
                 })
                 .ToList();
 
@@ -232,31 +232,10 @@ namespace JsonLD_Library.Service.Base
                 .Select(video => new Dictionary<string, object?>
                 {
                     ["@type"] = "VideoObject",
-                    ["name"] = RemoveEmojis(video.Content.Name),
-                    ["description"] = RemoveEmojis(video.Content.Description),
+                    ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
+                    ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
                     ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
                 })
-                .ToList();
-
-            // ---------------------------------------------------------
-            // 🔹 Meta image
-            // ---------------------------------------------------------
-            List<Dictionary<string, object?>>? metaImage = null;
-
-            if (page.Meta?.Content?.Path != null)
-            {
-                metaImage = new List<Dictionary<string, object?>>
-        {
-            new Dictionary<string, object?>
-            {
-                ["@type"] = "ImageObject",
-                ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
-            }
-        };
-            }
-
-            var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
-                .Concat(images)
                 .ToList();
 
             // ---------------------------------------------------------
@@ -271,21 +250,39 @@ namespace JsonLD_Library.Service.Base
 
             var articleNode = new Dictionary<string, object?>
             {
-                ["@type"] = page.JsonLDType,
+                ["@type"] = "BlogPosting",
                 ["@id"] = canonicalPageUrl,
-                ["headline"] = RemoveEmojis(page.Title),
-                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
+                ["url"] = canonicalPageUrl,
+                ["headline"] = RemoveEmojis(page.Title)?.Trim(),
+                ["description"] = RemoveEmojis(page.Meta?.MetaDescription)?.Trim(),
                 ["datePublished"] = page.PublishDate?.ToString(),
+
+                ["mainEntityOfPage"] = new Dictionary<string, object?>
+                {
+                    ["@type"] = "WebPage",
+                    ["@id"] = canonicalPageUrl
+                },
+
+                ["publisher"] = new Dictionary<string, object?>
+                {
+                    ["@type"] = "Organization",
+                    ["name"] = "Lewis Whittard",
+                    ["logo"] = new Dictionary<string, object?>
+                    {
+                        ["@type"] = "ImageObject",
+                        ["url"] = $"{baseUrl}/LMWlogo.png"
+                    }
+                },
 
                 ["author"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "Person",
-                    ["name"] = RemoveEmojis(page.Author)
+                    ["name"] = RemoveEmojis(page.Author)?.Trim()
                 }
             };
 
-            if (allImages.Any())
-                articleNode["image"] = allImages;
+            if (images.Any())
+                articleNode["image"] = images;
 
             if (videos.Any())
                 articleNode["video"] = videos;
@@ -309,31 +306,41 @@ namespace JsonLD_Library.Service.Base
                     ["position"] = pos++,
                     ["item"] = new Dictionary<string, object?>
                     {
+                        ["@type"] = "WebPage",
                         ["@id"] = $"{baseUrl}/{pillar.pillar}",
-                        ["name"] = RemoveEmojis(pillar.name)
+                        ["name"] = RemoveEmojis(pillar.name)?.Trim()
                     }
                 });
 
+                string pageURL;
                 // Page URL for this pillar
-                string pillarPageUrl = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
-
-                // Current page item
-                items.Add(new Dictionary<string, object?>
+                if (page.Category.Contains(","))
                 {
-                    ["@type"] = "ListItem",
-                    ["position"] = pos,
-                    ["item"] = new Dictionary<string, object?>
+                    pageURL = $"{baseUrl}/intersections/{page.ExternalId}";
+                }
+                else
+                {
+                    pageURL = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
+                }
+
+                    // Current page item
+                    items.Add(new Dictionary<string, object?>
                     {
-                        ["@id"] = pillarPageUrl,
-                        ["name"] = RemoveEmojis(page.Title)
-                    }
-                });
+                        ["@type"] = "ListItem",
+                        ["position"] = pos,
+                        ["item"] = new Dictionary<string, object?>
+                        {
+                            ["@type"] = "WebPage",
+                            ["@id"] = pageURL,
+                            ["name"] = RemoveEmojis(page.Title)?.Trim()
+                        }
+                    });
 
                 // Breadcrumb node
                 graph.Add(new Dictionary<string, object?>
                 {
                     ["@type"] = "BreadcrumbList",
-                    ["@id"] = $"{pillarPageUrl}#breadcrumb-{pillar.pillar}",
+                    ["@id"] = $"{pageURL}#breadcrumb-{pillar.pillar}",
                     ["itemListElement"] = items
                 });
             }
