@@ -20,11 +20,9 @@
     <strong>Content‑block model</strong> — factory‑constructed blocks rendered by
     Razor components for modular, maintainable page composition.
   </li>
-  <li>
-    <strong>Dynamic JSON‑LD generation</strong> — structured data produced from
-    the content model, including homepage schema, pillar schemas, and content
-    cluster schemas.
-  </li>
+<li>
+  <strong>JSON‑LD generation</strong> — structured data generated from the content model, including the static homepage schema, dynamic pillar schemas, and content‑cluster schemas.
+</li>
   <li>
     <strong>Internal search and routing</strong> — category‑driven search and
     pillar matching to reinforce relevance and discoverability.
