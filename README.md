@@ -8,4 +8,4 @@ The site follows a pillar‑page content model supported by a category‑aligned
 
 ## Automation & Reliability
 
-Reliability is maintained through a comprehensive automation test suite, using xUnit for unit and integration testing and Selenium for full end‑to‑end browser automation. This provides regression protection and long‑term maintainability as the platform evolves.
+Reliability is maintained through a comprehensive automation test suite, using xUnit for unit and integration testing and Selenium for full end‑to‑end browser automation. Behaviour‑driven development scenarios are implemented with ReqnRoll, providing executable specifications that validate user‑facing behaviour and strengthen long‑term maintainability as the platform evolves.
