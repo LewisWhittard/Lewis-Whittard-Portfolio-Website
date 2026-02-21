@@ -239,27 +239,6 @@ namespace JsonLD_Library.Service.Base
                 .ToList();
 
             // ---------------------------------------------------------
-            // 🔹 Meta image
-            // ---------------------------------------------------------
-            List<Dictionary<string, object?>>? metaImage = null;
-
-            if (page.Meta?.Content?.Path != null)
-            {
-                metaImage = new List<Dictionary<string, object?>>
-        {
-            new Dictionary<string, object?>
-            {
-                ["@type"] = "ImageObject",
-                ["url"] = $"{baseUrl}/{page.Meta.Content.Path}"
-            }
-        };
-            }
-
-            var allImages = (metaImage ?? new List<Dictionary<string, object?>>())
-                .Concat(images)
-                .ToList();
-
-            // ---------------------------------------------------------
             // 🔹 Build @graph
             // ---------------------------------------------------------
             var graph = new List<object>();
@@ -302,8 +281,8 @@ namespace JsonLD_Library.Service.Base
                 }
             };
 
-            if (allImages.Any())
-                articleNode["image"] = allImages;
+            if (images.Any())
+                articleNode["image"] = images;
 
             if (videos.Any())
                 articleNode["video"] = videos;
