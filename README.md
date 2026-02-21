@@ -4,7 +4,7 @@ This repository contains the source code for the portfolio site of Lewis Whittar
 
 ## Content Architecture
 
-The site follows a pillar‑page content model supported by a category‑aligned internal search system, improving navigation, topical authority, and SEO clarity. Structured data is generated through a semi‑automatic JSON‑LD pipeline, with the homepage schema defined statically and pillar and cluster pages populated dynamically from the underlying content model. An integrated XML sitemap generator keeps search engines accurately indexed with standards‑compliant output.
+The site follows a pillar‑page content model supported by a category‑aligned internal search system, improving navigation, topical authority, and SEO clarity. Structured data is generated through a semi‑automatic JSON‑LD library, with the homepage schema defined statically and pillar and cluster pages populated dynamically from the underlying content model. An integrated XML sitemap generator keeps search engines accurately indexed with standards‑compliant output.
 
 ## Automation & Reliability
 
