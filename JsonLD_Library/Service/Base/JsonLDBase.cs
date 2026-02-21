@@ -141,14 +141,6 @@ namespace JsonLD_Library.Service.Base
             {
                 ["@type"] = "ListItem",
                 ["position"] = position++,
-                ["name"] = "Home",
-                ["item"] = $"{baseUrl}/"
-            });
-
-            breadcrumbItems.Add(new Dictionary<string, object?>
-            {
-                ["@type"] = "ListItem",
-                ["position"] = position++,
                 ["name"] = RemoveEmojis(page.Title)?.Trim(),
                 ["item"] = $"{baseUrl}/{pillarSlug}"
             });
@@ -215,12 +207,13 @@ namespace JsonLD_Library.Service.Base
             return "intersections";
         }
 
-
         public string GenerateJsonLDCulsterContentPage(IPage page)
         {
             var baseUrl = $"{_http.HttpContext.Request.Scheme}://{_http.HttpContext.Request.Host}";
 
-            // Collect images
+            // ---------------------------------------------------------
+            // 🔹 Collect images
+            // ---------------------------------------------------------
             var images = page.ContentBlocks
                 .OfType<ImageBlock>()
                 .Select(image => new Dictionary<string, object?>
@@ -231,7 +224,9 @@ namespace JsonLD_Library.Service.Base
                 })
                 .ToList();
 
-            // Collect videos
+            // ---------------------------------------------------------
+            // 🔹 Collect videos
+            // ---------------------------------------------------------
             var videos = page.ContentBlocks
                 .OfType<VideoBlock>()
                 .Select(video => new Dictionary<string, object?>
@@ -243,7 +238,9 @@ namespace JsonLD_Library.Service.Base
                 })
                 .ToList();
 
-            // Meta image
+            // ---------------------------------------------------------
+            // 🔹 Meta image
+            // ---------------------------------------------------------
             List<Dictionary<string, object?>>? metaImage = null;
 
             if (page.Meta?.Content?.Path != null)
@@ -263,69 +260,51 @@ namespace JsonLD_Library.Service.Base
                 .ToList();
 
             // ---------------------------------------------------------
-            // 🔹 Build Breadcrumbs
+            // 🔹 Build Alternative Breadcrumb Lists
             // ---------------------------------------------------------
-            var breadcrumbItems = new List<Dictionary<string, object?>>();
-
-            // 1. Home
-            breadcrumbItems.Add(new Dictionary<string, object?>
-            {
-                ["@type"] = "ListItem",
-                ["position"] = 1,
-                ["item"] = new Dictionary<string, object?>
-                {
-                    ["@id"] = baseUrl,
-                    ["name"] = "Home"
-                }
-            });
-
-            // 2. Pillars
             var pillars = GetPillarsForCategory(page.Category);
-            bool multiplePillars = page.Category.Contains(",");
+
+            var allBreadcrumbs = new List<object>();
 
             foreach (var pillar in pillars)
             {
-                breadcrumbItems.Add(new Dictionary<string, object?>
+                var items = new List<Dictionary<string, object?>>();
+                int pos = 1;
+
+                // Pillar item
+                items.Add(new Dictionary<string, object?>
                 {
                     ["@type"] = "ListItem",
-                    ["position"] = 2,
+                    ["position"] = pos++,
                     ["item"] = new Dictionary<string, object?>
                     {
                         ["@id"] = $"{baseUrl}/{pillar.pillar}",
                         ["name"] = RemoveEmojis(pillar.name)
                     }
                 });
-            }
 
-            string pageUrl;
+                // Page URL for this pillar
+                string pageUrl = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
 
-            // Build page URL
-            if (page.Category.Contains(","))
-            {
-                pageUrl = $"{baseUrl}/intersections/{page.ExternalId}";
-            }
-            else
-            {
-                pageUrl = $"{baseUrl}/{string.Join("/", pillars.Select(p => p.pillar))}/{page.ExternalId}";
-            }
-
-            // 3. Current page
-            breadcrumbItems.Add(new Dictionary<string, object?>
-            {
-                ["@type"] = "ListItem",
-                ["position"] = 3,
-                ["item"] = new Dictionary<string, object?>
+                // Current page item
+                items.Add(new Dictionary<string, object?>
                 {
-                    ["@id"] = pageUrl,
-                    ["name"] = RemoveEmojis(page.Title)
-                }
-            });
+                    ["@type"] = "ListItem",
+                    ["position"] = pos,
+                    ["item"] = new Dictionary<string, object?>
+                    {
+                        ["@id"] = pageUrl,
+                        ["name"] = RemoveEmojis(page.Title)
+                    }
+                });
 
-            var breadcrumb = new Dictionary<string, object?>
-            {
-                ["@type"] = "BreadcrumbList",
-                ["itemListElement"] = breadcrumbItems
-            };
+                // Add this breadcrumb list
+                allBreadcrumbs.Add(new Dictionary<string, object?>
+                {
+                    ["@type"] = "BreadcrumbList",
+                    ["itemListElement"] = items
+                });
+            }
 
             // ---------------------------------------------------------
             // 🔹 Build JSON-LD
@@ -344,13 +323,7 @@ namespace JsonLD_Library.Service.Base
                     ["name"] = RemoveEmojis(page.Author)
                 },
 
-                ["mainEntityOfPage"] = new Dictionary<string, object?>
-                {
-                    ["@type"] = "WebPage",
-                    ["@id"] = pageUrl
-                },
-
-                ["breadcrumb"] = breadcrumb
+                ["breadcrumb"] = allBreadcrumbs
             };
 
             // ---------------------------------------------------------
