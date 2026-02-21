@@ -266,7 +266,7 @@ namespace JsonLD_Library.Service.Base
                 ["publisher"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "Organization",
-                    ["name"] = "Lewis Whittard",
+                    ["name"] = page.Author,
                     ["logo"] = new Dictionary<string, object?>
                     {
                         ["@type"] = "ImageObject",
