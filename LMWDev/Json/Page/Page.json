@@ -3,7 +3,7 @@
 		"ExternalId": "portfolio-website-completed",
 		"Title": "Portfolio Website Completed!",
 		"PageType": "Cluster Content Page",
-		"PublishDate": "2022-02-24",
+		"PublishDate": "2022-02-24T00:00:00Z",
 		"Category": "Software Development",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -78,7 +78,7 @@
 		"ExternalId": "lewis-matthew-whittard-software-development-logo",
 		"PageType": "Cluster Content Page",
 		"Title": "Lewis Matthew Whittard Software Development Logo",
-		"PublishDate": "2022-02-24",
+		"PublishDate": "2022-02-24T00:00:00Z",
 		"Category": "Creative Works",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -105,7 +105,7 @@
 		"ExternalId": "my-portfolio-website-development",
 		"PageType": "Cluster Content Page",
 		"Title": "My Portfolio Website Development",
-		"PublishDate": "2022-02-24",
+		"PublishDate": "2022-02-24T00:00:00Z",
 		"Category": "Software Development",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -132,7 +132,7 @@
 		"ExternalId": "ui-test-automation-portfolio-piece",
 		"PageType": "Cluster Content Page",
 		"Title": "UI Test Automation Portfolio Piece",
-		"PublishDate": "2022-03-19",
+		"PublishDate": "2022-03-19T00:00:00Z",
 		"Category": "Software Development",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -164,7 +164,7 @@
 		"ExternalId": "cogetta",
 		"PageType": "Cluster Content Page",
 		"Title": "Cogetta",
-		"PublishDate": "2022-11-14",
+		"PublishDate": "2022-11-14T00:00:00Z",
 		"Category": "Software Development, Creative Works",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -272,7 +272,7 @@
 		"ExternalId": "from-reflection-to-action-the-marginal-gains-sprint",
 		"PageType": "Cluster Content Page",
 		"Title": "🚀 From Reflection to Action: The Marginal Gains Sprint",
-		"PublishDate": "2025-10-19",
+		"PublishDate": "2025-10-19T00:00:00Z",
 		"Category": "Software Development",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -388,7 +388,7 @@
 		"ExternalId": "software-development",
 		"PageType": "Pillar Page",
 		"Title": "Software Development",
-		"PublishDate": "2025/12/21",
+		"PublishDate": "2025/12/21T00:00:00Z",
 		"Category": "Software Development",
 		"Meta": {
 			"MetaTitle": "Software Development Portfolio & Engineering Practices",
@@ -450,7 +450,7 @@
 		"ExternalId": "creative-works",
 		"PageType": "Pillar Page",
 		"Title": "Creative Works",
-		"PublishDate": "2025/12/21",
+		"PublishDate": "2025/12/21T00:00:00Z",
 		"Category": "Creative Works",
 		"Meta": {
 			"MetaTitle": "Creative Works and Visual Design Portfolio",
@@ -488,7 +488,7 @@
 		"ExternalId": "search-structure-and-seo-upgrade",
 		"PageType": "Cluster Content Page",
 		"Title": "🚀 Release 1.2.0 — Search, Structure, and SEO Upgrade",
-		"PublishDate": "2026-01-01",
+		"PublishDate": "2026-01-01T00:00:00Z",
 		"Category": "Software Development",
 		"Author": "Lewis Whittard",
 		"Meta": {
@@ -597,7 +597,7 @@
 		"ExternalId": "3d-background-wcag-and-seo-update",
 		"PageType": "Cluster Content Page",
 		"Title": "🚀 Release 1.3.1 — 3D Background, WCAG Controls & SEO Improvements",
-		"PublishDate": "2026-01-26",
+		"PublishDate": "2026-01-26T00:00:00Z",
 		"Category": "Software Development, Creative Works",
 		"Author": "Lewis Whittard",
 		"Meta": {
