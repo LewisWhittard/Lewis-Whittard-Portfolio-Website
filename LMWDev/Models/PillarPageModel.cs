@@ -16,11 +16,12 @@ namespace LMWDev.Models
 
 
 
-        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled)
+        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled, string jsonLD)
         {
             Page = page;
             Results = results;
             BackgroundDisabled = backgroundDisabled;
+            JsonLD = jsonLD;
         }
 
         public PillarPageModel()
