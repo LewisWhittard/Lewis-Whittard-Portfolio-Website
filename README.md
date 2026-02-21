@@ -1,4 +1,4 @@
-<h1>🚀 Overview</h1>
+<h2>🚀 Overview</h2>
 <p>
   This repository contains the source code for the portfolio site of 
   <strong>Lewis Whittard</strong>, built with <strong>ASP.NET Core MVC</strong> and 
