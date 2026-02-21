@@ -42,5 +42,5 @@
   <li><strong>xUnit</strong> — unit and integration testing for .NET</li>
   <li><strong>Selenium</strong> — end‑to‑end browser automation</li>
   <li><strong>ReqnRoll (BDD)</strong> — executable specifications for user‑facing behaviour</li>
-  <li><strong>OpenTelemetry</strong> — tracing and performance monitoring for ASP.NET Core</li>
+  <li><strong>OpenTelemetry</strong> — tracing and performance monitoring</li>
 </ul>
