@@ -1,12 +1,19 @@
-##Overview
+🚀 Overview
+This repository contains the source code for the portfolio site of Lewis Whittard, built with ASP.NET Core MVC and organised around a scalable service–repository architecture. The application uses a content‑block model with factory‑based construction, while Razor components provide consistent UI presentation and a clear separation between backend content generation and frontend layout.
 
-This repository contains the source code for the portfolio site of Lewis Whittard, built with ASP.NET Core MVC and structured around a scalable service–repository architecture. The application uses a content‑block model with factory‑based construction, with Razor components responsible for consistent UI presentation and a clean separation between backend content generation and frontend layout.
+🧩 Content Architecture
+The site follows a pillar‑page content model supported by a category‑aligned internal search system, improving navigation, topical authority, and SEO clarity.
+Key architectural features include:
+• 	Content‑block model — strongly typed blocks constructed via factories for predictable, schema‑safe output.
+• 	Dynamic structured data — a semi‑automatic JSON‑LD generation library, with static homepage schema and dynamic pillar/cluster schemas derived from the content model.
+• 	Search‑aligned routing — category‑driven organisation that reinforces internal relevance and discoverability.
+• 	XML sitemap generation — a standards‑compliant sitemap generator that keeps search engines accurately aligned with the site’s structure.
+Together, these components form a deterministic, maintainable content pipeline designed for long‑term scalability.
 
-
-## Content Architecture
-
-The site follows a pillar‑page content model supported by a category‑aligned internal search system, improving navigation, topical authority, and SEO clarity. Structured data is generated through a semi‑automatic JSON‑LD library, with the homepage schema defined statically and pillar and cluster pages populated dynamically from the underlying content model. An integrated XML sitemap generator keeps search engines accurately indexed with standards‑compliant output.
-
-## Automation & Reliability
-
-Reliability is maintained through a comprehensive automation test suite, using xUnit for unit and integration testing and Selenium for full end‑to‑end browser automation. Behaviour‑driven development scenarios are implemented with ReqnRoll, providing executable specifications that validate user‑facing behaviour. OpenTelemetry instrumentation is included for APM compatibility, ensuring the application can integrate cleanly with modern observability platforms as the system evolves.
+🛡️ Automation & Reliability
+Reliability is supported through a comprehensive automation suite:
+• 	xUnit for unit and integration testing
+• 	Selenium for full end‑to‑end browser automation
+• 	ReqnRoll (BDD) for executable specifications that validate user‑facing behaviour
+• 	OpenTelemetry instrumentation for APM compatibility and modern observability integration
+This combination ensures the system remains stable, testable, and observable as it evolves.
