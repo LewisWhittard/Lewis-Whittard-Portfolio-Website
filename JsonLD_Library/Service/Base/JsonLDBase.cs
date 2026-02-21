@@ -107,7 +107,7 @@ namespace JsonLD_Library.Service.Base
             var jsonLd = new Dictionary<string, object?>
             {
                 ["@context"] = "https://schema.org",
-                ["@type"] = page.JsonLDType,
+                ["@type"] = "BlogPosting",
                 ["headline"] = page.Title,
                 ["description"] = page.Meta?.MetaDescription,
                 ["datePublished"] = page.PublishDate?.ToString(),
