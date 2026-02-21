@@ -1,6 +1,7 @@
-## Overview
+##Overview
 
-This repository contains the source code for the portfolio site of Lewis Whittard, built with ASP.NET Core MVC and structured around a scalable service–repository architecture. The application uses Razor components ensuring consistent UI output and a clean separation of concerns across all content types.
+This repository contains the source code for the portfolio site of Lewis Whittard, built with ASP.NET Core MVC and structured around a scalable service–repository architecture. The application uses a content‑block model with factory‑based construction, with Razor components responsible for consistent UI presentation and a clean separation between backend content generation and frontend layout.
+
 
 ## Content Architecture
 
