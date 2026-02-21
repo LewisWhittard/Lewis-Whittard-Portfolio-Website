@@ -14,7 +14,6 @@ namespace Page_Library.Page.Entities.Page.Interface
         public string Category {  get; }
         public IMeta Meta { get; }
         public List<IContentBlock> ContentBlocks { get; }
-        public string JsonLDType { get; }
         public string Author { get; }
 
         public abstract void SetUpPolymorphContentBlocks(IContentRepository contentRepository, IContentBlockFactory contentBlockFactory);
