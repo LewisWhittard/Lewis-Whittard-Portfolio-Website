@@ -260,11 +260,42 @@ namespace JsonLD_Library.Service.Base
                 .ToList();
 
             // ---------------------------------------------------------
-            // 🔹 Build Alternative Breadcrumb Lists
+            // 🔹 Build @graph
+            // ---------------------------------------------------------
+            var graph = new List<object>();
+
+            // ---------------------------------------------------------
+            // 🔹 Article node
+            // ---------------------------------------------------------
+            string canonicalPageUrl = $"{baseUrl}/{page.ExternalId}";
+
+            var articleNode = new Dictionary<string, object?>
+            {
+                ["@type"] = page.JsonLDType,
+                ["@id"] = canonicalPageUrl,
+                ["headline"] = RemoveEmojis(page.Title),
+                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
+                ["datePublished"] = page.PublishDate?.ToString(),
+
+                ["author"] = new Dictionary<string, object?>
+                {
+                    ["@type"] = "Person",
+                    ["name"] = RemoveEmojis(page.Author)
+                }
+            };
+
+            if (allImages.Any())
+                articleNode["image"] = allImages;
+
+            if (videos.Any())
+                articleNode["video"] = videos;
+
+            graph.Add(articleNode);
+
+            // ---------------------------------------------------------
+            // 🔹 One breadcrumb list per pillar
             // ---------------------------------------------------------
             var pillars = GetPillarsForCategory(page.Category);
-
-            var allBreadcrumbs = new List<object>();
 
             foreach (var pillar in pillars)
             {
@@ -284,7 +315,7 @@ namespace JsonLD_Library.Service.Base
                 });
 
                 // Page URL for this pillar
-                string pageUrl = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
+                string pillarPageUrl = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
 
                 // Current page item
                 items.Add(new Dictionary<string, object?>
@@ -293,51 +324,28 @@ namespace JsonLD_Library.Service.Base
                     ["position"] = pos,
                     ["item"] = new Dictionary<string, object?>
                     {
-                        ["@id"] = pageUrl,
+                        ["@id"] = pillarPageUrl,
                         ["name"] = RemoveEmojis(page.Title)
                     }
                 });
 
-                // Add this breadcrumb list
-                allBreadcrumbs.Add(new Dictionary<string, object?>
+                // Breadcrumb node
+                graph.Add(new Dictionary<string, object?>
                 {
                     ["@type"] = "BreadcrumbList",
+                    ["@id"] = $"{pillarPageUrl}#breadcrumb-{pillar.pillar}",
                     ["itemListElement"] = items
                 });
             }
 
             // ---------------------------------------------------------
-            // 🔹 Build JSON-LD
+            // 🔹 Final JSON-LD wrapper
             // ---------------------------------------------------------
             var jsonLd = new Dictionary<string, object?>
             {
                 ["@context"] = "https://schema.org",
-                ["@type"] = page.JsonLDType,
-                ["headline"] = RemoveEmojis(page.Title),
-                ["description"] = RemoveEmojis(page.Meta?.MetaDescription),
-                ["datePublished"] = page.PublishDate?.ToString(),
-
-                ["author"] = new Dictionary<string, object?>
-                {
-                    ["@type"] = "Person",
-                    ["name"] = RemoveEmojis(page.Author)
-                },
-
-                ["breadcrumb"] = allBreadcrumbs
+                ["@graph"] = graph
             };
-
-            // ---------------------------------------------------------
-            // 🔹 Conditional image/video assignment
-            // ---------------------------------------------------------
-            if (allImages.Any())
-            {
-                jsonLd["image"] = allImages;
-            }
-
-            if (videos.Any())
-            {
-                jsonLd["video"] = videos;
-            }
 
             return JsonSerializer.Serialize(jsonLd, new JsonSerializerOptions
             {
