@@ -22,26 +22,41 @@ namespace LMWDev.Controllers
 			_logger = logger;
 		}
 
-		public IActionResult Index()
-		{
-			using var activity = ActivitySource.StartActivity("Index Action");
-			try
-			{
-                string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
-				var viewModel = new HomeModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
-				_logger.LogInformation("Rendering Index view");
-				return View(viewModel);
-			}
-			catch (Exception ex)
-			{
-				activity?.SetStatus(ActivityStatusCode.Error);
-				activity?.RecordException(ex);
-				_logger.LogError(ex, "Error in Index action");
-				throw;
-			}
-		}
+        public IActionResult Index()
+        {
+            using var activity = ActivitySource.StartActivity("HomeController.Index");
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+            try
+            {
+                activity?.SetTag("page.type", "HomePage");
+
+                string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+
+                bool backgroundDisabled = Convert.ToBoolean(
+                    HttpContext.Session.GetString("BackgroundDisabled")
+                );
+
+                var viewModel = new HomeModel(backgroundDisabled, jsonLD);
+
+                activity?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                activity?.SetStatus(ActivityStatusCode.Ok);
+
+                _logger.LogInformation("Rendering Home/Index");
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                activity?.SetStatus(ActivityStatusCode.Error);
+                activity?.RecordException(ex);
+
+                _logger.LogError(ex, "Error in HomeController.Index");
+
+                throw;
+            }
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
 			using var activity = ActivitySource.StartActivity("Error Action");

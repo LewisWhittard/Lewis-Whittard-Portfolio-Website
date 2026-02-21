@@ -33,60 +33,53 @@ namespace LMWDev.Controllers
         }
 
         [Route("{pillar:regex(^(software-development|creative-works|intersections)$)}/{id}")]
-        public IActionResult Index(string pillar,string id)
+        public IActionResult Index(string pillar, string id)
         {
             using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
+
             try
             {
                 _logger.LogInformation("Fetching page with ID: {Id}", id);
+
                 var page = _pageService.GetPage(id);
-                var jsonLD = _jsonLDService.GenerateJsonLDCulsterContentPage(page);
+
+                // Tag early so failures still have context
+                activity?.SetTag("page.id", id);
+                activity?.SetTag("pillar.route", pillar);
+                activity?.SetTag("page.exists", page != null);
+
                 if (page == null)
                 {
+                    activity?.SetTag("error.reason", "PageNotFound");
                     return NotFound();
                 }
 
-                
-                else if (page.Category == "Software Development")
-                {
-                    if (pillar != "software-development")
-                    {
-                        return NotFound();
-                    }
-                }
-                else if (page.Category == "Creative Works")
-                {
-                    if (pillar != "creative-works")
-                    {
-                        return NotFound();
-                    }
-                }
-                else if (page.Category.Contains(","))
-                {
-                    if (pillar == "software-development")
-                    {
-                        return NotFound();
-                    }
-
-                    else if (pillar == "creative-works")
-                    {
-                        return NotFound();
-                    }
-                }
-                else
-                {
-                    return NotFound();
-                }
-
+                // Validate page type
                 if (page.PageType != "Cluster Content Page")
                 {
+                    activity?.SetTag("error.reason", "InvalidPageType");
                     return NotFound();
                 }
 
-                activity?.SetTag("page.id", id);
-                activity?.SetTag("page.title", page?.Title);
+                // Validate pillar/category mapping
+                if (!IsValidPillarForCategory(pillar, page.Category))
+                {
+                    activity?.SetTag("error.reason", "PillarCategoryMismatch");
+                    activity?.SetTag("page.category", page.Category);
+                    return NotFound();
+                }
 
-                var viewModel = new ClusterContentModel(page, Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),jsonLD);
+                // Success tags
+                activity?.SetTag("page.title", page.Title);
+                activity?.SetTag("page.category", page.Category);
+
+                var jsonLD = _jsonLDService.GenerateJsonLDCulsterContentPage(page);
+                var viewModel = new ClusterContentModel(
+                    page,
+                    Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
+                    jsonLD
+                );
+
                 return View(viewModel);
             }
             catch (Exception ex)
@@ -96,6 +89,17 @@ namespace LMWDev.Controllers
                 activity?.SetTag("exception.message", ex.Message);
                 throw new Exception("Something went wrong while loading the page.");
             }
+        }
+
+        private bool IsValidPillarForCategory(string pillar, string category)
+        {
+            return category switch
+            {
+                "Software Development" => pillar == "software-development",
+                "Creative Works" => pillar == "creative-works",
+                _ when category.Contains(",") => pillar == "intersections",
+                _ => false
+            };
         }
     }
 }

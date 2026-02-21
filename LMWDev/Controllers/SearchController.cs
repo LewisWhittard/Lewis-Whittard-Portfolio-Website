@@ -36,9 +36,9 @@ namespace LMWDev.Controllers
             {
                 try
                 {
-                    SearchViewModel model; 
+                    SearchViewModel model;
                     _logger.LogInformation($"Executing filtered search with parameters", viewModel);
-                    model = new SearchViewModel(_pageService.Search(viewModel.Search,viewModel.Category), Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+                    model = new SearchViewModel(_pageService.Search(viewModel.Search, viewModel.Category), Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
                     return View(model);
                 }
                 catch (Exception ex)
@@ -47,5 +47,5 @@ namespace LMWDev.Controllers
                 }
             }
         }
-	}
+    }
 }
