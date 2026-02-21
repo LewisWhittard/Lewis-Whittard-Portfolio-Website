@@ -1,38 +1,48 @@
 <h2>🚀 Overview</h2>
 <p>
-  This repository contains the source code for the portfolio site of 
-  <strong>Lewis Whittard</strong>, built with <strong>ASP.NET Core MVC</strong> and 
-  organised around a scalable <strong>service–repository architecture</strong>. 
-  The application uses a <strong>content‑block model</strong> with factory‑based 
-  construction, while Razor components provide consistent UI presentation and a 
-  clear separation between backend content generation and frontend layout.
+  Source code for the portfolio site of Lewis Whittard, built with
+  <strong>ASP.NET Core MVC</strong> using a
+  <strong>service–repository architecture</strong> and a
+  <strong>factory-based content‑block system</strong>. The application separates
+  backend content generation from frontend layout through reusable
+  <strong>Razor components</strong>. The project focuses on clean architecture,
+  scalable content modelling, and automated structured data generation.
 </p>
-
-<hr>
 
 <h2>🧩 Content Architecture</h2>
 <p>
-  The site follows a <strong>pillar‑page content model</strong> supported by a 
-  <strong>category‑aligned internal search system</strong>, improving navigation, 
-  topical authority, and SEO clarity.
+  The site implements a <strong>pillar‑page content model</strong> with a
+  <strong>category‑aligned internal search engine</strong> to improve navigation,
+  topical relevance, and SEO performance.
 </p>
-
 <ul>
-  <li><strong>Content‑block model</strong> — blocks constructed via factories and rendered by razor components </li>
-  <li><strong>Dynamic structured data</strong> — a semi‑automatic JSON‑LD generation library, with static homepage schema and dynamic pillar/content cluster schemas derived from the content model.</li>
-  <li><strong>Internal Search and pillar matching routing </strong> — category‑driven organisation that reinforces internal relevance and discoverability.</li>
-  <li><strong>XML sitemap generation</strong> — a standards‑compliant sitemap generator that keeps search engines accurately aligned with the site’s structure.</li>
+  <li>
+    <strong>Content‑block model</strong> — factory‑constructed blocks rendered by
+    Razor components for modular, maintainable page composition.
+  </li>
+  <li>
+    <strong>Dynamic JSON‑LD generation</strong> — structured data produced from
+    the content model, including homepage schema, pillar schemas, and content
+    cluster schemas.
+  </li>
+  <li>
+    <strong>Internal search and routing</strong> — category‑driven search and
+    pillar matching to reinforce relevance and discoverability.
+  </li>
+  <li>
+    <strong>XML sitemap generation</strong> — automated, standards‑compliant
+    sitemaps aligned with the site’s content structure.
+  </li>
 </ul>
-<hr>
 
-<h2>🛡️ Automation & Reliability</h2>
+<h2>🛡️ Automation &amp; Reliability</h2>
 <p>
-  Reliability is supported through a comprehensive automation suite:
+  The project includes a full automation and observability stack for reliability
+  and continuous validation.
 </p>
-
 <ul>
-  <li><strong>xUnit</strong> for unit and integration testing</li>
-  <li><strong>Selenium</strong> for full end‑to‑end browser automation</li>
-  <li><strong>ReqnRoll (BDD)</strong> for executable specifications that validate user‑facing behaviour</li>
-  <li><strong>OpenTelemetry</strong> for application performance monitoring (APM) and modern observability integration</li>
+  <li><strong>xUnit</strong> — unit and integration testing for .NET</li>
+  <li><strong>Selenium</strong> — end‑to‑end browser automation</li>
+  <li><strong>ReqnRoll (BDD)</strong> — executable specifications for user‑facing behaviour</li>
+  <li><strong>OpenTelemetry</strong> — tracing and performance monitoring for ASP.NET Core</li>
 </ul>
