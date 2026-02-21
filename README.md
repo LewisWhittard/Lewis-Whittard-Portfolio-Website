@@ -18,7 +18,7 @@
 </p>
 
 <ul>
-  <li><strong>Content‑block model</strong> — blocks constructed via factories </li>
+  <li><strong>Content‑block model</strong> — blocks constructed via factories and rendered by razor components </li>
   <li><strong>Dynamic structured data</strong> — a semi‑automatic JSON‑LD generation library, with static homepage schema and dynamic pillar/content cluster schemas derived from the content model.</li>
   <li><strong>Internal Search and pillar matching routing </strong> — category‑driven organisation that reinforces internal relevance and discoverability.</li>
   <li><strong>XML sitemap generation</strong> — a standards‑compliant sitemap generator that keeps search engines accurately aligned with the site’s structure.</li>
