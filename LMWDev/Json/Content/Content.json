@@ -12,7 +12,7 @@
 		"Path": "SeleniumPortfolioPiece.mp4",
 		"Description": "Selenium Test Automation Framework",
 		"ContentType": "Video",
-		"ThumbnailPath": "/Thumbnails/SeleniumThumbnail.png"
+		"ThumbnailPath": "Thumbnails/SeleniumThumbnail.png"
 	},
 	{
 		"ID": 2,
@@ -34,7 +34,7 @@
 		"Path": "CogettaPortfolioVideo.mp4",
 		"Description": "Cogetta Portfolio Video",
 		"ContentType": "Video",
-		"ThumbnailPath": "/Thumbnails/CogettaPortfolioVideoThumbnail.png"
+		"ThumbnailPath": "Thumbnails/CogettaPortfolioVideoThumbnail.png"
 	},
 	{
 		"ID": 5,
@@ -42,7 +42,7 @@
 		"Path": "MarginalGainsSprintLWMDevPortfolioWebsite20251019.mp4",
 		"Description": "my Portfolio website marginal gains sprint",
 		"ContentType": "Video",
-		"ThumbnailPath": "/Thumbnails/MarginalGainsSprintLWMDevPortfolioWebsite20251019Thumbnail.png"
+		"ThumbnailPath": "Thumbnails/MarginalGainsSprintLWMDevPortfolioWebsite20251019Thumbnail.png"
 	},
 	{
 		"ID": 6,
@@ -50,7 +50,7 @@
 		"Path": "PortfolioRelease1.2.0.mp4",
 		"Description": "Release 1.2.0 video covering the search overhaul, SEO improvements, and UI updates.",
 		"ContentType": "Video",
-		"ThumbnailPath": "/Thumbnails/PortfolioRelease1.2.0Thumbnail.png"
+		"ThumbnailPath": "Thumbnails/PortfolioRelease1.2.0Thumbnail.png"
 	},
 	{
 		"ID": 7,
@@ -58,6 +58,6 @@
 		"Path": "PortfolioSiteRelease1.3.1.mp4",
 		"Description": "Release 1.3.1 video covering the new 3D prerendered background, WCAG accessibility toggle, hybrid video format, routing improvements, and automatic sitemap generation.",
 		"ContentType": "Video",
-		"ThumbnailPath": "/Thumbnails/PortfolioSiteRelease1.3.1Thumbnail.png"
+		"ThumbnailPath": "Thumbnails/PortfolioSiteRelease1.3.1Thumbnail.png"
 	}
 ]
