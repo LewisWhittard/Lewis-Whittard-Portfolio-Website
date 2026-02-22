@@ -7,15 +7,13 @@ using Moq;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Entities.SearchResult.Interface;
 using Page_Library.Page.Service.Interface;
+using JsonLD_Library.Service.Interface;
 using static LMWDev_Test.Controllers.AccessibilityControllerTests;
 
 namespace LMWDev_Test.Controllers
 {
     public class PillarPageControllerTests
     {
-        // -----------------------------
-        // 1. Create HttpContext + Session
-        // -----------------------------
         private HttpContext CreateHttpContextWithSession()
         {
             var context = new DefaultHttpContext();
@@ -32,14 +30,33 @@ namespace LMWDev_Test.Controllers
             public ISession Session { get; set; }
         }
 
-        // -----------------------------
-        // 2. Create controller with session
-        // -----------------------------
+        private Mock<IJsonLDService> CreateJsonLdMock()
+        {
+            var jsonLdMock = new Mock<IJsonLDService>();
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDCulsterContentPage(It.IsAny<IPage>()))
+                .Returns("{}");
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDHomePage())
+                .Returns("{}");
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDPillarPage(
+                    It.IsAny<IPage>(),
+                    It.IsAny<List<ISearchResult>>()))
+                .Returns("{}");
+
+            return jsonLdMock;
+        }
+
         private LMWDev.Controllers.PillarPageController CreateControllerWithSession(
             ILogger<LMWDev.Controllers.PillarPageController> logger,
-            IPageService pageService)
+            IPageService pageService,
+            IJsonLDService jsonLDService)
         {
-            var controller = new LMWDev.Controllers.PillarPageController(logger, pageService);
+            var controller = new LMWDev.Controllers.PillarPageController(logger, pageService, jsonLDService);
 
             controller.ControllerContext = new ControllerContext
             {
@@ -50,16 +67,16 @@ namespace LMWDev_Test.Controllers
         }
 
         // -----------------------------
-        // 3. Tests
+        // Tests
         // -----------------------------
         [Theory]
         [InlineData("software-development", 0)]
         [InlineData("creative-works", 1)]
         public void Index_ReturnsViewModel_ForValidRoutes(string id, int index)
         {
-            // Arrange
             var loggerMock = new Mock<ILogger<LMWDev.Controllers.PillarPageController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var mockPages = new List<IPage>
             {
@@ -94,13 +111,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(id);
 
-            // Assert
             var model = Assert.IsType<PillarPageModel>(((ViewResult)result).Model);
             Assert.Equal(mockPages[index], model.Page);
 
@@ -113,22 +129,21 @@ namespace LMWDev_Test.Controllers
         [Fact]
         public void Index_Returns404_WhenPageNotFound()
         {
-            // Arrange
             var loggerMock = new Mock<ILogger<LMWDev.Controllers.PillarPageController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             pageServiceMock.Setup(s => s.GetPage("unknown-route"))
                            .Returns((IPage)null);
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index("unknown-route");
 
-            // Assert
             Assert.IsType<NotFoundResult>(result);
         }
     }
