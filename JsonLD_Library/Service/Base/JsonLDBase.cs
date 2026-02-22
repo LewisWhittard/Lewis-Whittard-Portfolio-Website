@@ -106,7 +106,8 @@ namespace JsonLD_Library.Service.Base
                     ["@type"] = "VideoObject",
                     ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
                     ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
-                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
+                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}",
+                    ["thumbnailUrl"] = $"{baseUrl}/{video.Content.ThumbnailPath}"
                 })
                 .ToList();
 
@@ -234,7 +235,8 @@ namespace JsonLD_Library.Service.Base
                     ["@type"] = "VideoObject",
                     ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
                     ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
-                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}"
+                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}",
+                    ["thumbnailUrl"] = $"{baseUrl}/{video.Content.ThumbnailPath}"
                 })
                 .ToList();
 
