@@ -72,7 +72,7 @@ public class JsonLDService
     }
 
     [Fact]
-    public void PageService_GetPageById_Correctly()
+    public void ClusterContent_VideosAndImages_Correctly()
     {
         // Arrange
         var pagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
@@ -93,7 +93,7 @@ public class JsonLDService
         var jsonLdService = new JsonLD_Library.Service.JsonLDService(accessor);
 
         // Act
-        var page = pageService.GetPage("Cluster content page images and videos correctly");
+        var page = pageService.GetPage("Cluster content test Images and Videos");
         var actualJson = jsonLdService.GenerateJsonLDCulsterContentPage(page);
 
         // Expected JSON-LD (literal)
@@ -102,14 +102,14 @@ public class JsonLDService
   ""@graph"": [
     {
       ""@type"": ""BlogPosting"",
-      ""@id"": ""https://example.com/test"",
-      ""url"": ""https://example.com/test"",
+      ""@id"": ""https://example.com/Cluster content test Images and Videos"",
+      ""url"": ""https://example.com/Cluster content test Images and Videos"",
       ""headline"": ""Release 1.3.1 \u2014 3D Background, WCAG Controls \u0026 SEO Improvements"",
       ""description"": ""Explore Release 1.3.1, featuring a new 3D prerendered background video, WCAG\u2011compliant motion controls, automatic sitemap generation, improved routing, and a hybrid video format with higher production values."",
       ""datePublished"": ""2026-01-26T00:00:00Z"",
       ""mainEntityOfPage"": {
         ""@type"": ""WebPage"",
-        ""@id"": ""https://example.com/test""
+        ""@id"": ""https://example.com/Cluster content test Images and Videos""
       },
       ""publisher"": {
         ""@type"": ""Organization"",
@@ -156,7 +156,7 @@ public class JsonLDService
     },
     {
       ""@type"": ""BreadcrumbList"",
-      ""@id"": ""https://example.com/intersections/test#breadcrumb-software-development"",
+      ""@id"": ""https://example.com/intersections/Cluster content test Images and Videos#breadcrumb-software-development"",
       ""itemListElement"": [
         {
           ""@type"": ""ListItem"",
@@ -172,7 +172,7 @@ public class JsonLDService
           ""position"": 2,
           ""item"": {
             ""@type"": ""WebPage"",
-            ""@id"": ""https://example.com/intersections/test"",
+            ""@id"": ""https://example.com/intersections/Cluster content test Images and Videos"",
             ""name"": ""Release 1.3.1 \u2014 3D Background, WCAG Controls \u0026 SEO Improvements""
           }
         }
@@ -180,7 +180,7 @@ public class JsonLDService
     },
     {
       ""@type"": ""BreadcrumbList"",
-      ""@id"": ""https://example.com/intersections/test#breadcrumb-creative-works"",
+      ""@id"": ""https://example.com/intersections/Cluster content test Images and Videos#breadcrumb-creative-works"",
       ""itemListElement"": [
         {
           ""@type"": ""ListItem"",
@@ -196,7 +196,7 @@ public class JsonLDService
           ""position"": 2,
           ""item"": {
             ""@type"": ""WebPage"",
-            ""@id"": ""https://example.com/intersections/test"",
+            ""@id"": ""https://example.com/intersections/Cluster content test Images and Videos"",
             ""name"": ""Release 1.3.1 \u2014 3D Background, WCAG Controls \u0026 SEO Improvements""
           }
         }
@@ -204,6 +204,42 @@ public class JsonLDService
     }
   ]
 }";
+
+        // Normalise formatting for comparison
+        var expected = JToken.Parse(expectedJson).ToString();
+        var actual = JToken.Parse(actualJson).ToString();
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void PageService_GetPageById_Correctly()
+    {
+        // Arrange
+        var pagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
+        var pageRepository = new JsonPageRepository(pagePath);
+
+        var factory = new ContentBlockFactory();
+
+        var contentPath = Path.Combine(AppContext.BaseDirectory, "TestData", "Content", "content.json");
+        var contentRepository = new JsonContentRepository(contentPath);
+
+        var pageService = new PageService(pageRepository, factory, contentRepository);
+
+        var httpContext = new DefaultHttpContext();
+        httpContext.Request.Scheme = "https";
+        httpContext.Request.Host = new HostString("example.com");
+
+        var accessor = new HttpContextAccessor { HttpContext = httpContext };
+        var jsonLdService = new JsonLD_Library.Service.JsonLDService(accessor);
+
+        // Act
+        var page = pageService.GetPage("Cluster content test no Images and Videos");
+        var actualJson = jsonLdService.GenerateJsonLDCulsterContentPage(page);
+
+        // Expected JSON-LD (literal)
+        var expectedJson = @"";
 
         // Normalise formatting for comparison
         var expected = JToken.Parse(expectedJson).ToString();
