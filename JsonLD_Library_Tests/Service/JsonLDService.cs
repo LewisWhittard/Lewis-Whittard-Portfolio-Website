@@ -32,7 +32,23 @@ public class JsonLDService
         var actualJson = service.GenerateJsonLDHomePage();
 
         // Expected JSON-LD (literal)
-        var expectedJson = @"";
+        var expectedJson = @"{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""WebPage"",
+  ""name"": ""Lewis Whittard – Developer & Support Analyst"",
+  ""url"": ""https://example.com"",
+  ""description"": ""Portfolio homepage of Lewis Whittard, a Developer & Support Analyst with experience across software testing, development, and support. Showcasing professional history, qualifications and certifications."",
+  ""isPartOf"": {
+    ""@type"": ""WebSite"",
+    ""url"": ""https://example.com"",
+    ""name"": ""Lewis Whittard Portfolio""
+  },
+  ""primaryImageOfPage"": {
+    ""@type"": ""ImageObject"",
+    ""url"": ""https://example.com/Images/LewisWhittard.jpg"",
+    ""caption"": ""Picture of Lewis Whittard""
+  }
+}";
 
         // Normalise formatting for comparison
         var expected = JToken.Parse(expectedJson).ToString();
