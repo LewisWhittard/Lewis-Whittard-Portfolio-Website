@@ -214,7 +214,7 @@ public class JsonLDService
     }
 
     [Fact]
-    public void PageService_GetPageById_Correctly()
+    public void ClusterContent_NoVideosAndImages_Correctly()
     {
         // Arrange
         var pagePath = Path.Combine(AppContext.BaseDirectory, "TestData", "Page", "Page.json");
