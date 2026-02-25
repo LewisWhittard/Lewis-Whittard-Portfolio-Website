@@ -87,15 +87,6 @@ namespace JsonLD_Library.Service.Base
                 })
                 .ToList();
 
-            if (page.Meta?.Content?.Path is string metaPath)
-            {
-                images.Insert(0, new Dictionary<string, object?>
-                {
-                    ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/{metaPath}"
-                });
-            }
-
             // -----------------------------
             // VIDEOS
             // -----------------------------
