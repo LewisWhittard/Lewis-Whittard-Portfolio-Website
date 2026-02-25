@@ -355,14 +355,6 @@ namespace JsonLD_Library.Service.Base
                 {
                     ["@id"] = $"{baseUrl}/{pillar.pillar}"
                 });
-
-                // Add the pillar WebPage node to the graph
-                graph.Add(new Dictionary<string, object?>
-                {
-                    ["@type"] = "WebPage",
-                    ["@id"] = $"{baseUrl}/{pillar.pillar}",
-                    ["name"] = RemoveEmojis(pillar.name)?.Trim()
-                });
             }
 
             // ---------------------------------------------------------
