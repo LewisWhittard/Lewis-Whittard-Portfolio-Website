@@ -285,7 +285,7 @@ namespace JsonLD_Library.Service.Base
             graph.Add(articleNode);
 
             // ---------------------------------------------------------
-            // 🔹 One breadcrumb list per pillar
+            // 🔹 One breadcrumb list + isPartOf per pillar
             // ---------------------------------------------------------
             var pillars = GetPillarsForCategory(page.Category);
 
@@ -308,6 +308,7 @@ namespace JsonLD_Library.Service.Base
                 });
 
                 string pageURL;
+
                 // Page URL for this pillar
                 if (page.Category.Contains(","))
                 {
@@ -318,18 +319,18 @@ namespace JsonLD_Library.Service.Base
                     pageURL = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
                 }
 
-                    // Current page item
-                    items.Add(new Dictionary<string, object?>
+                // Current page item
+                items.Add(new Dictionary<string, object?>
+                {
+                    ["@type"] = "ListItem",
+                    ["position"] = pos,
+                    ["item"] = new Dictionary<string, object?>
                     {
-                        ["@type"] = "ListItem",
-                        ["position"] = pos,
-                        ["item"] = new Dictionary<string, object?>
-                        {
-                            ["@type"] = "WebPage",
-                            ["@id"] = pageURL,
-                            ["name"] = RemoveEmojis(page.Title)?.Trim()
-                        }
-                    });
+                        ["@type"] = "WebPage",
+                        ["@id"] = pageURL,
+                        ["name"] = RemoveEmojis(page.Title)?.Trim()
+                    }
+                });
 
                 // Breadcrumb node
                 graph.Add(new Dictionary<string, object?>
@@ -337,6 +338,30 @@ namespace JsonLD_Library.Service.Base
                     ["@type"] = "BreadcrumbList",
                     ["@id"] = $"{pageURL}#breadcrumb-{pillar.pillar}",
                     ["itemListElement"] = items
+                });
+
+                // ---------------------------------------------------------
+                // 🔹 Add isPartOf for this pillar
+                // ---------------------------------------------------------
+
+                // Ensure articleNode has an isPartOf list
+                if (!articleNode.ContainsKey("isPartOf"))
+                {
+                    articleNode["isPartOf"] = new List<object>();
+                }
+
+                // Add the pillar reference
+                ((List<object>)articleNode["isPartOf"]).Add(new Dictionary<string, object?>
+                {
+                    ["@id"] = $"{baseUrl}/{pillar.pillar}"
+                });
+
+                // Add the pillar WebPage node to the graph
+                graph.Add(new Dictionary<string, object?>
+                {
+                    ["@type"] = "WebPage",
+                    ["@id"] = $"{baseUrl}/{pillar.pillar}",
+                    ["name"] = RemoveEmojis(pillar.name)?.Trim()
                 });
             }
 
