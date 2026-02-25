@@ -12,6 +12,7 @@ namespace Page_Library.Page.Entities.Page.DTO
         public string Category {  get; set; }
         public MetaDTO Meta { get; set; }
         public List<ContentBlockDTO>? ContentBlocks { get; set; }
+        public string? Author { get; set; }
     }
 }
 

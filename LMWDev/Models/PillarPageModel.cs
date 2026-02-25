@@ -11,14 +11,17 @@ namespace LMWDev.Models
         public List<ISearchResult> Results { get; set; }
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
+        public string JsonLD { get; set; }
 
 
 
-        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled)
+
+        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled, string jsonLD)
         {
             Page = page;
             Results = results;
             BackgroundDisabled = backgroundDisabled;
+            JsonLD = jsonLD;
         }
 
         public PillarPageModel()

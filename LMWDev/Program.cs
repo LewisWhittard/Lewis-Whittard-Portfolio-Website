@@ -1,3 +1,4 @@
+using JsonLD_Library.Service.Interface;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -97,7 +98,12 @@ namespace LMWDev
                         return new SitemapXMLService(pageRepo, http);
                     });
 
+                    services.AddSingleton<IJsonLDService>(provider =>
+                    {
+                        var http = provider.GetRequiredService<IHttpContextAccessor>();
 
+                        return new JsonLD_Library.Service.JsonLDService(http);
+                    });
 
 
                     services.AddOpenTelemetry()

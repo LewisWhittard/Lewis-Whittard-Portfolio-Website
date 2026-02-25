@@ -11,10 +11,13 @@ namespace LMWDev.Models
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
         public SearchViewModel Search { get; set; }
+        public string JsonLD { get; set; }
 
-        public HomeModel(bool backgroundDisabled)
+
+        public HomeModel(bool backgroundDisabled, string jsonLD)
         {
             BackgroundDisabled = backgroundDisabled;
+            JsonLD = jsonLD;
         }
     }
 }

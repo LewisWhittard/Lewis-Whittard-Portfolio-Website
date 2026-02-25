@@ -8,5 +8,7 @@
         public string Alt { get; set; }
         public string ContentType { get; set; }
         public string Description { get; set; }
+        public string ThumbnailPath { get; set; }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using LMWDev.Controllers;
+﻿using JsonLD_Library.Service.Interface;
+using LMWDev.Controllers;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Page_Library.Page.Entities.Page.Interface;
+using Page_Library.Page.Entities.SearchResult.Interface;
 using Page_Library.Page.Service.Interface;
 using static LMWDev_Test.Controllers.AccessibilityControllerTests;
 
@@ -13,9 +15,6 @@ namespace LMWDev_Test.Controllers
 {
     public class ClusterContentControllerTests
     {
-        // -----------------------------
-        // 1. Create HttpContext + Session
-        // -----------------------------
         private HttpContext CreateHttpContextWithSession()
         {
             var context = new DefaultHttpContext();
@@ -32,14 +31,12 @@ namespace LMWDev_Test.Controllers
             public ISession Session { get; set; }
         }
 
-        // -----------------------------
-        // 2. Create controller with session
-        // -----------------------------
-        private LMWDev.Controllers.ClusterContentController CreateControllerWithSession(
-            ILogger<LMWDev.Controllers.ClusterContentController> logger,
-            IPageService pageService)
+        private ClusterContentController CreateControllerWithSession(
+            ILogger<ClusterContentController> logger,
+            IPageService pageService,
+            IJsonLDService jsonLDService)
         {
-            var controller = new LMWDev.Controllers.ClusterContentController(logger, pageService);
+            var controller = new ClusterContentController(logger, pageService, jsonLDService);
 
             controller.ControllerContext = new ControllerContext
             {
@@ -49,17 +46,38 @@ namespace LMWDev_Test.Controllers
             return controller;
         }
 
+        private Mock<IJsonLDService> CreateJsonLdMock()
+        {
+            var jsonLdMock = new Mock<IJsonLDService>();
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDCulsterContentPage(It.IsAny<IPage>()))
+                .Returns("{}");
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDHomePage())
+                .Returns("{}");
+
+            jsonLdMock
+                .Setup(x => x.GenerateJsonLDPillarPage(
+                    It.IsAny<IPage>(),
+                    It.IsAny<List<ISearchResult>>()))
+                .Returns("{}");
+
+            return jsonLdMock;
+        }
+
         // -----------------------------
-        // 3. Tests
+        // Tests
         // -----------------------------
         [Theory]
         [InlineData("1", 0, "software-development")]
         [InlineData("2", 1, "creative-works")]
         public void ClusterContentController_ReturnIndexViewModel_Correctly(string id, int count, string pillar)
         {
-            // Arrange
-            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var mockPages = new List<Mock<IPage>>
             {
@@ -77,13 +95,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(pillar, id);
 
-            // Assert
             var model = Assert.IsType<ClusterContentModel>(((ViewResult)result).Model);
             Assert.Equal(mockPages[count].Object, model.Page);
         }
@@ -93,9 +110,9 @@ namespace LMWDev_Test.Controllers
         [InlineData("1", 1, "creative-works")]
         public void ClusterContentController_WrongPageForPillar_404(string id, int count, string pillar)
         {
-            // Arrange
-            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var mockPages = new List<Mock<IPage>>
             {
@@ -113,13 +130,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(pillar, id);
 
-            // Assert
             var notFound = Assert.IsType<NotFoundResult>(result);
             Assert.Equal(404, notFound.StatusCode);
         }
@@ -128,9 +144,9 @@ namespace LMWDev_Test.Controllers
         [InlineData("1", 0, "software-development")]
         public void ClusterContentController_WrongPageType_404(string id, int count, string pillar)
         {
-            // Arrange
-            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var mockPages = new List<Mock<IPage>>
             {
@@ -144,13 +160,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(pillar, id);
 
-            // Assert
             var notFound = Assert.IsType<NotFoundResult>(result);
             Assert.Equal(404, notFound.StatusCode);
         }
@@ -160,9 +175,9 @@ namespace LMWDev_Test.Controllers
         [InlineData("1", "creative-works")]
         public void ClusterContentController_CommaCategory_WrongPillar_404(string id, string pillar)
         {
-            // Arrange
-            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var pageMock = new Mock<IPage>();
             pageMock.Setup(p => p.Category).Returns("Software Development, Creative Works");
@@ -172,13 +187,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(pillar, id);
 
-            // Assert
             var notFound = Assert.IsType<NotFoundResult>(result);
             Assert.Equal(404, notFound.StatusCode);
         }
@@ -187,9 +201,9 @@ namespace LMWDev_Test.Controllers
         [InlineData("1", "intersections")]
         public void ClusterContentController_NonCommaCategory_IntersectionsPillar_404(string id, string pillar)
         {
-            // Arrange
-            var loggerMock = new Mock<ILogger<LMWDev.Controllers.ClusterContentController>>();
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
 
             var pageMock = new Mock<IPage>();
             pageMock.Setup(p => p.Category).Returns("Software Development");
@@ -199,13 +213,12 @@ namespace LMWDev_Test.Controllers
 
             var controller = CreateControllerWithSession(
                 loggerMock.Object,
-                pageServiceMock.Object
+                pageServiceMock.Object,
+                jsonLdMock.Object
             );
 
-            // Act
             var result = controller.Index(pillar, id);
 
-            // Assert
             var notFound = Assert.IsType<NotFoundResult>(result);
             Assert.Equal(404, notFound.StatusCode);
         }
