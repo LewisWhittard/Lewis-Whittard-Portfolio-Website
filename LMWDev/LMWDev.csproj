@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\LewisWhittard\Optimised\" />
     <Folder Include="wwwroot\Images\Thumbnails\PortfolioSiteRelease1.3.1Thumbnail\Optimsed\" />
   </ItemGroup>
 
