@@ -35,8 +35,4 @@
     <ProjectReference Include="..\Sitemap_Library\Sitemap_Library.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Images\Thumbnails\PortfolioSiteRelease1.3.1Thumbnail\Optimised\" />
-  </ItemGroup>
-
 </Project>
