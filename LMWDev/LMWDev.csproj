@@ -37,12 +37,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Images\LewisWhittard\Optimised\" />
-    <Folder Include="wwwroot\Images\Thumbnails\CogettaPortfolioVideoThumbnail\Optimsed\" />
-    <Folder Include="wwwroot\Images\Thumbnails\MarginalGainsSprintLWMDevPortfolioWebsite20251019Thumbnail\Optimsed\" />
-    <Folder Include="wwwroot\Images\Thumbnails\PortfolioRelease1.2.0Thumbnail\Optimsed\" />
     <Folder Include="wwwroot\Images\Thumbnails\PortfolioSiteRelease1.3.1Thumbnail\Optimsed\" />
-    <Folder Include="wwwroot\Images\Thumbnails\SeleniumThumbnail\Optimsed\" />
-    <Folder Include="wwwroot\Images\Thumbnails\SeleniumThumbnail\Original\" />
   </ItemGroup>
 
 </Project>
