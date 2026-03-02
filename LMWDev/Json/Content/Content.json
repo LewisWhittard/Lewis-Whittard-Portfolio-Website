@@ -2,9 +2,9 @@
 	{
 		"ID": 0,
 		"Name": "LMWLogo",
-		"Path": "LMWlogo.png",
+		"Path": "LMWDLogo/Optimised/LMWlogo.avif",
 		"Alt": "Lewis Matthew Whittard Software Development",
-		"ContentType":  "Image"
+		"ContentType": "Image"
 	},
 	{
 		"ID": 1,
@@ -24,7 +24,7 @@
 	{
 		"ID": 3,
 		"Name": "Cogetta Logo",
-		"Path": "CogettaPlain.png",
+		"Path": "CogettaPlain/Optimised/CogettaPlain.avif",
 		"Alt": "Cogetta Logo",
 		"ContentType": "Image"
 	},
