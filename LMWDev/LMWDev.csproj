@@ -35,4 +35,8 @@
     <ProjectReference Include="..\Sitemap_Library\Sitemap_Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\LewisWhittard\Optimised\" />
+  </ItemGroup>
+
 </Project>
