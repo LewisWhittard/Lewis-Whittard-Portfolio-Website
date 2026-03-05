@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLD_Library", "JsonLD_Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLD_Library_Tests", "JsonLD_Library_Tests\JsonLD_Library_Tests.csproj", "{D76D6208-88CA-447B-BF5E-FC27C3932854}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticPageGenerator", "StaticPageGenerator", "{6625C518-5D90-4EFE-A3B5-1FFF813B8EED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticPageGenerator_Library", "StaticPageGenerator_Library\StaticPageGenerator_Library.csproj", "{1A2C2547-3597-4A26-ADED-F92F33EE6979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{D76D6208-88CA-447B-BF5E-FC27C3932854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D76D6208-88CA-447B-BF5E-FC27C3932854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D76D6208-88CA-447B-BF5E-FC27C3932854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A2C2547-3597-4A26-ADED-F92F33EE6979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A2C2547-3597-4A26-ADED-F92F33EE6979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A2C2547-3597-4A26-ADED-F92F33EE6979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A2C2547-3597-4A26-ADED-F92F33EE6979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +101,8 @@ Global
 		{F0A3C9BC-55D5-43EC-BFF5-65D034279EAA} = {0CA66A16-7042-405E-9B78-A9E9418A28EE}
 		{0DD14E8D-ECE1-48B4-94C2-DE4400FF4BD5} = {F0A3C9BC-55D5-43EC-BFF5-65D034279EAA}
 		{D76D6208-88CA-447B-BF5E-FC27C3932854} = {F0A3C9BC-55D5-43EC-BFF5-65D034279EAA}
+		{6625C518-5D90-4EFE-A3B5-1FFF813B8EED} = {0CA66A16-7042-405E-9B78-A9E9418A28EE}
+		{1A2C2547-3597-4A26-ADED-F92F33EE6979} = {6625C518-5D90-4EFE-A3B5-1FFF813B8EED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3328E80D-68B4-4CFC-8520-892E666B82C7}
