@@ -39,23 +39,19 @@ namespace LMWDev.Controllers
         public IActionResult Index()
         {
             bool backgroundDisabled = Convert.ToBoolean(
-            HttpContext.Session.GetString("BackgroundDisabled")
+                HttpContext.Session.GetString("BackgroundDisabled")
             );
 
-            string filePath = null;
-
-            if (backgroundDisabled)
-            {
-                filePath = Path.Combine(_env.WebRootPath, "pages","Home", "BackgroundOff", "index.html");
-            }
-
-            else
-            {
-                filePath = Path.Combine(_env.WebRootPath, "pages","Home", "BackgroundOn", "index.html");
-            }
+            string filePath = backgroundDisabled
+                ? Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOff", "index.html")
+                : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
 
             if (!System.IO.File.Exists(filePath))
                 return NotFound();
+
+            Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+            Response.Headers["Pragma"] = "no-cache";
+            Response.Headers["Expires"] = "0";
 
             return PhysicalFile(filePath, "text/html");
         }
