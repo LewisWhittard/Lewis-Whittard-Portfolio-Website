@@ -47,7 +47,9 @@ namespace LMWDev.Controllers
                 : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
 
             if (!System.IO.File.Exists(filePath))
+            {
                 return NotFound();
+            }
 
             Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
             Response.Headers["Pragma"] = "no-cache";
