@@ -33,6 +33,7 @@
     <ProjectReference Include="..\JsonLD_Library\JsonLD_Library.csproj" />
     <ProjectReference Include="..\Page_Library\Page_Library.csproj" />
     <ProjectReference Include="..\Sitemap_Library\Sitemap_Library.csproj" />
+    <ProjectReference Include="..\StaticPageGenerator_Library\StaticPageGenerator_Library.csproj" />
   </ItemGroup>
 
 </Project>
