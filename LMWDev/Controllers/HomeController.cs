@@ -38,25 +38,82 @@ namespace LMWDev.Controllers
 
         public IActionResult Index()
         {
-            bool backgroundDisabled = Convert.ToBoolean(
-                HttpContext.Session.GetString("BackgroundDisabled")
-            );
-
-            string filePath = backgroundDisabled
-                ? Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOff", "index.html")
-                : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
-
-            if (!System.IO.File.Exists(filePath))
+            using var activity = ActivitySource.StartActivity("Home.Index");
             {
-                return NotFound();
+                // Tag: user session
+                string sessionId = HttpContext.Session.Id;
+                activity?.SetTag("app.request_info", $"{sessionId}|home|{DateTime.UtcNow:o}"
+                    );
+
+                // ───────────────────────────────────────────────
+                // Span: Resolve background mode
+                // ───────────────────────────────────────────────
+                using (var span = ActivitySource.StartActivity("ResolveBackgroundMode"))
+                {
+                    bool backgroundDisabled = Convert.ToBoolean(
+                        HttpContext.Session.GetString("BackgroundDisabled")
+                    );
+
+                    activity?.SetTag("app.background.disabled", backgroundDisabled);
+
+                    span?.AddEvent(new ActivityEvent(
+                        backgroundDisabled ? "BackgroundDisabled" : "BackgroundEnabled"
+                    ));
+
+                    span?.SetTag("background.disabled", backgroundDisabled);
+
+                    // Store for later
+                    HttpContext.Items["BackgroundDisabled"] = backgroundDisabled;
+                }
+
+                bool bgDisabled = (bool)HttpContext.Items["BackgroundDisabled"];
+
+                // ───────────────────────────────────────────────
+                // Span: Resolve file path
+                // ───────────────────────────────────────────────
+                string filePath;
+                using (var span = ActivitySource.StartActivity("ResolveFilePath"))
+                {
+                    filePath = bgDisabled
+                        ? Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOff", "index.html")
+                        : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
+
+                    span?.AddEvent(new ActivityEvent("FilePathResolved"));
+                    span?.SetTag("file.path", filePath);
+                }
+
+                // ───────────────────────────────────────────────
+                // Span: Check file exists
+                // ───────────────────────────────────────────────
+                using (var span = ActivitySource.StartActivity("CheckFileExists"))
+                {
+                    if (!System.IO.File.Exists(filePath))
+                    {
+                        span?.AddEvent(new ActivityEvent("FileMissing"));
+                        span?.SetStatus(ActivityStatusCode.Error, "File not found");
+                        activity?.SetStatus(ActivityStatusCode.Error, "File not found");
+                        return NotFound();
+                    }
+
+                    span?.AddEvent(new ActivityEvent("FileExists"));
+                }
+
+                // ───────────────────────────────────────────────
+                // Span: Serve file
+                // ───────────────────────────────────────────────
+                using (var span = ActivitySource.StartActivity("ServeFile"))
+                {
+                    span?.AddEvent(new ActivityEvent("FileServed"));
+
+                    Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+                    Response.Headers["Pragma"] = "no-cache";
+                    Response.Headers["Expires"] = "0";
+
+                    return PhysicalFile(filePath, "text/html");
+                }
             }
-
-            Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
-            Response.Headers["Pragma"] = "no-cache";
-            Response.Headers["Expires"] = "0";
-
-            return PhysicalFile(filePath, "text/html");
         }
+
 
         public IActionResult GenerateHomepage()
         {
