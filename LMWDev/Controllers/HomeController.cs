@@ -34,81 +34,68 @@ namespace LMWDev.Controllers
             _env = env;
         }
 
-
-
         public IActionResult Index()
         {
-            using var activity = ActivitySource.StartActivity("Home.Index");
+            var activity = Activity.Current;
+
+
+            bool backgroundDisabled = false;
+
+            using (var span = ActivitySource.StartActivity("Session.Read"))
             {
-                // Tag: user session
                 string sessionId = HttpContext.Session.Id;
-                activity?.SetTag("app.request_info", $"{sessionId}|home|{DateTime.UtcNow:o}"
-                    );
+                activity?.SetTag("session.id", sessionId);
 
-                // ───────────────────────────────────────────────
-                // Span: Resolve background mode
-                // ───────────────────────────────────────────────
-                using (var span = ActivitySource.StartActivity("ResolveBackgroundMode"))
+                backgroundDisabled = Convert.ToBoolean(
+                    HttpContext.Session.GetString("BackgroundDisabled")
+                );
+
+                activity?.SetTag("page.name", "home");
+                activity?.SetTag("page.variant", backgroundDisabled ? "background-off" : "background-on");
+            }
+
+            //
+            // Resolve file path
+            //
+            string filePath;
+            using (var span = ActivitySource.StartActivity("File.ResolvePath"))
+            {
+                filePath = backgroundDisabled
+                    ? Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOff", "index.html")
+                    : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
+
+                activity?.SetTag("file.path", filePath);
+                span?.SetTag("resolved.path", filePath);
+            }
+
+            //
+            // Check file existence
+            //
+            using (var span = ActivitySource.StartActivity("File.CheckExists"))
+            {
+                if (!System.IO.File.Exists(filePath))
                 {
-                    bool backgroundDisabled = Convert.ToBoolean(
-                        HttpContext.Session.GetString("BackgroundDisabled")
-                    );
-
-                    activity?.SetTag("app.background.disabled", backgroundDisabled);
-
-                    span?.AddEvent(new ActivityEvent(
-                        backgroundDisabled ? "BackgroundDisabled" : "BackgroundEnabled"
-                    ));
-
-                    span?.SetTag("background.disabled", backgroundDisabled);
-
-                    // Store for later
-                    HttpContext.Items["BackgroundDisabled"] = backgroundDisabled;
+                    span?.SetStatus(ActivityStatusCode.Error, "File not found");
+                    return NotFound();
                 }
+            }
 
-                bool bgDisabled = (bool)HttpContext.Items["BackgroundDisabled"];
+            //
+            // Serve the file
+            //
+            using (var span = ActivitySource.StartActivity("StaticFile.Serve"))
+            {
+                span?.AddEvent(new ActivityEvent("FileServed"));
 
-                // ───────────────────────────────────────────────
-                // Span: Resolve file path
-                // ───────────────────────────────────────────────
-                string filePath;
-                using (var span = ActivitySource.StartActivity("ResolveFilePath"))
+                using (var headerSpan = ActivitySource.StartActivity("Response.SetHeaders"))
                 {
-                    filePath = bgDisabled
-                        ? Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOff", "index.html")
-                        : Path.Combine(_env.WebRootPath, "pages", "Home", "BackgroundOn", "index.html");
-
-                    span?.AddEvent(new ActivityEvent("FilePathResolved"));
-                    span?.SetTag("file.path", filePath);
-                }
-
-                // ───────────────────────────────────────────────
-                // Span: Check file exists
-                // ───────────────────────────────────────────────
-                using (var span = ActivitySource.StartActivity("CheckFileExists"))
-                {
-                    if (!System.IO.File.Exists(filePath))
-                    {
-                        span?.AddEvent(new ActivityEvent("FileMissing"));
-                        span?.SetStatus(ActivityStatusCode.Error, "File not found");
-                        activity?.SetStatus(ActivityStatusCode.Error, "File not found");
-                        return NotFound();
-                    }
-
-                    span?.AddEvent(new ActivityEvent("FileExists"));
-                }
-
-                // ───────────────────────────────────────────────
-                // Span: Serve file
-                // ───────────────────────────────────────────────
-                using (var span = ActivitySource.StartActivity("ServeFile"))
-                {
-                    span?.AddEvent(new ActivityEvent("FileServed"));
-
                     Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
                     Response.Headers["Pragma"] = "no-cache";
                     Response.Headers["Expires"] = "0";
+                }
 
+                using (var returnSpan = ActivitySource.StartActivity("Response.ReturnFile"))
+                {
                     return PhysicalFile(filePath, "text/html");
                 }
             }
@@ -117,12 +104,8 @@ namespace LMWDev.Controllers
 
         public IActionResult GenerateHomepage()
         {
-            using var activity = ActivitySource.StartActivity("HomeController.RenderHomepage");
-
             try
             {
-                activity?.SetTag("page.type", "HomePage");
-
                 // Generate JSON-LD
                 string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
 
@@ -147,8 +130,8 @@ namespace LMWDev.Controllers
                     .GetAwaiter().GetResult();
 
                 // Output paths
-                var pathOn = Path.Combine("wwwroot", "pages","Home", "BackgroundOn", "index.html");
-                var pathOff = Path.Combine("wwwroot", "pages","Home", "BackgroundOff", "index.html");
+                var pathOn = Path.Combine("wwwroot", "pages", "Home", "BackgroundOn", "index.html");
+                var pathOff = Path.Combine("wwwroot", "pages", "Home", "BackgroundOff", "index.html");
 
                 Directory.CreateDirectory(Path.GetDirectoryName(pathOn)!);
                 Directory.CreateDirectory(Path.GetDirectoryName(pathOff)!);
@@ -157,19 +140,13 @@ namespace LMWDev.Controllers
                 System.IO.File.WriteAllText(pathOn, htmlBackgroundOn);
                 System.IO.File.WriteAllText(pathOff, htmlBackgroundOff);
 
-                activity?.SetStatus(ActivityStatusCode.Ok);
                 _logger.LogInformation("Static Home pages generated (On + Off)");
 
-                // Return one of them (or a simple message)
                 return Content("Homepage Generated");
             }
             catch (Exception ex)
             {
-                activity?.SetStatus(ActivityStatusCode.Error);
-                activity?.RecordException(ex);
-
                 _logger.LogError(ex, "Error generating static home pages");
-
                 throw;
             }
         }
