@@ -125,7 +125,11 @@ namespace LMWDev.Controllers
             {
                 "Software Development" => pillar == "software-development",
                 "Creative Works" => pillar == "creative-works",
-                _ when category.Contains(",") => pillar == "intersections",
+
+                // When category contains commas, use the first segment
+                _ when category.Contains(",") =>
+                    pillar == category.Split(',')[0].Trim().ToLower().Replace(" ", "-"),
+
                 _ => false
             };
         }
