@@ -17,6 +17,21 @@ namespace LMWDev.Controllers
         private readonly ILogger<SearchController> _logger;
         private static readonly ActivitySource ActivitySource = new("LMWDev.SearchController");
 
+        public SearchController(IPageService pageService, ILogger<SearchController> logger)
+        {
+            _logger = logger;
+            try
+            {
+                _pageService = pageService;
+                _logger.LogInformation("Page Service initialized successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to initialize PageSearchService.");
+                throw;
+            }
+        }
+
         [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
