@@ -37,7 +37,7 @@ public class JsonLDService
   },
   ""primaryImageOfPage"": {
     ""@type"": ""ImageObject"",
-    ""url"": ""https://example.com/Images/LewisWhittard.jpg"",
+    ""url"": ""https://example.com/Images/LMWDLogo/OptimisedLewisWhittard.avif"",
     ""caption"": ""Picture of Lewis Whittard""
   }
 }";
