@@ -25,56 +25,57 @@ namespace LMWDev.Controllers
         public IActionResult Index()
         {
             using var activity = ActivitySource.StartActivity("HomeController.Index", ActivityKind.Server);
-
-            try
             {
-                activity?.SetTag("page.type", "HomePage");
-
-                // ---------------------------
-                // 1. JSON-LD Generation Span
-                // ---------------------------
-                string jsonLD;
-                using (var jsonSpan = ActivitySource.StartActivity("GenerateJsonLD", ActivityKind.Internal))
+                try
                 {
-                    jsonLD = _jsonLDService.GenerateJsonLDHomePage();
-                    jsonSpan?.SetTag("jsonld.generated", jsonLD != null);
-                }
+                    activity?.SetTag("page.type", "HomePage");
 
-                // ---------------------------
-                // 2. Session Retrieval Span
-                // ---------------------------
-                bool backgroundDisabled;
-                using (var sessionSpan = ActivitySource.StartActivity("ReadSession", ActivityKind.Internal))
+                    // ---------------------------
+                    // 1. JSON-LD Generation Span
+                    // ---------------------------
+                    string jsonLD;
+                    using (var jsonSpan = ActivitySource.StartActivity("GenerateJsonLD", ActivityKind.Internal))
+                    {
+                        jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+                        jsonSpan?.SetTag("jsonld.generated", jsonLD != null);
+                    }
+
+                    // ---------------------------
+                    // 2. Session Retrieval Span
+                    // ---------------------------
+                    bool backgroundDisabled;
+                    using (var sessionSpan = ActivitySource.StartActivity("ReadSession", ActivityKind.Internal))
+                    {
+                        backgroundDisabled = Convert.ToBoolean(
+                            HttpContext.Session.GetString("BackgroundDisabled")
+                        );
+
+                        sessionSpan?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                    }
+
+                    // ---------------------------
+                    // 3. ViewModel Construction Span
+                    // ---------------------------
+                    HomeModel viewModel;
+                    using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
+                    {
+                        viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                        vmSpan?.SetTag("viewmodel.created", true);
+                    }
+
+                    activity?.SetStatus(ActivityStatusCode.Ok);
+                    _logger.LogInformation("Rendering Home/Index");
+
+                    return View(viewModel);
+                }
+                catch (Exception ex)
                 {
-                    backgroundDisabled = Convert.ToBoolean(
-                        HttpContext.Session.GetString("BackgroundDisabled")
-                    );
+                    activity?.RecordException(ex);
+                    activity?.SetStatus(ActivityStatusCode.Error);
 
-                    sessionSpan?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                    _logger.LogError(ex, "Error in HomeController.Index");
+                    throw;
                 }
-
-                // ---------------------------
-                // 3. ViewModel Construction Span
-                // ---------------------------
-                HomeModel viewModel;
-                using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
-                {
-                    viewModel = new HomeModel(backgroundDisabled, jsonLD);
-                    vmSpan?.SetTag("viewmodel.created", true);
-                }
-
-                activity?.SetStatus(ActivityStatusCode.Ok);
-                _logger.LogInformation("Rendering Home/Index");
-
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                activity?.RecordException(ex);
-                activity?.SetStatus(ActivityStatusCode.Error);
-
-                _logger.LogError(ex, "Error in HomeController.Index");
-                throw;
             }
         }
 
