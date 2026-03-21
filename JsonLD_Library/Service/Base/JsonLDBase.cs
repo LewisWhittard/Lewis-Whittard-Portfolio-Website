@@ -282,12 +282,17 @@ namespace JsonLD_Library.Service.Base
             graph.Add(articleNode);
 
             // ---------------------------------------------------------
-            // 🔹 One breadcrumb list + isPartOf per pillar
+            // 🔹 Pillar logic (FIRST pillar only)
             // ---------------------------------------------------------
             var pillars = GetPillarsForCategory(page.Category);
 
-            foreach (var pillar in pillars)
+            if (pillars.Count > 0)
             {
+                var primary = pillars.First();
+
+                // ---------------------------------------------------------
+                // 🔹 Build breadcrumb (only once)
+                // ---------------------------------------------------------
                 var items = new List<Dictionary<string, object?>>();
                 int pos = 1;
 
@@ -299,22 +304,13 @@ namespace JsonLD_Library.Service.Base
                     ["item"] = new Dictionary<string, object?>
                     {
                         ["@type"] = "WebPage",
-                        ["@id"] = $"{baseUrl}/{pillar.pillar}",
-                        ["name"] = RemoveEmojis(pillar.name)?.Trim()
+                        ["@id"] = $"{baseUrl}/{primary.pillar}",
+                        ["name"] = RemoveEmojis(primary.name)?.Trim()
                     }
                 });
 
-                string pageURL;
-
-                // Page URL for this pillar
-                if (page.Category.Contains(","))
-                {
-                    pageURL = $"{baseUrl}/intersections/{page.ExternalId}";
-                }
-                else
-                {
-                    pageURL = $"{baseUrl}/{pillar.pillar}/{page.ExternalId}";
-                }
+                // Page URL always uses primary pillar
+                string pageURL = $"{baseUrl}/{primary.pillar}/{page.ExternalId}";
 
                 // Current page item
                 items.Add(new Dictionary<string, object?>
@@ -333,25 +329,20 @@ namespace JsonLD_Library.Service.Base
                 graph.Add(new Dictionary<string, object?>
                 {
                     ["@type"] = "BreadcrumbList",
-                    ["@id"] = $"{pageURL}#breadcrumb-{pillar.pillar}",
+                    ["@id"] = $"{pageURL}#breadcrumb",
                     ["itemListElement"] = items
                 });
 
                 // ---------------------------------------------------------
-                // 🔹 Add isPartOf for this pillar
+                // 🔹 isPartOf (only the primary pillar)
                 // ---------------------------------------------------------
-
-                // Ensure articleNode has an isPartOf list
-                if (!articleNode.ContainsKey("isPartOf"))
-                {
-                    articleNode["isPartOf"] = new List<object>();
-                }
-
-                // Add the pillar reference
-                ((List<object>)articleNode["isPartOf"]).Add(new Dictionary<string, object?>
-                {
-                    ["@id"] = $"{baseUrl}/{pillar.pillar}"
-                });
+                articleNode["isPartOf"] = new List<object>
+        {
+            new Dictionary<string, object?>
+            {
+                ["@id"] = $"{baseUrl}/{primary.pillar}"
+            }
+        };
             }
 
             // ---------------------------------------------------------
