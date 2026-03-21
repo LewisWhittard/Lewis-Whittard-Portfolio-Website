@@ -24,34 +24,56 @@ namespace LMWDev.Controllers
 
         public IActionResult Index()
         {
-            using var activity = ActivitySource.StartActivity("HomeController.Index");
+            using var activity = ActivitySource.StartActivity("HomeController.Index", ActivityKind.Server);
 
             try
             {
                 activity?.SetTag("page.type", "HomePage");
 
-                string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+                // ---------------------------
+                // 1. JSON-LD Generation Span
+                // ---------------------------
+                string jsonLD;
+                using (var jsonSpan = ActivitySource.StartActivity("GenerateJsonLD", ActivityKind.Internal))
+                {
+                    jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+                    jsonSpan?.SetTag("jsonld.generated", jsonLD != null);
+                }
 
-                bool backgroundDisabled = Convert.ToBoolean(
-                    HttpContext.Session.GetString("BackgroundDisabled")
-                );
+                // ---------------------------
+                // 2. Session Retrieval Span
+                // ---------------------------
+                bool backgroundDisabled;
+                using (var sessionSpan = ActivitySource.StartActivity("ReadSession", ActivityKind.Internal))
+                {
+                    backgroundDisabled = Convert.ToBoolean(
+                        HttpContext.Session.GetString("BackgroundDisabled")
+                    );
 
-                var viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                    sessionSpan?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                }
 
-                activity?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                // ---------------------------
+                // 3. ViewModel Construction Span
+                // ---------------------------
+                HomeModel viewModel;
+                using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
+                {
+                    viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                    vmSpan?.SetTag("viewmodel.created", true);
+                }
+
                 activity?.SetStatus(ActivityStatusCode.Ok);
-
                 _logger.LogInformation("Rendering Home/Index");
 
                 return View(viewModel);
             }
             catch (Exception ex)
             {
-                activity?.SetStatus(ActivityStatusCode.Error);
                 activity?.RecordException(ex);
+                activity?.SetStatus(ActivityStatusCode.Error);
 
                 _logger.LogError(ex, "Error in HomeController.Index");
-
                 throw;
             }
         }
