@@ -35,7 +35,10 @@
         }
         else if (Result.Category.Contains(","))
         {
-            <a href="/intersections/@Result.ExternalId"
+            var first = Result.Category.Split(',')[0].Trim();
+            var slug = first.ToLower().Replace(" ", "-");
+
+            <a href="/@slug/@Result.ExternalId"
                id="SearchResultButton-@Result.ExternalId"
                class="btn btn-sm btn-outline-primary ms-3">
                 View

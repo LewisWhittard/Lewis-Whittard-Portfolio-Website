@@ -182,22 +182,19 @@ namespace JsonLD_Library.Service.Base
             });
         }
 
-
-
         private string GetPillarSlug(string category)
         {
             category = RemoveEmojis(category);
 
-            if (category == "Software Development")
-                return "software-development";
+            // Always take the first category before any comma
+            var first = category.Split(',')[0].Trim();
 
-            if (category == "Creative Works")
-                return "creative-works";
-
-            if (category.Contains(","))
-                return "intersections";
-
-            return "intersections";
+            return first switch
+            {
+                "Software Development" => "software-development",
+                "Creative Works" => "creative-works",
+                _ => first
+            };
         }
 
         public string GenerateJsonLDCulsterContentPage(IPage page)
