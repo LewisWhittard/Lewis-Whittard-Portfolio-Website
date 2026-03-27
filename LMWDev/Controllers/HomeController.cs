@@ -30,11 +30,9 @@ namespace LMWDev.Controllers
                 {
                     activity?.SetTag("page.type", "HomePage");
 
-                    // NEW: Add session ID to the root activity
+                    // Add session ID to the root activity
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
-                    activity?.AddEvent(new ActivityEvent("session.id.captured",
-                    tags: new ActivityTagsCollection { { "session.id", sessionId } }));
 
                     // ---------------------------
                     // 1. JSON-LD Generation Span
