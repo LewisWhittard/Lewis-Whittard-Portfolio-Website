@@ -42,8 +42,8 @@ namespace LMWDev.Controllers
                     // NEW: Add session ID to the root activity
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
-
-                    activity?.SetTag("search.query", viewModel.Search);
+                    activity?.SetTag("Controller.Route", "search");
+                    activity?.SetTag("Action.value", viewModel.Search);
                     activity?.SetTag("search.category", viewModel.Category);
 
                     // ---------------------------

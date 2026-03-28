@@ -43,6 +43,7 @@ namespace LMWDev.Controllers
                     // NEW: Add session ID to the root activity
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
+                    activity?.SetTag("Controller.Route", pillar + id);
 
                     _logger.LogInformation("Fetching page with ID: {Id}", id);
 

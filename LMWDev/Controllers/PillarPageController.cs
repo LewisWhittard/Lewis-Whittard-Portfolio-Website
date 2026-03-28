@@ -48,6 +48,7 @@ namespace LMWDev.Controllers
                     // Add session ID to the root activity
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
+                    activity?.SetTag("Controller.Route", id);
 
                     // ---------------------------
                     // 1. Route Validation Span

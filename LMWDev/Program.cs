@@ -116,6 +116,7 @@ namespace LMWDev
                                 .AddSource("LMWDev.HomeController")
                                 .AddSource("LMWDev.ClusterContentController")
                                 .AddSource("LMWDev.PillarPageController")
+                                .AddSource("LMWDev.Accessibility")
                                 .AddAspNetCoreInstrumentation()
                                 .AddHttpClientInstrumentation()
                                 .SetSampler(new AlwaysOnSampler())
