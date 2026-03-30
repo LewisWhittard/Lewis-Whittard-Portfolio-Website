@@ -35,7 +35,7 @@ namespace LMWDev.Controllers
         [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
-            using var activity = ActivitySource.StartActivity("SearchController.Index", ActivityKind.Server);
+            using var activity = ActivitySource.StartActivity("SearchController.Index");
             {
                 try
                 {
@@ -43,7 +43,7 @@ namespace LMWDev.Controllers
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
                     activity?.SetTag("Controller.Route", "search");
-                    activity?.SetTag("Action.value", viewModel.Search);
+                    activity?.SetTag("Search.value", viewModel.Search);
                     activity?.SetTag("search.category", viewModel.Category);
 
                     // ---------------------------

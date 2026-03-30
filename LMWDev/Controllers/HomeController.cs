@@ -25,7 +25,7 @@ namespace LMWDev.Controllers
 
         public IActionResult Index()
         {
-            using var activity = ActivitySource.StartActivity("HomeController.Index", ActivityKind.Server);
+            using var activity = ActivitySource.StartActivity("HomeController.Index");
             {
                 try
                 {
