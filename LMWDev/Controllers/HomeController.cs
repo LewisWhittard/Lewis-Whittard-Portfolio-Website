@@ -1,4 +1,5 @@
-﻿using JsonLD_Library.Service;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using JsonLD_Library.Service;
 using JsonLD_Library.Service.Interface;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
@@ -24,11 +25,16 @@ namespace LMWDev.Controllers
 
         public IActionResult Index()
         {
-            using var activity = ActivitySource.StartActivity("HomeController.Index", ActivityKind.Server);
+            using var activity = ActivitySource.StartActivity("HomeController.Index");
             {
                 try
                 {
                     activity?.SetTag("page.type", "HomePage");
+
+                    // Add session ID to the root activity
+                    var sessionId = HttpContext.Session.Id;
+                    activity?.SetTag("session.id", sessionId);
+                    activity?.SetTag("Controller.Route", "/");
 
                     // ---------------------------
                     // 1. JSON-LD Generation Span

@@ -38,13 +38,18 @@ namespace LMWDev.Controllers
         [Route("{id}")]
         public IActionResult Index(string id)
         {
-            using var activity = ActivitySource.StartActivity("PillarPage.Index", ActivityKind.Server);
+            using var activity = ActivitySource.StartActivity("PillarPage.Index");
             {
                 activity?.SetTag("external.id", id);
                 _logger.LogInformation("Index action started with ExternalID: {ExternalID}", id);
 
                 try
                 {
+                    // Add session ID to the root activity
+                    var sessionId = HttpContext.Session.Id;
+                    activity?.SetTag("session.id", sessionId);
+                    activity?.SetTag("Controller.Route", id);
+
                     // ---------------------------
                     // 1. Route Validation Span
                     // ---------------------------

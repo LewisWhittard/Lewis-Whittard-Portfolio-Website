@@ -8,6 +8,7 @@ using Page_Library.Page.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace LMWDev.Controllers
 {
@@ -35,12 +36,18 @@ namespace LMWDev.Controllers
         [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
-            using var activity = ActivitySource.StartActivity("SearchController.Index", ActivityKind.Server);
+            using var activity = ActivitySource.StartActivity("SearchController.Index");
             {
                 try
                 {
-                    activity?.SetTag("search.query", viewModel.Search);
+                    // NEW: Add session ID to the root activity
+                    var sessionId = HttpContext.Session.Id;
+                    activity?.SetTag("session.id", sessionId);
+                    activity?.SetTag("Controller.Route", "search");
+                    bool hasSearch = !string.IsNullOrWhiteSpace(viewModel.Search);
+                    activity?.SetTag("Controller.Route", "search");
                     activity?.SetTag("search.category", viewModel.Category);
+                    activity?.SetTag("search.value", hasSearch.ToString());
 
                     // ---------------------------
                     // 1. Search Operation Span
@@ -52,7 +59,7 @@ namespace LMWDev.Controllers
 
                         results = _pageService.Search(viewModel.Search, viewModel.Category);
 
-                        searchSpan?.SetTag("search.resultCount", results?.Count ?? 0);
+                        
                         searchSpan?.SetStatus(ActivityStatusCode.Ok);
                     }
 
@@ -80,6 +87,7 @@ namespace LMWDev.Controllers
                     }
 
                     activity?.SetStatus(ActivityStatusCode.Ok);
+                    activity?.SetTag("search.resultCount", model.Results.Count().ToString());
                     return View(model);
                 }
                 catch (Exception ex)
