@@ -8,6 +8,7 @@ using Page_Library.Page.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace LMWDev.Controllers
 {
@@ -43,8 +44,10 @@ namespace LMWDev.Controllers
                     var sessionId = HttpContext.Session.Id;
                     activity?.SetTag("session.id", sessionId);
                     activity?.SetTag("Controller.Route", "search");
-                    activity?.SetTag("Search.value", viewModel.Search);
+                    bool hasSearch = !string.IsNullOrWhiteSpace(viewModel.Search);
+                    activity?.SetTag("Controller.Route", "search");
                     activity?.SetTag("search.category", viewModel.Category);
+                    activity?.SetTag("search.value", hasSearch.ToString());
 
                     // ---------------------------
                     // 1. Search Operation Span
@@ -56,7 +59,7 @@ namespace LMWDev.Controllers
 
                         results = _pageService.Search(viewModel.Search, viewModel.Category);
 
-                        searchSpan?.SetTag("search.resultCount", results?.Count ?? 0);
+                        searchSpan?.SetTag("search.resultCount", results?.Count() ?? 0);
                         searchSpan?.SetStatus(ActivityStatusCode.Ok);
                     }
 
