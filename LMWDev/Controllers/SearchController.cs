@@ -59,7 +59,7 @@ namespace LMWDev.Controllers
 
                         results = _pageService.Search(viewModel.Search, viewModel.Category);
 
-                        searchSpan?.SetTag("search.resultCount", results?.Count() ?? 0);
+                        
                         searchSpan?.SetStatus(ActivityStatusCode.Ok);
                     }
 
@@ -87,6 +87,7 @@ namespace LMWDev.Controllers
                     }
 
                     activity?.SetStatus(ActivityStatusCode.Ok);
+                    activity?.SetTag("search.resultCount", model.Results.Count().ToString());
                     return View(model);
                 }
                 catch (Exception ex)
