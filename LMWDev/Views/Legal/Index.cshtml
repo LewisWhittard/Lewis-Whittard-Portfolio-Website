@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "legal Page";
+}
+
+<body>
+
+    @if (!Model.BackgroundDisabled)
+    {
+        <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
+            <source src="~/Videos/WebsiteBackground.mp4" type="video/mp4">
+        </video>
+    }
+
+
+    <div class="container my-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Telemetry & Session Tracking Notice</h2>
+
+                <p class="mb-3">
+                    This portfolio website uses OpenTelemetry to collect technical data about how the site is accessed
+                    and used. A temporary session identifier is used to associate related events, such as which pages
+                    were visited during a browsing session.
+                </p>
+
+                <p class="fw-semibold mb-2">The telemetry system records:</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item px-0">Which categories are searched</li>
+                    <li class="list-group-item px-0">Whether a search term was used</li>
+                    <li class="list-group-item px-0">Performance‑related events that help assess site reliability and responsiveness</li>
+                    <li class="list-group-item px-0">High‑level marketing metrics related to feature usage</li>
+                </ul>
+
+                <p class="mb-3">
+                    This system does not store individual search terms, but it does associate search‑related events with
+                    a temporary session ID. This enables performance observability and aggregated marketing insights
+                    without identifying individual users.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+

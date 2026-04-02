@@ -36,17 +36,41 @@ namespace LMWDev.Controllers
         [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
+            string stored = HttpContext.Session.GetString("CookieApproved");
+
+            bool isCookieApprovedSet = stored != null;
+
+            bool cookieApproved = stored switch
+            {
+                null => false, // default when not set
+                _ => bool.TryParse(stored, out var parsed) && parsed
+            };
             using var activity = ActivitySource.StartActivity("SearchController.Index");
             {
                 try
                 {
                     // NEW: Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    if (cookieApproved == true)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    else
+                    {
+                        activity?.SetTag("session.id", "not consented");
+                    }
                     activity?.SetTag("Controller.Route", "search");
                     bool hasSearch = !string.IsNullOrWhiteSpace(viewModel.Search);
                     activity?.SetTag("Controller.Route", "search");
-                    activity?.SetTag("search.category", viewModel.Category);
+                    if (cookieApproved)
+                    {
+                        activity?.SetTag("search.category", viewModel.Category);
+                    }
+                    else
+                    {
+                        bool hasCategory = !string.IsNullOrWhiteSpace(viewModel.Search);
+                        activity?.SetTag("session.category", hasCategory.ToString());
+                    }
                     activity?.SetTag("search.value", hasSearch.ToString());
 
                     // ---------------------------
@@ -55,7 +79,7 @@ namespace LMWDev.Controllers
                     List<ISearchResult> results;
                     using (var searchSpan = ActivitySource.StartActivity("ExecuteSearch", ActivityKind.Internal))
                     {
-                        _logger.LogInformation("Executing filtered search with parameters {@ViewModel}", viewModel);
+                        _logger.LogInformation("Executing filtered search with parameters");
 
                         results = _pageService.Search(viewModel.Search, viewModel.Category);
 
