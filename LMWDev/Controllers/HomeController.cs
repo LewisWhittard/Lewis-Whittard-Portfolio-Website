@@ -32,9 +32,20 @@ namespace LMWDev.Controllers
                     activity?.SetTag("page.type", "HomePage");
 
                     // Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    if (cookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    else
+                    {
+                        activity?.SetTag("session.id", "not consented");
+                    }
+
+                    // Route tagging (always safe)
                     activity?.SetTag("Controller.Route", "/");
+
+
 
                     // ---------------------------
                     // 1. JSON-LD Generation Span

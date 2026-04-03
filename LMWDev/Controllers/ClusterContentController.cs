@@ -40,9 +40,16 @@ namespace LMWDev.Controllers
 
                 try
                 {
-                    // NEW: Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    // Add session ID to the root activity
+                    if (cookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    else
+                    {
+                        activity?.SetTag("session.id", "not consented");
+                    }
                     activity?.SetTag("Controller.Route", pillar + id);
 
                     _logger.LogInformation("Fetching page with ID: {Id}", id);

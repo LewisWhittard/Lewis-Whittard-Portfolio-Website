@@ -68,8 +68,7 @@ namespace LMWDev.Controllers
                     }
                     else
                     {
-                        bool hasCategory = !string.IsNullOrWhiteSpace(viewModel.Search);
-                        activity?.SetTag("session.category", hasCategory.ToString());
+                        activity?.SetTag("search.category", "not consented");
                     }
                     activity?.SetTag("search.value", hasSearch.ToString());
 
