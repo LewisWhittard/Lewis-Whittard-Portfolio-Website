@@ -36,21 +36,20 @@ namespace LMWDev.Controllers
         [Route("search")]
         public IActionResult Index(SearchViewModel viewModel)
         {
-            string stored = HttpContext.Session.GetString("CookieApproved");
+            var cookieValue = HttpContext.Session.GetString("CookieApproved");
 
-            bool isCookieApprovedSet = stored != null;
+            // Variable 1: is it set?
+            bool isCookieSet = cookieValue != null;
 
-            bool cookieApproved = stored switch
-            {
-                null => false, // default when not set
-                _ => bool.TryParse(stored, out var parsed) && parsed
-            };
+            // Variable 2: the actual value (true/false), defaulting to false if unset
+            bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
             using var activity = ActivitySource.StartActivity("SearchController.Index");
             {
                 try
                 {
                     // NEW: Add session ID to the root activity
-                    if (cookieApproved == true)
+                    if (CookieApproved == true)
                     {
                         var sessionId = HttpContext.Session.Id;
                         activity?.SetTag("session.id", sessionId);

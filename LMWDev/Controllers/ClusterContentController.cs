@@ -40,8 +40,17 @@ namespace LMWDev.Controllers
 
                 try
                 {
+                    var cookieValue = HttpContext.Session.GetString("CookieApproved");
+
+                    // Variable 1: is it set?
+                    bool isCookieSet = cookieValue != null;
+
+                    // Variable 2: the actual value (true/false), defaulting to false if unset
+                    bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
+
                     // Add session ID to the root activity
-                    if (cookieApproved)
+                    if (CookieApproved)
                     {
                         var sessionId = HttpContext.Session.Id;
                         activity?.SetTag("session.id", sessionId);

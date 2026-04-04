@@ -38,6 +38,14 @@ namespace LMWDev.Controllers
         [Route("{id}")]
         public IActionResult Index(string id)
         {
+            var cookieValue = HttpContext.Session.GetString("CookieApproved");
+
+            // Variable 1: is it set?
+            bool isCookieSet = cookieValue != null;
+
+            // Variable 2: the actual value (true/false), defaulting to false if unset
+            bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
             using var activity = ActivitySource.StartActivity("PillarPage.Index");
             {
                 activity?.SetTag("external.id", id);

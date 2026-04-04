@@ -12,12 +12,13 @@ namespace LMWDev.Models
         public bool CookieApproved { get; set; }
         public bool IsCookieConsentBannerEnabled { get; set; }
 
-        public ClusterContentModel(IPage page, bool backgroundDisabled, string jsonLD)
+        public ClusterContentModel(IPage page, bool backgroundDisabled, string jsonLD, bool cookieApproved, bool isCookieConsnetBannerEnabled)
         {
             Page = page;
             BackgroundDisabled = backgroundDisabled;
             JsonLD = jsonLD;
-            CookieApproved = 
+            CookieApproved = cookieApproved;
+            IsCookieConsentBannerEnabled = isCookieConsnetBannerEnabled;
         }
 
         public ClusterContentModel()
