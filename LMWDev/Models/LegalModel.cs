@@ -7,14 +7,14 @@
         public bool BackgroundDisabled { get; set; }
         public SearchViewModel Search { get; set; }
         public string JsonLD { get; set; }
-        public bool IsCookieConsentBannerEnabled { get; set; }
+        public bool IsCookieConsentBannerDisabled { get; set; }
 
 
-        public LegalModel(bool backgroundDisabled, string jsonLD, bool isCookieConsentBannerEnabled)
+        public LegalModel(bool backgroundDisabled, string jsonLD, bool isCookieConsentBannerDisabled)
         {
             BackgroundDisabled = backgroundDisabled;
             JsonLD = jsonLD;
-            IsCookieConsentBannerEnabled = isCookieConsentBannerEnabled;
+            IsCookieConsentBannerDisabled = isCookieConsentBannerDisabled;
         }
     }
 }

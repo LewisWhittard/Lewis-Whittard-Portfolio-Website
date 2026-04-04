@@ -11,7 +11,7 @@ namespace LMWDev.Models
         public bool ShouldNotBeIndexed { get; set; } = true;
         public bool BackgroundDisabled { get; set; }
         public string? JsonLD { get; set; }
-        public bool IsCookieConsentBannerEnabled { get; set; }
+        public bool IsCookieConsentBannerDisabled { get; set; }
 
 
         public List<ISearchResult> Results { get; set; }
@@ -21,12 +21,12 @@ namespace LMWDev.Models
 
         }
 
-        public SearchViewModel(List<ISearchResult> results, bool backgroundDisabled, bool isCookieConsentBannerEnabled)
+        public SearchViewModel(List<ISearchResult> results, bool backgroundDisabled, bool isCookieConsentBannerDisabled)
         {
 			Results = results;
             Category = "All";
             BackgroundDisabled = backgroundDisabled;
-            IsCookieConsentBannerEnabled = isCookieConsentBannerEnabled;
+            IsCookieConsentBannerDisabled = isCookieConsentBannerDisabled;
         }
         
         
