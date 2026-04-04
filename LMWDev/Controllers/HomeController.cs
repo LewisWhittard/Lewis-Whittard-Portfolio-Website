@@ -85,7 +85,7 @@ namespace LMWDev.Controllers
                     HomeModel viewModel;
                     using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
                     {
-                        viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                        viewModel = new HomeModel(backgroundDisabled, jsonLD,isCookieSet);
                         vmSpan?.SetTag("viewmodel.created", true);
                     }
 

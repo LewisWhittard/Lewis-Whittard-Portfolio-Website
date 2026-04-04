@@ -61,7 +61,7 @@ namespace LMWDev.Controllers
                     activity?.SetTag("Controller.Route", "search");
                     bool hasSearch = !string.IsNullOrWhiteSpace(viewModel.Search);
                     activity?.SetTag("Controller.Route", "search");
-                    if (cookieApproved)
+                    if (CookieApproved)
                     {
                         activity?.SetTag("search.category", viewModel.Category);
                     }
@@ -104,7 +104,7 @@ namespace LMWDev.Controllers
                     SearchViewModel model;
                     using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
                     {
-                        model = new SearchViewModel(results, backgroundDisabled);
+                        model = new SearchViewModel(results, backgroundDisabled, isCookieSet);
                         vmSpan?.SetTag("viewmodel.created", true);
                     }
 

@@ -123,7 +123,7 @@ namespace LMWDev.Controllers
                             viewModel = new ClusterContentModel(
                                 page,
                                 Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
-                                jsonLD
+                                jsonLD,isCookieSet
                             );
                         }
 

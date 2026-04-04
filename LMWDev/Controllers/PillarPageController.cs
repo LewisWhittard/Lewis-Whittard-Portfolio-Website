@@ -129,7 +129,8 @@ namespace LMWDev.Controllers
                             page,
                             search,
                             Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
-                            jsonLD
+                            jsonLD,
+                            isCookieSet
                         );
                     }
 

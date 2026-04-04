@@ -18,7 +18,7 @@ namespace LMWDev.Controllers
             // Variable 2: the actual value (true/false), defaulting to false if unset
             bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
 
-            LegalModel model = new LegalModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")), jsonLD: null);
+            LegalModel model = new LegalModel(Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")), null,isCookieSet);
 
             return View(model);
         }
