@@ -9,13 +9,15 @@ namespace LMWDev.Models
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
         public string JsonLD { get; set; }
-
+        public bool CookieApproved { get; set; }
+        public bool IsCookieConsentBannerEnabled { get; set; }
 
         public ClusterContentModel(IPage page, bool backgroundDisabled, string jsonLD)
         {
             Page = page;
             BackgroundDisabled = backgroundDisabled;
             JsonLD = jsonLD;
+            CookieApproved = 
         }
 
         public ClusterContentModel()

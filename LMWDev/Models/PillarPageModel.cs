@@ -12,16 +12,20 @@ namespace LMWDev.Models
         public bool ShouldNotBeIndexed { get; set; } = false;
         public bool BackgroundDisabled { get; set; }
         public string JsonLD { get; set; }
+        public bool CookieApproved { get; set; }
+        public bool IsCookieConsentBannerEnabled { get; set; }
 
 
 
 
-        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled, string jsonLD)
+        public PillarPageModel(IPage page, List<ISearchResult> results, bool backgroundDisabled, string jsonLD, bool cookieApproved, bool isCookieConsentBannerEnabled)
         {
             Page = page;
             Results = results;
             BackgroundDisabled = backgroundDisabled;
             JsonLD = jsonLD;
+            CookieApproved = cookieApproved;
+            IsCookieConsentBannerEnabled = isCookieConsentBannerEnabled;
         }
 
         public PillarPageModel()
