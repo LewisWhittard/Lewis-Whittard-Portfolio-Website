@@ -41,10 +41,11 @@ namespace LMWDev_Test.Controllers
 
             Assert.Contains("https://example.com/", xml);
             Assert.Contains("https://example.com/software-development", xml);
+            Assert.Contains("https://example.com/legal", xml);
             Assert.Contains("https://example.com/software-development/portfolio-website-completed", xml);
             Assert.Contains("https://example.com/software-development/my-portfolio-website-development", xml);
             Assert.Contains("https://example.com/software-development/ui-test-automation-portfolio-piece", xml);
-            Assert.Contains("https://example.com/intersections/cogetta", xml);
+            Assert.Contains("https://example.com/software-development/cogetta", xml);
             Assert.Contains("https://example.com/software-development/from-reflection-to-action-the-marginal-gains-sprint", xml);
             Assert.Contains("https://example.com/software-development/search-structure-and-SEO-upgrade", xml);
             Assert.Contains("https://example.com/creative-works", xml);
