@@ -33,6 +33,9 @@ namespace Sitemap_Library.Service
             sb.AppendLine("  <url>");
             sb.AppendLine($"    <loc>{_baseUrl}/creative-works</loc>");
             sb.AppendLine("  </url>");
+            sb.AppendLine("  <url>");
+            sb.AppendLine($"    <loc>{_baseUrl}/legal</loc>");
+            sb.AppendLine("  </url>");
             sb.AppendLine();
 
             foreach (var item in pages)
