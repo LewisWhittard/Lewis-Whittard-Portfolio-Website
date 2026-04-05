@@ -40,9 +40,25 @@ namespace LMWDev.Controllers
 
                 try
                 {
-                    // NEW: Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    var cookieValue = HttpContext.Session.GetString("CookieApproved");
+
+                    // Variable 1: is it set?
+                    bool isCookieSet = cookieValue != null;
+
+                    // Variable 2: the actual value (true/false), defaulting to false if unset
+                    bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
+
+                    // Add session ID to the root activity
+                    if (CookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    else
+                    {
+                        activity?.SetTag("session.id", "not consented");
+                    }
                     activity?.SetTag("Controller.Route", pillar + id);
 
                     _logger.LogInformation("Fetching page with ID: {Id}", id);
@@ -107,7 +123,7 @@ namespace LMWDev.Controllers
                             viewModel = new ClusterContentModel(
                                 page,
                                 Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
-                                jsonLD
+                                jsonLD,isCookieSet
                             );
                         }
 

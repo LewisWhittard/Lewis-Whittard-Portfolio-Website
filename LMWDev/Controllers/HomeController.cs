@@ -31,10 +31,30 @@ namespace LMWDev.Controllers
                 {
                     activity?.SetTag("page.type", "HomePage");
 
+                    var cookieValue = HttpContext.Session.GetString("CookieApproved");
+
+                    // Variable 1: is it set?
+                    bool isCookieSet = cookieValue != null;
+
+                    // Variable 2: the actual value (true/false), defaulting to false if unset
+                    bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
+
                     // Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    if (CookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    else
+                    {
+                        activity?.SetTag("session.id", "not consented");
+                    }
+
+                    // Route tagging (always safe)
                     activity?.SetTag("Controller.Route", "/");
+
+
 
                     // ---------------------------
                     // 1. JSON-LD Generation Span
@@ -65,7 +85,7 @@ namespace LMWDev.Controllers
                     HomeModel viewModel;
                     using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
                     {
-                        viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                        viewModel = new HomeModel(backgroundDisabled, jsonLD,isCookieSet);
                         vmSpan?.SetTag("viewmodel.created", true);
                     }
 
