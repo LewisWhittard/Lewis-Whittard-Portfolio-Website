@@ -1,27 +1,5 @@
-﻿<script>
-    async function setConsent(value) {
-        try {
-            await fetch('/api/cookie/set', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(value)
-            });
-
-            localStorage.setItem('CookieApproved', value ? 'true' : 'false');
-
-            const overlay = document.querySelector('.position-fixed');
-            if (overlay) {
-                overlay.style.display = 'none';
-            }
-        } catch (err) {
-            console.error('Failed to set consent:', err);
-        }
-    }
-</script>
-
-<div class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50
+﻿<div id="telemetry-overlay"
+     class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50
             d-flex align-items-center justify-content-center"
      style="z-index: 2000;">
     <div class="card shadow-lg border-0" style="max-width: 480px; width: 100%;">
@@ -44,3 +22,30 @@
         </div>
     </div>
 </div>
+
+<script>
+    // These MUST be global so the HTML buttons can call them
+    async function setConsent(value) {
+        try {
+            await fetch('/api/cookie/set', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(value)
+            });
+
+            localStorage.setItem('CookieApproved', value ? 'true' : 'false');
+            closeOverlay();
+        } catch (err) {
+            console.error('Failed to set consent:', err);
+        }
+    }
+
+        function closeOverlay() {
+        const overlay = document.getElementById('telemetry-overlay');
+        if (overlay) {
+            overlay.classList.remove('d-flex');
+            overlay.style.display = 'none';
+        }
+    }
+   
+</script>
