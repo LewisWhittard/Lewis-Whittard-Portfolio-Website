@@ -12,13 +12,17 @@
             </p>
 
             <p class="mb-3 text-center">
-                You can choose whether to allow this technical telemetry.
+                You can choose whether to allow non‑essential telemetry.
             </p>
 
             <div class="d-flex justify-content-center gap-3 mt-4">
                 <button class="btn btn-primary px-4" onclick="setConsent(true)">Accept</button>
                 <button class="btn btn-outline-secondary px-4" onclick="setConsent(false)">Reject</button>
             </div>
+
+            <p class="text-center mt-3 mb-0">
+                <a href="/legal" class="small text-decoration-none">Find out more</a>
+            </p>
         </div>
     </div>
 </div>
@@ -40,12 +44,11 @@
         }
     }
 
-        function closeOverlay() {
+    function closeOverlay() {
         const overlay = document.getElementById('telemetry-overlay');
         if (overlay) {
             overlay.classList.remove('d-flex');
             overlay.style.display = 'none';
         }
     }
-   
 </script>
