@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "legal Page";
 }
 
@@ -40,5 +39,67 @@
             </div>
         </div>
     </div>
+
+    <table class="table-bordered mt-4 bg-white">
+        <thead class="table-light">
+            <tr>
+                <th>Tracking Area</th>
+                <th>Purpose</th>
+                <th>Essential?</th>
+                <th>Behaviour When Declined</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Performance Monitoring</td>
+                <td>Measures site reliability, responsiveness, and technical performance across all users.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Performance metrics continue to be collected, but without any session‑level association.</td>
+            </tr>
+
+            <tr>
+                <td>Page / Route Tracking</td>
+                <td>Allows comparison of performance and feature usage per page or route to improve the site.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Page‑level performance is still measured, but without linking events to a telemetry session.</td>
+            </tr>
+
+            <tr>
+                <td>Error Handling & Diagnostics</td>
+                <td>Captures technical faults, failed requests, and unexpected behaviour to maintain site stability.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Errors are still logged, but without any telemetry session identifiers or category context.</td>
+            </tr>
+
+            <tr>
+                <td>Temporary Internal Application Session</td>
+                <td>
+                    Provides essential website accessibility compliance (WCAG 1.2.2),
+                    and determining whether the animated background should be displayed or disabled,
+                    accessibility‑friendly alternative. This temporary session already exists internally and is required for
+                    correct behaviour.
+                </td>
+                <td class="fw-semibold">Yes</td>
+                <td>
+                    Always active. Required for accessibility and functional behaviour, including controlling the
+                    animated background under WCAG 1.2.2 rules.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Telemetry Session ID</td>
+                <td>Associates related telemetry events within a single visit to understand session‑level behaviour.</td>
+                <td class="fw-semibold">No</td>
+                <td>Session is replaced with Not Consented when sent to the observability platform.</td>
+            </tr>
+
+            <tr>
+                <td>Category String</td>
+                <td>Category which category was selected to understand aggregated interest patterns.</td>
+                <td class="fw-semibold">No</td>
+                <td>Session is replaced with Not Consented when sent to the observability platform.</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
