@@ -172,15 +172,40 @@ namespace LMWDev_Test.Controllers
 
         [Theory]
         [InlineData("1", "software-development")]
-        [InlineData("1", "creative-works")]
-        public void ClusterContentController_CommaCategory_WrongPillar_404(string id, string pillar)
+        public void ClusterContentController_CommaCategory_SoftwareDevelopment_WrongPillar_404(string id, string pillar)
         {
             var loggerMock = new Mock<ILogger<ClusterContentController>>();
             var pageServiceMock = new Mock<IPageService>();
             var jsonLdMock = CreateJsonLdMock();
 
             var pageMock = new Mock<IPage>();
-            pageMock.Setup(p => p.Category).Returns("Software Development, Creative Works");
+            pageMock.Setup(p => p.Category).Returns("Creative Works, Software Development");
+            pageMock.Setup(p => p.PageType).Returns("Cluster Content Page");
+
+            pageServiceMock.Setup(s => s.GetPage(id)).Returns(pageMock.Object);
+
+            var controller = CreateControllerWithSession(
+                loggerMock.Object,
+                pageServiceMock.Object,
+                jsonLdMock.Object
+            );
+
+            var result = controller.Index(pillar, id);
+
+            var notFound = Assert.IsType<NotFoundResult>(result);
+            Assert.Equal(404, notFound.StatusCode);
+        }
+
+        [Theory]
+        [InlineData("1", "creative-works")]
+        public void ClusterContentController_CommaCategory_CreativeWorks_WrongPillar_404(string id, string pillar)
+        {
+            var loggerMock = new Mock<ILogger<ClusterContentController>>();
+            var pageServiceMock = new Mock<IPageService>();
+            var jsonLdMock = CreateJsonLdMock();
+
+            var pageMock = new Mock<IPage>();
+            pageMock.Setup(p => p.Category).Returns("Software Development,Creative Works");
             pageMock.Setup(p => p.PageType).Returns("Cluster Content Page");
 
             pageServiceMock.Setup(s => s.GetPage(id)).Returns(pageMock.Object);
