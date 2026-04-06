@@ -38,7 +38,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenIGoTo(string p0)
 		{
 			_searchPage.NavigateToPage(p0);
-		}
+            _searchPage.ClickAcceptCookie();
+        }
 
 
 		[Then("SearchPage: the page title is {string}")]

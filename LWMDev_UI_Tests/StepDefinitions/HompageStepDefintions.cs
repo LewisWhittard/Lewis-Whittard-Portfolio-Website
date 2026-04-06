@@ -40,7 +40,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenHomepageIGoTo(string url)
 		{
 			_homePage.NavigateToPage(url);
-		}
+			_homePage.ClickAcceptCookie();
+        }
 
 		[Then("Homepage: the page title is {string}")]
 		public void ThenHomepagePageTitleIs(string expectedTitle)

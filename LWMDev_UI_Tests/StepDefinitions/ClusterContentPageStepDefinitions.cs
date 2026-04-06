@@ -40,7 +40,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenIGoTo(string p0)
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
-		}
+			_clusterContentPageModel.ClickAcceptCookie();
+        }
 
 
 		[Then("ClusterContent: the page title is {string}")]

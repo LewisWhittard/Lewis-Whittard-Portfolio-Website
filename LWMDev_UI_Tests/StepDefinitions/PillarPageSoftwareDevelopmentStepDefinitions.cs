@@ -41,6 +41,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         public void WhenPillarSoftwareDevelopmentIGoTo(string url)
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
         }
 
         [Then("PillarSoftwareDevelopment: the page title is {string}")]

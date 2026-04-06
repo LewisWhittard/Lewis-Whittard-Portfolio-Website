@@ -38,7 +38,7 @@ namespace LMWSelenium.PageModels.PageModels
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
 			SearchDropDown = FindElementById("Category");
-            AcceptCookie = FindElementById("AcceptCookie");
+            AcceptCookie = FindElementById("CookieAccept");
         }
 
 		public void ClickHomeNavBarButton()
