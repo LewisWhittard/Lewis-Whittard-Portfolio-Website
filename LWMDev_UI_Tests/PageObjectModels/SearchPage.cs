@@ -102,5 +102,9 @@ namespace LMWSelenium.PageModels.PageModels
 			this.SelectDropdownOption(SearchDropDown,value);
 		}
 
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
     }
 }

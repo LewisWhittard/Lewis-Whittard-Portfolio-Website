@@ -77,5 +77,10 @@ namespace LMWSelenium.PageModels.PageModels
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
         }
+
+		public void ClickAcceptCookie()
+		{
+			AcceptCookie.Click();
+        }
     }
 }

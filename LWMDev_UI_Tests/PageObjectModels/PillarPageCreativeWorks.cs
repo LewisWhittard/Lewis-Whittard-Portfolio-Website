@@ -128,5 +128,10 @@ namespace LMWSelenium.PageModels.PageModels
 			FindElementById("SearchResult-cogetta");
 			FindElementById("SearchResult-lewis-matthew-whittard-software-development-logo");
         }
+
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
     }
 }

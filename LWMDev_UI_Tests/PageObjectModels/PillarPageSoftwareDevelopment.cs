@@ -131,5 +131,10 @@ namespace LMWSelenium.PageModels.PageModels
             FindElementById("SearchResult-my-portfolio-website-development");
             FindElementById("SearchResult-portfolio-website-completed");
         }
+
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
     }
 }
