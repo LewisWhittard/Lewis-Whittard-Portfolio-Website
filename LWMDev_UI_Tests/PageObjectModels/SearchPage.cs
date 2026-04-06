@@ -17,6 +17,7 @@ namespace LMWSelenium.PageModels.PageModels
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
 		public IWebElement SearchDropDown { get; private set; }
+        public IWebElement AcceptCookie { get; private set; }
 
         public SearchPage(IWebDriver driver)
 		{
@@ -37,6 +38,7 @@ namespace LMWSelenium.PageModels.PageModels
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
 			SearchDropDown = FindElementById("Category");
+            AcceptCookie = FindElementById("AcceptCookie");
         }
 
 		public void ClickHomeNavBarButton()
