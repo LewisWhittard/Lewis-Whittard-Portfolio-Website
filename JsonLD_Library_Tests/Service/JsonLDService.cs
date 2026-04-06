@@ -171,17 +171,17 @@ public class JsonLDService
     {
       ""@type"": ""WebPage"",
       ""name"": ""Release 1.3.1 \u2014 3D Background, WCAG Controls \u0026 SEO Improvements"",
-      ""url"": ""https://example.com/intersections/Cluster content test no Images and Videos""
+      ""url"": ""https://example.com/software-development/Cluster content test no Images and Videos""
     },
     {
       ""@type"": ""WebPage"",
       ""name"": ""Release 1.3.1 \u2014 3D Background, WCAG Controls \u0026 SEO Improvements"",
-      ""url"": ""https://example.com/intersections/Cluster content test Images and Videos""
+      ""url"": ""https://example.com/software-development/Cluster content test Images and Videos""
     },
     {
       ""@type"": ""WebPage"",
       ""name"": ""Cogetta"",
-      ""url"": ""https://example.com/intersections/cogetta""
+      ""url"": ""https://example.com/software-development/cogetta""
     },
     {
       ""@type"": ""WebPage"",
