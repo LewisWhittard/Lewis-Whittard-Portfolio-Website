@@ -41,6 +41,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
         public void WhenPillarCreativeWorksIGoTo(string url)
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
+            _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
         }
 
         [Then("PillarCreativeWorks: the page title is {string}")]
@@ -55,6 +57,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.CLickSearchNavBarButton();
         }
 
@@ -63,6 +66,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickHomeNavBarButton();
         }
 
@@ -71,6 +75,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickLinkedinButton();
         }
 
@@ -87,6 +92,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(url);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickLogoButton();
         }
 
@@ -95,6 +101,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(p0);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickGithubButton();
         }
 
@@ -111,6 +118,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(p0);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickSoftwareDevelopmentNavBarButton();
         }
 
@@ -119,6 +127,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageCreativeWorks.NavigateToPage(p0);
             _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
             _PillarPageCreativeWorks.ClickCreativeWorksNavBarButton();
         }
 
