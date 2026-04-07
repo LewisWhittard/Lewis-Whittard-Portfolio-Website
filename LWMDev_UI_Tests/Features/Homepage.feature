@@ -94,3 +94,15 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Click legal on the navigation bar
+	Given Homepage: I use Browser "<browser>"
+	When Homepage: I go to "https://localhost:44325/" and use the legal button
+	Then Homepage: the page title is "Legal - Lewis Whittard Software Development"
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
