@@ -274,7 +274,7 @@ Examples:
 
 Scenario Outline: Click legal on the navigation bar
 	Given SearchPage: I use Browser "<browser>"
-	When SearchPage: I go to "https://localhost:44325/" and use the legal button
+	When SearchPage: I go to "https://localhost:44325/search" and use the legal button
 	Then SearchPage: the page title is "Legal Page - Lewis Whittard Software Development"
 
 Examples:

@@ -111,7 +111,7 @@ Examples:
 
 Scenario Outline: Click legal on the navigation bar
 	Given ClusterContent: I use Browser "<browser>"
-	When ClusterContent: I go to "https://localhost:44325/" and use the legal button
+	When ClusterContent: I go to "https://localhost:44325/software-development/portfolio-website-completed" and use the legal button
 	Then ClusterContent: the page title is "Legal Page - Lewis Whittard Software Development"
 
 Examples:

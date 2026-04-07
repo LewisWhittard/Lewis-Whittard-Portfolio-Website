@@ -435,6 +435,44 @@ this.ScenarioInitialize(scenarioInfo);
             await this.ScenarioCleanupAsync();
         }
         
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click legal on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
+        [Xunit.TraitAttribute("Description", "Click legal on the navigation bar")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickLegalOnTheNavigationBar(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click legal on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 112
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 113
+ await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 114
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
+                        "ebsite-completed\" and use the legal button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 115
+ await testRunner.ThenAsync("ClusterContent: the page title is \"Legal Page - Lewis Whittard Software Developme" +
+                        "nt\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : object, Xunit.IAsyncLifetime

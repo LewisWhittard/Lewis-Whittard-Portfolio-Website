@@ -120,7 +120,7 @@ Examples:
 
 Scenario Outline: Click legal on the navigation bar
 	Given PillarSoftwareDevelopment: I use Browser "<browser>"
-	When PillarSoftwareDevelopment: I go to "https://localhost:44325/" and use the legal button
+	When PillarSoftwareDevelopment: I go to "https://localhost:44325/software-development" and use the legal button
 	Then PillarSoftwareDevelopment: the page title is "Legal Page - Lewis Whittard Software Development"
 
 Examples:
