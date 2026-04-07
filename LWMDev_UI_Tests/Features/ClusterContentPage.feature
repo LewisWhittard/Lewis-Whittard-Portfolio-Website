@@ -108,3 +108,15 @@ Examples:
 	| firefox |
 	| edge    |
 	| safari  |
+
+Scenario Outline: Click legal on the navigation bar
+	Given ClusterContent: I use Browser "<browser>"
+	When ClusterContent: I go to "https://localhost:44325/" and use the legal button
+	Then ClusterContent: the page title is "Legal Page - Lewis Whittard Software Development"
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |

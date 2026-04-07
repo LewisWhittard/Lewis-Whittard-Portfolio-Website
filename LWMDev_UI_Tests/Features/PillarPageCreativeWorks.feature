@@ -117,3 +117,15 @@ Examples:
   | browser | SearchResult                                                        | Title                                                                                  |
   | chrome  | SearchResultButton-cogetta                                          | Cogetta - Lewis Whittard Software Development                                          |
   | firefox | SearchResultButton-lewis-matthew-whittard-software-development-logo | Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Development |
+
+Scenario Outline: Click legal on the navigation bar
+	Given PillarCreativeWorks: I use Browser "<browser>"
+	When PillarCreativeWorks: I go to "https://localhost:44325/" and use the legal button
+	Then PillarCreativeWorks: the page title is "Legal Page - Lewis Whittard Software Development"
+
+Examples:
+	| browser |
+	| chrome  |
+	| firefox |
+	| edge    |
+	| safari  |
