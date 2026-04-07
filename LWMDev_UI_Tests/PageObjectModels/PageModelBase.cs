@@ -162,5 +162,12 @@ namespace LMWSelenium.PageModels.StandardPage
             var select = new SelectElement(dropdownElement);
             select.SelectByText(visibleText);
         }
+
+        public void ClickLegalButton()
+        {
+            ClickButton(LegalButton);
+            WaitUntilURLContainsValue("legal");
+            WaitUntilTitleContainsValue("Legal");
+        }
     }
 }
