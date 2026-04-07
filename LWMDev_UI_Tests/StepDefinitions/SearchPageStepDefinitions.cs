@@ -402,6 +402,15 @@ namespace LWMDev_UI_Tests.StepDefinitions
 
         }
 
+        [When("SearchPage: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.ClickLegalButton();
+        }
+
 
     }
 }

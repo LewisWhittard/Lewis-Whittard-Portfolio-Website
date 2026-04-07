@@ -149,5 +149,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageCreativeWorks.QuitDriver();
         }
 
+        [When("PillarCreativeWorks: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _PillarPageCreativeWorks.NavigateToPage(p0);
+            _PillarPageCreativeWorks.SetUpPage();
+            _PillarPageCreativeWorks.ClickAcceptCookie();
+            _PillarPageCreativeWorks.ClickLegalButton();
+        }
+
     }
 }

@@ -6,9 +6,9 @@ namespace LMWSelenium.PageModels.StandardPage
 {
 	abstract class PageModelBase
 	{
-        public IWebDriver Driver { get; private protected set; }
+		public IWebDriver Driver { get; private protected set; }
 
-        public void NavigateToPage(String url)
+		public void NavigateToPage(String url)
 		{
 			Driver.Navigate().GoToUrl(url);
 		}
@@ -31,8 +31,8 @@ namespace LMWSelenium.PageModels.StandardPage
 		{
 			IWebElement ReturnElement;
 
-			
-			
+
+
 			try
 			{
 				var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10))
@@ -45,35 +45,35 @@ namespace LMWSelenium.PageModels.StandardPage
 
 				throw;
 			}
-			
+
 
 			return ReturnElement;
 		}
 
-        public void DontFindElementById(string id)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(2));
+		public void DontFindElementById(string id)
+		{
+			WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(2));
 
-            bool elementNotFound = wait.Until(driver =>
-            {
-                try
-                {
-                    driver.FindElement(By.Id(id));
-                    return false; // Element is still present
-                }
-                catch (NoSuchElementException)
-                {
-                    return true; // Element is not found
-                }
-            });
+			bool elementNotFound = wait.Until(driver =>
+			{
+				try
+				{
+					driver.FindElement(By.Id(id));
+					return false; // Element is still present
+				}
+				catch (NoSuchElementException)
+				{
+					return true; // Element is not found
+				}
+			});
 
-            if (!elementNotFound)
-            {
-                throw new InvalidOperationException("Failed to not find element");
-            }
-        }
+			if (!elementNotFound)
+			{
+				throw new InvalidOperationException("Failed to not find element");
+			}
+		}
 
-        public void CloseDriver()
+		public void CloseDriver()
 		{
 			Driver.Close();
 		}
@@ -82,16 +82,16 @@ namespace LMWSelenium.PageModels.StandardPage
 		{
 			Driver.Quit();
 		}
-		
+
 		public void AssertAreEqual(string valueOne, string valueTwo)
 		{
 			if (valueOne != valueTwo)
-            { 
+			{
 				throw new InvalidOperationException("Values are not equal");
-            }
+			}
 
 
-        }
+		}
 
 		public void ClickButton(IWebElement button)
 		{
@@ -126,9 +126,9 @@ namespace LMWSelenium.PageModels.StandardPage
 			driver.SwitchTo().Window(driver.WindowHandles[Tab]);
 		}
 
-		
 
-		public void AssertContains(string Value1,string Value2)
+
+		public void AssertContains(string Value1, string Value2)
 		{
 			bool CheckValue = Value1.Contains(Value2);
 
@@ -136,31 +136,31 @@ namespace LMWSelenium.PageModels.StandardPage
 			{
 				throw new InvalidOperationException("Does not Contain");
 			}
-			
+
 		}
 
-        public void WaitUntilElementIsStale(IWebElement element)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-            wait.Until(d =>
-            {
-                try
-                {
-                    // Accessing any property will throw if the element is stale
-                    var displayed = element.Displayed;
-                    return false;
-                }
-                catch (StaleElementReferenceException)
-                {
-                    return true;
-                }
-            });
-        }
+		public void WaitUntilElementIsStale(IWebElement element)
+		{
+			WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+			wait.Until(d =>
+			{
+				try
+				{
+					// Accessing any property will throw if the element is stale
+					var displayed = element.Displayed;
+					return false;
+				}
+				catch (StaleElementReferenceException)
+				{
+					return true;
+				}
+			});
+		}
 
-        public void SelectDropdownOption(IWebElement dropdownElement, string visibleText)
-        {
-            var select = new SelectElement(dropdownElement);
-            select.SelectByText(visibleText);
-        }
-    }
+		public void SelectDropdownOption(IWebElement dropdownElement, string visibleText)
+		{
+			var select = new SelectElement(dropdownElement);
+			select.SelectByText(visibleText);
+		}
+	}
 }

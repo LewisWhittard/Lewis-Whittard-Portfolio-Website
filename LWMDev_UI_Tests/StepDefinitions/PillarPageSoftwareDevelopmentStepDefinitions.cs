@@ -147,5 +147,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageSoftwareDevelopment.QuitDriver();
         }
 
+        [When("PillarSoftwareDevelopment: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _PillarPageSoftwareDevelopment.NavigateToPage(p0);
+            _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
+            _PillarPageSoftwareDevelopment.ClickLegalButton();
+        }
+
     }
 }

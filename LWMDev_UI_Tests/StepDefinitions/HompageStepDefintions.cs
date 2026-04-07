@@ -130,5 +130,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _homePage.ClickCreativeWorksNavBarButton();
         }
 
+        [When("Homepage: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
+            _homePage.ClickLegalButton();
+        }
+
     }
 }

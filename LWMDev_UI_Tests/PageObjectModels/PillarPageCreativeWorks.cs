@@ -19,6 +19,7 @@ namespace LMWSelenium.PageModels.PageModels
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
         public IWebElement AcceptCookie { get; private set; }
+        public IWebElement LegalButton { get; private set; }
 
 
         public PillarPageCreativeWorks(IWebDriver driver)
@@ -36,6 +37,7 @@ namespace LMWSelenium.PageModels.PageModels
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
             AcceptCookie = FindElementById("CookieAccept");
+            LegalButton = FindElementById("LegalNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -132,6 +134,13 @@ namespace LMWSelenium.PageModels.PageModels
         public void ClickAcceptCookie()
         {
             AcceptCookie.Click();
+        }
+        
+		public void ClickLegalButton()
+        {
+            ClickButton(LegalButton);
+            WaitUntilURLContainsValue("legal");
+            WaitUntilTitleContainsValue("Legal");
         }
     }
 }
