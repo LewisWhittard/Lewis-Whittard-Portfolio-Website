@@ -133,7 +133,14 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _clusterContentPageModel.ClickCreativeWorksNavBarButton();
         }
 
-
+        [When("ClusterContent: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _clusterContentPageModel.NavigateToPage(p0);
+            _clusterContentPageModel.SetUpPage();
+            _clusterContentPageModel.ClickAcceptCookie();
+            _clusterContentPageModel.ClickLegalButton();
+        }
 
     }
 }
