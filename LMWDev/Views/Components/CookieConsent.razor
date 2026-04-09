@@ -37,7 +37,6 @@
                 body: JSON.stringify(value)
             });
 
-            localStorage.setItem('CookieApproved', value ? 'true' : 'false');
             closeOverlay();
         } catch (err) {
             console.error('Failed to set consent:', err);
