@@ -54,8 +54,11 @@ namespace LMWDev.Controllers
                 try
                 {
                     // Add session ID to the root activity
-                    var sessionId = HttpContext.Session.Id;
-                    activity?.SetTag("session.id", sessionId);
+                    if (CookieApproved == true)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
                     activity?.SetTag("Controller.Route", id);
 
                     // ---------------------------

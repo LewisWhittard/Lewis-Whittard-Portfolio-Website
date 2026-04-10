@@ -55,10 +55,6 @@ namespace LMWDev.Controllers
                         var sessionId = HttpContext.Session.Id;
                         activity?.SetTag("session.id", sessionId);
                     }
-                    else
-                    {
-                        activity?.SetTag("session.id", "not consented");
-                    }
                     activity?.SetTag("Controller.Route", pillar + id);
 
                     _logger.LogInformation("Fetching page with ID: {Id}", id);
