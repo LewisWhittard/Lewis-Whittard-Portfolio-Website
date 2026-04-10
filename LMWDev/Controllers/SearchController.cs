@@ -54,20 +54,12 @@ namespace LMWDev.Controllers
                         var sessionId = HttpContext.Session.Id;
                         activity?.SetTag("session.id", sessionId);
                     }
-                    else
-                    {
-                        activity?.SetTag("session.id", "not consented");
-                    }
+
                     activity?.SetTag("Controller.Route", "search");
                     bool hasSearch = !string.IsNullOrWhiteSpace(viewModel.Search);
-                    activity?.SetTag("Controller.Route", "search");
                     if (CookieApproved)
                     {
                         activity?.SetTag("search.category", viewModel.Category);
-                    }
-                    else
-                    {
-                        activity?.SetTag("search.category", "not consented");
                     }
                     activity?.SetTag("search.value", hasSearch.ToString());
 
