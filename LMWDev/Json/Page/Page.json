@@ -240,7 +240,7 @@
 			},
 			{
 				"BlockType": "Paragraph",
-				"Alignment": "lefr",
+				"Alignment": "left",
 				"BodyText": "Blender, GIMP 2.8"
 			},
 			{
@@ -741,6 +741,94 @@
 				"Alignment": "left",
 				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
 				"LinkText": "To GitHub Repository"
+			}
+		]
+	},
+	{
+		"ExternalId": "release-1-5-1",
+		"PageType": "Cluster Content Page",
+		"Title": "🚀 Release 1.5.1 — Sustained Engineering Release: Honeycomb, AVIF, and JSON‑LD Enhancements",
+		"PublishDate": "2026-04-14T00:00:00Z",
+		"Category": "Software Development",
+		"Author": "Lewis Whittard",
+		"Meta": {
+			"MetaTitle": "Release 1.5.1 — Honeycomb, AVIF, and JSON‑LD Enhancements",
+			"MetaDescription": "Honeycomb dashboards, OpenTelemetry transparency, AVIF optimisation, structured data improvements, and canonical realignment.",
+			"MetaKeywords": [
+				"Honeycomb",
+				"OpenTelemetry",
+				"AVIF",
+				"JSON-LD",
+				"Structured Data",
+				"Telemetry",
+				"Observability",
+				"Portfolio Release"
+			],
+			"MetaImageId": 0
+		},
+		"ContentBlocks": [
+			{
+				"BlockType": "Video",
+				"Alignment": "left",
+				"MediaId": 8
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📡 1.4.3 pre - 1.5.1 — Honeycomb Dashboards & Telemetry Alignment"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Honeycomb dashboards added for real‑user monitoring and performance observability. Telemetry spans aligned for consistent tracing and clearer diagnostics."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🛡️ 1.5.0 pre — 1.5.1 OpenTelemetry Transparency"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Non‑essential telemetry transparency banner added. Legal page introduced explaining what OpenTelemetry collects and how users can control it."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🖼️ 1.4.2 — AVIF Media Optimisation"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "All remaining images migrated to AVIF to reduce file size, improve load performance, and provide higher‑efficiency media delivery across the site."
+			},
+
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "📘 1.4.0 - 1.4.3 pre — Structured Data Added"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Structured data added for Home, Pillar, and Cluster pages to improve search visibility and give crawlers a clearer understanding of site hierarchy."
+			},
+			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🧩 1.3.2 — Favicon Update"
+			},
+			{
+				"BlockType": "Paragraph",
+				"Alignment": "left",
+				"BodyText": "Favicon asset updated."
 			}
 		]
 	}
