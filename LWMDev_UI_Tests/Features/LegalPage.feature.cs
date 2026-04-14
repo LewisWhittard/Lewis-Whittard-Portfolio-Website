@@ -19,21 +19,21 @@ namespace LWMDev_UI_Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PillarPageCreativeWorksFeature : object, Xunit.IClassFixture<PillarPageCreativeWorksFeature.FixtureData>, Xunit.IAsyncLifetime
+    public partial class LegalPageFeature : object, Xunit.IClassFixture<LegalPageFeature.FixtureData>, Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Pillar Page Creative Works", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LegalPage", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "PillarPageCreativeWorks.feature"
+#line 1 "LegalPage.feature"
 #line hidden
         
-        public PillarPageCreativeWorksFeature(PillarPageCreativeWorksFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public LegalPageFeature(LegalPageFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -92,21 +92,19 @@ namespace LWMDev_UI_Tests.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Pillar title")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
-        [Xunit.TraitAttribute("Description", "Verify Pillar title")]
-        [Xunit.InlineDataAttribute("chrome", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        public async System.Threading.Tasks.Task VerifyPillarTitle(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify legal title")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
+        [Xunit.TraitAttribute("Description", "Verify legal title")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task VerifyLegalTitle(string browser, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
-            argumentsOfScenario.Add("pageIndex", pageIndex);
-            argumentsOfScenario.Add("expectedTitle", expectedTitle);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Pillar title", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify legal title", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -118,20 +116,20 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 4
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 5
- await testRunner.WhenAsync(string.Format("PillarCreativeWorks: I go to \"https://localhost:44325/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 6
- await testRunner.ThenAsync(string.Format("PillarCreativeWorks: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Legal Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click search on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click search on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -143,7 +141,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 15
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -153,23 +151,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 14
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 15
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 16
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 17
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 18
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Search - Lewis Whittard Software Developm" +
-                        "ent\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click home on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click home on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -181,7 +177,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click home on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 27
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -191,23 +187,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 26
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 27
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 28
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 29
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 30
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Home Page - Lewis Whittard Software Devel" +
-                        "opment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click Linkedin button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click Linkedin button")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -219,7 +213,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Linkedin button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 39
+#line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -229,22 +223,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 38
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 39
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 40
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 41
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 42
- await testRunner.ThenAsync("PillarCreativeWorks: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click logo on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click logo on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -256,7 +249,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click logo on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 51
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -266,23 +259,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 51
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
 #line 52
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 53
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 54
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Home Page - Lewis Whittard Software Devel" +
-                        "opment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Home Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click Github button")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click Github button")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -294,7 +285,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Github button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 63
+#line 62
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -304,22 +295,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 63
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
 #line 64
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 65
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 66
- await testRunner.ThenAsync("PillarCreativeWorks: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click Software Development on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click Software Development on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -331,7 +321,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Software Development on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 75
+#line 74
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -341,23 +331,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 75
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
 #line 76
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the Software Developme" +
+                        "nt button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 77
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " Software Development button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 78
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Software Development - Lewis Whittard Sof" +
-                        "tware Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Software Development - Lewis Whittard Software Deve" +
+                        "lopment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click Creative Works on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click Creative Works on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -369,7 +359,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Creative Works on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 87
+#line 86
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -379,98 +369,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 87
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
 #line 88
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the Creative Works but" +
+                        "ton", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 89
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\" and use the" +
-                        " Creative Works button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 90
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Creative Works - Lewis Whittard Software " +
-                        "Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Verify brings back correct cluster content")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
-        [Xunit.TraitAttribute("Description", "Verify brings back correct cluster content")]
-        [Xunit.InlineDataAttribute("chrome", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "creative-works", "Creative Works - Lewis Whittard Software Development", new string[0])]
-        public async System.Threading.Tasks.Task VerifyBringsBackCorrectClusterContent(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            argumentsOfScenario.Add("pageIndex", pageIndex);
-            argumentsOfScenario.Add("expectedTitle", expectedTitle);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify brings back correct cluster content", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 99
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 100
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 101
- await testRunner.WhenAsync(string.Format("PillarCreativeWorks: I go to \"https://localhost:44325/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 102
- await testRunner.ThenAsync("PillarCreativeWorks: The pillar pages brings back the correct cluster content", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableTheoryAttribute(DisplayName="Click search option")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
-        [Xunit.TraitAttribute("Description", "Click search option")]
-        [Xunit.InlineDataAttribute("chrome", "SearchResultButton-cogetta", "Cogetta - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "SearchResultButton-lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
-            "pment", new string[0])]
-        public async System.Threading.Tasks.Task ClickSearchOption(string browser, string searchResult, string title, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("browser", browser);
-            argumentsOfScenario.Add("SearchResult", searchResult);
-            argumentsOfScenario.Add("Title", title);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search option", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 111
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 112
-  await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 113
-  await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/creative-works\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 114
-  await testRunner.ThenAsync(string.Format("PillarCreativeWorks: I click the search result \"{0}\" and the title is \"{1}\"", searchResult, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("LegalPage: the page title is \"Creative Works - Lewis Whittard Software Developmen" +
+                        "t\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Click legal on the navigation bar")]
-        [Xunit.TraitAttribute("FeatureTitle", "Pillar Page Creative Works")]
+        [Xunit.TraitAttribute("FeatureTitle", "LegalPage")]
         [Xunit.TraitAttribute("Description", "Click legal on the navigation bar")]
         [Xunit.InlineDataAttribute("chrome", new string[0])]
         [Xunit.InlineDataAttribute("firefox", new string[0])]
@@ -482,7 +397,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click legal on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 121
+#line 98
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -492,16 +407,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 122
- await testRunner.GivenAsync(string.Format("PillarCreativeWorks: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line 99
+ await testRunner.GivenAsync(string.Format("LegalPage: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 123
- await testRunner.WhenAsync("PillarCreativeWorks: I go to \"https://localhost:44325/software-development\" and u" +
-                        "se the legal button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 100
+ await testRunner.WhenAsync("LegalPage: I go to \"https://localhost:44325/legal\" and use the legal button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 124
- await testRunner.ThenAsync("PillarCreativeWorks: the page title is \"Legal Page - Lewis Whittard Software Deve" +
-                        "lopment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 101
+ await testRunner.ThenAsync("LegalPage: the page title is \"Legal Page - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -514,12 +427,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             async System.Threading.Tasks.Task Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await PillarPageCreativeWorksFeature.FeatureSetupAsync();
+                await LegalPageFeature.FeatureSetupAsync();
             }
             
             async System.Threading.Tasks.Task Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await PillarPageCreativeWorksFeature.FeatureTearDownAsync();
+                await LegalPageFeature.FeatureTearDownAsync();
             }
         }
     }

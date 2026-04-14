@@ -18,7 +18,8 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement Github { get; private set; }
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
-
+		public IWebElement AcceptCookie { get; private set; }
+        public IWebElement LegalButton { get; private set; }
 
         public HomePage(IWebDriver driver)
 		{
@@ -34,6 +35,8 @@ namespace LMWSelenium.PageModels.PageModels
 			Github = FindElementById("Github");
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+            AcceptCookie = FindElementById("CookieAccept");
+			LegalButton = FindElementById("LegalNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -119,6 +122,18 @@ namespace LMWSelenium.PageModels.PageModels
             ClickButton(CreativeWorksNavBarButton);
             WaitUntilURLContainsValue("creative-works");
             WaitUntilTitleContainsValue("Creative Works");
+        }
+
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
+
+		public void ClickLegalButton()
+		{
+			ClickButton(LegalButton);
+			WaitUntilURLContainsValue("legal");
+			WaitUntilTitleContainsValue("Legal");
         }
     }
 }

@@ -38,7 +38,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenIGoTo(string p0)
 		{
 			_searchPage.NavigateToPage(p0);
-		}
+            _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
+        }
 
 
 		[Then("SearchPage: the page title is {string}")]
@@ -53,7 +55,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_searchPage.NavigateToPage(p0);
 			_searchPage.SetUpPage();
-			_searchPage.CLickSearchNavBarButton();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.CLickSearchNavBarButton();
 		}
 
 		[When("SearchPage: I go to {string} and use the home button")]
@@ -61,7 +64,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_searchPage.NavigateToPage(p0);
 			_searchPage.SetUpPage();
-			_searchPage.ClickHomeNavBarButton();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.ClickHomeNavBarButton();
 
 		}
 
@@ -70,7 +74,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_searchPage.NavigateToPage(p0);
 			_searchPage.SetUpPage();
-			_searchPage.ClickLinkedinButton();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.ClickLinkedinButton();
 		}
 
 		[Then("SearchPage: I have arrived at linkedin")]
@@ -87,7 +92,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_searchPage.NavigateToPage(p0);
 			_searchPage.SetUpPage();
-			_searchPage.ClickLogoButton();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.ClickLogoButton();
 		}
 
 		[Then("SearchPage: all search items should be visible")]
@@ -107,6 +113,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.ClickGithubButton();
         }
 
@@ -123,6 +130,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.ClickSoftwareDevelopmentNavBarButton();
         }
 
@@ -131,6 +139,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.ClickCreativeWorksNavBarButton();
         }
 
@@ -139,6 +148,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
 			_searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.PopluateSearchDropDown("All");
 			_searchPage.ClickSearchButton();
         }
@@ -162,6 +172,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.PopluateSearchDropDown("Software Development");
             _searchPage.ClickSearchButton();
         }
@@ -186,6 +197,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.PopluateSearchDropDown("Creative Works");
             _searchPage.ClickSearchButton();
         }
@@ -210,6 +222,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.Search(seachTerm);
             _searchPage.PopluateSearchDropDown("Creative Works");
             _searchPage.ClickSearchButton();
@@ -262,6 +275,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.Search(seachTerm);
             _searchPage.PopluateSearchDropDown("Software Development");
             _searchPage.ClickSearchButton();
@@ -315,6 +329,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _searchPage.NavigateToPage(p0);
             _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
             _searchPage.Search(seachTerm);
             _searchPage.PopluateSearchDropDown("All");
             _searchPage.ClickSearchButton();
@@ -385,6 +400,15 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _searchPage.CloseDriver();
             _searchPage.QuitDriver();
 
+        }
+
+        [When("SearchPage: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _searchPage.NavigateToPage(p0);
+            _searchPage.SetUpPage();
+            _searchPage.ClickAcceptCookie();
+            _searchPage.ClickLegalButton();
         }
 
 

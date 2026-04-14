@@ -33,31 +33,20 @@ namespace Sitemap_Library.Service
             sb.AppendLine("  <url>");
             sb.AppendLine($"    <loc>{_baseUrl}/creative-works</loc>");
             sb.AppendLine("  </url>");
+            sb.AppendLine("  <url>");
+            sb.AppendLine($"    <loc>{_baseUrl}/legal</loc>");
+            sb.AppendLine("  </url>");
             sb.AppendLine();
 
             foreach (var item in pages)
             {
-                if (item.Category == "Software Development" && item.PageType == "Cluster Content Page")
-                {
-                    sb.AppendLine("  <url>");
-                    sb.AppendLine($"    <loc>{_baseUrl}/software-development/{item.ExternalId}</loc>");
-                    sb.AppendLine("  </url>");
-                    sb.AppendLine();
-                }
-                else if (item.Category == "Creative Works" && item.PageType == "Cluster Content Page")
-                {
-                    sb.AppendLine("  <url>");
-                    sb.AppendLine($"    <loc>{_baseUrl}/creative-works/{item.ExternalId}</loc>");
-                    sb.AppendLine("  </url>");
-                    sb.AppendLine();
-                }
-                else if (item.Category.Contains(",") && item.PageType == "Cluster Content Page")
-                {
-                    sb.AppendLine("  <url>");
-                    sb.AppendLine($"    <loc>{_baseUrl}/intersections/{item.ExternalId}</loc>");
-                    sb.AppendLine("  </url>");
-                    sb.AppendLine();
-                }
+                var first = item.Category.Split(',')[0].Trim();
+                var slug = first.ToLower().Replace(" ", "-");
+
+                sb.AppendLine("  <url>");
+                sb.AppendLine($"    <loc>{_baseUrl}/{slug}/{item.ExternalId}</loc>");
+                sb.AppendLine("  </url>");
+                sb.AppendLine();
             }
 
             sb.AppendLine("</urlset>");

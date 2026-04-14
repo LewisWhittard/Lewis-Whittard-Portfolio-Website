@@ -3,7 +3,7 @@ using LMWSelenium.PageModels.StandardPage;
 
 namespace LMWSelenium.PageModels.PageModels
 {
-	class PillarPageSoftwareDevelopment : PageModelBase
+	class LegalPageModel : PageModelBase
 	{
 		public IWebElement HomeNavBarButton { get; private set; }
 		public IWebElement SearchNavBarButton { get; private set; }
@@ -18,11 +18,9 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement Github { get; private set; }
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
-        public IWebElement AcceptCookie { get; private set; }
         public IWebElement LegalButton { get; private set; }
 
-
-        public PillarPageSoftwareDevelopment(IWebDriver driver)
+        public LegalPageModel(IWebDriver driver)
 		{
             Driver = driver;
 		}
@@ -34,10 +32,9 @@ namespace LMWSelenium.PageModels.PageModels
             LMWLogo = FindElementById("LogoLink");
             Linkedin = FindElementById("Linkedin");
 			Github = FindElementById("Github");
-			SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
-			CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
-			AcceptCookie = FindElementById("CookieAccept");
-            LegalButton = FindElementById("LegalNavBarButton");
+            SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
+            CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+			LegalButton = FindElementById("LegalNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -125,25 +122,11 @@ namespace LMWSelenium.PageModels.PageModels
             WaitUntilTitleContainsValue("Creative Works");
         }
 
-        public void FindClusterContent()
-        {
-            FindElementById("SearchResult-from-reflection-to-action-the-marginal-gains-sprint");
-            FindElementById("SearchResult-cogetta");
-            FindElementById("SearchResult-ui-test-automation-portfolio-piece");
-            FindElementById("SearchResult-my-portfolio-website-development");
-            FindElementById("SearchResult-portfolio-website-completed");
-        }
-
-        public void ClickAcceptCookie()
-        {
-            AcceptCookie.Click();
-        }
-
-        public void ClickLegalButton()
-        {
-            ClickButton(LegalButton);
-            WaitUntilURLContainsValue("legal");
-            WaitUntilTitleContainsValue("Legal");
+		public void ClickLegalButton()
+		{
+			ClickButton(LegalButton);
+			WaitUntilURLContainsValue("legal");
+			WaitUntilTitleContainsValue("Legal");
         }
     }
 }

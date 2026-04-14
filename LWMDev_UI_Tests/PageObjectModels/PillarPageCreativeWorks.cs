@@ -18,6 +18,8 @@ namespace LMWSelenium.PageModels.PageModels
 		public IWebElement Github { get; private set; }
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
+        public IWebElement AcceptCookie { get; private set; }
+        public IWebElement LegalButton { get; private set; }
 
 
         public PillarPageCreativeWorks(IWebDriver driver)
@@ -34,6 +36,8 @@ namespace LMWSelenium.PageModels.PageModels
 			Github = FindElementById("Github");
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
+            AcceptCookie = FindElementById("CookieAccept");
+            LegalButton = FindElementById("LegalNavBarButton");
         }
 
         public void ClickHomeNavBarButton()
@@ -125,6 +129,18 @@ namespace LMWSelenium.PageModels.PageModels
 		{
 			FindElementById("SearchResult-cogetta");
 			FindElementById("SearchResult-lewis-matthew-whittard-software-development-logo");
+        }
+
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
+        
+		public void ClickLegalButton()
+        {
+            ClickButton(LegalButton);
+            WaitUntilURLContainsValue("legal");
+            WaitUntilTitleContainsValue("Legal");
         }
     }
 }

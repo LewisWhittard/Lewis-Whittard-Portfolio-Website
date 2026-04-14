@@ -1,11 +1,13 @@
-﻿using JsonLD_Library.Service;
-using JsonLD_Library.Service.Interface;
+﻿using JsonLD_Library.Service.Interface;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Page_Library.Page.Entities.Page.Interface;
+using Page_Library.Page.Entities.SearchResult.Interface;
 using Page_Library.Page.Service.Interface;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace LMWDev.Controllers
@@ -36,73 +38,122 @@ namespace LMWDev.Controllers
         [Route("{id}")]
         public IActionResult Index(string id)
         {
-            using var activity = new Activity("PillarPage.Index").Start();
+            var cookieValue = HttpContext.Session.GetString("CookieApproved");
 
-            activity?.SetTag("external.id", id);
-            _logger.LogInformation("Index action started with ExternalID: {ExternalID}", id);
+            // Variable 1: is it set?
+            bool isCookieSet = cookieValue != null;
 
-            try
+            // Variable 2: the actual value (true/false), defaulting to false if unset
+            bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
+            using var activity = ActivitySource.StartActivity("PillarPage.Index");
             {
-                // Validate route
-                bool isValidRoute = id == "software-development" || id == "creative-works";
-                activity?.SetTag("route.valid", isValidRoute);
+                activity?.SetTag("external.id", id);
+                _logger.LogInformation("Index action started with ExternalID: {ExternalID}", id);
 
-                if (!isValidRoute)
+                try
                 {
-                    activity?.SetStatus(ActivityStatusCode.Error, "Invalid route");
-                    return NotFound();
+                    // Add session ID to the root activity
+                    if (CookieApproved == true)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    activity?.SetTag("Controller.Route", id);
+
+                    // ---------------------------
+                    // 1. Route Validation Span
+                    // ---------------------------
+                    using (var routeSpan = ActivitySource.StartActivity("ValidateRoute"))
+                    {
+                        bool isValidRoute = id == "software-development" || id == "creative-works";
+                        routeSpan?.SetTag("route.valid", isValidRoute);
+                        routeSpan?.SetTag("route.value", id);
+
+                        if (!isValidRoute)
+                        {
+                            routeSpan?.SetStatus(ActivityStatusCode.Error, "Invalid route");
+                            activity?.SetStatus(ActivityStatusCode.Error, "Invalid route");
+                            return NotFound();
+                        }
+                    }
+
+                    // ---------------------------
+                    // 2. Page Retrieval Span
+                    // ---------------------------
+                    IPage page;
+                    using (var pageSpan = ActivitySource.StartActivity("RetrievePage"))
+                    {
+                        page = _pageService.GetPage(id);
+                        bool pageFound = page != null;
+
+                        pageSpan?.SetTag("page.found", pageFound);
+
+                        if (!pageFound)
+                        {
+                            pageSpan?.SetStatus(ActivityStatusCode.Error, "Page not found");
+                            activity?.SetStatus(ActivityStatusCode.Error, "Page not found");
+                            _logger.LogWarning("No page found for ExternalID: {ExternalID}", id);
+                            return NotFound();
+                        }
+
+                        pageSpan?.SetTag("page.category", page.Category);
+                    }
+
+                    // ---------------------------
+                    // 3. Search Span
+                    // ---------------------------
+                    List<ISearchResult> search;
+                    using (var searchSpan = ActivitySource.StartActivity("Search"))
+                    {
+                        searchSpan?.SetTag("search.category", page.Category);
+                        search = _pageService.Search(null, page.Category);
+                    }
+
+                    // ---------------------------
+                    // 4. JSON-LD Generation Span
+                    // ---------------------------
+                    string jsonLD;
+                    using (var jsonSpan = ActivitySource.StartActivity("GenerateJsonLD"))
+                    {
+                        jsonLD = _jsonLDService.GenerateJsonLDPillarPage(page, search);
+                    }
+
+                    // ---------------------------
+                    // 5. ViewModel Construction Span
+                    // ---------------------------
+                    PillarPageModel viewModel;
+                    using (var vmSpan = ActivitySource.StartActivity("BuildViewModel"))
+                    {
+                        vmSpan?.SetTag("session.backgroundDisabled",
+                            Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")));
+
+                        viewModel = new PillarPageModel(
+                            page,
+                            search,
+                            Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
+                            jsonLD,
+                            isCookieSet
+                        );
+                    }
+
+                    activity?.SetStatus(ActivityStatusCode.Ok);
+                    _logger.LogInformation("Returning view for ExternalID: {ExternalID}", id);
+
+                    return View(viewModel);
                 }
-
-                // Retrieve page
-                var page = _pageService.GetPage(id);
-                bool pageFound = page != null;
-                activity?.SetTag("page.found", pageFound);
-
-                if (!pageFound)
+                catch (Exception ex)
                 {
-                    _logger.LogWarning("No page found for ExternalID: {ExternalID}", id);
-                    activity?.SetStatus(ActivityStatusCode.Error, "Page not found");
-                    return NotFound();
+                    activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
+                    activity?.SetTag("exception.type", ex.GetType().Name);
+                    activity?.SetTag("exception.message", ex.Message);
+                    activity?.SetTag("exception.stacktrace", ex.StackTrace);
+
+                    _logger.LogError(ex, "Error occurred while processing ExternalID: {ExternalID}", id);
+                    return StatusCode(500, "An unexpected error occurred.");
                 }
-
-                activity?.SetTag("page.category", page.Category);
-                _logger.LogInformation("Page retrieved successfully for ExternalID: {ExternalID}", id);
-
-                // Search
-                var search = _pageService.Search(null, page.Category);
-                activity?.AddEvent(new ActivityEvent("SearchCompleted", tags: new ActivityTagsCollection
-        {
-            { "search.category", page.Category }
-        }));
-
-                // JSON-LD generation
-                var jsonLD = _jsonLDService.GenerateJsonLDPillarPage(page, search);
-                activity?.AddEvent(new ActivityEvent("JsonLdGenerated"));
-
-                // View model (constructor untouched)
-                var viewModel = new PillarPageModel(
-                    page,
-                    search,
-                    Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
-                    jsonLD
-                );
-
-                _logger.LogInformation("Returning view for ExternalID: {ExternalID}", id);
-                activity?.SetStatus(ActivityStatusCode.Ok);
-
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while processing ExternalID: {ExternalID}", id);
-
-                activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
-                activity?.SetTag("exception.type", ex.GetType().Name);
-                activity?.SetTag("exception.message", ex.Message);
-                activity?.SetTag("exception.stacktrace", ex.StackTrace);
-
-                return StatusCode(500, "An unexpected error occurred.");
             }
         }
+
     }
 }

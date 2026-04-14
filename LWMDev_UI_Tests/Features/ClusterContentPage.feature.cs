@@ -92,29 +92,21 @@ namespace LWMDev_UI_Tests.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages software development")]
         [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
-        [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages")]
+        [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages software development")]
         [Xunit.InlineDataAttribute("chrome", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("firefox", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("edge", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
         [Xunit.InlineDataAttribute("safari", "portfolio-website-completed", "Portfolio Website Completed! - Lewis Whittard Software Development", new string[0])]
-        [Xunit.InlineDataAttribute("chrome", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
-            "pment", new string[0])]
-        [Xunit.InlineDataAttribute("firefox", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
-            "pment", new string[0])]
-        [Xunit.InlineDataAttribute("edge", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
-            "pment", new string[0])]
-        [Xunit.InlineDataAttribute("safari", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
-            "pment", new string[0])]
-        public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePages(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePagesSoftwareDevelopment(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             argumentsOfScenario.Add("pageIndex", pageIndex);
             argumentsOfScenario.Add("expectedTitle", expectedTitle);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Cluster title for multiple pages", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Cluster title for multiple pages software development", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -129,9 +121,51 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 5
- await testRunner.WhenAsync(string.Format("ClusterContent: I go to \"https://localhost:44325/clustercontent/Index/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync(string.Format("ClusterContent: I go to \"https://localhost:44325/software-development/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 6
+ await testRunner.ThenAsync(string.Format("ClusterContent: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Verify Cluster title for multiple pages creative works")]
+        [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
+        [Xunit.TraitAttribute("Description", "Verify Cluster title for multiple pages creative works")]
+        [Xunit.InlineDataAttribute("chrome", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+            "pment", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+            "pment", new string[0])]
+        [Xunit.InlineDataAttribute("edge", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+            "pment", new string[0])]
+        [Xunit.InlineDataAttribute("safari", "lewis-matthew-whittard-software-development-logo", "Lewis Matthew Whittard Software Development Logo - Lewis Whittard Software Develo" +
+            "pment", new string[0])]
+        public async System.Threading.Tasks.Task VerifyClusterTitleForMultiplePagesCreativeWorks(string browser, string pageIndex, string expectedTitle, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            argumentsOfScenario.Add("pageIndex", pageIndex);
+            argumentsOfScenario.Add("expectedTitle", expectedTitle);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Cluster title for multiple pages creative works", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 16
+ await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 17
+ await testRunner.WhenAsync(string.Format("ClusterContent: I go to \"https://localhost:44325/creative-works/{0}\"", pageIndex), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 18
  await testRunner.ThenAsync(string.Format("ClusterContent: the page title is \"{0}\"", expectedTitle), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -151,7 +185,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click search on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -161,14 +195,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 20
+#line 28
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 21
- await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+#line 29
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
                         "ebsite-completed\" and use the search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 30
  await testRunner.ThenAsync("ClusterContent: the page title is \"Search - Lewis Whittard Software Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -188,7 +222,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click home on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 31
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -198,14 +232,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 32
+#line 40
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 33
- await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+#line 41
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
                         "ebsite-completed\" and use the home button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 42
  await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
                         "t\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
@@ -226,7 +260,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Linkedin button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 43
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -236,14 +270,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 44
+#line 52
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 45
- await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+#line 53
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
                         "ebsite-completed\" and use the Linkedin button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 46
+#line 54
  await testRunner.ThenAsync("ClusterContent: I have arrived at linkedin", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -263,7 +297,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click logo on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 55
+#line 63
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -273,14 +307,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 56
+#line 64
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 57
- await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+#line 65
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
                         "ebsite-completed\" and use the logo button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 66
  await testRunner.ThenAsync("ClusterContent: the page title is \"Home Page - Lewis Whittard Software Developmen" +
                         "t\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
@@ -301,7 +335,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Github button", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 67
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -311,14 +345,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 68
+#line 76
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 69
- await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/ClusterContent/Index/portfolio-w" +
+#line 77
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
                         "ebsite-completed\" and use the Github button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 70
+#line 78
  await testRunner.ThenAsync("ClusterContent: I have arrived at Github", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -338,7 +372,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Software Development on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 80
+#line 88
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -348,14 +382,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 81
+#line 89
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 82
+#line 90
  await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/\" and use the Software Developme" +
                         "nt button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 83
+#line 91
  await testRunner.ThenAsync("ClusterContent: the page title is \"Software Development - Lewis Whittard Software" +
                         " Development\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
@@ -376,7 +410,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("browser", browser);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click Creative Works on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 92
+#line 100
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -386,16 +420,54 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 93
+#line 101
  await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 94
+#line 102
  await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/\" and use the Creative Works but" +
                         "ton", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 103
  await testRunner.ThenAsync("ClusterContent: the page title is \"Creative Works - Lewis Whittard Software Devel" +
                         "opment\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Click legal on the navigation bar")]
+        [Xunit.TraitAttribute("FeatureTitle", "Cluster Content Page")]
+        [Xunit.TraitAttribute("Description", "Click legal on the navigation bar")]
+        [Xunit.InlineDataAttribute("chrome", new string[0])]
+        [Xunit.InlineDataAttribute("firefox", new string[0])]
+        [Xunit.InlineDataAttribute("edge", new string[0])]
+        [Xunit.InlineDataAttribute("safari", new string[0])]
+        public async System.Threading.Tasks.Task ClickLegalOnTheNavigationBar(string browser, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("browser", browser);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Click legal on the navigation bar", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 112
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 113
+ await testRunner.GivenAsync(string.Format("ClusterContent: I use Browser \"{0}\"", browser), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 114
+ await testRunner.WhenAsync("ClusterContent: I go to \"https://localhost:44325/software-development/portfolio-w" +
+                        "ebsite-completed\" and use the legal button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 115
+ await testRunner.ThenAsync("ClusterContent: the page title is \"Legal Page - Lewis Whittard Software Developme" +
+                        "nt\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

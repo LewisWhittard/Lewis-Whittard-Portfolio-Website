@@ -1,6 +1,6 @@
 ﻿namespace LMWDev.Models
 {
-	public class HomeModel
+	public class LegalModel
 	{
 		public bool Meta { get; set; } = false;
         public bool ShouldNotBeIndexed { get; set; } = false;
@@ -10,7 +10,7 @@
         public bool IsCookieConsentBannerDisabled { get; set; }
 
 
-        public HomeModel(bool backgroundDisabled, string jsonLD, bool isCookieConsentBannerDisabled)
+        public LegalModel(bool backgroundDisabled, string jsonLD, bool isCookieConsentBannerDisabled)
         {
             BackgroundDisabled = backgroundDisabled;
             JsonLD = jsonLD;

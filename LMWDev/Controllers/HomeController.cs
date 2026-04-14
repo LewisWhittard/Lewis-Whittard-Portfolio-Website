@@ -1,4 +1,5 @@
-﻿using JsonLD_Library.Service;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using JsonLD_Library.Service;
 using JsonLD_Library.Service.Interface;
 using LMWDev.Models;
 using Microsoft.AspNetCore.Http;
@@ -25,34 +26,78 @@ namespace LMWDev.Controllers
         public IActionResult Index()
         {
             using var activity = ActivitySource.StartActivity("HomeController.Index");
-
-            try
             {
-                activity?.SetTag("page.type", "HomePage");
+                try
+                {
+                    activity?.SetTag("page.type", "HomePage");
 
-                string jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+                    var cookieValue = HttpContext.Session.GetString("CookieApproved");
 
-                bool backgroundDisabled = Convert.ToBoolean(
-                    HttpContext.Session.GetString("BackgroundDisabled")
-                );
+                    // Variable 1: is it set?
+                    bool isCookieSet = cookieValue != null;
 
-                var viewModel = new HomeModel(backgroundDisabled, jsonLD);
+                    // Variable 2: the actual value (true/false), defaulting to false if unset
+                    bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
 
-                activity?.SetTag("session.backgroundDisabled", backgroundDisabled);
-                activity?.SetStatus(ActivityStatusCode.Ok);
 
-                _logger.LogInformation("Rendering Home/Index");
+                    // Add session ID to the root activity
+                    if (CookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
 
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                activity?.SetStatus(ActivityStatusCode.Error);
-                activity?.RecordException(ex);
+                    // Route tagging (always safe)
+                    activity?.SetTag("Controller.Route", "/");
 
-                _logger.LogError(ex, "Error in HomeController.Index");
 
-                throw;
+
+                    // ---------------------------
+                    // 1. JSON-LD Generation Span
+                    // ---------------------------
+                    string jsonLD;
+                    using (var jsonSpan = ActivitySource.StartActivity("GenerateJsonLD", ActivityKind.Internal))
+                    {
+                        jsonLD = _jsonLDService.GenerateJsonLDHomePage();
+                        jsonSpan?.SetTag("jsonld.generated", jsonLD != null);
+                    }
+
+                    // ---------------------------
+                    // 2. Session Retrieval Span
+                    // ---------------------------
+                    bool backgroundDisabled;
+                    using (var sessionSpan = ActivitySource.StartActivity("ReadSession", ActivityKind.Internal))
+                    {
+                        backgroundDisabled = Convert.ToBoolean(
+                            HttpContext.Session.GetString("BackgroundDisabled")
+                        );
+
+                        sessionSpan?.SetTag("session.backgroundDisabled", backgroundDisabled);
+                    }
+
+                    // ---------------------------
+                    // 3. ViewModel Construction Span
+                    // ---------------------------
+                    HomeModel viewModel;
+                    using (var vmSpan = ActivitySource.StartActivity("BuildViewModel", ActivityKind.Internal))
+                    {
+                        viewModel = new HomeModel(backgroundDisabled, jsonLD,isCookieSet);
+                        vmSpan?.SetTag("viewmodel.created", true);
+                    }
+
+                    activity?.SetStatus(ActivityStatusCode.Ok);
+                    _logger.LogInformation("Rendering Home/Index");
+
+                    return View(viewModel);
+                }
+                catch (Exception ex)
+                {
+                    activity?.RecordException(ex);
+                    activity?.SetStatus(ActivityStatusCode.Error);
+
+                    _logger.LogError(ex, "Error in HomeController.Index");
+                    throw;
+                }
             }
         }
 

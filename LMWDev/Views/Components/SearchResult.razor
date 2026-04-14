@@ -17,30 +17,18 @@
             </small>
         </div>
 
-        @if (Result.Category == "Software Development")
-        {
-            <a href="/software-development/@Result.ExternalId"
-               id="SearchResultButton-@Result.ExternalId"
-               class="btn btn-sm btn-outline-primary ms-3">
-                View
-            </a>
+
+        @{
+            var first = Result.Category.Split(',')[0].Trim();
+            var slug = first.ToLower().Replace(" ", "-");
         }
-        else if (Result.Category == "Creative Works")
-        {
-            <a href="/creative-works/@Result.ExternalId"
-               id="SearchResultButton-@Result.ExternalId"
-               class="btn btn-sm btn-outline-primary ms-3">
-                View
-            </a>
-        }
-        else if (Result.Category.Contains(","))
-        {
-            <a href="/intersections/@Result.ExternalId"
-               id="SearchResultButton-@Result.ExternalId"
-               class="btn btn-sm btn-outline-primary ms-3">
-                View
-            </a>
-        }
+
+        <a href="/@slug/@Result.ExternalId"
+           id="SearchResultButton-@Result.ExternalId"
+           class="btn btn-sm btn-outline-primary ms-3">
+            View
+        </a>
+
     </div>
 </div>
 

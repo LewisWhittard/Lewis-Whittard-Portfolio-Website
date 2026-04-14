@@ -40,7 +40,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenIGoTo(string p0)
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
-		}
+			_clusterContentPageModel.SetUpPage();
+            _clusterContentPageModel.ClickAcceptCookie();
+        }
 
 
 		[Then("ClusterContent: the page title is {string}")]
@@ -55,6 +57,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
 			_clusterContentPageModel.SetUpPage();
+			_clusterContentPageModel.ClickAcceptCookie();
 			_clusterContentPageModel.CLickSearchNavBarButton();
 		}
 
@@ -63,6 +66,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
 			_clusterContentPageModel.SetUpPage();
+			_clusterContentPageModel.ClickAcceptCookie();
 			_clusterContentPageModel.ClickHomeNavBarButton();
 
 		}
@@ -72,7 +76,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
 			_clusterContentPageModel.SetUpPage();
-			_clusterContentPageModel.ClickLinkedinButton();
+            _clusterContentPageModel.ClickAcceptCookie();
+            _clusterContentPageModel.ClickLinkedinButton();
 		}
 
 		[Then("ClusterContent: I have arrived at linkedin")]
@@ -89,7 +94,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_clusterContentPageModel.NavigateToPage(p0);
 			_clusterContentPageModel.SetUpPage();
-			_clusterContentPageModel.ClickLogoButton();
+            _clusterContentPageModel.ClickAcceptCookie();
+            _clusterContentPageModel.ClickLogoButton();
 		}
 
         [When("ClusterContent: I go to {string} and use the Github button")]
@@ -97,6 +103,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _clusterContentPageModel.NavigateToPage(p0);
             _clusterContentPageModel.SetUpPage();
+			_clusterContentPageModel.ClickAcceptCookie();
             _clusterContentPageModel.ClickGithubButton();
         }
 
@@ -113,6 +120,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _clusterContentPageModel.NavigateToPage(p0);
             _clusterContentPageModel.SetUpPage();
+			_clusterContentPageModel.ClickAcceptCookie();
             _clusterContentPageModel.ClickSoftwareDevelopmentNavBarButton();
         }
 
@@ -121,10 +129,18 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _clusterContentPageModel.NavigateToPage(p0);
             _clusterContentPageModel.SetUpPage();
+			_clusterContentPageModel.ClickAcceptCookie();
             _clusterContentPageModel.ClickCreativeWorksNavBarButton();
         }
 
-
+        [When("ClusterContent: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _clusterContentPageModel.NavigateToPage(p0);
+            _clusterContentPageModel.SetUpPage();
+            _clusterContentPageModel.ClickAcceptCookie();
+            _clusterContentPageModel.ClickLegalButton();
+        }
 
     }
 }

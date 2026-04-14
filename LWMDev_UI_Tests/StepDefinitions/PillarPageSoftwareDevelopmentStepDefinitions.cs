@@ -41,6 +41,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
         public void WhenPillarSoftwareDevelopmentIGoTo(string url)
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
+            _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
         }
 
         [Then("PillarSoftwareDevelopment: the page title is {string}")]
@@ -55,6 +57,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.CLickSearchNavBarButton();
         }
 
@@ -63,6 +66,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickHomeNavBarButton();
         }
 
@@ -71,6 +75,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickLinkedinButton();
         }
 
@@ -87,6 +92,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(url);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickLogoButton();
         }
 
@@ -95,6 +101,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(p0);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickGithubButton();
         }
 
@@ -111,6 +118,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(p0);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickSoftwareDevelopmentNavBarButton();
         }
 
@@ -119,6 +127,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _PillarPageSoftwareDevelopment.NavigateToPage(p0);
             _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
             _PillarPageSoftwareDevelopment.ClickCreativeWorksNavBarButton();
         }
 
@@ -136,6 +145,15 @@ namespace LWMDev_UI_Tests.StepDefinitions
             _PillarPageSoftwareDevelopment.WaitUntilTitleContainsValue(p1);
             _PillarPageSoftwareDevelopment.CloseDriver();
             _PillarPageSoftwareDevelopment.QuitDriver();
+        }
+
+        [When("PillarSoftwareDevelopment: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _PillarPageSoftwareDevelopment.NavigateToPage(p0);
+            _PillarPageSoftwareDevelopment.SetUpPage();
+            _PillarPageSoftwareDevelopment.ClickAcceptCookie();
+            _PillarPageSoftwareDevelopment.ClickLegalButton();
         }
 
     }

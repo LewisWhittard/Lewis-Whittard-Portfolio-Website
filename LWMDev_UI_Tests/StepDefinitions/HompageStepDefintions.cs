@@ -40,7 +40,9 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		public void WhenHomepageIGoTo(string url)
 		{
 			_homePage.NavigateToPage(url);
-		}
+            _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
+        }
 
 		[Then("Homepage: the page title is {string}")]
 		public void ThenHomepagePageTitleIs(string expectedTitle)
@@ -54,7 +56,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
-			_homePage.CLickSearchNavBarButton();
+            _homePage.ClickAcceptCookie();
+            _homePage.CLickSearchNavBarButton();
 		}
 
 		[When("Homepage: I go to {string} and use the home button")]
@@ -62,7 +65,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
-			_homePage.ClickHomeNavBarButton();
+            _homePage.ClickAcceptCookie();
+            _homePage.ClickHomeNavBarButton();
 		}
 
 		[When("Homepage: I go to {string} and use the Linkedin button")]
@@ -70,7 +74,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
-			_homePage.ClickLinkedinButton();
+            _homePage.ClickAcceptCookie();
+            _homePage.ClickLinkedinButton();
 		}
 
 		[Then("Homepage: I have arrived at linkedin")]
@@ -86,7 +91,8 @@ namespace LWMDev_UI_Tests.StepDefinitions
 		{
 			_homePage.NavigateToPage(url);
 			_homePage.SetUpPage();
-			_homePage.ClickLogoButton();
+            _homePage.ClickAcceptCookie();
+            _homePage.ClickLogoButton();
 		}
 
         [When("Homepage: I go to {string} and use the Github button")]
@@ -94,6 +100,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
             _homePage.ClickGithubButton();
         }
 
@@ -110,6 +117,7 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
             _homePage.ClickSoftwareDevelopmentNavBarButton();
         }
 
@@ -118,7 +126,17 @@ namespace LWMDev_UI_Tests.StepDefinitions
         {
             _homePage.NavigateToPage(p0);
             _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
             _homePage.ClickCreativeWorksNavBarButton();
+        }
+
+        [When("Homepage: I go to {string} and use the legal button")]
+        public void WhenHomepageIGoToAndUseTheLegalButton(string p0)
+        {
+            _homePage.NavigateToPage(p0);
+            _homePage.SetUpPage();
+            _homePage.ClickAcceptCookie();
+            _homePage.ClickLegalButton();
         }
 
     }

@@ -36,58 +36,103 @@ namespace LMWDev.Controllers
         public IActionResult Index(string pillar, string id)
         {
             using var activity = ActivitySource.StartActivity("ClusterContentController.Index");
-
-            try
             {
-                _logger.LogInformation("Fetching page with ID: {Id}", id);
 
-                var page = _pageService.GetPage(id);
-
-                // Tag early so failures still have context
-                activity?.SetTag("page.id", id);
-                activity?.SetTag("pillar.route", pillar);
-                activity?.SetTag("page.exists", page != null);
-
-                if (page == null)
+                try
                 {
-                    activity?.SetTag("error.reason", "PageNotFound");
-                    return NotFound();
-                }
+                    var cookieValue = HttpContext.Session.GetString("CookieApproved");
 
-                // Validate page type
-                if (page.PageType != "Cluster Content Page")
+                    // Variable 1: is it set?
+                    bool isCookieSet = cookieValue != null;
+
+                    // Variable 2: the actual value (true/false), defaulting to false if unset
+                    bool CookieApproved = bool.TryParse(cookieValue, out var parsed) && parsed;
+
+
+                    // Add session ID to the root activity
+                    if (CookieApproved)
+                    {
+                        var sessionId = HttpContext.Session.Id;
+                        activity?.SetTag("session.id", sessionId);
+                    }
+                    activity?.SetTag("Controller.Route", pillar + id);
+
+                    _logger.LogInformation("Fetching page with ID: {Id}", id);
+
+                    // Fetch page
+                    using (var fetchPageSpan = ActivitySource.StartActivity("FetchPage"))
+                    {
+                        fetchPageSpan?.SetTag("page.id", id);
+                        var page = _pageService.GetPage(id);
+
+                        activity?.SetTag("page.id", id);
+                        activity?.SetTag("pillar.route", pillar);
+                        activity?.SetTag("page.exists", page != null);
+
+                        if (page == null)
+                        {
+                            activity?.SetTag("error.reason", "PageNotFound");
+                            return NotFound();
+                        }
+
+                        // Validate page type
+                        using (var validateTypeSpan = ActivitySource.StartActivity("ValidatePageType"))
+                        {
+                            validateTypeSpan?.SetTag("page.type", page.PageType);
+
+                            if (page.PageType != "Cluster Content Page")
+                            {
+                                activity?.SetTag("error.reason", "InvalidPageType");
+                                return NotFound();
+                            }
+                        }
+
+                        // Validate pillar/category mapping
+                        using (var validatePillarSpan = ActivitySource.StartActivity("ValidatePillarCategory"))
+                        {
+                            validatePillarSpan?.SetTag("page.category", page.Category);
+
+                            if (!IsValidPillarForCategory(pillar, page.Category))
+                            {
+                                activity?.SetTag("error.reason", "PillarCategoryMismatch");
+                                activity?.SetTag("page.category", page.Category);
+                                return NotFound();
+                            }
+                        }
+
+                        // Success tags
+                        activity?.SetTag("page.title", page.Title);
+                        activity?.SetTag("page.category", page.Category);
+
+                        // Generate JSON-LD
+                        string jsonLD;
+                        using (var jsonLdSpan = ActivitySource.StartActivity("GenerateJsonLD"))
+                        {
+                            jsonLdSpan?.SetTag("page.id", page.ExternalId);
+                            jsonLD = _jsonLDService.GenerateJsonLDCulsterContentPage(page);
+                        }
+
+                        // Build view model
+                        ClusterContentModel viewModel;
+                        using (var viewModelSpan = ActivitySource.StartActivity("BuildViewModel"))
+                        {
+                            viewModel = new ClusterContentModel(
+                                page,
+                                Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
+                                jsonLD,isCookieSet
+                            );
+                        }
+
+                        return View(viewModel);
+                    }
+                }
+                catch (Exception ex)
                 {
-                    activity?.SetTag("error.reason", "InvalidPageType");
-                    return NotFound();
+                    activity?.SetTag("error", true);
+                    activity?.SetTag("exception.message", ex.Message);
+                    activity?.SetTag("exception.stacktrace", ex.StackTrace);
+                    throw;
                 }
-
-                // Validate pillar/category mapping
-                if (!IsValidPillarForCategory(pillar, page.Category))
-                {
-                    activity?.SetTag("error.reason", "PillarCategoryMismatch");
-                    activity?.SetTag("page.category", page.Category);
-                    return NotFound();
-                }
-
-                // Success tags
-                activity?.SetTag("page.title", page.Title);
-                activity?.SetTag("page.category", page.Category);
-
-                var jsonLD = _jsonLDService.GenerateJsonLDCulsterContentPage(page);
-                var viewModel = new ClusterContentModel(
-                    page,
-                    Convert.ToBoolean(HttpContext.Session.GetString("BackgroundDisabled")),
-                    jsonLD
-                );
-
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while loading ClusterContent for ID: {Id}", id);
-                activity?.SetTag("error", true);
-                activity?.SetTag("exception.message", ex.Message);
-                throw new Exception("Something went wrong while loading the page.");
             }
         }
 
@@ -97,7 +142,11 @@ namespace LMWDev.Controllers
             {
                 "Software Development" => pillar == "software-development",
                 "Creative Works" => pillar == "creative-works",
-                _ when category.Contains(",") => pillar == "intersections",
+
+                // When category contains commas, use the first segment
+                _ when category.Contains(",") =>
+                    pillar == category.Split(',')[0].Trim().ToLower().Replace(" ", "-"),
+
                 _ => false
             };
         }

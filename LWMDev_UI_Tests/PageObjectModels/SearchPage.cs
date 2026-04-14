@@ -17,6 +17,8 @@ namespace LMWSelenium.PageModels.PageModels
         public IWebElement SoftwareDevelopmentNavBarButton { get; private set; }
         public IWebElement CreativeWorksNavBarButton { get; private set; }
 		public IWebElement SearchDropDown { get; private set; }
+        public IWebElement AcceptCookie { get; private set; }
+        public IWebElement LegalButton { get; private set; }
 
         public SearchPage(IWebDriver driver)
 		{
@@ -37,6 +39,8 @@ namespace LMWSelenium.PageModels.PageModels
             SoftwareDevelopmentNavBarButton = FindElementById("SoftwareDevelopmentNavBarButton");
             CreativeWorksNavBarButton = FindElementById("CreativeWorksNavBarButton");
 			SearchDropDown = FindElementById("Category");
+            AcceptCookie = FindElementById("CookieAccept");
+            LegalButton = FindElementById("LegalNavBarButton");
         }
 
 		public void ClickHomeNavBarButton()
@@ -100,5 +104,16 @@ namespace LMWSelenium.PageModels.PageModels
 			this.SelectDropdownOption(SearchDropDown,value);
 		}
 
+        public void ClickAcceptCookie()
+        {
+            AcceptCookie.Click();
+        }
+
+        public void ClickLegalButton()
+        {
+            ClickButton(LegalButton);
+            WaitUntilURLContainsValue("legal");
+            WaitUntilTitleContainsValue("Legal");
+        }
     }
 }

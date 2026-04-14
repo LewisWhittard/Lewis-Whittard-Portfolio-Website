@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Legal Page";
+}
+
+<script>
+    // These MUST be global so the HTML buttons can call them
+    async function setConsent(value) {
+        try {
+            await fetch('/api/cookie/set', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(value)
+            });
+
+            localStorage.setItem('CookieApproved', value ? 'true' : 'false');
+            closeOverlay();
+        } catch (err) {
+            console.error('Failed to set consent:', err);
+        }
+    }
+
+    function closeOverlay() {
+        const overlay = document.getElementById('telemetry-overlay');
+        if (overlay) {
+            overlay.classList.remove('d-flex');
+            overlay.style.display = 'none';
+        }
+    }
+</script>
+
+<body>
+
+    @if (!Model.BackgroundDisabled)
+    {
+        <video preload="none" aria-hidden="true" autoplay muted loop playsinline id="bg-video">
+            <source src="~/Videos/WebsiteBackground.mp4" type="video/mp4">
+        </video>
+    }
+
+
+    <div class="container my-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-3">Telemetry & Session Tracking Notice</h2>
+
+                <p class="mb-3">
+                    This portfolio website uses OpenTelemetry to collect technical data about how the site is accessed
+                    and used. A temporary session identifier is used to associate related events, such as which pages
+                    were visited during a browsing session.
+                </p>
+
+                <p class="fw-semibold mb-2">The telemetry system records:</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item px-0">Which categories are searched</li>
+                    <li class="list-group-item px-0">Whether a search term was used</li>
+                    <li class="list-group-item px-0">Performance‑related events that help assess site reliability and responsiveness</li>
+                    <li class="list-group-item px-0">Real user monitoring (RUM) metrics related to feature usage</li>
+                </ul>
+
+                <p class="mb-3">
+                    This system does not store individual search terms, but it does associate search‑related events with
+                    a temporary session ID. This enables performance observability and aggregated marketing insights
+                    without identifying individual users.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <table class="table-bordered mt-4 bg-white">
+        <thead class="table-light">
+            <tr>
+                <th>Tracking Area</th>
+                <th>Purpose</th>
+                <th>Essential?</th>
+                <th>Behaviour When Declined</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Performance Monitoring</td>
+                <td>Measures site reliability, responsiveness, and technical performance across all users.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Performance metrics continue to be collected, but without any session‑level association.</td>
+            </tr>
+
+            <tr>
+                <td>Page / Route Tracking</td>
+                <td>Allows comparison of performance and feature usage per page or route to improve the site.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Page‑level performance is still measured, but without linking events to a telemetry session.</td>
+            </tr>
+
+            <tr>
+                <td>Error Handling & Diagnostics</td>
+                <td>Captures technical faults, failed requests, and unexpected behaviour to maintain site stability.</td>
+                <td class="fw-semibold">Yes</td>
+                <td>Errors are still logged, but without any telemetry session identifiers or category context.</td>
+            </tr>
+
+            <tr>
+                <td>Temporary Internal Application Session</td>
+                <td>
+                    Provides essential website accessibility compliance (WCAG 1.2.2),
+                    and determining whether the animated background should be displayed or disabled,
+                    accessibility‑friendly alternative. This temporary session already exists internally and is required for
+                    correct behaviour.
+                </td>
+                <td class="fw-semibold">Yes</td>
+                <td>
+                    Always active. Required for accessibility and functional behaviour, including controlling the
+                    animated background under WCAG 1.2.2 rules.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Telemetry Session ID</td>
+                <td>Associates related telemetry events within a single visit to understand session‑level behaviour.</td>
+                <td class="fw-semibold">No</td>
+                <td>Session is not sent to the observability platform.</td>
+            </tr>
+
+            <tr>
+                <td>Category String</td>
+                <td>Which category was selected to understand aggregated interest patterns.</td>
+                <td class="fw-semibold">No</td>
+                <td>category is not sent to the observability platform.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        <button class="btn btn-primary px-4" onclick="setConsent(true)">Accept</button>
+        <button class="btn btn-outline-secondary px-4" onclick="setConsent(false)">Reject</button>
+    </div>
+
+</body>
+
