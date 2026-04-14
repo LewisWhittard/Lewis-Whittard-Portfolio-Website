@@ -831,6 +831,12 @@
 				"BodyText": "Favicon asset updated."
 			},
 			{
+				"BlockType": "Header",
+				"Level": "H2",
+				"Alignment": "left",
+				"Text": "🔗 Links"
+			},
+			{
 				"BlockType": "Hyperlink",
 				"Alignment": "left",
 				"Url": "https://github.com/LewisWhittard/Lewis-Whittard-Portfolio-Website",
