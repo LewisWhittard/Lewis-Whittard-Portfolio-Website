@@ -21,7 +21,6 @@ namespace Page_Library.Page.Entities.Page.Base
         public string Author { get; private set; }
 
         private List<ContentBlockDTO>? ContentBlockDTO;
-        private List<UmbracoPageDto>? UmbracoContentBlockDTO;
 
         protected PageBase(PageDTO dto)
         {
@@ -31,17 +30,6 @@ namespace Page_Library.Page.Entities.Page.Base
             PublishDate = dto.PublishDate;
             Category = dto.Category;
             Meta = new Meta(dto.Meta);
-            ContentBlockDTO = dto.ContentBlocks;
-            Author = dto.Author;
-        }
-
-        protected PageBase(UmbracoPageDto dto)
-        {
-            PageType = dto.PageType;
-            Title = dto.Name;
-            PublishDate =  dto.PublishDate.ToString();
-            Category = dto.Category;
-            Meta = new Meta(dto.Properties.Meta);
             ContentBlockDTO = dto.ContentBlocks;
             Author = dto.Author;
         }

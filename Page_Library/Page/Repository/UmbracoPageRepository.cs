@@ -18,7 +18,7 @@ public class UmbracoPageRepository : PageRepositoryBase
         var url = $"/umbraco/delivery/api/v2/content/item/{idOrSlug}";
 
         // Correct: call HttpClient using the URL (not the variable name)
-        var dto = _http.GetFromJsonAsync<UmbracoPageDto>(url).Result;
+        var dto = _http.GetFromJsonAsync<PageDTO>(url).Result;
 
         // Map into your domain Page object
         return new Page_Library.Page.Entities.Page.Page(dto);
