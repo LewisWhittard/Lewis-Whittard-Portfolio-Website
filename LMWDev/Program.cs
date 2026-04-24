@@ -12,13 +12,17 @@ using Page_Library.Content.Repository;
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Factory;
 using Page_Library.Page.Factory.Interface;
-using Page_Library.Page.Repository;
 using Page_Library.Page.Repository.Interface;
 using Page_Library.Page.Service;
 using Page_Library.Page.Service.Interface;
 using Sitemap_Library.Service;
 using Sitemap_Library.Service.Interface;
 using System;
+using Page_Library.Page.Repository.Base;
+using Page_Library.Page.Entities.Page.DTO;
+using Page_Library.Page.Entities.Page.Interface;
+using Page_Library.Page.Repository;
+using System.Net.Http.Json;
 
 namespace LMWDev
 {
@@ -37,7 +41,6 @@ namespace LMWDev
                     logging.AddConsole();
                     logging.AddDebug();
 
-                    // OpenTelemetry logging with Honeycomb
                     logging.AddOpenTelemetry(options =>
                     {
                         options.IncludeFormattedMessage = true;
@@ -58,6 +61,11 @@ namespace LMWDev
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
+                    //
+                    // ----------------------------------------------------
+                    // SESSION + HTTP CONTEXT
+                    // ----------------------------------------------------
+                    //
                     services.AddDistributedMemoryCache();
 
                     services.AddSession(options =>
@@ -67,19 +75,39 @@ namespace LMWDev
                         options.Cookie.IsEssential = true;
                     });
 
-                    services.AddScoped<IContentRepository>(provider =>
-                        new JsonContentRepository(@"./Json/Content/Content.json"));
+                    services.AddHttpContextAccessor();
 
-                    // Singleton registrations for page-related services
-                    services.AddSingleton<IPageRepository>(provider =>
-                        new JsonPageRepository(@"./Json/Page/Page.json"));
-
+                    //
+                    // ----------------------------------------------------
+                    // CONTENT REPOSITORY (still JSON)
+                    // ----------------------------------------------------
+                    //
                     services.AddSingleton<IContentRepository>(provider =>
                         new JsonContentRepository(@"./Json/Content/Content.json"));
 
+                    //
+                    // ----------------------------------------------------
+                    // PAGE REPOSITORY (UMBRACO DELIVERY API)
+                    // ----------------------------------------------------
+                    //
+                    services.AddHttpClient<IPageRepository, UmbracoPageRepository>(client =>
+                    {
+                        client.BaseAddress = new Uri("https://localhost:44303/");
+                    });
+
+                    //
+                    // ----------------------------------------------------
+                    // CONTENT BLOCK FACTORY
+                    // ----------------------------------------------------
+                    //
                     services.AddSingleton<IContentBlockFactory, ContentBlockFactory>();
 
-                    services.AddSingleton<IPageService>(provider =>
+                    //
+                    // ----------------------------------------------------
+                    // PAGE SERVICE (now uses Umbraco repo)
+                    // ----------------------------------------------------
+                    //
+                    services.AddScoped<IPageService>(provider =>
                     {
                         var pageRepo = provider.GetRequiredService<IPageRepository>();
                         var contentRepo = provider.GetRequiredService<IContentRepository>();
@@ -88,8 +116,11 @@ namespace LMWDev
                         return new PageService(pageRepo, blockFactory, contentRepo);
                     });
 
-                    services.AddHttpContextAccessor();
-
+                    //
+                    // ----------------------------------------------------
+                    // SITEMAP SERVICE
+                    // ----------------------------------------------------
+                    //
                     services.AddSingleton<ISiteMapService>(provider =>
                     {
                         var pageRepo = provider.GetRequiredService<IPageRepository>();
@@ -98,14 +129,22 @@ namespace LMWDev
                         return new SitemapXMLService(pageRepo, http);
                     });
 
+                    //
+                    // ----------------------------------------------------
+                    // JSON-LD SERVICE
+                    // ----------------------------------------------------
+                    //
                     services.AddSingleton<IJsonLDService>(provider =>
                     {
                         var http = provider.GetRequiredService<IHttpContextAccessor>();
-
                         return new JsonLD_Library.Service.JsonLDService(http);
                     });
 
-
+                    //
+                    // ----------------------------------------------------
+                    // OPENTELEMETRY TRACING
+                    // ----------------------------------------------------
+                    //
                     services.AddOpenTelemetry()
                         .WithTracing(builder =>
                         {
@@ -135,6 +174,5 @@ namespace LMWDev
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
     }
 }

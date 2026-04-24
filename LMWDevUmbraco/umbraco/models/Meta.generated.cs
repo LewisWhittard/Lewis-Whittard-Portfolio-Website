@@ -70,7 +70,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.3+644334c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("metaKeywords")]
-		public virtual string MetaKeywords => this.Value<string>(_publishedValueFallback, "metaKeywords");
+		public virtual global::System.Collections.Generic.IEnumerable<string> MetaKeywords => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "metaKeywords");
 
 		///<summary>
 		/// MetaTitle
