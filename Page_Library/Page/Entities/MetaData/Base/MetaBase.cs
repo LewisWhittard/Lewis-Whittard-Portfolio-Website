@@ -27,19 +27,6 @@ namespace Page_Library.Page.Entities.MetaData.Base
             MetaImageId = dto.MetaImageId;
         }
 
-        public MetaBase(MetaBlockGridDto metaBlockGridDto)
-        {
-            if (metaBlockGridDto?.Items == null || metaBlockGridDto.Items.Count == 0)
-                return;
-
-            var block = metaBlockGridDto.Items[0].Content.Properties;
-
-            MetaTitle = block.MetaTitle;
-            MetaDescription = block.MetaDescription;
-            MetaKeywords = block.MetaKeywords?.Split(",").ToList() ?? Array.Empty<string>().ToList();
-            MetaImageId = block.MetaImageId;
-        }
-
 
         public void SetContent(IContentRepository contentRepository)
         {

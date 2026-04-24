@@ -9,9 +9,5 @@ namespace Page_Library.Page.Entities.MetaData
         public Meta(MetaDTO dto) : base(dto)
         {
         }
-
-        public Meta(MetaBlockGridDto metaBlockGridDto) : base(metaBlockGridDto)
-        {
-        }
     }
 }
