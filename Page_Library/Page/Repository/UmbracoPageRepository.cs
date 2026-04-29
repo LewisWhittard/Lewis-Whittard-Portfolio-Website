@@ -37,7 +37,11 @@ public class UmbracoPageRepository : PageRepositoryBase
             .Where(p => p != null)
             .Select(p => new ContentBlockDTO
             {
-                BlockType = (string?)p["blockType"],
+                BlockType = p["blockType"]?
+    .ToString()?
+    .Trim('[', ']', '"', ' ')
+    ?? null,
+
                 Alignment = (string?)p["alignment"],
                 Level = (string?)p["hLevel"],
                 Text = (string?)p["text"],
