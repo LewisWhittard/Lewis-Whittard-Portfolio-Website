@@ -19,66 +19,77 @@ public class UmbracoPageRepository : PageRepositoryBase
 
     public override IPage GetPage(string idOrSlug)
     {
-        var url = $"/umbraco/delivery/api/v2/content/item/{idOrSlug}";
-
-        JsonNode json = _http.GetFromJsonAsync<JsonNode>(url).Result;
-        if (json == null)
-            return null;
-
-        var props = json["properties"];
-
-        // --- META BLOCK ---
-        var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
-
-        // --- CONTENT BLOCKS ---
-        var blocks = props?["contentBlocks"]?["items"]?
-            .AsArray()
-            .Select(item => item?["content"]?["properties"])
-            .Where(p => p != null)
-            .Select(p => new ContentBlockDTO
-            {
-                BlockType = p["blockType"]?
-    .ToString()?
-    .Trim('[', ']', '"', ' ')
-    ?? null,
-
-                Alignment = (string?)p["alignment"],
-                Level = (string?)p["hLevel"],
-                Text = (string?)p["text"],
-                BodyText = (string?)p["bodyText"],
-                MediaId = (int?)p["mediaId"],
-                Url = (string?)p["url"],
-                LinkText = (string?)p["linkText"]
-            })
-            .ToList() ?? new List<ContentBlockDTO>();
-
-        // --- PAGE DTO ---
-        var dto = new PageDTO
+        try
         {
-            ExternalId = (string?)json["id"],
-            PageType = (string?)props?["pageType"],
-            Title = (string?)json["name"],
-            PublishDate = (string?)props?["publishedDate"],
-            Category = (string?)props?["category"],
-            Author = (string?)props?["author"],
+            var url = $"/umbraco/delivery/api/v2/content/item/{idOrSlug}";
+            JsonNode json = _http.GetFromJsonAsync<JsonNode>(url).Result;
+            if (json == null)
+                return null;
 
-            Meta = new MetaDTO
+            var props = json["properties"];
+
+            // --- META BLOCK ---
+            var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
+
+            // --- CONTENT BLOCKS ---
+            var blocks = props?["contentBlocks"]?["items"]?
+                .AsArray()
+                .Select(item => item?["content"]?["properties"])
+                .Where(p => p != null)
+                .Select(p => new ContentBlockDTO
+                {
+                    BlockType = (string?)p["blockType"],
+                    Alignment = (string?)p["alignment"],
+                    Level = (string?)p["hLevel"],
+                    Text = (string?)p["text"],
+                    BodyText = (string?)p["bodyText"],
+                    MediaId = (int?)p["mediaId"],
+                    Url = (string?)p["url"],
+                    LinkText = (string?)p["linkText"]
+                })
+                .ToList() ?? new List<ContentBlockDTO>();
+
+            // --- CATEGORY HANDLING (string OR array) ---
+            string category = props?["category"] switch
             {
-                MetaTitle = (string?)metaProps?["metaTitle"],
-                MetaDescription = (string?)metaProps?["metaDescription"],
-                MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
-                    ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
-                    : new List<string>(),
-                MetaImageId = (int?)metaProps?["metaImageId"]
-            },
+                JsonArray arr => string.Join(", ", arr.Select(x => x?.ToString())),
+                JsonValue val => val.ToString(),
+                _ => null
+            };
 
-            ContentBlocks = blocks
-        };
+            // --- PAGE DTO ---
+            var dto = new PageDTO
+            {
+                ExternalId = (string?)props?["externalId"],   // FIXED
+                PageType = (string?)props?["pageType"],
+                Title = (string?)props?["title"],             // FIXED
+                PublishDate = (string?)props?["publishDate"],
+                Category = category,                          // FIXED
+                Author = (string?)props?["author"],
 
-        Page page = new Page(dto);
+                Meta = new MetaDTO
+                {
+                    MetaTitle = (string?)metaProps?["metaTitle"],
+                    MetaDescription = (string?)metaProps?["metaDescription"],
+                    MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
+                        ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
+                        : new List<string>(),
+                    MetaImageId = (int?)metaProps?["metaImageId"]
+                },
 
-        return (IPage)page;
+                ContentBlocks = blocks
+            };
+
+            return new Page(dto);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return null;
+        }
     }
+
+
 
     public override List<IPage> GetPages(string? searchTerm, string category)
     {

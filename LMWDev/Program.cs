@@ -92,7 +92,7 @@ namespace LMWDev
                     //
                     services.AddHttpClient<IPageRepository, UmbracoPageRepository>(client =>
                     {
-                        client.BaseAddress = new Uri("https://localhost:44303/");
+                        client.BaseAddress = new Uri("https://localhost:44383/");
                     });
 
                     //
