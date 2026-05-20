@@ -2,6 +2,8 @@
 using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Entities.MetaData.DTO;
 using Page_Library.Page.Entities.MetaData.Interface;
+using Page_Library.Page.Entities.Page.DTO;
+using System.Runtime.CompilerServices;
 
 namespace Page_Library.Page.Entities.MetaData.Base
 {
@@ -24,6 +26,7 @@ namespace Page_Library.Page.Entities.MetaData.Base
             MetaKeywords = dto.MetaKeywords;
             MetaImageId = dto.MetaImageId;
         }
+
 
         public void SetContent(IContentRepository contentRepository)
         {

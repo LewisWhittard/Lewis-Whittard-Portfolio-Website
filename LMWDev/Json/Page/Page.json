@@ -12,7 +12,7 @@
 			"MetaKeywords": [ "MVC.Net", "Core", "Portfolio", "Games", "Blogs", "Programming", "Software", "Development", "Dev", "3D", "Models", "2D", "Models" ],
 			"MetaImageId": 0
 		},
-		"ContentBlocks": [
+		"ContentBlocks":
 			{
 				"BlockType": "Header",
 				"Level": "H2",

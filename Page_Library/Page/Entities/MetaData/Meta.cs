@@ -1,5 +1,6 @@
 ﻿using Page_Library.Page.Entities.MetaData.Base;
 using Page_Library.Page.Entities.MetaData.DTO;
+using Page_Library.Page.Entities.Page.DTO;
 
 namespace Page_Library.Page.Entities.MetaData
 {
