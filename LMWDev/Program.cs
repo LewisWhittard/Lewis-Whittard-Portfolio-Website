@@ -92,7 +92,9 @@ namespace LMWDev
                     //
                     services.AddHttpClient<IPageRepository, UmbracoPageRepository>(client =>
                     {
-                        client.BaseAddress = new Uri("https://localhost:44383/");
+                        client.BaseAddress = new Uri(
+                            hostContext.Configuration["Umbraco:BaseUrl"]
+                        );
                         client.DefaultRequestHeaders.Add(
                             "Api-Key",
                             hostContext.Configuration["Umbraco:ApiKey"]
