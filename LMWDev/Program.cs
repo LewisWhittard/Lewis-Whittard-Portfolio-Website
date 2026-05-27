@@ -94,7 +94,7 @@ namespace LMWDev
                     {
                         client.BaseAddress = new Uri(
                             hostContext.Configuration["Umbraco:BaseUrl"]
-                            );
+                        );
                         client.DefaultRequestHeaders.Add(
                             "Api-Key",
                             hostContext.Configuration["Umbraco:ApiKey"]
