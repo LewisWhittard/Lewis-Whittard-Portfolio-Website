@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -18,11 +17,6 @@ using Page_Library.Page.Service.Interface;
 using Sitemap_Library.Service;
 using Sitemap_Library.Service.Interface;
 using System;
-using Page_Library.Page.Repository.Base;
-using Page_Library.Page.Entities.Page.DTO;
-using Page_Library.Page.Entities.Page.Interface;
-using Page_Library.Page.Repository;
-using System.Net.Http.Json;
 
 namespace LMWDev
 {
@@ -35,8 +29,10 @@ namespace LMWDev
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(logging =>
+                .ConfigureLogging((hostContext, logging) =>
                 {
+                    var config = hostContext.Configuration;
+
                     logging.ClearProviders();
                     logging.AddConsole();
                     logging.AddDebug();
@@ -54,17 +50,19 @@ namespace LMWDev
 
                         options.AddOtlpExporter(otlpOptions =>
                         {
-                            otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
-                            otlpOptions.Headers = "x-honeycomb-team=Key,x-honeycomb-dataset=LMWDevService";
+                            otlpOptions.Endpoint = new Uri(config["Honeycomb:Endpoint"]);
+                            otlpOptions.Headers =
+                                $"x-honeycomb-team={config["Honeycomb:Team"]}," +
+                                $"x-honeycomb-dataset={config["Honeycomb:Dataset"]}";
                         });
                     });
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
+                    var config = hostContext.Configuration;
+
                     //
-                    // ----------------------------------------------------
                     // SESSION + HTTP CONTEXT
-                    // ----------------------------------------------------
                     //
                     services.AddDistributedMemoryCache();
 
@@ -78,38 +76,27 @@ namespace LMWDev
                     services.AddHttpContextAccessor();
 
                     //
-                    // ----------------------------------------------------
-                    // CONTENT REPOSITORY (still JSON)
-                    // ----------------------------------------------------
+                    // CONTENT REPOSITORY (JSON)
                     //
                     services.AddSingleton<IContentRepository>(provider =>
                         new JsonContentRepository(@"./Json/Content/Content.json"));
 
                     //
-                    // ----------------------------------------------------
                     // PAGE REPOSITORY (UMBRACO DELIVERY API)
-                    // ----------------------------------------------------
                     //
                     services.AddHttpClient<IPageRepository, UmbracoPageRepository>(client =>
                     {
-                        client.BaseAddress = new Uri("https://localhost:44383/");
-                        client.DefaultRequestHeaders.Add(
-                            "Api-Key",
-                            hostContext.Configuration["Umbraco:ApiKey"]
-                        );
+                        client.BaseAddress = new Uri(config["Umbraco:BaseUrl"]);
+                        client.DefaultRequestHeaders.Add("Api-Key", config["Umbraco:ApiKey"]);
                     });
 
                     //
-                    // ----------------------------------------------------
                     // CONTENT BLOCK FACTORY
-                    // ----------------------------------------------------
                     //
                     services.AddSingleton<IContentBlockFactory, ContentBlockFactory>();
 
                     //
-                    // ----------------------------------------------------
-                    // PAGE SERVICE (now uses Umbraco repo)
-                    // ----------------------------------------------------
+                    // PAGE SERVICE
                     //
                     services.AddScoped<IPageService>(provider =>
                     {
@@ -121,9 +108,7 @@ namespace LMWDev
                     });
 
                     //
-                    // ----------------------------------------------------
                     // SITEMAP SERVICE
-                    // ----------------------------------------------------
                     //
                     services.AddSingleton<ISiteMapService>(provider =>
                     {
@@ -134,9 +119,7 @@ namespace LMWDev
                     });
 
                     //
-                    // ----------------------------------------------------
                     // JSON-LD SERVICE
-                    // ----------------------------------------------------
                     //
                     services.AddSingleton<IJsonLDService>(provider =>
                     {
@@ -145,9 +128,7 @@ namespace LMWDev
                     });
 
                     //
-                    // ----------------------------------------------------
                     // OPENTELEMETRY TRACING
-                    // ----------------------------------------------------
                     //
                     services.AddOpenTelemetry()
                         .WithTracing(builder =>
@@ -169,8 +150,10 @@ namespace LMWDev
                                 })
                                 .AddOtlpExporter(otlpOptions =>
                                 {
-                                    otlpOptions.Endpoint = new Uri("https://api.honeycomb.io");
-                                    otlpOptions.Headers = "x-honeycomb-team=Key,x-honeycomb-dataset=LMWDevService";
+                                    otlpOptions.Endpoint = new Uri(config["Honeycomb:Endpoint"]);
+                                    otlpOptions.Headers =
+                                        $"x-honeycomb-team={config["Honeycomb:Team"]}," +
+                                        $"x-honeycomb-dataset={config["Honeycomb:Dataset"]}";
                                 });
                         });
                 })
