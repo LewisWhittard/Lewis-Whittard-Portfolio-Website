@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.StaticFiles;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -8,6 +10,14 @@ builder.CreateUmbracoBuilder()
     .Build();
 
 WebApplication app = builder.Build();
+
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".avif"] = "image/avif";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = provider
+});
 
 await app.BootUmbracoAsync();
 
