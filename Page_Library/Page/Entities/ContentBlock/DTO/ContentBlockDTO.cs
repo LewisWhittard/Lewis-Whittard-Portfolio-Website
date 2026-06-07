@@ -12,9 +12,6 @@
         // Paragraph
         public string? BodyText { get; set; }  // For Paragraph blocks
 
-        // Legacy media
-        public int? MediaId { get; set; }      // For Image or Video blocks
-
         // Hyperlink
         public string? Url { get; set; }       // For Hyperlink blocks
         public string? LinkText { get; set; }  // For Hyperlink blocks
