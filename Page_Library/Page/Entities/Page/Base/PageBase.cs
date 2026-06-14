@@ -48,20 +48,12 @@ namespace Page_Library.Page.Entities.Page.Base
             {
                 try
                 {
-                    if (item.BlockType == "Video" || item.BlockType == "Image")
-                    {
-                        var mediaContent = contentRepository.GetContent((int)item.MediaId);
-                        contentBlocks.Add(contentBlockFactory.CreateContentBlock(item, mediaContent));
-                    }
-                    else
-                    {
                         contentBlocks.Add(contentBlockFactory.CreateContentBlock(item, null));
-                    }
                 }
                 catch (Exception ex)
                 {
                     // Log the error, maybe continue with the next item
-                    Console.WriteLine($"Error processing item with MediaId {item.MediaId}: {ex.Message}");
+                    Console.WriteLine($"Error processing item {ex.Message}");
                 }
             }
 
