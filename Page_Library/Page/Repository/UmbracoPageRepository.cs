@@ -5,9 +5,7 @@ using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Repository.Base;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Text.Json.Nodes;
-using static System.Net.WebRequestMethods;
 
 public class UmbracoPageRepository : PageRepositoryBase
 {

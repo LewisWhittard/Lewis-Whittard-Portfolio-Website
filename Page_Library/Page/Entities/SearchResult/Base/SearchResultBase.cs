@@ -1,5 +1,4 @@
 ﻿using Page_Library.Content.Entities.Content;
-using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Entities.SearchResult.Interface;
 namespace Page_Library.Page.Entities.SearchResult.Base
