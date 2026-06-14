@@ -7,6 +7,7 @@ using Page_Library.Page.Repository.Base;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using static System.Net.WebRequestMethods;
 
 public class UmbracoPageRepository : PageRepositoryBase
 {
@@ -49,7 +50,8 @@ public class UmbracoPageRepository : PageRepositoryBase
                         Url = (string?)p["url"],
                         LinkText = (string?)p["linkText"],
                         Alt = (string?)p["alt"],
-                        Description = (string?)p["description"]
+                        Description = (string?)p["description"],
+                        VideoTitle = (string?)p["videoTitle"]
                     };
 
                     // Image
@@ -57,7 +59,7 @@ public class UmbracoPageRepository : PageRepositoryBase
                     var imageNode = selectedImage?.FirstOrDefault();
                     if (imageNode != null)
                     {
-                        dto.ImageUrl = (string?)imageNode["url"];
+                        dto.ImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)imageNode["url"];
                     }
 
                     // Video
@@ -65,7 +67,7 @@ public class UmbracoPageRepository : PageRepositoryBase
                     var videoNode = selectedVideo?.FirstOrDefault();
                     if (videoNode != null)
                     {
-                        dto.VideoUrl = (string?)videoNode["url"];
+                        dto.VideoUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)videoNode["url"];
                     }
 
                     // Thumbnail
@@ -73,7 +75,7 @@ public class UmbracoPageRepository : PageRepositoryBase
                     var thumbNode = selectedThumbnail?.FirstOrDefault();
                     if (thumbNode != null)
                     {
-                        dto.ThumbnailUrl = (string?)thumbNode["url"];
+                        dto.ThumbnailUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)thumbNode["url"];
                     }
 
                     return dto;
@@ -176,28 +178,29 @@ public class UmbracoPageRepository : PageRepositoryBase
                             Url = (string?)p["url"],
                             LinkText = (string?)p["linkText"],
                             Alt = (string?)p["alt"],
-                            Description = (string?)p["description"]
+                            Description = (string?)p["description"],
+                            VideoTitle = (string?)p["videoTitle"]
                         };
 
                         var selectedImage = p["selectedImage"] as JsonArray;
                         var imageNode = selectedImage?.FirstOrDefault();
                         if (imageNode != null)
                         {
-                            dto.ImageUrl = (string?)imageNode["url"];
+                            dto.ImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)imageNode["url"];
                         }
 
                         var selectedVideo = p["selectedVideo"] as JsonArray;
                         var videoNode = selectedVideo?.FirstOrDefault();
                         if (videoNode != null)
                         {
-                            dto.VideoUrl = (string?)videoNode["url"];
+                            dto.VideoUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)videoNode["url"];
                         }
 
                         var selectedThumbnail = p["selectedThumbnail"] as JsonArray;
                         var thumbNode = selectedThumbnail?.FirstOrDefault();
                         if (thumbNode != null)
                         {
-                            dto.ThumbnailUrl = (string?)thumbNode["url"];
+                            dto.ThumbnailUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)thumbNode["url"];
                         }
 
                         return dto;

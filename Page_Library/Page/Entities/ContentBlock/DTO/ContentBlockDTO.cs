@@ -25,6 +25,7 @@
         public string? ThumbnailUrl { get; set; }
 
         // NEW: Video description
+        public string VideoTitle { get; set; }
         public string? Description { get; set; }
     }
 }
