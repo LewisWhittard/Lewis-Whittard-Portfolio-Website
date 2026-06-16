@@ -56,7 +56,7 @@ namespace JsonLD_Library.Service.Base
                 ["primaryImageOfPage"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/Images/LMWDLogo/OptimisedLewisWhittard.avif",
+                    ["url"] = "https://lewiswhittard-001-site1.jtempurl.com/media/kc3jnjkh/lewiswhittard.avif",
                     ["caption"] = RemoveEmojis("Picture of Lewis Whittard")
                 }
             };
