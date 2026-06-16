@@ -25,7 +25,6 @@ namespace Page_Library.Page.Service.Base
         {
             var results = _pageRepository.GetPage(id);
             results.SetUpPolymorphContentBlocks(_contentRepository, _contentBlockFactory);
-            results.Meta.SetContent(_contentRepository);
             return results;
         }
 
@@ -34,7 +33,6 @@ namespace Page_Library.Page.Service.Base
             var toReturn = new List<ISearchResult>();
             foreach (IPage page in pages)
             {
-                page.Meta.SetContent(_contentRepository);
                 var SearchResult = new SearchResult(page);
                 toReturn.Add(SearchResult);
             }

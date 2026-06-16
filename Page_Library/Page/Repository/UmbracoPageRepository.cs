@@ -30,6 +30,15 @@ public class UmbracoPageRepository : PageRepositoryBase
             // --- META BLOCK ---
             var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
 
+            string? metaImageUrl = null;
+            var selectedMetaImage = metaProps?["selectedMetaImage"] as JsonArray;
+            var metaImageNode = selectedMetaImage?.FirstOrDefault();
+            if (metaImageNode != null)
+            {
+                metaImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)metaImageNode["url"];
+            }
+            string? metaImageAlt = (string?)metaProps?["metaImageAlt"];
+
             // --- CONTENT BLOCKS ---
             var blocks = props?["contentBlocks"]?["items"]?
                 .AsArray()
@@ -105,7 +114,8 @@ public class UmbracoPageRepository : PageRepositoryBase
                     MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
                         ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
                         : new List<string>(),
-                    MetaImageId = (int?)metaProps?["metaImageId"]
+                    MetaImageUrl = metaImageUrl,
+                    MetaImageAlt = metaImageAlt
                 },
                 ContentBlocks = blocks
             };
@@ -157,6 +167,15 @@ public class UmbracoPageRepository : PageRepositoryBase
 
                 // Meta
                 var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
+
+                string? metaImageUrl = null;
+                var selectedMetaImage = metaProps?["selectedMetaImage"] as JsonArray;
+                var metaImageNode = selectedMetaImage?.FirstOrDefault();
+                if (metaImageNode != null)
+                {
+                    metaImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)metaImageNode["url"];
+                }
+                string? metaImageAlt = (string?)metaProps?["metaImageAlt"];
 
                 // Content blocks
                 var blocks = props?["contentBlocks"]?["items"]?
@@ -229,7 +248,8 @@ public class UmbracoPageRepository : PageRepositoryBase
                         MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
                             ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
                             : new List<string>(),
-                        MetaImageId = (int?)metaProps?["metaImageId"]
+                        MetaImageUrl = metaImageUrl,
+                        MetaImageAlt = metaImageAlt
                     },
                     ContentBlocks = blocks
                 };
