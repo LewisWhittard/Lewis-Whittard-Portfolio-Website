@@ -1,7 +1,4 @@
-﻿using Moq;
-using Page_Library.Content.Entities.Content;
 using Page_Library.Page.Entities.ContentBlock.DTO;
-using Page_Library.Content.Entities.Content.DTO;
 
 namespace Page_Library_Tests.Page.Entities.ContentBlock
 {
@@ -15,29 +12,22 @@ namespace Page_Library_Tests.Page.Entities.ContentBlock
             {
                 BlockType = "Video",
                 Alignment = "Right",
-                MediaId = 99
+                VideoUrl = "/test/video.mp4",
+                ThumbnailUrl = "/test/thumb.jpg",
+                VideoTitle = "Test Title",
+                Description = "Test desc"
             };
-
-            // Arrange
-            var contentDTO = new contentDTO()
-            {
-                ID = 1,
-                Name = "Test Name",
-                Path = "/test/path.jpg",
-                Description = "Test desc",
-                ContentType = "Video"
-            };
-
-            Video video = new Video(contentDTO);
 
             // Act
-            var block = new Page_Library.Page.Entities.ContentBlock.VideoBlock(dto, video);
+            var block = new Page_Library.Page.Entities.ContentBlock.VideoBlock(dto);
 
             // Assert
             Assert.Equal("Video", block.BlockType);
             Assert.Equal("Right", block.Alignment);
-            Assert.Equal(99, block.MediaId);
-            Assert.Equal(video, block.Content);
+            Assert.Equal("/test/video.mp4", block.URL);
+            Assert.Equal("/test/thumb.jpg", block.ThumbnailURL);
+            Assert.Equal("Test Title", block.Title);
+            Assert.Equal("Test desc", block.Description);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Page_Library.Page.Entities.MetaData.Base;
+using Page_Library.Page.Entities.MetaData.Base;
 using Page_Library.Page.Entities.MetaData.DTO;
 
 namespace Page_Library_Tests.Page.Entities.Meta
@@ -14,7 +14,8 @@ namespace Page_Library_Tests.Page.Entities.Meta
                 MetaTitle = "Test Title",
                 MetaDescription = "Test Description",
                 MetaKeywords = new List<string> { "keyword1", "keyword2" },
-                MetaImageId = 101
+                MetaImageUrl = "https://example.com/image.jpg",
+                MetaImageAlt = "Test Alt"
             };
 
             // Act
@@ -24,7 +25,8 @@ namespace Page_Library_Tests.Page.Entities.Meta
             Assert.Equal(dto.MetaTitle, meta.MetaTitle);
             Assert.Equal(dto.MetaDescription, meta.MetaDescription);
             Assert.Equal(dto.MetaKeywords, meta.MetaKeywords);
-            Assert.Equal(dto.MetaImageId, meta.MetaImageId);
+            Assert.Equal(dto.MetaImageUrl, meta.MetaImageUrl);
+            Assert.Equal(dto.MetaImageAlt, meta.MetaImageAlt);
         }
     }
 }
