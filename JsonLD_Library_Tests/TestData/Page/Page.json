@@ -562,22 +562,30 @@
 			{
 				"BlockType": "Video",
 				"Alignment": "left",
-				"MediaId": 7
+				"VideoUrl": "https://example.com/PortfolioSiteRelease1.3.1.mp4",
+				"ThumbnailUrl": "https://example.com/Thumbnails/PortfolioSiteRelease1.3.1Thumbnail.png",
+				"VideoTitle": "Release 1.3.1 — 3D Background, WCAG Controls, and SEO Improvements",
+				"Description": "Release 1.3.1 video covering the new 3D prerendered background, WCAG accessibility toggle, hybrid video format, routing improvements, and automatic sitemap generation."
 			},
 			{
 				"BlockType": "Video",
 				"Alignment": "left",
-				"MediaId": 6
+				"VideoUrl": "https://example.com/PortfolioRelease1.2.0.mp4",
+				"ThumbnailUrl": "https://example.com/Thumbnails/PortfolioRelease1.2.0Thumbnail.png",
+				"VideoTitle": "Release 1.2.0 — Search, Structure, and SEO Upgrade",
+				"Description": "Release 1.2.0 video covering the search overhaul, SEO improvements, and UI updates."
 			},
 			{
 				"BlockType": "Image",
 				"Alignment": "left",
-				"MediaId": 0
+				"ImageUrl": "https://example.com/LMWlogo.png",
+				"Alt": "Lewis Matthew Whittard Software Development"
 			},
 			{
 				"BlockType": "Image",
 				"Alignment": "left",
-				"MediaId": 3
+				"ImageUrl": "https://example.com/CogettaPlain.png",
+				"Alt": "Cogetta Logo"
 			},
 			{
 				"BlockType": "Paragraph",
@@ -917,22 +925,30 @@
 			{
 				"BlockType": "Video",
 				"Alignment": "left",
-				"MediaId": 7
+				"VideoUrl": "https://example.com/PortfolioSiteRelease1.3.1.mp4",
+				"ThumbnailUrl": "https://example.com/Thumbnails/PortfolioSiteRelease1.3.1Thumbnail.png",
+				"VideoTitle": "Release 1.3.1 — 3D Background, WCAG Controls, and SEO Improvements",
+				"Description": "Release 1.3.1 video covering the new 3D prerendered background, WCAG accessibility toggle, hybrid video format, routing improvements, and automatic sitemap generation."
 			},
 			{
 				"BlockType": "Video",
 				"Alignment": "left",
-				"MediaId": 6
+				"VideoUrl": "https://example.com/PortfolioRelease1.2.0.mp4",
+				"ThumbnailUrl": "https://example.com/Thumbnails/PortfolioRelease1.2.0Thumbnail.png",
+				"VideoTitle": "Release 1.2.0 — Search, Structure, and SEO Upgrade",
+				"Description": "Release 1.2.0 video covering the search overhaul, SEO improvements, and UI updates."
 			},
 			{
 				"BlockType": "Image",
 				"Alignment": "left",
-				"MediaId": 0
+				"ImageUrl": "https://example.com/LMWlogo.png",
+				"Alt": "Lewis Matthew Whittard Software Development"
 			},
 			{
 				"BlockType": "Image",
 				"Alignment": "left",
-				"MediaId": 3
+				"ImageUrl": "https://example.com/CogettaPlain.png",
+				"Alt": "Cogetta Logo"
 			},
 			{
 				"BlockType": "Header",
