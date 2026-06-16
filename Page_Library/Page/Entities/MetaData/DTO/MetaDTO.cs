@@ -5,6 +5,7 @@
         public string MetaTitle { get; set; }           // Always expected
         public string MetaDescription { get; set; }     // Always expected
         public List<string> MetaKeywords { get; set; }  // Always expected
-        public int? MetaImageId { get; set; }           // Optional (nullable)
+        public string MetaImageUrl { get; set; }       // Optional
+        public string MetaImageAlt { get; set; }       // Optional
     }
 }

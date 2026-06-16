@@ -23,7 +23,10 @@
         <meta name="keywords" content="@string.Join(", ", Model.Page.Meta.MetaKeywords)" />
         <meta name="publish-date" content="@Model.Page.PublishDate" />
         <!-- Optional: Meta image if needed -->
-        <meta property="og:image" content="~/images/@Model.Page.Meta.Content.Path" />
+        @if (!string.IsNullOrEmpty(Model.Page.Meta.MetaImageUrl))
+        {
+            <meta property="og:image" content="@Model.Page.Meta.MetaImageUrl" />
+        }
     }
     @if (Model.ShouldNotBeIndexed)
     {
