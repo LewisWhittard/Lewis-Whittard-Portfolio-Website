@@ -60,14 +60,6 @@
     keeping the page assembly logic centralised and the individual block classes clean.
   </li>
   <li>
-    <strong>Meta entities</strong> — each page carries a <code>Meta</code> object with title,
-    description, image URL, and alt text, used for both HTML meta tags and JSON‑LD output.
-  </li>
-  <li>
-    <strong>Repository</strong> — <code>JsonContentRepository</code> hydrates pages from
-    structured JSON, and a separate content repository handles image and video retrieval.
-  </li>
-  <li>
     <strong>Page service</strong> — exposes <code>GetPage(id)</code> and
     <code>Search(query, category)</code> for use by the MVC controllers.
   </li>
