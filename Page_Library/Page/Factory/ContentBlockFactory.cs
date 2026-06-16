@@ -1,5 +1,4 @@
-﻿using Page_Library.Content.Entities.Content;
-using Page_Library.Content.Entities.Content.Interface;
+﻿using Page_Library.Content.Entities.Content.Interface;
 using Page_Library.Page.Entities.ContentBlock;
 using Page_Library.Page.Entities.ContentBlock.DTO;
 using Page_Library.Page.Entities.ContentBlock.Interface;
@@ -20,20 +19,14 @@ namespace Page_Library.Page.Factory
                     return new HyperlinkBlock(dto);
 
                 case "Image":
-                    if (content is Image imageContent)
-                    {
-                        return new ImageBlock(dto, imageContent);
-                    }
+                        return new ImageBlock(dto);
                     throw new InvalidCastException("Content is not of type ImageContent");
 
                 case "Paragraph":
                     return new ParagraphBlock(dto);
 
                 case "Video":
-                    if (content is Video videoContent)
-                    {
-                        return new VideoBlock(dto, videoContent);
-                    }
+                        return new VideoBlock(dto);
                     throw new InvalidCastException("Content is not of type VideoContent");
 
                 default:

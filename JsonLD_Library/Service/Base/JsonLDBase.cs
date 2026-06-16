@@ -56,7 +56,7 @@ namespace JsonLD_Library.Service.Base
                 ["primaryImageOfPage"] = new Dictionary<string, object?>
                 {
                     ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/Images/LMWDLogo/OptimisedLewisWhittard.avif",
+                    ["url"] = "https://lewiswhittard-001-site1.jtempurl.com/media/kc3jnjkh/lewiswhittard.avif",
                     ["caption"] = RemoveEmojis("Picture of Lewis Whittard")
                 }
             };
@@ -82,8 +82,8 @@ namespace JsonLD_Library.Service.Base
                 .Select(image => new Dictionary<string, object?>
                 {
                     ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/{image.Content.Path}",
-                    ["caption"] = RemoveEmojis(image.Content.Alt)?.Trim()
+                    ["url"] = $"{image.URL}",
+                    ["caption"] = RemoveEmojis(image.Alt)?.Trim()
                 })
                 .ToList();
 
@@ -95,10 +95,10 @@ namespace JsonLD_Library.Service.Base
                 .Select(video => new Dictionary<string, object?>
                 {
                     ["@type"] = "VideoObject",
-                    ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
-                    ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
-                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}",
-                    ["thumbnailUrl"] = $"{baseUrl}/{video.Content.ThumbnailPath}",
+                    ["name"] = RemoveEmojis(video.Title)?.Trim(),
+                    ["description"] = RemoveEmojis(video.Description)?.Trim(),
+                    ["contentUrl"] = $"{video.URL}",
+                    ["thumbnailUrl"] = $"{video.ThumbnailURL}",
                     ["uploadDate"] = page.PublishDate
                 })
                 .ToList();
@@ -209,8 +209,8 @@ namespace JsonLD_Library.Service.Base
                 .Select(image => new Dictionary<string, object?>
                 {
                     ["@type"] = "ImageObject",
-                    ["url"] = $"{baseUrl}/{image.Content.Path}",
-                    ["caption"] = RemoveEmojis(image.Content.Alt)?.Trim()
+                    ["url"] = $"{image.URL}",
+                    ["caption"] = RemoveEmojis(image.Alt)?.Trim()
                 })
                 .ToList();
 
@@ -222,10 +222,10 @@ namespace JsonLD_Library.Service.Base
                 .Select(video => new Dictionary<string, object?>
                 {
                     ["@type"] = "VideoObject",
-                    ["name"] = RemoveEmojis(video.Content.Name)?.Trim(),
-                    ["description"] = RemoveEmojis(video.Content.Description)?.Trim(),
-                    ["contentUrl"] = $"{baseUrl}/{video.Content.Path}",
-                    ["thumbnailUrl"] = $"{baseUrl}/{video.Content.ThumbnailPath}",
+                    ["name"] = RemoveEmojis(video.Title)?.Trim(),
+                    ["description"] = RemoveEmojis(video.Description)?.Trim(),
+                    ["contentUrl"] = $"{video.URL}",
+                    ["thumbnailUrl"] = $"{video.ThumbnailURL}",
                     ["uploadDate"] = page.PublishDate
                 })
                 .ToList();

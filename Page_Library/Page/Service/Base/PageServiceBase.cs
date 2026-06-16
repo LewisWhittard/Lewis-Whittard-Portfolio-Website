@@ -25,7 +25,6 @@ namespace Page_Library.Page.Service.Base
         {
             var results = _pageRepository.GetPage(id);
             results.SetUpPolymorphContentBlocks(_contentRepository, _contentBlockFactory);
-            results.Meta.SetContent(_contentRepository);
             return results;
         }
 
@@ -34,7 +33,6 @@ namespace Page_Library.Page.Service.Base
             var toReturn = new List<ISearchResult>();
             foreach (IPage page in pages)
             {
-                page.Meta.SetContent(_contentRepository);
                 var SearchResult = new SearchResult(page);
                 toReturn.Add(SearchResult);
             }
@@ -47,9 +45,10 @@ namespace Page_Library.Page.Service.Base
             try
             {
                 List<IPage> pages = _pageRepository.GetPages(searchTerm, category);
-                var toReturn = createSearchResults(pages);
-                toReturn.Reverse();
-                return toReturn;
+                var sorted = pages
+                    .OrderByDescending(p => DateTime.TryParse(p.PublishDate, out var d) ? d : DateTime.MinValue)
+                    .ToList();
+                return createSearchResults(sorted);
             }
             catch (Exception ex)
             {

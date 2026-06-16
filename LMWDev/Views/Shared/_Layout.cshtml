@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="/Images/LMWDLogo/Optimised/LMWlogo.avif">
+    <link rel="icon" type="image/png" href="https://lewiswhittard-001-site1.jtempurl.com/media/hr4bmqzx/lmwlogo.avif">
 	<style>
 		nav {
 		}
@@ -23,7 +23,10 @@
         <meta name="keywords" content="@string.Join(", ", Model.Page.Meta.MetaKeywords)" />
         <meta name="publish-date" content="@Model.Page.PublishDate" />
         <!-- Optional: Meta image if needed -->
-        <meta property="og:image" content="~/images/@Model.Page.Meta.Content.Path" />
+        @if (!string.IsNullOrEmpty(Model.Page.Meta.MetaImageUrl))
+        {
+            <meta property="og:image" content="@Model.Page.Meta.MetaImageUrl" />
+        }
     }
     @if (Model.ShouldNotBeIndexed)
     {
@@ -51,7 +54,7 @@
             <div class="container">
 				<a class="navbar-brand" id="LogoLink" asp-area="" asp-controller="Home" asp-action="Index">
 					<div style="width: 128px; height: 128px;">
-                        <img src="~/Images/LMWDLogo/Optimised/LMWlogo.avif" width="100%" height="100%">
+                        <img src="https://lewiswhittard-001-site1.jtempurl.com/media/hr4bmqzx/lmwlogo.avif" width="100%" height="100%">
 					</div>
 				</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -121,10 +124,10 @@
 
             <div class="mt-3 d-flex justify-content-center gap-3">
                 <a target="_blank" id="Linkedin" href="https://www.linkedin.com/in/lewis-whittard-092167157/">
-                    <img height="32" src="~/Images/Linkedin/Optimised/Linkedin.avif" alt="LinkedIn" />
+                    <img height="32" src="https://lewiswhittard-001-site1.jtempurl.com/media/3bipfiut/linkedin.avif" alt="LinkedIn" />
                 </a>
                 <a target="_blank" id="Github" href="https://github.com/LewisWhittard">
-                    <img height="32" src="~/Images/Github/Optimised/github-mark.avif" alt="GitHub" />
+                    <img height="32" src="https://lewiswhittard-001-site1.jtempurl.com/media/kcdh3qjr/github-mark.avif" alt="GitHub" />
                 </a>
             </div>
 

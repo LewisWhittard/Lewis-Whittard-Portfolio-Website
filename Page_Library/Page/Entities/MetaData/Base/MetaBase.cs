@@ -1,9 +1,5 @@
-﻿using Page_Library.Content.Entities.Content.Interface;
-using Page_Library.Content.Repository.Interface;
 using Page_Library.Page.Entities.MetaData.DTO;
 using Page_Library.Page.Entities.MetaData.Interface;
-using Page_Library.Page.Entities.Page.DTO;
-using System.Runtime.CompilerServices;
 
 namespace Page_Library.Page.Entities.MetaData.Base
 {
@@ -15,22 +11,17 @@ namespace Page_Library.Page.Entities.MetaData.Base
 
         public List<string> MetaKeywords { get; private set; }
 
-        public int? MetaImageId { get; private set; }
+        public string MetaImageUrl { get; private set; }
 
-        public IContent Content { get; private set; }
+        public string MetaImageAlt { get; private set; }
 
         public MetaBase(MetaDTO dto)
         {
             MetaTitle = dto.MetaTitle;
             MetaDescription = dto.MetaDescription;
             MetaKeywords = dto.MetaKeywords;
-            MetaImageId = dto.MetaImageId;
-        }
-
-
-        public void SetContent(IContentRepository contentRepository)
-        {
-            Content = contentRepository.GetContent((int)MetaImageId);
+            MetaImageUrl = dto.MetaImageUrl;
+            MetaImageAlt = dto.MetaImageAlt;
         }
     }
 }

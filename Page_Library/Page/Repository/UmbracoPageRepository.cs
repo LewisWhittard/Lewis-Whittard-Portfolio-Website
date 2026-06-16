@@ -5,7 +5,6 @@ using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Repository.Base;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Text.Json.Nodes;
 
 public class UmbracoPageRepository : PageRepositoryBase
@@ -31,22 +30,64 @@ public class UmbracoPageRepository : PageRepositoryBase
             // --- META BLOCK ---
             var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
 
+            string? metaImageUrl = null;
+            var selectedMetaImage = metaProps?["selectedMetaImage"] as JsonArray;
+            var metaImageNode = selectedMetaImage?.FirstOrDefault();
+            if (metaImageNode != null)
+            {
+                metaImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)metaImageNode["url"];
+            }
+            string? metaImageAlt = (string?)metaProps?["metaImageAlt"];
+
             // --- CONTENT BLOCKS ---
             var blocks = props?["contentBlocks"]?["items"]?
                 .AsArray()
-                .Select(item => item?["content"]?["properties"])
-                .Where(p => p != null)
-                .Select(p => new ContentBlockDTO
+                .Select(item =>
                 {
-                    BlockType = (string?)p["blockType"],
-                    Alignment = (string?)p["alignment"],
-                    Level = (string?)p["hLevel"],
-                    Text = (string?)p["text"],
-                    BodyText = (string?)p["bodyText"],
-                    MediaId = (int?)p["mediaId"],
-                    Url = (string?)p["url"],
-                    LinkText = (string?)p["linkText"]
+                    var p = item?["content"]?["properties"];
+                    if (p == null) return null;
+
+                    var dto = new ContentBlockDTO
+                    {
+                        BlockType = (string?)p["blockType"],
+                        Alignment = (string?)p["alignment"],
+                        Level = (string?)p["hLevel"],
+                        Text = (string?)p["text"],
+                        BodyText = (string?)p["bodyText"],
+                        Url = (string?)p["url"],
+                        LinkText = (string?)p["linkText"],
+                        Alt = (string?)p["alt"],
+                        Description = (string?)p["description"],
+                        VideoTitle = (string?)p["videoTitle"]
+                    };
+
+                    // Image
+                    var selectedImage = p["selectedImage"] as JsonArray;
+                    var imageNode = selectedImage?.FirstOrDefault();
+                    if (imageNode != null)
+                    {
+                        dto.ImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)imageNode["url"];
+                    }
+
+                    // Video
+                    var selectedVideo = p["selectedVideo"] as JsonArray;
+                    var videoNode = selectedVideo?.FirstOrDefault();
+                    if (videoNode != null)
+                    {
+                        dto.VideoUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)videoNode["url"];
+                    }
+
+                    // Thumbnail
+                    var selectedThumbnail = p["selectedThumbnail"] as JsonArray;
+                    var thumbNode = selectedThumbnail?.FirstOrDefault();
+                    if (thumbNode != null)
+                    {
+                        dto.ThumbnailUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)thumbNode["url"];
+                    }
+
+                    return dto;
                 })
+                .Where(x => x != null)
                 .ToList() ?? new List<ContentBlockDTO>();
 
             // --- CATEGORY HANDLING (string OR array) ---
@@ -60,13 +101,12 @@ public class UmbracoPageRepository : PageRepositoryBase
             // --- PAGE DTO ---
             var dto = new PageDTO
             {
-                ExternalId = (string?)props?["externalId"],   // FIXED
+                ExternalId = (string?)props?["externalId"],
                 PageType = (string?)props?["pageType"],
-                Title = (string?)props?["title"],             // FIXED
+                Title = (string?)props?["title"],
                 PublishDate = (string?)props?["publishDate"],
-                Category = category,                          // FIXED
+                Category = category,
                 Author = (string?)props?["author"],
-
                 Meta = new MetaDTO
                 {
                     MetaTitle = (string?)metaProps?["metaTitle"],
@@ -74,9 +114,9 @@ public class UmbracoPageRepository : PageRepositoryBase
                     MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
                         ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
                         : new List<string>(),
-                    MetaImageId = (int?)metaProps?["metaImageId"]
+                    MetaImageUrl = metaImageUrl,
+                    MetaImageAlt = metaImageAlt
                 },
-
                 ContentBlocks = blocks
             };
 
@@ -128,22 +168,61 @@ public class UmbracoPageRepository : PageRepositoryBase
                 // Meta
                 var metaProps = props?["meta"]?["items"]?[0]?["content"]?["properties"];
 
+                string? metaImageUrl = null;
+                var selectedMetaImage = metaProps?["selectedMetaImage"] as JsonArray;
+                var metaImageNode = selectedMetaImage?.FirstOrDefault();
+                if (metaImageNode != null)
+                {
+                    metaImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)metaImageNode["url"];
+                }
+                string? metaImageAlt = (string?)metaProps?["metaImageAlt"];
+
                 // Content blocks
                 var blocks = props?["contentBlocks"]?["items"]?
                     .AsArray()
-                    .Select(it => it?["content"]?["properties"])
-                    .Where(p => p != null)
-                    .Select(p => new ContentBlockDTO
+                    .Select(it =>
                     {
-                        BlockType = (string?)p["blockType"],
-                        Alignment = (string?)p["alignment"],
-                        Level = (string?)p["hLevel"],
-                        Text = (string?)p["text"],
-                        BodyText = (string?)p["bodyText"],
-                        MediaId = (int?)p["mediaId"],
-                        Url = (string?)p["url"],
-                        LinkText = (string?)p["linkText"]
+                        var p = it?["content"]?["properties"];
+                        if (p == null) return null;
+
+                        var dto = new ContentBlockDTO
+                        {
+                            BlockType = (string?)p["blockType"],
+                            Alignment = (string?)p["alignment"],
+                            Level = (string?)p["hLevel"],
+                            Text = (string?)p["text"],
+                            BodyText = (string?)p["bodyText"],
+                            Url = (string?)p["url"],
+                            LinkText = (string?)p["linkText"],
+                            Alt = (string?)p["alt"],
+                            Description = (string?)p["description"],
+                            VideoTitle = (string?)p["videoTitle"]
+                        };
+
+                        var selectedImage = p["selectedImage"] as JsonArray;
+                        var imageNode = selectedImage?.FirstOrDefault();
+                        if (imageNode != null)
+                        {
+                            dto.ImageUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)imageNode["url"];
+                        }
+
+                        var selectedVideo = p["selectedVideo"] as JsonArray;
+                        var videoNode = selectedVideo?.FirstOrDefault();
+                        if (videoNode != null)
+                        {
+                            dto.VideoUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)videoNode["url"];
+                        }
+
+                        var selectedThumbnail = p["selectedThumbnail"] as JsonArray;
+                        var thumbNode = selectedThumbnail?.FirstOrDefault();
+                        if (thumbNode != null)
+                        {
+                            dto.ThumbnailUrl = "https://lewiswhittard-001-site1.jtempurl.com/" + (string?)thumbNode["url"];
+                        }
+
+                        return dto;
                     })
+                    .Where(x => x != null)
                     .ToList() ?? new List<ContentBlockDTO>();
 
                 // Category (string or array)
@@ -169,7 +248,8 @@ public class UmbracoPageRepository : PageRepositoryBase
                         MetaKeywords = metaProps?["metaKeywords"] is JsonArray keywordsArray
                             ? keywordsArray.Select(k => (string?)k).Where(s => s != null).ToList()!
                             : new List<string>(),
-                        MetaImageId = (int?)metaProps?["metaImageId"]
+                        MetaImageUrl = metaImageUrl,
+                        MetaImageAlt = metaImageAlt
                     },
                     ContentBlocks = blocks
                 };
@@ -177,18 +257,20 @@ public class UmbracoPageRepository : PageRepositoryBase
                 pages.Add(new Page(dto));
             }
 
-            // 3) Filtering - use same semantics as previous implementation but null-safe and case-insensitive
-            var data = pages.Cast<Page>().ToList(); // Page inherits PageBase, which exposes properties
+            // 3) Filtering
+            var data = pages.Cast<Page>().ToList();
 
             bool isSearchEmpty = string.IsNullOrWhiteSpace(searchTerm);
             bool isCategoryEmpty = string.IsNullOrWhiteSpace(category) || category.ToLower() == "all";
 
             if (isSearchEmpty && isCategoryEmpty)
             {
-                return data.Where(r => string.Equals(r.PageType, "Cluster Content Page", StringComparison.OrdinalIgnoreCase)).Cast<IPage>().ToList();
+                return data
+                    .Where(r => string.Equals(r.PageType, "Cluster Content Page", StringComparison.OrdinalIgnoreCase))
+                    .Cast<IPage>()
+                    .ToList();
             }
 
-            // Prepare lowercase search strings
             string searchLower = isSearchEmpty ? string.Empty : searchTerm!.ToLower();
             string categoryLower = isCategoryEmpty ? string.Empty : category.ToLower();
 
@@ -208,11 +290,15 @@ public class UmbracoPageRepository : PageRepositoryBase
 
             if (!isCategoryEmpty)
             {
-                filtered = filtered.Where(r => !string.IsNullOrEmpty(r.Category) && r.Category.ToLower().Contains(categoryLower));
+                filtered = filtered.Where(r =>
+                    !string.IsNullOrEmpty(r.Category) &&
+                    r.Category.ToLower().Contains(categoryLower));
             }
 
-            // Always restrict to Cluster Content Page as original logic
-            var resultFinal = filtered.Where(r => string.Equals(r.PageType, "Cluster Content Page", StringComparison.OrdinalIgnoreCase)).Cast<IPage>().ToList();
+            var resultFinal = filtered
+                .Where(r => string.Equals(r.PageType, "Cluster Content Page", StringComparison.OrdinalIgnoreCase))
+                .Cast<IPage>()
+                .ToList();
 
             return resultFinal;
         }

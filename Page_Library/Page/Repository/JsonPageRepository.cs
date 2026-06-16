@@ -1,5 +1,4 @@
-﻿using Page_Library.Content.Entities.Content.DTO;
-using Page_Library.Page.Entities.Page.DTO;
+﻿using Page_Library.Page.Entities.Page.DTO;
 using Page_Library.Page.Entities.Page.Interface;
 using Page_Library.Page.Repository.Base;
 using System.Text.Json;
