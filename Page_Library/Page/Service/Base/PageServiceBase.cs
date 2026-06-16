@@ -45,9 +45,10 @@ namespace Page_Library.Page.Service.Base
             try
             {
                 List<IPage> pages = _pageRepository.GetPages(searchTerm, category);
-                var toReturn = createSearchResults(pages);
-                toReturn.Reverse();
-                return toReturn;
+                var sorted = pages
+                    .OrderByDescending(p => DateTime.TryParse(p.PublishDate, out var d) ? d : DateTime.MinValue)
+                    .ToList();
+                return createSearchResults(sorted);
             }
             catch (Exception ex)
             {
