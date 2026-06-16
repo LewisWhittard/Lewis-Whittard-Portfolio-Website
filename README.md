@@ -81,12 +81,6 @@
   keeping the sitemap in sync with the site's actual content structure automatically.
 </p>
 
-<h3>Breadcrumb Library — <code>Breadcrumb_Library</code></h3>
-<p>Builds breadcrumb trails from the pillar–cluster page hierarchy for navigation and structured data.</p>
-
-<h3>Static Page Generator — <code>StaticPageGenerator_Library</code></h3>
-<p>Supports pre-generation of static page output where dynamic rendering is not required.</p>
-
 <h2>🔍 Content &amp; SEO Model</h2>
 <p>
   The site is organised around a <strong>pillar–cluster content model</strong>. Two pillar
