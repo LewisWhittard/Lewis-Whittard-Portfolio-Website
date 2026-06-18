@@ -134,7 +134,7 @@ public class UmbracoPageRepository : PageRepositoryBase
         try
         {
             // 1) Fetch list from API
-            var url = "/umbraco/delivery/api/v2/content";
+            var url = "/umbraco/delivery/api/v2/content?take=1000";
             JsonNode json = _http.GetFromJsonAsync<JsonNode>(url).Result;
             if (json == null)
                 return new List<IPage>();
